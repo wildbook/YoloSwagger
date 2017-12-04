@@ -31,7 +31,7 @@ def generate_enum(file, namespace, name,  enum):
         file.write("    {0} = {1},\n".format(value,  details["value"]))
     file.write("  };\n\n")
     # to json
-    file.write("  void to_json(nlohmann::json& j, const {0}& v) {{\n".format(name))
+    file.write("  inline void to_json(nlohmann::json& j, const {0}& v) {{\n".format(name))
     file.write("    switch(v) {\n")
     for value in enum["values"]:
         file.write("      case {0}::{1}:\n".format(name,  value))
@@ -40,7 +40,7 @@ def generate_enum(file, namespace, name,  enum):
     file.write("    }\n")
     file.write("  }\n\n")
     # from json
-    file.write("  void from_json(const nlohmann::json& j, {0}& v) {{\n".format(name))
+    file.write("  inline void from_json(const nlohmann::json& j, {0}& v) {{\n".format(name))
     file.write("    const auto s& = j.get<std::string>();\n")
     for value in enum["values"]:
         file.write("    if(s == \"{0}\"){{\n".format(value))
@@ -63,12 +63,12 @@ def generate_struct(file, namespace,  name, struct):
         file.write("    {0} {1};\n".format(type2cpp(details["type"]),  field))
     file.write("  };\n\n")
     # to json
-    file.write("  void to_json(nlohmann::json& j, const {0}& v) {{\n".format(name))
+    file.write("  inline void to_json(nlohmann::json& j, const {0}& v) {{\n".format(name))
     for fields in struct["fields"]:
         file.write("    j[\"{0}\"] = v.{0};\n".format(fields))
     file.write("  }\n\n")
     # from json
-    file.write("  void from_json(const nlohmann::json& j, {0}& v) {{\n".format(name))
+    file.write("  inline void from_json(const nlohmann::json& j, {0}& v) {{\n".format(name))
     for value, details in struct["fields"].items():
         file.write("    v.{0} = j.at(\"{0}\").get<{1}>;\n".format(value,  type2cpp(details["type"])))
     file.write("  }\n\n")
