@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_ChampSelectSession_HPP
 #include <json.hpp>
 #include "ChampSelectTimer.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ChampSelectSession {
-'    // 
+    // 
     ChampSelectTimer timer;
   };
 

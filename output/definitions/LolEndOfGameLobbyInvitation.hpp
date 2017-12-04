@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEndOfGameLobbyInvitation_HPP
 #define SWAGGER_TYPES_LolEndOfGameLobbyInvitation_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameLobbyInvitation {
-'    // 
+    // 
     std::string state;
   };
 

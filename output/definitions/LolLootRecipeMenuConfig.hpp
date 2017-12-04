@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLootRecipeMenuConfig_HPP
 #define SWAGGER_TYPES_LolLootRecipeMenuConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootRecipeMenuConfig {
-'    // 
+    // 
     std::vector<std::string> alwaysShowLootIds;
     // 
     bool enabled;

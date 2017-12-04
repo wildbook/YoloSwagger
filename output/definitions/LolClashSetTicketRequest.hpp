@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashSetTicketRequest_HPP
 #define SWAGGER_TYPES_LolClashSetTicketRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashSetTicketRequest {
-'    // 
+    // 
     int32_t ticketAmount;
   };
 

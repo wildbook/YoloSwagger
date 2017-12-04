@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LCDSLoyaltyRewards_HPP
 #include <json.hpp>
 #include "LCDSChampionReward.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LCDSLoyaltyRewards {
-'    // 
+    // 
     std::vector<LCDSChampionReward> champions;
     // 
     int32_t ipBoost;

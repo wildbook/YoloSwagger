@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolHonorV2Honor_HPP
 #define SWAGGER_TYPES_LolHonorV2Honor_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolHonorV2Honor {
-'    // 
+    // 
     std::string honorCategory;
     // 
     std::string voterRelationship;

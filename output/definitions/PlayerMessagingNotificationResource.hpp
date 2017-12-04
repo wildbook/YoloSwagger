@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerMessagingNotificationResource_HPP
 #define SWAGGER_TYPES_PlayerMessagingNotificationResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerMessagingNotificationResource {
-'    // 
+    // 
     std::string body;
     // 
     int32_t id;

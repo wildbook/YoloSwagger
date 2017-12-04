@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPersonalizedOffersUIOffer_HPP
 #define SWAGGER_TYPES_LolPersonalizedOffersUIOffer_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPersonalizedOffersUIOffer {
-'    // 
+    // 
     int32_t championId;
     // 
     int64_t discountPrice;

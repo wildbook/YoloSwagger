@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChatLobbyStatus_HPP
 #include <json.hpp>
 #include "LolChatQueueCustomGameSpectatorPolicy.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatLobbyStatus {
-'    // 
+    // 
     LolChatQueueCustomGameSpectatorPolicy customSpectatorPolicy;
     // 
     bool isCustom;

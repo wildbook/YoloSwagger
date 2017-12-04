@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolCollectionsCollectionsChampionMastery_HPP
 #define SWAGGER_TYPES_LolCollectionsCollectionsChampionMastery_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionsChampionMastery {
-'    // 
+    // 
     int32_t championId;
     // 
     int32_t championLevel;

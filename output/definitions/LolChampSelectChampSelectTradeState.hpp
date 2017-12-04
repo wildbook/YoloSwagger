@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampSelectChampSelectTradeState_HPP
 #define SWAGGER_TYPES_LolChampSelectChampSelectTradeState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolChampSelectChampSelectTradeState {
-'    // 
+    // 
     AVAILABLE = 1,
     // 
     BUSY = 2,

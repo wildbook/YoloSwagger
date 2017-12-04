@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampSelectLegacyQueueGameTypeConfig_HPP
 #define SWAGGER_TYPES_LolChampSelectLegacyQueueGameTypeConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyQueueGameTypeConfig {
-'    // 
+    // 
     bool allowTrades;
     // 
     bool battleBoost;

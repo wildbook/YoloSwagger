@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksPlatformConfig_HPP
 #define SWAGGER_TYPES_LolPerksPlatformConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksPlatformConfig {
-'    // 
+    // 
     bool PerksEnabled;
   };
 

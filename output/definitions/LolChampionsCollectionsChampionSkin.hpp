@@ -4,10 +4,10 @@
 #include "LolChampionsCollectionsOwnership.hpp"
 #include "LolChampionsCollectionsChampionSkinEmblem.hpp"
 #include "LolChampionsCollectionsChampionChroma.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampionsCollectionsChampionSkin {
-'    // 
+    // 
     std::string cardPath;
     // 
     int32_t championId;

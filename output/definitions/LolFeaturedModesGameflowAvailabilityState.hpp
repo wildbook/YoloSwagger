@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolFeaturedModesGameflowAvailabilityState_HPP
 #define SWAGGER_TYPES_LolFeaturedModesGameflowAvailabilityState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolFeaturedModesGameflowAvailabilityState {
-'    // 
+    // 
     Available = 0,
     // 
     Configuration = 5,

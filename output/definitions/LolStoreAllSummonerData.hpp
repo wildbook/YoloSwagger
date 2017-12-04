@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolStoreSummonerLevelAndPoints.hpp"
 #include "LolStoreSummoner.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolStoreAllSummonerData {
-'    // 
+    // 
     LolStoreSummoner summoner;
     // 
     LolStoreSummonerLevelAndPoints summonerLevelAndPoints;

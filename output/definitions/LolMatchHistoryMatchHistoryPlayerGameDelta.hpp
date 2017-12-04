@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerGameDelta_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerGameDelta_HPP
 #include <json.hpp>
-#include "LolMatchHistoryMatchHistoryPlayerPlatformDelta.hpp"
 #include "LolMatchHistoryMatchHistoryPlayerChampMasteryDelta.hpp"
+#include "LolMatchHistoryMatchHistoryPlayerPlatformDelta.hpp"
 #include "LolMatchHistoryMatchHistoryPlayerLeagueDelta.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryPlayerGameDelta {
-'    // 
+    // 
     LolMatchHistoryMatchHistoryPlayerChampMasteryDelta champMastery;
     // 
     uint64_t gameId;

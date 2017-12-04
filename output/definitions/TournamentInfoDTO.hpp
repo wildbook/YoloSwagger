@@ -4,10 +4,10 @@
 #include "RosterDTO.hpp"
 #include "TournamentDTO.hpp"
 #include "PendingRosterDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct TournamentInfoDTO {
-'    // 
+    // 
     std::vector<PendingRosterDTO> inviteePendingRosters;
     // 
     PendingRosterDTO pendingRoster;

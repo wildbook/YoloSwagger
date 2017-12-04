@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolFeaturedModesMaps_HPP
 #define SWAGGER_TYPES_LolFeaturedModesMaps_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolFeaturedModesMaps {
-'    // 
+    // 
     std::map<std::string, std::string> assets;
     // 
     std::string gameModeName;

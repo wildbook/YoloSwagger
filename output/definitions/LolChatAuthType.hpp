@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatAuthType_HPP
 #define SWAGGER_TYPES_LolChatAuthType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolChatAuthType {
-'    // 
+    // 
     plain = 0,
     // 
     rsoCreate = 1,

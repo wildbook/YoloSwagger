@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatSanitizeRequest_HPP
 #define SWAGGER_TYPES_LolChatSanitizeRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatSanitizeRequest {
-'    // 
+    // 
     bool aggressiveScan;
     // 
     uint32_t level;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPurchaseWidgetValidationRequestItem_HPP
 #include <json.hpp>
 #include "LolPurchaseWidgetItemKey.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPurchaseWidgetValidationRequestItem {
-'    // 
+    // 
     LolPurchaseWidgetItemKey itemKey;
     // 
     int32_t quantity;

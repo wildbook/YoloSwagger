@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClubPlayer_HPP
 #define SWAGGER_TYPES_ClubPlayer_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ClubPlayer {
-'    // 
+    // 
     uint64_t accountId;
     // 
     int32_t summonerIconId;

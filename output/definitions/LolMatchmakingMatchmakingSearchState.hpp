@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchmakingMatchmakingSearchState_HPP
 #define SWAGGER_TYPES_LolMatchmakingMatchmakingSearchState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolMatchmakingMatchmakingSearchState {
-'    // 
+    // 
     AbandonedLowPriorityQueue = 1,
     // 
     Canceled = 2,

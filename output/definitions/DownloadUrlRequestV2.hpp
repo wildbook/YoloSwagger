@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_DownloadUrlRequestV2_HPP
 #define SWAGGER_TYPES_DownloadUrlRequestV2_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct DownloadUrlRequestV2 {
-'    // 
+    // 
     uint64_t gameId;
     // 
     std::string platformId;

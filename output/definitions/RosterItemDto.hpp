@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RosterItemDto_HPP
 #define SWAGGER_TYPES_RosterItemDto_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RosterItemDto {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string clubRole;

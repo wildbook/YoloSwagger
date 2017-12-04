@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolGameSettingsgamesettingsgameflowsession_HPP
 #include <json.hpp>
 #include "LolGameSettingsgamesettingsgameclient.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameSettingsgamesettingsgameflowsession {
-'    // 
+    // 
     LolGameSettingsgamesettingsgameclient gameClient;
   };
 

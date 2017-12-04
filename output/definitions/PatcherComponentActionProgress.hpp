@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_PatcherComponentActionProgress_HPP
 #define SWAGGER_TYPES_PatcherComponentActionProgress_HPP
 #include <json.hpp>
-#include "PatcherComponentStateProgress.hpp"
 #include "PatcherComponentStateWorkType.hpp"
-namespace test {
+#include "PatcherComponentStateProgress.hpp"
+namespace leagueapi {
   // 
   struct PatcherComponentActionProgress {
-'    // 
+    // 
     std::string currentItem;
     // 
     PatcherComponentStateProgress network;

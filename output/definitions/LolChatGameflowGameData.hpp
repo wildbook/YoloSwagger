@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LolChatGameflowGameData_HPP
 #define SWAGGER_TYPES_LolChatGameflowGameData_HPP
 #include <json.hpp>
-#include "LolChatChampSelection.hpp"
 #include "LolChatTeamPlayerEntry.hpp"
+#include "LolChatChampSelection.hpp"
 #include "LolChatQueue.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatGameflowGameData {
-'    // 
+    // 
     std::vector<LolChatChampSelection> playerChampionSelections;
     // 
     LolChatQueue queue;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClashPlayerRewards_HPP
 #include <json.hpp>
 #include "LolClashThemeVp.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashPlayerRewards {
-'    // 
+    // 
     int32_t seasonVp;
     // 
     std::vector<LolClashThemeVp> themeVp;

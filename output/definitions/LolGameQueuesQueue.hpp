@@ -2,13 +2,13 @@
 #define SWAGGER_TYPES_LolGameQueuesQueue_HPP
 #include <json.hpp>
 #include "LolGameQueuesQueueAvailability.hpp"
-#include "LolGameQueuesQueueGameCategory.hpp"
 #include "LolGameQueuesQueueReward.hpp"
 #include "LolGameQueuesQueueGameTypeConfig.hpp"
-namespace test {
+#include "LolGameQueuesQueueGameCategory.hpp"
+namespace leagueapi {
   // 
   struct LolGameQueuesQueue {
-'    // 
+    // 
     std::vector<int32_t> allowablePremadeSizes;
     // 
     bool areFreeChampionsAllowed;

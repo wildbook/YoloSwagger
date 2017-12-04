@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PaymentsFrontEndRequest_HPP
 #define SWAGGER_TYPES_PaymentsFrontEndRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PaymentsFrontEndRequest {
-'    // 
+    // 
     int32_t gifteeAccountId;
     // 
     std::string gifteeMessage;

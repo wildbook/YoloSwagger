@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolMissionsCollectionsChampionSkin_HPP
 #include <json.hpp>
 #include "LolMissionsCollectionsOwnership.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolMissionsCollectionsChampionSkin {
-'    // 
+    // 
     int32_t championId;
     // 
     int32_t id;

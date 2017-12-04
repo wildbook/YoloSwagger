@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_Summoner_HPP
 #define SWAGGER_TYPES_Summoner_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct Summoner {
-'    // 
+    // 
     uint64_t acctId;
     // 
     uint64_t sumId;

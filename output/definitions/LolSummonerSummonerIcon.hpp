@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSummonerSummonerIcon_HPP
 #define SWAGGER_TYPES_LolSummonerSummonerIcon_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSummonerSummonerIcon {
-'    // 
+    // 
     int32_t profileIconId;
   };
 

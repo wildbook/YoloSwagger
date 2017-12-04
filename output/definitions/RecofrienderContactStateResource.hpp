@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RecofrienderContactStateResource_HPP
 #define SWAGGER_TYPES_RecofrienderContactStateResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RecofrienderContactStateResource {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string action;

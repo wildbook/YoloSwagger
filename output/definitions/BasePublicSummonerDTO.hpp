@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BasePublicSummonerDTO_HPP
 #define SWAGGER_TYPES_BasePublicSummonerDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct BasePublicSummonerDTO {
-'    // 
+    // 
     uint64_t acctId;
     // 
     std::string internalName;

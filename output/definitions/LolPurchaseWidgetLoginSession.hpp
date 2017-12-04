@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPurchaseWidgetLoginSession_HPP
 #include <json.hpp>
 #include "LolPurchaseWidgetLoginSessionStates.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPurchaseWidgetLoginSession {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string idToken;

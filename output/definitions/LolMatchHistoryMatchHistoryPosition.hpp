@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryPosition_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryPosition_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryPosition {
-'    // 
+    // 
     int16_t x;
     // 
     int16_t y;

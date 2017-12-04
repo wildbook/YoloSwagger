@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LCDSLoyaltyStateChangeNotificationCategory_HPP
 #define SWAGGER_TYPES_LCDSLoyaltyStateChangeNotificationCategory_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LCDSLoyaltyStateChangeNotificationCategory {
-'    // 
+    // 
     change = 3,
     // 
     disabled = 5,

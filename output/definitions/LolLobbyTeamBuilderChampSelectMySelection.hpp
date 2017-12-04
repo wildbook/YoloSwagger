@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderChampSelectMySelection_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderChampSelectMySelection_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderChampSelectMySelection {
-'    // 
+    // 
     int32_t selectedSkinId;
     // 
     uint64_t spell1Id;

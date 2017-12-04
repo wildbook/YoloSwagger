@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolInventoryRmsEntitlementPayload_HPP
 #define SWAGGER_TYPES_LolInventoryRmsEntitlementPayload_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolInventoryRmsEntitlementPayload {
-'    // 
+    // 
     std::string itemId;
     // 
     std::string itemTypeId;

@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolChatChatDomainConfig.hpp"
 #include "LolChatLcuSocialConfig.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatChatServiceDynamicClientConfig {
-'    // 
+    // 
     LolChatChatDomainConfig ChatDomain;
     // 
     LolChatLcuSocialConfig LcuSocial;

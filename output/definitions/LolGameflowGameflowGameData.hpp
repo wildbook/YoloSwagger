@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolGameflowGameflowGameData_HPP
 #include <json.hpp>
 #include "LolGameflowQueue.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameflowGameflowGameData {
-'    // 
+    // 
     uint64_t gameId;
     // 
     std::string gameName;

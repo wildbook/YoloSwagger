@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClubsPresenceDataDto_HPP
 #define SWAGGER_TYPES_ClubsPresenceDataDto_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ClubsPresenceDataDto {
-'    // 
+    // 
     std::string clubName;
     // 
     std::string clubTag;

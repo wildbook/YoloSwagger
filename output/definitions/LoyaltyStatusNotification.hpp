@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LoyaltyStatusNotification_HPP
 #define SWAGGER_TYPES_LoyaltyStatusNotification_HPP
 #include <json.hpp>
-#include "LoyaltyRewards.hpp"
 #include "LoyaltyStatus.hpp"
-namespace test {
+#include "LoyaltyRewards.hpp"
+namespace leagueapi {
   // 
   struct LoyaltyStatusNotification {
-'    // 
+    // 
     LoyaltyRewards rewards;
     // 
     LoyaltyStatus status;

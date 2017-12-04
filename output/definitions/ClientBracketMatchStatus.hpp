@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClientBracketMatchStatus_HPP
 #define SWAGGER_TYPES_ClientBracketMatchStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class ClientBracketMatchStatus {
-'    // 
+    // 
     COMPLETED = 2,
     // 
     STARTED = 1,

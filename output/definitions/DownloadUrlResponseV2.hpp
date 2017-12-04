@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_DownloadUrlResponseV2_HPP
 #define SWAGGER_TYPES_DownloadUrlResponseV2_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct DownloadUrlResponseV2 {
-'    // 
+    // 
     std::string url;
   };
 

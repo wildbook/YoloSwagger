@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLicenseAgreementPluginRegionLocaleChangedEvent_HPP
 #define SWAGGER_TYPES_LolLicenseAgreementPluginRegionLocaleChangedEvent_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLicenseAgreementPluginRegionLocaleChangedEvent {
-'    // 
+    // 
     std::string locale;
     // 
     std::string region;

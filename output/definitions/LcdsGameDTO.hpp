@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LcdsGameDTO_HPP
 #include <json.hpp>
 #include "LcdsPlayerParticipant.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsGameDTO {
-'    // 
+    // 
     std::string gameMode;
     // 
     std::vector<std::string> gameMutators;

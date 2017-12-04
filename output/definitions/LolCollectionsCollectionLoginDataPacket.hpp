@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolCollectionsCollectionLoginDataPacket_HPP
 #include <json.hpp>
 #include "LolCollectionsSummonerData.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionLoginDataPacket {
-'    // 
+    // 
     LolCollectionsSummonerData allSummonerData;
   };
 

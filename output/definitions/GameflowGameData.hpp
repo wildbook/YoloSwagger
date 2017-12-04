@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_GameflowGameData_HPP
 #include <json.hpp>
 #include "Queue.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct GameflowGameData {
-'    // 
+    // 
     Queue queue;
   };
 

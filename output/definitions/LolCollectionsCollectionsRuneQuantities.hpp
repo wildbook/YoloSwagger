@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolCollectionsCollectionsRuneQuantities_HPP
 #include <json.hpp>
 #include "LolCollectionsCollectionsRuneQuantity.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionsRuneQuantities {
-'    // 
+    // 
     std::vector<LolCollectionsCollectionsRuneQuantity> runeQuantities;
     // 
     uint64_t summonerId;

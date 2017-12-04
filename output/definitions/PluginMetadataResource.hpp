@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_PluginMetadataResource_HPP
 #include <json.hpp>
 #include "PluginThreadingModel.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PluginMetadataResource {
-'    // 
+    // 
     std::string app;
     // 
     std::string feature;

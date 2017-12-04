@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LeaguesLcdsAggregatedStat_HPP
 #define SWAGGER_TYPES_LeaguesLcdsAggregatedStat_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LeaguesLcdsAggregatedStat {
-'    // 
+    // 
     int32_t championId;
     // 
     uint64_t id;

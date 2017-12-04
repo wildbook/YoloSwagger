@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerDTO_HPP
 #define SWAGGER_TYPES_PlayerDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerDTO {
-'    // 
+    // 
     int32_t tickets;
   };
 

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_EndOfGameLcdsTeamInfo_HPP
 #include <json.hpp>
 #include "EndOfGameLcdsTeamId.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct EndOfGameLcdsTeamInfo {
-'    // 
+    // 
     std::string memberStatusString;
     // 
     std::string name;

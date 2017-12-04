@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyPremadeMemberDto_HPP
 #include <json.hpp>
 #include "LolLobbyPartyMemberRoleEnum.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyPremadeMemberDto {
-'    // 
+    // 
     std::string partyId;
     // 
     std::string puuid;

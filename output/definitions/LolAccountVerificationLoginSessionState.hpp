@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolAccountVerificationLoginSessionState_HPP
 #define SWAGGER_TYPES_LolAccountVerificationLoginSessionState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolAccountVerificationLoginSessionState {
-'    // 
+    // 
     ERROR = 3,
     // 
     IN_PROGRESS = 0,

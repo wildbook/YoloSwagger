@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLcdsPartyRewardsConfig_HPP
 #define SWAGGER_TYPES_LolLobbyLcdsPartyRewardsConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLcdsPartyRewardsConfig {
-'    // 
+    // 
     bool Enabled;
   };
 

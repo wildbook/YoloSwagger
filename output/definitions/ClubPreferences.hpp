@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClubPreferences_HPP
 #define SWAGGER_TYPES_ClubPreferences_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ClubPreferences {
-'    // 
+    // 
     std::string primaryClubKey;
     // 
     bool shareClubAffiliation;

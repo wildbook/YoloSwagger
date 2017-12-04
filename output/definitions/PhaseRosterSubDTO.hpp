@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_PhaseRosterSubDTO_HPP
 #define SWAGGER_TYPES_PhaseRosterSubDTO_HPP
 #include <json.hpp>
-#include "Position.hpp"
 #include "SubState.hpp"
-namespace test {
+#include "Position.hpp"
+namespace leagueapi {
   // 
   struct PhaseRosterSubDTO {
-'    // 
+    // 
     int32_t bet;
     // 
     int32_t pay;

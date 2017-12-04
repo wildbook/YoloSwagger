@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_SummonerOrTeamAvailabilty_HPP
 #define SWAGGER_TYPES_SummonerOrTeamAvailabilty_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct SummonerOrTeamAvailabilty {
-'    // 
+    // 
     std::vector<std::string> availableForWatching;
   };
 

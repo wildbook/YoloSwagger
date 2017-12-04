@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEndOfGameEndOfGameVictoriousComrade_HPP
 #define SWAGGER_TYPES_LolEndOfGameEndOfGameVictoriousComrade_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameEndOfGameVictoriousComrade {
-'    // 
+    // 
     uint64_t summonerId;
     // 
     std::string summonerName;

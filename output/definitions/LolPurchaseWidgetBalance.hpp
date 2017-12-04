@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPurchaseWidgetBalance_HPP
 #define SWAGGER_TYPES_LolPurchaseWidgetBalance_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPurchaseWidgetBalance {
-'    // 
+    // 
     int32_t amount;
     // 
     std::string currencyType;

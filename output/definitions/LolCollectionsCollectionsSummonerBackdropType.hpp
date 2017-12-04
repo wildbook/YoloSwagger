@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolCollectionsCollectionsSummonerBackdropType_HPP
 #define SWAGGER_TYPES_LolCollectionsCollectionsSummonerBackdropType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolCollectionsCollectionsSummonerBackdropType {
-'    // 
+    // 
     default = 0,
     // 
     highest-mastery = 3,

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MissionProgressDTO_HPP
 #define SWAGGER_TYPES_MissionProgressDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct MissionProgressDTO {
-'    // 
+    // 
     int32_t currentProgress;
     // 
     int32_t lastViewedProgress;

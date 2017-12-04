@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyStateResource_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyStateResource_HPP
 #include <json.hpp>
-#include "LolLobbyTeamBuilderAfkCheckStateV1.hpp"
-#include "LolLobbyTeamBuilderChampionSelectStateV1.hpp"
 #include "LolLobbyTeamBuilderTBDMatchmakingState.hpp"
+#include "LolLobbyTeamBuilderAfkCheckStateV1.hpp"
 #include "LolLobbyTeamBuilderTbLobbyPremadeStateResource.hpp"
-namespace test {
+#include "LolLobbyTeamBuilderChampionSelectStateV1.hpp"
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderTbLobbyStateResource {
-'    // 
+    // 
     LolLobbyTeamBuilderAfkCheckStateV1 afkCheckState;
     // 
     LolLobbyTeamBuilderChampionSelectStateV1 championSelectState;

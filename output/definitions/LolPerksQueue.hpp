@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksQueue_HPP
 #define SWAGGER_TYPES_LolPerksQueue_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksQueue {
-'    // 
+    // 
     int32_t id;
   };
 

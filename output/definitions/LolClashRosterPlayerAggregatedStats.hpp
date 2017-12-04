@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashRosterPlayerAggregatedStats_HPP
 #define SWAGGER_TYPES_LolClashRosterPlayerAggregatedStats_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashRosterPlayerAggregatedStats {
-'    // 
+    // 
     std::map<std::string, int32_t> rawStatsMax;
     // 
     std::map<std::string, int32_t> rawStatsSum;

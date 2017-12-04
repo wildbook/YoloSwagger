@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyRemovedFromGameReason_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyRemovedFromGameReason_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLobbyLobbyRemovedFromGameReason {
-'    // 
+    // 
     Disbanded = 2,
     // 
     GameStartError = 7,

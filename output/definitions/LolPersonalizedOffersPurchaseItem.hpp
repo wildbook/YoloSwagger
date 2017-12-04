@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPersonalizedOffersPurchaseItem_HPP
 #define SWAGGER_TYPES_LolPersonalizedOffersPurchaseItem_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPersonalizedOffersPurchaseItem {
-'    // 
+    // 
     std::string inventoryType;
     // 
     int32_t itemId;

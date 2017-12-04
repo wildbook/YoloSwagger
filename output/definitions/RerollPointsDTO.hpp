@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RerollPointsDTO_HPP
 #define SWAGGER_TYPES_RerollPointsDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RerollPointsDTO {
-'    // 
+    // 
     uint64_t currentPoints;
     // 
     uint32_t maxRolls;

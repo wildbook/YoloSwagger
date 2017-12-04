@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolGameflowGameflowGameMap_HPP
 #define SWAGGER_TYPES_LolGameflowGameflowGameMap_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameflowGameflowGameMap {
-'    // 
+    // 
     nlohmann::json assets;
     // 
     std::string description;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LeaguesLcdsAggregatedStatsKey_HPP
 #define SWAGGER_TYPES_LeaguesLcdsAggregatedStatsKey_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LeaguesLcdsAggregatedStatsKey {
-'    // 
+    // 
     std::string gameMode;
     // 
     uint64_t userId;

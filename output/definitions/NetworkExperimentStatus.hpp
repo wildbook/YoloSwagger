@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_NetworkExperimentStatus_HPP
 #define SWAGGER_TYPES_NetworkExperimentStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class NetworkExperimentStatus {
-'    // 
+    // 
     Completed = 3,
     // 
     Disabled = 0,

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LcdsStartChampSelectDto_HPP
 #include <json.hpp>
 #include "LcdsFailedJoinPlayer.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsStartChampSelectDto {
-'    // 
+    // 
     std::vector<LcdsFailedJoinPlayer> invalidPlayers;
   };
 

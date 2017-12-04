@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashRosterNotifyReason_HPP
 #define SWAGGER_TYPES_LolClashRosterNotifyReason_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolClashRosterNotifyReason {
-'    // 
+    // 
     BUYBACK = 7,
     // 
     BUYBACK_READY = 6,

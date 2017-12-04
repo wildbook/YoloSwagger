@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersVictoriousComrade_HPP
 #define SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersVictoriousComrade_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSuggestedPlayersSuggestedPlayersVictoriousComrade {
-'    // 
+    // 
     uint64_t summonerId;
     // 
     std::string summonerName;

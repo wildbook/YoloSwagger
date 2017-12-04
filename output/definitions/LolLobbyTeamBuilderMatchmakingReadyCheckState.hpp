@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingReadyCheckState_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingReadyCheckState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLobbyTeamBuilderMatchmakingReadyCheckState {
-'    // 
+    // 
     Error = 5,
     // 
     EveryoneReady = 2,

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashQueueAvailability_HPP
 #define SWAGGER_TYPES_LolClashQueueAvailability_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolClashQueueAvailability {
-'    // 
+    // 
     Available = 0,
     // 
     DoesntMeetRequirements = 2,

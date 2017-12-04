@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_PlayerMissionDTO_HPP
 #define SWAGGER_TYPES_PlayerMissionDTO_HPP
 #include <json.hpp>
+#include "PlayerMissionObjectiveDTO.hpp"
+#include "PlayerMissionRewardDTO.hpp"
 #include "MissionAlertDTO.hpp"
 #include "MissionRequirementDTO.hpp"
-#include "PlayerMissionRewardDTO.hpp"
-#include "PlayerMissionObjectiveDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerMissionDTO {
-'    // 
+    // 
     std::string backgroundImageUrl;
     // 
     std::string celebrationType;

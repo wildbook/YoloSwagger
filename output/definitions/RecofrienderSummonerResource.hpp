@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RecofrienderSummonerResource_HPP
 #define SWAGGER_TYPES_RecofrienderSummonerResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RecofrienderSummonerResource {
-'    // 
+    // 
     uint64_t accountId;
     // 
     uint64_t summonerId;

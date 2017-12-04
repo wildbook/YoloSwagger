@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_Punishment_HPP
 #define SWAGGER_TYPES_Punishment_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct Punishment {
-'    // 
+    // 
     bool permaBan;
     // 
     std::string playerFacingMessage;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_ClubDataDto_HPP
 #include <json.hpp>
 #include "ClubPermissions.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ClubDataDto {
-'    // 
+    // 
     std::string clubKey;
     // 
     int64_t createdTs;

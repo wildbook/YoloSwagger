@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_brackets_HPP
 #include <json.hpp>
 #include "LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_matches.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_brackets {
-'    // 
+    // 
     std::string id;
     // 
     std::map<std::string, LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_matches> matches;

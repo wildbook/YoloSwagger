@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LeaverBusterLcdsMatchmakingNotification_HPP
 #define SWAGGER_TYPES_LeaverBusterLcdsMatchmakingNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LeaverBusterLcdsMatchmakingNotification {
-'    // 
+    // 
     std::vector<nlohmann::json> playerJoinFailures;
   };
 

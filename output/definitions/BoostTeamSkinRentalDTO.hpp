@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BoostTeamSkinRentalDTO_HPP
 #define SWAGGER_TYPES_BoostTeamSkinRentalDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct BoostTeamSkinRentalDTO {
-'    // 
+    // 
     std::vector<int64_t> availableSkins;
     // 
     int64_t ipReward;

@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolLobbyPartyNotificationEnvelopeDto_HPP
 #define SWAGGER_TYPES_LolLobbyPartyNotificationEnvelopeDto_HPP
 #include <json.hpp>
-#include "LolLobbyQueueRestrictionDto.hpp"
 #include "LolLobbyPlayerDto.hpp"
-namespace test {
+#include "LolLobbyQueueRestrictionDto.hpp"
+namespace leagueapi {
   // 
   struct LolLobbyPartyNotificationEnvelopeDto {
-'    // 
+    // 
     LolLobbyPlayerDto player;
     // 
     LolLobbyQueueRestrictionDto queueRestriction;

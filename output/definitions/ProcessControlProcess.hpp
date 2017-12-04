@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ProcessControlProcess_HPP
 #define SWAGGER_TYPES_ProcessControlProcess_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ProcessControlProcess {
-'    // 
+    // 
     float restart-countdown-seconds;
     // 
     std::string status;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LeaguesLcdsLeagueTier_HPP
 #define SWAGGER_TYPES_LeaguesLcdsLeagueTier_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LeaguesLcdsLeagueTier {
-'    // 
+    // 
     BRONZE = 1,
     // 
     CHALLENGER = 7,

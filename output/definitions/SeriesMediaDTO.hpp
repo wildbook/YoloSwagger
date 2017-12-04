@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_SeriesMediaDTO_HPP
 #define SWAGGER_TYPES_SeriesMediaDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct SeriesMediaDTO {
-'    // 
+    // 
     std::string backgroundUrl;
   };
 

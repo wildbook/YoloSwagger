@@ -2,12 +2,12 @@
 #define SWAGGER_TYPES_LolGameQueuesQueueCustomGame_HPP
 #include <json.hpp>
 #include "LolGameQueuesQueueAvailability.hpp"
-#include "LolGameQueuesQueueCustomGameSpectatorPolicy.hpp"
 #include "LolGameQueuesQueueCustomGameSubcategory.hpp"
-namespace test {
+#include "LolGameQueuesQueueCustomGameSpectatorPolicy.hpp"
+namespace leagueapi {
   // 
   struct LolGameQueuesQueueCustomGame {
-'    // 
+    // 
     std::vector<std::string> gameServerRegions;
     // 
     LolGameQueuesQueueAvailability queueAvailability;

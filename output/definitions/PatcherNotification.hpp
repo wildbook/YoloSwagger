@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_PatcherNotification_HPP
 #include <json.hpp>
 #include "PatcherNotificationId.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PatcherNotification {
-'    // 
+    // 
     std::string id;
     // 
     PatcherNotificationId notificationId;

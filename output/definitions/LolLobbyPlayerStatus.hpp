@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyPlayerStatus_HPP
 #include <json.hpp>
 #include "LolLobbyLobbyStatus.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyPlayerStatus {
-'    // 
+    // 
     LolLobbyLobbyStatus currentLobbyStatus;
     // 
     LolLobbyLobbyStatus lastQueuedLobbyStatus;

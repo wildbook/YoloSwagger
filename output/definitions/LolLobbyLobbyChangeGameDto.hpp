@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyLobbyChangeGameDto_HPP
 #include <json.hpp>
 #include "LolLobbyLobbyCustomGameLobby.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyChangeGameDto {
-'    // 
+    // 
     LolLobbyLobbyCustomGameLobby customGameLobby;
     // 
     bool isCustom;

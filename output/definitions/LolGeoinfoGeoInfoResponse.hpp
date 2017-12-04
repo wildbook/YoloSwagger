@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolGeoinfoGeoInfoResponse_HPP
 #include <json.hpp>
 #include "LolGeoinfoGeoInfo.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolGeoinfoGeoInfoResponse {
-'    // 
+    // 
     std::string errorMessage;
     // 
     LolGeoinfoGeoInfo geoInfo;

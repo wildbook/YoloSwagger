@@ -4,10 +4,10 @@
 #include "BindingFullEventHelp.hpp"
 #include "BindingFullFunctionHelp.hpp"
 #include "BindingFullTypeHelp.hpp"
-namespace test {
+namespace leagueapi {
   // Describes the exposed native API.
   struct BindingFullApiHelp {
-'    // 
+    // 
     std::vector<BindingFullEventHelp> events;
     // 
     std::vector<BindingFullFunctionHelp> functions;

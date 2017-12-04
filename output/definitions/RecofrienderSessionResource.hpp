@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RecofrienderSessionResource_HPP
 #define SWAGGER_TYPES_RecofrienderSessionResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RecofrienderSessionResource {
-'    // 
+    // 
     uint32_t sessionExpire;
     // 
     std::string sessionState;

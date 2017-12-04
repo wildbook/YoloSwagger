@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyLobbyBotParams_HPP
 #include <json.hpp>
 #include "LolLobbyLobbyBotDifficulty.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyBotParams {
-'    // 
+    // 
     LolLobbyLobbyBotDifficulty botDifficulty;
     // 
     int32_t championId;

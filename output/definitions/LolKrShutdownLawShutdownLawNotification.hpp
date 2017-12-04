@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolKrShutdownLawShutdownLawNotification_HPP
 #include <json.hpp>
 #include "LolKrShutdownLawShutdownLawStatus.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolKrShutdownLawShutdownLawNotification {
-'    // 
+    // 
     LolKrShutdownLawShutdownLawStatus type;
   };
 

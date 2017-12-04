@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatPlayerPreferences_HPP
 #define SWAGGER_TYPES_LolChatPlayerPreferences_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatPlayerPreferences {
-'    // 
+    // 
     std::string data;
     // 
     std::string hash;

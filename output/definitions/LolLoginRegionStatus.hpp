@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoginRegionStatus_HPP
 #define SWAGGER_TYPES_LolLoginRegionStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoginRegionStatus {
-'    // 
+    // 
     bool enabled;
     // 
     bool isLQFallbackAllowed;

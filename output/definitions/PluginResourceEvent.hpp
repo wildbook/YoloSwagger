@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_PluginResourceEvent_HPP
 #include <json.hpp>
 #include "PluginResourceEventType.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PluginResourceEvent {
-'    // 
+    // 
     nlohmann::json data;
     // 
     PluginResourceEventType eventType;

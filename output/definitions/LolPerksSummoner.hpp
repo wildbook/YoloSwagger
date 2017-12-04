@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPerksSummoner_HPP
 #include <json.hpp>
 #include "LolPerksSummonerRerollPoints.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksSummoner {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string displayName;

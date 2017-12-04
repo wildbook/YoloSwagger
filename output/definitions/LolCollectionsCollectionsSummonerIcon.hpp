@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolCollectionsCollectionsSummonerIcon_HPP
 #include <json.hpp>
 #include "LolCollectionsCollectionsOwnership.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionsSummonerIcon {
-'    // 
+    // 
     int32_t iconId;
     // 
     LolCollectionsCollectionsOwnership ownership;

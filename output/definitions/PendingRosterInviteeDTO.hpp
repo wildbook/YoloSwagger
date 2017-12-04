@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_PendingRosterInviteeDTO_HPP
 #include <json.hpp>
 #include "PendingRosterInviteeState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PendingRosterInviteeDTO {
-'    // 
+    // 
     int64_t inviteTime;
     // 
     uint64_t inviteeId;

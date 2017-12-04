@@ -4,10 +4,10 @@
 #include "LolPurchaseWidgetSale.hpp"
 #include "LolPurchaseWidgetItemKey.hpp"
 #include "LolPurchaseWidgetItemPrice.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPurchaseWidgetValidationResponseItem {
-'    // 
+    // 
     std::string description;
     // 
     LolPurchaseWidgetItemKey itemKey;

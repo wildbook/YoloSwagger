@@ -4,10 +4,10 @@
 #include "LolChampionsCollectionsOwnership.hpp"
 #include "LolChampionsCollectionsChampionSkin.hpp"
 #include "LolChampionsCollectionsChampionSpell.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampionsCollectionsChampion {
-'    // 
+    // 
     bool active;
     // 
     std::string alias;

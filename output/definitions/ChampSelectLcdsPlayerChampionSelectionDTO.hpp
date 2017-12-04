@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ChampSelectLcdsPlayerChampionSelectionDTO_HPP
 #define SWAGGER_TYPES_ChampSelectLcdsPlayerChampionSelectionDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ChampSelectLcdsPlayerChampionSelectionDTO {
-'    // 
+    // 
     int32_t championId;
     // 
     int32_t selectedSkinIndex;

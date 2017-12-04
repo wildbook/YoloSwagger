@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChatSessionResource_HPP
 #include <json.hpp>
 #include "LolChatSessionState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatSessionResource {
-'    // 
+    // 
     uint32_t sessionExpire;
     // 
     LolChatSessionState sessionState;

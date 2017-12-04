@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_SanitizerSanitizeResponse_HPP
 #define SWAGGER_TYPES_SanitizerSanitizeResponse_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct SanitizerSanitizeResponse {
-'    // 
+    // 
     bool modified;
     // 
     std::string text;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_NetworkExperimentResource_HPP
 #include <json.hpp>
 #include "NetworkExperimentStatus.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct NetworkExperimentResource {
-'    // 
+    // 
     NetworkExperimentStatus status;
   };
 

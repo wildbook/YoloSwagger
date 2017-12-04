@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyGatekeeperRestrictionDto_HPP
 #define SWAGGER_TYPES_LolLobbyGatekeeperRestrictionDto_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyGatekeeperRestrictionDto {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string payload;

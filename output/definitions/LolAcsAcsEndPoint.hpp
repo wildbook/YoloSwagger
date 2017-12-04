@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolAcsAcsEndPoint_HPP
 #define SWAGGER_TYPES_LolAcsAcsEndPoint_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolAcsAcsEndPoint {
-'    // 
+    // 
     std::string url;
   };
 

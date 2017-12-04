@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LcdsGameNotification_HPP
 #define SWAGGER_TYPES_LcdsGameNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsGameNotification {
-'    // 
+    // 
     std::string messageArgument;
     // 
     std::string messageCode;

@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolPersonalizedOffersPurchaseResponse_HPP
 #define SWAGGER_TYPES_LolPersonalizedOffersPurchaseResponse_HPP
 #include <json.hpp>
-#include "LolPersonalizedOffersWallet.hpp"
 #include "LolPersonalizedOffersPurchaseItem.hpp"
-namespace test {
+#include "LolPersonalizedOffersWallet.hpp"
+namespace leagueapi {
   // 
   struct LolPersonalizedOffersPurchaseResponse {
-'    // 
+    // 
     std::vector<LolPersonalizedOffersPurchaseItem> items;
     // 
     LolPersonalizedOffersWallet wallet;

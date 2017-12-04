@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEndOfGameGameflowGameData_HPP
 #define SWAGGER_TYPES_LolEndOfGameGameflowGameData_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameGameflowGameData {
-'    // 
+    // 
     uint64_t gameId;
   };
 

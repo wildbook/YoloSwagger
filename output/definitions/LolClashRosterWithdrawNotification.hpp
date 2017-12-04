@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolClashRosterNotifyReason.hpp"
 #include "RosterWithdraw.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashRosterWithdrawNotification {
-'    // 
+    // 
     LolClashRosterNotifyReason notifyReason;
     // 
     int64_t rosterId;

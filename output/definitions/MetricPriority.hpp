@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MetricPriority_HPP
 #define SWAGGER_TYPES_MetricPriority_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class MetricPriority {
-'    // 
+    // 
     high = 2,
     // 
     low = 0,

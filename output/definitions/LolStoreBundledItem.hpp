@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolStoreBundledItem_HPP
 #include <json.hpp>
 #include "LolStoreBundledItemCost.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolStoreBundledItem {
-'    // 
+    // 
     std::vector<LolStoreBundledItemCost> discountPrices;
     // 
     std::string inventoryType;

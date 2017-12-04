@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LeaguesLcdsLeagueListDTO_HPP
 #define SWAGGER_TYPES_LeaguesLcdsLeagueListDTO_HPP
 #include <json.hpp>
-#include "LeaguesLcdsQueueType.hpp"
 #include "LeaguesLcdsLeagueTier.hpp"
 #include "LeaguesLcdsLeagueItemDTO.hpp"
-namespace test {
+#include "LeaguesLcdsQueueType.hpp"
+namespace leagueapi {
   // 
   struct LeaguesLcdsLeagueListDTO {
-'    // 
+    // 
     std::vector<LeaguesLcdsLeagueItemDTO> entries;
     // 
     uint64_t maxLeagueSize;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashMatchmakingDodgeWarning_HPP
 #define SWAGGER_TYPES_LolClashMatchmakingDodgeWarning_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolClashMatchmakingDodgeWarning {
-'    // 
+    // 
     None = 0,
     // 
     Penalty = 2,

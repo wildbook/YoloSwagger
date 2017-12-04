@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLootGameDataSummonerEmote_HPP
 #define SWAGGER_TYPES_LolLootGameDataSummonerEmote_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootGameDataSummonerEmote {
-'    // 
+    // 
     std::string description;
     // 
     int64_t id;

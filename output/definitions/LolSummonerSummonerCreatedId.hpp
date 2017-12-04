@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSummonerSummonerCreatedId_HPP
 #define SWAGGER_TYPES_LolSummonerSummonerCreatedId_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSummonerSummonerCreatedId {
-'    // 
+    // 
     uint64_t summonerId;
   };
 

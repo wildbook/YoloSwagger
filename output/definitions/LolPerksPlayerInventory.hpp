@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksPlayerInventory_HPP
 #define SWAGGER_TYPES_LolPerksPlayerInventory_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksPlayerInventory {
-'    // 
+    // 
     uint32_t ownedPageCount;
   };
 

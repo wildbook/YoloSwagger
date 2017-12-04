@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashEntitlementsToken_HPP
 #define SWAGGER_TYPES_LolClashEntitlementsToken_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashEntitlementsToken {
-'    // 
+    // 
     std::string accessToken;
     // 
     std::vector<std::string> entitlements;

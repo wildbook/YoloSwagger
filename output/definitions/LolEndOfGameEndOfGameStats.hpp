@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LolEndOfGameEndOfGameStats_HPP
 #define SWAGGER_TYPES_LolEndOfGameEndOfGameStats_HPP
 #include <json.hpp>
-#include "LolEndOfGameEndOfGamePoints.hpp"
-#include "LolEndOfGameEndOfGameTeamBoost.hpp"
 #include "LolEndOfGameEndOfGameTeam.hpp"
-namespace test {
+#include "LolEndOfGameEndOfGameTeamBoost.hpp"
+#include "LolEndOfGameEndOfGamePoints.hpp"
+namespace leagueapi {
   // 
   struct LolEndOfGameEndOfGameStats {
-'    // 
+    // 
     uint64_t accountId;
     // 
     int32_t basePoints;

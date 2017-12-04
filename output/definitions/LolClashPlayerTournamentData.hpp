@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClashPlayerTournamentData_HPP
 #include <json.hpp>
 #include "LolClashPlayerState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashPlayerTournamentData {
-'    // 
+    // 
     int64_t bracketId;
     // 
     std::string rosterId;

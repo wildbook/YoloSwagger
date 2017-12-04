@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbySummoner_HPP
 #define SWAGGER_TYPES_LolLobbySummoner_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbySummoner {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string displayName;

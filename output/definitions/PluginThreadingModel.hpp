@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PluginThreadingModel_HPP
 #define SWAGGER_TYPES_PluginThreadingModel_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class PluginThreadingModel {
-'    // 
+    // 
     concurrent = 3,
     // 
     dedicated = 1,

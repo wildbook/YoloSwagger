@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatSanitizeResponse_HPP
 #define SWAGGER_TYPES_LolChatSanitizeResponse_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatSanitizeResponse {
-'    // 
+    // 
     bool modified;
     // 
     std::vector<std::string> texts;

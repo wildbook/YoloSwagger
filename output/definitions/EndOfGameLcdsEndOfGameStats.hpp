@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_EndOfGameLcdsEndOfGameStats_HPP
 #define SWAGGER_TYPES_EndOfGameLcdsEndOfGameStats_HPP
 #include <json.hpp>
-#include "EndOfGameLcdsPlayerParticipantStatsSummary.hpp"
-#include "EndOfGameLcdsPointsPenalty.hpp"
-#include "EndOfGameLcdsSpell.hpp"
 #include "EndOfGameLcdsTeamInfo.hpp"
-namespace test {
+#include "EndOfGameLcdsPlayerParticipantStatsSummary.hpp"
+#include "EndOfGameLcdsSpell.hpp"
+#include "EndOfGameLcdsPointsPenalty.hpp"
+namespace leagueapi {
   // 
   struct EndOfGameLcdsEndOfGameStats {
-'    // 
+    // 
     int32_t basePoints;
     // 
     int32_t battleBoostIpEarned;

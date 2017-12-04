@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClubRole_HPP
 #define SWAGGER_TYPES_ClubRole_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class ClubRole {
-'    // 
+    // 
     INVITEE = 4,
     // 
     MEMBER = 3,

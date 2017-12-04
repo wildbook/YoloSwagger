@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PaymentsFrontEndResult_HPP
 #define SWAGGER_TYPES_PaymentsFrontEndResult_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PaymentsFrontEndResult {
-'    // 
+    // 
     std::string url;
   };
 

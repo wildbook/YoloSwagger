@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_CollectionsLcdsTalentEntry_HPP
 #define SWAGGER_TYPES_CollectionsLcdsTalentEntry_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct CollectionsLcdsTalentEntry {
-'    // 
+    // 
     int32_t rank;
     // 
     int32_t talentId;

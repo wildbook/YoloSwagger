@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolCollectionsGameDataChampionMasteryTree_HPP
 #include <json.hpp>
 #include "LolCollectionsGameDataChampionMasteryGroup.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsGameDataChampionMasteryTree {
-'    // 
+    // 
     std::vector<LolCollectionsGameDataChampionMasteryGroup> groups;
   };
 

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_CollectionsLcdsSpellBookPageDTO_HPP
 #include <json.hpp>
 #include "CollectionsLcdsSlotEntry.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct CollectionsLcdsSpellBookPageDTO {
-'    // 
+    // 
     uint64_t createDate;
     // 
     bool current;

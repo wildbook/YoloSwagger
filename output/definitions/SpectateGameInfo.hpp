@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_SpectateGameInfo_HPP
 #define SWAGGER_TYPES_SpectateGameInfo_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct SpectateGameInfo {
-'    // 
+    // 
     std::string allowObserveMode;
     // 
     std::string dropInSpectateGameId;

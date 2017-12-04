@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_BindingFullTypeHelp_HPP
 #define SWAGGER_TYPES_BindingFullTypeHelp_HPP
 #include <json.hpp>
-#include "BindingFullFieldHelp.hpp"
 #include "BindingFullEnumValueHelp.hpp"
-namespace test {
+#include "BindingFullFieldHelp.hpp"
+namespace leagueapi {
   // Describes a struct or enum type.
   struct BindingFullTypeHelp {
-'    // 
+    // 
     std::string description;
     // 
     std::vector<BindingFullFieldHelp> fields;

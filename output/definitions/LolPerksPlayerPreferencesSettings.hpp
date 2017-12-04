@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolPerksPlayerPreferencesSettings_HPP
 #define SWAGGER_TYPES_LolPerksPlayerPreferencesSettings_HPP
 #include <json.hpp>
-#include "LolPerksPerkPageResource.hpp"
 #include "LolPerksUISettings.hpp"
-namespace test {
+#include "LolPerksPerkPageResource.hpp"
+namespace leagueapi {
   // 
   struct LolPerksPlayerPreferencesSettings {
-'    // 
+    // 
     std::vector<LolPerksPerkPageResource> pages;
     // 
     LolPerksUISettings settings;

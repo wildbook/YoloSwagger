@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_CollectionsLcdsClientDynamicConfigurationNotification_HPP
 #define SWAGGER_TYPES_CollectionsLcdsClientDynamicConfigurationNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct CollectionsLcdsClientDynamicConfigurationNotification {
-'    // 
+    // 
     std::string configs;
     // 
     bool delta;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MissionIdsDTO_HPP
 #define SWAGGER_TYPES_MissionIdsDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct MissionIdsDTO {
-'    // 
+    // 
     std::vector<std::string> missionIds;
   };
 

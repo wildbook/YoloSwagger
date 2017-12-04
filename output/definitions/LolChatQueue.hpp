@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChatQueue_HPP
 #include <json.hpp>
 #include "LolChatQueueGameTypeConfig.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatQueue {
-'    // 
+    // 
     std::string gameMode;
     // 
     LolChatQueueGameTypeConfig gameTypeConfig;

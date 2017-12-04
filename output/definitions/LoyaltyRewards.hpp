@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LoyaltyRewards_HPP
 #define SWAGGER_TYPES_LoyaltyRewards_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LoyaltyRewards {
-'    // 
+    // 
     int32_t freeRewardedChampionsCount;
     // 
     int32_t freeRewardedSkinsCount;

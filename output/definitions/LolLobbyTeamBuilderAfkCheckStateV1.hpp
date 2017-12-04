@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyTeamBuilderAfkCheckStateV1_HPP
 #include <json.hpp>
 #include "LolLobbyTeamBuilderTbdInventory.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderAfkCheckStateV1 {
-'    // 
+    // 
     bool afkReady;
     // 
     LolLobbyTeamBuilderTbdInventory inventoryDraft;

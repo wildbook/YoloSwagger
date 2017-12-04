@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolStoreItemKey_HPP
 #define SWAGGER_TYPES_LolStoreItemKey_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolStoreItemKey {
-'    // 
+    // 
     std::string inventoryType;
     // 
     int32_t itemId;

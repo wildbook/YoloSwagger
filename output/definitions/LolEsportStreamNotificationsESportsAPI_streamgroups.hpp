@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEsportStreamNotificationsESportsAPI_streamgroups_HPP
 #define SWAGGER_TYPES_LolEsportStreamNotificationsESportsAPI_streamgroups_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEsportStreamNotificationsESportsAPI_streamgroups {
-'    // 
+    // 
     std::string content;
     // 
     int64_t id;

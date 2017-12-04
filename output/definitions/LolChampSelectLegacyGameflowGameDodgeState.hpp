@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampSelectLegacyGameflowGameDodgeState_HPP
 #define SWAGGER_TYPES_LolChampSelectLegacyGameflowGameDodgeState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolChampSelectLegacyGameflowGameDodgeState {
-'    // 
+    // 
     Invalid = 48,
     // 
     PartyDodged = 49,

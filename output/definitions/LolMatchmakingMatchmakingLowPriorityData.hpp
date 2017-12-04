@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchmakingMatchmakingLowPriorityData_HPP
 #define SWAGGER_TYPES_LolMatchmakingMatchmakingLowPriorityData_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchmakingMatchmakingLowPriorityData {
-'    // 
+    // 
     std::string bustedLeaverAccessToken;
     // 
     std::vector<uint64_t> penalizedSummonerIds;

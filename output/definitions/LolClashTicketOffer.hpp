@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashTicketOffer_HPP
 #define SWAGGER_TYPES_LolClashTicketOffer_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashTicketOffer {
-'    // 
+    // 
     int32_t amount;
     // 
     bool isAccepted;

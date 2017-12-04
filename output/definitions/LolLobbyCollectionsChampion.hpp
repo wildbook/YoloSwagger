@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyCollectionsChampion_HPP
 #define SWAGGER_TYPES_LolLobbyCollectionsChampion_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyCollectionsChampion {
-'    // 
+    // 
     bool active;
     // 
     bool botEnabled;

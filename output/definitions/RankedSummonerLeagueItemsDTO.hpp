@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_RankedSummonerLeagueItemsDTO_HPP
 #include <json.hpp>
 #include "RankedLeagueItemDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct RankedSummonerLeagueItemsDTO {
-'    // 
+    // 
     std::vector<RankedLeagueItemDTO> summonerLeagues;
   };
 

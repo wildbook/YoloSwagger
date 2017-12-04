@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderRerollStateV1_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderRerollStateV1_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderRerollStateV1 {
-'    // 
+    // 
     bool allowRerolling;
     // 
     uint32_t rerollsRemaining;

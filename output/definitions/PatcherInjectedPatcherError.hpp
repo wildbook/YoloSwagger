@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PatcherInjectedPatcherError_HPP
 #define SWAGGER_TYPES_PatcherInjectedPatcherError_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class PatcherInjectedPatcherError {
-'    // 
+    // 
     FailedFailedToWriteFile = 3,
     // 
     FailedToFindFile = 1,

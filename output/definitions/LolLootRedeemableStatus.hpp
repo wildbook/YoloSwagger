@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLootRedeemableStatus_HPP
 #define SWAGGER_TYPES_LolLootRedeemableStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLootRedeemableStatus {
-'    // 
+    // 
     ALREADY_OWNED = 5,
     // 
     ALREADY_RENTED = 6,

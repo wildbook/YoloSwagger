@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLicenseAgreementLicenseAgreementType_HPP
 #define SWAGGER_TYPES_LolLicenseAgreementLicenseAgreementType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLicenseAgreementLicenseAgreementType {
-'    // 
+    // 
     Eula = 0,
     // 
     TermsOfUse = 1,

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksChampSelectMySelection_HPP
 #define SWAGGER_TYPES_LolPerksChampSelectMySelection_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksChampSelectMySelection {
-'    // 
+    // 
     int32_t selectedSkinId;
     // 
     uint64_t spell1Id;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_GameDataSummonerSpell_HPP
 #define SWAGGER_TYPES_GameDataSummonerSpell_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct GameDataSummonerSpell {
-'    // 
+    // 
     uint64_t id;
     // 
     uint32_t summonerLevel;

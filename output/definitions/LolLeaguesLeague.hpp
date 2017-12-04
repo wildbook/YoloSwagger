@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_LolLeaguesLeague_HPP
 #define SWAGGER_TYPES_LolLeaguesLeague_HPP
 #include <json.hpp>
-#include "LolLeaguesLeagueRank.hpp"
-#include "LolLeaguesLeagueTier.hpp"
 #include "LolLeaguesLeagueQueueType.hpp"
+#include "LolLeaguesLeagueTier.hpp"
 #include "LolLeaguesLeagueDivision.hpp"
-namespace test {
+#include "LolLeaguesLeagueRank.hpp"
+namespace leagueapi {
   // 
   struct LolLeaguesLeague {
-'    // 
+    // 
     uint64_t challengerNextPromotionUpdateInMs;
     // 
     std::string leagueName;

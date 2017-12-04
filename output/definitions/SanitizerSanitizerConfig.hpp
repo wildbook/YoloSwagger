@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_SanitizerSanitizerConfig_HPP
 #define SWAGGER_TYPES_SanitizerSanitizerConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct SanitizerSanitizerConfig {
-'    // 
+    // 
     std::string Level0Filter;
     // 
     std::string Level0Unfilter;

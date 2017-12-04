@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderLobby_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderLobby_HPP
 #include <json.hpp>
+#include "LolLobbyTeamBuilderLobbyInvitation.hpp"
 #include "LolLobbyTeamBuilderLobbyMember.hpp"
 #include "LolLobbyTeamBuilderLobbyRemovedFromGameReason.hpp"
-#include "LolLobbyTeamBuilderLobbyInvitation.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderLobby {
-'    // 
+    // 
     std::vector<int32_t> allowablePremadeSizes;
     // 
     bool autoFillEligible;

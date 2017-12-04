@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RosterWithdraw_HPP
 #define SWAGGER_TYPES_RosterWithdraw_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RosterWithdraw {
-'    // 
+    // 
     std::vector<int64_t> declineWithdrawMembers;
     // 
     int64_t gameStartBufferMs;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLootPlayerLootNotification_HPP
 #define SWAGGER_TYPES_LolLootPlayerLootNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootPlayerLootNotification {
-'    // 
+    // 
     bool acknowledged;
     // 
     int32_t count;

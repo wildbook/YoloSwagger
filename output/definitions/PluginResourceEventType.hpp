@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PluginResourceEventType_HPP
 #define SWAGGER_TYPES_PluginResourceEventType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class PluginResourceEventType {
-'    // 
+    // 
     Create = 0,
     // 
     Delete = 2,

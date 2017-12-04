@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_CollectionsLcdsSummonerIconInventoryDTO_HPP
 #include <json.hpp>
 #include "CollectionsLcdsSummonerIcon.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct CollectionsLcdsSummonerIconInventoryDTO {
-'    // 
+    // 
     std::string dateString;
     // 
     std::vector<CollectionsLcdsSummonerIcon> summonerIcons;

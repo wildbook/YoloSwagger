@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_basicSystemInfo_HPP
 #include <json.hpp>
 #include "basicOperatingSystemInfo.hpp"
-namespace test {
+namespace leagueapi {
   // User Experience Settings System Information
   struct basicSystemInfo {
-'    // 
+    // 
     basicOperatingSystemInfo operatingSystem;
     // 
     uint64_t physicalMemory;

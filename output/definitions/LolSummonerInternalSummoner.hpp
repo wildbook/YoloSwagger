@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSummonerInternalSummoner_HPP
 #define SWAGGER_TYPES_LolSummonerInternalSummoner_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSummonerInternalSummoner {
-'    // 
+    // 
     uint64_t accountId;
     // 
     bool advancedTutorialFlag;

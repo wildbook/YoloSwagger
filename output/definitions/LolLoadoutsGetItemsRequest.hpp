@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoadoutsGetItemsRequest_HPP
 #define SWAGGER_TYPES_LolLoadoutsGetItemsRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoadoutsGetItemsRequest {
-'    // 
+    // 
     uint32_t id;
     // 
     std::vector<std::string> inventoryJWTs;

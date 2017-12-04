@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyBackwardsToPremadeTransitionResource_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyBackwardsToPremadeTransitionResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderTbLobbyBackwardsToPremadeTransitionResource {
-'    // 
+    // 
     std::string backwardsTransitionReason;
     // 
     std::vector<int32_t> slotIds;

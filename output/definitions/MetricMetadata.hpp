@@ -1,16 +1,16 @@
 #ifndef SWAGGER_TYPES_MetricMetadata_HPP
 #define SWAGGER_TYPES_MetricMetadata_HPP
 #include <json.hpp>
-#include "MetricMetadataNotify.hpp"
 #include "MetricMetadataAlert.hpp"
-#include "MetricDataType.hpp"
-#include "MetricType.hpp"
 #include "AggregationType.hpp"
+#include "MetricDataType.hpp"
+#include "MetricMetadataNotify.hpp"
 #include "MetricPriority.hpp"
-namespace test {
+#include "MetricType.hpp"
+namespace leagueapi {
   // 
   struct MetricMetadata {
-'    // 
+    // 
     std::vector<MetricMetadataAlert> alerts;
     // 
     std::string category;

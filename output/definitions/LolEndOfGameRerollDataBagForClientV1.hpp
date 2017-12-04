@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEndOfGameRerollDataBagForClientV1_HPP
 #define SWAGGER_TYPES_LolEndOfGameRerollDataBagForClientV1_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameRerollDataBagForClientV1 {
-'    // 
+    // 
     uint32_t maximumRerolls;
     // 
     int64_t pointCostOfReroll;

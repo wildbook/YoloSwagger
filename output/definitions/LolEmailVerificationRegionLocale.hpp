@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEmailVerificationRegionLocale_HPP
 #define SWAGGER_TYPES_LolEmailVerificationRegionLocale_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEmailVerificationRegionLocale {
-'    // 
+    // 
     std::string locale;
     // 
     std::string region;

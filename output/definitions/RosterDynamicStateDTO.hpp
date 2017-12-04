@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_RosterDynamicStateDTO_HPP
 #define SWAGGER_TYPES_RosterDynamicStateDTO_HPP
 #include <json.hpp>
-#include "RosterWithdraw.hpp"
-#include "TicketOfferDTO.hpp"
 #include "PhaseRosterSubDTO.hpp"
 #include "BuybackMember.hpp"
-namespace test {
+#include "TicketOfferDTO.hpp"
+#include "RosterWithdraw.hpp"
+namespace leagueapi {
   // 
   struct RosterDynamicStateDTO {
-'    // 
+    // 
     std::vector<BuybackMember> members;
     // 
     std::vector<uint64_t> phaseCheckinStates;

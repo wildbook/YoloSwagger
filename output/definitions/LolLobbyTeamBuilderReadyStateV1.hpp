@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderReadyStateV1_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderReadyStateV1_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderReadyStateV1 {
-'    // 
+    // 
     std::vector<int32_t> allowablePremadeSizes;
     // 
     bool premadeSizeAllowed;

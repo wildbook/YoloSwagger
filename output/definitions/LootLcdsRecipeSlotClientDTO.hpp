@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LootLcdsRecipeSlotClientDTO_HPP
 #define SWAGGER_TYPES_LootLcdsRecipeSlotClientDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LootLcdsRecipeSlotClientDTO {
-'    // 
+    // 
     std::string quantityExpression;
     // 
     std::string query;

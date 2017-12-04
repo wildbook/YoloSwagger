@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolPftGameflowPhase.hpp"
 #include "LolPftGameflowGameDodge.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPftGameflowSession {
-'    // 
+    // 
     LolPftGameflowGameDodge gameDodge;
     // 
     LolPftGameflowPhase phase;

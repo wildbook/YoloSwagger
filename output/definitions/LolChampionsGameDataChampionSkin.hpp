@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolChampionsGameDataChampionChroma.hpp"
 #include "LolChampionsCollectionsChampionSkinEmblem.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampionsGameDataChampionSkin {
-'    // 
+    // 
     std::string cardPath;
     // 
     std::string chromaPath;

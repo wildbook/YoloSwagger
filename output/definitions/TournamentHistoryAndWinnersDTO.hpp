@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_TournamentHistoryAndWinnersDTO_HPP
 #include <json.hpp>
 #include "TournamentDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct TournamentHistoryAndWinnersDTO {
-'    // 
+    // 
     std::vector<TournamentDTO> tournamentHistory;
     // 
     std::string tournamentWinnersCompressed;

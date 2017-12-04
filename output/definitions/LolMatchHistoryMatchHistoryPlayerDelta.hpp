@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerDelta_HPP
 #include <json.hpp>
 #include "LolMatchHistoryMatchHistoryPlayerGameDelta.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryPlayerDelta {
-'    // 
+    // 
     std::vector<LolMatchHistoryMatchHistoryPlayerGameDelta> deltas;
     // 
     uint64_t originalAccountId;

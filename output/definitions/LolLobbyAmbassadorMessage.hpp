@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyAmbassadorMessage_HPP
 #define SWAGGER_TYPES_LolLobbyAmbassadorMessage_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyAmbassadorMessage {
-'    // 
+    // 
     std::string errorCode;
     // 
     int32_t httpStatus;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashMatchmakingDodgeState_HPP
 #define SWAGGER_TYPES_LolClashMatchmakingDodgeState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolClashMatchmakingDodgeState {
-'    // 
+    // 
     Invalid = 48,
     // 
     PartyDodged = 49,

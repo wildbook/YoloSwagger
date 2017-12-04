@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClubsPublicSessionResource_HPP
 #define SWAGGER_TYPES_LolClubsPublicSessionResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClubsPublicSessionResource {
-'    // 
+    // 
     uint32_t sessionExpire;
     // 
     std::string sessionState;

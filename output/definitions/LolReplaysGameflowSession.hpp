@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolReplaysGameflowSession_HPP
 #define SWAGGER_TYPES_LolReplaysGameflowSession_HPP
 #include <json.hpp>
-#include "LolReplaysGameflowPhase.hpp"
 #include "LolReplaysGameflowGameClient.hpp"
-namespace test {
+#include "LolReplaysGameflowPhase.hpp"
+namespace leagueapi {
   // 
   struct LolReplaysGameflowSession {
-'    // 
+    // 
     LolReplaysGameflowGameClient gameClient;
     // 
     LolReplaysGameflowPhase phase;

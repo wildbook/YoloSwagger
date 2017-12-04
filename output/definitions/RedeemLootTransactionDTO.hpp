@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RedeemLootTransactionDTO_HPP
 #define SWAGGER_TYPES_RedeemLootTransactionDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RedeemLootTransactionDTO {
-'    // 
+    // 
     std::string lootName;
   };
 

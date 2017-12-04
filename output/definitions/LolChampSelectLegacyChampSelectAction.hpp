@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampSelectLegacyChampSelectAction_HPP
 #define SWAGGER_TYPES_LolChampSelectLegacyChampSelectAction_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyChampSelectAction {
-'    // 
+    // 
     int64_t actorCellId;
     // 
     int32_t championId;

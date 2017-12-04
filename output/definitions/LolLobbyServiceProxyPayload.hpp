@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyServiceProxyPayload_HPP
 #define SWAGGER_TYPES_LolLobbyServiceProxyPayload_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyServiceProxyPayload {
-'    // 
+    // 
     std::string body;
     // 
     std::string method;

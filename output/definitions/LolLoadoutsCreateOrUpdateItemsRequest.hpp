@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoadoutsCreateOrUpdateItemsRequest_HPP
 #define SWAGGER_TYPES_LolLoadoutsCreateOrUpdateItemsRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoadoutsCreateOrUpdateItemsRequest {
-'    // 
+    // 
     uint32_t id;
     // 
     std::vector<std::string> inventoryJWTs;

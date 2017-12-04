@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyTeamBuilderGameflowSession_HPP
 #include <json.hpp>
 #include "LolLobbyTeamBuilderGameflowGameClient.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderGameflowSession {
-'    // 
+    // 
     LolLobbyTeamBuilderGameflowGameClient gameClient;
   };
 

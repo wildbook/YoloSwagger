@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PersonalizedOffersLcdsClientDynamicConfigurationNotification_HPP
 #define SWAGGER_TYPES_PersonalizedOffersLcdsClientDynamicConfigurationNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PersonalizedOffersLcdsClientDynamicConfigurationNotification {
-'    // 
+    // 
     std::string configs;
     // 
     bool delta;

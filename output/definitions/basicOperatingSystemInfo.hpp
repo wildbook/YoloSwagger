@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_basicOperatingSystemInfo_HPP
 #define SWAGGER_TYPES_basicOperatingSystemInfo_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // User Experience Settings Operating System Information
   struct basicOperatingSystemInfo {
-'    // 
+    // 
     std::string edition;
     // 
     std::string platform;

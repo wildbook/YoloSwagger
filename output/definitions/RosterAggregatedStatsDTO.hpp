@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "RosterPlayerAggregatedStatsDTO.hpp"
 #include "RosterPeriodAggregatedStatsDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct RosterAggregatedStatsDTO {
-'    // 
+    // 
     std::vector<RosterPeriodAggregatedStatsDTO> periodStats;
     // 
     std::map<std::string, RosterPlayerAggregatedStatsDTO> playerStats;

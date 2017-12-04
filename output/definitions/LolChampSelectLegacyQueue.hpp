@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChampSelectLegacyQueue_HPP
 #include <json.hpp>
 #include "LolChampSelectLegacyQueueGameTypeConfig.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyQueue {
-'    // 
+    // 
     bool areFreeChampionsAllowed;
     // 
     LolChampSelectLegacyQueueGameTypeConfig gameTypeConfig;

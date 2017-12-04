@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_CollectionsLcdsMasteryBookDTO_HPP
 #include <json.hpp>
 #include "CollectionsLcdsMasteryBookPageDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct CollectionsLcdsMasteryBookDTO {
-'    // 
+    // 
     std::vector<CollectionsLcdsMasteryBookPageDTO> bookPages;
     // 
     std::string dateString;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSuggestedPlayersFriendOfFriendRecord_HPP
 #define SWAGGER_TYPES_LolSuggestedPlayersFriendOfFriendRecord_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSuggestedPlayersFriendOfFriendRecord {
-'    // 
+    // 
     uint64_t commonFriendId;
     // 
     std::string commonFriendName;

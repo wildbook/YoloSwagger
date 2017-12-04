@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMissionsCollectionsRental_HPP
 #define SWAGGER_TYPES_LolMissionsCollectionsRental_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMissionsCollectionsRental {
-'    // 
+    // 
     bool rented;
   };
 

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolHonorV2ServiceProxyHonorPlayerServerRequest_HPP
 #define SWAGGER_TYPES_LolHonorV2ServiceProxyHonorPlayerServerRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolHonorV2ServiceProxyHonorPlayerServerRequest {
-'    // 
+    // 
     uint64_t gameId;
     // 
     std::string honorType;

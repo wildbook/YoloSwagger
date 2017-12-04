@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLootPlayerLootMap_HPP
 #include <json.hpp>
 #include "LolLootPlayerLoot.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootPlayerLootMap {
-'    // 
+    // 
     std::map<std::string, LolLootPlayerLoot> playerLoot;
     // 
     int64_t version;

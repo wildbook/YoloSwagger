@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolBannersInventoryItemsByType_HPP
 #include <json.hpp>
 #include "LolBannersTournamentFlagInventoryItem.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolBannersInventoryItemsByType {
-'    // 
+    // 
     std::vector<LolBannersTournamentFlagInventoryItem> TOURNAMENT_FLAG;
   };
 

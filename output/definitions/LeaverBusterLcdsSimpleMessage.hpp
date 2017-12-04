@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LeaverBusterLcdsSimpleMessage_HPP
 #define SWAGGER_TYPES_LeaverBusterLcdsSimpleMessage_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LeaverBusterLcdsSimpleMessage {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string msgId;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LootLcdsClientConfigurationDTO_HPP
 #define SWAGGER_TYPES_LootLcdsClientConfigurationDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LootLcdsClientConfigurationDTO {
-'    // 
+    // 
     std::vector<std::string> currenciesUsingCapWallets;
     // 
     std::vector<std::string> lootItemsUsingBreakoutRecipeMenu;

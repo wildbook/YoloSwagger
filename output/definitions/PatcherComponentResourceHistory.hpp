@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PatcherComponentResourceHistory_HPP
 #define SWAGGER_TYPES_PatcherComponentResourceHistory_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class PatcherComponentResourceHistory {
-'    // 
+    // 
     keep = 1,
     // 
     none = 0,

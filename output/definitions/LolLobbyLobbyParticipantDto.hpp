@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyLobbyParticipantDto_HPP
 #include <json.hpp>
 #include "LolLobbyLobbyBotDifficulty.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyParticipantDto {
-'    // 
+    // 
     bool allowedChangeActivity;
     // 
     bool allowedInviteOthers;

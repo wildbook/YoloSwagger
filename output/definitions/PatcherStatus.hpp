@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PatcherStatus_HPP
 #define SWAGGER_TYPES_PatcherStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PatcherStatus {
-'    // 
+    // 
     bool connectedToPatchServer;
     // 
     bool hasUpdatesOnRestart;

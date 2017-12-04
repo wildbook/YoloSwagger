@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BindingHelpFormat_HPP
 #define SWAGGER_TYPES_BindingHelpFormat_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // Help format for binding functions and types.
   enum class BindingHelpFormat {
-'    // Python epytext format
+    // Python epytext format
     Epytext = 2,
     // Native help format
     Full = 1,

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolReplaysReplayCreateMetadata_HPP
 #define SWAGGER_TYPES_LolReplaysReplayCreateMetadata_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolReplaysReplayCreateMetadata {
-'    // 
+    // 
     uint64_t gameEnd;
     // 
     std::string gameType;

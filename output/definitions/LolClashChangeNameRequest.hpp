@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashChangeNameRequest_HPP
 #define SWAGGER_TYPES_LolClashChangeNameRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashChangeNameRequest {
-'    // 
+    // 
     std::string name;
   };
 

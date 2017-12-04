@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryTeamBan_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryTeamBan_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryTeamBan {
-'    // 
+    // 
     int32_t championId;
     // 
     uint16_t pickTurn;

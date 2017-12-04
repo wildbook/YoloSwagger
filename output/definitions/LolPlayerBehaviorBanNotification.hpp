@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPlayerBehaviorBanNotification_HPP
 #include <json.hpp>
 #include "LolPlayerBehaviorNotificationSource.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPlayerBehaviorBanNotification {
-'    // 
+    // 
     bool displayReformCard;
     // 
     uint64_t id;

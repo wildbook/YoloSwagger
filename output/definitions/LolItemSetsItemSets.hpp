@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolItemSetsItemSets_HPP
 #include <json.hpp>
 #include "LolItemSetsItemSet.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolItemSetsItemSets {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::vector<LolItemSetsItemSet> itemSets;

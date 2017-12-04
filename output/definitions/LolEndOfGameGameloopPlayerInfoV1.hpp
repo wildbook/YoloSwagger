@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolEndOfGameGameloopPlayerInfoV1_HPP
 #include <json.hpp>
 #include "LolEndOfGameRerollDataBagForClientV1.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameGameloopPlayerInfoV1 {
-'    // 
+    // 
     LolEndOfGameRerollDataBagForClientV1 rerollDataBag;
   };
 

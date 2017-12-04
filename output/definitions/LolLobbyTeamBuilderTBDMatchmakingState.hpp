@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderTBDMatchmakingState_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderTBDMatchmakingState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderTBDMatchmakingState {
-'    // 
+    // 
     std::string backwardsTransitionReason;
     // 
     int64_t estimatedMatchmakingTimeMillis;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyChatBlockedPlayerResource_HPP
 #define SWAGGER_TYPES_LolLobbyChatBlockedPlayerResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyChatBlockedPlayerResource {
-'    // 
+    // 
     uint64_t id;
     // 
     std::string name;

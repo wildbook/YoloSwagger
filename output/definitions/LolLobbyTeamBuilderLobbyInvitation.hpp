@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderLobbyInvitation_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderLobbyInvitation_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderLobbyInvitation {
-'    // 
+    // 
     nlohmann::json invitationMetaData;
   };
 

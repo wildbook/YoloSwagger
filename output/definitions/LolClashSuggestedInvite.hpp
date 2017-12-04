@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashSuggestedInvite_HPP
 #define SWAGGER_TYPES_LolClashSuggestedInvite_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashSuggestedInvite {
-'    // 
+    // 
     uint64_t suggesterSummonerId;
     // 
     uint64_t summonerId;

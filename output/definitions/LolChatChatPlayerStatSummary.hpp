@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatChatPlayerStatSummary_HPP
 #define SWAGGER_TYPES_LolChatChatPlayerStatSummary_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatChatPlayerStatSummary {
-'    // 
+    // 
     uint64_t leaves;
     // 
     uint64_t losses;

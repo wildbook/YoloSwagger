@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerLevelUpEvent_HPP
 #define SWAGGER_TYPES_PlayerLevelUpEvent_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerLevelUpEvent {
-'    // 
+    // 
     bool leveledUp;
     // 
     bool newMasterySlotUnlocked;

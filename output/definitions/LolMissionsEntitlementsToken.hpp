@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMissionsEntitlementsToken_HPP
 #define SWAGGER_TYPES_LolMissionsEntitlementsToken_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMissionsEntitlementsToken {
-'    // 
+    // 
     std::vector<std::string> entitlements;
   };
 

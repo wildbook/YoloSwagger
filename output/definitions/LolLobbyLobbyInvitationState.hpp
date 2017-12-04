@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyInvitationState_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyInvitationState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLobbyLobbyInvitationState {
-'    // 
+    // 
     Accepted = 2,
     // 
     Declined = 4,

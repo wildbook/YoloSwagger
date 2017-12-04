@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChampSelectLegacyGameflowGameDodge_HPP
 #include <json.hpp>
 #include "LolChampSelectLegacyGameflowGameDodgeState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyGameflowGameDodge {
-'    // 
+    // 
     std::vector<uint64_t> dodgeIds;
     // 
     LolChampSelectLegacyGameflowGameDodgeState state;

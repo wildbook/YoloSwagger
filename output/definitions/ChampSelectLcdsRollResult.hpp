@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_ChampSelectLcdsRollResult_HPP
 #include <json.hpp>
 #include "ChampSelectLcdsPointSummary.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ChampSelectLcdsRollResult {
-'    // 
+    // 
     int32_t championId;
     // 
     ChampSelectLcdsPointSummary pointSummary;

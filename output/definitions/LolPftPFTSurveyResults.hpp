@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolPftPFTSurveyResults_HPP
 #define SWAGGER_TYPES_LolPftPFTSurveyResults_HPP
 #include <json.hpp>
-#include "LolPftPFTEvent.hpp"
 #include "LolPftPFTQuestionResponse.hpp"
-namespace test {
+#include "LolPftPFTEvent.hpp"
+namespace leagueapi {
   // 
   struct LolPftPFTSurveyResults {
-'    // 
+    // 
     std::vector<LolPftPFTEvent> actions;
     // 
     std::vector<LolPftPFTQuestionResponse> questionResponses;

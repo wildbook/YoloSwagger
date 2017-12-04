@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_GameQueuesLcdsAllowSpectators_HPP
 #define SWAGGER_TYPES_GameQueuesLcdsAllowSpectators_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class GameQueuesLcdsAllowSpectators {
-'    // 
+    // 
     ALL = 3,
     // 
     DROPINONLY = 2,

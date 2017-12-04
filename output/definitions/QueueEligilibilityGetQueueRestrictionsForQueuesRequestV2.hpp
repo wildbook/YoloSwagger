@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_QueueEligilibilityGetQueueRestrictionsForQueuesRequestV2_HPP
 #define SWAGGER_TYPES_QueueEligilibilityGetQueueRestrictionsForQueuesRequestV2_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct QueueEligilibilityGetQueueRestrictionsForQueuesRequestV2 {
-'    // 
+    // 
     std::vector<int32_t> queueIds;
     // 
     std::vector<std::string> queueRestrictionsToExclude;

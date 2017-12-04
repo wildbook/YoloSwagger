@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_CollectionsLcdsSummonerRuneInventory_HPP
 #include <json.hpp>
 #include "CollectionsLcdsSummonerRune.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct CollectionsLcdsSummonerRuneInventory {
-'    // 
+    // 
     std::string dateString;
     // 
     uint64_t summonerId;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_GameflowLcdsGameDTO_HPP
 #define SWAGGER_TYPES_GameflowLcdsGameDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct GameflowLcdsGameDTO {
-'    // 
+    // 
     std::string gameMode;
     // 
     std::string gameState;

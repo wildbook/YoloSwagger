@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LeaguesLcdsChampionStatInfo_HPP
 #include <json.hpp>
 #include "LeaguesLcdsAggregatedStat.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LeaguesLcdsChampionStatInfo {
-'    // 
+    // 
     int32_t championId;
     // 
     std::vector<LeaguesLcdsAggregatedStat> stats;

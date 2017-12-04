@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RecofrienderNetworkConfig_HPP
 #define SWAGGER_TYPES_RecofrienderNetworkConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RecofrienderNetworkConfig {
-'    // 
+    // 
     bool enabled;
     // 
     std::string linkUrlTemplate;

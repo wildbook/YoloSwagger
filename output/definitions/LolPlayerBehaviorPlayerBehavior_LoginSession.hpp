@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolPlayerBehaviorPlayerBehavior_LoginSessionState.hpp"
 #include "LolPlayerBehaviorPlayerBehavior_LoginError.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPlayerBehaviorPlayerBehavior_LoginSession {
-'    // 
+    // 
     uint64_t accountId;
     // 
     LolPlayerBehaviorPlayerBehavior_LoginError error;

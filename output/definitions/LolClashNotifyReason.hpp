@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashNotifyReason_HPP
 #define SWAGGER_TYPES_LolClashNotifyReason_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolClashNotifyReason {
-'    // 
+    // 
     ACCEPT_INVITE = 17,
     // 
     ACCEPT_SUGGESTION = 2,

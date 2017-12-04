@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolAccountVerificationAVSConfig_HPP
 #define SWAGGER_TYPES_LolAccountVerificationAVSConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolAccountVerificationAVSConfig {
-'    // 
+    // 
     bool Enabled;
   };
 

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolRankedStatsPluginStatus_HPP
 #define SWAGGER_TYPES_LolRankedStatsPluginStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolRankedStatsPluginStatus {
-'    // 
+    // 
     bool ready;
   };
 

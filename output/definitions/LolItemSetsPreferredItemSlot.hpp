@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolItemSetsPreferredItemSlot_HPP
 #define SWAGGER_TYPES_LolItemSetsPreferredItemSlot_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolItemSetsPreferredItemSlot {
-'    // 
+    // 
     std::string id;
     // 
     int16_t preferredItemSlot;

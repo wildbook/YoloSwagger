@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_PluginManagerResource_HPP
 #include <json.hpp>
 #include "PluginManagerState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PluginManagerResource {
-'    // 
+    // 
     PluginManagerState state;
   };
 

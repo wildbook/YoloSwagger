@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolStoreOrderNotificationResource_HPP
 #define SWAGGER_TYPES_LolStoreOrderNotificationResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolStoreOrderNotificationResource {
-'    // 
+    // 
     std::string eventType;
     // 
     std::string eventTypeId;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolCollectionsCollectionsRunePage_HPP
 #include <json.hpp>
 #include "LolCollectionsCollectionsRune.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionsRunePage {
-'    // 
+    // 
     bool current;
     // 
     uint32_t id;

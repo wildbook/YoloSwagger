@@ -4,10 +4,10 @@
 #include "RosterDynamicStateDTO.hpp"
 #include "PhaseRosterDTO.hpp"
 #include "RosterMemberDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct RosterDTO {
-'    // 
+    // 
     uint64_t captainId;
     // 
     RosterDynamicStateDTO dynamicState;

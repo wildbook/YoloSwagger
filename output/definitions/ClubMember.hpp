@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_ClubMember_HPP
 #include <json.hpp>
 #include "ClubRole.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ClubMember {
-'    // 
+    // 
     uint64_t accountId;
     // 
     ClubRole role;

@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LeaguesLcdsTeamDTO_HPP
 #define SWAGGER_TYPES_LeaguesLcdsTeamDTO_HPP
 #include <json.hpp>
-#include "LeaguesLcdsRosterDTO.hpp"
 #include "LeaguesLcdsTeamIdDTO.hpp"
-namespace test {
+#include "LeaguesLcdsRosterDTO.hpp"
+namespace leagueapi {
   // 
   struct LeaguesLcdsTeamDTO {
-'    // 
+    // 
     std::string name;
     // 
     LeaguesLcdsRosterDTO roster;

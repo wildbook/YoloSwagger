@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClubsConfig_HPP
 #define SWAGGER_TYPES_ClubsConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ClubsConfig {
-'    // 
+    // 
     int32_t clubDescriptionMaxLength;
     // 
     int32_t clubMotdMaxLength;

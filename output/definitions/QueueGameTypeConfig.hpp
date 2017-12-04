@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_QueueGameTypeConfig_HPP
 #define SWAGGER_TYPES_QueueGameTypeConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct QueueGameTypeConfig {
-'    // 
+    // 
     bool battleBoost;
   };
 

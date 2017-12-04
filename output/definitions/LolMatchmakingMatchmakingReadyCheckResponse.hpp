@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchmakingMatchmakingReadyCheckResponse_HPP
 #define SWAGGER_TYPES_LolMatchmakingMatchmakingReadyCheckResponse_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolMatchmakingMatchmakingReadyCheckResponse {
-'    // 
+    // 
     Accepted = 49,
     // 
     Declined = 50,

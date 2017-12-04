@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BindingAsyncFailureEvent_HPP
 #define SWAGGER_TYPES_BindingAsyncFailureEvent_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // Represents a failed asynchronous operation.
   struct BindingAsyncFailureEvent {
-'    // Asynchronous operation token
+    // Asynchronous operation token
     uint32_t asyncToken;
     // Error message
     std::string error;

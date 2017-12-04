@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolQueueEligibilitySummonerSummoner_HPP
 #define SWAGGER_TYPES_LolQueueEligibilitySummonerSummoner_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolQueueEligibilitySummonerSummoner {
-'    // 
+    // 
     uint64_t summonerId;
     // 
     uint32_t summonerLevel;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RsoAuthRSOPlayerCredentials_HPP
 #define SWAGGER_TYPES_RsoAuthRSOPlayerCredentials_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RsoAuthRSOPlayerCredentials {
-'    // 
+    // 
     std::string password;
     // 
     std::string platformId;

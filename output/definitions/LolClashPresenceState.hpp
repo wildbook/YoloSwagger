@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashPresenceState_HPP
 #define SWAGGER_TYPES_LolClashPresenceState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolClashPresenceState {
-'    // 
+    // 
     LOCKED_IN = 1,
     // 
     NONE = 0,

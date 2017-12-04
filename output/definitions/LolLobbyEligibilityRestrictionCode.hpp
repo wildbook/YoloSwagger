@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyEligibilityRestrictionCode_HPP
 #define SWAGGER_TYPES_LolLobbyEligibilityRestrictionCode_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLobbyEligibilityRestrictionCode {
-'    // 
+    // 
     PlayerAvailableChampionRestriction = 5,
     // 
     PlayerBannedRestriction = 4,

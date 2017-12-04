@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashFoundationError_HPP
 #define SWAGGER_TYPES_LolClashFoundationError_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolClashFoundationError {
-'    // 
+    // 
     CLASH_DISABLED = 1,
     // 
     CLASH_NOT_INITIALIZED = 0,

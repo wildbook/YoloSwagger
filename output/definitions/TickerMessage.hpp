@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_TickerMessage_HPP
 #include <json.hpp>
 #include "ServiceStatusIncident_Severity.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct TickerMessage {
-'    // 
+    // 
     std::string createdAt;
     // 
     std::string heading;

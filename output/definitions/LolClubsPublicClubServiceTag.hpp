@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClubsPublicClubServiceTag_HPP
 #define SWAGGER_TYPES_LolClubsPublicClubServiceTag_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClubsPublicClubServiceTag {
-'    // 
+    // 
     std::string name;
     // 
     uint64_t summonerId;

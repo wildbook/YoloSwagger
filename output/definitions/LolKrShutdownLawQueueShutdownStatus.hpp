@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolKrShutdownLawQueueShutdownStatus_HPP
 #define SWAGGER_TYPES_LolKrShutdownLawQueueShutdownStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolKrShutdownLawQueueShutdownStatus {
-'    // 
+    // 
     bool isDisabled;
   };
 

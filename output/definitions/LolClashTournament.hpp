@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolClashTournament_HPP
 #define SWAGGER_TYPES_LolClashTournament_HPP
 #include <json.hpp>
-#include "ClashRewardConfigClient.hpp"
 #include "LolClashTournamentPhase.hpp"
-namespace test {
+#include "ClashRewardConfigClient.hpp"
+namespace leagueapi {
   // 
   struct LolClashTournament {
-'    // 
+    // 
     bool allowRosterCreation;
     // 
     bool allowRosterDisband;

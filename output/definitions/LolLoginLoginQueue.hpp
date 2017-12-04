@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoginLoginQueue_HPP
 #define SWAGGER_TYPES_LolLoginLoginQueue_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoginLoginQueue {
-'    // 
+    // 
     uint64_t approximateWaitTimeSeconds;
     // 
     uint64_t estimatedPositionInQueue;

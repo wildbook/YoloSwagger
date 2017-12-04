@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MatchmakingLcdsMatchMakerPayload_HPP
 #define SWAGGER_TYPES_MatchmakingLcdsMatchMakerPayload_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct MatchmakingLcdsMatchMakerPayload {
-'    // 
+    // 
     std::string LEAVER_BUSTER_ACCESS_TOKEN;
   };
 

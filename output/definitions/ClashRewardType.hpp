@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClashRewardType_HPP
 #define SWAGGER_TYPES_ClashRewardType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class ClashRewardType {
-'    // 
+    // 
     FLAG = 1,
     // 
     FRAME = 2,

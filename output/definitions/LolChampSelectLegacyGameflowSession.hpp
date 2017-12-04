@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LolChampSelectLegacyGameflowSession_HPP
 #define SWAGGER_TYPES_LolChampSelectLegacyGameflowSession_HPP
 #include <json.hpp>
-#include "LolChampSelectLegacyGameflowGameClient.hpp"
 #include "LolChampSelectLegacyGameflowGameData.hpp"
 #include "LolChampSelectLegacyGameflowPhase.hpp"
-namespace test {
+#include "LolChampSelectLegacyGameflowGameClient.hpp"
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyGameflowSession {
-'    // 
+    // 
     LolChampSelectLegacyGameflowGameClient gameClient;
     // 
     LolChampSelectLegacyGameflowGameData gameData;

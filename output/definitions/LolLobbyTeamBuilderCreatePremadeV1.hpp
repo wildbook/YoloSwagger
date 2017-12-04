@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderCreatePremadeV1_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderCreatePremadeV1_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderCreatePremadeV1 {
-'    // 
+    // 
     int32_t queueId;
   };
 

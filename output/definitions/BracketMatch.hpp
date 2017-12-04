@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_BracketMatch_HPP
 #include <json.hpp>
 #include "ClientBracketMatchStatus.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct BracketMatch {
-'    // 
+    // 
     int64_t gameId;
     // 
     int64_t gameStartTime;

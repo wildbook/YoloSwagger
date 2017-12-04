@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolSummonerRMSLevelField_HPP
 #include <json.hpp>
 #include "LolSummonerRMSLevelProgression.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolSummonerRMSLevelField {
-'    // 
+    // 
     uint32_t finalLevel;
     // 
     uint32_t initialLevel;

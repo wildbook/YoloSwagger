@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MissionRequirementDTO_HPP
 #define SWAGGER_TYPES_MissionRequirementDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct MissionRequirementDTO {
-'    // 
+    // 
     std::string description;
     // 
     std::string type;

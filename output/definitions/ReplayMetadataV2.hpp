@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ReplayMetadataV2_HPP
 #define SWAGGER_TYPES_ReplayMetadataV2_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ReplayMetadataV2 {
-'    // 
+    // 
     uint32_t fileSize;
     // 
     std::string gameVersion;

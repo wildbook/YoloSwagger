@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolFeaturedModesFeaturedModesConfig_HPP
 #define SWAGGER_TYPES_LolFeaturedModesFeaturedModesConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolFeaturedModesFeaturedModesConfig {
-'    // 
+    // 
     uint32_t MaxNotificationSaveDelayMinutes;
     // 
     bool NotificationsEnabled;

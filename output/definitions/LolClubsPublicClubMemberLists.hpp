@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClubsPublicClubMemberLists_HPP
 #include <json.hpp>
 #include "LolClubsPublicClubPlayer.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClubsPublicClubMemberLists {
-'    // 
+    // 
     std::vector<LolClubsPublicClubPlayer> activeMembers;
   };
 

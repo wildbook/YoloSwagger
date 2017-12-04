@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolFeaturedModesGameflowAvailability_HPP
 #include <json.hpp>
 #include "LolFeaturedModesGameflowAvailabilityState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolFeaturedModesGameflowAvailability {
-'    // 
+    // 
     bool isAvailable;
     // 
     LolFeaturedModesGameflowAvailabilityState state;

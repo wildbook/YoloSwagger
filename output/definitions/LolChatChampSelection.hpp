@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatChampSelection_HPP
 #define SWAGGER_TYPES_LolChatChampSelection_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatChampSelection {
-'    // 
+    // 
     int32_t championId;
     // 
     int32_t selectedSkinIndex;

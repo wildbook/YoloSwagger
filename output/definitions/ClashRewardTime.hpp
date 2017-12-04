@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClashRewardTime_HPP
 #define SWAGGER_TYPES_ClashRewardTime_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class ClashRewardTime {
-'    // 
+    // 
     EOB = 2,
     // 
     EOG = 1,

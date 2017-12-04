@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPurchaseWidgetWallet_HPP
 #include <json.hpp>
 #include "LolPurchaseWidgetBalance.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPurchaseWidgetWallet {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::vector<LolPurchaseWidgetBalance> balances;

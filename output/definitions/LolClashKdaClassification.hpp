@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashKdaClassification_HPP
 #define SWAGGER_TYPES_LolClashKdaClassification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolClashKdaClassification {
-'    // 
+    // 
     AVERAGE = 1,
     // 
     HIGH = 2,

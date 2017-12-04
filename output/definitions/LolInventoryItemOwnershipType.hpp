@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolInventoryItemOwnershipType_HPP
 #define SWAGGER_TYPES_LolInventoryItemOwnershipType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolInventoryItemOwnershipType {
-'    // 
+    // 
     F2P = 2,
     // 
     OWNED = 0,

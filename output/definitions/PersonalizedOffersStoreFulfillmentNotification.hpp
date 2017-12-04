@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PersonalizedOffersStoreFulfillmentNotification_HPP
 #define SWAGGER_TYPES_PersonalizedOffersStoreFulfillmentNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PersonalizedOffersStoreFulfillmentNotification {
-'    // 
+    // 
     nlohmann::json data;
     // 
     std::string inventoryType;

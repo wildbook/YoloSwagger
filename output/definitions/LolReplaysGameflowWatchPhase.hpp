@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolReplaysGameflowWatchPhase_HPP
 #define SWAGGER_TYPES_LolReplaysGameflowWatchPhase_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolReplaysGameflowWatchPhase {
-'    // 
+    // 
     None = 0,
     // 
     WatchFailedToLaunch = 3,

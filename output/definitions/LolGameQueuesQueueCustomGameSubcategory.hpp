@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolGameQueuesQueueAvailability.hpp"
 #include "LolGameQueuesQueueGameTypeConfig.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameQueuesQueueCustomGameSubcategory {
-'    // 
+    // 
     std::string gameMode;
     // 
     std::string gameMutator;

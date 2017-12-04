@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyLobbyCustomChampSelectStartResponse_HPP
 #include <json.hpp>
 #include "LolLobbyLobbyCustomFailedPlayer.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyCustomChampSelectStartResponse {
-'    // 
+    // 
     std::vector<LolLobbyLobbyCustomFailedPlayer> failedPlayers;
     // 
     bool success;

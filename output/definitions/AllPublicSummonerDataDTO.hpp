@@ -4,10 +4,10 @@
 #include "BasePublicSummonerDTO.hpp"
 #include "SummonerLevelAndPoints.hpp"
 #include "SummonerLevel.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct AllPublicSummonerDataDTO {
-'    // 
+    // 
     BasePublicSummonerDTO summoner;
     // 
     SummonerLevel summonerLevel;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolReplaysReplaysDynamicConfig_HPP
 #define SWAGGER_TYPES_LolReplaysReplaysDynamicConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolReplaysReplaysDynamicConfig {
-'    // 
+    // 
     std::string MinSupportedGameServerVersion;
     // 
     double MinutesUntilReplayConsideredLost;

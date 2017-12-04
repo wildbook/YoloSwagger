@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolLootLootItemGdsResource.hpp"
 #include "LolLootLootRecipeGdsResource.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootLootDataGdsResource {
-'    // 
+    // 
     std::vector<LolLootLootItemGdsResource> LootItems;
     // 
     std::vector<LolLootLootRecipeGdsResource> LootRecipes;

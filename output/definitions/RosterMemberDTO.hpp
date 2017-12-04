@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_RosterMemberDTO_HPP
 #include <json.hpp>
 #include "Position.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct RosterMemberDTO {
-'    // 
+    // 
     int32_t currentBid;
     // 
     int64_t joinTime;

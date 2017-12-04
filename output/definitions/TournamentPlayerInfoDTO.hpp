@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_TournamentPlayerInfoDTO_HPP
 #define SWAGGER_TYPES_TournamentPlayerInfoDTO_HPP
 #include <json.hpp>
-#include "RosterStatsDTO.hpp"
 #include "TournamentInfoDTO.hpp"
-#include "PlayerDTO.hpp"
 #include "ThemeVp.hpp"
-namespace test {
+#include "RosterStatsDTO.hpp"
+#include "PlayerDTO.hpp"
+namespace leagueapi {
   // 
   struct TournamentPlayerInfoDTO {
-'    // 
+    // 
     PlayerDTO player;
     // 
     std::vector<RosterStatsDTO> rosterStats;

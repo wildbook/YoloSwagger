@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolCollectionsGameDataSplashMetadata_HPP
 #define SWAGGER_TYPES_LolCollectionsGameDataSplashMetadata_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsGameDataSplashMetadata {
-'    // 
+    // 
     std::string CalculatedColor;
     // 
     std::string OverrideColor;

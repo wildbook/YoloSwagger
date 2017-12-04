@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_brackets.hpp"
 #include "LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolEsportStreamNotificationsEsportsAPI_highlanderTournaments {
-'    // 
+    // 
     std::map<std::string, LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_brackets> brackets;
     // 
     std::string description;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BindingFullEnumValueHelp_HPP
 #define SWAGGER_TYPES_BindingFullEnumValueHelp_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // Describes an enumerator.
   struct BindingFullEnumValueHelp {
-'    // 
+    // 
     std::string description;
     // 
     std::string name;

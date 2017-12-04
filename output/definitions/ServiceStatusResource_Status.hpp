@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ServiceStatusResource_Status_HPP
 #define SWAGGER_TYPES_ServiceStatusResource_Status_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class ServiceStatusResource_Status {
-'    // 
+    // 
     degraded = 3,
     // 
     deploying = 4,

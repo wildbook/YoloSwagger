@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryParticipantFrame_HPP
 #include <json.hpp>
 #include "LolMatchHistoryMatchHistoryPosition.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryParticipantFrame {
-'    // 
+    // 
     int32_t currentGold;
     // 
     uint16_t dominionScore;

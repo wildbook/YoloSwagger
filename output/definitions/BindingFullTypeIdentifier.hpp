@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BindingFullTypeIdentifier_HPP
 #define SWAGGER_TYPES_BindingFullTypeIdentifier_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // Describes the type of a value.
   struct BindingFullTypeIdentifier {
-'    // 
+    // 
     std::string elementType;
     // 
     std::string type;

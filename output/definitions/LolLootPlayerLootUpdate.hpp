@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLootPlayerLootUpdate_HPP
 #include <json.hpp>
 #include "LolLootPlayerLootDelta.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootPlayerLootUpdate {
-'    // 
+    // 
     std::vector<LolLootPlayerLootDelta> added;
     // 
     std::vector<LolLootPlayerLootDelta> redeemed;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashChangeIconRequest_HPP
 #define SWAGGER_TYPES_LolClashChangeIconRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashChangeIconRequest {
-'    // 
+    // 
     int32_t iconColorId;
     // 
     int32_t iconId;

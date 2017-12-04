@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashPlayerState_HPP
 #define SWAGGER_TYPES_LolClashPlayerState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolClashPlayerState {
-'    // 
+    // 
     BRACKET_ROSTER = 2,
     // 
     ELIMINATED = 3,

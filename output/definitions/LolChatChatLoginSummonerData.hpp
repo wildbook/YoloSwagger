@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChatChatLoginSummonerData_HPP
 #include <json.hpp>
 #include "LolChatChatLoginSummonerLevelAndPoints.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatChatLoginSummonerData {
-'    // 
+    // 
     LolChatChatLoginSummonerLevelAndPoints summonerLevelAndPoints;
   };
 

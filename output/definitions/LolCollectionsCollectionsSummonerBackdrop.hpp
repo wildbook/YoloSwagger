@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolCollectionsCollectionsSummonerBackdrop_HPP
 #include <json.hpp>
 #include "LolCollectionsCollectionsSummonerBackdropType.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionsSummonerBackdrop {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string backdropImage;

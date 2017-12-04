@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_SanitizerContainsSanitizedResponse_HPP
 #define SWAGGER_TYPES_SanitizerContainsSanitizedResponse_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct SanitizerContainsSanitizedResponse {
-'    // 
+    // 
     bool contains;
   };
 

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ChampSelectLcdsGameTimerDTO_HPP
 #define SWAGGER_TYPES_ChampSelectLcdsGameTimerDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ChampSelectLcdsGameTimerDTO {
-'    // 
+    // 
     std::string currentGameState;
     // 
     double remainingTimeInMillis;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_EndOfGameLcdsSpell_HPP
 #define SWAGGER_TYPES_EndOfGameLcdsSpell_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct EndOfGameLcdsSpell {
-'    // 
+    // 
     int32_t spellId;
   };
 

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RsoAuthPublicClientConfig_HPP
 #define SWAGGER_TYPES_RsoAuthPublicClientConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RsoAuthPublicClientConfig {
-'    // 
+    // 
     std::string clientId;
     // 
     std::string url;

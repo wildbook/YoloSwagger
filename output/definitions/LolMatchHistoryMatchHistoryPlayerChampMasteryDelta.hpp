@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerChampMasteryDelta_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerChampMasteryDelta_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryPlayerChampMasteryDelta {
-'    // 
+    // 
     std::string grade;
   };
 

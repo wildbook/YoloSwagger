@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLicenseAgreementLicenseAgreement_HPP
 #include <json.hpp>
 #include "LolLicenseAgreementLicenseAgreementType.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLicenseAgreementLicenseAgreement {
-'    // 
+    // 
     std::string id;
     // 
     LolLicenseAgreementLicenseAgreementType licenseType;

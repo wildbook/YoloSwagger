@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatTeamPlayerEntry_HPP
 #define SWAGGER_TYPES_LolChatTeamPlayerEntry_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatTeamPlayerEntry {
-'    // 
+    // 
     uint64_t summonerId;
     // 
     std::string summonerInternalName;

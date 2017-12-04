@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyTeamBuilderLobbyMember_HPP
 #include <json.hpp>
 #include "LolLobbyTeamBuilderLobbyPositionPreferences.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderLobbyMember {
-'    // 
+    // 
     bool autoFillEligible;
     // 
     bool autoFillProtectedForPromos;

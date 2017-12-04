@@ -1,15 +1,15 @@
 #ifndef SWAGGER_TYPES_LolPerksChampSelectSession_HPP
 #define SWAGGER_TYPES_LolPerksChampSelectSession_HPP
 #include <json.hpp>
-#include "LolPerksChampSelectPlayerSelection.hpp"
-#include "LolPerksChampSelectBannedChampions.hpp"
 #include "LolPerksChampSelectTradeContract.hpp"
 #include "LolPerksChampSelectTimer.hpp"
+#include "LolPerksChampSelectPlayerSelection.hpp"
+#include "LolPerksChampSelectBannedChampions.hpp"
 #include "LolPerksChampSelectChatRoomDetails.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksChampSelectSession {
-'    // 
+    // 
     std::vector<nlohmann::json> actions;
     // 
     LolPerksChampSelectBannedChampions bans;

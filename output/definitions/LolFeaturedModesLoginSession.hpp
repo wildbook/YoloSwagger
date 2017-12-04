@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolFeaturedModesLoginSession_HPP
 #include <json.hpp>
 #include "LolFeaturedModesLoginSessionStates.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolFeaturedModesLoginSession {
-'    // 
+    // 
     uint64_t accountId;
     // 
     LolFeaturedModesLoginSessionStates state;

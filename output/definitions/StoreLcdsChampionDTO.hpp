@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_StoreLcdsChampionDTO_HPP
 #include <json.hpp>
 #include "StoreLcdsChampionSkinDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct StoreLcdsChampionDTO {
-'    // 
+    // 
     bool active;
     // 
     bool botEnabled;

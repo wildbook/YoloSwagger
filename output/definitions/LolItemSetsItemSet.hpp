@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolItemSetsItemSet_HPP
 #define SWAGGER_TYPES_LolItemSetsItemSet_HPP
 #include <json.hpp>
-#include "LolItemSetsPreferredItemSlot.hpp"
 #include "LolItemSetsItemSetBlock.hpp"
-namespace test {
+#include "LolItemSetsPreferredItemSlot.hpp"
+namespace leagueapi {
   // 
   struct LolItemSetsItemSet {
-'    // 
+    // 
     std::vector<int32_t> associatedChampions;
     // 
     std::vector<int32_t> associatedMaps;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPurchaseWidgetValidationResponse_HPP
 #include <json.hpp>
 #include "LolPurchaseWidgetValidationResponseItem.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPurchaseWidgetValidationResponse {
-'    // 
+    // 
     std::vector<LolPurchaseWidgetValidationResponseItem> items;
     // 
     bool valid;

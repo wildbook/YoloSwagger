@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLootLootType_HPP
 #define SWAGGER_TYPES_LolLootLootType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLootLootType {
-'    // 
+    // 
     Chest = 0,
     // 
     Currency = 1,

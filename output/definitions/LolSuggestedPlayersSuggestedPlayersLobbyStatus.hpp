@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersLobbyStatus_HPP
 #define SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersLobbyStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSuggestedPlayersSuggestedPlayersLobbyStatus {
-'    // 
+    // 
     std::vector<uint64_t> invitedSummonerIds;
     // 
     std::vector<uint64_t> memberSummonerIds;

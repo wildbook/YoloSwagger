@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoginLcdsServiceProxyResponse_HPP
 #define SWAGGER_TYPES_LolLoginLcdsServiceProxyResponse_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoginLcdsServiceProxyResponse {
-'    // 
+    // 
     bool compressedPayload;
     // 
     std::string messageId;

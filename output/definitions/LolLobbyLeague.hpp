@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLeague_HPP
 #define SWAGGER_TYPES_LolLobbyLeague_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLeague {
-'    // 
+    // 
     std::string leagueTier;
     // 
     std::string queueType;

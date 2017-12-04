@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersConfig_HPP
 #define SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSuggestedPlayersSuggestedPlayersConfig {
-'    // 
+    // 
     bool Enabled;
     // 
     bool FriendsOfFriendsEnabled;

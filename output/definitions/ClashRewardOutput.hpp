@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_ClashRewardOutput_HPP
 #define SWAGGER_TYPES_ClashRewardOutput_HPP
 #include <json.hpp>
-#include "ClashRewardTime.hpp"
 #include "ClashRewardDefinition.hpp"
-namespace test {
+#include "ClashRewardTime.hpp"
+namespace leagueapi {
   // 
   struct ClashRewardOutput {
-'    // 
+    // 
     ClashRewardDefinition alternative;
     // 
     ClashRewardTime grant;

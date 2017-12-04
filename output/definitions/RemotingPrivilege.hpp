@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RemotingPrivilege_HPP
 #define SWAGGER_TYPES_RemotingPrivilege_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // Well-known privilege levels for bindable functions.
   enum class RemotingPrivilege {
-'    // Maximum privilege level for remote administrators.
+    // Maximum privilege level for remote administrators.
     Admin = 254,
     // Maximum possible privilege level. Used for in-process function calls.
     Local = 255,

@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_PendingRosterMemberDTO_HPP
 #define SWAGGER_TYPES_PendingRosterMemberDTO_HPP
 #include <json.hpp>
-#include "Position.hpp"
 #include "PendingRosterMemberState.hpp"
-namespace test {
+#include "Position.hpp"
+namespace leagueapi {
   // 
   struct PendingRosterMemberDTO {
-'    // 
+    // 
     int32_t bet;
     // 
     int64_t joinTime;

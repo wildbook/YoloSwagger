@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolGameQueuesQueueTranslation_HPP
 #define SWAGGER_TYPES_LolGameQueuesQueueTranslation_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameQueuesQueueTranslation {
-'    // 
+    // 
     std::string description;
     // 
     std::string detailedDescription;

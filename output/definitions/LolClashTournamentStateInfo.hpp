@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClashTournamentStateInfo_HPP
 #include <json.hpp>
 #include "LolClashTournamentState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashTournamentStateInfo {
-'    // 
+    // 
     int64_t currentPhaseId;
     // 
     int64_t nextPhaseId;

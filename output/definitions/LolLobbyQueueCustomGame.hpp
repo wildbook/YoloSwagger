@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyQueueCustomGame_HPP
 #include <json.hpp>
 #include "LolLobbyQueueAvailability.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyQueueCustomGame {
-'    // 
+    // 
     LolLobbyQueueAvailability queueAvailability;
   };
 

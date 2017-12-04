@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLootCurrencyConfiguration_HPP
 #define SWAGGER_TYPES_LolLootCurrencyConfiguration_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootCurrencyConfiguration {
-'    // 
+    // 
     std::vector<std::string> currenciesUsingCapWallets;
   };
 

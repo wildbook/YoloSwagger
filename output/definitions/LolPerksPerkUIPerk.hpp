@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksPerkUIPerk_HPP
 #define SWAGGER_TYPES_LolPerksPerkUIPerk_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksPerkUIPerk {
-'    // 
+    // 
     std::string iconPath;
     // 
     int32_t id;

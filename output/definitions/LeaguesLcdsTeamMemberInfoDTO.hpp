@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LeaguesLcdsTeamMemberInfoDTO_HPP
 #define SWAGGER_TYPES_LeaguesLcdsTeamMemberInfoDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LeaguesLcdsTeamMemberInfoDTO {
-'    // 
+    // 
     uint64_t playerId;
     // 
     std::string playerName;

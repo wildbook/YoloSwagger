@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolGameflowLobbyStatus_HPP
 #include <json.hpp>
 #include "LolGameflowQueueCustomGameSpectatorPolicy.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameflowLobbyStatus {
-'    // 
+    // 
     bool allowedPlayAgain;
     // 
     LolGameflowQueueCustomGameSpectatorPolicy customSpectatorPolicy;

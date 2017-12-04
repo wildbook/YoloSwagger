@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderBackwardsTransitionInfoV1_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderBackwardsTransitionInfoV1_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderBackwardsTransitionInfoV1 {
-'    // 
+    // 
     std::string backwardsTransitionReason;
     // 
     std::vector<uint64_t> initiatorSummonerIds;

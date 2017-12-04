@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchHistorySummonerIdAndName_HPP
 #define SWAGGER_TYPES_LolMatchHistorySummonerIdAndName_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistorySummonerIdAndName {
-'    // 
+    // 
     std::string displayName;
   };
 

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_cookie_HPP
 #define SWAGGER_TYPES_cookie_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct cookie {
-'    // 
+    // 
     std::string domain;
     // 
     int64_t expires;

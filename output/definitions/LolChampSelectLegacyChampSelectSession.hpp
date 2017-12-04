@@ -1,15 +1,15 @@
 #ifndef SWAGGER_TYPES_LolChampSelectLegacyChampSelectSession_HPP
 #define SWAGGER_TYPES_LolChampSelectLegacyChampSelectSession_HPP
 #include <json.hpp>
+#include "LolChampSelectLegacyChampSelectChatRoomDetails.hpp"
+#include "LolChampSelectLegacyChampSelectBannedChampions.hpp"
 #include "LolChampSelectLegacyChampSelectTimer.hpp"
 #include "LolChampSelectLegacyChampSelectPlayerSelection.hpp"
-#include "LolChampSelectLegacyChampSelectChatRoomDetails.hpp"
 #include "LolChampSelectLegacyChampSelectTradeContract.hpp"
-#include "LolChampSelectLegacyChampSelectBannedChampions.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyChampSelectSession {
-'    // 
+    // 
     std::vector<nlohmann::json> actions;
     // 
     bool allowBattleBoost;

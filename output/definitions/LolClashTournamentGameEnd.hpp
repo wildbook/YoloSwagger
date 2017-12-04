@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashTournamentGameEnd_HPP
 #define SWAGGER_TYPES_LolClashTournamentGameEnd_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashTournamentGameEnd {
-'    // 
+    // 
     int64_t bracketId;
     // 
     int64_t tournamentId;

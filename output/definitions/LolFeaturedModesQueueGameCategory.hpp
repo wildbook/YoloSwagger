@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolFeaturedModesQueueGameCategory_HPP
 #define SWAGGER_TYPES_LolFeaturedModesQueueGameCategory_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolFeaturedModesQueueGameCategory {
-'    // 
+    // 
     Custom = 1,
     // 
     None = 0,

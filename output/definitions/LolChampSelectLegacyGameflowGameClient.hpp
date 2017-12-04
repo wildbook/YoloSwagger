@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampSelectLegacyGameflowGameClient_HPP
 #define SWAGGER_TYPES_LolChampSelectLegacyGameflowGameClient_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyGameflowGameClient {
-'    // 
+    // 
     bool running;
     // 
     bool visible;

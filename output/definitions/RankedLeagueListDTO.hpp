@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_RankedLeagueListDTO_HPP
 #include <json.hpp>
 #include "RankedLeagueItemDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct RankedLeagueListDTO {
-'    // 
+    // 
     std::vector<RankedLeagueItemDTO> entries;
     // 
     uint32_t maxLeagueSize;

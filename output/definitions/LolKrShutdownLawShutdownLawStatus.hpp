@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolKrShutdownLawShutdownLawStatus_HPP
 #define SWAGGER_TYPES_LolKrShutdownLawShutdownLawStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolKrShutdownLawShutdownLawStatus {
-'    // 
+    // 
     CUT_OFF = 2,
     // 
     NONE = 0,

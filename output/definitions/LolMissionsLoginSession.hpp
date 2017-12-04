@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMissionsLoginSession_HPP
 #define SWAGGER_TYPES_LolMissionsLoginSession_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMissionsLoginSession {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string platformId;

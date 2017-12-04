@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPlayerBehaviorPlayerBehavior_SimpleMessage_HPP
 #define SWAGGER_TYPES_LolPlayerBehaviorPlayerBehavior_SimpleMessage_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPlayerBehaviorPlayerBehavior_SimpleMessage {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string msgId;

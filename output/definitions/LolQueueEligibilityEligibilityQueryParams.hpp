@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolQueueEligibilityEligibilityQueryParams_HPP
 #define SWAGGER_TYPES_LolQueueEligibilityEligibilityQueryParams_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolQueueEligibilityEligibilityQueryParams {
-'    // 
+    // 
     std::vector<int32_t> queueIds;
     // 
     std::vector<uint64_t> summonerIds;

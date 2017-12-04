@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMapsMaps_HPP
 #define SWAGGER_TYPES_LolMapsMaps_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMapsMaps {
-'    // 
+    // 
     std::map<std::string, std::string> assets;
     // 
     std::string description;

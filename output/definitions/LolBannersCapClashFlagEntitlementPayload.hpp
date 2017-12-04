@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolBannersCapClashFlagEntitlementPayload_HPP
 #include <json.hpp>
 #include "LolBannersClashV2FlagRewardSpec.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolBannersCapClashFlagEntitlementPayload {
-'    // 
+    // 
     std::string eventId;
     // 
     LolBannersClashV2FlagRewardSpec rewardSpec;

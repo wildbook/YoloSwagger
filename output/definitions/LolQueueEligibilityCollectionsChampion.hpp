@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolQueueEligibilityCollectionsChampion_HPP
 #include <json.hpp>
 #include "LolQueueEligibilityCollectionsOwnership.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolQueueEligibilityCollectionsChampion {
-'    // 
+    // 
     std::vector<std::string> disabledQueues;
     // 
     bool freeToPlay;

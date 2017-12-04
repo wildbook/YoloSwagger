@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyMatchmakingSearchErrorResource_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyMatchmakingSearchErrorResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyMatchmakingSearchErrorResource {
-'    // 
+    // 
     std::string errorType;
     // 
     int32_t id;

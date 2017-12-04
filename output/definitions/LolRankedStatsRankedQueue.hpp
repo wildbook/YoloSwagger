@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolRankedStatsRankedQueue_HPP
 #define SWAGGER_TYPES_LolRankedStatsRankedQueue_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolRankedStatsRankedQueue {
-'    // 
+    // 
     INVALID = 0,
     // 
     RANKED_FLEX_SR = 2,

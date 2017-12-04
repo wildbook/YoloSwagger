@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSimpleDialogMessagesGameflowPhase_HPP
 #define SWAGGER_TYPES_LolSimpleDialogMessagesGameflowPhase_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolSimpleDialogMessagesGameflowPhase {
-'    // 
+    // 
     ChampSelect = 5,
     // 
     CheckedIntoTournament = 3,

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMissionsCollectionsSummoner_HPP
 #define SWAGGER_TYPES_LolMissionsCollectionsSummoner_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMissionsCollectionsSummoner {
-'    // 
+    // 
     int32_t summonerLevel;
   };
 

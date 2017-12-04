@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_GameflowLcdsPlayerCredentialsDto_HPP
 #define SWAGGER_TYPES_GameflowLcdsPlayerCredentialsDto_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct GameflowLcdsPlayerCredentialsDto {
-'    // 
+    // 
     std::string encryptionKey;
     // 
     uint64_t gameId;

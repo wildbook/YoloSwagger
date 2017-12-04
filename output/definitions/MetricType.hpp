@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MetricType_HPP
 #define SWAGGER_TYPES_MetricType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class MetricType {
-'    // 
+    // 
     count = 2,
     // 
     duration = 3,

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LoyaltyStatus_HPP
 #define SWAGGER_TYPES_LoyaltyStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LoyaltyStatus {
-'    // 
+    // 
     CHANGE = 3,
     // 
     DISABLED = 5,

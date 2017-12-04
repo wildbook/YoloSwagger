@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersReason_HPP
 #define SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersReason_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolSuggestedPlayersSuggestedPlayersReason {
-'    // 
+    // 
     FriendOfFriend = 3,
     // 
     LegacyPlayAgain = 9999,

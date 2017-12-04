@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MultipleReplayMetadataRequestV2_HPP
 #define SWAGGER_TYPES_MultipleReplayMetadataRequestV2_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct MultipleReplayMetadataRequestV2 {
-'    // 
+    // 
     std::vector<uint64_t> gameIds;
     // 
     std::string platformId;

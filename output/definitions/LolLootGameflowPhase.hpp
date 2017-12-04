@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLootGameflowPhase_HPP
 #define SWAGGER_TYPES_LolLootGameflowPhase_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLootGameflowPhase {
-'    // 
+    // 
     ChampSelect = 5,
     // 
     CheckedIntoTournament = 3,

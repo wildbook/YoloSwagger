@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_ClubInvite_HPP
 #include <json.hpp>
 #include "ClubInviteStatus.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ClubInvite {
-'    // 
+    // 
     std::string clubKey;
     // 
     std::string clubName;

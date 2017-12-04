@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LootSimpleDialogMessageResponse_HPP
 #define SWAGGER_TYPES_LootSimpleDialogMessageResponse_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LootSimpleDialogMessageResponse {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string command;

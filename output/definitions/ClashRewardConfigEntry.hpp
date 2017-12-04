@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_ClashRewardConfigEntry_HPP
 #include <json.hpp>
 #include "ClashRewardOutput.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ClashRewardConfigEntry {
-'    // 
+    // 
     std::string key;
     // 
     std::vector<ClashRewardOutput> vals;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LcdsMember_HPP
 #define SWAGGER_TYPES_LcdsMember_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsMember {
-'    // 
+    // 
     bool hasDelegatedInvitePower;
     // 
     uint64_t summonerId;

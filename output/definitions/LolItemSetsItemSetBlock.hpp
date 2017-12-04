@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolItemSetsItemSetBlock_HPP
 #include <json.hpp>
 #include "LolItemSetsItemSetItem.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolItemSetsItemSetBlock {
-'    // 
+    // 
     std::string hideIfSummonerSpell;
     // 
     std::vector<LolItemSetsItemSetItem> items;

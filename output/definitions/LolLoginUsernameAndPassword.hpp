@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoginUsernameAndPassword_HPP
 #define SWAGGER_TYPES_LolLoginUsernameAndPassword_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoginUsernameAndPassword {
-'    // 
+    // 
     std::string password;
     // 
     std::string username;

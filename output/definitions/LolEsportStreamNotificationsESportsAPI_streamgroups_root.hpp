@@ -4,10 +4,10 @@
 #include "LolEsportStreamNotificationsESportsAPI_streamgroups.hpp"
 #include "LolEsportStreamNotificationsEsportsAPI_highlanderTournaments.hpp"
 #include "LolEsportStreamNotificationsEsportsAPI_teams.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolEsportStreamNotificationsESportsAPI_streamgroups_root {
-'    // 
+    // 
     std::vector<LolEsportStreamNotificationsEsportsAPI_highlanderTournaments> highlanderTournaments;
     // 
     std::vector<LolEsportStreamNotificationsESportsAPI_streamgroups> streamgroups;

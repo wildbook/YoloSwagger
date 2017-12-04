@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSummonerRMSLevelProgression_HPP
 #define SWAGGER_TYPES_LolSummonerRMSLevelProgression_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSummonerRMSLevelProgression {
-'    // 
+    // 
     uint64_t finalLevelBoundary;
     // 
     uint64_t finalXp;

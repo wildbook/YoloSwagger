@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchmakingGameflowGameTypeConfig_HPP
 #define SWAGGER_TYPES_LolMatchmakingGameflowGameTypeConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchmakingGameflowGameTypeConfig {
-'    // 
+    // 
     bool reroll;
   };
 

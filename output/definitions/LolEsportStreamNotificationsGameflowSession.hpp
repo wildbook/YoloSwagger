@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolEsportStreamNotificationsGameflowSession_HPP
 #include <json.hpp>
 #include "LolEsportStreamNotificationsGameflowPhase.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolEsportStreamNotificationsGameflowSession {
-'    // 
+    // 
     LolEsportStreamNotificationsGameflowPhase phase;
   };
 

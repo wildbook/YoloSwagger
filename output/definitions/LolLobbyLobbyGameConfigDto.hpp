@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolLobbyQueueCustomGameSpectatorPolicy.hpp"
 #include "LolLobbyLobbyParticipantDto.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyGameConfigDto {
-'    // 
+    // 
     std::vector<int32_t> allowablePremadeSizes;
     // 
     std::string customLobbyName;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyAutoFillDto_HPP
 #include <json.hpp>
 #include "LolLobbyAutoFillQueueDto.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyAutoFillDto {
-'    // 
+    // 
     std::vector<LolLobbyAutoFillQueueDto> autoFillQueues;
   };
 

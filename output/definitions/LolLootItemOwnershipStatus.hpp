@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLootItemOwnershipStatus_HPP
 #define SWAGGER_TYPES_LolLootItemOwnershipStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLootItemOwnershipStatus {
-'    // 
+    // 
     FREE = 1,
     // 
     NONE = 0,

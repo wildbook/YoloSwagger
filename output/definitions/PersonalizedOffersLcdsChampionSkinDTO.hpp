@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PersonalizedOffersLcdsChampionSkinDTO_HPP
 #define SWAGGER_TYPES_PersonalizedOffersLcdsChampionSkinDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PersonalizedOffersLcdsChampionSkinDTO {
-'    // 
+    // 
     int32_t championId;
     // 
     bool owned;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEsportStreamNotificationsESportStreamNotificationsConfig_HPP
 #define SWAGGER_TYPES_LolEsportStreamNotificationsESportStreamNotificationsConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEsportStreamNotificationsESportStreamNotificationsConfig {
-'    // 
+    // 
     int64_t beappFailureLongPollMinutes;
     // 
     std::string notificationsAssetMagickURL;

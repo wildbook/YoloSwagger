@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatChatDomainConfig_HPP
 #define SWAGGER_TYPES_LolChatChatDomainConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatChatDomainConfig {
-'    // 
+    // 
     std::string ChampSelectDomainName;
     // 
     std::string ClubDomainName;

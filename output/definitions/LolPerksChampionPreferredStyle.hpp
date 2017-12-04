@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksChampionPreferredStyle_HPP
 #define SWAGGER_TYPES_LolPerksChampionPreferredStyle_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksChampionPreferredStyle {
-'    // 
+    // 
     uint32_t championId;
     // 
     std::string championName;

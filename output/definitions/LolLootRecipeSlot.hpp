@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLootRecipeSlot_HPP
 #define SWAGGER_TYPES_LolLootRecipeSlot_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootRecipeSlot {
-'    // 
+    // 
     std::vector<std::string> lootIds;
     // 
     int32_t quantity;

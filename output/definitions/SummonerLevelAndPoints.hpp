@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_SummonerLevelAndPoints_HPP
 #define SWAGGER_TYPES_SummonerLevelAndPoints_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct SummonerLevelAndPoints {
-'    // 
+    // 
     uint64_t expPoints;
     // 
     uint64_t infPoints;

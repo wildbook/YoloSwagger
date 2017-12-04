@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolHonorV2HonorConfig_HPP
 #define SWAGGER_TYPES_LolHonorV2HonorConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolHonorV2HonorConfig {
-'    // 
+    // 
     bool DayOneModalEnabled;
     // 
     bool Enabled;

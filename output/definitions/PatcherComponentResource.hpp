@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_PatcherComponentResource_HPP
 #define SWAGGER_TYPES_PatcherComponentResource_HPP
 #include <json.hpp>
+#include "PatcherComponentResourceType.hpp"
 #include "PatcherHeaderEntry.hpp"
 #include "PatcherComponentResourceHistory.hpp"
-#include "PatcherComponentResourceType.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PatcherComponentResource {
-'    // 
+    // 
     bool copy_to_solution;
     // 
     std::vector<PatcherHeaderEntry> headers;

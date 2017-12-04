@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolGameflowGameflowProcessInfo_HPP
 #define SWAGGER_TYPES_LolGameflowGameflowProcessInfo_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameflowGameflowProcessInfo {
-'    // 
+    // 
     uint32_t pid;
     // 
     std::vector<std::string> rawArgs;

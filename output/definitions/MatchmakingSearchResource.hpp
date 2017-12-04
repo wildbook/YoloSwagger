@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_MatchmakingSearchResource_HPP
 #include <json.hpp>
 #include "MatchmakingSearchErrorResource.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct MatchmakingSearchResource {
-'    // 
+    // 
     std::vector<MatchmakingSearchErrorResource> errors;
     // 
     int32_t queueId;

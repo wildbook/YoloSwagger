@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolReplaysReplaysSettingsData_HPP
 #define SWAGGER_TYPES_LolReplaysReplaysSettingsData_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolReplaysReplaysSettingsData {
-'    // 
+    // 
     std::string highlights-folder-path;
     // 
     std::string replays-folder-path;

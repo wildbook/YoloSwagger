@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPurchaseWidgetPurchaseRequest_HPP
 #include <json.hpp>
 #include "LolPurchaseWidgetPurchaseItem.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPurchaseWidgetPurchaseRequest {
-'    // 
+    // 
     std::vector<LolPurchaseWidgetPurchaseItem> items;
   };
 

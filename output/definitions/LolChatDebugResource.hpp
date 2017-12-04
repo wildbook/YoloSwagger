@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatDebugResource_HPP
 #define SWAGGER_TYPES_LolChatDebugResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatDebugResource {
-'    // 
+    // 
     uint32_t asyncWaitInterval;
     // 
     bool enableChatFiltering;

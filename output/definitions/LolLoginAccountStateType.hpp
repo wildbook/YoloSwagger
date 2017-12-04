@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoginAccountStateType_HPP
 #define SWAGGER_TYPES_LolLoginAccountStateType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLoginAccountStateType {
-'    // 
+    // 
     CREATING = 1,
     // 
     ENABLED = 2,

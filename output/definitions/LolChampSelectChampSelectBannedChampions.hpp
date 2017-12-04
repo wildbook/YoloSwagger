@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampSelectChampSelectBannedChampions_HPP
 #define SWAGGER_TYPES_LolChampSelectChampSelectBannedChampions_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectChampSelectBannedChampions {
-'    // 
+    // 
     std::vector<int32_t> myTeamBans;
     // 
     int32_t numBans;

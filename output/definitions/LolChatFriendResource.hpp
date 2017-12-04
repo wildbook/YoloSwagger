@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatFriendResource_HPP
 #define SWAGGER_TYPES_LolChatFriendResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatFriendResource {
-'    // 
+    // 
     std::string availability;
     // 
     uint32_t displayGroupId;

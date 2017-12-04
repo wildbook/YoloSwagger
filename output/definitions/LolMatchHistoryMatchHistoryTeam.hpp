@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryTeam_HPP
 #include <json.hpp>
 #include "LolMatchHistoryMatchHistoryTeamBan.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryTeam {
-'    // 
+    // 
     std::vector<LolMatchHistoryMatchHistoryTeamBan> bans;
     // 
     uint32_t baronKills;

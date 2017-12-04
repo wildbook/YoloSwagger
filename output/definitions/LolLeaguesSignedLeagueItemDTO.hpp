@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_LolLeaguesSignedLeagueItemDTO_HPP
 #define SWAGGER_TYPES_LolLeaguesSignedLeagueItemDTO_HPP
 #include <json.hpp>
-#include "LeaguesLcdsLeagueRank.hpp"
-#include "LeaguesLcdsQueueType.hpp"
-#include "LeaguesLcdsMiniSeriesDTO.hpp"
 #include "LeaguesLcdsLeagueTier.hpp"
-namespace test {
+#include "LeaguesLcdsMiniSeriesDTO.hpp"
+#include "LeaguesLcdsQueueType.hpp"
+#include "LeaguesLcdsLeagueRank.hpp"
+namespace leagueapi {
   // 
   struct LolLeaguesSignedLeagueItemDTO {
-'    // 
+    // 
     int32_t apexDaysUntilDecay;
     // 
     uint64_t demotionWarning;

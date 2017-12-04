@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolGameQueuesQueueCustomGameSpectatorPolicy_HPP
 #define SWAGGER_TYPES_LolGameQueuesQueueCustomGameSpectatorPolicy_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolGameQueuesQueueCustomGameSpectatorPolicy {
-'    // 
+    // 
     AllAllowed = 3,
     // 
     FriendsAllowed = 2,

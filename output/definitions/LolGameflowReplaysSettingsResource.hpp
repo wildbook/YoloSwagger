@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolGameflowReplaysSettingsResource_HPP
 #include <json.hpp>
 #include "LolGameflowReplaysSettingsData.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameflowReplaysSettingsResource {
-'    // 
+    // 
     LolGameflowReplaysSettingsData data;
   };
 

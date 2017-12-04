@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_PatcherProductResource_HPP
 #include <json.hpp>
 #include "PatcherComponentResource.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PatcherProductResource {
-'    // 
+    // 
     std::vector<PatcherComponentResource> components;
     // 
     std::string id;

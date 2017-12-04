@@ -5,10 +5,10 @@
 #include "RankedLeagueMiniSeriesDTO.hpp"
 #include "LolRankedStatsRankedTier.hpp"
 #include "RankedDivision.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct RankedLeagueItemDTO {
-'    // 
+    // 
     int32_t apexDaysUntilDecay;
     // 
     bool inactive;

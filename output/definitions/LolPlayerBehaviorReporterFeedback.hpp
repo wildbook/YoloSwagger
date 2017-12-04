@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPlayerBehaviorReporterFeedback_HPP
 #define SWAGGER_TYPES_LolPlayerBehaviorReporterFeedback_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPlayerBehaviorReporterFeedback {
-'    // 
+    // 
     uint64_t id;
     // 
     std::string type;

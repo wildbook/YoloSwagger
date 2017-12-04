@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolAccountVerificationVerifyRequest_HPP
 #define SWAGGER_TYPES_LolAccountVerificationVerifyRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolAccountVerificationVerifyRequest {
-'    // 
+    // 
     std::string mediator;
     // 
     std::string token;

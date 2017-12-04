@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RecofrienderFriendState_HPP
 #define SWAGGER_TYPES_RecofrienderFriendState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class RecofrienderFriendState {
-'    // 
+    // 
     BLOCKED = 2,
     // 
     FRIEND = 1,

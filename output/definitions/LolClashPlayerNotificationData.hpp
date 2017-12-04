@@ -4,10 +4,10 @@
 #include "LolClashRosterNotifyReason.hpp"
 #include "LolClashPlayerNotification.hpp"
 #include "LolClashNotifyReason.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashPlayerNotificationData {
-'    // 
+    // 
     LolClashPlayerNotification notification;
     // 
     LolClashNotifyReason notifyReason;

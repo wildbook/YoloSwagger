@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSummonerEndOfGamePoints_HPP
 #define SWAGGER_TYPES_LolSummonerEndOfGamePoints_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSummonerEndOfGamePoints {
-'    // 
+    // 
     uint64_t pointsUntilNextReroll;
     // 
     uint32_t rerollCount;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PatcherComponentStateAction_HPP
 #define SWAGGER_TYPES_PatcherComponentStateAction_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class PatcherComponentStateAction {
-'    // 
+    // 
     CheckingForUpdates = 1,
     // 
     Idle = 0,

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolHonorV2FullTeamVote_HPP
 #define SWAGGER_TYPES_LolHonorV2FullTeamVote_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolHonorV2FullTeamVote {
-'    // 
+    // 
     uint64_t gameId;
   };
 

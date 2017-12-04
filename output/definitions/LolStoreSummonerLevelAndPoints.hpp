@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolStoreSummonerLevelAndPoints_HPP
 #define SWAGGER_TYPES_LolStoreSummonerLevelAndPoints_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolStoreSummonerLevelAndPoints {
-'    // 
+    // 
     uint32_t summonerLevel;
   };
 

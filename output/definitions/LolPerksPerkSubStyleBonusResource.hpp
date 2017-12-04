@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksPerkSubStyleBonusResource_HPP
 #define SWAGGER_TYPES_LolPerksPerkSubStyleBonusResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksPerkSubStyleBonusResource {
-'    // 
+    // 
     int32_t perkId;
     // 
     int32_t styleId;

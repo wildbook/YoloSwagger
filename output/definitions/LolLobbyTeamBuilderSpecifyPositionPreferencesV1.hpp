@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderSpecifyPositionPreferencesV1_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderSpecifyPositionPreferencesV1_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderSpecifyPositionPreferencesV1 {
-'    // 
+    // 
     std::string firstPreference;
     // 
     std::string secondPreference;

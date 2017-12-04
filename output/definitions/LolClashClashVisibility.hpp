@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashClashVisibility_HPP
 #define SWAGGER_TYPES_LolClashClashVisibility_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolClashClashVisibility {
-'    // 
+    // 
     DarkVisible = 1,
     // 
     Hidden = 0,

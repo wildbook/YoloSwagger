@@ -4,10 +4,10 @@
 #include "LcdsMember.hpp"
 #include "LcdsInvitee.hpp"
 #include "LcdsPlayer.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsLobbyStatus {
-'    // 
+    // 
     std::string chatKey;
     // 
     std::string gameMetaData;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RosterMatchAggregatedStatsDTO_HPP
 #define SWAGGER_TYPES_RosterMatchAggregatedStatsDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RosterMatchAggregatedStatsDTO {
-'    // 
+    // 
     int64_t duration;
     // 
     int64_t gameId;

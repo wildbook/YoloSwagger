@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolEndOfGameLoginSession_HPP
 #include <json.hpp>
 #include "LolEndOfGameLoginSessionStates.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameLoginSession {
-'    // 
+    // 
     uint64_t accountId;
     // 
     LolEndOfGameLoginSessionStates state;

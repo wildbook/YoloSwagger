@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_RosterPeriodAggregatedStatsDTO_HPP
 #include <json.hpp>
 #include "RosterMatchAggregatedStatsDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct RosterPeriodAggregatedStatsDTO {
-'    // 
+    // 
     int32_t bracketSize;
     // 
     std::vector<RosterMatchAggregatedStatsDTO> matchStats;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_GameQueuesLcdsGameQueueConfig_HPP
 #include <json.hpp>
 #include "GameQueuesLcdsMatchingThrottleConfig.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct GameQueuesLcdsGameQueueConfig {
-'    // 
+    // 
     uint32_t blockedMinutesThreshold;
     // 
     bool botsCanSpawnOnBlueSide;

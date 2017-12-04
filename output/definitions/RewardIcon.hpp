@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RewardIcon_HPP
 #define SWAGGER_TYPES_RewardIcon_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RewardIcon {
-'    // 
+    // 
     int32_t icon;
     // 
     int32_t memberOwnedCount;

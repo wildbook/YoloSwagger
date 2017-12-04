@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolLobbyLobbyCustomGameConfiguration.hpp"
 #include "LolLobbyLobbyMember.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyCustomGameLobby {
-'    // 
+    // 
     LolLobbyLobbyCustomGameConfiguration configuration;
     // 
     uint64_t gameId;

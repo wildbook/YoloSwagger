@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolClashRegisteredRosterNotification_HPP
 #define SWAGGER_TYPES_LolClashRegisteredRosterNotification_HPP
 #include <json.hpp>
-#include "LolClashRosterNotifyReason.hpp"
 #include "RosterDTO.hpp"
-namespace test {
+#include "LolClashRosterNotifyReason.hpp"
+namespace leagueapi {
   // 
   struct LolClashRegisteredRosterNotification {
-'    // 
+    // 
     LolClashRosterNotifyReason notifyReason;
     // 
     RosterDTO roster;

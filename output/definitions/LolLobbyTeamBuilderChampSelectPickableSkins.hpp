@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderChampSelectPickableSkins_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderChampSelectPickableSkins_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderChampSelectPickableSkins {
-'    // 
+    // 
     std::vector<int32_t> skinIds;
   };
 

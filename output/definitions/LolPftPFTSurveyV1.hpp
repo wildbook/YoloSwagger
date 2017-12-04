@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPftPFTSurveyV1_HPP
 #define SWAGGER_TYPES_LolPftPFTSurveyV1_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPftPFTSurveyV1 {
-'    // 
+    // 
     std::string caption;
     // 
     uint64_t id;

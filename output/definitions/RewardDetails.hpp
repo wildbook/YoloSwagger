@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RewardDetails_HPP
 #define SWAGGER_TYPES_RewardDetails_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RewardDetails {
-'    // 
+    // 
     int64_t rosterId;
     // 
     std::vector<int64_t> teamMemberIds;

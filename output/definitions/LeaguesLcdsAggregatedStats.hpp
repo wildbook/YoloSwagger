@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LeaguesLcdsAggregatedStatsKey.hpp"
 #include "LeaguesLcdsAggregatedStat.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LeaguesLcdsAggregatedStats {
-'    // 
+    // 
     LeaguesLcdsAggregatedStatsKey key;
     // 
     std::vector<LeaguesLcdsAggregatedStat> lifetimeStatistics;

@@ -4,10 +4,10 @@
 #include "LolLobbyGameflowPhase.hpp"
 #include "LolLobbyGameflowGameDodge.hpp"
 #include "LolLobbyGameflowGameClient.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyGameflowSession {
-'    // 
+    // 
     LolLobbyGameflowGameClient gameClient;
     // 
     LolLobbyGameflowGameDodge gameDodge;

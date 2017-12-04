@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoginLoginError_HPP
 #define SWAGGER_TYPES_LolLoginLoginError_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoginLoginError {
-'    // 
+    // 
     std::string description;
     // 
     std::string id;

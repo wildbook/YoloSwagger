@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolFeaturedModesPlayerNotificationResource_HPP
 #define SWAGGER_TYPES_LolFeaturedModesPlayerNotificationResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolFeaturedModesPlayerNotificationResource {
-'    // 
+    // 
     std::string backgroundUrl;
     // 
     bool critical;

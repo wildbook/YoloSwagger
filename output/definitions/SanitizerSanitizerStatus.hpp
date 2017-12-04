@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_SanitizerSanitizerStatus_HPP
 #define SWAGGER_TYPES_SanitizerSanitizerStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct SanitizerSanitizerStatus {
-'    // 
+    // 
     uint32_t allowedCharsCount;
     // 
     uint32_t breakingCharsCount;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_MatchmakingLcdsQueueRestricted_HPP
 #include <json.hpp>
 #include "MatchmakingLcdsSummoner.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct MatchmakingLcdsQueueRestricted {
-'    // 
+    // 
     std::string message;
     // 
     int32_t queueId;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashRosterDetails_HPP
 #define SWAGGER_TYPES_LolClashRosterDetails_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashRosterDetails {
-'    // 
+    // 
     int32_t iconColorId;
     // 
     int32_t iconId;

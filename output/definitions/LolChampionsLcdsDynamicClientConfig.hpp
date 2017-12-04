@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampionsLcdsDynamicClientConfig_HPP
 #define SWAGGER_TYPES_LolChampionsLcdsDynamicClientConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampionsLcdsDynamicClientConfig {
-'    // 
+    // 
     nlohmann::json DisabledChampions;
   };
 

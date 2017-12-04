@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLoadoutsInventoryResponseDTO_HPP
 #include <json.hpp>
 #include "LolLoadoutsInventoryDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoadoutsInventoryResponseDTO {
-'    // 
+    // 
     LolLoadoutsInventoryDTO data;
   };
 

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyBotDifficulty_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyBotDifficulty_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLobbyLobbyBotDifficulty {
-'    // 
+    // 
     EASY = 0,
     // 
     HARD = 2,

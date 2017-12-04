@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLootLootGrantNotification_HPP
 #define SWAGGER_TYPES_LolLootLootGrantNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootLootGrantNotification {
-'    // 
+    // 
     uint64_t accountId;
     // 
     int32_t championId;

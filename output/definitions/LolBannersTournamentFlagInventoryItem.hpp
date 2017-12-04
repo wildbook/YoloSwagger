@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolBannersTournamentFlagInventoryItem_HPP
 #include <json.hpp>
 #include "LolBannersCapClashFlagEntitlementPayload.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolBannersTournamentFlagInventoryItem {
-'    // 
+    // 
     LolBannersCapClashFlagEntitlementPayload payload;
     // 
     std::string purchaseDate;

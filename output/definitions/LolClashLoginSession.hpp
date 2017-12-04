@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClashLoginSession_HPP
 #include <json.hpp>
 #include "LolClashLoginSessionState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashLoginSession {
-'    // 
+    // 
     LolClashLoginSessionState state;
     // 
     uint64_t summonerId;

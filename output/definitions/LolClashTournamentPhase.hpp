@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashTournamentPhase_HPP
 #define SWAGGER_TYPES_LolClashTournamentPhase_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashTournamentPhase {
-'    // 
+    // 
     int64_t id;
     // 
     int64_t lockinStartTime;

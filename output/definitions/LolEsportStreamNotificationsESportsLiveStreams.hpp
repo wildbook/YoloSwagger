@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolEsportStreamNotificationsESportsLiveStreams_HPP
 #include <json.hpp>
 #include "LolEsportStreamNotificationsESportsStreams.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolEsportStreamNotificationsESportsLiveStreams {
-'    // 
+    // 
     std::vector<LolEsportStreamNotificationsESportsStreams> liveStreams;
   };
 

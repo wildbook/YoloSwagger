@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolGameQueuesQueueReward_HPP
 #define SWAGGER_TYPES_LolGameQueuesQueueReward_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameQueuesQueueReward {
-'    // 
+    // 
     bool isChampionPointsEnabled;
     // 
     bool isIpEnabled;

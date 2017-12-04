@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPreEndOfGameSequenceEvent_HPP
 #define SWAGGER_TYPES_LolPreEndOfGameSequenceEvent_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPreEndOfGameSequenceEvent {
-'    // 
+    // 
     std::string name;
     // 
     int32_t priority;

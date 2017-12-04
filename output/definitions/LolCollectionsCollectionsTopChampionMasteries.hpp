@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolCollectionsCollectionsTopChampionMasteries_HPP
 #include <json.hpp>
 #include "LolCollectionsCollectionsChampionMastery.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionsTopChampionMasteries {
-'    // 
+    // 
     std::vector<LolCollectionsCollectionsChampionMastery> masteries;
     // 
     uint64_t score;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLeaguesLeaguesSeasonRewardConfig_HPP
 #define SWAGGER_TYPES_LolLeaguesLeaguesSeasonRewardConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLeaguesLeaguesSeasonRewardConfig {
-'    // 
+    // 
     bool QualificationWarningEnabled;
   };
 

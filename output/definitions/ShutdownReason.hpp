@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ShutdownReason_HPP
 #define SWAGGER_TYPES_ShutdownReason_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class ShutdownReason {
-'    // 
+    // 
     Invalid = 0,
     // 
     LcuAlphaDisabled = 2,

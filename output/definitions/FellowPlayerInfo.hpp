@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_FellowPlayerInfo_HPP
 #define SWAGGER_TYPES_FellowPlayerInfo_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct FellowPlayerInfo {
-'    // 
+    // 
     uint64_t championId;
     // 
     uint64_t summonerId;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BindingCallbackEvent_HPP
 #define SWAGGER_TYPES_BindingCallbackEvent_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // Represents the parameters of a call to a provided callback.
   struct BindingCallbackEvent {
-'    // ID of the callback being invoked
+    // ID of the callback being invoked
     uint32_t id;
     // Callback parameters
     std::vector<nlohmann::json> parameters;

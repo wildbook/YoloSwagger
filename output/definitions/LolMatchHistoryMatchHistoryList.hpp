@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryList_HPP
 #include <json.hpp>
 #include "LolMatchHistoryMatchHistoryGameList.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryList {
-'    // 
+    // 
     uint64_t accountId;
     // 
     LolMatchHistoryMatchHistoryGameList games;

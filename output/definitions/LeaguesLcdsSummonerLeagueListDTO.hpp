@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_LeaguesLcdsSummonerLeagueListDTO_HPP
 #define SWAGGER_TYPES_LeaguesLcdsSummonerLeagueListDTO_HPP
 #include <json.hpp>
-#include "LeaguesLcdsLeagueRank.hpp"
-#include "LeaguesLcdsQueueType.hpp"
 #include "LeaguesLcdsLeagueTier.hpp"
 #include "LeaguesLcdsLeagueItemDTO.hpp"
-namespace test {
+#include "LeaguesLcdsLeagueRank.hpp"
+#include "LeaguesLcdsQueueType.hpp"
+namespace leagueapi {
   // 
   struct LeaguesLcdsSummonerLeagueListDTO {
-'    // 
+    // 
     std::vector<LeaguesLcdsLeagueItemDTO> entries;
     // 
     std::string name;

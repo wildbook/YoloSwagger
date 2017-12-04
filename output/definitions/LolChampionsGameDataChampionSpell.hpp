@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampionsGameDataChampionSpell_HPP
 #define SWAGGER_TYPES_LolChampionsGameDataChampionSpell_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampionsGameDataChampionSpell {
-'    // 
+    // 
     std::string description;
     // 
     std::string name;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_MetricMetadataAlert_HPP
 #include <json.hpp>
 #include "MetricMetadataNotify.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct MetricMetadataAlert {
-'    // 
+    // 
     std::string description;
     // 
     std::string info;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RecofrienderActionResource_HPP
 #define SWAGGER_TYPES_RecofrienderActionResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RecofrienderActionResource {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string action;

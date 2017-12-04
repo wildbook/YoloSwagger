@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LeaverBusterNotificationType_HPP
 #define SWAGGER_TYPES_LeaverBusterNotificationType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LeaverBusterNotificationType {
-'    // 
+    // 
     Invalid = 0,
     // 
     PunishedGamesRemaining = 3,

@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolClashRosterNotifyReason.hpp"
 #include "Bracket.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashTournamentGameEndNotification {
-'    // 
+    // 
     Bracket bracket;
     // 
     int64_t currentMatchId;

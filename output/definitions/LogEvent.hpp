@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LogEvent_HPP
 #include <json.hpp>
 #include "LogSeverityLevels.hpp"
-namespace test {
+namespace leagueapi {
   // Describes a log entry.
   struct LogEvent {
-'    // 
+    // 
     std::string message;
     // 
     LogSeverityLevels severity;

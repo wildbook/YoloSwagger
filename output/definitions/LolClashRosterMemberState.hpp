@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashRosterMemberState_HPP
 #define SWAGGER_TYPES_LolClashRosterMemberState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolClashRosterMemberState {
-'    // 
+    // 
     FORCED_NOT_READY = 2,
     // 
     NOT_READY = 1,

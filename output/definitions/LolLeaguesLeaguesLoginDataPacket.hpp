@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLeaguesLeaguesLoginDataPacket_HPP
 #include <json.hpp>
 #include "LolLeaguesSimpleMessage.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLeaguesLeaguesLoginDataPacket {
-'    // 
+    // 
     std::vector<LolLeaguesSimpleMessage> simpleMessages;
   };
 

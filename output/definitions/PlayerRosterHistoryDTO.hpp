@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_PlayerRosterHistoryDTO_HPP
 #include <json.hpp>
 #include "RosterMemberDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerRosterHistoryDTO {
-'    // 
+    // 
     std::vector<RosterMemberDTO> rosters;
   };
 

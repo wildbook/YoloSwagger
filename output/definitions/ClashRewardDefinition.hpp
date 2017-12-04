@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "ClashRewardType.hpp"
 #include "ClashRewardSpec.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ClashRewardDefinition {
-'    // 
+    // 
     ClashRewardSpec rewardSpec;
     // 
     ClashRewardType rewardType;

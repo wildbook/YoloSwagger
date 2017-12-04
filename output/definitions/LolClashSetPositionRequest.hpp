@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClashSetPositionRequest_HPP
 #include <json.hpp>
 #include "Position.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashSetPositionRequest {
-'    // 
+    // 
     Position position;
   };
 

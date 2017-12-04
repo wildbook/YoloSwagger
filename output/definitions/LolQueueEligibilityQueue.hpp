@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolQueueEligibilityQueue_HPP
 #include <json.hpp>
 #include "LolQueueEligibilityQueueAvailability.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolQueueEligibilityQueue {
-'    // 
+    // 
     bool areFreeChampionsAllowed;
     // 
     uint32_t championsRequiredToPlay;

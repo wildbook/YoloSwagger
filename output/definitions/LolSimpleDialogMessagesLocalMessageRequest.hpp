@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSimpleDialogMessagesLocalMessageRequest_HPP
 #define SWAGGER_TYPES_LolSimpleDialogMessagesLocalMessageRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSimpleDialogMessagesLocalMessageRequest {
-'    // 
+    // 
     std::vector<std::string> msgBody;
     // 
     std::string msgType;

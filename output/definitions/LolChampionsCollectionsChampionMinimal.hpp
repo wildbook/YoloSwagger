@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChampionsCollectionsChampionMinimal_HPP
 #include <json.hpp>
 #include "LolChampionsCollectionsOwnership.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampionsCollectionsChampionMinimal {
-'    // 
+    // 
     bool active;
     // 
     std::string alias;

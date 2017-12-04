@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_CraftLootRefTransactionDTO_HPP
 #include <json.hpp>
 #include "LootNameRefId.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct CraftLootRefTransactionDTO {
-'    // 
+    // 
     std::vector<LootNameRefId> lootNameRefIds;
     // 
     std::string recipeName;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_RosterStatsDTO_HPP
 #include <json.hpp>
 #include "RosterAggregatedStatsDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct RosterStatsDTO {
-'    // 
+    // 
     int64_t rosterId;
     // 
     int32_t rosterLogo;

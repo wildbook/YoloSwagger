@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PrivateSummonerDTO_HPP
 #define SWAGGER_TYPES_PrivateSummonerDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PrivateSummonerDTO {
-'    // 
+    // 
     uint64_t acctId;
     // 
     bool advancedTutorialFlag;

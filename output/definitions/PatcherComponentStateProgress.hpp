@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PatcherComponentStateProgress_HPP
 #define SWAGGER_TYPES_PatcherComponentStateProgress_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PatcherComponentStateProgress {
-'    // 
+    // 
     uint64_t bytesComplete;
     // 
     double bytesPerSecond;

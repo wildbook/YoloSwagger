@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLootContextMenu_HPP
 #define SWAGGER_TYPES_LolLootContextMenu_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootContextMenu {
-'    // 
+    // 
     std::string actionType;
     // 
     bool enabled;

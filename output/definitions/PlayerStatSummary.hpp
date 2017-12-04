@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerStatSummary_HPP
 #define SWAGGER_TYPES_PlayerStatSummary_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerStatSummary {
-'    // 
+    // 
     uint64_t leaves;
     // 
     uint64_t losses;

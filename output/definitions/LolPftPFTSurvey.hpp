@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPftPFTSurvey_HPP
 #define SWAGGER_TYPES_LolPftPFTSurvey_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPftPFTSurvey {
-'    // 
+    // 
     std::string caption;
     // 
     std::map<std::string, nlohmann::json> data;

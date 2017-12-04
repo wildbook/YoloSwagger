@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RecofrienderChatFriendResource_HPP
 #define SWAGGER_TYPES_RecofrienderChatFriendResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RecofrienderChatFriendResource {
-'    // 
+    // 
     uint64_t id;
     // 
     std::string name;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLootCollectionsWardSkin_HPP
 #include <json.hpp>
 #include "LolLootCollectionsOwnership.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootCollectionsWardSkin {
-'    // 
+    // 
     int64_t id;
     // 
     std::string name;

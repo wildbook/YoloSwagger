@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClubsPublicClubsPublicData_HPP
 #include <json.hpp>
 #include "LolClubsPublicClubTag.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClubsPublicClubsPublicData {
-'    // 
+    // 
     std::string availability;
     // 
     std::string lastSeenOnlineTimestamp;

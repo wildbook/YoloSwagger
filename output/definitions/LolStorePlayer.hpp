@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolStorePlayer_HPP
 #define SWAGGER_TYPES_LolStorePlayer_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolStorePlayer {
-'    // 
+    // 
     uint64_t accountId;
     // 
     int64_t ip;

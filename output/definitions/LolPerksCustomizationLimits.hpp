@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksCustomizationLimits_HPP
 #define SWAGGER_TYPES_LolPerksCustomizationLimits_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolPerksCustomizationLimits {
-'    // 
+    // 
     CanSelectKeystones = 2,
     // 
     CanSelectPages = 1,

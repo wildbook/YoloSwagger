@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPreEndOfGameGameflowSessionResource_HPP
 #include <json.hpp>
 #include "LolPreEndOfGameGameflowPhase.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPreEndOfGameGameflowSessionResource {
-'    // 
+    // 
     LolPreEndOfGameGameflowPhase phase;
   };
 

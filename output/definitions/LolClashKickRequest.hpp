@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashKickRequest_HPP
 #define SWAGGER_TYPES_LolClashKickRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashKickRequest {
-'    // 
+    // 
     uint64_t summonerId;
   };
 

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LootLcdsRecipeOutputDTO_HPP
 #define SWAGGER_TYPES_LootLcdsRecipeOutputDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LootLcdsRecipeOutputDTO {
-'    // 
+    // 
     bool allowDuplicates;
     // 
     std::string lootName;

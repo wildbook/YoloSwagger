@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolLobbyLobbyBotDifficulty.hpp"
 #include "LolLobbyLobbyPositionPreferences.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyMember {
-'    // 
+    // 
     bool autoFillEligible;
     // 
     bool autoFillProtectedForPromos;

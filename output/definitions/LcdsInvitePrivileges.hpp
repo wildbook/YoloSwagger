@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LcdsInvitePrivileges_HPP
 #define SWAGGER_TYPES_LcdsInvitePrivileges_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsInvitePrivileges {
-'    // 
+    // 
     bool canInvite;
   };
 

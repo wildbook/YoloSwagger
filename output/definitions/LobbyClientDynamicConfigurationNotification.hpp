@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LobbyClientDynamicConfigurationNotification_HPP
 #define SWAGGER_TYPES_LobbyClientDynamicConfigurationNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LobbyClientDynamicConfigurationNotification {
-'    // 
+    // 
     std::string configs;
     // 
     bool delta;

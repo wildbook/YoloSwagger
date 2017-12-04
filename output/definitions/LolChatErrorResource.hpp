@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatErrorResource_HPP
 #define SWAGGER_TYPES_LolChatErrorResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatErrorResource {
-'    // 
+    // 
     uint64_t code;
     // 
     std::string from;

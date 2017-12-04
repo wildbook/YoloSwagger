@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEsportStreamNotificationsPlayerNotificationResource_HPP
 #define SWAGGER_TYPES_LolEsportStreamNotificationsPlayerNotificationResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEsportStreamNotificationsPlayerNotificationResource {
-'    // 
+    // 
     std::string backgroundUrl;
     // 
     bool critical;

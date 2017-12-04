@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyCustomFailedPlayer_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyCustomFailedPlayer_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyCustomFailedPlayer {
-'    // 
+    // 
     std::string reason;
     // 
     uint64_t summonerId;

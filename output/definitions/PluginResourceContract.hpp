@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PluginResourceContract_HPP
 #define SWAGGER_TYPES_PluginResourceContract_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PluginResourceContract {
-'    // 
+    // 
     std::string fullName;
     // 
     std::string version;

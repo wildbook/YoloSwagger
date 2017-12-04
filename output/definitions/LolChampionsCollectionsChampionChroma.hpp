@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChampionsCollectionsChampionChroma_HPP
 #include <json.hpp>
 #include "LolChampionsCollectionsOwnership.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampionsCollectionsChampionChroma {
-'    // 
+    // 
     int32_t championId;
     // 
     std::string chromaPath;

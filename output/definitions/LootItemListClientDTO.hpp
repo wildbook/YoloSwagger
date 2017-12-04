@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LootItemListClientDTO_HPP
 #include <json.hpp>
 #include "LootItemClientDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LootItemListClientDTO {
-'    // 
+    // 
     int64_t lastUpdate;
     // 
     std::vector<LootItemClientDTO> lootItems;

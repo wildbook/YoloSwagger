@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolStoreBundledItemCost_HPP
 #define SWAGGER_TYPES_LolStoreBundledItemCost_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolStoreBundledItemCost {
-'    // 
+    // 
     int64_t cost;
     // 
     std::string costType;

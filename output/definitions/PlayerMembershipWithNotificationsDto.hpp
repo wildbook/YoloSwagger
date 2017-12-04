@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_PlayerMembershipWithNotificationsDto_HPP
 #define SWAGGER_TYPES_PlayerMembershipWithNotificationsDto_HPP
 #include <json.hpp>
-#include "MembershipNoficationsDto.hpp"
 #include "PlayerMembershipDto.hpp"
-namespace test {
+#include "MembershipNoficationsDto.hpp"
+namespace leagueapi {
   // 
   struct PlayerMembershipWithNotificationsDto {
-'    // 
+    // 
     std::vector<MembershipNoficationsDto> membershipNotifications;
     // 
     PlayerMembershipDto playerMembership;

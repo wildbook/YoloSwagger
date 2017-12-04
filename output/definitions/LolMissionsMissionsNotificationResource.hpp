@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMissionsMissionsNotificationResource_HPP
 #define SWAGGER_TYPES_LolMissionsMissionsNotificationResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMissionsMissionsNotificationResource {
-'    // 
+    // 
     std::string backgroundUrl;
     // 
     std::string created;

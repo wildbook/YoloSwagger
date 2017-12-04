@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RecofrienderLoginSessionStates_HPP
 #define SWAGGER_TYPES_RecofrienderLoginSessionStates_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class RecofrienderLoginSessionStates {
-'    // 
+    // 
     ERROR = 3,
     // 
     IN_PROGRESS = 0,

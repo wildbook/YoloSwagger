@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolGameflowPatcherProductStateAction_HPP
 #define SWAGGER_TYPES_LolGameflowPatcherProductStateAction_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolGameflowPatcherProductStateAction {
-'    // 
+    // 
     CheckingForUpdates = 1,
     // 
     Idle = 0,

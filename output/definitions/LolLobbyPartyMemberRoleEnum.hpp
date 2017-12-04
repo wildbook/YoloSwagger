@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyPartyMemberRoleEnum_HPP
 #define SWAGGER_TYPES_LolLobbyPartyMemberRoleEnum_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLobbyPartyMemberRoleEnum {
-'    // 
+    // 
     DECLINED = 5,
     // 
     HOLD = 3,

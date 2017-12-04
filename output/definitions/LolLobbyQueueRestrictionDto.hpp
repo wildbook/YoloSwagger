@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyQueueRestrictionDto_HPP
 #include <json.hpp>
 #include "LolLobbyGatekeeperRestrictionDto.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyQueueRestrictionDto {
-'    // 
+    // 
     std::vector<LolLobbyGatekeeperRestrictionDto> gatekeeperRestrictions;
   };
 

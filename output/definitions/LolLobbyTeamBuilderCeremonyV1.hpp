@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderCeremonyV1_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderCeremonyV1_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderCeremonyV1 {
-'    // 
+    // 
     int64_t duration;
     // 
     std::string name;

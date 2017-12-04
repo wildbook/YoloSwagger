@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderLobbyCountdownTimer_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderLobbyCountdownTimer_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderLobbyCountdownTimer {
-'    // 
+    // 
     int32_t counter;
     // 
     std::string phaseName;

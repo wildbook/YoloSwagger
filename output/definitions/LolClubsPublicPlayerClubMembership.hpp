@@ -4,10 +4,10 @@
 #include "LolClubsPublicClubPreferences.hpp"
 #include "LolClubsPublicPlayerClub.hpp"
 #include "LolClubsPublicClubPlayer.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClubsPublicPlayerClubMembership {
-'    // 
+    // 
     std::vector<LolClubsPublicPlayerClub> activeClubs;
     // 
     LolClubsPublicClubPlayer info;

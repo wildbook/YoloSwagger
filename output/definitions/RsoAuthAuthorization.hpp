@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RsoAuthAuthorization_HPP
 #define SWAGGER_TYPES_RsoAuthAuthorization_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RsoAuthAuthorization {
-'    // 
+    // 
     uint64_t currentAccountId;
     // 
     std::string currentPlatformId;

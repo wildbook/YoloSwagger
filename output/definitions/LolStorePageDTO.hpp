@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LolStorePageDTO_HPP
 #define SWAGGER_TYPES_LolStorePageDTO_HPP
 #include <json.hpp>
-#include "LolStorePageGroupingDTO.hpp"
 #include "LolStorePlayer.hpp"
 #include "LolStoreCatalogItem.hpp"
-namespace test {
+#include "LolStorePageGroupingDTO.hpp"
+namespace leagueapi {
   // 
   struct LolStorePageDTO {
-'    // 
+    // 
     LolStorePlayer Player;
     // 
     std::vector<LolStoreCatalogItem> catalog;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolStoreSale_HPP
 #include <json.hpp>
 #include "LolStoreItemCost.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolStoreSale {
-'    // 
+    // 
     std::string endDate;
     // 
     std::vector<LolStoreItemCost> prices;

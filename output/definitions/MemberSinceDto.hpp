@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_MemberSinceDto_HPP
 #include <json.hpp>
 #include "PlayerInfoDto.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct MemberSinceDto {
-'    // 
+    // 
     PlayerInfoDto playerInfo;
     // 
     std::string role;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RemotingHelpFormat_HPP
 #define SWAGGER_TYPES_RemotingHelpFormat_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // Help format for remoting functions and types.
   enum class RemotingHelpFormat {
-'    // Short description format
+    // Short description format
     Brief = 4,
     // Console-friendly description format
     Console = 5,

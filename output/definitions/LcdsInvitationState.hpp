@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LcdsInvitationState_HPP
 #define SWAGGER_TYPES_LcdsInvitationState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LcdsInvitationState {
-'    // 
+    // 
     ACTIVE = 0,
     // 
     ON_HOLD = 1,

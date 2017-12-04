@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolCollectionsGameDataChampionSummary_HPP
 #define SWAGGER_TYPES_LolCollectionsGameDataChampionSummary_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsGameDataChampionSummary {
-'    // 
+    // 
     int32_t id;
   };
 

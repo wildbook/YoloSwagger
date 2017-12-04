@@ -2,13 +2,13 @@
 #define SWAGGER_TYPES_LolStoreCatalogItem_HPP
 #include <json.hpp>
 #include "LolStoreItemKey.hpp"
-#include "LolStoreBundled.hpp"
-#include "LolStoreSale.hpp"
 #include "LolStoreItemCost.hpp"
-namespace test {
+#include "LolStoreSale.hpp"
+#include "LolStoreBundled.hpp"
+namespace leagueapi {
   // 
   struct LolStoreCatalogItem {
-'    // 
+    // 
     bool active;
     // 
     LolStoreBundled bundled;

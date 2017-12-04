@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClashBiddingData_HPP
 #include <json.hpp>
 #include "LolClashTicketOffer.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashBiddingData {
-'    // 
+    // 
     int32_t currentBid;
     // 
     int32_t currentPaid;

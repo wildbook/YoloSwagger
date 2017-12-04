@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolPurchaseWidgetPurchaseItem_HPP
 #define SWAGGER_TYPES_LolPurchaseWidgetPurchaseItem_HPP
 #include <json.hpp>
-#include "LolPurchaseWidgetItemPrice.hpp"
 #include "LolPurchaseWidgetItemKey.hpp"
-namespace test {
+#include "LolPurchaseWidgetItemPrice.hpp"
+namespace leagueapi {
   // 
   struct LolPurchaseWidgetPurchaseItem {
-'    // 
+    // 
     LolPurchaseWidgetItemKey itemKey;
     // 
     LolPurchaseWidgetItemPrice purchaseCurrencyInfo;

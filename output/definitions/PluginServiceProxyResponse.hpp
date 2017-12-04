@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PluginServiceProxyResponse_HPP
 #define SWAGGER_TYPES_PluginServiceProxyResponse_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PluginServiceProxyResponse {
-'    // 
+    // 
     std::string error;
     // 
     std::string methodName;

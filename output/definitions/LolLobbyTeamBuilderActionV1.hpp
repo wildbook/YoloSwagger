@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderActionV1_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderActionV1_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderActionV1 {
-'    // 
+    // 
     int32_t actionId;
     // 
     int32_t actorCellId;

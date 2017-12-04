@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClientRequestError_HPP
 #define SWAGGER_TYPES_ClientRequestError_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class ClientRequestError {
-'    // 
+    // 
     ALREADY_DECLINE_WITHDRAW = 3,
     // 
     ALREADY_INVITED = 1,

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolCollectionsCollectionsWardSkinList_HPP
 #define SWAGGER_TYPES_LolCollectionsCollectionsWardSkinList_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionsWardSkinList {
-'    // 
+    // 
     std::vector<int64_t> wardSkinList;
   };
 

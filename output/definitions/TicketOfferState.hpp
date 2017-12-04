@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_TicketOfferState_HPP
 #define SWAGGER_TYPES_TicketOfferState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class TicketOfferState {
-'    // 
+    // 
     ACCEPTED = 1,
     // 
     ACTIVE = 0,

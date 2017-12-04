@@ -1,16 +1,16 @@
 #ifndef SWAGGER_TYPES_PlayerClubMembership_HPP
 #define SWAGGER_TYPES_PlayerClubMembership_HPP
 #include <json.hpp>
-#include "ClubPlayer.hpp"
-#include "ClubsConfig.hpp"
-#include "PlayerClub.hpp"
-#include "ClubInvite.hpp"
-#include "ClubPreferences.hpp"
 #include "Club.hpp"
-namespace test {
+#include "PlayerClub.hpp"
+#include "ClubPlayer.hpp"
+#include "ClubInvite.hpp"
+#include "ClubsConfig.hpp"
+#include "ClubPreferences.hpp"
+namespace leagueapi {
   // 
   struct PlayerClubMembership {
-'    // 
+    // 
     std::vector<PlayerClub> activeClubs;
     // 
     ClubsConfig clubsServerConfig;

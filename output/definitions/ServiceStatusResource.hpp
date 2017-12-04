@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_ServiceStatusResource_HPP
 #include <json.hpp>
 #include "ServiceStatusResource_Status.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ServiceStatusResource {
-'    // 
+    // 
     std::string humanReadableUrl;
     // 
     ServiceStatusResource_Status status;

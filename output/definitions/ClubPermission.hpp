@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClubPermission_HPP
 #define SWAGGER_TYPES_ClubPermission_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class ClubPermission {
-'    // 
+    // 
     DEMOTE = 2,
     // 
     INVITE = 0,

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoginSummonerCreatedResource_HPP
 #define SWAGGER_TYPES_LolLoginSummonerCreatedResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoginSummonerCreatedResource {
-'    // 
+    // 
     uint64_t summonerId;
   };
 

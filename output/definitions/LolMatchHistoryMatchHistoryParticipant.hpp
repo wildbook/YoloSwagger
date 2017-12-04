@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryParticipant_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryParticipant_HPP
 #include <json.hpp>
-#include "LolMatchHistoryMatchHistoryParticipantStatistics.hpp"
 #include "LolMatchHistoryMatchHistoryTimeline.hpp"
-namespace test {
+#include "LolMatchHistoryMatchHistoryParticipantStatistics.hpp"
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryParticipant {
-'    // 
+    // 
     int32_t championId;
     // 
     std::string highestAchievedSeasonTier;

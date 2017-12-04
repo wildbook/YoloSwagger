@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLootRecipeOutput_HPP
 #define SWAGGER_TYPES_LolLootRecipeOutput_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootRecipeOutput {
-'    // 
+    // 
     std::string lootName;
     // 
     int32_t quantity;

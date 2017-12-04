@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlaytimeReminder_HPP
 #define SWAGGER_TYPES_PlaytimeReminder_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PlaytimeReminder {
-'    // 
+    // 
     uint32_t hours;
   };
 

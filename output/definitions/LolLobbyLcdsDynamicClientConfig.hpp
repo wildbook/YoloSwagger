@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyLcdsDynamicClientConfig_HPP
 #include <json.hpp>
 #include "LolLobbyLcdsPartyRewardsConfig.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLcdsDynamicClientConfig {
-'    // 
+    // 
     LolLobbyLcdsPartyRewardsConfig PartyRewards;
   };
 

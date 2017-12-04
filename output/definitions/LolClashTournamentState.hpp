@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashTournamentState_HPP
 #define SWAGGER_TYPES_LolClashTournamentState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolClashTournamentState {
-'    // 
+    // 
     IDLE = 0,
     // 
     IN_GAME = 3,

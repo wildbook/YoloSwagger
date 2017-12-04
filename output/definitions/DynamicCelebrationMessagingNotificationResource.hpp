@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_DynamicCelebrationMessagingNotificationResource_HPP
 #define SWAGGER_TYPES_DynamicCelebrationMessagingNotificationResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct DynamicCelebrationMessagingNotificationResource {
-'    // 
+    // 
     std::string celebrationBody;
     // 
     std::string celebrationMessage;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PatcherNotificationId_HPP
 #define SWAGGER_TYPES_PatcherNotificationId_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class PatcherNotificationId {
-'    // 
+    // 
     ConnectionError = 1,
     // 
     DidRestoreClientBackup = 5,

@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_PendingRosterDTO_HPP
 #define SWAGGER_TYPES_PendingRosterDTO_HPP
 #include <json.hpp>
-#include "FailedInvite.hpp"
-#include "PendingRosterMemberDTO.hpp"
-#include "TicketOfferDTO.hpp"
 #include "PendingRosterInviteeDTO.hpp"
-namespace test {
+#include "FailedInvite.hpp"
+#include "TicketOfferDTO.hpp"
+#include "PendingRosterMemberDTO.hpp"
+namespace leagueapi {
   // 
   struct PendingRosterDTO {
-'    // 
+    // 
     uint64_t captainId;
     // 
     std::string invitationId;

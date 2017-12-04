@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_FailedInvite_HPP
 #include <json.hpp>
 #include "ClientRequestError.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct FailedInvite {
-'    // 
+    // 
     ClientRequestError exception;
     // 
     uint64_t playerId;

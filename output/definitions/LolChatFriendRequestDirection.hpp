@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatFriendRequestDirection_HPP
 #define SWAGGER_TYPES_LolChatFriendRequestDirection_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolChatFriendRequestDirection {
-'    // 
+    // 
     both = 2,
     // 
     in = 0,

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_RecofrienderLoginSession_HPP
 #include <json.hpp>
 #include "RecofrienderLoginSessionStates.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct RecofrienderLoginSession {
-'    // 
+    // 
     uint64_t accountId;
     // 
     nlohmann::json gasToken;

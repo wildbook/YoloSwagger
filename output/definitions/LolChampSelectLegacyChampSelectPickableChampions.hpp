@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampSelectLegacyChampSelectPickableChampions_HPP
 #define SWAGGER_TYPES_LolChampSelectLegacyChampSelectPickableChampions_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyChampSelectPickableChampions {
-'    // 
+    // 
     std::vector<int32_t> championIds;
   };
 

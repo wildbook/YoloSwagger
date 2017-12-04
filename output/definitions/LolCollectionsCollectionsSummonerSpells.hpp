@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolCollectionsCollectionsSummonerSpells_HPP
 #define SWAGGER_TYPES_LolCollectionsCollectionsSummonerSpells_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionsSummonerSpells {
-'    // 
+    // 
     std::vector<uint64_t> spells;
     // 
     uint64_t summonerId;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClashMatchmakingDodgeData_HPP
 #include <json.hpp>
 #include "LolClashMatchmakingDodgeState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashMatchmakingDodgeData {
-'    // 
+    // 
     uint64_t dodgerId;
     // 
     LolClashMatchmakingDodgeState state;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerPlatformDelta_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerPlatformDelta_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryPlayerPlatformDelta {
-'    // 
+    // 
     bool compensationModeEnabled;
     // 
     uint64_t ipDelta;

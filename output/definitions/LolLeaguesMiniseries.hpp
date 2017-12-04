@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLeaguesMiniseries_HPP
 #define SWAGGER_TYPES_LolLeaguesMiniseries_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLeaguesMiniseries {
-'    // 
+    // 
     L = 1,
     // 
     N = 2,

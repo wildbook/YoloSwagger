@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryTimelineFrames_HPP
 #include <json.hpp>
 #include "LolMatchHistoryMatchHistoryTimelineFrame.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryTimelineFrames {
-'    // 
+    // 
     std::vector<LolMatchHistoryMatchHistoryTimelineFrame> frames;
   };
 

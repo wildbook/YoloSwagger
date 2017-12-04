@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LcdsPayloadDto_HPP
 #define SWAGGER_TYPES_LcdsPayloadDto_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsPayloadDto {
-'    // 
+    // 
     std::string body;
     // 
     std::map<std::string, std::string> headers;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLeaguesLeagueTeam_HPP
 #include <json.hpp>
 #include "LolLeaguesLeagueTeamMember.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLeaguesLeagueTeam {
-'    // 
+    // 
     std::string id;
     // 
     std::vector<LolLeaguesLeagueTeamMember> members;

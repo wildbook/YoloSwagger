@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolGeoinfoLoginSession_HPP
 #include <json.hpp>
 #include "LolGeoinfoLoginSessionState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolGeoinfoLoginSession {
-'    // 
+    // 
     uint64_t accountId;
     // 
     LolGeoinfoLoginSessionState state;

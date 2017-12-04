@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_MatchmakingLcdsFailedJoinPlayer_HPP
 #include <json.hpp>
 #include "MatchmakingLcdsSummoner.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct MatchmakingLcdsFailedJoinPlayer {
-'    // 
+    // 
     std::string reasonFailed;
     // 
     MatchmakingLcdsSummoner summoner;

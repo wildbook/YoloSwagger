@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksChampSelectChatRoomDetails_HPP
 #define SWAGGER_TYPES_LolPerksChampSelectChatRoomDetails_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksChampSelectChatRoomDetails {
-'    // 
+    // 
     std::string chatRoomName;
     // 
     std::string chatRoomPassword;

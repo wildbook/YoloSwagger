@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_PhaseRosterDTO_HPP
 #include <json.hpp>
 #include "Bracket.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PhaseRosterDTO {
-'    // 
+    // 
     Bracket bracketDTO;
     // 
     int32_t period;

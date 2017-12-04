@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClashRosterPeriodAggregatedStats_HPP
 #include <json.hpp>
 #include "LolClashRosterMatchAggregatedStats.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashRosterPeriodAggregatedStats {
-'    // 
+    // 
     int32_t bracketSize;
     // 
     std::vector<LolClashRosterMatchAggregatedStats> matchStats;

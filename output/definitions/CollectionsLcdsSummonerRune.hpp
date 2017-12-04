@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_CollectionsLcdsSummonerRune_HPP
 #define SWAGGER_TYPES_CollectionsLcdsSummonerRune_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct CollectionsLcdsSummonerRune {
-'    // 
+    // 
     uint64_t purchaseDate;
     // 
     uint64_t purchased;

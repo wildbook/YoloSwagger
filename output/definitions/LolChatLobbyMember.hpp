@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatLobbyMember_HPP
 #define SWAGGER_TYPES_LolChatLobbyMember_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatLobbyMember {
-'    // 
+    // 
     uint64_t id;
     // 
     bool isOwner;

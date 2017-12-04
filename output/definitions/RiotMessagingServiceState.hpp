@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RiotMessagingServiceState_HPP
 #define SWAGGER_TYPES_RiotMessagingServiceState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class RiotMessagingServiceState {
-'    // 
+    // 
     Connected = 5,
     // 
     Connecting = 3,

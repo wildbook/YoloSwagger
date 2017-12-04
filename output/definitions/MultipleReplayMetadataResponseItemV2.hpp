@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "ReplayResponseStatus.hpp"
 #include "ReplayMetadataV2.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct MultipleReplayMetadataResponseItemV2 {
-'    // 
+    // 
     uint64_t gameId;
     // 
     ReplayMetadataV2 metadata;

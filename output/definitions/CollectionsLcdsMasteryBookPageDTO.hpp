@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_CollectionsLcdsMasteryBookPageDTO_HPP
 #include <json.hpp>
 #include "CollectionsLcdsTalentEntry.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct CollectionsLcdsMasteryBookPageDTO {
-'    // 
+    // 
     uint64_t createDate;
     // 
     bool current;

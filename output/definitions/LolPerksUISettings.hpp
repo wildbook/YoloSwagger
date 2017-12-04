@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksUISettings_HPP
 #define SWAGGER_TYPES_LolPerksUISettings_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksUISettings {
-'    // 
+    // 
     bool gridModeEnabled;
     // 
     bool showLongDescriptions;

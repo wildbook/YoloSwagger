@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ChampSelectLcdsPotentialTradersDTO_HPP
 #define SWAGGER_TYPES_ChampSelectLcdsPotentialTradersDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ChampSelectLcdsPotentialTradersDTO {
-'    // 
+    // 
     std::vector<std::string> potentialTraders;
   };
 

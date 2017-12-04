@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_PluginResource_HPP
 #include <json.hpp>
 #include "PluginResourceContract.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PluginResource {
-'    // 
+    // 
     std::string app;
     // 
     std::vector<std::string> assetBundleNames;

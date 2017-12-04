@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolGameSettingsLoginSession_HPP
 #include <json.hpp>
 #include "LolGameSettingsLoginSessionStates.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameSettingsLoginSession {
-'    // 
+    // 
     uint64_t accountId;
     // 
     nlohmann::json gasToken;

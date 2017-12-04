@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderTbdInventory_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderTbdInventory_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderTbdInventory {
-'    // 
+    // 
     std::vector<int32_t> allChampionIds;
     // 
     std::vector<int32_t> disabledChampionIds;

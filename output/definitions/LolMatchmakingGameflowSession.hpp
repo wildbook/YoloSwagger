@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LolMatchmakingGameflowSession_HPP
 #define SWAGGER_TYPES_LolMatchmakingGameflowSession_HPP
 #include <json.hpp>
-#include "LolMatchmakingGameflowGameData.hpp"
 #include "LolMatchmakingGameflowPhase.hpp"
 #include "LolMatchmakingGameflowGameDodge.hpp"
-namespace test {
+#include "LolMatchmakingGameflowGameData.hpp"
+namespace leagueapi {
   // 
   struct LolMatchmakingGameflowSession {
-'    // 
+    // 
     LolMatchmakingGameflowGameData gameData;
     // 
     LolMatchmakingGameflowGameDodge gameDodge;

@@ -4,10 +4,10 @@
 #include "LolEndOfGameGameflowPhase.hpp"
 #include "LolEndOfGameGameflowGameData.hpp"
 #include "LolEndOfGameGameflowClient.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameGameflowSession {
-'    // 
+    // 
     LolEndOfGameGameflowClient gameClient;
     // 
     LolEndOfGameGameflowGameData gameData;

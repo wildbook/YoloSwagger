@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPftPFTMetadata_HPP
 #include <json.hpp>
 #include "LolPftPFTEndOfGameStats.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPftPFTMetadata {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string appName;

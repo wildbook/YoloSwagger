@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_StoreLcdsStoreFulfillmentNotification_HPP
 #define SWAGGER_TYPES_StoreLcdsStoreFulfillmentNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct StoreLcdsStoreFulfillmentNotification {
-'    // 
+    // 
     nlohmann::json data;
     // 
     std::string inventoryType;

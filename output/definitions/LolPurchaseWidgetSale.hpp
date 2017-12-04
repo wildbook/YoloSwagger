@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPurchaseWidgetSale_HPP
 #include <json.hpp>
 #include "LolPurchaseWidgetItemPrice.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPurchaseWidgetSale {
-'    // 
+    // 
     std::string endDate;
     // 
     std::vector<LolPurchaseWidgetItemPrice> prices;

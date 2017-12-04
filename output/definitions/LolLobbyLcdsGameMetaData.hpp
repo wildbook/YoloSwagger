@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLcdsGameMetaData_HPP
 #define SWAGGER_TYPES_LolLobbyLcdsGameMetaData_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLcdsGameMetaData {
-'    // 
+    // 
     uint64_t gameId;
     // 
     int32_t mapId;

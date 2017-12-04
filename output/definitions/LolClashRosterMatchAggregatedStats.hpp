@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashRosterMatchAggregatedStats_HPP
 #define SWAGGER_TYPES_LolClashRosterMatchAggregatedStats_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashRosterMatchAggregatedStats {
-'    // 
+    // 
     int64_t durationMs;
     // 
     int64_t gameId;

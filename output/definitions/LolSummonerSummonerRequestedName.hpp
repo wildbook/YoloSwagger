@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSummonerSummonerRequestedName_HPP
 #define SWAGGER_TYPES_LolSummonerSummonerRequestedName_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSummonerSummonerRequestedName {
-'    // 
+    // 
     std::string name;
   };
 

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMissionsCollectionsSummonerIcons_HPP
 #define SWAGGER_TYPES_LolMissionsCollectionsSummonerIcons_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMissionsCollectionsSummonerIcons {
-'    // 
+    // 
     std::vector<int32_t> icons;
   };
 

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolRankedStatsRankedData_HPP
 #include <json.hpp>
 #include "LolRankedStatsRankedEntry.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolRankedStatsRankedData {
-'    // 
+    // 
     std::vector<LolRankedStatsRankedEntry> rankedData;
     // 
     uint64_t summonerId;

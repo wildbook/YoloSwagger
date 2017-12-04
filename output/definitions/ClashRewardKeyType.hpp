@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClashRewardKeyType_HPP
 #define SWAGGER_TYPES_ClashRewardKeyType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class ClashRewardKeyType {
-'    // 
+    // 
     CUP = 1,
     // 
     LOWEST_POSITION = 3,

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PatcherHeaderEntry_HPP
 #define SWAGGER_TYPES_PatcherHeaderEntry_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PatcherHeaderEntry {
-'    // 
+    // 
     std::string key;
     // 
     std::string value;

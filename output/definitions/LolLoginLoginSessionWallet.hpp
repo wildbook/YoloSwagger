@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoginLoginSessionWallet_HPP
 #define SWAGGER_TYPES_LolLoginLoginSessionWallet_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoginLoginSessionWallet {
-'    // 
+    // 
     int64_t ip;
     // 
     int64_t rp;

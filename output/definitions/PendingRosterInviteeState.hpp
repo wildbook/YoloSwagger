@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PendingRosterInviteeState_HPP
 #define SWAGGER_TYPES_PendingRosterInviteeState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class PendingRosterInviteeState {
-'    // 
+    // 
     DECLINED = 2,
     // 
     PENDING = 1,

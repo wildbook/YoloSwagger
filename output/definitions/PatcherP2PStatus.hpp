@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PatcherP2PStatus_HPP
 #define SWAGGER_TYPES_PatcherP2PStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PatcherP2PStatus {
-'    // 
+    // 
     bool isAllowedByUser;
     // 
     bool isEnabledForPatchline;

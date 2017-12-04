@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "ClashRewardConfigClient.hpp"
 #include "TournamentPhaseDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct TournamentDTO {
-'    // 
+    // 
     std::vector<int32_t> buyInOptions;
     // 
     int32_t entryFee;

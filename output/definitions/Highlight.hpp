@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_Highlight_HPP
 #define SWAGGER_TYPES_Highlight_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct Highlight {
-'    // 
+    // 
     uint64_t fileSizeBytes;
     // 
     std::string filepath;

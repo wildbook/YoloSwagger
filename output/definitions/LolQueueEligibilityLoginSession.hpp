@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolQueueEligibilityLoginSession_HPP
 #include <json.hpp>
 #include "LolQueueEligibilityLoginSessionStates.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolQueueEligibilityLoginSession {
-'    // 
+    // 
     uint64_t accountId;
     // 
     LolQueueEligibilityLoginSessionStates state;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_TournamentInfoMinimalDTO_HPP
 #include <json.hpp>
 #include "TournamentInfoDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct TournamentInfoMinimalDTO {
-'    // 
+    // 
     int64_t time;
     // 
     std::vector<TournamentInfoDTO> tournamentInfo;

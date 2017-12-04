@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LogSeverityLevels_HPP
 #define SWAGGER_TYPES_LogSeverityLevels_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // Allowable severity levels for log events.
   enum class LogSeverityLevels {
-'    // Always logged, regardless of program's state
+    // Always logged, regardless of program's state
     Always = 3,
     // Critical failure; thread may terminate
     Error = 2,

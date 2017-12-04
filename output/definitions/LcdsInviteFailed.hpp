@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LcdsInviteFailed_HPP
 #include <json.hpp>
 #include "LcdsGameInviteBaseRuntimeException.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsInviteFailed {
-'    // 
+    // 
     LcdsGameInviteBaseRuntimeException exception;
     // 
     uint64_t summonerId;

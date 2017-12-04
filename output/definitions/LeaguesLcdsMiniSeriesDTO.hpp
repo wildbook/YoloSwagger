@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LeaguesLcdsMiniSeriesDTO_HPP
 #define SWAGGER_TYPES_LeaguesLcdsMiniSeriesDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LeaguesLcdsMiniSeriesDTO {
-'    // 
+    // 
     uint64_t losses;
     // 
     std::string progress;

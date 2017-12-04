@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryGame_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryGame_HPP
 #include <json.hpp>
+#include "LolMatchHistoryMatchHistoryTeam.hpp"
 #include "LolMatchHistoryMatchHistoryParticipantIdentities.hpp"
 #include "LolMatchHistoryMatchHistoryParticipant.hpp"
-#include "LolMatchHistoryMatchHistoryTeam.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryGame {
-'    // 
+    // 
     uint64_t gameCreation;
     // 
     std::string gameCreationDate;

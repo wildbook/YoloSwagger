@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolLobbyPlayerDto_HPP
 #define SWAGGER_TYPES_LolLobbyPlayerDto_HPP
 #include <json.hpp>
-#include "LolLobbyPartyDto.hpp"
 #include "LolLobbyPartyMemberDto.hpp"
-namespace test {
+#include "LolLobbyPartyDto.hpp"
+namespace leagueapi {
   // 
   struct LolLobbyPlayerDto {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string accountToken;

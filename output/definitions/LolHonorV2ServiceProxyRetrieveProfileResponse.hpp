@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolHonorV2ServiceProxyRetrieveProfileResponse_HPP
 #define SWAGGER_TYPES_LolHonorV2ServiceProxyRetrieveProfileResponse_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolHonorV2ServiceProxyRetrieveProfileResponse {
-'    // 
+    // 
     int32_t checkpoint;
     // 
     int32_t honorLevel;

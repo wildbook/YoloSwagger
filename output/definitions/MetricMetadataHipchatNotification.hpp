@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MetricMetadataHipchatNotification_HPP
 #define SWAGGER_TYPES_MetricMetadataHipchatNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct MetricMetadataHipchatNotification {
-'    // 
+    // 
     std::string roomid;
     // 
     std::string tags;

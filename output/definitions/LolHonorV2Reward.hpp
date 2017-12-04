@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolHonorV2Reward_HPP
 #define SWAGGER_TYPES_LolHonorV2Reward_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolHonorV2Reward {
-'    // 
+    // 
     std::string message;
     // 
     int32_t quantity;

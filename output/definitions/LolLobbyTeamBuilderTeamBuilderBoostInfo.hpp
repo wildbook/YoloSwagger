@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderTeamBuilderBoostInfo_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderTeamBuilderBoostInfo_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderTeamBuilderBoostInfo {
-'    // 
+    // 
     int64_t activatorCellId;
     // 
     bool allowBattleBoost;

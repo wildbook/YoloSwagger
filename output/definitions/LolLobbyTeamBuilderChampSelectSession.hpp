@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderChampSelectSession_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderChampSelectSession_HPP
 #include <json.hpp>
-#include "LolLobbyTeamBuilderChampSelectTimer.hpp"
-#include "LolLobbyTeamBuilderChampSelectChatRoomDetails.hpp"
 #include "LolLobbyTeamBuilderChampSelectPlayerSelection.hpp"
 #include "LolLobbyTeamBuilderChampSelectTradeContract.hpp"
-namespace test {
+#include "LolLobbyTeamBuilderChampSelectTimer.hpp"
+#include "LolLobbyTeamBuilderChampSelectChatRoomDetails.hpp"
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderChampSelectSession {
-'    // 
+    // 
     std::vector<nlohmann::json> actions;
     // 
     bool allowBattleBoost;

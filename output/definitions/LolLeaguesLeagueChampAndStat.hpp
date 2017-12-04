@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLeaguesLeagueChampAndStat_HPP
 #define SWAGGER_TYPES_LolLeaguesLeagueChampAndStat_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLeaguesLeagueChampAndStat {
-'    // 
+    // 
     int32_t championId;
     // 
     int64_t totalGamePlayed;

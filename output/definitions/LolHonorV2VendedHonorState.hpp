@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolHonorV2VendedHonorState_HPP
 #define SWAGGER_TYPES_LolHonorV2VendedHonorState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolHonorV2VendedHonorState {
-'    // 
+    // 
     int32_t checkpoint;
     // 
     int32_t level;

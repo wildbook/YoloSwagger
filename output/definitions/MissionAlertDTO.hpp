@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MissionAlertDTO_HPP
 #define SWAGGER_TYPES_MissionAlertDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct MissionAlertDTO {
-'    // 
+    // 
     int64_t alertTime;
     // 
     std::string message;

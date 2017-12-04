@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RankedDivision_HPP
 #define SWAGGER_TYPES_RankedDivision_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class RankedDivision {
-'    // 
+    // 
     I = 1,
     // 
     II = 2,

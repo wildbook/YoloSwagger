@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolClashMatchmakingReadyCheckResource_HPP
 #define SWAGGER_TYPES_LolClashMatchmakingReadyCheckResource_HPP
 #include <json.hpp>
-#include "LolClashMatchmakingReadyCheckState.hpp"
 #include "LolClashMatchmakingReadyCheckResponse.hpp"
-namespace test {
+#include "LolClashMatchmakingReadyCheckState.hpp"
+namespace leagueapi {
   // 
   struct LolClashMatchmakingReadyCheckResource {
-'    // 
+    // 
     LolClashMatchmakingReadyCheckResponse playerResponse;
     // 
     LolClashMatchmakingReadyCheckState state;

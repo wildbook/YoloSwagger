@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolAccountVerificationDeviceResponse_HPP
 #define SWAGGER_TYPES_LolAccountVerificationDeviceResponse_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolAccountVerificationDeviceResponse {
-'    // 
+    // 
     std::string message;
     // 
     int32_t status;

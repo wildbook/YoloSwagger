@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_LolLobbyPartyDto_HPP
 #define SWAGGER_TYPES_LolLobbyPartyDto_HPP
 #include <json.hpp>
-#include "LolLobbyPartyMemberDto.hpp"
-#include "LolLobbyQueueRestrictionDto.hpp"
-#include "LolLobbyPartyChatDto.hpp"
 #include "LolLobbyGameModeDto.hpp"
-namespace test {
+#include "LolLobbyQueueRestrictionDto.hpp"
+#include "LolLobbyPartyMemberDto.hpp"
+#include "LolLobbyPartyChatDto.hpp"
+namespace leagueapi {
   // 
   struct LolLobbyPartyDto {
-'    // 
+    // 
     LolLobbyQueueRestrictionDto activeRestrictions;
     // 
     bool activityLocked;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_GameflowSession_HPP
 #include <json.hpp>
 #include "GameflowGameData.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct GameflowSession {
-'    // 
+    // 
     GameflowGameData gameData;
   };
 

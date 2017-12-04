@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_PatcherComponentState_HPP
 #define SWAGGER_TYPES_PatcherComponentState_HPP
 #include <json.hpp>
-#include "PatcherComponentStateAction.hpp"
 #include "PatcherComponentActionProgress.hpp"
-namespace test {
+#include "PatcherComponentStateAction.hpp"
+namespace leagueapi {
   // 
   struct PatcherComponentState {
-'    // 
+    // 
     PatcherComponentStateAction action;
     // 
     std::string id;

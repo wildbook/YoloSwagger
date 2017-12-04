@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BuybackState_HPP
 #define SWAGGER_TYPES_BuybackState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class BuybackState {
-'    // 
+    // 
     FORCED_NOT_READY = 1,
     // 
     NOT_READY = 0,

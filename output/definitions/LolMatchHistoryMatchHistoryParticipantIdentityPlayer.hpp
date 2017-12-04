@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryParticipantIdentityPlayer_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryParticipantIdentityPlayer_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryParticipantIdentityPlayer {
-'    // 
+    // 
     uint64_t accountId;
     // 
     uint64_t currentAccountId;

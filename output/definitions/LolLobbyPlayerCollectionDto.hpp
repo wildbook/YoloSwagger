@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyPlayerCollectionDto_HPP
 #include <json.hpp>
 #include "LolLobbyPlayerDto.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyPlayerCollectionDto {
-'    // 
+    // 
     std::vector<LolLobbyPlayerDto> players;
   };
 

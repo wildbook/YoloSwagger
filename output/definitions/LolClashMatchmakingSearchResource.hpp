@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClashMatchmakingSearchResource_HPP
 #include <json.hpp>
 #include "LolClashMatchmakingDodgeData.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashMatchmakingSearchResource {
-'    // 
+    // 
     LolClashMatchmakingDodgeData dodgeData;
     // 
     int32_t queueId;

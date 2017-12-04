@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSimpleDialogMessagesMessage_HPP
 #define SWAGGER_TYPES_LolSimpleDialogMessagesMessage_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSimpleDialogMessagesMessage {
-'    // 
+    // 
     nlohmann::json body;
     // 
     int64_t id;

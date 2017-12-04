@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_ClubMemberLists_HPP
 #include <json.hpp>
 #include "ClubMember.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ClubMemberLists {
-'    // 
+    // 
     std::vector<ClubMember> activeMembers;
     // 
     std::vector<ClubMember> invitedMembers;

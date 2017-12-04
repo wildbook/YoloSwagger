@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolLobbyEligibility.hpp"
 #include "LolLobbyLobbyInvitationState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyInvitation {
-'    // 
+    // 
     LolLobbyEligibility eligibility;
     // 
     std::string errorType;

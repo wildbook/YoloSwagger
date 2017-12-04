@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_ClubMembershipDto_HPP
 #include <json.hpp>
 #include "MemberSinceDto.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ClubMembershipDto {
-'    // 
+    // 
     std::vector<MemberSinceDto> activeMembers;
     // 
     std::string clubKey;

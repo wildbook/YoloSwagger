@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEndOfGameGameflowAvailability_HPP
 #define SWAGGER_TYPES_LolEndOfGameGameflowAvailability_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameGameflowAvailability {
-'    // 
+    // 
     std::string state;
   };
 

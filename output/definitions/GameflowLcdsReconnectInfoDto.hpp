@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "GameflowLcdsPlayerCredentialsDto.hpp"
 #include "GameflowLcdsGameDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct GameflowLcdsReconnectInfoDto {
-'    // 
+    // 
     GameflowLcdsGameDTO game;
     // 
     GameflowLcdsPlayerCredentialsDto playerCredentials;

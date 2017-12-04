@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolMatchmakingGameflowQueue_HPP
 #include <json.hpp>
 #include "LolMatchmakingGameflowGameTypeConfig.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchmakingGameflowQueue {
-'    // 
+    // 
     LolMatchmakingGameflowGameTypeConfig gameTypeConfig;
   };
 

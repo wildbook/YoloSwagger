@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LCDSChampionReward_HPP
 #define SWAGGER_TYPES_LCDSChampionReward_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LCDSChampionReward {
-'    // 
+    // 
     int32_t championId;
     // 
     std::vector<int32_t> skins;

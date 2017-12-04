@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LeaguesLcdsSummonerLeaguesDTO_HPP
 #include <json.hpp>
 #include "LeaguesLcdsSummonerLeagueListDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LeaguesLcdsSummonerLeaguesDTO {
-'    // 
+    // 
     std::vector<LeaguesLcdsSummonerLeagueListDTO> summonerLeagues;
   };
 

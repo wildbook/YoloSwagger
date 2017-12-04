@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_SubState_HPP
 #define SWAGGER_TYPES_SubState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class SubState {
-'    // 
+    // 
     DECLINED = 2,
     // 
     FORCED_NOT_READY = 5,

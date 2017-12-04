@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolStoreBundleItemDTO_HPP
 #define SWAGGER_TYPES_LolStoreBundleItemDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolStoreBundleItemDTO {
-'    // 
+    // 
     std::string description;
     // 
     int64_t discountedRp;

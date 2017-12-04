@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_PlayerLootDefinitionsDTO_HPP
 #define SWAGGER_TYPES_PlayerLootDefinitionsDTO_HPP
 #include <json.hpp>
-#include "LootItemListClientDTO.hpp"
 #include "QueryResultDTO.hpp"
+#include "LootItemListClientDTO.hpp"
 #include "LootLcdsRecipeListClientDTO.hpp"
 #include "PlayerLootDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerLootDefinitionsDTO {
-'    // 
+    // 
     LootItemListClientDTO lootItemList;
     // 
     std::vector<PlayerLootDTO> playerLoot;

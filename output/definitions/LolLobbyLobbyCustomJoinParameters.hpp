@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyCustomJoinParameters_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyCustomJoinParameters_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyCustomJoinParameters {
-'    // 
+    // 
     bool asSpectator;
     // 
     std::string password;

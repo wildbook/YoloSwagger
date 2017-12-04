@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LcdsInvitee_HPP
 #include <json.hpp>
 #include "LcdsInviteeState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsInvitee {
-'    // 
+    // 
     LcdsInviteeState inviteeState;
     // 
     uint64_t summonerId;

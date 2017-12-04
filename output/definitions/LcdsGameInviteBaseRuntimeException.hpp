@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LcdsGameInviteBaseRuntimeException_HPP
 #define SWAGGER_TYPES_LcdsGameInviteBaseRuntimeException_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsGameInviteBaseRuntimeException {
-'    // 
+    // 
     std::string rootCauseClassname;
   };
 

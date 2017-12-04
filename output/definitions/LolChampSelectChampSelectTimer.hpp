@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampSelectChampSelectTimer_HPP
 #define SWAGGER_TYPES_LolChampSelectChampSelectTimer_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectChampSelectTimer {
-'    // 
+    // 
     int64_t adjustedTimeLeftInPhase;
     // 
     int32_t adjustedTimeLeftInPhaseInSec;

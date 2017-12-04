@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLeaguesLeagueEmblem_HPP
 #define SWAGGER_TYPES_LolLeaguesLeagueEmblem_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLeaguesLeagueEmblem {
-'    // 
+    // 
     FRESHBLOOD = 2,
     // 
     HOTSTREAK = 1,

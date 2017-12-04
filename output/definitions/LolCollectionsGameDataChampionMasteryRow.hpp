@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolCollectionsGameDataChampionMasteryRow_HPP
 #define SWAGGER_TYPES_LolCollectionsGameDataChampionMasteryRow_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsGameDataChampionMasteryRow {
-'    // 
+    // 
     std::vector<uint32_t> masteries;
   };
 

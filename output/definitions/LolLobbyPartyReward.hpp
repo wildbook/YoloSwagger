@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyPartyReward_HPP
 #include <json.hpp>
 #include "LolLobbyLobbyPartyRewardType.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyPartyReward {
-'    // 
+    // 
     int32_t premadeSize;
     // 
     LolLobbyLobbyPartyRewardType type;

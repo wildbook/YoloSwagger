@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChatChatRankedData_HPP
 #include <json.hpp>
 #include "LolChatChatRankedEntry.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatChatRankedData {
-'    // 
+    // 
     std::vector<LolChatChatRankedEntry> rankedData;
     // 
     uint64_t summonerId;

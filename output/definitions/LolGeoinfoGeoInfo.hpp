@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolGeoinfoGeoInfo_HPP
 #define SWAGGER_TYPES_LolGeoinfoGeoInfo_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolGeoinfoGeoInfo {
-'    // 
+    // 
     std::string city;
     // 
     std::string country;

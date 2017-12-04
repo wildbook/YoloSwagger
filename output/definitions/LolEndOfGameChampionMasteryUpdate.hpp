@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolEndOfGameChampionMasteryGrade.hpp"
 #include "LolEndOfGameChampionMasteryMini.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameChampionMasteryUpdate {
-'    // 
+    // 
     int64_t bonusPointsGained;
     // 
     int32_t championId;

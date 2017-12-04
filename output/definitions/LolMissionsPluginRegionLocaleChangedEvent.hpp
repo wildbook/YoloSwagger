@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMissionsPluginRegionLocaleChangedEvent_HPP
 #define SWAGGER_TYPES_LolMissionsPluginRegionLocaleChangedEvent_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMissionsPluginRegionLocaleChangedEvent {
-'    // 
+    // 
     std::string locale;
   };
 

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_TournamentPhaseDTO_HPP
 #define SWAGGER_TYPES_TournamentPhaseDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct TournamentPhaseDTO {
-'    // 
+    // 
     int64_t id;
     // 
     int32_t period;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLeaguesSeverity_HPP
 #define SWAGGER_TYPES_LolLeaguesSeverity_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLeaguesSeverity {
-'    // 
+    // 
     ALERT = 1,
     // 
     WARNING = 0,

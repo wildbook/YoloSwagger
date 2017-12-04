@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "CollectionsLcdsSpellBookDTO.hpp"
 #include "CollectionsLcdsMasteryBookDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsSummonerData {
-'    // 
+    // 
     CollectionsLcdsMasteryBookDTO masteryBook;
     // 
     CollectionsLcdsSpellBookDTO spellBook;

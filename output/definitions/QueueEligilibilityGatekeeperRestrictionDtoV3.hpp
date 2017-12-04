@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_QueueEligilibilityGatekeeperRestrictionDtoV3_HPP
 #define SWAGGER_TYPES_QueueEligilibilityGatekeeperRestrictionDtoV3_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct QueueEligilibilityGatekeeperRestrictionDtoV3 {
-'    // 
+    // 
     std::string payload;
     // 
     int32_t queueId;

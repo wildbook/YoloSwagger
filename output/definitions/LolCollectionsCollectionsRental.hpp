@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolCollectionsCollectionsRental_HPP
 #define SWAGGER_TYPES_LolCollectionsCollectionsRental_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionsRental {
-'    // 
+    // 
     uint64_t endDate;
     // 
     uint64_t purchaseDate;

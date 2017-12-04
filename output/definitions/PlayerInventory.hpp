@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerInventory_HPP
 #define SWAGGER_TYPES_PlayerInventory_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerInventory {
-'    // 
+    // 
     std::vector<int32_t> champions;
     // 
     std::vector<int32_t> icons;

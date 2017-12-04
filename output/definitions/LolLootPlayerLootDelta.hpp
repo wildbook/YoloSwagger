@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLootPlayerLootDelta_HPP
 #include <json.hpp>
 #include "LolLootPlayerLoot.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootPlayerLootDelta {
-'    // 
+    // 
     int32_t deltaCount;
     // 
     LolLootPlayerLoot playerLoot;

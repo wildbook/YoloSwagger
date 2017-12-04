@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPersonalizedOffersAuthenticationRequest_HPP
 #define SWAGGER_TYPES_LolPersonalizedOffersAuthenticationRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPersonalizedOffersAuthenticationRequest {
-'    // 
+    // 
     std::string token;
     // 
     std::string tokenType;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_EndOfGameStats_HPP
 #define SWAGGER_TYPES_EndOfGameStats_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct EndOfGameStats {
-'    // 
+    // 
     uint64_t timeUntilNextFirstWinBonus;
   };
 

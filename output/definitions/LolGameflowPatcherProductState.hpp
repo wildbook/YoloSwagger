@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolGameflowPatcherProductState_HPP
 #include <json.hpp>
 #include "LolGameflowPatcherProductStateAction.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameflowPatcherProductState {
-'    // 
+    // 
     LolGameflowPatcherProductStateAction action;
     // 
     bool isCorrupted;

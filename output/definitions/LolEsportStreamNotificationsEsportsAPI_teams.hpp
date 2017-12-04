@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEsportStreamNotificationsEsportsAPI_teams_HPP
 #define SWAGGER_TYPES_LolEsportStreamNotificationsEsportsAPI_teams_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEsportStreamNotificationsEsportsAPI_teams {
-'    // 
+    // 
     std::string acronym;
     // 
     std::string guid;

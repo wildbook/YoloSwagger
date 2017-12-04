@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_GameQueuesLcdsMatchingThrottleConfig_HPP
 #define SWAGGER_TYPES_GameQueuesLcdsMatchingThrottleConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct GameQueuesLcdsMatchingThrottleConfig {
-'    // 
+    // 
     std::string cacheName;
     // 
     int64_t limit;

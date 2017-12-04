@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSummonerRMSMessage_HPP
 #define SWAGGER_TYPES_LolSummonerRMSMessage_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSummonerRMSMessage {
-'    // 
+    // 
     std::string payload;
     // 
     int64_t timestamp;

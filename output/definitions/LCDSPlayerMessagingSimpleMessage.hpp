@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LCDSPlayerMessagingSimpleMessage_HPP
 #define SWAGGER_TYPES_LCDSPlayerMessagingSimpleMessage_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LCDSPlayerMessagingSimpleMessage {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string bodyCode;

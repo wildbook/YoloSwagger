@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolLootLoginSimpleMessage.hpp"
 #include "LolLootLoginAllSummonerData.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootLoginDataPacket {
-'    // 
+    // 
     LolLootLoginAllSummonerData allSummonerData;
     // 
     std::vector<LolLootLoginSimpleMessage> simpleMessages;

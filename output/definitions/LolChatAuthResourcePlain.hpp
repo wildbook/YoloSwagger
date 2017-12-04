@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatAuthResourcePlain_HPP
 #define SWAGGER_TYPES_LolChatAuthResourcePlain_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatAuthResourcePlain {
-'    // 
+    // 
     nlohmann::json gasToken;
     // 
     std::string password;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RecofrienderContactPaginationResource_HPP
 #define SWAGGER_TYPES_RecofrienderContactPaginationResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RecofrienderContactPaginationResource {
-'    // 
+    // 
     uint64_t cached;
     // 
     uint64_t count;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PendingRosterMemberState_HPP
 #define SWAGGER_TYPES_PendingRosterMemberState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class PendingRosterMemberState {
-'    // 
+    // 
     FORCED_NOT_READY = 1,
     // 
     KICK = 4,

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChampSelectLegacyLoginSession_HPP
 #include <json.hpp>
 #include "LolChampSelectLegacyLoginSessionStates.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyLoginSession {
-'    // 
+    // 
     uint64_t accountId;
     // 
     bool connected;

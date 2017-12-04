@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BlockedPlayerResource_HPP
 #define SWAGGER_TYPES_BlockedPlayerResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct BlockedPlayerResource {
-'    // 
+    // 
     uint64_t id;
     // 
     std::string name;

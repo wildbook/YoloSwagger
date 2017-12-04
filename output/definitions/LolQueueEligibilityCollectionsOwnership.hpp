@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolQueueEligibilityCollectionsOwnership_HPP
 #include <json.hpp>
 #include "LolQueueEligibilityCollectionsRental.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolQueueEligibilityCollectionsOwnership {
-'    // 
+    // 
     bool freeToPlayReward;
     // 
     bool owned;

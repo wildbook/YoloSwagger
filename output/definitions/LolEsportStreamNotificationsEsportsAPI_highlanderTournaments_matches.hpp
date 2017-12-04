@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_matches_HPP
 #include <json.hpp>
 #include "LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_roster.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_matches {
-'    // 
+    // 
     std::string id;
     // 
     std::vector<LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_roster> input;

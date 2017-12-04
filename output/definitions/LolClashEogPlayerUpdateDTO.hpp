@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClashEogPlayerUpdateDTO_HPP
 #include <json.hpp>
 #include "ClashRewardDefinition.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashEogPlayerUpdateDTO {
-'    // 
+    // 
     std::vector<ClashRewardDefinition> earnedRewards;
     // 
     int64_t gameId;

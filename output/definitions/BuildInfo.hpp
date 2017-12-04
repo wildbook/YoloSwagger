@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BuildInfo_HPP
 #define SWAGGER_TYPES_BuildInfo_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct BuildInfo {
-'    // 
+    // 
     std::string branch;
     // 
     std::string branchFull;

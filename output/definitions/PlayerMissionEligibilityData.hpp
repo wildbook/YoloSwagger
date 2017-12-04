@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_PlayerMissionEligibilityData_HPP
 #include <json.hpp>
 #include "PlayerInventory.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerMissionEligibilityData {
-'    // 
+    // 
     int32_t level;
     // 
     PlayerInventory playerInventory;

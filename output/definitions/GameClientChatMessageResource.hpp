@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_GameClientChatMessageResource_HPP
 #define SWAGGER_TYPES_GameClientChatMessageResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct GameClientChatMessageResource {
-'    // 
+    // 
     std::string body;
     // 
     std::string fromSummonerName;

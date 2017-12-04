@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RegionLocale_HPP
 #define SWAGGER_TYPES_RegionLocale_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RegionLocale {
-'    // 
+    // 
     std::string locale;
     // 
     std::string region;

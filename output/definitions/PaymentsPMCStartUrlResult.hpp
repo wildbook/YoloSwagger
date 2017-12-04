@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PaymentsPMCStartUrlResult_HPP
 #define SWAGGER_TYPES_PaymentsPMCStartUrlResult_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PaymentsPMCStartUrlResult {
-'    // 
+    // 
     std::string createdAt;
     // 
     std::string id;

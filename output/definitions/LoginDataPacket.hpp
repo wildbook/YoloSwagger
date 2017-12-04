@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LoginDataPacket_HPP
 #define SWAGGER_TYPES_LoginDataPacket_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LoginDataPacket {
-'    // 
+    // 
     uint64_t timeUntilFirstWinOfDay;
   };
 

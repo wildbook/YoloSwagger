@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolChatChatLoginSummonerData.hpp"
 #include "LolChatChatPlayerStatSummaries.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatChatLoginDataPacket {
-'    // 
+    // 
     LolChatChatLoginSummonerData allSummonerData;
     // 
     LolChatChatPlayerStatSummaries playerStatSummaries;

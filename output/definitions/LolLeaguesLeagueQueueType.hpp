@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLeaguesLeagueQueueType_HPP
 #define SWAGGER_TYPES_LolLeaguesLeagueQueueType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLeaguesLeagueQueueType {
-'    // 
+    // 
     FLEXSR = 3,
     // 
     FLEXTT = 2,

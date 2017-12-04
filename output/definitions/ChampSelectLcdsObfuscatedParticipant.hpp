@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ChampSelectLcdsObfuscatedParticipant_HPP
 #define SWAGGER_TYPES_ChampSelectLcdsObfuscatedParticipant_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ChampSelectLcdsObfuscatedParticipant {
-'    // 
+    // 
     uint64_t gameUniqueId;
   };
 

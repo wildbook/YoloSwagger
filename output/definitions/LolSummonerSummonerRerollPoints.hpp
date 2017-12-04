@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSummonerSummonerRerollPoints_HPP
 #define SWAGGER_TYPES_LolSummonerSummonerRerollPoints_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSummonerSummonerRerollPoints {
-'    // 
+    // 
     uint64_t currentPoints;
     // 
     uint32_t maxRolls;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LeaguesLcdsRosterDTO_HPP
 #include <json.hpp>
 #include "LeaguesLcdsTeamMemberInfoDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LeaguesLcdsRosterDTO {
-'    // 
+    // 
     std::vector<LeaguesLcdsTeamMemberInfoDTO> memberList;
   };
 

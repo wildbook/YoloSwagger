@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashPlayerData_HPP
 #define SWAGGER_TYPES_LolClashPlayerData_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashPlayerData {
-'    // 
+    // 
     int32_t tickets;
   };
 

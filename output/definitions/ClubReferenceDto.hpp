@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClubReferenceDto_HPP
 #define SWAGGER_TYPES_ClubReferenceDto_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ClubReferenceDto {
-'    // 
+    // 
     std::string clubKey;
     // 
     std::string clubName;

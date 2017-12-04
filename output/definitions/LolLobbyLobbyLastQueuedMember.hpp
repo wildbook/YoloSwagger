@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyLastQueuedMember_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyLastQueuedMember_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyLastQueuedMember {
-'    // 
+    // 
     uint64_t id;
   };
 

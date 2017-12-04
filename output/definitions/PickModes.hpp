@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PickModes_HPP
 #define SWAGGER_TYPES_PickModes_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class PickModes {
-'    // 
+    // 
     DONE = 2,
     // 
     IN_PROGRESS = 1,

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerBehaviorLcdsForcedClientShutdown_HPP
 #define SWAGGER_TYPES_PlayerBehaviorLcdsForcedClientShutdown_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerBehaviorLcdsForcedClientShutdown {
-'    // 
+    // 
     std::string additionalInfo;
     // 
     std::string reason;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolGameQueuesPlatformConfigEnabledMap_HPP
 #define SWAGGER_TYPES_LolGameQueuesPlatformConfigEnabledMap_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameQueuesPlatformConfigEnabledMap {
-'    // 
+    // 
     int32_t gameMapId;
     // 
     int32_t minPlayers;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolReplaysRoflFileMetadata_HPP
 #define SWAGGER_TYPES_LolReplaysRoflFileMetadata_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolReplaysRoflFileMetadata {
-'    // 
+    // 
     uint32_t gameLength;
     // 
     std::string gameVersion;

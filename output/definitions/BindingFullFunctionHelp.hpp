@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "BindingFullArgumentHelp.hpp"
 #include "BindingFullTypeIdentifier.hpp"
-namespace test {
+namespace leagueapi {
   // Describes a function.
   struct BindingFullFunctionHelp {
-'    // 
+    // 
     std::vector<BindingFullArgumentHelp> arguments;
     // 
     std::string async;

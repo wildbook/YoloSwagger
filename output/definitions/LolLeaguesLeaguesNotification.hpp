@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolLeaguesLeaguesNotification_HPP
 #define SWAGGER_TYPES_LolLeaguesLeaguesNotification_HPP
 #include <json.hpp>
-#include "LolLeaguesLeagueNotificationItem.hpp"
 #include "LolLeaguesSeverity.hpp"
-namespace test {
+#include "LolLeaguesLeagueNotificationItem.hpp"
+namespace leagueapi {
   // 
   struct LolLeaguesLeaguesNotification {
-'    // 
+    // 
     bool acknowledgedByPlayer;
     // 
     LolLeaguesLeagueNotificationItem data;

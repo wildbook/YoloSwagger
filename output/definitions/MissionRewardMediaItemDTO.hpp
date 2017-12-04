@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MissionRewardMediaItemDTO_HPP
 #define SWAGGER_TYPES_MissionRewardMediaItemDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct MissionRewardMediaItemDTO {
-'    // 
+    // 
     std::string sound;
     // 
     std::string video;

@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolMissionsCollectionsChampionSkin.hpp"
 #include "LolMissionsCollectionsOwnership.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolMissionsCollectionsChampion {
-'    // 
+    // 
     bool freeToPlay;
     // 
     int32_t id;

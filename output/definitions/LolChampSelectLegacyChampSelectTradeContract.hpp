@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChampSelectLegacyChampSelectTradeContract_HPP
 #include <json.hpp>
 #include "LolChampSelectLegacyChampSelectTradeState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyChampSelectTradeContract {
-'    // 
+    // 
     int64_t cellId;
     // 
     int64_t id;

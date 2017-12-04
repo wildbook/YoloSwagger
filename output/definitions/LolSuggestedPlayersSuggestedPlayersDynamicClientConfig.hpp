@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersDynamicClientConfig_HPP
 #include <json.hpp>
 #include "LolSuggestedPlayersSuggestedPlayersConfig.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolSuggestedPlayersSuggestedPlayersDynamicClientConfig {
-'    // 
+    // 
     LolSuggestedPlayersSuggestedPlayersConfig SuggestedPlayers;
   };
 

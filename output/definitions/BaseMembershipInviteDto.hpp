@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BaseMembershipInviteDto_HPP
 #define SWAGGER_TYPES_BaseMembershipInviteDto_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct BaseMembershipInviteDto {
-'    // 
+    // 
     std::string clubKey;
     // 
     std::string clubName;

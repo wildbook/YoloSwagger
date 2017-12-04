@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyRiotMessagingServiceMessage_HPP
 #define SWAGGER_TYPES_LolLobbyRiotMessagingServiceMessage_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyRiotMessagingServiceMessage {
-'    // 
+    // 
     std::string payload;
     // 
     std::string resource;

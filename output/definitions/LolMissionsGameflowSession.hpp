@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolMissionsGameflowSession_HPP
 #include <json.hpp>
 #include "LolMissionsGameflowPhase.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolMissionsGameflowSession {
-'    // 
+    // 
     LolMissionsGameflowPhase phase;
   };
 

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolGameQueuesLoginSession_HPP
 #include <json.hpp>
 #include "LolGameQueuesLoginSessionStates.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameQueuesLoginSession {
-'    // 
+    // 
     uint64_t accountId;
     // 
     bool connected;

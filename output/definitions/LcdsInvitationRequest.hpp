@@ -4,10 +4,10 @@
 #include "LcdsInviter.hpp"
 #include "LcdsInvitationState.hpp"
 #include "LcdsPlayer.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsInvitationRequest {
-'    // 
+    // 
     std::string gameMetaData;
     // 
     std::string invitationId;

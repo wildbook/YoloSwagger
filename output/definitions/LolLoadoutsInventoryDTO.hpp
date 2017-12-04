@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoadoutsInventoryDTO_HPP
 #define SWAGGER_TYPES_LolLoadoutsInventoryDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoadoutsInventoryDTO {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string expires;

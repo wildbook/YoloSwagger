@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerLootDTO_HPP
 #define SWAGGER_TYPES_PlayerLootDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerLootDTO {
-'    // 
+    // 
     int32_t count;
     // 
     int64_t expiryTime;

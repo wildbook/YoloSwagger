@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_NetworkTestingDynamicConfig_HPP
 #define SWAGGER_TYPES_NetworkTestingDynamicConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct NetworkTestingDynamicConfig {
-'    // 
+    // 
     double IPv4OptionsProbability;
     // 
     uint8_t IPv4OptionsProbeCount;

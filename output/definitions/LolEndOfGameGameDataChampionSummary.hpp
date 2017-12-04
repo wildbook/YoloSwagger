@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEndOfGameGameDataChampionSummary_HPP
 #define SWAGGER_TYPES_LolEndOfGameGameDataChampionSummary_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameGameDataChampionSummary {
-'    // 
+    // 
     std::string alias;
     // 
     int32_t id;

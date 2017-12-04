@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_MatchmakingLcdsBustedLeaver_HPP
 #include <json.hpp>
 #include "MatchmakingLcdsSummoner.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct MatchmakingLcdsBustedLeaver {
-'    // 
+    // 
     std::string accessToken;
     // 
     uint64_t leaverPenaltyMillisRemaining;

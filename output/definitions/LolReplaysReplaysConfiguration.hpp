@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolReplaysReplaysConfiguration_HPP
 #define SWAGGER_TYPES_LolReplaysReplaysConfiguration_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolReplaysReplaysConfiguration {
-'    // 
+    // 
     std::string gameVersion;
     // 
     bool isLoggedIn;

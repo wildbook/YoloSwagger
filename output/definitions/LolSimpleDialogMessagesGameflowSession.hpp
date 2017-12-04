@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolSimpleDialogMessagesGameflowSession_HPP
 #include <json.hpp>
 #include "LolSimpleDialogMessagesGameflowPhase.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolSimpleDialogMessagesGameflowSession {
-'    // 
+    // 
     LolSimpleDialogMessagesGameflowPhase phase;
   };
 

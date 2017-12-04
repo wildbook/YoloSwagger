@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolGameflowGameflowAvailability_HPP
 #include <json.hpp>
 #include "LolGameflowGameflowAvailabilityState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameflowGameflowAvailability {
-'    // 
+    // 
     bool isAvailable;
     // 
     LolGameflowGameflowAvailabilityState state;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLeaguesLoginSession_HPP
 #include <json.hpp>
 #include "LolLeaguesLoginSessionStates.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLeaguesLoginSession {
-'    // 
+    // 
     uint64_t accountId;
     // 
     LolLeaguesLoginSessionStates state;

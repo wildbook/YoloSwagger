@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_EndOfGameLcdsRawStatDTO_HPP
 #define SWAGGER_TYPES_EndOfGameLcdsRawStatDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct EndOfGameLcdsRawStatDTO {
-'    // 
+    // 
     std::string statTypeName;
     // 
     int64_t value;

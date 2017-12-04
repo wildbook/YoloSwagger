@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_MatchmakingLcdsSearchingForMatchNotification_HPP
 #include <json.hpp>
 #include "MatchmakingLcdsQueueInfo.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct MatchmakingLcdsSearchingForMatchNotification {
-'    // 
+    // 
     std::vector<MatchmakingLcdsQueueInfo> joinedQueues;
     // 
     std::vector<nlohmann::json> playerJoinFailures;

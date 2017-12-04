@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolInventoryInventoryItem_HPP
 #include <json.hpp>
 #include "LolInventoryItemOwnershipType.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolInventoryInventoryItem {
-'    // 
+    // 
     std::string inventoryType;
     // 
     int32_t itemId;

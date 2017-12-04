@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEndOfGameChampionMasteryMini_HPP
 #define SWAGGER_TYPES_LolEndOfGameChampionMasteryMini_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameChampionMasteryMini {
-'    // 
+    // 
     int32_t championId;
     // 
     int64_t championLevel;

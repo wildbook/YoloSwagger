@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_RecentGames_HPP
 #include <json.hpp>
 #include "PlayerGameStats.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct RecentGames {
-'    // 
+    // 
     std::vector<PlayerGameStats> gameStatistics;
     // 
     uint64_t userId;

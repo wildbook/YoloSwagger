@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MembershipNoficationsDto_HPP
 #define SWAGGER_TYPES_MembershipNoficationsDto_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct MembershipNoficationsDto {
-'    // 
+    // 
     std::string action;
     // 
     std::string clubKey;

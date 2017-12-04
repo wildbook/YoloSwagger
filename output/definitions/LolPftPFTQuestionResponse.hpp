@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPftPFTQuestionResponse_HPP
 #define SWAGGER_TYPES_LolPftPFTQuestionResponse_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPftPFTQuestionResponse {
-'    // 
+    // 
     uint64_t questionId;
     // 
     nlohmann::json responseData;

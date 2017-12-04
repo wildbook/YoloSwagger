@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPlayerBehaviorReformCard_HPP
 #define SWAGGER_TYPES_LolPlayerBehaviorReformCard_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPlayerBehaviorReformCard {
-'    // 
+    // 
     std::vector<std::string> chatLogs;
     // 
     std::vector<uint64_t> gameIds;

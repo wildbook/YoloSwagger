@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LcdsRemovalReason_HPP
 #define SWAGGER_TYPES_LcdsRemovalReason_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LcdsRemovalReason {
-'    // 
+    // 
     DESTROYED = 1,
     // 
     KICKED = 0,

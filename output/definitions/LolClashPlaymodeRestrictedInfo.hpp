@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClashPlaymodeRestrictedInfo_HPP
 #include <json.hpp>
 #include "LolClashPresenceState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashPlaymodeRestrictedInfo {
-'    // 
+    // 
     bool isRestricted;
     // 
     LolClashPresenceState presenceState;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_HighlightsConfig_HPP
 #define SWAGGER_TYPES_HighlightsConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct HighlightsConfig {
-'    // 
+    // 
     std::string invalidHighlightNameCharacters;
     // 
     bool isHighlightsEnabled;

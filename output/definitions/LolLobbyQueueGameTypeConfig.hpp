@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyQueueGameTypeConfig_HPP
 #define SWAGGER_TYPES_LolLobbyQueueGameTypeConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyQueueGameTypeConfig {
-'    // 
+    // 
     bool advancedLearningQuests;
     // 
     bool allowTrades;

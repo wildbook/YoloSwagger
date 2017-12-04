@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolAccountVerificationSendTokenRequest_HPP
 #define SWAGGER_TYPES_LolAccountVerificationSendTokenRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolAccountVerificationSendTokenRequest {
-'    // 
+    // 
     std::string device;
     // 
     std::string locale;

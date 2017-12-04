@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LcdsInviteeState_HPP
 #define SWAGGER_TYPES_LcdsInviteeState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LcdsInviteeState {
-'    // 
+    // 
     ACCEPTED = 3,
     // 
     ACCEPT_FAILED = 4,

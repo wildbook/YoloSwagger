@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_LolClashQueue_HPP
 #define SWAGGER_TYPES_LolClashQueue_HPP
 #include <json.hpp>
-#include "LolClashQueueGameCategory.hpp"
-#include "LolClashQueueReward.hpp"
-#include "LolClashQueueGameTypeConfig.hpp"
 #include "LolClashQueueAvailability.hpp"
-namespace test {
+#include "LolClashQueueGameTypeConfig.hpp"
+#include "LolClashQueueReward.hpp"
+#include "LolClashQueueGameCategory.hpp"
+namespace leagueapi {
   // 
   struct LolClashQueue {
-'    // 
+    // 
     bool areFreeChampionsAllowed;
     // 
     LolClashQueueGameCategory category;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyPremadePartyDto_HPP
 #include <json.hpp>
 #include "LolLobbyPremadeMemberDto.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyPremadePartyDto {
-'    // 
+    // 
     std::string partyId;
     // 
     std::vector<LolLobbyPremadeMemberDto> players;

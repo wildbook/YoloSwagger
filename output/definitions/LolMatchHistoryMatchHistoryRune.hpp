@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryRune_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryRune_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryRune {
-'    // 
+    // 
     uint16_t rank;
     // 
     uint16_t runeId;

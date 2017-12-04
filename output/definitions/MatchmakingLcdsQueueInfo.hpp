@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MatchmakingLcdsQueueInfo_HPP
 #define SWAGGER_TYPES_MatchmakingLcdsQueueInfo_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct MatchmakingLcdsQueueInfo {
-'    // 
+    // 
     int32_t queueId;
     // 
     uint64_t waitTime;

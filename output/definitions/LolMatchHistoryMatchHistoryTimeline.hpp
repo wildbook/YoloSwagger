@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryTimeline_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryTimeline_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryTimeline {
-'    // 
+    // 
     std::map<std::string, double> creepsPerMinDeltas;
     // 
     std::map<std::string, double> csDiffPerMinDeltas;

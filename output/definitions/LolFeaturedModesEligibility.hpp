@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolFeaturedModesEligibility_HPP
 #define SWAGGER_TYPES_LolFeaturedModesEligibility_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolFeaturedModesEligibility {
-'    // 
+    // 
     bool eligible;
     // 
     int32_t queueId;

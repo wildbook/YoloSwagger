@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LcdsFailedJoinPlayer_HPP
 #include <json.hpp>
 #include "LcdsSummoner.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsFailedJoinPlayer {
-'    // 
+    // 
     std::string reasonFailed;
     // 
     LcdsSummoner summoner;

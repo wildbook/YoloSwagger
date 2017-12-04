@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolInventoryLoginSession_HPP
 #include <json.hpp>
 #include "LolInventoryLoginSessionStates.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolInventoryLoginSession {
-'    // 
+    // 
     uint64_t accountId;
     // 
     nlohmann::json gasToken;

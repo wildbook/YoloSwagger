@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashRosterPhaseInfo_HPP
 #define SWAGGER_TYPES_LolClashRosterPhaseInfo_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashRosterPhaseInfo {
-'    // 
+    // 
     bool isBracketComplete;
     // 
     int32_t period;

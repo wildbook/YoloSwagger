@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RsoAuthIdToken_HPP
 #define SWAGGER_TYPES_RsoAuthIdToken_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RsoAuthIdToken {
-'    // 
+    // 
     uint64_t expiry;
     // 
     std::string token;

@@ -1,16 +1,16 @@
 #ifndef SWAGGER_TYPES_PlayerMembershipDto_HPP
 #define SWAGGER_TYPES_PlayerMembershipDto_HPP
 #include <json.hpp>
-#include "PlayerInfoDto.hpp"
 #include "ClubsServerConfigDto.hpp"
-#include "PlayerMembershipPreferencesDto.hpp"
 #include "ClubReferenceDto.hpp"
-#include "MembershipInviteDto.hpp"
+#include "PlayerMembershipPreferencesDto.hpp"
 #include "ClubDto.hpp"
-namespace test {
+#include "MembershipInviteDto.hpp"
+#include "PlayerInfoDto.hpp"
+namespace leagueapi {
   // 
   struct PlayerMembershipDto {
-'    // 
+    // 
     std::vector<ClubDto> activeClubs;
     // 
     ClubsServerConfigDto clubsServerConfig;

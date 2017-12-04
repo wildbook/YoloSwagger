@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyDto_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyDto_HPP
 #include <json.hpp>
-#include "LolLobbyLobbyParticipantDto.hpp"
-#include "LolLobbyEligibilityRestriction.hpp"
 #include "LolLobbyLobbyGameConfigDto.hpp"
 #include "LolLobbyLobbyInvitationDto.hpp"
-namespace test {
+#include "LolLobbyLobbyParticipantDto.hpp"
+#include "LolLobbyEligibilityRestriction.hpp"
+namespace leagueapi {
   // 
   struct LolLobbyLobbyDto {
-'    // 
+    // 
     bool canStartActivity;
     // 
     std::string chatRoomId;

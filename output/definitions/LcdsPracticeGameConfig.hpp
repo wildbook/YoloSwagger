@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LcdsPracticeGameConfig_HPP
 #include <json.hpp>
 #include "LcdsGameMap.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsPracticeGameConfig {
-'    // 
+    // 
     std::string allowSpectators;
     // 
     LcdsGameMap gameMap;

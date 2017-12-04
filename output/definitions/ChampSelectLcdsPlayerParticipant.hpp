@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ChampSelectLcdsPlayerParticipant_HPP
 #define SWAGGER_TYPES_ChampSelectLcdsPlayerParticipant_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ChampSelectLcdsPlayerParticipant {
-'    // 
+    // 
     int32_t pickMode;
     // 
     int32_t pickTurn;

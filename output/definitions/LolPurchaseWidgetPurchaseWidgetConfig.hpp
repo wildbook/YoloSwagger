@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPurchaseWidgetPurchaseWidgetConfig_HPP
 #define SWAGGER_TYPES_LolPurchaseWidgetPurchaseWidgetConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPurchaseWidgetPurchaseWidgetConfig {
-'    // 
+    // 
     bool enabled;
     // 
     bool purchaseDisclaimerEnabled;

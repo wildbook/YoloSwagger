@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPersonalizedOffersLoginSession_HPP
 #include <json.hpp>
 #include "LolPersonalizedOffersLoginSessionStates.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPersonalizedOffersLoginSession {
-'    // 
+    // 
     uint64_t accountId;
     // 
     nlohmann::json gasToken;

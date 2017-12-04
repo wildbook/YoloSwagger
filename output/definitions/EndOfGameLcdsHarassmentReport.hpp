@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_EndOfGameLcdsHarassmentReport_HPP
 #define SWAGGER_TYPES_EndOfGameLcdsHarassmentReport_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct EndOfGameLcdsHarassmentReport {
-'    // 
+    // 
     std::string comment;
     // 
     uint64_t gameId;

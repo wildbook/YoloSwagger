@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPftPFTEndOfGameTeam_HPP
 #include <json.hpp>
 #include "LolPftPFTEndOfGamePlayer.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPftPFTEndOfGameTeam {
-'    // 
+    // 
     std::vector<int32_t> championBans;
     // 
     std::string fullId;

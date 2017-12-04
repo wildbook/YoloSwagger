@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolSummonerRMSXpAndLevelMessage_HPP
 #include <json.hpp>
 #include "LolSummonerRMSLevelField.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolSummonerRMSXpAndLevelMessage {
-'    // 
+    // 
     LolSummonerRMSLevelField level;
     // 
     nlohmann::json xp;

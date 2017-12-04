@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyNotification_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyNotification {
-'    // 
+    // 
     std::string notificationId;
     // 
     std::string notificationReason;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PatcherComponentResourceType_HPP
 #define SWAGGER_TYPES_PatcherComponentResourceType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class PatcherComponentResourceType {
-'    // 
+    // 
     project = 0,
     // 
     solution = 1,

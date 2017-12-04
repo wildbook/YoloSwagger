@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatSanitizerStatus_HPP
 #define SWAGGER_TYPES_LolChatSanitizerStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatSanitizerStatus {
-'    // 
+    // 
     std::string locale;
     // 
     std::string platformID;

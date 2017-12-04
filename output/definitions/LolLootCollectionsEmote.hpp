@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLootCollectionsEmote_HPP
 #include <json.hpp>
 #include "LolLootInventoryOwnership.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootCollectionsEmote {
-'    // 
+    // 
     int64_t itemId;
     // 
     LolLootInventoryOwnership ownershipType;

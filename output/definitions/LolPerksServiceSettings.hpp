@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksServiceSettings_HPP
 #define SWAGGER_TYPES_LolPerksServiceSettings_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksServiceSettings {
-'    // 
+    // 
     bool serverSideStorageAvailable;
   };
 

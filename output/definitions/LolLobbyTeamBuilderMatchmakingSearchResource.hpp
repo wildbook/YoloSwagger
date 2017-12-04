@@ -1,15 +1,15 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingSearchResource_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingSearchResource_HPP
 #include <json.hpp>
-#include "LolLobbyTeamBuilderMatchmakingSearchErrorResource.hpp"
-#include "LolLobbyTeamBuilderMatchmakingLowPriorityData.hpp"
-#include "LolLobbyTeamBuilderMatchmakingReadyCheckResource.hpp"
 #include "LolLobbyTeamBuilderMatchmakingDodgeData.hpp"
+#include "LolLobbyTeamBuilderMatchmakingSearchErrorResource.hpp"
+#include "LolLobbyTeamBuilderMatchmakingReadyCheckResource.hpp"
+#include "LolLobbyTeamBuilderMatchmakingLowPriorityData.hpp"
 #include "LolLobbyTeamBuilderMatchmakingSearchState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderMatchmakingSearchResource {
-'    // 
+    // 
     LolLobbyTeamBuilderMatchmakingDodgeData dodgeData;
     // 
     std::vector<LolLobbyTeamBuilderMatchmakingSearchErrorResource> errors;

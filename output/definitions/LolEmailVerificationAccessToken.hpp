@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEmailVerificationAccessToken_HPP
 #define SWAGGER_TYPES_LolEmailVerificationAccessToken_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEmailVerificationAccessToken {
-'    // 
+    // 
     uint64_t expiry;
     // 
     std::string token;

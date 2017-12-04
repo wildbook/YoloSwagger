@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashClashState_HPP
 #define SWAGGER_TYPES_LolClashClashState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolClashClashState {
-'    // 
+    // 
     DarkDisabled = 0,
     // 
     DarkEnabled = 1,

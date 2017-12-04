@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_TencentQTNotification_HPP
 #define SWAGGER_TYPES_TencentQTNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct TencentQTNotification {
-'    // 
+    // 
     nlohmann::json data;
     // 
     std::string state;

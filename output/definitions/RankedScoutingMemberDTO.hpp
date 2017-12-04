@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_RankedScoutingMemberDTO_HPP
 #include <json.hpp>
 #include "RankedScoutingTopChampionDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct RankedScoutingMemberDTO {
-'    // 
+    // 
     std::vector<RankedScoutingTopChampionDTO> championScoutingData;
     // 
     uint64_t playerId;

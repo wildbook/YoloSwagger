@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolGameflowGameflowAvailabilityState_HPP
 #define SWAGGER_TYPES_LolGameflowGameflowAvailabilityState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolGameflowGameflowAvailabilityState {
-'    // 
+    // 
     Available = 0,
     // 
     Configuration = 5,

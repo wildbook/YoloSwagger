@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLeaguesQueue_HPP
 #define SWAGGER_TYPES_LolLeaguesQueue_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLeaguesQueue {
-'    // 
+    // 
     nlohmann::json type;
   };
 

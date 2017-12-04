@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerParticipant_HPP
 #define SWAGGER_TYPES_PlayerParticipant_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerParticipant {
-'    // 
+    // 
     uint64_t summonerId;
   };
 

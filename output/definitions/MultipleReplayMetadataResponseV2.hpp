@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_MultipleReplayMetadataResponseV2_HPP
 #include <json.hpp>
 #include "MultipleReplayMetadataResponseItemV2.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct MultipleReplayMetadataResponseV2 {
-'    // 
+    // 
     std::vector<MultipleReplayMetadataResponseItemV2> metadataResponses;
   };
 

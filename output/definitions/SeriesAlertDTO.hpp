@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_SeriesAlertDTO_HPP
 #define SWAGGER_TYPES_SeriesAlertDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct SeriesAlertDTO {
-'    // 
+    // 
     int64_t alertTime;
     // 
     std::string description;

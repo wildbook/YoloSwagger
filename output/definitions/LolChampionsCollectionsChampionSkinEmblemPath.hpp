@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampionsCollectionsChampionSkinEmblemPath_HPP
 #define SWAGGER_TYPES_LolChampionsCollectionsChampionSkinEmblemPath_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampionsCollectionsChampionSkinEmblemPath {
-'    // 
+    // 
     std::string large;
     // 
     std::string small;

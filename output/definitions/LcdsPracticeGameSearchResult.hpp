@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LcdsPracticeGameSearchResult_HPP
 #define SWAGGER_TYPES_LcdsPracticeGameSearchResult_HPP
 #include <json.hpp>
-#include "LcdsPlayerParticipant.hpp"
 #include "LcdsGameMap.hpp"
-namespace test {
+#include "LcdsPlayerParticipant.hpp"
+namespace leagueapi {
   // 
   struct LcdsPracticeGameSearchResult {
-'    // 
+    // 
     std::string allowSpectators;
     // 
     LcdsGameMap gameMap;

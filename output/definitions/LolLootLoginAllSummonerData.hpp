@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLootLoginAllSummonerData_HPP
 #include <json.hpp>
 #include "LolLootLoginSummonerLevelAndPoints.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootLoginAllSummonerData {
-'    // 
+    // 
     LolLootLoginSummonerLevelAndPoints summonerLevelAndPoints;
   };
 

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_ShutdownNotification_HPP
 #include <json.hpp>
 #include "ShutdownReason.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ShutdownNotification {
-'    // 
+    // 
     std::string additionalInfo;
     // 
     float countdown;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatAuthResourceRsoAccessToken_HPP
 #define SWAGGER_TYPES_LolChatAuthResourceRsoAccessToken_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatAuthResourceRsoAccessToken {
-'    // 
+    // 
     uint64_t expiry;
     // 
     std::vector<std::string> scopes;

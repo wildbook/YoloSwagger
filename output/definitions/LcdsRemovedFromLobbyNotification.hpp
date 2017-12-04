@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LcdsRemovedFromLobbyNotification_HPP
 #include <json.hpp>
 #include "LcdsRemovalReason.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsRemovedFromLobbyNotification {
-'    // 
+    // 
     LcdsRemovalReason removalReason;
   };
 

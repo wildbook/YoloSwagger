@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolBannersClashV2FlagRewardSpec_HPP
 #define SWAGGER_TYPES_LolBannersClashV2FlagRewardSpec_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolBannersClashV2FlagRewardSpec {
-'    // 
+    // 
     std::string level;
     // 
     std::string seasonId;

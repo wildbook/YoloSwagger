@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPftPFTEvent_HPP
 #define SWAGGER_TYPES_LolPftPFTEvent_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPftPFTEvent {
-'    // 
+    // 
     std::string action;
     // 
     std::vector<nlohmann::json> data;

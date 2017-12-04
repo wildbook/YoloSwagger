@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolInventoryCacheEntry_HPP
 #define SWAGGER_TYPES_LolInventoryCacheEntry_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolInventoryCacheEntry {
-'    // 
+    // 
     uint64_t expirationMS;
     // 
     std::string signedInventoryJwt;

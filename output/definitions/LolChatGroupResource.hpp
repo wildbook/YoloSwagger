@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatGroupResource_HPP
 #define SWAGGER_TYPES_LolChatGroupResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatGroupResource {
-'    // 
+    // 
     bool collapsed;
     // 
     uint32_t id;

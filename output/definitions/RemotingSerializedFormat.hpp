@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RemotingSerializedFormat_HPP
 #define SWAGGER_TYPES_RemotingSerializedFormat_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // Serialization format for remoting requests and results.
   enum class RemotingSerializedFormat {
-'    // 
+    // 
     JSON = 1,
     // 
     MsgPack = 3,

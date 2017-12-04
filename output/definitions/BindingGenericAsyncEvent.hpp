@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BindingGenericAsyncEvent_HPP
 #define SWAGGER_TYPES_BindingGenericAsyncEvent_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // Represents generic data for an asynchronous event.
   struct BindingGenericAsyncEvent {
-'    // Asynchronous operation token
+    // Asynchronous operation token
     uint32_t asyncToken;
     // Event data
     nlohmann::json data;

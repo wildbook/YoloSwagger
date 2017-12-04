@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_MetricMetadataNotify_HPP
 #define SWAGGER_TYPES_MetricMetadataNotify_HPP
 #include <json.hpp>
-#include "MetricMetadataPagerDutyNotification.hpp"
 #include "MetricMetadataHipchatNotification.hpp"
-namespace test {
+#include "MetricMetadataPagerDutyNotification.hpp"
+namespace leagueapi {
   // 
   struct MetricMetadataNotify {
-'    // 
+    // 
     std::vector<std::string> email;
     // 
     std::vector<MetricMetadataHipchatNotification> hipchat;

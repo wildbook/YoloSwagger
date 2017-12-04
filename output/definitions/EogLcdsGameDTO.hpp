@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_EogLcdsGameDTO_HPP
 #define SWAGGER_TYPES_EogLcdsGameDTO_HPP
 #include <json.hpp>
-#include "BannedChampion.hpp"
 #include "PlayerParticipant.hpp"
-namespace test {
+#include "BannedChampion.hpp"
+namespace leagueapi {
   // 
   struct EogLcdsGameDTO {
-'    // 
+    // 
     std::vector<BannedChampion> bannedChampions;
     // 
     std::string gameState;

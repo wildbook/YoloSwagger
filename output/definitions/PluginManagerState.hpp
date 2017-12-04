@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PluginManagerState_HPP
 #define SWAGGER_TYPES_PluginManagerState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class PluginManagerState {
-'    // 
+    // 
     NotReady = 0,
     // 
     PluginsInitialized = 1,

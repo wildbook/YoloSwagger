@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LeaguesLcdsQueueType_HPP
 #define SWAGGER_TYPES_LeaguesLcdsQueueType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LeaguesLcdsQueueType {
-'    // 
+    // 
     RANKED_FLEX_SR = 2,
     // 
     RANKED_FLEX_TT = 3,

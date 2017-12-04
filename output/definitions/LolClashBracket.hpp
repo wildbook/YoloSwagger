@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "BracketRoster.hpp"
 #include "BracketMatch.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashBracket {
-'    // 
+    // 
     int32_t currentLoserRound;
     // 
     int32_t currentRound;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolCollectionsCollectionsRune_HPP
 #define SWAGGER_TYPES_LolCollectionsCollectionsRune_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionsRune {
-'    // 
+    // 
     uint32_t runeId;
     // 
     uint32_t runeSlotId;

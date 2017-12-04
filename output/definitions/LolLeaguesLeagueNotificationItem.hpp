@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolLeaguesLeagueNotificationItem_HPP
 #define SWAGGER_TYPES_LolLeaguesLeagueNotificationItem_HPP
 #include <json.hpp>
-#include "LolLeaguesLeagueEmblem.hpp"
 #include "LolLeaguesMiniseries.hpp"
-namespace test {
+#include "LolLeaguesLeagueEmblem.hpp"
+namespace leagueapi {
   // 
   struct LolLeaguesLeagueNotificationItem {
-'    // 
+    // 
     int64_t demotionWarning;
     // 
     bool displayDecayWarning;

@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "ChampSelectLcdsPlayerChampionSelectionDTO.hpp"
 #include "BannedChampion.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ChampSelectLcdsGameDTO {
-'    // 
+    // 
     std::vector<BannedChampion> bannedChampions;
     // 
     std::vector<std::string> gameMutators;

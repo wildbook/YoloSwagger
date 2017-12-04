@@ -4,10 +4,10 @@
 #include "SummonerLevel.hpp"
 #include "SummonerLevelAndPoints.hpp"
 #include "PrivateSummonerDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct AllSummonerData {
-'    // 
+    // 
     PrivateSummonerDTO summoner;
     // 
     SummonerLevel summonerLevel;

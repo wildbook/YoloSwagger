@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LolMatchmakingMatchmakingReadyCheckResource_HPP
 #define SWAGGER_TYPES_LolMatchmakingMatchmakingReadyCheckResource_HPP
 #include <json.hpp>
+#include "LolMatchmakingMatchmakingReadyCheckState.hpp"
 #include "LolMatchmakingMatchmakingDodgeWarning.hpp"
 #include "LolMatchmakingMatchmakingReadyCheckResponse.hpp"
-#include "LolMatchmakingMatchmakingReadyCheckState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchmakingMatchmakingReadyCheckResource {
-'    // 
+    // 
     std::vector<uint64_t> declinerIds;
     // 
     LolMatchmakingMatchmakingDodgeWarning dodgeWarning;

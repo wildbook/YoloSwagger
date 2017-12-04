@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolLootPlayerLoot_HPP
 #define SWAGGER_TYPES_LolLootPlayerLoot_HPP
 #include <json.hpp>
-#include "LolLootRedeemableStatus.hpp"
 #include "LolLootItemOwnershipStatus.hpp"
-namespace test {
+#include "LolLootRedeemableStatus.hpp"
+namespace leagueapi {
   // 
   struct LolLootPlayerLoot {
-'    // 
+    // 
     std::string asset;
     // 
     int32_t count;

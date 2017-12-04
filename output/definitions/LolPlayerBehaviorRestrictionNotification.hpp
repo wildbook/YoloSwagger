@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPlayerBehaviorRestrictionNotification_HPP
 #include <json.hpp>
 #include "LolPlayerBehaviorNotificationSource.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPlayerBehaviorRestrictionNotification {
-'    // 
+    // 
     bool displayReformCard;
     // 
     int64_t gamesRemaining;

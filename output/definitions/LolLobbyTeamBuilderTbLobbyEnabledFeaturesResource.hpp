@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource {
-'    // 
+    // 
     std::vector<std::string> enabledFeatures;
   };
 

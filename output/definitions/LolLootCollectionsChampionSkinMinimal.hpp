@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLootCollectionsChampionSkinMinimal_HPP
 #include <json.hpp>
 #include "LolLootCollectionsOwnership.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootCollectionsChampionSkinMinimal {
-'    // 
+    // 
     int32_t championId;
     // 
     int32_t id;

@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LootLcdsRecipeClientDTO_HPP
 #define SWAGGER_TYPES_LootLcdsRecipeClientDTO_HPP
 #include <json.hpp>
-#include "LootLcdsRecipeSlotClientDTO.hpp"
-#include "LootLcdsRecipeOutputDTO.hpp"
 #include "LootLcdsRecipeMetadata.hpp"
-namespace test {
+#include "LootLcdsRecipeOutputDTO.hpp"
+#include "LootLcdsRecipeSlotClientDTO.hpp"
+namespace leagueapi {
   // 
   struct LootLcdsRecipeClientDTO {
-'    // 
+    // 
     std::string crafterName;
     // 
     std::string displayCategories;

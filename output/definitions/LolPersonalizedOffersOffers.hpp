@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPersonalizedOffersOffers_HPP
 #include <json.hpp>
 #include "LolPersonalizedOffersOffer.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPersonalizedOffersOffers {
-'    // 
+    // 
     std::vector<LolPersonalizedOffersOffer> offers;
   };
 

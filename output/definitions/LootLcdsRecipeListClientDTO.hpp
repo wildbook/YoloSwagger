@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LootLcdsRecipeListClientDTO_HPP
 #include <json.hpp>
 #include "LootLcdsRecipeClientDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LootLcdsRecipeListClientDTO {
-'    // 
+    // 
     int64_t lastUpdate;
     // 
     std::vector<LootLcdsRecipeClientDTO> recipes;

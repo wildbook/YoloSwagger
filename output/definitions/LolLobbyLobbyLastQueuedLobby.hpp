@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyLobbyLastQueuedLobby_HPP
 #include <json.hpp>
 #include "LolLobbyLobbyLastQueuedMember.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyLastQueuedLobby {
-'    // 
+    // 
     bool canPlayAgain;
     // 
     std::vector<LolLobbyLobbyLastQueuedMember> members;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LootLcdsRecipeMetadata_HPP
 #include <json.hpp>
 #include "LootLcdsLootDescriptionDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LootLcdsRecipeMetadata {
-'    // 
+    // 
     std::vector<LootLcdsLootDescriptionDTO> bonusDescriptions;
     // 
     std::vector<LootLcdsLootDescriptionDTO> guaranteedDescriptions;

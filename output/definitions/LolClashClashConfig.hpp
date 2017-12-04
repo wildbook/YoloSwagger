@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolClashClashVisibility.hpp"
 #include "LolClashClashState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashClashConfig {
-'    // 
+    // 
     std::string DarkModeEntitlement;
     // 
     LolClashClashState EnabledState;

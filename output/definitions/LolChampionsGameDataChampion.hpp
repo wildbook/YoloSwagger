@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolChampionsGameDataChampionSkin.hpp"
 #include "LolChampionsGameDataChampionSpell.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampionsGameDataChampion {
-'    // 
+    // 
     std::string alias;
     // 
     std::string banVoPath;

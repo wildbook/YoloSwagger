@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_PluginDescriptionResource_HPP
 #include <json.hpp>
 #include "PluginMetadataResource.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PluginDescriptionResource {
-'    // 
+    // 
     std::string name;
     // 
     std::map<std::string, std::string> pluginDependencies;

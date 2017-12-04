@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPersonalizedOffersOffer_HPP
 #define SWAGGER_TYPES_LolPersonalizedOffersOffer_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPersonalizedOffersOffer {
-'    // 
+    // 
     int64_t discountPrice;
     // 
     std::string expirationDate;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_HighlightsSettingsData_HPP
 #define SWAGGER_TYPES_HighlightsSettingsData_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct HighlightsSettingsData {
-'    // 
+    // 
     std::string highlights-folder-path;
   };
 

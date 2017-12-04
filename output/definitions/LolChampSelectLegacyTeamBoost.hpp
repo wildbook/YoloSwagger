@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampSelectLegacyTeamBoost_HPP
 #define SWAGGER_TYPES_LolChampSelectLegacyTeamBoost_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyTeamBoost {
-'    // 
+    // 
     std::vector<int64_t> availableSkins;
     // 
     int64_t ipReward;

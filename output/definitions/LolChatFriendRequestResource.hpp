@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChatFriendRequestResource_HPP
 #include <json.hpp>
 #include "LolChatFriendRequestDirection.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatFriendRequestResource {
-'    // 
+    // 
     LolChatFriendRequestDirection direction;
     // 
     uint64_t id;

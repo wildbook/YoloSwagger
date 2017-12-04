@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MatchmakingLcdsMatchMakerParams_HPP
 #define SWAGGER_TYPES_MatchmakingLcdsMatchMakerParams_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct MatchmakingLcdsMatchMakerParams {
-'    // 
+    // 
     std::string botDifficulty;
     // 
     std::string invitationId;

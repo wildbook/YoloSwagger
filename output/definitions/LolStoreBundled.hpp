@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolStoreBundledItem.hpp"
 #include "LolStoreBundledItemCost.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolStoreBundled {
-'    // 
+    // 
     bool flexible;
     // 
     std::vector<LolStoreBundledItem> items;

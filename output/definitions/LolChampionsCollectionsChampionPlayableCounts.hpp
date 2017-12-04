@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampionsCollectionsChampionPlayableCounts_HPP
 #define SWAGGER_TYPES_LolChampionsCollectionsChampionPlayableCounts_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampionsCollectionsChampionPlayableCounts {
-'    // 
+    // 
     uint32_t championsFreeToPlay;
     // 
     uint32_t championsFreeToPlayReward;

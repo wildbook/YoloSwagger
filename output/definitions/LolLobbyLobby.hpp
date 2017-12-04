@@ -2,14 +2,14 @@
 #define SWAGGER_TYPES_LolLobbyLobby_HPP
 #include <json.hpp>
 #include "LolLobbyLobbyMember.hpp"
-#include "LolLobbyLobbyRemovedFromGameReason.hpp"
-#include "LolLobbyQueueAvailability.hpp"
-#include "LolLobbyLobbyCustomGameLobby.hpp"
 #include "LolLobbyLobbyInvitation.hpp"
-namespace test {
+#include "LolLobbyLobbyCustomGameLobby.hpp"
+#include "LolLobbyQueueAvailability.hpp"
+#include "LolLobbyLobbyRemovedFromGameReason.hpp"
+namespace leagueapi {
   // 
   struct LolLobbyLobby {
-'    // 
+    // 
     std::vector<int32_t> allowablePremadeSizes;
     // 
     bool autoFillEligible;

@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LolClashRosterPlayerNotification_HPP
 #define SWAGGER_TYPES_LolClashRosterPlayerNotification_HPP
 #include <json.hpp>
+#include "RosterDTO.hpp"
 #include "LolClashRosterNotifyReason.hpp"
 #include "PlayerDTO.hpp"
-#include "RosterDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashRosterPlayerNotification {
-'    // 
+    // 
     LolClashRosterNotifyReason notifyReason;
     // 
     PlayerDTO player;

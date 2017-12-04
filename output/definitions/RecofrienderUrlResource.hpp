@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RecofrienderUrlResource_HPP
 #define SWAGGER_TYPES_RecofrienderUrlResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RecofrienderUrlResource {
-'    // 
+    // 
     std::string url;
   };
 

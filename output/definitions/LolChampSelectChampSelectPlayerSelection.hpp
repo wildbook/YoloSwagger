@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampSelectChampSelectPlayerSelection_HPP
 #define SWAGGER_TYPES_LolChampSelectChampSelectPlayerSelection_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectChampSelectPlayerSelection {
-'    // 
+    // 
     std::string assignedPosition;
     // 
     int64_t cellId;

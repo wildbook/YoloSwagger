@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_MatchmakingLcdsGameDTO_HPP
 #include <json.hpp>
 #include "MatchmakingLcdsPlayerParticipant.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct MatchmakingLcdsGameDTO {
-'    // 
+    // 
     std::string gameState;
     // 
     std::string statusOfParticipants;

@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_PatcherProductState_HPP
 #define SWAGGER_TYPES_PatcherProductState_HPP
 #include <json.hpp>
-#include "PatcherComponentStateAction.hpp"
 #include "PatcherComponentState.hpp"
-namespace test {
+#include "PatcherComponentStateAction.hpp"
+namespace leagueapi {
   // 
   struct PatcherProductState {
-'    // 
+    // 
     PatcherComponentStateAction action;
     // 
     std::vector<PatcherComponentState> components;

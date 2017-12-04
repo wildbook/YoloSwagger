@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerInfoDto_HPP
 #define SWAGGER_TYPES_PlayerInfoDto_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerInfoDto {
-'    // 
+    // 
     uint64_t currentAccountId;
     // 
     std::string currentPlatformId;

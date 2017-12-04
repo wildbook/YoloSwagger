@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEmailVerificationEmailVerificationSession_HPP
 #define SWAGGER_TYPES_LolEmailVerificationEmailVerificationSession_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEmailVerificationEmailVerificationSession {
-'    // 
+    // 
     std::string email;
     // 
     bool emailVerified;

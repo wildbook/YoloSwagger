@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolStoreServiceWallet_HPP
 #include <json.hpp>
 #include "LolStoreServiceBalance.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolStoreServiceWallet {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::vector<LolStoreServiceBalance> balances;

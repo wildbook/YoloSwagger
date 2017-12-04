@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_KickoutMessage_HPP
 #define SWAGGER_TYPES_KickoutMessage_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct KickoutMessage {
-'    // 
+    // 
     std::string message;
   };
 

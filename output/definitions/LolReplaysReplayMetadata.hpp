@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolReplaysReplayMetadata_HPP
 #include <json.hpp>
 #include "LolReplaysMetadataState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolReplaysReplayMetadata {
-'    // 
+    // 
     uint32_t downloadProgress;
     // 
     uint64_t gameId;

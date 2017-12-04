@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_CollectionsLcdsChampionSkinDTO_HPP
 #define SWAGGER_TYPES_CollectionsLcdsChampionSkinDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct CollectionsLcdsChampionSkinDTO {
-'    // 
+    // 
     int32_t championId;
     // 
     uint64_t endDate;

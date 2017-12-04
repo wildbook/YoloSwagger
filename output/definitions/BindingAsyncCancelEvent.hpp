@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BindingAsyncCancelEvent_HPP
 #define SWAGGER_TYPES_BindingAsyncCancelEvent_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // Represents a cancelled asynchronous operation.
   struct BindingAsyncCancelEvent {
-'    // Asynchronous operation token
+    // Asynchronous operation token
     uint32_t asyncToken;
   };
 

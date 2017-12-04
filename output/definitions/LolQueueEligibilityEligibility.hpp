@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolQueueEligibilityEligibility_HPP
 #include <json.hpp>
 #include "LolQueueEligibilityEligibilityRestriction.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolQueueEligibilityEligibility {
-'    // 
+    // 
     bool eligible;
     // 
     int32_t queueId;

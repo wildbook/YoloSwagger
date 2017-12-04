@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyEligibilityRestriction_HPP
 #include <json.hpp>
 #include "LolLobbyEligibilityRestrictionCode.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyEligibilityRestriction {
-'    // 
+    // 
     uint64_t expiredTimestamp;
     // 
     std::map<std::string, std::string> restrictionArgs;

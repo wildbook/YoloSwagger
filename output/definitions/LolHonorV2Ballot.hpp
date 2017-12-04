@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolHonorV2Ballot_HPP
 #include <json.hpp>
 #include "LolHonorV2EligiblePlayer.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolHonorV2Ballot {
-'    // 
+    // 
     std::vector<LolHonorV2EligiblePlayer> eligiblePlayers;
     // 
     uint64_t gameId;

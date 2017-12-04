@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLoadoutsGameflowGameData_HPP
 #include <json.hpp>
 #include "LolLoadoutsQueue.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoadoutsGameflowGameData {
-'    // 
+    // 
     LolLoadoutsQueue queue;
   };
 

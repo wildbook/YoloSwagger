@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolCollectionsCollectionsRuneBook_HPP
 #include <json.hpp>
 #include "LolCollectionsCollectionsRunePage.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionsRuneBook {
-'    // 
+    // 
     std::vector<LolCollectionsCollectionsRunePage> pages;
     // 
     uint64_t summonerId;

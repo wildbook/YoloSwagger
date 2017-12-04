@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BracketRoster_HPP
 #define SWAGGER_TYPES_BracketRoster_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct BracketRoster {
-'    // 
+    // 
     int32_t logo;
     // 
     int32_t logoColor;

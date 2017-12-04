@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolClashPlayerChatRoster_HPP
 #define SWAGGER_TYPES_LolClashPlayerChatRoster_HPP
 #include <json.hpp>
-#include "LolClashPlayerState.hpp"
 #include "LolClashTournamentState.hpp"
-namespace test {
+#include "LolClashPlayerState.hpp"
+namespace leagueapi {
   // 
   struct LolClashPlayerChatRoster {
-'    // 
+    // 
     int64_t endTimeMs;
     // 
     int32_t iconColorId;

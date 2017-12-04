@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatChatSummoner_HPP
 #define SWAGGER_TYPES_LolChatChatSummoner_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatChatSummoner {
-'    // 
+    // 
     std::string displayName;
     // 
     int32_t profileIconId;

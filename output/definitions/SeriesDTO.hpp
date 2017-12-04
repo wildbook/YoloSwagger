@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_SeriesDTO_HPP
 #define SWAGGER_TYPES_SeriesDTO_HPP
 #include <json.hpp>
-#include "SeriesMediaDTO.hpp"
 #include "SeriesAlertDTO.hpp"
-namespace test {
+#include "SeriesMediaDTO.hpp"
+namespace leagueapi {
   // 
   struct SeriesDTO {
-'    // 
+    // 
     std::string description;
     // 
     int64_t endDate;

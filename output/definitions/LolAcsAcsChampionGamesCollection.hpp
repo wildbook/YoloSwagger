@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolAcsAcsChampionGamesCollection_HPP
 #include <json.hpp>
 #include "LolAcsAcsChampionGames.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolAcsAcsChampionGamesCollection {
-'    // 
+    // 
     std::vector<LolAcsAcsChampionGames> champions;
     // 
     uint32_t gameCount;

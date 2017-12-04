@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChampSelectLegacyPlayerStatus_HPP
 #include <json.hpp>
 #include "LolChampSelectLegacyLobbyStatus.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyPlayerStatus {
-'    // 
+    // 
     LolChampSelectLegacyLobbyStatus currentLobbyStatus;
     // 
     LolChampSelectLegacyLobbyStatus lastQueuedLobbyStatus;

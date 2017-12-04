@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolPerksPerkStyleResource_HPP
 #define SWAGGER_TYPES_LolPerksPerkStyleResource_HPP
 #include <json.hpp>
-#include "LolPerksPerkSubStyleBonusResource.hpp"
 #include "LolPerksPerkStyleSlotResource.hpp"
-namespace test {
+#include "LolPerksPerkSubStyleBonusResource.hpp"
+namespace leagueapi {
   // 
   struct LolPerksPerkStyleResource {
-'    // 
+    // 
     std::vector<int32_t> allowedSubStyles;
     // 
     std::string defaultPageName;

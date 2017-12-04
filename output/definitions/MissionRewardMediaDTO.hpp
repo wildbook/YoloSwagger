@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_MissionRewardMediaDTO_HPP
 #include <json.hpp>
 #include "MissionRewardMediaItemDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct MissionRewardMediaDTO {
-'    // 
+    // 
     MissionRewardMediaItemDTO intro;
     // 
     MissionRewardMediaItemDTO loop;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolCollectionsCollectionsChestEligibility_HPP
 #define SWAGGER_TYPES_LolCollectionsCollectionsChestEligibility_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionsChestEligibility {
-'    // 
+    // 
     uint32_t earnableChests;
     // 
     uint32_t maximumChests;

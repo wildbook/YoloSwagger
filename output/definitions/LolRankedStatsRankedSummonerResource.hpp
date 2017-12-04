@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolRankedStatsRankedSummonerResource_HPP
 #define SWAGGER_TYPES_LolRankedStatsRankedSummonerResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolRankedStatsRankedSummonerResource {
-'    // 
+    // 
     uint64_t accountId;
     // 
     uint64_t summonerId;

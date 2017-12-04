@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_PlayerLifetimeStats_HPP
 #include <json.hpp>
 #include "PlayerStatSummaries.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerLifetimeStats {
-'    // 
+    // 
     PlayerStatSummaries playerStatSummaries;
   };
 

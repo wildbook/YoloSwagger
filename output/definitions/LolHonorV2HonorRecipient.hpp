@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolHonorV2HonorRecipient_HPP
 #include <json.hpp>
 #include "LolHonorV2Honor.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolHonorV2HonorRecipient {
-'    // 
+    // 
     uint64_t gameId;
     // 
     std::vector<LolHonorV2Honor> honors;

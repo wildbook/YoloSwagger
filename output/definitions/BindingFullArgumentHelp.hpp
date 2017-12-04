@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_BindingFullArgumentHelp_HPP
 #include <json.hpp>
 #include "BindingFullTypeIdentifier.hpp"
-namespace test {
+namespace leagueapi {
   // Describes a function parameter.
   struct BindingFullArgumentHelp {
-'    // 
+    // 
     std::string description;
     // 
     std::string name;

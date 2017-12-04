@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_ClashEventData_HPP
 #include <json.hpp>
 #include "ClashRewardSpec.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ClashEventData {
-'    // 
+    // 
     int32_t bracket;
     // 
     std::string earnedDate;

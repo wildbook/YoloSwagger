@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LCDSLoyaltyStateChangeNotification_HPP
 #define SWAGGER_TYPES_LCDSLoyaltyStateChangeNotification_HPP
 #include <json.hpp>
-#include "LCDSLoyaltyRewards.hpp"
 #include "LCDSLoyaltyStateChangeNotificationCategory.hpp"
-namespace test {
+#include "LCDSLoyaltyRewards.hpp"
+namespace leagueapi {
   // 
   struct LCDSLoyaltyStateChangeNotification {
-'    // 
+    // 
     uint64_t accountId;
     // 
     LCDSLoyaltyStateChangeNotificationCategory notificationCategory;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatUserResource_HPP
 #define SWAGGER_TYPES_LolChatUserResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatUserResource {
-'    // 
+    // 
     std::string availability;
     // 
     int32_t icon;

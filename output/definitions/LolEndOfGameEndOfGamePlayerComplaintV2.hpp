@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEndOfGameEndOfGamePlayerComplaintV2_HPP
 #define SWAGGER_TYPES_LolEndOfGameEndOfGamePlayerComplaintV2_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameEndOfGamePlayerComplaintV2 {
-'    // 
+    // 
     std::string comment;
     // 
     uint64_t gameId;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEndOfGameSimpleMessage_HPP
 #define SWAGGER_TYPES_LolEndOfGameSimpleMessage_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameSimpleMessage {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string msgId;

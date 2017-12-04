@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolCollectionsAcsChampionGames_HPP
 #define SWAGGER_TYPES_LolCollectionsAcsChampionGames_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsAcsChampionGames {
-'    // 
+    // 
     int32_t championId;
     // 
     int32_t queue;

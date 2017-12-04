@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolHonorV2EndOfGameStats_HPP
 #include <json.hpp>
 #include "LolHonorV2EndOfGameTeam.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolHonorV2EndOfGameStats {
-'    // 
+    // 
     uint64_t accountId;
     // 
     int32_t championId;

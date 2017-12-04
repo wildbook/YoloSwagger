@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolClashRosterPeriodAggregatedStats.hpp"
 #include "LolClashRosterPlayerAggregatedStats.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashRosterStats {
-'    // 
+    // 
     std::vector<LolClashRosterPeriodAggregatedStats> periodStats;
     // 
     std::map<std::string, LolClashRosterPlayerAggregatedStats> playerStats;

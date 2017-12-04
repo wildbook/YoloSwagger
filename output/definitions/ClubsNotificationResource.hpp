@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClubsNotificationResource_HPP
 #define SWAGGER_TYPES_ClubsNotificationResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ClubsNotificationResource {
-'    // 
+    // 
     std::string backgroundUrl;
     // 
     std::string created;

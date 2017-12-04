@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolFeaturedModesQueue_HPP
 #define SWAGGER_TYPES_LolFeaturedModesQueue_HPP
 #include <json.hpp>
-#include "LolFeaturedModesQueueAvailability.hpp"
 #include "LolFeaturedModesQueueGameCategory.hpp"
-namespace test {
+#include "LolFeaturedModesQueueAvailability.hpp"
+namespace leagueapi {
   // 
   struct LolFeaturedModesQueue {
-'    // 
+    // 
     LolFeaturedModesQueueGameCategory category;
     // 
     std::string gameMode;

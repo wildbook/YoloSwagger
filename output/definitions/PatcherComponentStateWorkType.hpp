@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PatcherComponentStateWorkType_HPP
 #define SWAGGER_TYPES_PatcherComponentStateWorkType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class PatcherComponentStateWorkType {
-'    // 
+    // 
     Disk = 2,
     // 
     Network = 1,

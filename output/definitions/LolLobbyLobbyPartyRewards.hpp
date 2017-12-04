@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyLobbyPartyRewards_HPP
 #include <json.hpp>
 #include "LolLobbyPartyReward.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyPartyRewards {
-'    // 
+    // 
     bool isCustom;
     // 
     bool isEnabled;

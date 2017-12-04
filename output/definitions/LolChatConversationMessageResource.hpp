@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatConversationMessageResource_HPP
 #define SWAGGER_TYPES_LolChatConversationMessageResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatConversationMessageResource {
-'    // 
+    // 
     std::string body;
     // 
     uint64_t fromId;

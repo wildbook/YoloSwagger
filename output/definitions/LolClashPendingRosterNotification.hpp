@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "PendingRosterDTO.hpp"
 #include "LolClashNotifyReason.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashPendingRosterNotification {
-'    // 
+    // 
     LolClashNotifyReason notifyReason;
     // 
     PendingRosterDTO pendingRoster;

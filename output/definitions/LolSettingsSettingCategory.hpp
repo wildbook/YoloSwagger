@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSettingsSettingCategory_HPP
 #define SWAGGER_TYPES_LolSettingsSettingCategory_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSettingsSettingCategory {
-'    // 
+    // 
     nlohmann::json data;
     // 
     int32_t schemaVersion;

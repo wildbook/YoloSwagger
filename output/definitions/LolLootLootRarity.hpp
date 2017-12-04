@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLootLootRarity_HPP
 #define SWAGGER_TYPES_LolLootLootRarity_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLootLootRarity {
-'    // 
+    // 
     Default = 0,
   };
 

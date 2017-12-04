@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEndOfGameGameflowClient_HPP
 #define SWAGGER_TYPES_LolEndOfGameGameflowClient_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameGameflowClient {
-'    // 
+    // 
     std::string observerServerIp;
     // 
     uint16_t observerServerPort;

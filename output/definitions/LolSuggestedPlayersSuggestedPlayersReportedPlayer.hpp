@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersReportedPlayer_HPP
 #define SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersReportedPlayer_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSuggestedPlayersSuggestedPlayersReportedPlayer {
-'    // 
+    // 
     uint64_t reportedSummonerId;
   };
 

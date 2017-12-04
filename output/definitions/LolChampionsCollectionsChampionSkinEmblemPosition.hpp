@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampionsCollectionsChampionSkinEmblemPosition_HPP
 #define SWAGGER_TYPES_LolChampionsCollectionsChampionSkinEmblemPosition_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampionsCollectionsChampionSkinEmblemPosition {
-'    // 
+    // 
     std::string horizontal;
     // 
     std::string vertical;

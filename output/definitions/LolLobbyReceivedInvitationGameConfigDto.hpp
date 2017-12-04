@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyReceivedInvitationGameConfigDto_HPP
 #define SWAGGER_TYPES_LolLobbyReceivedInvitationGameConfigDto_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyReceivedInvitationGameConfigDto {
-'    // 
+    // 
     std::string gameMode;
     // 
     std::string gameMutator;

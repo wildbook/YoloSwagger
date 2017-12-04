@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLoadoutsFrontendInventoryResponse_HPP
 #include <json.hpp>
 #include "LolLoadoutsItemKey.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoadoutsFrontendInventoryResponse {
-'    // 
+    // 
     std::vector<LolLoadoutsItemKey> entitlements;
   };
 

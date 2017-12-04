@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolReplaysMetadataState_HPP
 #define SWAGGER_TYPES_LolReplaysMetadataState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolReplaysMetadataState {
-'    // 
+    // 
     checking = 0,
     // 
     download = 3,

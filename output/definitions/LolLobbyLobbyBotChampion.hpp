@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyLobbyBotChampion_HPP
 #include <json.hpp>
 #include "LolLobbyLobbyBotDifficulty.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyBotChampion {
-'    // 
+    // 
     bool active;
     // 
     std::vector<LolLobbyLobbyBotDifficulty> botDifficulties;

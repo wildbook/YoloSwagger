@@ -1,14 +1,14 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderChampionSelectStateV1_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderChampionSelectStateV1_HPP
 #include <json.hpp>
-#include "LolLobbyTeamBuilderRerollStateV1.hpp"
 #include "LolLobbyTeamBuilderTradeV1.hpp"
-#include "LolLobbyTeamBuilderCellsV1.hpp"
 #include "LolLobbyTeamBuilderTeamBuilderBoostInfo.hpp"
-namespace test {
+#include "LolLobbyTeamBuilderRerollStateV1.hpp"
+#include "LolLobbyTeamBuilderCellsV1.hpp"
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderChampionSelectStateV1 {
-'    // 
+    // 
     std::vector<nlohmann::json> actionSetList;
     // 
     bool allowOptingOutOfBanning;

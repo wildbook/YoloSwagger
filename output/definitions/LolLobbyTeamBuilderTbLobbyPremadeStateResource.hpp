@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyPremadeStateResource_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyPremadeStateResource_HPP
 #include <json.hpp>
+#include "LolLobbyTeamBuilderReadyStateV1.hpp"
 #include "LolLobbyTeamBuilderTbLobbyBackwardsToPremadeTransitionResource.hpp"
 #include "LolLobbyTeamBuilderTbLobbySlotResource.hpp"
-#include "LolLobbyTeamBuilderReadyStateV1.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderTbLobbyPremadeStateResource {
-'    // 
+    // 
     bool autoFillEligible;
     // 
     bool autoFillProtectedForPromos;

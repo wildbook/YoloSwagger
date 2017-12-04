@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolChampionsCollectionsChampionSkinEmblem_HPP
 #define SWAGGER_TYPES_LolChampionsCollectionsChampionSkinEmblem_HPP
 #include <json.hpp>
-#include "LolChampionsCollectionsChampionSkinEmblemPath.hpp"
 #include "LolChampionsCollectionsChampionSkinEmblemPosition.hpp"
-namespace test {
+#include "LolChampionsCollectionsChampionSkinEmblemPath.hpp"
+namespace leagueapi {
   // 
   struct LolChampionsCollectionsChampionSkinEmblem {
-'    // 
+    // 
     LolChampionsCollectionsChampionSkinEmblemPath emblemPath;
     // 
     std::string name;

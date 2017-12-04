@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampionsGameDataChampionChroma_HPP
 #define SWAGGER_TYPES_LolChampionsGameDataChampionChroma_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampionsGameDataChampionChroma {
-'    // 
+    // 
     std::string chromaPath;
     // 
     std::vector<std::string> colors;

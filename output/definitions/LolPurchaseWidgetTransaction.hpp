@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPurchaseWidgetTransaction_HPP
 #include <json.hpp>
 #include "LolPurchaseWidgetItemKey.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPurchaseWidgetTransaction {
-'    // 
+    // 
     std::string iconUrl;
     // 
     LolPurchaseWidgetItemKey itemKey;

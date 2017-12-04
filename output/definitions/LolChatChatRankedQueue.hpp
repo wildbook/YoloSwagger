@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatChatRankedQueue_HPP
 #define SWAGGER_TYPES_LolChatChatRankedQueue_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolChatChatRankedQueue {
-'    // 
+    // 
     INVALID = 0,
     // 
     RANKED_FLEX_SR = 2,

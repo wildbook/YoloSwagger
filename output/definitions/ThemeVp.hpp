@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ThemeVp_HPP
 #define SWAGGER_TYPES_ThemeVp_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ThemeVp {
-'    // 
+    // 
     int32_t themeId;
     // 
     int32_t themeVp;

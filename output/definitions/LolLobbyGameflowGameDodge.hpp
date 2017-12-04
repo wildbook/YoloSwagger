@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolLobbyGameflowGameDodge_HPP
 #define SWAGGER_TYPES_LolLobbyGameflowGameDodge_HPP
 #include <json.hpp>
-#include "LolLobbyMatchmakingDodgeState.hpp"
 #include "LolLobbyGameflowPhase.hpp"
-namespace test {
+#include "LolLobbyMatchmakingDodgeState.hpp"
+namespace leagueapi {
   // 
   struct LolLobbyGameflowGameDodge {
-'    // 
+    // 
     std::vector<uint64_t> dodgeIds;
     // 
     LolLobbyGameflowPhase phase;

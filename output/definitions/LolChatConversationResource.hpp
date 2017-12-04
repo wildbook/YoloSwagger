@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChatConversationResource_HPP
 #include <json.hpp>
 #include "LolChatConversationMessageResource.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatConversationResource {
-'    // 
+    // 
     std::string id;
     // 
     std::string inviterId;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksPerkStyleSlotResource_HPP
 #define SWAGGER_TYPES_LolPerksPerkStyleSlotResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksPerkStyleSlotResource {
-'    // 
+    // 
     std::vector<int32_t> perks;
     // 
     std::string slotLabel;

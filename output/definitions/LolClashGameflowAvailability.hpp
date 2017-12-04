@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashGameflowAvailability_HPP
 #define SWAGGER_TYPES_LolClashGameflowAvailability_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashGameflowAvailability {
-'    // 
+    // 
     bool isAvailable;
   };
 

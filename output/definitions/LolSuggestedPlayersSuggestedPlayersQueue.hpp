@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersQueue_HPP
 #define SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersQueue_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolSuggestedPlayersSuggestedPlayersQueue {
-'    // 
+    // 
     int32_t id;
     // 
     uint32_t minLevel;

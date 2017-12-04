@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolSummonerGameloopPlayerInfoV1_HPP
 #include <json.hpp>
 #include "LolSummonerRerollDataBagForClientV1.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolSummonerGameloopPlayerInfoV1 {
-'    // 
+    // 
     nlohmann::json autoFillDataBagByQueueId;
     // 
     LolSummonerRerollDataBagForClientV1 rerollDataBag;

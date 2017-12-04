@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPersonalizedOffersWallet_HPP
 #define SWAGGER_TYPES_LolPersonalizedOffersWallet_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPersonalizedOffersWallet {
-'    // 
+    // 
     int64_t rp;
   };
 

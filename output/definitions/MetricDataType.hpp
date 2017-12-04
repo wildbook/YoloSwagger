@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MetricDataType_HPP
 #define SWAGGER_TYPES_MetricDataType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class MetricDataType {
-'    // 
+    // 
     bool = 4,
     // 
     float = 3,

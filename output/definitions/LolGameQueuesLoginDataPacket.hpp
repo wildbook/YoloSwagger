@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolGameQueuesLoginDataPacket_HPP
 #include <json.hpp>
 #include "LolGameQueuesQueueGameTypeConfig.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolGameQueuesLoginDataPacket {
-'    // 
+    // 
     std::vector<LolGameQueuesQueueGameTypeConfig> gameTypeConfigs;
   };
 

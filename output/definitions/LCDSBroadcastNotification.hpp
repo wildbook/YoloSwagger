@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LCDSBroadcastNotification_HPP
 #define SWAGGER_TYPES_LCDSBroadcastNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LCDSBroadcastNotification {
-'    // 
+    // 
     std::vector<nlohmann::json> broadcastMessages;
   };
 

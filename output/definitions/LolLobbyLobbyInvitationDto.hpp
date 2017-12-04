@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyLobbyInvitationDto_HPP
 #include <json.hpp>
 #include "LolLobbyLobbyInvitationState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyInvitationDto {
-'    // 
+    // 
     std::string invitationId;
     // 
     LolLobbyLobbyInvitationState state;

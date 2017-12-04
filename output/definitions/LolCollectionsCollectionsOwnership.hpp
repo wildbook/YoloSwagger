@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolCollectionsCollectionsOwnership_HPP
 #include <json.hpp>
 #include "LolCollectionsCollectionsRental.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionsOwnership {
-'    // 
+    // 
     bool freeToPlayReward;
     // 
     bool owned;

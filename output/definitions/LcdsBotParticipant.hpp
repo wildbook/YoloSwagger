@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LcdsBotParticipant_HPP
 #define SWAGGER_TYPES_LcdsBotParticipant_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsBotParticipant {
-'    // 
+    // 
     int32_t botSkillLevel;
     // 
     uint64_t summonerId;

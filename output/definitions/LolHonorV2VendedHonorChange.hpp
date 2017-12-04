@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolHonorV2VendedHonorChange_HPP
 #define SWAGGER_TYPES_LolHonorV2VendedHonorChange_HPP
 #include <json.hpp>
-#include "LolHonorV2VendedHonorState.hpp"
 #include "LolHonorV2Reward.hpp"
-namespace test {
+#include "LolHonorV2VendedHonorState.hpp"
+namespace leagueapi {
   // 
   struct LolHonorV2VendedHonorChange {
-'    // 
+    // 
     std::string actionType;
     // 
     LolHonorV2VendedHonorState currentState;

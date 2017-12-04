@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RsoAuthUserInfo_HPP
 #define SWAGGER_TYPES_RsoAuthUserInfo_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RsoAuthUserInfo {
-'    // 
+    // 
     std::string userInfo;
   };
 

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_SpectatorLcdsSpectateAvailabilityResponseDto_HPP
 #define SWAGGER_TYPES_SpectatorLcdsSpectateAvailabilityResponseDto_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct SpectatorLcdsSpectateAvailabilityResponseDto {
-'    // 
+    // 
     std::vector<std::string> availableForWatching;
   };
 

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatGameflowGameMap_HPP
 #define SWAGGER_TYPES_LolChatGameflowGameMap_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatGameflowGameMap {
-'    // 
+    // 
     int64_t id;
   };
 

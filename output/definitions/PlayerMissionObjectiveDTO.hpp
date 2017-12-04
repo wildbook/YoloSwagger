@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_PlayerMissionObjectiveDTO_HPP
 #include <json.hpp>
 #include "MissionProgressDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerMissionObjectiveDTO {
-'    // 
+    // 
     std::string description;
     // 
     MissionProgressDTO progress;

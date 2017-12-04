@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashClubsSummoner_HPP
 #define SWAGGER_TYPES_LolClashClubsSummoner_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashClubsSummoner {
-'    // 
+    // 
     std::string displayName;
     // 
     int32_t profileIconId;

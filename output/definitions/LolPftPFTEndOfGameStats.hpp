@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolPftPFTEndOfGamePoints.hpp"
 #include "LolPftPFTEndOfGameTeam.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPftPFTEndOfGameStats {
-'    // 
+    // 
     uint64_t accountId;
     // 
     int32_t basePoints;

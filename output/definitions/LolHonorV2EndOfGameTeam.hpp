@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolHonorV2EndOfGameTeam_HPP
 #include <json.hpp>
 #include "LolHonorV2EndOfGamePlayer.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolHonorV2EndOfGameTeam {
-'    // 
+    // 
     std::vector<int32_t> championBans;
     // 
     std::string fullId;

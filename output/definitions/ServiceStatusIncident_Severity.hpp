@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ServiceStatusIncident_Severity_HPP
 #define SWAGGER_TYPES_ServiceStatusIncident_Severity_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class ServiceStatusIncident_Severity {
-'    // 
+    // 
     error = 2,
     // 
     info = 0,

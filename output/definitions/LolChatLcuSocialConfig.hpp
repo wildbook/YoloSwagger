@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatLcuSocialConfig_HPP
 #define SWAGGER_TYPES_LolChatLcuSocialConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatLcuSocialConfig {
-'    // 
+    // 
     bool AggressiveScanning;
     // 
     bool ForceChatFilter;

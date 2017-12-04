@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BindingAsyncState_HPP
 #define SWAGGER_TYPES_BindingAsyncState_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // Possible states of an asynchronous operation.
   enum class BindingAsyncState {
-'    // The operation was cancelled
+    // The operation was cancelled
     Cancelled = 3,
     // A request to cancel the operation has been made
     Cancelling = 2,

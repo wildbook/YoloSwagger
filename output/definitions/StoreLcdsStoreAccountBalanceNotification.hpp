@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_StoreLcdsStoreAccountBalanceNotification_HPP
 #define SWAGGER_TYPES_StoreLcdsStoreAccountBalanceNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct StoreLcdsStoreAccountBalanceNotification {
-'    // 
+    // 
     int64_t ip;
     // 
     int64_t rp;

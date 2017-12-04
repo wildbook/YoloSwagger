@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_PlayerGameStats_HPP
 #include <json.hpp>
 #include "FellowPlayerInfo.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerGameStats {
-'    // 
+    // 
     uint64_t createDate;
     // 
     std::vector<FellowPlayerInfo> fellowPlayers;

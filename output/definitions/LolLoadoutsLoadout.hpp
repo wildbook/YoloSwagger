@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoadoutsLoadout_HPP
 #define SWAGGER_TYPES_LolLoadoutsLoadout_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoadoutsLoadout {
-'    // 
+    // 
     uint32_t id;
     // 
     std::map<std::string, nlohmann::json> items;

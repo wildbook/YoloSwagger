@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_SanitizerContainsSanitizedRequest_HPP
 #define SWAGGER_TYPES_SanitizerContainsSanitizedRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct SanitizerContainsSanitizedRequest {
-'    // 
+    // 
     bool aggressiveScan;
     // 
     bool includeEmbedded;

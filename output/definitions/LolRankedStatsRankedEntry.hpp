@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolRankedStatsRankedQueue.hpp"
 #include "LolRankedStatsRankedTier.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolRankedStatsRankedEntry {
-'    // 
+    // 
     int64_t apexDaysUntilDecay;
     // 
     uint64_t division;

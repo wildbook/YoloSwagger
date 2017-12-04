@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_LolLeaguesLeagueStanding_HPP
 #define SWAGGER_TYPES_LolLeaguesLeagueStanding_HPP
 #include <json.hpp>
-#include "LolLeaguesLeagueEmblem.hpp"
 #include "LolLeaguesMiniseries.hpp"
-namespace test {
+#include "LolLeaguesLeagueEmblem.hpp"
+namespace leagueapi {
   // 
   struct LolLeaguesLeagueStanding {
-'    // 
+    // 
     int64_t apexDaysUntilDecay;
     // 
     std::vector<LolLeaguesLeagueEmblem> emblems;

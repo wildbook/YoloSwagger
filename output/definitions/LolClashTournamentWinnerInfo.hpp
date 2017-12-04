@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashTournamentWinnerInfo_HPP
 #define SWAGGER_TYPES_LolClashTournamentWinnerInfo_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashTournamentWinnerInfo {
-'    // 
+    // 
     int64_t averageWinDuration;
     // 
     int64_t createTime;

@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolLoadoutsGameflowGameData.hpp"
 #include "LolLoadoutsGameflowPhase.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoadoutsGameflowSession {
-'    // 
+    // 
     LolLoadoutsGameflowGameData gameData;
     // 
     LolLoadoutsGameflowPhase phase;

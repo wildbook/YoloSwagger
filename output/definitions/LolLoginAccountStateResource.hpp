@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLoginAccountStateResource_HPP
 #include <json.hpp>
 #include "LolLoginAccountStateType.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoginAccountStateResource {
-'    // 
+    // 
     LolLoginAccountStateType state;
   };
 

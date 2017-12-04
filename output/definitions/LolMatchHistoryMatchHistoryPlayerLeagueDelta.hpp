@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerLeagueDelta_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerLeagueDelta_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryPlayerLeagueDelta {
-'    // 
+    // 
     uint64_t leaguePointDelta;
     // 
     std::vector<std::string> miniSeriesProgress;

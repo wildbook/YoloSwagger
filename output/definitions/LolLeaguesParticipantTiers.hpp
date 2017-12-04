@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLeaguesParticipantTiers_HPP
 #include <json.hpp>
 #include "LolLeaguesAchievedTier.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLeaguesParticipantTiers {
-'    // 
+    // 
     std::vector<LolLeaguesAchievedTier> achievedTiers;
     // 
     uint64_t summonerId;

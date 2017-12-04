@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatSettingsResource_HPP
 #define SWAGGER_TYPES_LolChatSettingsResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatSettingsResource {
-'    // 
+    // 
     nlohmann::json data;
   };
 

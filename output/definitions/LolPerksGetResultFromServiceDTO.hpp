@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksGetResultFromServiceDTO_HPP
 #define SWAGGER_TYPES_LolPerksGetResultFromServiceDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksGetResultFromServiceDTO {
-'    // 
+    // 
     std::string error;
     // 
     std::string result;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLeaguesApexLeagues_HPP
 #include <json.hpp>
 #include "LolLeaguesLeague.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLeaguesApexLeagues {
-'    // 
+    // 
     std::vector<LolLeaguesLeague> challengers;
     // 
     std::vector<LolLeaguesLeague> masters;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderLeaverBusterAbandoned_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderLeaverBusterAbandoned_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderLeaverBusterAbandoned {
-'    // 
+    // 
     std::string abandonerName;
   };
 

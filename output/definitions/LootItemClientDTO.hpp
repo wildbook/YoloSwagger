@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LootItemClientDTO_HPP
 #define SWAGGER_TYPES_LootItemClientDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LootItemClientDTO {
-'    // 
+    // 
     std::string asset;
     // 
     std::string displayCategories;

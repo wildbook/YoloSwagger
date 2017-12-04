@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_Position_HPP
 #define SWAGGER_TYPES_Position_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class Position {
-'    // 
+    // 
     BOTTOM = 2,
     // 
     FILL = 5,

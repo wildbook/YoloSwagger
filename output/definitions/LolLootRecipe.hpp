@@ -2,12 +2,12 @@
 #define SWAGGER_TYPES_LolLootRecipe_HPP
 #include <json.hpp>
 #include "LolLootRecipeMetadata.hpp"
-#include "LolLootRecipeSlot.hpp"
 #include "LolLootRecipeOutput.hpp"
-namespace test {
+#include "LolLootRecipeSlot.hpp"
+namespace leagueapi {
   // 
   struct LolLootRecipe {
-'    // 
+    // 
     std::string crafterName;
     // 
     std::string displayCategories;

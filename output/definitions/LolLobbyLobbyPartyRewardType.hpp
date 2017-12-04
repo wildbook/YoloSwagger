@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyPartyRewardType_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyPartyRewardType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLobbyLobbyPartyRewardType {
-'    // 
+    // 
     Icon = 2,
     // 
     Ip = 1,

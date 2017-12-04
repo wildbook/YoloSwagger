@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClashRankedScoutingMember_HPP
 #include <json.hpp>
 #include "LolClashRankedScoutingTopChampion.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashRankedScoutingMember {
-'    // 
+    // 
     std::vector<LolClashRankedScoutingTopChampion> championScoutingData;
     // 
     uint64_t playerId;

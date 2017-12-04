@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyReadyDto_HPP
 #define SWAGGER_TYPES_LolLobbyReadyDto_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyReadyDto {
-'    // 
+    // 
     bool ready;
   };
 

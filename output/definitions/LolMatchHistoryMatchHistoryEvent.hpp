@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryEvent_HPP
 #include <json.hpp>
 #include "LolMatchHistoryMatchHistoryPosition.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryEvent {
-'    // 
+    // 
     std::vector<uint16_t> assistingParticipantIds;
     // 
     std::string buildingType;

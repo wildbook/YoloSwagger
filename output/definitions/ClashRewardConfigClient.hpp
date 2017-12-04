@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "ClashRewardKeyType.hpp"
 #include "ClashRewardConfigEntry.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ClashRewardConfigClient {
-'    // 
+    // 
     std::vector<ClashRewardConfigEntry> entries;
     // 
     bool grantToSub;

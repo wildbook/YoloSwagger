@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolPerksGameflowGameData_HPP
 #include <json.hpp>
 #include "LolPerksQueue.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksGameflowGameData {
-'    // 
+    // 
     bool isCustomGame;
     // 
     LolPerksQueue queue;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ActiveBoosts_HPP
 #define SWAGGER_TYPES_ActiveBoosts_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ActiveBoosts {
-'    // 
+    // 
     std::string firstWinOfTheDayStartTime;
     // 
     std::string ipBoostEndDate;

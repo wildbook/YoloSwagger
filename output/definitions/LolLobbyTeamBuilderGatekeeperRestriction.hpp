@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderGatekeeperRestriction_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderGatekeeperRestriction_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderGatekeeperRestriction {
-'    // 
+    // 
     std::string payload;
     // 
     int32_t queueId;

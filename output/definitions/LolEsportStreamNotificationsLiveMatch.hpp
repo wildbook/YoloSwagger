@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolEsportStreamNotificationsLiveMatch_HPP
 #include <json.hpp>
 #include "LolEsportStreamNotificationsLiveMatchTeam.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolEsportStreamNotificationsLiveMatch {
-'    // 
+    // 
     std::string id;
     // 
     std::string streamGroup;

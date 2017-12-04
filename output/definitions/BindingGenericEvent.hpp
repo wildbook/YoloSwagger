@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_BindingGenericEvent_HPP
 #define SWAGGER_TYPES_BindingGenericEvent_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // Represents generic data for an event.
   struct BindingGenericEvent {
-'    // Event data
+    // Event data
     nlohmann::json data;
   };
 

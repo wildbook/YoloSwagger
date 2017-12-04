@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LootNameRefId_HPP
 #define SWAGGER_TYPES_LootNameRefId_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LootNameRefId {
-'    // 
+    // 
     std::string lootName;
     // 
     std::string refId;

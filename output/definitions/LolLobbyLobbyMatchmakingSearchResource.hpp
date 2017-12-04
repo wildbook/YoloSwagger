@@ -2,12 +2,12 @@
 #define SWAGGER_TYPES_LolLobbyLobbyMatchmakingSearchResource_HPP
 #include <json.hpp>
 #include "LolLobbyLobbyMatchmakingSearchErrorResource.hpp"
-#include "LolLobbyLobbyMatchmakingLowPriorityDataResource.hpp"
 #include "LolLobbyLobbyMatchmakingSearchState.hpp"
-namespace test {
+#include "LolLobbyLobbyMatchmakingLowPriorityDataResource.hpp"
+namespace leagueapi {
   // 
   struct LolLobbyLobbyMatchmakingSearchResource {
-'    // 
+    // 
     std::vector<LolLobbyLobbyMatchmakingSearchErrorResource> errors;
     // 
     LolLobbyLobbyMatchmakingLowPriorityDataResource lowPriorityData;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatQueueGameTypeConfig_HPP
 #define SWAGGER_TYPES_LolChatQueueGameTypeConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatQueueGameTypeConfig {
-'    // 
+    // 
     int64_t id;
     // 
     std::string name;

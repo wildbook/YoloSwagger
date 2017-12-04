@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashInviteSubRequest_HPP
 #define SWAGGER_TYPES_LolClashInviteSubRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashInviteSubRequest {
-'    // 
+    // 
     uint64_t replacedSummonerId;
     // 
     uint64_t substituteSummonerId;

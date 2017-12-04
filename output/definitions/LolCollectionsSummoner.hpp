@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolCollectionsSummoner_HPP
 #define SWAGGER_TYPES_LolCollectionsSummoner_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsSummoner {
-'    // 
+    // 
     uint64_t accountId;
     // 
     int32_t profileIconId;

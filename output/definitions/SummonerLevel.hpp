@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_SummonerLevel_HPP
 #define SWAGGER_TYPES_SummonerLevel_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct SummonerLevel {
-'    // 
+    // 
     uint64_t expTierMod;
     // 
     uint64_t expToNextLevel;

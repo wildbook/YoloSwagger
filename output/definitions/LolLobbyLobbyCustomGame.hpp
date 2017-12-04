@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyCustomGame_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyCustomGame_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyCustomGame {
-'    // 
+    // 
     int32_t filledPlayerSlots;
     // 
     int32_t filledSpectatorSlots;

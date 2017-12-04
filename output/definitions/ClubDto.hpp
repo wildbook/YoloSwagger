@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "ClubMembershipDto.hpp"
 #include "ClubDataDto.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct ClubDto {
-'    // 
+    // 
     ClubDataDto clubData;
     // 
     ClubMembershipDto membership;

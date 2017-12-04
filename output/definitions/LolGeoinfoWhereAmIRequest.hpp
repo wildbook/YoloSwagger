@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolGeoinfoWhereAmIRequest_HPP
 #define SWAGGER_TYPES_LolGeoinfoWhereAmIRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolGeoinfoWhereAmIRequest {
-'    // 
+    // 
     std::string ipAddress;
   };
 

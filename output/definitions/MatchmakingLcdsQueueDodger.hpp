@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_MatchmakingLcdsQueueDodger_HPP
 #include <json.hpp>
 #include "MatchmakingLcdsSummoner.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct MatchmakingLcdsQueueDodger {
-'    // 
+    // 
     uint64_t dodgePenaltyRemainingTime;
     // 
     std::string reasonFailed;

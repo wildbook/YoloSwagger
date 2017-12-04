@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoginPlatformGeneratedCredentials_HPP
 #define SWAGGER_TYPES_LolLoginPlatformGeneratedCredentials_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoginPlatformGeneratedCredentials {
-'    // 
+    // 
     nlohmann::json gasToken;
     // 
     std::string password;

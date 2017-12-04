@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RiotMessagingServiceTokenType_HPP
 #define SWAGGER_TYPES_RiotMessagingServiceTokenType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class RiotMessagingServiceTokenType {
-'    // 
+    // 
     Access = 1,
     // 
     Identity = 2,

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolGeoinfoGeoInfoConfig_HPP
 #define SWAGGER_TYPES_LolGeoinfoGeoInfoConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolGeoinfoGeoInfoConfig {
-'    // 
+    // 
     bool Enabled;
   };
 

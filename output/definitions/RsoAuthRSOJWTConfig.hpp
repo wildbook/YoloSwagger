@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RsoAuthRSOJWTConfig_HPP
 #define SWAGGER_TYPES_RsoAuthRSOJWTConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RsoAuthRSOJWTConfig {
-'    // 
+    // 
     std::string token;
   };
 

@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LeaguesLcdsTeamIdDTO.hpp"
 #include "LeaguesLcdsPlayerAggregatedStats.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LeaguesLcdsTeamAggregatedStats {
-'    // 
+    // 
     LeaguesLcdsTeamIdDTO id;
     // 
     std::vector<LeaguesLcdsPlayerAggregatedStats> playerAggregatedStatsList;

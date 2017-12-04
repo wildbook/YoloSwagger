@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyTimer_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyTimer_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyLobbyTimer {
-'    // 
+    // 
     int64_t countdown;
     // 
     bool enabled;

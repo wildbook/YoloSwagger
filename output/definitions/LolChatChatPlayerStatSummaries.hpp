@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChatChatPlayerStatSummaries_HPP
 #include <json.hpp>
 #include "LolChatChatPlayerStatSummary.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatChatPlayerStatSummaries {
-'    // 
+    // 
     std::vector<LolChatChatPlayerStatSummary> playerStatSummarySet;
   };
 

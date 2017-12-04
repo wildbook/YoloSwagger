@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolStorePageGroupingDTO_HPP
 #include <json.hpp>
 #include "LolStoreItemKey.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolStorePageGroupingDTO {
-'    // 
+    // 
     bool grouped;
     // 
     bool hidden;

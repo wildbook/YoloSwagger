@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChatPluginRegionLocaleChangedEvent_HPP
 #define SWAGGER_TYPES_LolChatPluginRegionLocaleChangedEvent_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatPluginRegionLocaleChangedEvent {
-'    // 
+    // 
     std::string locale;
     // 
     std::string region;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerPreferences_HPP
 #define SWAGGER_TYPES_PlayerPreferences_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerPreferences {
-'    // 
+    // 
     std::string data;
     // 
     std::string hash;

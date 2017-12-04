@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ChampSelectLcdsTradeContractDTO_HPP
 #define SWAGGER_TYPES_ChampSelectLcdsTradeContractDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ChampSelectLcdsTradeContractDTO {
-'    // 
+    // 
     int32_t requesterChampionId;
     // 
     std::string requesterInternalSummonerName;

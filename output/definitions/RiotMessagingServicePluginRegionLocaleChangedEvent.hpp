@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RiotMessagingServicePluginRegionLocaleChangedEvent_HPP
 #define SWAGGER_TYPES_RiotMessagingServicePluginRegionLocaleChangedEvent_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RiotMessagingServicePluginRegionLocaleChangedEvent {
-'    // 
+    // 
     std::string locale;
     // 
     std::string region;

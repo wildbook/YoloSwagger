@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClubInviteStatus_HPP
 #define SWAGGER_TYPES_ClubInviteStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class ClubInviteStatus {
-'    // 
+    // 
     ACCEPTED = 1,
     // 
     BLOCKED = 3,

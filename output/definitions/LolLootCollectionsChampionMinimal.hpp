@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLootCollectionsChampionMinimal_HPP
 #include <json.hpp>
 #include "LolLootCollectionsOwnership.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootCollectionsChampionMinimal {
-'    // 
+    // 
     int32_t id;
     // 
     LolLootCollectionsOwnership ownership;

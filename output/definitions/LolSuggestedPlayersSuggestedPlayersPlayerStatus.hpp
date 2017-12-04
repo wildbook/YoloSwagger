@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersPlayerStatus_HPP
 #include <json.hpp>
 #include "LolSuggestedPlayersSuggestedPlayersLobbyStatus.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolSuggestedPlayersSuggestedPlayersPlayerStatus {
-'    // 
+    // 
     LolSuggestedPlayersSuggestedPlayersLobbyStatus currentLobbyStatus;
     // 
     LolSuggestedPlayersSuggestedPlayersLobbyStatus lastQueuedLobbyStatus;

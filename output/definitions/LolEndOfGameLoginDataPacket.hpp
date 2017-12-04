@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolEndOfGameSimpleMessage.hpp"
 #include "LolEndOfGameLoginSummonerData.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameLoginDataPacket {
-'    // 
+    // 
     LolEndOfGameLoginSummonerData allSummonerData;
     // 
     std::string platformId;

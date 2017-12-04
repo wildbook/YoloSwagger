@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LeagueTierAndRankDTO_HPP
 #define SWAGGER_TYPES_LeagueTierAndRankDTO_HPP
 #include <json.hpp>
-#include "LeaguesLcdsLeagueRank.hpp"
 #include "LeaguesLcdsLeagueTier.hpp"
 #include "LeaguesLcdsQueueType.hpp"
-namespace test {
+#include "LeaguesLcdsLeagueRank.hpp"
+namespace leagueapi {
   // 
   struct LeagueTierAndRankDTO {
-'    // 
+    // 
     std::string playerOrTeamId;
     // 
     std::string playerOrTeamName;

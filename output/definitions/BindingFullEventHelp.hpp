@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_BindingFullEventHelp_HPP
 #include <json.hpp>
 #include "BindingFullTypeIdentifier.hpp"
-namespace test {
+namespace leagueapi {
   // Describes an event.
   struct BindingFullEventHelp {
-'    // 
+    // 
     std::string description;
     // 
     std::string name;

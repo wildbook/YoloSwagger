@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolStoreItemLocalization_HPP
 #define SWAGGER_TYPES_LolStoreItemLocalization_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolStoreItemLocalization {
-'    // 
+    // 
     std::string description;
     // 
     std::string language;

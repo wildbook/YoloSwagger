@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLootLootDescription_HPP
 #define SWAGGER_TYPES_LolLootLootDescription_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLootLootDescription {
-'    // 
+    // 
     std::vector<std::string> childLootTableNames;
     // 
     std::map<std::string, std::string> localizationLongDescriptionMap;

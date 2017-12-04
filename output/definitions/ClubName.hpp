@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClubName_HPP
 #define SWAGGER_TYPES_ClubName_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ClubName {
-'    // 
+    // 
     std::string name;
   };
 

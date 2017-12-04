@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ChampSelectLcdsPointSummary_HPP
 #define SWAGGER_TYPES_ChampSelectLcdsPointSummary_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ChampSelectLcdsPointSummary {
-'    // 
+    // 
     int32_t currentPoints;
     // 
     int32_t maxRolls;

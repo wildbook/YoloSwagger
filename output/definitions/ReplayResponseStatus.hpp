@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ReplayResponseStatus_HPP
 #define SWAGGER_TYPES_ReplayResponseStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class ReplayResponseStatus {
-'    // 
+    // 
     BAD_REQUEST = 3,
     // 
     EXPIRED = 2,

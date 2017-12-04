@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClashRewardSpec_HPP
 #define SWAGGER_TYPES_ClashRewardSpec_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ClashRewardSpec {
-'    // 
+    // 
     std::string bracket;
     // 
     std::string cup;

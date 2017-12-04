@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerLevelUpEventAck_HPP
 #define SWAGGER_TYPES_PlayerLevelUpEventAck_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerLevelUpEventAck {
-'    // 
+    // 
     uint32_t newSummonerLevel;
     // 
     bool seenThisEvent;

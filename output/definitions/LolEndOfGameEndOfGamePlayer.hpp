@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolEndOfGameEndOfGamePlayer_HPP
 #define SWAGGER_TYPES_LolEndOfGameEndOfGamePlayer_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolEndOfGameEndOfGamePlayer {
-'    // 
+    // 
     bool botPlayer;
     // 
     int32_t championId;

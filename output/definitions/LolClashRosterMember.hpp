@@ -1,13 +1,13 @@
 #ifndef SWAGGER_TYPES_LolClashRosterMember_HPP
 #define SWAGGER_TYPES_LolClashRosterMember_HPP
 #include <json.hpp>
-#include "Position.hpp"
-#include "LolClashRosterMemberState.hpp"
 #include "LolClashBiddingData.hpp"
-namespace test {
+#include "LolClashRosterMemberState.hpp"
+#include "Position.hpp"
+namespace leagueapi {
   // 
   struct LolClashRosterMember {
-'    // 
+    // 
     LolClashBiddingData biddingData;
     // 
     bool isSubbedOut;

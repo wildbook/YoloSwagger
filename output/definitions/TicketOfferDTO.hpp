@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_TicketOfferDTO_HPP
 #include <json.hpp>
 #include "TicketOfferState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct TicketOfferDTO {
-'    // 
+    // 
     int32_t count;
     // 
     uint64_t offerPlayerId;

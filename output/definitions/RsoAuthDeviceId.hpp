@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RsoAuthDeviceId_HPP
 #define SWAGGER_TYPES_RsoAuthDeviceId_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct RsoAuthDeviceId {
-'    // 
+    // 
     std::string collectorServerName;
     // 
     std::string frameUrl;

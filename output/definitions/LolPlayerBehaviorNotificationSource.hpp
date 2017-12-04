@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPlayerBehaviorNotificationSource_HPP
 #define SWAGGER_TYPES_LolPlayerBehaviorNotificationSource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolPlayerBehaviorNotificationSource {
-'    // 
+    // 
     ForcedShutdown = 2,
     // 
     Invalid = 0,

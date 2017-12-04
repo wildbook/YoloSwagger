@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryMastery_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryMastery_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryMastery {
-'    // 
+    // 
     uint16_t masteryId;
     // 
     uint16_t rank;

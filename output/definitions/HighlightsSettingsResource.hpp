@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_HighlightsSettingsResource_HPP
 #include <json.hpp>
 #include "HighlightsSettingsData.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct HighlightsSettingsResource {
-'    // 
+    // 
     HighlightsSettingsData data;
   };
 

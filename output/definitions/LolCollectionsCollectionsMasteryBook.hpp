@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolCollectionsCollectionsMasteryBook_HPP
 #include <json.hpp>
 #include "LolCollectionsCollectionsMasteryPage.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolCollectionsCollectionsMasteryBook {
-'    // 
+    // 
     std::vector<LolCollectionsCollectionsMasteryPage> pages;
     // 
     uint64_t summonerId;

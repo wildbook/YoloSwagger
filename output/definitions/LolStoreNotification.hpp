@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolStoreNotification_HPP
 #define SWAGGER_TYPES_LolStoreNotification_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolStoreNotification {
-'    // 
+    // 
     std::string backgroundUrl;
     // 
     std::string created;

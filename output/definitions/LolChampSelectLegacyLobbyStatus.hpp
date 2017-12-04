@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampSelectLegacyLobbyStatus_HPP
 #define SWAGGER_TYPES_LolChampSelectLegacyLobbyStatus_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyLobbyStatus {
-'    // 
+    // 
     bool allowedPlayAgain;
     // 
     bool isCustom;

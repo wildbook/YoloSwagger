@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryRecentlyPlayedSummoner_HPP
 #define SWAGGER_TYPES_LolMatchHistoryRecentlyPlayedSummoner_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryRecentlyPlayedSummoner {
-'    // 
+    // 
     uint64_t championId;
     // 
     std::string gameCreationDate;

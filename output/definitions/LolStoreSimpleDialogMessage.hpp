@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolStoreSimpleDialogMessage_HPP
 #define SWAGGER_TYPES_LolStoreSimpleDialogMessage_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolStoreSimpleDialogMessage {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string msgId;

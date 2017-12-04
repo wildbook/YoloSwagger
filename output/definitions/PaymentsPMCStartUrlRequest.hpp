@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PaymentsPMCStartUrlRequest_HPP
 #define SWAGGER_TYPES_PaymentsPMCStartUrlRequest_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PaymentsPMCStartUrlRequest {
-'    // 
+    // 
     int32_t gifteeAccountId;
     // 
     std::string gifteeMessage;

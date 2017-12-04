@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolClashRankedScoutingTopChampion_HPP
 #include <json.hpp>
 #include "LolClashKdaClassification.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolClashRankedScoutingTopChampion {
-'    // 
+    // 
     int32_t championId;
     // 
     int32_t gameCount;

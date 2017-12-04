@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryParticipantStatistics_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryParticipantStatistics_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryParticipantStatistics {
-'    // 
+    // 
     int64_t assists;
     // 
     bool causedEarlySurrender;

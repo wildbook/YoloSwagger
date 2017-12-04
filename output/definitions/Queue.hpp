@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_Queue_HPP
 #include <json.hpp>
 #include "QueueGameTypeConfig.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct Queue {
-'    // 
+    // 
     QueueGameTypeConfig gameTypeConfig;
   };
 

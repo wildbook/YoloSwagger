@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolHonorV2SequenceEvent_HPP
 #define SWAGGER_TYPES_LolHonorV2SequenceEvent_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolHonorV2SequenceEvent {
-'    // 
+    // 
     std::string name;
     // 
     int32_t priority;

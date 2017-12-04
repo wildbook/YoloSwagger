@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_EndOfGameLcdsPlayerParticipantStatsSummary_HPP
 #include <json.hpp>
 #include "EndOfGameLcdsRawStatDTO.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct EndOfGameLcdsPlayerParticipantStatsSummary {
-'    // 
+    // 
     bool botPlayer;
     // 
     int32_t championId;

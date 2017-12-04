@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "LolChatChatRankedTier.hpp"
 #include "LolChatChatRankedQueue.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChatChatRankedEntry {
-'    // 
+    // 
     uint64_t division;
     // 
     uint64_t games;

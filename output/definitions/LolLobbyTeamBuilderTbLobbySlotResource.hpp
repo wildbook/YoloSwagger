@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbySlotResource_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbySlotResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderTbLobbySlotResource {
-'    // 
+    // 
     bool autoFillEligible;
     // 
     bool autoFillProtectedForPromos;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksPerkPageResource_HPP
 #define SWAGGER_TYPES_LolPerksPerkPageResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPerksPerkPageResource {
-'    // 
+    // 
     int32_t formatVersion;
     // 
     int32_t id;

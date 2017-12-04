@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoadoutsQueue_HPP
 #define SWAGGER_TYPES_LolLoadoutsQueue_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoadoutsQueue {
-'    // 
+    // 
     bool isTeamBuilderManaged;
   };
 

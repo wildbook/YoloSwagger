@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChampSelectLegacyCollectionsChampion_HPP
 #include <json.hpp>
 #include "LolChampSelectLegacyCollectionsOwnership.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyCollectionsChampion {
-'    // 
+    // 
     bool freeToPlay;
     // 
     int32_t id;

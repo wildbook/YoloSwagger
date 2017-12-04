@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolMatchmakingGameflowGameDodge_HPP
 #include <json.hpp>
 #include "LolMatchmakingMatchmakingDodgeState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolMatchmakingGameflowGameDodge {
-'    // 
+    // 
     std::vector<uint64_t> dodgeIds;
     // 
     LolMatchmakingMatchmakingDodgeState state;

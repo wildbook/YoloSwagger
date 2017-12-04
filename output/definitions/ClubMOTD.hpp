@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ClubMOTD_HPP
 #define SWAGGER_TYPES_ClubMOTD_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ClubMOTD {
-'    // 
+    // 
     std::string motd;
   };
 

@@ -1,15 +1,15 @@
 #ifndef SWAGGER_TYPES_LolClashRoster_HPP
 #define SWAGGER_TYPES_LolClashRoster_HPP
 #include <json.hpp>
-#include "RosterWithdraw.hpp"
+#include "LolClashRosterPhaseInfo.hpp"
 #include "LolClashRosterMember.hpp"
 #include "LolClashSuggestedInvite.hpp"
-#include "LolClashRosterPhaseInfo.hpp"
 #include "RewardIcon.hpp"
-namespace test {
+#include "RosterWithdraw.hpp"
+namespace leagueapi {
   // 
   struct LolClashRoster {
-'    // 
+    // 
     std::vector<RewardIcon> availableIcons;
     // 
     uint64_t captainSummonerId;

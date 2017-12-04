@@ -3,10 +3,10 @@
 #include <json.hpp>
 #include "RiotMessagingServiceState.hpp"
 #include "RiotMessagingServiceTokenType.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct RiotMessagingServiceSession {
-'    // 
+    // 
     RiotMessagingServiceState state;
     // 
     std::string token;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPftPFTEndOfGamePoints_HPP
 #define SWAGGER_TYPES_LolPftPFTEndOfGamePoints_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolPftPFTEndOfGamePoints {
-'    // 
+    // 
     int32_t pointChangeFromChampionsOwned;
     // 
     int32_t pointChangeFromGameplay;

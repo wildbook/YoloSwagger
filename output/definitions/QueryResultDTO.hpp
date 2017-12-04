@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_QueryResultDTO_HPP
 #define SWAGGER_TYPES_QueryResultDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct QueryResultDTO {
-'    // 
+    // 
     int64_t lastUpdate;
     // 
     nlohmann::json queryToLootNames;

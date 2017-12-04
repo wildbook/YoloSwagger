@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolBannersBannerFlag_HPP
 #define SWAGGER_TYPES_LolBannersBannerFlag_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolBannersBannerFlag {
-'    // 
+    // 
     std::string level;
     // 
     std::string theme;

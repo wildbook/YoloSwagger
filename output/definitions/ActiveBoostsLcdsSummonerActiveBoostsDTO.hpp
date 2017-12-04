@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_ActiveBoostsLcdsSummonerActiveBoostsDTO_HPP
 #define SWAGGER_TYPES_ActiveBoostsLcdsSummonerActiveBoostsDTO_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct ActiveBoostsLcdsSummonerActiveBoostsDTO {
-'    // 
+    // 
     int64_t ipBoostEndDate;
     // 
     uint32_t ipBoostPerWinCount;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_StoreLcdsSimpleDialogMessageResponse_HPP
 #define SWAGGER_TYPES_StoreLcdsSimpleDialogMessageResponse_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct StoreLcdsSimpleDialogMessageResponse {
-'    // 
+    // 
     uint64_t accountId;
     // 
     std::string command;

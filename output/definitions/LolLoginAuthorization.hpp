@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLoginAuthorization_HPP
 #define SWAGGER_TYPES_LolLoginAuthorization_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLoginAuthorization {
-'    // 
+    // 
     uint64_t currentAccountId;
     // 
     std::string currentPlatformId;

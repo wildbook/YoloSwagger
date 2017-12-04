@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyTeamBuilderTbRemovedFromServiceNotification_HPP
 #include <json.hpp>
 #include "LolLobbyTeamBuilderBackwardsTransitionInfoV1.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderTbRemovedFromServiceNotification {
-'    // 
+    // 
     LolLobbyTeamBuilderBackwardsTransitionInfoV1 backwardsTransitionInfo;
     // 
     std::string reason;

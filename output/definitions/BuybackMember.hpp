@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_BuybackMember_HPP
 #include <json.hpp>
 #include "BuybackState.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct BuybackMember {
-'    // 
+    // 
     int32_t bet;
     // 
     BuybackState buybackState;

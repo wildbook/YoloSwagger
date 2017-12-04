@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyAutoFillQueueDto_HPP
 #define SWAGGER_TYPES_LolLobbyAutoFillQueueDto_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyAutoFillQueueDto {
-'    // 
+    // 
     bool autoFillEligible;
     // 
     bool autoFillProtectedForPromos;

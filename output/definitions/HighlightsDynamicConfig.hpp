@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_HighlightsDynamicConfig_HPP
 #define SWAGGER_TYPES_HighlightsDynamicConfig_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct HighlightsDynamicConfig {
-'    // 
+    // 
     bool Enabled;
   };
 

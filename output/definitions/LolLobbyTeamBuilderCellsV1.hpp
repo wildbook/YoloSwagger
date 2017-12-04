@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolLobbyTeamBuilderCellsV1_HPP
 #include <json.hpp>
 #include "LolLobbyTeamBuilderCellV1.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderCellsV1 {
-'    // 
+    // 
     std::vector<LolLobbyTeamBuilderCellV1> alliedTeam;
     // 
     std::vector<LolLobbyTeamBuilderCellV1> enemyTeam;

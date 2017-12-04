@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolAcsAcsChampionGames_HPP
 #define SWAGGER_TYPES_LolAcsAcsChampionGames_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolAcsAcsChampionGames {
-'    // 
+    // 
     int32_t championId;
     // 
     std::string lane;

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LeaguesLcdsPlayerAggregatedStats_HPP
 #include <json.hpp>
 #include "LeaguesLcdsAggregatedStats.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LeaguesLcdsPlayerAggregatedStats {
-'    // 
+    // 
     LeaguesLcdsAggregatedStats aggregatedStats;
     // 
     uint64_t playerId;

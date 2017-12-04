@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolItemSetsItemSetItem_HPP
 #define SWAGGER_TYPES_LolItemSetsItemSetItem_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LolItemSetsItemSetItem {
-'    // 
+    // 
     uint16_t count;
     // 
     std::string id;

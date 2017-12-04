@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LcdsInviter_HPP
 #define SWAGGER_TYPES_LcdsInviter_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsInviter {
-'    // 
+    // 
     std::string previousSeasonHighestTier;
     // 
     uint64_t summonerId;

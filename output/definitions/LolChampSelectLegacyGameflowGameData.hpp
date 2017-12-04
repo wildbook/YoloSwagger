@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChampSelectLegacyGameflowGameData_HPP
 #include <json.hpp>
 #include "LolChampSelectLegacyQueue.hpp"
-namespace test {
+namespace leagueapi {
   // 
   struct LolChampSelectLegacyGameflowGameData {
-'    // 
+    // 
     LolChampSelectLegacyQueue queue;
   };
 

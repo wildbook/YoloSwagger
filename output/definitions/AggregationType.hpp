@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_AggregationType_HPP
 #define SWAGGER_TYPES_AggregationType_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class AggregationType {
-'    // 
+    // 
     average = 2,
     // 
     none = 0,

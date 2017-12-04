@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LcdsPlayer_HPP
 #define SWAGGER_TYPES_LcdsPlayer_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct LcdsPlayer {
-'    // 
+    // 
     uint64_t summonerId;
     // 
     std::string summonerName;

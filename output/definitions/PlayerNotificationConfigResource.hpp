@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerNotificationConfigResource_HPP
 #define SWAGGER_TYPES_PlayerNotificationConfigResource_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PlayerNotificationConfigResource {
-'    // 
+    // 
     uint64_t ExpirationCheckFrequency;
   };
 

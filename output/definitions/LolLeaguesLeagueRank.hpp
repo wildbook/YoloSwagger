@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLeaguesLeagueRank_HPP
 #define SWAGGER_TYPES_LolLeaguesLeagueRank_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   enum class LolLeaguesLeagueRank {
-'    // 
+    // 
     I = 0,
     // 
     II = 1,

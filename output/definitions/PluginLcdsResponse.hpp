@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PluginLcdsResponse_HPP
 #define SWAGGER_TYPES_PluginLcdsResponse_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct PluginLcdsResponse {
-'    // 
+    // 
     nlohmann::json body;
     // 
     std::string typeName;

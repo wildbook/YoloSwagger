@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_MatchmakingLcdsSummoner_HPP
 #define SWAGGER_TYPES_MatchmakingLcdsSummoner_HPP
 #include <json.hpp>
-namespace test {
+namespace leagueapi {
   // 
   struct MatchmakingLcdsSummoner {
-'    // 
+    // 
     std::string name;
     // 
     uint64_t sumId;
