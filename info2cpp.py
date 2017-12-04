@@ -93,4 +93,4 @@ def generate_defintions(info,  folder,  namespace):
         file.write("#endif // SWAGGER_TYPES_{0}_HPP\n".format(name))
 
 # json_save( info_init(json_load("help.json"),  json_load("lol.json")),  "info.json")       
-generate_defintions(json_load("info.json"),  "output",  "leagueapi")
+generate_defintions(json_load("info.json"),  "output/cpp",  "leagueapi")
