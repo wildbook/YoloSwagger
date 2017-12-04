@@ -9,11 +9,11 @@ namespace leagueapi {
     LolClashGameflowPhase phase;
   };
 
-  void to_json(nlohmann::json& j, const LolClashGameflowSession& v) {
+  inline void to_json(nlohmann::json& j, const LolClashGameflowSession& v) {
     j["phase"] = v.phase;
   }
 
-  void from_json(const nlohmann::json& j, LolClashGameflowSession& v) {
+  inline void from_json(const nlohmann::json& j, LolClashGameflowSession& v) {
     v.phase = j.at("phase").get<LolClashGameflowPhase>;
   }
 

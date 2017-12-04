@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_PatcherComponentResource_HPP
 #define SWAGGER_TYPES_PatcherComponentResource_HPP
 #include <json.hpp>
-#include "PatcherComponentResourceType.hpp"
 #include "PatcherHeaderEntry.hpp"
+#include "PatcherComponentResourceType.hpp"
 #include "PatcherComponentResourceHistory.hpp"
 namespace leagueapi {
   // 
@@ -31,7 +31,7 @@ namespace leagueapi {
     bool use_tls;
   };
 
-  void to_json(nlohmann::json& j, const PatcherComponentResource& v) {
+  inline void to_json(nlohmann::json& j, const PatcherComponentResource& v) {
     j["copy_to_solution"] = v.copy_to_solution;
     j["headers"] = v.headers;
     j["history"] = v.history;
@@ -45,7 +45,7 @@ namespace leagueapi {
     j["use_tls"] = v.use_tls;
   }
 
-  void from_json(const nlohmann::json& j, PatcherComponentResource& v) {
+  inline void from_json(const nlohmann::json& j, PatcherComponentResource& v) {
     v.copy_to_solution = j.at("copy_to_solution").get<bool>;
     v.headers = j.at("headers").get<std::vector<PatcherHeaderEntry>>;
     v.history = j.at("history").get<PatcherComponentResourceHistory>;

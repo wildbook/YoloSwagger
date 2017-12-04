@@ -16,7 +16,7 @@ namespace leagueapi {
     SENT = 5,
   };
 
-  void to_json(nlohmann::json& j, const LolChampSelectChampSelectTradeState& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectChampSelectTradeState& v) {
     switch(v) {
       case LolChampSelectChampSelectTradeState::AVAILABLE:
         j = "AVAILABLE";
@@ -36,7 +36,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolChampSelectChampSelectTradeState& v) {
+  inline void from_json(const nlohmann::json& j, LolChampSelectChampSelectTradeState& v) {
     const auto s& = j.get<std::string>();
     if(s == "AVAILABLE"){
       v = LolChampSelectChampSelectTradeState::AVAILABLE;

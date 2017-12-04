@@ -8,11 +8,11 @@ namespace leagueapi {
     bool canInvite;
   };
 
-  void to_json(nlohmann::json& j, const LcdsInvitePrivileges& v) {
+  inline void to_json(nlohmann::json& j, const LcdsInvitePrivileges& v) {
     j["canInvite"] = v.canInvite;
   }
 
-  void from_json(const nlohmann::json& j, LcdsInvitePrivileges& v) {
+  inline void from_json(const nlohmann::json& j, LcdsInvitePrivileges& v) {
     v.canInvite = j.at("canInvite").get<bool>;
   }
 

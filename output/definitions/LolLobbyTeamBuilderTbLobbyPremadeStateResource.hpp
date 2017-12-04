@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyPremadeStateResource_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyPremadeStateResource_HPP
 #include <json.hpp>
-#include "LolLobbyTeamBuilderReadyStateV1.hpp"
 #include "LolLobbyTeamBuilderTbLobbyBackwardsToPremadeTransitionResource.hpp"
+#include "LolLobbyTeamBuilderReadyStateV1.hpp"
 #include "LolLobbyTeamBuilderTbLobbySlotResource.hpp"
 namespace leagueapi {
   // 
@@ -39,7 +39,7 @@ namespace leagueapi {
     int64_t timer;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTbLobbyPremadeStateResource& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTbLobbyPremadeStateResource& v) {
     j["autoFillEligible"] = v.autoFillEligible;
     j["autoFillProtectedForPromos"] = v.autoFillProtectedForPromos;
     j["autoFillProtectedForStreaking"] = v.autoFillProtectedForStreaking;
@@ -57,7 +57,7 @@ namespace leagueapi {
     j["timer"] = v.timer;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTbLobbyPremadeStateResource& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTbLobbyPremadeStateResource& v) {
     v.autoFillEligible = j.at("autoFillEligible").get<bool>;
     v.autoFillProtectedForPromos = j.at("autoFillProtectedForPromos").get<bool>;
     v.autoFillProtectedForStreaking = j.at("autoFillProtectedForStreaking").get<bool>;

@@ -8,11 +8,11 @@ namespace leagueapi {
     std::string token;
   };
 
-  void to_json(nlohmann::json& j, const RsoAuthRSOJWTConfig& v) {
+  inline void to_json(nlohmann::json& j, const RsoAuthRSOJWTConfig& v) {
     j["token"] = v.token;
   }
 
-  void from_json(const nlohmann::json& j, RsoAuthRSOJWTConfig& v) {
+  inline void from_json(const nlohmann::json& j, RsoAuthRSOJWTConfig& v) {
     v.token = j.at("token").get<std::string>;
   }
 

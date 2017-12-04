@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LootLcdsRecipeClientDTO_HPP
 #define SWAGGER_TYPES_LootLcdsRecipeClientDTO_HPP
 #include <json.hpp>
-#include "LootLcdsRecipeMetadata.hpp"
 #include "LootLcdsRecipeOutputDTO.hpp"
 #include "LootLcdsRecipeSlotClientDTO.hpp"
+#include "LootLcdsRecipeMetadata.hpp"
 namespace leagueapi {
   // 
   struct LootLcdsRecipeClientDTO {
@@ -23,7 +23,7 @@ namespace leagueapi {
     std::string type;
   };
 
-  void to_json(nlohmann::json& j, const LootLcdsRecipeClientDTO& v) {
+  inline void to_json(nlohmann::json& j, const LootLcdsRecipeClientDTO& v) {
     j["crafterName"] = v.crafterName;
     j["displayCategories"] = v.displayCategories;
     j["metadata"] = v.metadata;
@@ -33,7 +33,7 @@ namespace leagueapi {
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, LootLcdsRecipeClientDTO& v) {
+  inline void from_json(const nlohmann::json& j, LootLcdsRecipeClientDTO& v) {
     v.crafterName = j.at("crafterName").get<std::string>;
     v.displayCategories = j.at("displayCategories").get<std::string>;
     v.metadata = j.at("metadata").get<LootLcdsRecipeMetadata>;

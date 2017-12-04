@@ -14,7 +14,7 @@ namespace leagueapi {
     Enabled = 3,
   };
 
-  void to_json(nlohmann::json& j, const LolClashClashState& v) {
+  inline void to_json(nlohmann::json& j, const LolClashClashState& v) {
     switch(v) {
       case LolClashClashState::DarkDisabled:
         j = "DarkDisabled";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolClashClashState& v) {
+  inline void from_json(const nlohmann::json& j, LolClashClashState& v) {
     const auto s& = j.get<std::string>();
     if(s == "DarkDisabled"){
       v = LolClashClashState::DarkDisabled;

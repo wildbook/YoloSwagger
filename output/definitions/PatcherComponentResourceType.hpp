@@ -10,7 +10,7 @@ namespace leagueapi {
     solution = 1,
   };
 
-  void to_json(nlohmann::json& j, const PatcherComponentResourceType& v) {
+  inline void to_json(nlohmann::json& j, const PatcherComponentResourceType& v) {
     switch(v) {
       case PatcherComponentResourceType::project:
         j = "project";
@@ -21,7 +21,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, PatcherComponentResourceType& v) {
+  inline void from_json(const nlohmann::json& j, PatcherComponentResourceType& v) {
     const auto s& = j.get<std::string>();
     if(s == "project"){
       v = PatcherComponentResourceType::project;

@@ -18,7 +18,7 @@ namespace leagueapi {
     uint32_t summonerLevel;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbySummoner& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbySummoner& v) {
     j["accountId"] = v.accountId;
     j["displayName"] = v.displayName;
     j["profileIconId"] = v.profileIconId;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["summonerLevel"] = v.summonerLevel;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbySummoner& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbySummoner& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.displayName = j.at("displayName").get<std::string>;
     v.profileIconId = j.at("profileIconId").get<int32_t>;

@@ -17,7 +17,7 @@ namespace leagueapi {
     bool isUpdateAvailable;
   };
 
-  void to_json(nlohmann::json& j, const LolGameflowPatcherProductState& v) {
+  inline void to_json(nlohmann::json& j, const LolGameflowPatcherProductState& v) {
     j["action"] = v.action;
     j["isCorrupted"] = v.isCorrupted;
     j["isStopped"] = v.isStopped;
@@ -25,7 +25,7 @@ namespace leagueapi {
     j["isUpdateAvailable"] = v.isUpdateAvailable;
   }
 
-  void from_json(const nlohmann::json& j, LolGameflowPatcherProductState& v) {
+  inline void from_json(const nlohmann::json& j, LolGameflowPatcherProductState& v) {
     v.action = j.at("action").get<LolGameflowPatcherProductStateAction>;
     v.isCorrupted = j.at("isCorrupted").get<bool>;
     v.isStopped = j.at("isStopped").get<bool>;

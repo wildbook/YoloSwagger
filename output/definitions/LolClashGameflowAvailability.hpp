@@ -8,11 +8,11 @@ namespace leagueapi {
     bool isAvailable;
   };
 
-  void to_json(nlohmann::json& j, const LolClashGameflowAvailability& v) {
+  inline void to_json(nlohmann::json& j, const LolClashGameflowAvailability& v) {
     j["isAvailable"] = v.isAvailable;
   }
 
-  void from_json(const nlohmann::json& j, LolClashGameflowAvailability& v) {
+  inline void from_json(const nlohmann::json& j, LolClashGameflowAvailability& v) {
     v.isAvailable = j.at("isAvailable").get<bool>;
   }
 

@@ -12,13 +12,13 @@ namespace leagueapi {
     std::vector<std::string> texts;
   };
 
-  void to_json(nlohmann::json& j, const SanitizerSanitizeResponse& v) {
+  inline void to_json(nlohmann::json& j, const SanitizerSanitizeResponse& v) {
     j["modified"] = v.modified;
     j["text"] = v.text;
     j["texts"] = v.texts;
   }
 
-  void from_json(const nlohmann::json& j, SanitizerSanitizeResponse& v) {
+  inline void from_json(const nlohmann::json& j, SanitizerSanitizeResponse& v) {
     v.modified = j.at("modified").get<bool>;
     v.text = j.at("text").get<std::string>;
     v.texts = j.at("texts").get<std::vector<std::string>>;

@@ -16,7 +16,7 @@ namespace leagueapi {
     std::string summonerName;
   };
 
-  void to_json(nlohmann::json& j, const ChampSelectLcdsPlayerParticipant& v) {
+  inline void to_json(nlohmann::json& j, const ChampSelectLcdsPlayerParticipant& v) {
     j["pickMode"] = v.pickMode;
     j["pickTurn"] = v.pickTurn;
     j["summonerId"] = v.summonerId;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["summonerName"] = v.summonerName;
   }
 
-  void from_json(const nlohmann::json& j, ChampSelectLcdsPlayerParticipant& v) {
+  inline void from_json(const nlohmann::json& j, ChampSelectLcdsPlayerParticipant& v) {
     v.pickMode = j.at("pickMode").get<int32_t>;
     v.pickTurn = j.at("pickTurn").get<int32_t>;
     v.summonerId = j.at("summonerId").get<uint64_t>;

@@ -26,7 +26,7 @@ namespace leagueapi {
     std::string TeamBuilderDomainName;
   };
 
-  void to_json(nlohmann::json& j, const LolChatChatDomainConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolChatChatDomainConfig& v) {
     j["ChampSelectDomainName"] = v.ChampSelectDomainName;
     j["ClubDomainName"] = v.ClubDomainName;
     j["CustomGameDomainName"] = v.CustomGameDomainName;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["TeamBuilderDomainName"] = v.TeamBuilderDomainName;
   }
 
-  void from_json(const nlohmann::json& j, LolChatChatDomainConfig& v) {
+  inline void from_json(const nlohmann::json& j, LolChatChatDomainConfig& v) {
     v.ChampSelectDomainName = j.at("ChampSelectDomainName").get<std::string>;
     v.ClubDomainName = j.at("ClubDomainName").get<std::string>;
     v.CustomGameDomainName = j.at("CustomGameDomainName").get<std::string>;

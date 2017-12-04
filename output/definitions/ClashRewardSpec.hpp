@@ -26,7 +26,7 @@ namespace leagueapi {
     std::string tier;
   };
 
-  void to_json(nlohmann::json& j, const ClashRewardSpec& v) {
+  inline void to_json(nlohmann::json& j, const ClashRewardSpec& v) {
     j["bracket"] = v.bracket;
     j["cup"] = v.cup;
     j["gem"] = v.gem;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["tier"] = v.tier;
   }
 
-  void from_json(const nlohmann::json& j, ClashRewardSpec& v) {
+  inline void from_json(const nlohmann::json& j, ClashRewardSpec& v) {
     v.bracket = j.at("bracket").get<std::string>;
     v.cup = j.at("cup").get<std::string>;
     v.gem = j.at("gem").get<std::string>;

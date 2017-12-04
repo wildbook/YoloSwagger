@@ -13,13 +13,13 @@ namespace leagueapi {
     MissionRewardMediaItemDTO outro;
   };
 
-  void to_json(nlohmann::json& j, const MissionRewardMediaDTO& v) {
+  inline void to_json(nlohmann::json& j, const MissionRewardMediaDTO& v) {
     j["intro"] = v.intro;
     j["loop"] = v.loop;
     j["outro"] = v.outro;
   }
 
-  void from_json(const nlohmann::json& j, MissionRewardMediaDTO& v) {
+  inline void from_json(const nlohmann::json& j, MissionRewardMediaDTO& v) {
     v.intro = j.at("intro").get<MissionRewardMediaItemDTO>;
     v.loop = j.at("loop").get<MissionRewardMediaItemDTO>;
     v.outro = j.at("outro").get<MissionRewardMediaItemDTO>;

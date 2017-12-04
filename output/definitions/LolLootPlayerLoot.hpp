@@ -66,7 +66,7 @@ namespace leagueapi {
     int32_t value;
   };
 
-  void to_json(nlohmann::json& j, const LolLootPlayerLoot& v) {
+  inline void to_json(nlohmann::json& j, const LolLootPlayerLoot& v) {
     j["asset"] = v.asset;
     j["count"] = v.count;
     j["disenchantLootName"] = v.disenchantLootName;
@@ -98,7 +98,7 @@ namespace leagueapi {
     j["value"] = v.value;
   }
 
-  void from_json(const nlohmann::json& j, LolLootPlayerLoot& v) {
+  inline void from_json(const nlohmann::json& j, LolLootPlayerLoot& v) {
     v.asset = j.at("asset").get<std::string>;
     v.count = j.at("count").get<int32_t>;
     v.disenchantLootName = j.at("disenchantLootName").get<std::string>;

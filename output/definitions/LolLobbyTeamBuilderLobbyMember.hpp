@@ -27,7 +27,7 @@ namespace leagueapi {
     bool showPositionExcluder;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLobbyMember& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLobbyMember& v) {
     j["autoFillEligible"] = v.autoFillEligible;
     j["autoFillProtectedForPromos"] = v.autoFillProtectedForPromos;
     j["autoFillProtectedForSoloing"] = v.autoFillProtectedForSoloing;
@@ -40,7 +40,7 @@ namespace leagueapi {
     j["showPositionExcluder"] = v.showPositionExcluder;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLobbyMember& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLobbyMember& v) {
     v.autoFillEligible = j.at("autoFillEligible").get<bool>;
     v.autoFillProtectedForPromos = j.at("autoFillProtectedForPromos").get<bool>;
     v.autoFillProtectedForSoloing = j.at("autoFillProtectedForSoloing").get<bool>;

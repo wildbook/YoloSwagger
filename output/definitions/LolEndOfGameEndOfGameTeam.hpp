@@ -29,7 +29,7 @@ namespace leagueapi {
     int32_t teamId;
   };
 
-  void to_json(nlohmann::json& j, const LolEndOfGameEndOfGameTeam& v) {
+  inline void to_json(nlohmann::json& j, const LolEndOfGameEndOfGameTeam& v) {
     j["championBans"] = v.championBans;
     j["fullId"] = v.fullId;
     j["isBottomTeam"] = v.isBottomTeam;
@@ -43,7 +43,7 @@ namespace leagueapi {
     j["teamId"] = v.teamId;
   }
 
-  void from_json(const nlohmann::json& j, LolEndOfGameEndOfGameTeam& v) {
+  inline void from_json(const nlohmann::json& j, LolEndOfGameEndOfGameTeam& v) {
     v.championBans = j.at("championBans").get<std::vector<int32_t>>;
     v.fullId = j.at("fullId").get<std::string>;
     v.isBottomTeam = j.at("isBottomTeam").get<bool>;

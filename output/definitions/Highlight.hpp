@@ -20,7 +20,7 @@ namespace leagueapi {
     std::string url;
   };
 
-  void to_json(nlohmann::json& j, const Highlight& v) {
+  inline void to_json(nlohmann::json& j, const Highlight& v) {
     j["fileSizeBytes"] = v.fileSizeBytes;
     j["filepath"] = v.filepath;
     j["id"] = v.id;
@@ -30,7 +30,7 @@ namespace leagueapi {
     j["url"] = v.url;
   }
 
-  void from_json(const nlohmann::json& j, Highlight& v) {
+  inline void from_json(const nlohmann::json& j, Highlight& v) {
     v.fileSizeBytes = j.at("fileSizeBytes").get<uint64_t>;
     v.filepath = j.at("filepath").get<std::string>;
     v.id = j.at("id").get<uint64_t>;

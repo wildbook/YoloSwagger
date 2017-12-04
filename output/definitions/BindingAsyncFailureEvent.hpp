@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string error;
   };
 
-  void to_json(nlohmann::json& j, const BindingAsyncFailureEvent& v) {
+  inline void to_json(nlohmann::json& j, const BindingAsyncFailureEvent& v) {
     j["asyncToken"] = v.asyncToken;
     j["error"] = v.error;
   }
 
-  void from_json(const nlohmann::json& j, BindingAsyncFailureEvent& v) {
+  inline void from_json(const nlohmann::json& j, BindingAsyncFailureEvent& v) {
     v.asyncToken = j.at("asyncToken").get<uint32_t>;
     v.error = j.at("error").get<std::string>;
   }

@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolItemSetsItemSet_HPP
 #define SWAGGER_TYPES_LolItemSetsItemSet_HPP
 #include <json.hpp>
-#include "LolItemSetsItemSetBlock.hpp"
 #include "LolItemSetsPreferredItemSlot.hpp"
+#include "LolItemSetsItemSetBlock.hpp"
 namespace leagueapi {
   // 
   struct LolItemSetsItemSet {
@@ -30,7 +30,7 @@ namespace leagueapi {
     std::string uid;
   };
 
-  void to_json(nlohmann::json& j, const LolItemSetsItemSet& v) {
+  inline void to_json(nlohmann::json& j, const LolItemSetsItemSet& v) {
     j["associatedChampions"] = v.associatedChampions;
     j["associatedMaps"] = v.associatedMaps;
     j["blocks"] = v.blocks;
@@ -44,7 +44,7 @@ namespace leagueapi {
     j["uid"] = v.uid;
   }
 
-  void from_json(const nlohmann::json& j, LolItemSetsItemSet& v) {
+  inline void from_json(const nlohmann::json& j, LolItemSetsItemSet& v) {
     v.associatedChampions = j.at("associatedChampions").get<std::vector<int32_t>>;
     v.associatedMaps = j.at("associatedMaps").get<std::vector<int32_t>>;
     v.blocks = j.at("blocks").get<std::vector<LolItemSetsItemSetBlock>>;

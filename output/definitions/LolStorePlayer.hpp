@@ -14,14 +14,14 @@ namespace leagueapi {
     uint32_t summonerLevel;
   };
 
-  void to_json(nlohmann::json& j, const LolStorePlayer& v) {
+  inline void to_json(nlohmann::json& j, const LolStorePlayer& v) {
     j["accountId"] = v.accountId;
     j["ip"] = v.ip;
     j["rp"] = v.rp;
     j["summonerLevel"] = v.summonerLevel;
   }
 
-  void from_json(const nlohmann::json& j, LolStorePlayer& v) {
+  inline void from_json(const nlohmann::json& j, LolStorePlayer& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.ip = j.at("ip").get<int64_t>;
     v.rp = j.at("rp").get<int64_t>;

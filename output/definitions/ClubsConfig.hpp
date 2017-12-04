@@ -30,7 +30,7 @@ namespace leagueapi {
     int32_t minClubTagLength;
   };
 
-  void to_json(nlohmann::json& j, const ClubsConfig& v) {
+  inline void to_json(nlohmann::json& j, const ClubsConfig& v) {
     j["clubDescriptionMaxLength"] = v.clubDescriptionMaxLength;
     j["clubMotdMaxLength"] = v.clubMotdMaxLength;
     j["clubNominationsEnabled"] = v.clubNominationsEnabled;
@@ -45,7 +45,7 @@ namespace leagueapi {
     j["minClubTagLength"] = v.minClubTagLength;
   }
 
-  void from_json(const nlohmann::json& j, ClubsConfig& v) {
+  inline void from_json(const nlohmann::json& j, ClubsConfig& v) {
     v.clubDescriptionMaxLength = j.at("clubDescriptionMaxLength").get<int32_t>;
     v.clubMotdMaxLength = j.at("clubMotdMaxLength").get<int32_t>;
     v.clubNominationsEnabled = j.at("clubNominationsEnabled").get<bool>;

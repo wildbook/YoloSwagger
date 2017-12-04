@@ -15,14 +15,14 @@ namespace leagueapi {
     uint32_t processorSpeed;
   };
 
-  void to_json(nlohmann::json& j, const basicSystemInfo& v) {
+  inline void to_json(nlohmann::json& j, const basicSystemInfo& v) {
     j["operatingSystem"] = v.operatingSystem;
     j["physicalMemory"] = v.physicalMemory;
     j["physicalProcessorCores"] = v.physicalProcessorCores;
     j["processorSpeed"] = v.processorSpeed;
   }
 
-  void from_json(const nlohmann::json& j, basicSystemInfo& v) {
+  inline void from_json(const nlohmann::json& j, basicSystemInfo& v) {
     v.operatingSystem = j.at("operatingSystem").get<basicOperatingSystemInfo>;
     v.physicalMemory = j.at("physicalMemory").get<uint64_t>;
     v.physicalProcessorCores = j.at("physicalProcessorCores").get<uint32_t>;

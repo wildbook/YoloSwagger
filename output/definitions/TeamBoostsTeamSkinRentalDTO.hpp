@@ -20,7 +20,7 @@ namespace leagueapi {
     bool unlocked;
   };
 
-  void to_json(nlohmann::json& j, const TeamBoostsTeamSkinRentalDTO& v) {
+  inline void to_json(nlohmann::json& j, const TeamBoostsTeamSkinRentalDTO& v) {
     j["availableSkins"] = v.availableSkins;
     j["ipReward"] = v.ipReward;
     j["ipRewardForPurchaser"] = v.ipRewardForPurchaser;
@@ -30,7 +30,7 @@ namespace leagueapi {
     j["unlocked"] = v.unlocked;
   }
 
-  void from_json(const nlohmann::json& j, TeamBoostsTeamSkinRentalDTO& v) {
+  inline void from_json(const nlohmann::json& j, TeamBoostsTeamSkinRentalDTO& v) {
     v.availableSkins = j.at("availableSkins").get<std::vector<int64_t>>;
     v.ipReward = j.at("ipReward").get<int64_t>;
     v.ipRewardForPurchaser = j.at("ipRewardForPurchaser").get<int64_t>;

@@ -10,12 +10,12 @@ namespace leagueapi {
     std::vector<uint64_t> summonerIds;
   };
 
-  void to_json(nlohmann::json& j, const LolQueueEligibilityEligibilityQueryParams& v) {
+  inline void to_json(nlohmann::json& j, const LolQueueEligibilityEligibilityQueryParams& v) {
     j["queueIds"] = v.queueIds;
     j["summonerIds"] = v.summonerIds;
   }
 
-  void from_json(const nlohmann::json& j, LolQueueEligibilityEligibilityQueryParams& v) {
+  inline void from_json(const nlohmann::json& j, LolQueueEligibilityEligibilityQueryParams& v) {
     v.queueIds = j.at("queueIds").get<std::vector<int32_t>>;
     v.summonerIds = j.at("summonerIds").get<std::vector<uint64_t>>;
   }

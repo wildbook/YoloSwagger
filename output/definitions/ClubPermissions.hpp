@@ -18,7 +18,7 @@ namespace leagueapi {
     std::vector<std::string> UNKNOWN;
   };
 
-  void to_json(nlohmann::json& j, const ClubPermissions& v) {
+  inline void to_json(nlohmann::json& j, const ClubPermissions& v) {
     j["ADMIN"] = v.ADMIN;
     j["INVITEE"] = v.INVITEE;
     j["MEMBER"] = v.MEMBER;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["UNKNOWN"] = v.UNKNOWN;
   }
 
-  void from_json(const nlohmann::json& j, ClubPermissions& v) {
+  inline void from_json(const nlohmann::json& j, ClubPermissions& v) {
     v.ADMIN = j.at("ADMIN").get<std::vector<std::string>>;
     v.INVITEE = j.at("INVITEE").get<std::vector<std::string>>;
     v.MEMBER = j.at("MEMBER").get<std::vector<std::string>>;

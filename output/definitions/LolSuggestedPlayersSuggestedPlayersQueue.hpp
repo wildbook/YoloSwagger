@@ -10,12 +10,12 @@ namespace leagueapi {
     uint32_t minLevel;
   };
 
-  void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersQueue& v) {
+  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersQueue& v) {
     j["id"] = v.id;
     j["minLevel"] = v.minLevel;
   }
 
-  void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersQueue& v) {
+  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersQueue& v) {
     v.id = j.at("id").get<int32_t>;
     v.minLevel = j.at("minLevel").get<uint32_t>;
   }

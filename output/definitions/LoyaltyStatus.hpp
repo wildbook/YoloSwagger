@@ -18,7 +18,7 @@ namespace leagueapi {
     REWARDS_GRANT = 1,
   };
 
-  void to_json(nlohmann::json& j, const LoyaltyStatus& v) {
+  inline void to_json(nlohmann::json& j, const LoyaltyStatus& v) {
     switch(v) {
       case LoyaltyStatus::CHANGE:
         j = "CHANGE";
@@ -41,7 +41,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LoyaltyStatus& v) {
+  inline void from_json(const nlohmann::json& j, LoyaltyStatus& v) {
     const auto s& = j.get<std::string>();
     if(s == "CHANGE"){
       v = LoyaltyStatus::CHANGE;

@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string refId;
   };
 
-  void to_json(nlohmann::json& j, const LootNameRefId& v) {
+  inline void to_json(nlohmann::json& j, const LootNameRefId& v) {
     j["lootName"] = v.lootName;
     j["refId"] = v.refId;
   }
 
-  void from_json(const nlohmann::json& j, LootNameRefId& v) {
+  inline void from_json(const nlohmann::json& j, LootNameRefId& v) {
     v.lootName = j.at("lootName").get<std::string>;
     v.refId = j.at("refId").get<std::string>;
   }

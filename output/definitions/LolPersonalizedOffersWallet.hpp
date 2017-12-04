@@ -8,11 +8,11 @@ namespace leagueapi {
     int64_t rp;
   };
 
-  void to_json(nlohmann::json& j, const LolPersonalizedOffersWallet& v) {
+  inline void to_json(nlohmann::json& j, const LolPersonalizedOffersWallet& v) {
     j["rp"] = v.rp;
   }
 
-  void from_json(const nlohmann::json& j, LolPersonalizedOffersWallet& v) {
+  inline void from_json(const nlohmann::json& j, LolPersonalizedOffersWallet& v) {
     v.rp = j.at("rp").get<int64_t>;
   }
 

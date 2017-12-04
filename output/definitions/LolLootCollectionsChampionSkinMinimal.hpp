@@ -19,7 +19,7 @@ namespace leagueapi {
     std::string tilePath;
   };
 
-  void to_json(nlohmann::json& j, const LolLootCollectionsChampionSkinMinimal& v) {
+  inline void to_json(nlohmann::json& j, const LolLootCollectionsChampionSkinMinimal& v) {
     j["championId"] = v.championId;
     j["id"] = v.id;
     j["name"] = v.name;
@@ -28,7 +28,7 @@ namespace leagueapi {
     j["tilePath"] = v.tilePath;
   }
 
-  void from_json(const nlohmann::json& j, LolLootCollectionsChampionSkinMinimal& v) {
+  inline void from_json(const nlohmann::json& j, LolLootCollectionsChampionSkinMinimal& v) {
     v.championId = j.at("championId").get<int32_t>;
     v.id = j.at("id").get<int32_t>;
     v.name = j.at("name").get<std::string>;

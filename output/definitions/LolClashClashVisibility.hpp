@@ -12,7 +12,7 @@ namespace leagueapi {
     Visible = 2,
   };
 
-  void to_json(nlohmann::json& j, const LolClashClashVisibility& v) {
+  inline void to_json(nlohmann::json& j, const LolClashClashVisibility& v) {
     switch(v) {
       case LolClashClashVisibility::DarkVisible:
         j = "DarkVisible";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolClashClashVisibility& v) {
+  inline void from_json(const nlohmann::json& j, LolClashClashVisibility& v) {
     const auto s& = j.get<std::string>();
     if(s == "DarkVisible"){
       v = LolClashClashVisibility::DarkVisible;

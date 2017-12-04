@@ -18,7 +18,7 @@ namespace leagueapi {
     std::string status;
   };
 
-  void to_json(nlohmann::json& j, const LolLoginLcdsServiceProxyResponse& v) {
+  inline void to_json(nlohmann::json& j, const LolLoginLcdsServiceProxyResponse& v) {
     j["compressedPayload"] = v.compressedPayload;
     j["messageId"] = v.messageId;
     j["methodName"] = v.methodName;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["status"] = v.status;
   }
 
-  void from_json(const nlohmann::json& j, LolLoginLcdsServiceProxyResponse& v) {
+  inline void from_json(const nlohmann::json& j, LolLoginLcdsServiceProxyResponse& v) {
     v.compressedPayload = j.at("compressedPayload").get<bool>;
     v.messageId = j.at("messageId").get<std::string>;
     v.methodName = j.at("methodName").get<std::string>;

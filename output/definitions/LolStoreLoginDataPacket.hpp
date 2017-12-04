@@ -12,12 +12,12 @@ namespace leagueapi {
     std::vector<LolStoreSimpleDialogMessage> simpleMessages;
   };
 
-  void to_json(nlohmann::json& j, const LolStoreLoginDataPacket& v) {
+  inline void to_json(nlohmann::json& j, const LolStoreLoginDataPacket& v) {
     j["allSummonerData"] = v.allSummonerData;
     j["simpleMessages"] = v.simpleMessages;
   }
 
-  void from_json(const nlohmann::json& j, LolStoreLoginDataPacket& v) {
+  inline void from_json(const nlohmann::json& j, LolStoreLoginDataPacket& v) {
     v.allSummonerData = j.at("allSummonerData").get<LolStoreAllSummonerData>;
     v.simpleMessages = j.at("simpleMessages").get<std::vector<LolStoreSimpleDialogMessage>>;
   }

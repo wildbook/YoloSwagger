@@ -8,11 +8,11 @@ namespace leagueapi {
     std::string componentType;
   };
 
-  void to_json(nlohmann::json& j, const LolReplaysReplayContextData& v) {
+  inline void to_json(nlohmann::json& j, const LolReplaysReplayContextData& v) {
     j["componentType"] = v.componentType;
   }
 
-  void from_json(const nlohmann::json& j, LolReplaysReplayContextData& v) {
+  inline void from_json(const nlohmann::json& j, LolReplaysReplayContextData& v) {
     v.componentType = j.at("componentType").get<std::string>;
   }
 

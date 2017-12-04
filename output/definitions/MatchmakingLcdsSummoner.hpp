@@ -10,12 +10,12 @@ namespace leagueapi {
     uint64_t sumId;
   };
 
-  void to_json(nlohmann::json& j, const MatchmakingLcdsSummoner& v) {
+  inline void to_json(nlohmann::json& j, const MatchmakingLcdsSummoner& v) {
     j["name"] = v.name;
     j["sumId"] = v.sumId;
   }
 
-  void from_json(const nlohmann::json& j, MatchmakingLcdsSummoner& v) {
+  inline void from_json(const nlohmann::json& j, MatchmakingLcdsSummoner& v) {
     v.name = j.at("name").get<std::string>;
     v.sumId = j.at("sumId").get<uint64_t>;
   }

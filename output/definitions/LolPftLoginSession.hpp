@@ -17,7 +17,7 @@ namespace leagueapi {
     uint64_t summonerId;
   };
 
-  void to_json(nlohmann::json& j, const LolPftLoginSession& v) {
+  inline void to_json(nlohmann::json& j, const LolPftLoginSession& v) {
     j["accountId"] = v.accountId;
     j["idToken"] = v.idToken;
     j["puuid"] = v.puuid;
@@ -25,7 +25,7 @@ namespace leagueapi {
     j["summonerId"] = v.summonerId;
   }
 
-  void from_json(const nlohmann::json& j, LolPftLoginSession& v) {
+  inline void from_json(const nlohmann::json& j, LolPftLoginSession& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.idToken = j.at("idToken").get<std::string>;
     v.puuid = j.at("puuid").get<std::string>;

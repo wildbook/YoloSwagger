@@ -14,13 +14,13 @@ namespace leagueapi {
     RiotMessagingServiceTokenType tokenType;
   };
 
-  void to_json(nlohmann::json& j, const RiotMessagingServiceSession& v) {
+  inline void to_json(nlohmann::json& j, const RiotMessagingServiceSession& v) {
     j["state"] = v.state;
     j["token"] = v.token;
     j["tokenType"] = v.tokenType;
   }
 
-  void from_json(const nlohmann::json& j, RiotMessagingServiceSession& v) {
+  inline void from_json(const nlohmann::json& j, RiotMessagingServiceSession& v) {
     v.state = j.at("state").get<RiotMessagingServiceState>;
     v.token = j.at("token").get<std::string>;
     v.tokenType = j.at("tokenType").get<RiotMessagingServiceTokenType>;

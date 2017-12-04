@@ -24,7 +24,7 @@ namespace leagueapi {
     UNKNOWN = 0,
   };
 
-  void to_json(nlohmann::json& j, const LolLootRedeemableStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolLootRedeemableStatus& v) {
     switch(v) {
       case LolLootRedeemableStatus::ALREADY_OWNED:
         j = "ALREADY_OWNED";
@@ -56,7 +56,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLootRedeemableStatus& v) {
+  inline void from_json(const nlohmann::json& j, LolLootRedeemableStatus& v) {
     const auto s& = j.get<std::string>();
     if(s == "ALREADY_OWNED"){
       v = LolLootRedeemableStatus::ALREADY_OWNED;

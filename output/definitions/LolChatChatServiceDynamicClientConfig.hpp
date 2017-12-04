@@ -12,12 +12,12 @@ namespace leagueapi {
     LolChatLcuSocialConfig LcuSocial;
   };
 
-  void to_json(nlohmann::json& j, const LolChatChatServiceDynamicClientConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolChatChatServiceDynamicClientConfig& v) {
     j["ChatDomain"] = v.ChatDomain;
     j["LcuSocial"] = v.LcuSocial;
   }
 
-  void from_json(const nlohmann::json& j, LolChatChatServiceDynamicClientConfig& v) {
+  inline void from_json(const nlohmann::json& j, LolChatChatServiceDynamicClientConfig& v) {
     v.ChatDomain = j.at("ChatDomain").get<LolChatChatDomainConfig>;
     v.LcuSocial = j.at("LcuSocial").get<LolChatLcuSocialConfig>;
   }

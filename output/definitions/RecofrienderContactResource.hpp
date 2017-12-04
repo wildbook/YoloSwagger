@@ -25,7 +25,7 @@ namespace leagueapi {
     uint64_t summonerId;
   };
 
-  void to_json(nlohmann::json& j, const RecofrienderContactResource& v) {
+  inline void to_json(nlohmann::json& j, const RecofrienderContactResource& v) {
     j["accountId"] = v.accountId;
     j["action"] = v.action;
     j["displayState"] = v.displayState;
@@ -37,7 +37,7 @@ namespace leagueapi {
     j["summonerId"] = v.summonerId;
   }
 
-  void from_json(const nlohmann::json& j, RecofrienderContactResource& v) {
+  inline void from_json(const nlohmann::json& j, RecofrienderContactResource& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.action = j.at("action").get<std::string>;
     v.displayState = j.at("displayState").get<std::string>;

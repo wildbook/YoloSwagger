@@ -15,14 +15,14 @@ namespace leagueapi {
     BindingFullTypeIdentifier type;
   };
 
-  void to_json(nlohmann::json& j, const BindingFullArgumentHelp& v) {
+  inline void to_json(nlohmann::json& j, const BindingFullArgumentHelp& v) {
     j["description"] = v.description;
     j["name"] = v.name;
     j["optional"] = v.optional;
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, BindingFullArgumentHelp& v) {
+  inline void from_json(const nlohmann::json& j, BindingFullArgumentHelp& v) {
     v.description = j.at("description").get<std::string>;
     v.name = j.at("name").get<std::string>;
     v.optional = j.at("optional").get<bool>;

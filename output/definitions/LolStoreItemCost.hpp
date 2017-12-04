@@ -12,13 +12,13 @@ namespace leagueapi {
     float discount;
   };
 
-  void to_json(nlohmann::json& j, const LolStoreItemCost& v) {
+  inline void to_json(nlohmann::json& j, const LolStoreItemCost& v) {
     j["cost"] = v.cost;
     j["currency"] = v.currency;
     j["discount"] = v.discount;
   }
 
-  void from_json(const nlohmann::json& j, LolStoreItemCost& v) {
+  inline void from_json(const nlohmann::json& j, LolStoreItemCost& v) {
     v.cost = j.at("cost").get<int64_t>;
     v.currency = j.at("currency").get<std::string>;
     v.discount = j.at("discount").get<float>;

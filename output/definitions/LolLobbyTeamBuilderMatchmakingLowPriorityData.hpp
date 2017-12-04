@@ -14,14 +14,14 @@ namespace leagueapi {
     double penaltyTimeRemaining;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingLowPriorityData& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingLowPriorityData& v) {
     j["bustedLeaverAccessToken"] = v.bustedLeaverAccessToken;
     j["penalizedSummonerIds"] = v.penalizedSummonerIds;
     j["penaltyTime"] = v.penaltyTime;
     j["penaltyTimeRemaining"] = v.penaltyTimeRemaining;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingLowPriorityData& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingLowPriorityData& v) {
     v.bustedLeaverAccessToken = j.at("bustedLeaverAccessToken").get<std::string>;
     v.penalizedSummonerIds = j.at("penalizedSummonerIds").get<std::vector<uint64_t>>;
     v.penaltyTime = j.at("penaltyTime").get<double>;

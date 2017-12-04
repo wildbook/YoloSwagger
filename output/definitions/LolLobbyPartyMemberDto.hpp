@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolLobbyPartyMemberDto_HPP
 #define SWAGGER_TYPES_LolLobbyPartyMemberDto_HPP
 #include <json.hpp>
-#include "LolLobbyGameModeDto.hpp"
-#include "LolLobbyPartyMemberRoleEnum.hpp"
 #include "LolLobbyPartyMemberMetadataDto.hpp"
+#include "LolLobbyPartyMemberRoleEnum.hpp"
+#include "LolLobbyGameModeDto.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyPartyMemberDto {
@@ -33,7 +33,7 @@ namespace leagueapi {
     uint64_t summonerId;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyPartyMemberDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyPartyMemberDto& v) {
     j["accountId"] = v.accountId;
     j["canInvite"] = v.canInvite;
     j["gameMode"] = v.gameMode;
@@ -48,7 +48,7 @@ namespace leagueapi {
     j["summonerId"] = v.summonerId;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyPartyMemberDto& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyPartyMemberDto& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.canInvite = j.at("canInvite").get<bool>;
     v.gameMode = j.at("gameMode").get<LolLobbyGameModeDto>;

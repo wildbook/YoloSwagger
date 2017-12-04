@@ -48,7 +48,7 @@ namespace leagueapi {
     UnknownRestriction = 20,
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyEligibilityRestrictionCode& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyEligibilityRestrictionCode& v) {
     switch(v) {
       case LolLobbyEligibilityRestrictionCode::PlayerAvailableChampionRestriction:
         j = "PlayerAvailableChampionRestriction";
@@ -116,7 +116,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyEligibilityRestrictionCode& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyEligibilityRestrictionCode& v) {
     const auto s& = j.get<std::string>();
     if(s == "PlayerAvailableChampionRestriction"){
       v = LolLobbyEligibilityRestrictionCode::PlayerAvailableChampionRestriction;

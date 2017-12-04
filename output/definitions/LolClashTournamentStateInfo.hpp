@@ -19,7 +19,7 @@ namespace leagueapi {
     int64_t tournamentId;
   };
 
-  void to_json(nlohmann::json& j, const LolClashTournamentStateInfo& v) {
+  inline void to_json(nlohmann::json& j, const LolClashTournamentStateInfo& v) {
     j["currentPhaseId"] = v.currentPhaseId;
     j["nextPhaseId"] = v.nextPhaseId;
     j["nextStateChangeTime"] = v.nextStateChangeTime;
@@ -28,7 +28,7 @@ namespace leagueapi {
     j["tournamentId"] = v.tournamentId;
   }
 
-  void from_json(const nlohmann::json& j, LolClashTournamentStateInfo& v) {
+  inline void from_json(const nlohmann::json& j, LolClashTournamentStateInfo& v) {
     v.currentPhaseId = j.at("currentPhaseId").get<int64_t>;
     v.nextPhaseId = j.at("nextPhaseId").get<int64_t>;
     v.nextStateChangeTime = j.at("nextStateChangeTime").get<int64_t>;

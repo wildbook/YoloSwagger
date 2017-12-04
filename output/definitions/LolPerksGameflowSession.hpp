@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolPerksGameflowSession_HPP
 #define SWAGGER_TYPES_LolPerksGameflowSession_HPP
 #include <json.hpp>
-#include "LolPerksGameflowGameData.hpp"
 #include "LolPerksGameflowPhase.hpp"
+#include "LolPerksGameflowGameData.hpp"
 namespace leagueapi {
   // 
   struct LolPerksGameflowSession {
@@ -12,12 +12,12 @@ namespace leagueapi {
     LolPerksGameflowPhase phase;
   };
 
-  void to_json(nlohmann::json& j, const LolPerksGameflowSession& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksGameflowSession& v) {
     j["gameData"] = v.gameData;
     j["phase"] = v.phase;
   }
 
-  void from_json(const nlohmann::json& j, LolPerksGameflowSession& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksGameflowSession& v) {
     v.gameData = j.at("gameData").get<LolPerksGameflowGameData>;
     v.phase = j.at("phase").get<LolPerksGameflowPhase>;
   }

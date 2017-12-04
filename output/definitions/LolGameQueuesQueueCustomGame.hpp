@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolGameQueuesQueueCustomGame_HPP
 #define SWAGGER_TYPES_LolGameQueuesQueueCustomGame_HPP
 #include <json.hpp>
-#include "LolGameQueuesQueueAvailability.hpp"
-#include "LolGameQueuesQueueCustomGameSubcategory.hpp"
 #include "LolGameQueuesQueueCustomGameSpectatorPolicy.hpp"
+#include "LolGameQueuesQueueCustomGameSubcategory.hpp"
+#include "LolGameQueuesQueueAvailability.hpp"
 namespace leagueapi {
   // 
   struct LolGameQueuesQueueCustomGame {
@@ -19,7 +19,7 @@ namespace leagueapi {
     std::vector<LolGameQueuesQueueCustomGameSubcategory> subcategories;
   };
 
-  void to_json(nlohmann::json& j, const LolGameQueuesQueueCustomGame& v) {
+  inline void to_json(nlohmann::json& j, const LolGameQueuesQueueCustomGame& v) {
     j["gameServerRegions"] = v.gameServerRegions;
     j["queueAvailability"] = v.queueAvailability;
     j["spectatorPolicies"] = v.spectatorPolicies;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["subcategories"] = v.subcategories;
   }
 
-  void from_json(const nlohmann::json& j, LolGameQueuesQueueCustomGame& v) {
+  inline void from_json(const nlohmann::json& j, LolGameQueuesQueueCustomGame& v) {
     v.gameServerRegions = j.at("gameServerRegions").get<std::vector<std::string>>;
     v.queueAvailability = j.at("queueAvailability").get<LolGameQueuesQueueAvailability>;
     v.spectatorPolicies = j.at("spectatorPolicies").get<std::vector<LolGameQueuesQueueCustomGameSpectatorPolicy>>;

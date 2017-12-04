@@ -21,7 +21,7 @@ namespace leagueapi {
     std::string pretty_name;
   };
 
-  void to_json(nlohmann::json& j, const MetricMetadataAlert& v) {
+  inline void to_json(nlohmann::json& j, const MetricMetadataAlert& v) {
     j["description"] = v.description;
     j["info"] = v.info;
     j["level"] = v.level;
@@ -31,7 +31,7 @@ namespace leagueapi {
     j["pretty_name"] = v.pretty_name;
   }
 
-  void from_json(const nlohmann::json& j, MetricMetadataAlert& v) {
+  inline void from_json(const nlohmann::json& j, MetricMetadataAlert& v) {
     v.description = j.at("description").get<std::string>;
     v.info = j.at("info").get<std::string>;
     v.level = j.at("level").get<std::string>;

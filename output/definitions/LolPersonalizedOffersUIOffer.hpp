@@ -26,7 +26,7 @@ namespace leagueapi {
     std::string type;
   };
 
-  void to_json(nlohmann::json& j, const LolPersonalizedOffersUIOffer& v) {
+  inline void to_json(nlohmann::json& j, const LolPersonalizedOffersUIOffer& v) {
     j["championId"] = v.championId;
     j["discountPrice"] = v.discountPrice;
     j["expirationDate"] = v.expirationDate;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, LolPersonalizedOffersUIOffer& v) {
+  inline void from_json(const nlohmann::json& j, LolPersonalizedOffersUIOffer& v) {
     v.championId = j.at("championId").get<int32_t>;
     v.discountPrice = j.at("discountPrice").get<int64_t>;
     v.expirationDate = j.at("expirationDate").get<std::string>;

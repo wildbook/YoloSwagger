@@ -14,14 +14,14 @@ namespace leagueapi {
     std::string updatedBy;
   };
 
-  void to_json(nlohmann::json& j, const TencentQTNotification& v) {
+  inline void to_json(nlohmann::json& j, const TencentQTNotification& v) {
     j["data"] = v.data;
     j["state"] = v.state;
     j["timestamp"] = v.timestamp;
     j["updatedBy"] = v.updatedBy;
   }
 
-  void from_json(const nlohmann::json& j, TencentQTNotification& v) {
+  inline void from_json(const nlohmann::json& j, TencentQTNotification& v) {
     v.data = j.at("data").get<nlohmann::json>;
     v.state = j.at("state").get<std::string>;
     v.timestamp = j.at("timestamp").get<int64_t>;

@@ -14,7 +14,7 @@ namespace leagueapi {
     summoner-icon = 1,
   };
 
-  void to_json(nlohmann::json& j, const LolCollectionsCollectionsSummonerBackdropType& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsSummonerBackdropType& v) {
     switch(v) {
       case LolCollectionsCollectionsSummonerBackdropType::default:
         j = "default";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolCollectionsCollectionsSummonerBackdropType& v) {
+  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsSummonerBackdropType& v) {
     const auto s& = j.get<std::string>();
     if(s == "default"){
       v = LolCollectionsCollectionsSummonerBackdropType::default;

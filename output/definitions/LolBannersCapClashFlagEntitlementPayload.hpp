@@ -13,13 +13,13 @@ namespace leagueapi {
     std::string rewardType;
   };
 
-  void to_json(nlohmann::json& j, const LolBannersCapClashFlagEntitlementPayload& v) {
+  inline void to_json(nlohmann::json& j, const LolBannersCapClashFlagEntitlementPayload& v) {
     j["eventId"] = v.eventId;
     j["rewardSpec"] = v.rewardSpec;
     j["rewardType"] = v.rewardType;
   }
 
-  void from_json(const nlohmann::json& j, LolBannersCapClashFlagEntitlementPayload& v) {
+  inline void from_json(const nlohmann::json& j, LolBannersCapClashFlagEntitlementPayload& v) {
     v.eventId = j.at("eventId").get<std::string>;
     v.rewardSpec = j.at("rewardSpec").get<LolBannersClashV2FlagRewardSpec>;
     v.rewardType = j.at("rewardType").get<std::string>;

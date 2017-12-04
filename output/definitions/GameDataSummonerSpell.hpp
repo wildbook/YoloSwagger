@@ -10,12 +10,12 @@ namespace leagueapi {
     uint32_t summonerLevel;
   };
 
-  void to_json(nlohmann::json& j, const GameDataSummonerSpell& v) {
+  inline void to_json(nlohmann::json& j, const GameDataSummonerSpell& v) {
     j["id"] = v.id;
     j["summonerLevel"] = v.summonerLevel;
   }
 
-  void from_json(const nlohmann::json& j, GameDataSummonerSpell& v) {
+  inline void from_json(const nlohmann::json& j, GameDataSummonerSpell& v) {
     v.id = j.at("id").get<uint64_t>;
     v.summonerLevel = j.at("summonerLevel").get<uint32_t>;
   }

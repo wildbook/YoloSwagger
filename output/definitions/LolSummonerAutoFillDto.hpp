@@ -9,11 +9,11 @@ namespace leagueapi {
     std::vector<LolSummonerAutoFillQueueDto> autoFillQueues;
   };
 
-  void to_json(nlohmann::json& j, const LolSummonerAutoFillDto& v) {
+  inline void to_json(nlohmann::json& j, const LolSummonerAutoFillDto& v) {
     j["autoFillQueues"] = v.autoFillQueues;
   }
 
-  void from_json(const nlohmann::json& j, LolSummonerAutoFillDto& v) {
+  inline void from_json(const nlohmann::json& j, LolSummonerAutoFillDto& v) {
     v.autoFillQueues = j.at("autoFillQueues").get<std::vector<LolSummonerAutoFillQueueDto>>;
   }
 

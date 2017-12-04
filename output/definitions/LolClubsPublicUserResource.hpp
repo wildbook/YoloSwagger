@@ -18,7 +18,7 @@ namespace leagueapi {
     std::string name;
   };
 
-  void to_json(nlohmann::json& j, const LolClubsPublicUserResource& v) {
+  inline void to_json(nlohmann::json& j, const LolClubsPublicUserResource& v) {
     j["availability"] = v.availability;
     j["icon"] = v.icon;
     j["id"] = v.id;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["name"] = v.name;
   }
 
-  void from_json(const nlohmann::json& j, LolClubsPublicUserResource& v) {
+  inline void from_json(const nlohmann::json& j, LolClubsPublicUserResource& v) {
     v.availability = j.at("availability").get<std::string>;
     v.icon = j.at("icon").get<int32_t>;
     v.id = j.at("id").get<uint64_t>;

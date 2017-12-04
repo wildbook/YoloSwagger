@@ -12,7 +12,7 @@ namespace leagueapi {
     PlatformDisabled = 1,
   };
 
-  void to_json(nlohmann::json& j, const LolGameQueuesQueueAvailability& v) {
+  inline void to_json(nlohmann::json& j, const LolGameQueuesQueueAvailability& v) {
     switch(v) {
       case LolGameQueuesQueueAvailability::Available:
         j = "Available";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolGameQueuesQueueAvailability& v) {
+  inline void from_json(const nlohmann::json& j, LolGameQueuesQueueAvailability& v) {
     const auto s& = j.get<std::string>();
     if(s == "Available"){
       v = LolGameQueuesQueueAvailability::Available;

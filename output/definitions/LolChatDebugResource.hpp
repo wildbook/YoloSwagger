@@ -30,7 +30,7 @@ namespace leagueapi {
     bool triggerChatDisconnect;
   };
 
-  void to_json(nlohmann::json& j, const LolChatDebugResource& v) {
+  inline void to_json(nlohmann::json& j, const LolChatDebugResource& v) {
     j["asyncWaitInterval"] = v.asyncWaitInterval;
     j["enableChatFiltering"] = v.enableChatFiltering;
     j["failAllChatLogin"] = v.failAllChatLogin;
@@ -45,7 +45,7 @@ namespace leagueapi {
     j["triggerChatDisconnect"] = v.triggerChatDisconnect;
   }
 
-  void from_json(const nlohmann::json& j, LolChatDebugResource& v) {
+  inline void from_json(const nlohmann::json& j, LolChatDebugResource& v) {
     v.asyncWaitInterval = j.at("asyncWaitInterval").get<uint32_t>;
     v.enableChatFiltering = j.at("enableChatFiltering").get<bool>;
     v.failAllChatLogin = j.at("failAllChatLogin").get<bool>;

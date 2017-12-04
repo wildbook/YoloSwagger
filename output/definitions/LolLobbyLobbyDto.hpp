@@ -2,9 +2,9 @@
 #define SWAGGER_TYPES_LolLobbyLobbyDto_HPP
 #include <json.hpp>
 #include "LolLobbyLobbyGameConfigDto.hpp"
-#include "LolLobbyLobbyInvitationDto.hpp"
 #include "LolLobbyLobbyParticipantDto.hpp"
 #include "LolLobbyEligibilityRestriction.hpp"
+#include "LolLobbyLobbyInvitationDto.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyLobbyDto {
@@ -28,7 +28,7 @@ namespace leagueapi {
     std::vector<LolLobbyEligibilityRestriction> restrictions;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyDto& v) {
     j["canStartActivity"] = v.canStartActivity;
     j["chatRoomId"] = v.chatRoomId;
     j["chatRoomKey"] = v.chatRoomKey;
@@ -40,7 +40,7 @@ namespace leagueapi {
     j["restrictions"] = v.restrictions;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyDto& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyDto& v) {
     v.canStartActivity = j.at("canStartActivity").get<bool>;
     v.chatRoomId = j.at("chatRoomId").get<std::string>;
     v.chatRoomKey = j.at("chatRoomKey").get<std::string>;

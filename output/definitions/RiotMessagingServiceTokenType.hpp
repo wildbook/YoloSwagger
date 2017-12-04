@@ -12,7 +12,7 @@ namespace leagueapi {
     Unavailable = 0,
   };
 
-  void to_json(nlohmann::json& j, const RiotMessagingServiceTokenType& v) {
+  inline void to_json(nlohmann::json& j, const RiotMessagingServiceTokenType& v) {
     switch(v) {
       case RiotMessagingServiceTokenType::Access:
         j = "Access";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, RiotMessagingServiceTokenType& v) {
+  inline void from_json(const nlohmann::json& j, RiotMessagingServiceTokenType& v) {
     const auto s& = j.get<std::string>();
     if(s == "Access"){
       v = RiotMessagingServiceTokenType::Access;

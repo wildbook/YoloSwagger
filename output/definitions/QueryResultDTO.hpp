@@ -10,12 +10,12 @@ namespace leagueapi {
     nlohmann::json queryToLootNames;
   };
 
-  void to_json(nlohmann::json& j, const QueryResultDTO& v) {
+  inline void to_json(nlohmann::json& j, const QueryResultDTO& v) {
     j["lastUpdate"] = v.lastUpdate;
     j["queryToLootNames"] = v.queryToLootNames;
   }
 
-  void from_json(const nlohmann::json& j, QueryResultDTO& v) {
+  inline void from_json(const nlohmann::json& j, QueryResultDTO& v) {
     v.lastUpdate = j.at("lastUpdate").get<int64_t>;
     v.queryToLootNames = j.at("queryToLootNames").get<nlohmann::json>;
   }

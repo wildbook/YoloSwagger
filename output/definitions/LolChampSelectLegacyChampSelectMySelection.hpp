@@ -14,14 +14,14 @@ namespace leagueapi {
     int64_t wardSkinId;
   };
 
-  void to_json(nlohmann::json& j, const LolChampSelectLegacyChampSelectMySelection& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyChampSelectMySelection& v) {
     j["selectedSkinId"] = v.selectedSkinId;
     j["spell1Id"] = v.spell1Id;
     j["spell2Id"] = v.spell2Id;
     j["wardSkinId"] = v.wardSkinId;
   }
 
-  void from_json(const nlohmann::json& j, LolChampSelectLegacyChampSelectMySelection& v) {
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyChampSelectMySelection& v) {
     v.selectedSkinId = j.at("selectedSkinId").get<int32_t>;
     v.spell1Id = j.at("spell1Id").get<uint64_t>;
     v.spell2Id = j.at("spell2Id").get<uint64_t>;

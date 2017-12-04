@@ -23,7 +23,7 @@ namespace leagueapi {
     std::string webRegion;
   };
 
-  void to_json(nlohmann::json& j, const LolPftPFTMetadata& v) {
+  inline void to_json(nlohmann::json& j, const LolPftPFTMetadata& v) {
     j["accountId"] = v.accountId;
     j["appName"] = v.appName;
     j["appVersion"] = v.appVersion;
@@ -34,7 +34,7 @@ namespace leagueapi {
     j["webRegion"] = v.webRegion;
   }
 
-  void from_json(const nlohmann::json& j, LolPftPFTMetadata& v) {
+  inline void from_json(const nlohmann::json& j, LolPftPFTMetadata& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.appName = j.at("appName").get<std::string>;
     v.appVersion = j.at("appVersion").get<std::string>;

@@ -14,7 +14,7 @@ namespace leagueapi {
     GAMEFLOW_UNAVAILABLE = 3,
   };
 
-  void to_json(nlohmann::json& j, const LolClashFoundationError& v) {
+  inline void to_json(nlohmann::json& j, const LolClashFoundationError& v) {
     switch(v) {
       case LolClashFoundationError::CLASH_DISABLED:
         j = "CLASH_DISABLED";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolClashFoundationError& v) {
+  inline void from_json(const nlohmann::json& j, LolClashFoundationError& v) {
     const auto s& = j.get<std::string>();
     if(s == "CLASH_DISABLED"){
       v = LolClashFoundationError::CLASH_DISABLED;

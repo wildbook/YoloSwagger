@@ -28,7 +28,7 @@ namespace leagueapi {
     int32_t subStyleId;
   };
 
-  void to_json(nlohmann::json& j, const LolPerksPerkPageResource& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksPerkPageResource& v) {
     j["formatVersion"] = v.formatVersion;
     j["id"] = v.id;
     j["isActive"] = v.isActive;
@@ -42,7 +42,7 @@ namespace leagueapi {
     j["subStyleId"] = v.subStyleId;
   }
 
-  void from_json(const nlohmann::json& j, LolPerksPerkPageResource& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksPerkPageResource& v) {
     v.formatVersion = j.at("formatVersion").get<int32_t>;
     v.id = j.at("id").get<int32_t>;
     v.isActive = j.at("isActive").get<bool>;

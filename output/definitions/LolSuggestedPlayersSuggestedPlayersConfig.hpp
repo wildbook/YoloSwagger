@@ -22,7 +22,7 @@ namespace leagueapi {
     uint32_t VicoriousComradesLimit;
   };
 
-  void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersConfig& v) {
     j["Enabled"] = v.Enabled;
     j["FriendsOfFriendsEnabled"] = v.FriendsOfFriendsEnabled;
     j["FriendsOfFriendsLimit"] = v.FriendsOfFriendsLimit;
@@ -33,7 +33,7 @@ namespace leagueapi {
     j["VicoriousComradesLimit"] = v.VicoriousComradesLimit;
   }
 
-  void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersConfig& v) {
+  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersConfig& v) {
     v.Enabled = j.at("Enabled").get<bool>;
     v.FriendsOfFriendsEnabled = j.at("FriendsOfFriendsEnabled").get<bool>;
     v.FriendsOfFriendsLimit = j.at("FriendsOfFriendsLimit").get<uint32_t>;

@@ -12,13 +12,13 @@ namespace leagueapi {
     int32_t maxAllowableBans;
   };
 
-  void to_json(nlohmann::json& j, const LolChampSelectLegacyQueueGameTypeConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyQueueGameTypeConfig& v) {
     j["allowTrades"] = v.allowTrades;
     j["battleBoost"] = v.battleBoost;
     j["maxAllowableBans"] = v.maxAllowableBans;
   }
 
-  void from_json(const nlohmann::json& j, LolChampSelectLegacyQueueGameTypeConfig& v) {
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyQueueGameTypeConfig& v) {
     v.allowTrades = j.at("allowTrades").get<bool>;
     v.battleBoost = j.at("battleBoost").get<bool>;
     v.maxAllowableBans = j.at("maxAllowableBans").get<int32_t>;

@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string currencyType;
   };
 
-  void to_json(nlohmann::json& j, const LolPurchaseWidgetBalance& v) {
+  inline void to_json(nlohmann::json& j, const LolPurchaseWidgetBalance& v) {
     j["amount"] = v.amount;
     j["currencyType"] = v.currencyType;
   }
 
-  void from_json(const nlohmann::json& j, LolPurchaseWidgetBalance& v) {
+  inline void from_json(const nlohmann::json& j, LolPurchaseWidgetBalance& v) {
     v.amount = j.at("amount").get<int32_t>;
     v.currencyType = j.at("currencyType").get<std::string>;
   }

@@ -34,7 +34,7 @@ namespace leagueapi {
     uint64_t wins;
   };
 
-  void to_json(nlohmann::json& j, const LolLoadoutsInventoryItemDTO& v) {
+  inline void to_json(nlohmann::json& j, const LolLoadoutsInventoryItemDTO& v) {
     j["eneitlementTypeId"] = v.eneitlementTypeId;
     j["entitlementId"] = v.entitlementId;
     j["expirationDate"] = v.expirationDate;
@@ -51,7 +51,7 @@ namespace leagueapi {
     j["wins"] = v.wins;
   }
 
-  void from_json(const nlohmann::json& j, LolLoadoutsInventoryItemDTO& v) {
+  inline void from_json(const nlohmann::json& j, LolLoadoutsInventoryItemDTO& v) {
     v.eneitlementTypeId = j.at("eneitlementTypeId").get<std::string>;
     v.entitlementId = j.at("entitlementId").get<std::string>;
     v.expirationDate = j.at("expirationDate").get<std::string>;

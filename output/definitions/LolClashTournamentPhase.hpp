@@ -16,7 +16,7 @@ namespace leagueapi {
     int64_t tournamentId;
   };
 
-  void to_json(nlohmann::json& j, const LolClashTournamentPhase& v) {
+  inline void to_json(nlohmann::json& j, const LolClashTournamentPhase& v) {
     j["id"] = v.id;
     j["lockinStartTime"] = v.lockinStartTime;
     j["period"] = v.period;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["tournamentId"] = v.tournamentId;
   }
 
-  void from_json(const nlohmann::json& j, LolClashTournamentPhase& v) {
+  inline void from_json(const nlohmann::json& j, LolClashTournamentPhase& v) {
     v.id = j.at("id").get<int64_t>;
     v.lockinStartTime = j.at("lockinStartTime").get<int64_t>;
     v.period = j.at("period").get<int32_t>;

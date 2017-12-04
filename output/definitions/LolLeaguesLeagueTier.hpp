@@ -22,7 +22,7 @@ namespace leagueapi {
     SILVER = 2,
   };
 
-  void to_json(nlohmann::json& j, const LolLeaguesLeagueTier& v) {
+  inline void to_json(nlohmann::json& j, const LolLeaguesLeagueTier& v) {
     switch(v) {
       case LolLeaguesLeagueTier::BRONZE:
         j = "BRONZE";
@@ -51,7 +51,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLeaguesLeagueTier& v) {
+  inline void from_json(const nlohmann::json& j, LolLeaguesLeagueTier& v) {
     const auto s& = j.get<std::string>();
     if(s == "BRONZE"){
       v = LolLeaguesLeagueTier::BRONZE;

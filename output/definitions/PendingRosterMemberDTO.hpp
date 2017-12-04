@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_PendingRosterMemberDTO_HPP
 #define SWAGGER_TYPES_PendingRosterMemberDTO_HPP
 #include <json.hpp>
-#include "PendingRosterMemberState.hpp"
 #include "Position.hpp"
+#include "PendingRosterMemberState.hpp"
 namespace leagueapi {
   // 
   struct PendingRosterMemberDTO {
@@ -20,7 +20,7 @@ namespace leagueapi {
     Position position;
   };
 
-  void to_json(nlohmann::json& j, const PendingRosterMemberDTO& v) {
+  inline void to_json(nlohmann::json& j, const PendingRosterMemberDTO& v) {
     j["bet"] = v.bet;
     j["joinTime"] = v.joinTime;
     j["memberState"] = v.memberState;
@@ -29,7 +29,7 @@ namespace leagueapi {
     j["position"] = v.position;
   }
 
-  void from_json(const nlohmann::json& j, PendingRosterMemberDTO& v) {
+  inline void from_json(const nlohmann::json& j, PendingRosterMemberDTO& v) {
     v.bet = j.at("bet").get<int32_t>;
     v.joinTime = j.at("joinTime").get<int64_t>;
     v.memberState = j.at("memberState").get<PendingRosterMemberState>;

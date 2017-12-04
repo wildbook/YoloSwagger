@@ -13,13 +13,13 @@ namespace leagueapi {
     std::vector<LolLootPlayerLootDelta> removed;
   };
 
-  void to_json(nlohmann::json& j, const LolLootPlayerLootUpdate& v) {
+  inline void to_json(nlohmann::json& j, const LolLootPlayerLootUpdate& v) {
     j["added"] = v.added;
     j["redeemed"] = v.redeemed;
     j["removed"] = v.removed;
   }
 
-  void from_json(const nlohmann::json& j, LolLootPlayerLootUpdate& v) {
+  inline void from_json(const nlohmann::json& j, LolLootPlayerLootUpdate& v) {
     v.added = j.at("added").get<std::vector<LolLootPlayerLootDelta>>;
     v.redeemed = j.at("redeemed").get<std::vector<LolLootPlayerLootDelta>>;
     v.removed = j.at("removed").get<std::vector<LolLootPlayerLootDelta>>;

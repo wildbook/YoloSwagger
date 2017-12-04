@@ -12,12 +12,12 @@ namespace leagueapi {
     LolPerksUISettings settings;
   };
 
-  void to_json(nlohmann::json& j, const LolPerksPlayerPreferencesSettings& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksPlayerPreferencesSettings& v) {
     j["pages"] = v.pages;
     j["settings"] = v.settings;
   }
 
-  void from_json(const nlohmann::json& j, LolPerksPlayerPreferencesSettings& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksPlayerPreferencesSettings& v) {
     v.pages = j.at("pages").get<std::vector<LolPerksPerkPageResource>>;
     v.settings = j.at("settings").get<LolPerksUISettings>;
   }

@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string password;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyCustomJoinParameters& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyCustomJoinParameters& v) {
     j["asSpectator"] = v.asSpectator;
     j["password"] = v.password;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyCustomJoinParameters& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyCustomJoinParameters& v) {
     v.asSpectator = j.at("asSpectator").get<bool>;
     v.password = j.at("password").get<std::string>;
   }

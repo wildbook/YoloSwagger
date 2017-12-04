@@ -50,7 +50,7 @@ namespace leagueapi {
     bool teamChampionPool;
   };
 
-  void to_json(nlohmann::json& j, const LolGameQueuesQueueGameTypeConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolGameQueuesQueueGameTypeConfig& v) {
     j["advancedLearningQuests"] = v.advancedLearningQuests;
     j["allowTrades"] = v.allowTrades;
     j["banMode"] = v.banMode;
@@ -75,7 +75,7 @@ namespace leagueapi {
     j["teamChampionPool"] = v.teamChampionPool;
   }
 
-  void from_json(const nlohmann::json& j, LolGameQueuesQueueGameTypeConfig& v) {
+  inline void from_json(const nlohmann::json& j, LolGameQueuesQueueGameTypeConfig& v) {
     v.advancedLearningQuests = j.at("advancedLearningQuests").get<bool>;
     v.allowTrades = j.at("allowTrades").get<bool>;
     v.banMode = j.at("banMode").get<std::string>;

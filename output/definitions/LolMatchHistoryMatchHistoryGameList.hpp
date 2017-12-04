@@ -19,7 +19,7 @@ namespace leagueapi {
     std::vector<LolMatchHistoryMatchHistoryGame> games;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryGameList& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryGameList& v) {
     j["gameBeginDate"] = v.gameBeginDate;
     j["gameCount"] = v.gameCount;
     j["gameEndDate"] = v.gameEndDate;
@@ -28,7 +28,7 @@ namespace leagueapi {
     j["games"] = v.games;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryGameList& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryGameList& v) {
     v.gameBeginDate = j.at("gameBeginDate").get<std::string>;
     v.gameCount = j.at("gameCount").get<uint64_t>;
     v.gameEndDate = j.at("gameEndDate").get<std::string>;

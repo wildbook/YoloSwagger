@@ -14,14 +14,14 @@ namespace leagueapi {
     std::string platformId;
   };
 
-  void to_json(nlohmann::json& j, const LolLoginRegionStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolLoginRegionStatus& v) {
     j["enabled"] = v.enabled;
     j["isLQFallbackAllowed"] = v.isLQFallbackAllowed;
     j["isUserInfoEnabled"] = v.isUserInfoEnabled;
     j["platformId"] = v.platformId;
   }
 
-  void from_json(const nlohmann::json& j, LolLoginRegionStatus& v) {
+  inline void from_json(const nlohmann::json& j, LolLoginRegionStatus& v) {
     v.enabled = j.at("enabled").get<bool>;
     v.isLQFallbackAllowed = j.at("isLQFallbackAllowed").get<bool>;
     v.isUserInfoEnabled = j.at("isUserInfoEnabled").get<bool>;

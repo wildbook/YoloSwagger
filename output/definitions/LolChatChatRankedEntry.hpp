@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolChatChatRankedEntry_HPP
 #define SWAGGER_TYPES_LolChatChatRankedEntry_HPP
 #include <json.hpp>
-#include "LolChatChatRankedTier.hpp"
 #include "LolChatChatRankedQueue.hpp"
+#include "LolChatChatRankedTier.hpp"
 namespace leagueapi {
   // 
   struct LolChatChatRankedEntry {
@@ -20,7 +20,7 @@ namespace leagueapi {
     uint64_t wins;
   };
 
-  void to_json(nlohmann::json& j, const LolChatChatRankedEntry& v) {
+  inline void to_json(nlohmann::json& j, const LolChatChatRankedEntry& v) {
     j["division"] = v.division;
     j["games"] = v.games;
     j["leagueName"] = v.leagueName;
@@ -29,7 +29,7 @@ namespace leagueapi {
     j["wins"] = v.wins;
   }
 
-  void from_json(const nlohmann::json& j, LolChatChatRankedEntry& v) {
+  inline void from_json(const nlohmann::json& j, LolChatChatRankedEntry& v) {
     v.division = j.at("division").get<uint64_t>;
     v.games = j.at("games").get<uint64_t>;
     v.leagueName = j.at("leagueName").get<std::string>;

@@ -30,7 +30,7 @@ namespace leagueapi {
     std::string spectatorPolicy;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyCustomGame& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyCustomGame& v) {
     j["filledPlayerSlots"] = v.filledPlayerSlots;
     j["filledSpectatorSlots"] = v.filledSpectatorSlots;
     j["gameType"] = v.gameType;
@@ -45,7 +45,7 @@ namespace leagueapi {
     j["spectatorPolicy"] = v.spectatorPolicy;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyCustomGame& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyCustomGame& v) {
     v.filledPlayerSlots = j.at("filledPlayerSlots").get<int32_t>;
     v.filledSpectatorSlots = j.at("filledSpectatorSlots").get<int32_t>;
     v.gameType = j.at("gameType").get<std::string>;

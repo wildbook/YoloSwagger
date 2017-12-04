@@ -14,7 +14,7 @@ namespace leagueapi {
     NO_ROSTER = 0,
   };
 
-  void to_json(nlohmann::json& j, const LolClashPlayerState& v) {
+  inline void to_json(nlohmann::json& j, const LolClashPlayerState& v) {
     switch(v) {
       case LolClashPlayerState::BRACKET_ROSTER:
         j = "BRACKET_ROSTER";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolClashPlayerState& v) {
+  inline void from_json(const nlohmann::json& j, LolClashPlayerState& v) {
     const auto s& = j.get<std::string>();
     if(s == "BRACKET_ROSTER"){
       v = LolClashPlayerState::BRACKET_ROSTER;

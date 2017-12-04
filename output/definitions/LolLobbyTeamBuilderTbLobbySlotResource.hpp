@@ -26,7 +26,7 @@ namespace leagueapi {
     std::string summonerName;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTbLobbySlotResource& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTbLobbySlotResource& v) {
     j["autoFillEligible"] = v.autoFillEligible;
     j["autoFillProtectedForPromos"] = v.autoFillProtectedForPromos;
     j["autoFillProtectedForSoloing"] = v.autoFillProtectedForSoloing;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["summonerName"] = v.summonerName;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTbLobbySlotResource& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTbLobbySlotResource& v) {
     v.autoFillEligible = j.at("autoFillEligible").get<bool>;
     v.autoFillProtectedForPromos = j.at("autoFillProtectedForPromos").get<bool>;
     v.autoFillProtectedForSoloing = j.at("autoFillProtectedForSoloing").get<bool>;

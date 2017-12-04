@@ -18,7 +18,7 @@ namespace leagueapi {
     std::string type;
   };
 
-  void to_json(nlohmann::json& j, const LolChampSelectLegacyChampSelectAction& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyChampSelectAction& v) {
     j["actorCellId"] = v.actorCellId;
     j["championId"] = v.championId;
     j["completed"] = v.completed;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, LolChampSelectLegacyChampSelectAction& v) {
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyChampSelectAction& v) {
     v.actorCellId = j.at("actorCellId").get<int64_t>;
     v.championId = j.at("championId").get<int32_t>;
     v.completed = j.at("completed").get<bool>;

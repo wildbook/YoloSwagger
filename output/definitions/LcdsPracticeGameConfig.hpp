@@ -29,7 +29,7 @@ namespace leagueapi {
     std::string region;
   };
 
-  void to_json(nlohmann::json& j, const LcdsPracticeGameConfig& v) {
+  inline void to_json(nlohmann::json& j, const LcdsPracticeGameConfig& v) {
     j["allowSpectators"] = v.allowSpectators;
     j["gameMap"] = v.gameMap;
     j["gameMode"] = v.gameMode;
@@ -43,7 +43,7 @@ namespace leagueapi {
     j["region"] = v.region;
   }
 
-  void from_json(const nlohmann::json& j, LcdsPracticeGameConfig& v) {
+  inline void from_json(const nlohmann::json& j, LcdsPracticeGameConfig& v) {
     v.allowSpectators = j.at("allowSpectators").get<std::string>;
     v.gameMap = j.at("gameMap").get<LcdsGameMap>;
     v.gameMode = j.at("gameMode").get<std::string>;

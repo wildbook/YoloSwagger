@@ -34,7 +34,7 @@ namespace leagueapi {
     uint64_t version;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyPlayerDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyPlayerDto& v) {
     j["accountId"] = v.accountId;
     j["accountToken"] = v.accountToken;
     j["createdAt"] = v.createdAt;
@@ -50,7 +50,7 @@ namespace leagueapi {
     j["version"] = v.version;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyPlayerDto& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyPlayerDto& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.accountToken = j.at("accountToken").get<std::string>;
     v.createdAt = j.at("createdAt").get<uint64_t>;

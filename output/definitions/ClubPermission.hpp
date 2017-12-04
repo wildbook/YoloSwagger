@@ -24,7 +24,7 @@ namespace leagueapi {
     SET_MOTD = 7,
   };
 
-  void to_json(nlohmann::json& j, const ClubPermission& v) {
+  inline void to_json(nlohmann::json& j, const ClubPermission& v) {
     switch(v) {
       case ClubPermission::DEMOTE:
         j = "DEMOTE";
@@ -56,7 +56,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, ClubPermission& v) {
+  inline void from_json(const nlohmann::json& j, ClubPermission& v) {
     const auto s& = j.get<std::string>();
     if(s == "DEMOTE"){
       v = ClubPermission::DEMOTE;

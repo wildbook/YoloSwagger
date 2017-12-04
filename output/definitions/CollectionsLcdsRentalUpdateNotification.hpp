@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string inventoryType;
   };
 
-  void to_json(nlohmann::json& j, const CollectionsLcdsRentalUpdateNotification& v) {
+  inline void to_json(nlohmann::json& j, const CollectionsLcdsRentalUpdateNotification& v) {
     j["data"] = v.data;
     j["inventoryType"] = v.inventoryType;
   }
 
-  void from_json(const nlohmann::json& j, CollectionsLcdsRentalUpdateNotification& v) {
+  inline void from_json(const nlohmann::json& j, CollectionsLcdsRentalUpdateNotification& v) {
     v.data = j.at("data").get<nlohmann::json>;
     v.inventoryType = j.at("inventoryType").get<std::string>;
   }

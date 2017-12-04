@@ -12,13 +12,13 @@ namespace leagueapi {
     int64_t timeInMatchmakingMillis;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTBDMatchmakingState& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTBDMatchmakingState& v) {
     j["backwardsTransitionReason"] = v.backwardsTransitionReason;
     j["estimatedMatchmakingTimeMillis"] = v.estimatedMatchmakingTimeMillis;
     j["timeInMatchmakingMillis"] = v.timeInMatchmakingMillis;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTBDMatchmakingState& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTBDMatchmakingState& v) {
     v.backwardsTransitionReason = j.at("backwardsTransitionReason").get<std::string>;
     v.estimatedMatchmakingTimeMillis = j.at("estimatedMatchmakingTimeMillis").get<int64_t>;
     v.timeInMatchmakingMillis = j.at("timeInMatchmakingMillis").get<int64_t>;

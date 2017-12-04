@@ -18,7 +18,7 @@ namespace leagueapi {
     std::string uuid;
   };
 
-  void to_json(nlohmann::json& j, const PluginServiceProxyResponse& v) {
+  inline void to_json(nlohmann::json& j, const PluginServiceProxyResponse& v) {
     j["error"] = v.error;
     j["methodName"] = v.methodName;
     j["payload"] = v.payload;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["uuid"] = v.uuid;
   }
 
-  void from_json(const nlohmann::json& j, PluginServiceProxyResponse& v) {
+  inline void from_json(const nlohmann::json& j, PluginServiceProxyResponse& v) {
     v.error = j.at("error").get<std::string>;
     v.methodName = j.at("methodName").get<std::string>;
     v.payload = j.at("payload").get<std::string>;

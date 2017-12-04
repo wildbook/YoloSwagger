@@ -27,7 +27,7 @@ namespace leagueapi {
     int32_t tournamentThemeId;
   };
 
-  void to_json(nlohmann::json& j, const RosterStatsDTO& v) {
+  inline void to_json(nlohmann::json& j, const RosterStatsDTO& v) {
     j["rosterId"] = v.rosterId;
     j["rosterLogo"] = v.rosterLogo;
     j["rosterLogoColor"] = v.rosterLogoColor;
@@ -40,7 +40,7 @@ namespace leagueapi {
     j["tournamentThemeId"] = v.tournamentThemeId;
   }
 
-  void from_json(const nlohmann::json& j, RosterStatsDTO& v) {
+  inline void from_json(const nlohmann::json& j, RosterStatsDTO& v) {
     v.rosterId = j.at("rosterId").get<int64_t>;
     v.rosterLogo = j.at("rosterLogo").get<int32_t>;
     v.rosterLogoColor = j.at("rosterLogoColor").get<int32_t>;

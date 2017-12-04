@@ -16,7 +16,7 @@ namespace leagueapi {
     int32_t previousPoints;
   };
 
-  void to_json(nlohmann::json& j, const EndOfGameLcdsEogPointChangeBreakdown& v) {
+  inline void to_json(nlohmann::json& j, const EndOfGameLcdsEogPointChangeBreakdown& v) {
     j["endPoints"] = v.endPoints;
     j["pointChangeFromChampionsOwned"] = v.pointChangeFromChampionsOwned;
     j["pointChangeFromGameplay"] = v.pointChangeFromGameplay;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["previousPoints"] = v.previousPoints;
   }
 
-  void from_json(const nlohmann::json& j, EndOfGameLcdsEogPointChangeBreakdown& v) {
+  inline void from_json(const nlohmann::json& j, EndOfGameLcdsEogPointChangeBreakdown& v) {
     v.endPoints = j.at("endPoints").get<int32_t>;
     v.pointChangeFromChampionsOwned = j.at("pointChangeFromChampionsOwned").get<int32_t>;
     v.pointChangeFromGameplay = j.at("pointChangeFromGameplay").get<int32_t>;

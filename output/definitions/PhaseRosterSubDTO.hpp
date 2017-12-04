@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_PhaseRosterSubDTO_HPP
 #define SWAGGER_TYPES_PhaseRosterSubDTO_HPP
 #include <json.hpp>
-#include "SubState.hpp"
 #include "Position.hpp"
+#include "SubState.hpp"
 namespace leagueapi {
   // 
   struct PhaseRosterSubDTO {
@@ -20,7 +20,7 @@ namespace leagueapi {
     SubState subState;
   };
 
-  void to_json(nlohmann::json& j, const PhaseRosterSubDTO& v) {
+  inline void to_json(nlohmann::json& j, const PhaseRosterSubDTO& v) {
     j["bet"] = v.bet;
     j["pay"] = v.pay;
     j["playerId"] = v.playerId;
@@ -29,7 +29,7 @@ namespace leagueapi {
     j["subState"] = v.subState;
   }
 
-  void from_json(const nlohmann::json& j, PhaseRosterSubDTO& v) {
+  inline void from_json(const nlohmann::json& j, PhaseRosterSubDTO& v) {
     v.bet = j.at("bet").get<int32_t>;
     v.pay = j.at("pay").get<int32_t>;
     v.playerId = j.at("playerId").get<uint64_t>;

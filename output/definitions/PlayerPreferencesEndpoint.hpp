@@ -16,7 +16,7 @@ namespace leagueapi {
     std::string Version;
   };
 
-  void to_json(nlohmann::json& j, const PlayerPreferencesEndpoint& v) {
+  inline void to_json(nlohmann::json& j, const PlayerPreferencesEndpoint& v) {
     j["Enabled"] = v.Enabled;
     j["EnforceHttps"] = v.EnforceHttps;
     j["Retries"] = v.Retries;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["Version"] = v.Version;
   }
 
-  void from_json(const nlohmann::json& j, PlayerPreferencesEndpoint& v) {
+  inline void from_json(const nlohmann::json& j, PlayerPreferencesEndpoint& v) {
     v.Enabled = j.at("Enabled").get<bool>;
     v.EnforceHttps = j.at("EnforceHttps").get<bool>;
     v.Retries = j.at("Retries").get<int64_t>;

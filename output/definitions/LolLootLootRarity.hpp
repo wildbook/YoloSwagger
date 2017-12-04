@@ -8,7 +8,7 @@ namespace leagueapi {
     Default = 0,
   };
 
-  void to_json(nlohmann::json& j, const LolLootLootRarity& v) {
+  inline void to_json(nlohmann::json& j, const LolLootLootRarity& v) {
     switch(v) {
       case LolLootLootRarity::Default:
         j = "Default";
@@ -16,7 +16,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLootLootRarity& v) {
+  inline void from_json(const nlohmann::json& j, LolLootLootRarity& v) {
     const auto s& = j.get<std::string>();
     if(s == "Default"){
       v = LolLootLootRarity::Default;

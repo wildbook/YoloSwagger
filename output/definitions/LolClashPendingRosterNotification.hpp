@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolClashPendingRosterNotification_HPP
 #define SWAGGER_TYPES_LolClashPendingRosterNotification_HPP
 #include <json.hpp>
-#include "PendingRosterDTO.hpp"
 #include "LolClashNotifyReason.hpp"
+#include "PendingRosterDTO.hpp"
 namespace leagueapi {
   // 
   struct LolClashPendingRosterNotification {
@@ -16,14 +16,14 @@ namespace leagueapi {
     uint64_t targetPlayerId;
   };
 
-  void to_json(nlohmann::json& j, const LolClashPendingRosterNotification& v) {
+  inline void to_json(nlohmann::json& j, const LolClashPendingRosterNotification& v) {
     j["notifyReason"] = v.notifyReason;
     j["pendingRoster"] = v.pendingRoster;
     j["sourcePlayerId"] = v.sourcePlayerId;
     j["targetPlayerId"] = v.targetPlayerId;
   }
 
-  void from_json(const nlohmann::json& j, LolClashPendingRosterNotification& v) {
+  inline void from_json(const nlohmann::json& j, LolClashPendingRosterNotification& v) {
     v.notifyReason = j.at("notifyReason").get<LolClashNotifyReason>;
     v.pendingRoster = j.at("pendingRoster").get<PendingRosterDTO>;
     v.sourcePlayerId = j.at("sourcePlayerId").get<uint64_t>;

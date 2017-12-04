@@ -12,7 +12,7 @@ namespace leagueapi {
     RANKED_SOLO_5x5 = 1,
   };
 
-  void to_json(nlohmann::json& j, const LeaguesLcdsQueueType& v) {
+  inline void to_json(nlohmann::json& j, const LeaguesLcdsQueueType& v) {
     switch(v) {
       case LeaguesLcdsQueueType::RANKED_FLEX_SR:
         j = "RANKED_FLEX_SR";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LeaguesLcdsQueueType& v) {
+  inline void from_json(const nlohmann::json& j, LeaguesLcdsQueueType& v) {
     const auto s& = j.get<std::string>();
     if(s == "RANKED_FLEX_SR"){
       v = LeaguesLcdsQueueType::RANKED_FLEX_SR;

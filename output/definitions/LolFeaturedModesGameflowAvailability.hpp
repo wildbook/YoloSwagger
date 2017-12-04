@@ -11,12 +11,12 @@ namespace leagueapi {
     LolFeaturedModesGameflowAvailabilityState state;
   };
 
-  void to_json(nlohmann::json& j, const LolFeaturedModesGameflowAvailability& v) {
+  inline void to_json(nlohmann::json& j, const LolFeaturedModesGameflowAvailability& v) {
     j["isAvailable"] = v.isAvailable;
     j["state"] = v.state;
   }
 
-  void from_json(const nlohmann::json& j, LolFeaturedModesGameflowAvailability& v) {
+  inline void from_json(const nlohmann::json& j, LolFeaturedModesGameflowAvailability& v) {
     v.isAvailable = j.at("isAvailable").get<bool>;
     v.state = j.at("state").get<LolFeaturedModesGameflowAvailabilityState>;
   }

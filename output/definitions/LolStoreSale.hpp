@@ -13,13 +13,13 @@ namespace leagueapi {
     std::string startDate;
   };
 
-  void to_json(nlohmann::json& j, const LolStoreSale& v) {
+  inline void to_json(nlohmann::json& j, const LolStoreSale& v) {
     j["endDate"] = v.endDate;
     j["prices"] = v.prices;
     j["startDate"] = v.startDate;
   }
 
-  void from_json(const nlohmann::json& j, LolStoreSale& v) {
+  inline void from_json(const nlohmann::json& j, LolStoreSale& v) {
     v.endDate = j.at("endDate").get<std::string>;
     v.prices = j.at("prices").get<std::vector<LolStoreItemCost>>;
     v.startDate = j.at("startDate").get<std::string>;

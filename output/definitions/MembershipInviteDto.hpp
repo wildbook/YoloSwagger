@@ -24,7 +24,7 @@ namespace leagueapi {
     int32_t status;
   };
 
-  void to_json(nlohmann::json& j, const MembershipInviteDto& v) {
+  inline void to_json(nlohmann::json& j, const MembershipInviteDto& v) {
     j["clubKey"] = v.clubKey;
     j["clubName"] = v.clubName;
     j["inviteeAccountId"] = v.inviteeAccountId;
@@ -36,7 +36,7 @@ namespace leagueapi {
     j["status"] = v.status;
   }
 
-  void from_json(const nlohmann::json& j, MembershipInviteDto& v) {
+  inline void from_json(const nlohmann::json& j, MembershipInviteDto& v) {
     v.clubKey = j.at("clubKey").get<std::string>;
     v.clubName = j.at("clubName").get<std::string>;
     v.inviteeAccountId = j.at("inviteeAccountId").get<uint64_t>;

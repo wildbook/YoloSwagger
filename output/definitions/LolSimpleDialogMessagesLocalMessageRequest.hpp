@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string msgType;
   };
 
-  void to_json(nlohmann::json& j, const LolSimpleDialogMessagesLocalMessageRequest& v) {
+  inline void to_json(nlohmann::json& j, const LolSimpleDialogMessagesLocalMessageRequest& v) {
     j["msgBody"] = v.msgBody;
     j["msgType"] = v.msgType;
   }
 
-  void from_json(const nlohmann::json& j, LolSimpleDialogMessagesLocalMessageRequest& v) {
+  inline void from_json(const nlohmann::json& j, LolSimpleDialogMessagesLocalMessageRequest& v) {
     v.msgBody = j.at("msgBody").get<std::vector<std::string>>;
     v.msgType = j.at("msgType").get<std::string>;
   }

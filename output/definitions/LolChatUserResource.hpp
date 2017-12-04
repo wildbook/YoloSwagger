@@ -20,7 +20,7 @@ namespace leagueapi {
     std::string statusMessage;
   };
 
-  void to_json(nlohmann::json& j, const LolChatUserResource& v) {
+  inline void to_json(nlohmann::json& j, const LolChatUserResource& v) {
     j["availability"] = v.availability;
     j["icon"] = v.icon;
     j["id"] = v.id;
@@ -30,7 +30,7 @@ namespace leagueapi {
     j["statusMessage"] = v.statusMessage;
   }
 
-  void from_json(const nlohmann::json& j, LolChatUserResource& v) {
+  inline void from_json(const nlohmann::json& j, LolChatUserResource& v) {
     v.availability = j.at("availability").get<std::string>;
     v.icon = j.at("icon").get<int32_t>;
     v.id = j.at("id").get<uint64_t>;

@@ -8,11 +8,11 @@ namespace leagueapi {
     bool Enabled;
   };
 
-  void to_json(nlohmann::json& j, const HighlightsDynamicConfig& v) {
+  inline void to_json(nlohmann::json& j, const HighlightsDynamicConfig& v) {
     j["Enabled"] = v.Enabled;
   }
 
-  void from_json(const nlohmann::json& j, HighlightsDynamicConfig& v) {
+  inline void from_json(const nlohmann::json& j, HighlightsDynamicConfig& v) {
     v.Enabled = j.at("Enabled").get<bool>;
   }
 

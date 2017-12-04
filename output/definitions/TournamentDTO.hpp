@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_TournamentDTO_HPP
 #define SWAGGER_TYPES_TournamentDTO_HPP
 #include <json.hpp>
-#include "ClashRewardConfigClient.hpp"
 #include "TournamentPhaseDTO.hpp"
+#include "ClashRewardConfigClient.hpp"
 namespace leagueapi {
   // 
   struct TournamentDTO {
@@ -38,7 +38,7 @@ namespace leagueapi {
     int32_t themeId;
   };
 
-  void to_json(nlohmann::json& j, const TournamentDTO& v) {
+  inline void to_json(nlohmann::json& j, const TournamentDTO& v) {
     j["buyInOptions"] = v.buyInOptions;
     j["entryFee"] = v.entryFee;
     j["id"] = v.id;
@@ -56,7 +56,7 @@ namespace leagueapi {
     j["themeId"] = v.themeId;
   }
 
-  void from_json(const nlohmann::json& j, TournamentDTO& v) {
+  inline void from_json(const nlohmann::json& j, TournamentDTO& v) {
     v.buyInOptions = j.at("buyInOptions").get<std::vector<int32_t>>;
     v.entryFee = j.at("entryFee").get<int32_t>;
     v.id = j.at("id").get<int64_t>;

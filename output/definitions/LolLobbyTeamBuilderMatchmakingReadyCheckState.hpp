@@ -18,7 +18,7 @@ namespace leagueapi {
     StrangerNotReady = 3,
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingReadyCheckState& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingReadyCheckState& v) {
     switch(v) {
       case LolLobbyTeamBuilderMatchmakingReadyCheckState::Error:
         j = "Error";
@@ -41,7 +41,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingReadyCheckState& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingReadyCheckState& v) {
     const auto s& = j.get<std::string>();
     if(s == "Error"){
       v = LolLobbyTeamBuilderMatchmakingReadyCheckState::Error;

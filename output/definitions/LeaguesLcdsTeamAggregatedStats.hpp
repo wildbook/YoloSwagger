@@ -14,13 +14,13 @@ namespace leagueapi {
     std::string queueType;
   };
 
-  void to_json(nlohmann::json& j, const LeaguesLcdsTeamAggregatedStats& v) {
+  inline void to_json(nlohmann::json& j, const LeaguesLcdsTeamAggregatedStats& v) {
     j["id"] = v.id;
     j["playerAggregatedStatsList"] = v.playerAggregatedStatsList;
     j["queueType"] = v.queueType;
   }
 
-  void from_json(const nlohmann::json& j, LeaguesLcdsTeamAggregatedStats& v) {
+  inline void from_json(const nlohmann::json& j, LeaguesLcdsTeamAggregatedStats& v) {
     v.id = j.at("id").get<LeaguesLcdsTeamIdDTO>;
     v.playerAggregatedStatsList = j.at("playerAggregatedStatsList").get<std::vector<LeaguesLcdsPlayerAggregatedStats>>;
     v.queueType = j.at("queueType").get<std::string>;

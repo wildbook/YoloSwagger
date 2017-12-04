@@ -26,7 +26,7 @@ namespace leagueapi {
     LolFeaturedModesQueueAvailability queueAvailability;
   };
 
-  void to_json(nlohmann::json& j, const LolFeaturedModesQueue& v) {
+  inline void to_json(nlohmann::json& j, const LolFeaturedModesQueue& v) {
     j["category"] = v.category;
     j["gameMode"] = v.gameMode;
     j["gameMutator"] = v.gameMutator;
@@ -38,7 +38,7 @@ namespace leagueapi {
     j["queueAvailability"] = v.queueAvailability;
   }
 
-  void from_json(const nlohmann::json& j, LolFeaturedModesQueue& v) {
+  inline void from_json(const nlohmann::json& j, LolFeaturedModesQueue& v) {
     v.category = j.at("category").get<LolFeaturedModesQueueGameCategory>;
     v.gameMode = j.at("gameMode").get<std::string>;
     v.gameMutator = j.at("gameMutator").get<std::string>;

@@ -13,13 +13,13 @@ namespace leagueapi {
     std::string uri;
   };
 
-  void to_json(nlohmann::json& j, const PluginResourceEvent& v) {
+  inline void to_json(nlohmann::json& j, const PluginResourceEvent& v) {
     j["data"] = v.data;
     j["eventType"] = v.eventType;
     j["uri"] = v.uri;
   }
 
-  void from_json(const nlohmann::json& j, PluginResourceEvent& v) {
+  inline void from_json(const nlohmann::json& j, PluginResourceEvent& v) {
     v.data = j.at("data").get<nlohmann::json>;
     v.eventType = j.at("eventType").get<PluginResourceEventType>;
     v.uri = j.at("uri").get<std::string>;

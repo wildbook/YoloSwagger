@@ -18,7 +18,7 @@ namespace leagueapi {
     PlayerBanned = 3,
   };
 
-  void to_json(nlohmann::json& j, const LolGameflowGameflowAvailabilityState& v) {
+  inline void to_json(nlohmann::json& j, const LolGameflowGameflowAvailabilityState& v) {
     switch(v) {
       case LolGameflowGameflowAvailabilityState::Available:
         j = "Available";
@@ -41,7 +41,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolGameflowGameflowAvailabilityState& v) {
+  inline void from_json(const nlohmann::json& j, LolGameflowGameflowAvailabilityState& v) {
     const auto s& = j.get<std::string>();
     if(s == "Available"){
       v = LolGameflowGameflowAvailabilityState::Available;

@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string token;
   };
 
-  void to_json(nlohmann::json& j, const LolLoginIdToken& v) {
+  inline void to_json(nlohmann::json& j, const LolLoginIdToken& v) {
     j["expiry"] = v.expiry;
     j["token"] = v.token;
   }
 
-  void from_json(const nlohmann::json& j, LolLoginIdToken& v) {
+  inline void from_json(const nlohmann::json& j, LolLoginIdToken& v) {
     v.expiry = j.at("expiry").get<uint64_t>;
     v.token = j.at("token").get<std::string>;
   }

@@ -8,11 +8,11 @@ namespace leagueapi {
     int32_t queueId;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderCreatePremadeV1& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderCreatePremadeV1& v) {
     j["queueId"] = v.queueId;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderCreatePremadeV1& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderCreatePremadeV1& v) {
     v.queueId = j.at("queueId").get<int32_t>;
   }
 

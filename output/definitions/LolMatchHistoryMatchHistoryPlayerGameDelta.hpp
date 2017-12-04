@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerGameDelta_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerGameDelta_HPP
 #include <json.hpp>
-#include "LolMatchHistoryMatchHistoryPlayerChampMasteryDelta.hpp"
-#include "LolMatchHistoryMatchHistoryPlayerPlatformDelta.hpp"
 #include "LolMatchHistoryMatchHistoryPlayerLeagueDelta.hpp"
+#include "LolMatchHistoryMatchHistoryPlayerPlatformDelta.hpp"
+#include "LolMatchHistoryMatchHistoryPlayerChampMasteryDelta.hpp"
 namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryPlayerGameDelta {
@@ -19,7 +19,7 @@ namespace leagueapi {
     LolMatchHistoryMatchHistoryPlayerPlatformDelta platformDelta;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryPlayerGameDelta& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryPlayerGameDelta& v) {
     j["champMastery"] = v.champMastery;
     j["gameId"] = v.gameId;
     j["gamePlatformId"] = v.gamePlatformId;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["platformDelta"] = v.platformDelta;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryPlayerGameDelta& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryPlayerGameDelta& v) {
     v.champMastery = j.at("champMastery").get<LolMatchHistoryMatchHistoryPlayerChampMasteryDelta>;
     v.gameId = j.at("gameId").get<uint64_t>;
     v.gamePlatformId = j.at("gamePlatformId").get<std::string>;

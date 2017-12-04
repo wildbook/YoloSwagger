@@ -10,12 +10,12 @@ namespace leagueapi {
     bool isTeamBuilderManaged;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchmakingQueue& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchmakingQueue& v) {
     j["id"] = v.id;
     j["isTeamBuilderManaged"] = v.isTeamBuilderManaged;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchmakingQueue& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchmakingQueue& v) {
     v.id = j.at("id").get<int32_t>;
     v.isTeamBuilderManaged = j.at("isTeamBuilderManaged").get<bool>;
   }

@@ -8,11 +8,11 @@ namespace leagueapi {
     std::vector<std::string> currenciesUsingCapWallets;
   };
 
-  void to_json(nlohmann::json& j, const LolLootCurrencyConfiguration& v) {
+  inline void to_json(nlohmann::json& j, const LolLootCurrencyConfiguration& v) {
     j["currenciesUsingCapWallets"] = v.currenciesUsingCapWallets;
   }
 
-  void from_json(const nlohmann::json& j, LolLootCurrencyConfiguration& v) {
+  inline void from_json(const nlohmann::json& j, LolLootCurrencyConfiguration& v) {
     v.currenciesUsingCapWallets = j.at("currenciesUsingCapWallets").get<std::vector<std::string>>;
   }
 

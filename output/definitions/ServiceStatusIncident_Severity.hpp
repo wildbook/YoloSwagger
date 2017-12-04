@@ -12,7 +12,7 @@ namespace leagueapi {
     warn = 1,
   };
 
-  void to_json(nlohmann::json& j, const ServiceStatusIncident_Severity& v) {
+  inline void to_json(nlohmann::json& j, const ServiceStatusIncident_Severity& v) {
     switch(v) {
       case ServiceStatusIncident_Severity::error:
         j = "error";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, ServiceStatusIncident_Severity& v) {
+  inline void from_json(const nlohmann::json& j, ServiceStatusIncident_Severity& v) {
     const auto s& = j.get<std::string>();
     if(s == "error"){
       v = ServiceStatusIncident_Severity::error;

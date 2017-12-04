@@ -10,12 +10,12 @@ namespace leagueapi {
     int32_t memberOwnedCount;
   };
 
-  void to_json(nlohmann::json& j, const RewardIcon& v) {
+  inline void to_json(nlohmann::json& j, const RewardIcon& v) {
     j["icon"] = v.icon;
     j["memberOwnedCount"] = v.memberOwnedCount;
   }
 
-  void from_json(const nlohmann::json& j, RewardIcon& v) {
+  inline void from_json(const nlohmann::json& j, RewardIcon& v) {
     v.icon = j.at("icon").get<int32_t>;
     v.memberOwnedCount = j.at("memberOwnedCount").get<int32_t>;
   }

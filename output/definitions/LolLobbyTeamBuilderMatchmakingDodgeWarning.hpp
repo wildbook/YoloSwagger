@@ -12,7 +12,7 @@ namespace leagueapi {
     Warning = 1,
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingDodgeWarning& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingDodgeWarning& v) {
     switch(v) {
       case LolLobbyTeamBuilderMatchmakingDodgeWarning::None:
         j = "None";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingDodgeWarning& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingDodgeWarning& v) {
     const auto s& = j.get<std::string>();
     if(s == "None"){
       v = LolLobbyTeamBuilderMatchmakingDodgeWarning::None;

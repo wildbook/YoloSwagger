@@ -13,13 +13,13 @@ namespace leagueapi {
     int64_t phaseId;
   };
 
-  void to_json(nlohmann::json& j, const PhaseRosterDTO& v) {
+  inline void to_json(nlohmann::json& j, const PhaseRosterDTO& v) {
     j["bracketDTO"] = v.bracketDTO;
     j["period"] = v.period;
     j["phaseId"] = v.phaseId;
   }
 
-  void from_json(const nlohmann::json& j, PhaseRosterDTO& v) {
+  inline void from_json(const nlohmann::json& j, PhaseRosterDTO& v) {
     v.bracketDTO = j.at("bracketDTO").get<Bracket>;
     v.period = j.at("period").get<int32_t>;
     v.phaseId = j.at("phaseId").get<int64_t>;

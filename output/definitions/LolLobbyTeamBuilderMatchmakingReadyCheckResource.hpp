@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingReadyCheckResource_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingReadyCheckResource_HPP
 #include <json.hpp>
-#include "LolLobbyTeamBuilderMatchmakingReadyCheckState.hpp"
 #include "LolLobbyTeamBuilderMatchmakingReadyCheckResponse.hpp"
 #include "LolLobbyTeamBuilderMatchmakingDodgeWarning.hpp"
+#include "LolLobbyTeamBuilderMatchmakingReadyCheckState.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderMatchmakingReadyCheckResource {
@@ -19,7 +19,7 @@ namespace leagueapi {
     float timer;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingReadyCheckResource& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingReadyCheckResource& v) {
     j["declinerIds"] = v.declinerIds;
     j["dodgeWarning"] = v.dodgeWarning;
     j["playerResponse"] = v.playerResponse;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["timer"] = v.timer;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingReadyCheckResource& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingReadyCheckResource& v) {
     v.declinerIds = j.at("declinerIds").get<std::vector<uint64_t>>;
     v.dodgeWarning = j.at("dodgeWarning").get<LolLobbyTeamBuilderMatchmakingDodgeWarning>;
     v.playerResponse = j.at("playerResponse").get<LolLobbyTeamBuilderMatchmakingReadyCheckResponse>;

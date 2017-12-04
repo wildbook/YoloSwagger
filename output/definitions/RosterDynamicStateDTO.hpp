@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RosterDynamicStateDTO_HPP
 #define SWAGGER_TYPES_RosterDynamicStateDTO_HPP
 #include <json.hpp>
-#include "PhaseRosterSubDTO.hpp"
-#include "BuybackMember.hpp"
 #include "TicketOfferDTO.hpp"
 #include "RosterWithdraw.hpp"
+#include "PhaseRosterSubDTO.hpp"
+#include "BuybackMember.hpp"
 namespace leagueapi {
   // 
   struct RosterDynamicStateDTO {
@@ -24,7 +24,7 @@ namespace leagueapi {
     RosterWithdraw withdraw;
   };
 
-  void to_json(nlohmann::json& j, const RosterDynamicStateDTO& v) {
+  inline void to_json(nlohmann::json& j, const RosterDynamicStateDTO& v) {
     j["members"] = v.members;
     j["phaseCheckinStates"] = v.phaseCheckinStates;
     j["phaseRosterSubs"] = v.phaseRosterSubs;
@@ -34,7 +34,7 @@ namespace leagueapi {
     j["withdraw"] = v.withdraw;
   }
 
-  void from_json(const nlohmann::json& j, RosterDynamicStateDTO& v) {
+  inline void from_json(const nlohmann::json& j, RosterDynamicStateDTO& v) {
     v.members = j.at("members").get<std::vector<BuybackMember>>;
     v.phaseCheckinStates = j.at("phaseCheckinStates").get<std::vector<uint64_t>>;
     v.phaseRosterSubs = j.at("phaseRosterSubs").get<std::vector<PhaseRosterSubDTO>>;

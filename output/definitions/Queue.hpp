@@ -9,11 +9,11 @@ namespace leagueapi {
     QueueGameTypeConfig gameTypeConfig;
   };
 
-  void to_json(nlohmann::json& j, const Queue& v) {
+  inline void to_json(nlohmann::json& j, const Queue& v) {
     j["gameTypeConfig"] = v.gameTypeConfig;
   }
 
-  void from_json(const nlohmann::json& j, Queue& v) {
+  inline void from_json(const nlohmann::json& j, Queue& v) {
     v.gameTypeConfig = j.at("gameTypeConfig").get<QueueGameTypeConfig>;
   }
 

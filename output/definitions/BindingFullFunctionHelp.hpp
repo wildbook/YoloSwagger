@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_BindingFullFunctionHelp_HPP
 #define SWAGGER_TYPES_BindingFullFunctionHelp_HPP
 #include <json.hpp>
-#include "BindingFullArgumentHelp.hpp"
 #include "BindingFullTypeIdentifier.hpp"
+#include "BindingFullArgumentHelp.hpp"
 namespace leagueapi {
   // Describes a function.
   struct BindingFullFunctionHelp {
@@ -26,7 +26,7 @@ namespace leagueapi {
     bool threadSafe;
   };
 
-  void to_json(nlohmann::json& j, const BindingFullFunctionHelp& v) {
+  inline void to_json(nlohmann::json& j, const BindingFullFunctionHelp& v) {
     j["arguments"] = v.arguments;
     j["async"] = v.async;
     j["description"] = v.description;
@@ -38,7 +38,7 @@ namespace leagueapi {
     j["threadSafe"] = v.threadSafe;
   }
 
-  void from_json(const nlohmann::json& j, BindingFullFunctionHelp& v) {
+  inline void from_json(const nlohmann::json& j, BindingFullFunctionHelp& v) {
     v.arguments = j.at("arguments").get<std::vector<BindingFullArgumentHelp>>;
     v.async = j.at("async").get<std::string>;
     v.description = j.at("description").get<std::string>;

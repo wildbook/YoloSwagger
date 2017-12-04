@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolClashRosterWithdrawNotification_HPP
 #define SWAGGER_TYPES_LolClashRosterWithdrawNotification_HPP
 #include <json.hpp>
-#include "LolClashRosterNotifyReason.hpp"
 #include "RosterWithdraw.hpp"
+#include "LolClashRosterNotifyReason.hpp"
 namespace leagueapi {
   // 
   struct LolClashRosterWithdrawNotification {
@@ -18,7 +18,7 @@ namespace leagueapi {
     RosterWithdraw withdraw;
   };
 
-  void to_json(nlohmann::json& j, const LolClashRosterWithdrawNotification& v) {
+  inline void to_json(nlohmann::json& j, const LolClashRosterWithdrawNotification& v) {
     j["notifyReason"] = v.notifyReason;
     j["rosterId"] = v.rosterId;
     j["sourcePlayerId"] = v.sourcePlayerId;
@@ -26,7 +26,7 @@ namespace leagueapi {
     j["withdraw"] = v.withdraw;
   }
 
-  void from_json(const nlohmann::json& j, LolClashRosterWithdrawNotification& v) {
+  inline void from_json(const nlohmann::json& j, LolClashRosterWithdrawNotification& v) {
     v.notifyReason = j.at("notifyReason").get<LolClashRosterNotifyReason>;
     v.rosterId = j.at("rosterId").get<int64_t>;
     v.sourcePlayerId = j.at("sourcePlayerId").get<uint64_t>;

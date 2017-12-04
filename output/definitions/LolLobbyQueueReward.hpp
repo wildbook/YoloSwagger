@@ -14,14 +14,14 @@ namespace leagueapi {
     std::vector<int32_t> partySizeIpRewards;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyQueueReward& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyQueueReward& v) {
     j["isChampionPointsEnabled"] = v.isChampionPointsEnabled;
     j["isIpEnabled"] = v.isIpEnabled;
     j["isXpEnabled"] = v.isXpEnabled;
     j["partySizeIpRewards"] = v.partySizeIpRewards;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyQueueReward& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyQueueReward& v) {
     v.isChampionPointsEnabled = j.at("isChampionPointsEnabled").get<bool>;
     v.isIpEnabled = j.at("isIpEnabled").get<bool>;
     v.isXpEnabled = j.at("isXpEnabled").get<bool>;

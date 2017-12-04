@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyCustomGameLobby_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyCustomGameLobby_HPP
 #include <json.hpp>
-#include "LolLobbyLobbyCustomGameConfiguration.hpp"
 #include "LolLobbyLobbyMember.hpp"
+#include "LolLobbyLobbyCustomGameConfiguration.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyLobbyCustomGameLobby {
@@ -24,7 +24,7 @@ namespace leagueapi {
     std::vector<LolLobbyLobbyMember> teamTwo;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyCustomGameLobby& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyCustomGameLobby& v) {
     j["configuration"] = v.configuration;
     j["gameId"] = v.gameId;
     j["lobbyName"] = v.lobbyName;
@@ -35,7 +35,7 @@ namespace leagueapi {
     j["teamTwo"] = v.teamTwo;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyCustomGameLobby& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyCustomGameLobby& v) {
     v.configuration = j.at("configuration").get<LolLobbyLobbyCustomGameConfiguration>;
     v.gameId = j.at("gameId").get<uint64_t>;
     v.lobbyName = j.at("lobbyName").get<std::string>;

@@ -16,7 +16,7 @@ namespace leagueapi {
     std::string summonerInternalName;
   };
 
-  void to_json(nlohmann::json& j, const ChampSelectLcdsPlayerChampionSelectionDTO& v) {
+  inline void to_json(nlohmann::json& j, const ChampSelectLcdsPlayerChampionSelectionDTO& v) {
     j["championId"] = v.championId;
     j["selectedSkinIndex"] = v.selectedSkinIndex;
     j["spell1Id"] = v.spell1Id;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["summonerInternalName"] = v.summonerInternalName;
   }
 
-  void from_json(const nlohmann::json& j, ChampSelectLcdsPlayerChampionSelectionDTO& v) {
+  inline void from_json(const nlohmann::json& j, ChampSelectLcdsPlayerChampionSelectionDTO& v) {
     v.championId = j.at("championId").get<int32_t>;
     v.selectedSkinIndex = j.at("selectedSkinIndex").get<int32_t>;
     v.spell1Id = j.at("spell1Id").get<int32_t>;

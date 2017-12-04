@@ -16,7 +16,7 @@ namespace leagueapi {
     uint64_t summonerId;
   };
 
-  void to_json(nlohmann::json& j, const CollectionsLcdsSummonerRune& v) {
+  inline void to_json(nlohmann::json& j, const CollectionsLcdsSummonerRune& v) {
     j["purchaseDate"] = v.purchaseDate;
     j["purchased"] = v.purchased;
     j["quantity"] = v.quantity;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["summonerId"] = v.summonerId;
   }
 
-  void from_json(const nlohmann::json& j, CollectionsLcdsSummonerRune& v) {
+  inline void from_json(const nlohmann::json& j, CollectionsLcdsSummonerRune& v) {
     v.purchaseDate = j.at("purchaseDate").get<uint64_t>;
     v.purchased = j.at("purchased").get<uint64_t>;
     v.quantity = j.at("quantity").get<int32_t>;

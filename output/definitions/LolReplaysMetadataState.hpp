@@ -28,7 +28,7 @@ namespace leagueapi {
     watch = 2,
   };
 
-  void to_json(nlohmann::json& j, const LolReplaysMetadataState& v) {
+  inline void to_json(nlohmann::json& j, const LolReplaysMetadataState& v) {
     switch(v) {
       case LolReplaysMetadataState::checking:
         j = "checking";
@@ -66,7 +66,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolReplaysMetadataState& v) {
+  inline void from_json(const nlohmann::json& j, LolReplaysMetadataState& v) {
     const auto s& = j.get<std::string>();
     if(s == "checking"){
       v = LolReplaysMetadataState::checking;

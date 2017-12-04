@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyPartyDto_HPP
 #define SWAGGER_TYPES_LolLobbyPartyDto_HPP
 #include <json.hpp>
-#include "LolLobbyGameModeDto.hpp"
 #include "LolLobbyQueueRestrictionDto.hpp"
-#include "LolLobbyPartyMemberDto.hpp"
 #include "LolLobbyPartyChatDto.hpp"
+#include "LolLobbyGameModeDto.hpp"
+#include "LolLobbyPartyMemberDto.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyPartyDto {
@@ -36,7 +36,7 @@ namespace leagueapi {
     uint64_t version;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyPartyDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyPartyDto& v) {
     j["activeRestrictions"] = v.activeRestrictions;
     j["activityLocked"] = v.activityLocked;
     j["activityResumeUtcMillis"] = v.activityResumeUtcMillis;
@@ -52,7 +52,7 @@ namespace leagueapi {
     j["version"] = v.version;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyPartyDto& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyPartyDto& v) {
     v.activeRestrictions = j.at("activeRestrictions").get<LolLobbyQueueRestrictionDto>;
     v.activityLocked = j.at("activityLocked").get<bool>;
     v.activityResumeUtcMillis = j.at("activityResumeUtcMillis").get<uint64_t>;

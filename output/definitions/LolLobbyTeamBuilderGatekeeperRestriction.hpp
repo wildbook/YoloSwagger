@@ -16,7 +16,7 @@ namespace leagueapi {
     uint64_t summonerId;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderGatekeeperRestriction& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderGatekeeperRestriction& v) {
     j["payload"] = v.payload;
     j["queueId"] = v.queueId;
     j["reason"] = v.reason;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["summonerId"] = v.summonerId;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderGatekeeperRestriction& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderGatekeeperRestriction& v) {
     v.payload = j.at("payload").get<std::string>;
     v.queueId = j.at("queueId").get<int32_t>;
     v.reason = j.at("reason").get<std::string>;

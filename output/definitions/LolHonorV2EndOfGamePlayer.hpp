@@ -34,7 +34,7 @@ namespace leagueapi {
     int32_t wins;
   };
 
-  void to_json(nlohmann::json& j, const LolHonorV2EndOfGamePlayer& v) {
+  inline void to_json(nlohmann::json& j, const LolHonorV2EndOfGamePlayer& v) {
     j["botPlayer"] = v.botPlayer;
     j["championId"] = v.championId;
     j["gameId"] = v.gameId;
@@ -51,7 +51,7 @@ namespace leagueapi {
     j["wins"] = v.wins;
   }
 
-  void from_json(const nlohmann::json& j, LolHonorV2EndOfGamePlayer& v) {
+  inline void from_json(const nlohmann::json& j, LolHonorV2EndOfGamePlayer& v) {
     v.botPlayer = j.at("botPlayer").get<bool>;
     v.championId = j.at("championId").get<int32_t>;
     v.gameId = j.at("gameId").get<uint64_t>;

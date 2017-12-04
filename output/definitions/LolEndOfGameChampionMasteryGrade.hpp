@@ -12,13 +12,13 @@ namespace leagueapi {
     uint64_t playerId;
   };
 
-  void to_json(nlohmann::json& j, const LolEndOfGameChampionMasteryGrade& v) {
+  inline void to_json(nlohmann::json& j, const LolEndOfGameChampionMasteryGrade& v) {
     j["championId"] = v.championId;
     j["grade"] = v.grade;
     j["playerId"] = v.playerId;
   }
 
-  void from_json(const nlohmann::json& j, LolEndOfGameChampionMasteryGrade& v) {
+  inline void from_json(const nlohmann::json& j, LolEndOfGameChampionMasteryGrade& v) {
     v.championId = j.at("championId").get<int32_t>;
     v.grade = j.at("grade").get<std::string>;
     v.playerId = j.at("playerId").get<uint64_t>;

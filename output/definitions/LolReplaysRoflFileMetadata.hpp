@@ -14,14 +14,14 @@ namespace leagueapi {
     uint32_t lastKeyFrameId;
   };
 
-  void to_json(nlohmann::json& j, const LolReplaysRoflFileMetadata& v) {
+  inline void to_json(nlohmann::json& j, const LolReplaysRoflFileMetadata& v) {
     j["gameLength"] = v.gameLength;
     j["gameVersion"] = v.gameVersion;
     j["lastGameChunkId"] = v.lastGameChunkId;
     j["lastKeyFrameId"] = v.lastKeyFrameId;
   }
 
-  void from_json(const nlohmann::json& j, LolReplaysRoflFileMetadata& v) {
+  inline void from_json(const nlohmann::json& j, LolReplaysRoflFileMetadata& v) {
     v.gameLength = j.at("gameLength").get<uint32_t>;
     v.gameVersion = j.at("gameVersion").get<std::string>;
     v.lastGameChunkId = j.at("lastGameChunkId").get<uint32_t>;

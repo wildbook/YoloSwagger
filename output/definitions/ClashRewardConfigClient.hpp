@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_ClashRewardConfigClient_HPP
 #define SWAGGER_TYPES_ClashRewardConfigClient_HPP
 #include <json.hpp>
-#include "ClashRewardKeyType.hpp"
 #include "ClashRewardConfigEntry.hpp"
+#include "ClashRewardKeyType.hpp"
 namespace leagueapi {
   // 
   struct ClashRewardConfigClient {
@@ -16,14 +16,14 @@ namespace leagueapi {
     std::string name;
   };
 
-  void to_json(nlohmann::json& j, const ClashRewardConfigClient& v) {
+  inline void to_json(nlohmann::json& j, const ClashRewardConfigClient& v) {
     j["entries"] = v.entries;
     j["grantToSub"] = v.grantToSub;
     j["keyDef"] = v.keyDef;
     j["name"] = v.name;
   }
 
-  void from_json(const nlohmann::json& j, ClashRewardConfigClient& v) {
+  inline void from_json(const nlohmann::json& j, ClashRewardConfigClient& v) {
     v.entries = j.at("entries").get<std::vector<ClashRewardConfigEntry>>;
     v.grantToSub = j.at("grantToSub").get<bool>;
     v.keyDef = j.at("keyDef").get<std::vector<ClashRewardKeyType>>;

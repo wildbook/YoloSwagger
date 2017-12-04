@@ -16,7 +16,7 @@ namespace leagueapi {
     int32_t winCount;
   };
 
-  void to_json(nlohmann::json& j, const RankedScoutingTopChampionDTO& v) {
+  inline void to_json(nlohmann::json& j, const RankedScoutingTopChampionDTO& v) {
     j["championId"] = v.championId;
     j["gameCount"] = v.gameCount;
     j["kda"] = v.kda;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["winCount"] = v.winCount;
   }
 
-  void from_json(const nlohmann::json& j, RankedScoutingTopChampionDTO& v) {
+  inline void from_json(const nlohmann::json& j, RankedScoutingTopChampionDTO& v) {
     v.championId = j.at("championId").get<int32_t>;
     v.gameCount = j.at("gameCount").get<int32_t>;
     v.kda = j.at("kda").get<float>;

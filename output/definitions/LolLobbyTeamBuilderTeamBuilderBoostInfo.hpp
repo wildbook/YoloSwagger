@@ -16,7 +16,7 @@ namespace leagueapi {
     std::vector<int64_t> unlockedSkinIds;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTeamBuilderBoostInfo& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTeamBuilderBoostInfo& v) {
     j["activatorCellId"] = v.activatorCellId;
     j["allowBattleBoost"] = v.allowBattleBoost;
     j["battleBoostActivated"] = v.battleBoostActivated;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["unlockedSkinIds"] = v.unlockedSkinIds;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTeamBuilderBoostInfo& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTeamBuilderBoostInfo& v) {
     v.activatorCellId = j.at("activatorCellId").get<int64_t>;
     v.allowBattleBoost = j.at("allowBattleBoost").get<bool>;
     v.battleBoostActivated = j.at("battleBoostActivated").get<bool>;

@@ -8,11 +8,11 @@ namespace leagueapi {
     std::vector<std::string> positionPref;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyPartyMemberMetadataDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyPartyMemberMetadataDto& v) {
     j["positionPref"] = v.positionPref;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyPartyMemberMetadataDto& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyPartyMemberMetadataDto& v) {
     v.positionPref = j.at("positionPref").get<std::vector<std::string>>;
   }
 

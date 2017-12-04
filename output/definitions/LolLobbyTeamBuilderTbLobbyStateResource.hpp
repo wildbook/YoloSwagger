@@ -2,9 +2,9 @@
 #define SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyStateResource_HPP
 #include <json.hpp>
 #include "LolLobbyTeamBuilderTBDMatchmakingState.hpp"
-#include "LolLobbyTeamBuilderAfkCheckStateV1.hpp"
 #include "LolLobbyTeamBuilderTbLobbyPremadeStateResource.hpp"
 #include "LolLobbyTeamBuilderChampionSelectStateV1.hpp"
+#include "LolLobbyTeamBuilderAfkCheckStateV1.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderTbLobbyStateResource {
@@ -24,7 +24,7 @@ namespace leagueapi {
     int32_t queueId;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTbLobbyStateResource& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTbLobbyStateResource& v) {
     j["afkCheckState"] = v.afkCheckState;
     j["championSelectState"] = v.championSelectState;
     j["counter"] = v.counter;
@@ -34,7 +34,7 @@ namespace leagueapi {
     j["queueId"] = v.queueId;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTbLobbyStateResource& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTbLobbyStateResource& v) {
     v.afkCheckState = j.at("afkCheckState").get<LolLobbyTeamBuilderAfkCheckStateV1>;
     v.championSelectState = j.at("championSelectState").get<LolLobbyTeamBuilderChampionSelectStateV1>;
     v.counter = j.at("counter").get<int32_t>;

@@ -26,7 +26,7 @@ namespace leagueapi {
     double minutesUntilReplayConsideredLost;
   };
 
-  void to_json(nlohmann::json& j, const LolReplaysReplaysConfiguration& v) {
+  inline void to_json(nlohmann::json& j, const LolReplaysReplaysConfiguration& v) {
     j["gameVersion"] = v.gameVersion;
     j["isLoggedIn"] = v.isLoggedIn;
     j["isPatching"] = v.isPatching;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["minutesUntilReplayConsideredLost"] = v.minutesUntilReplayConsideredLost;
   }
 
-  void from_json(const nlohmann::json& j, LolReplaysReplaysConfiguration& v) {
+  inline void from_json(const nlohmann::json& j, LolReplaysReplaysConfiguration& v) {
     v.gameVersion = j.at("gameVersion").get<std::string>;
     v.isLoggedIn = j.at("isLoggedIn").get<bool>;
     v.isPatching = j.at("isPatching").get<bool>;

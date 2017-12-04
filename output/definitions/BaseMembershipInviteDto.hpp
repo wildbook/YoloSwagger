@@ -22,7 +22,7 @@ namespace leagueapi {
     int32_t status;
   };
 
-  void to_json(nlohmann::json& j, const BaseMembershipInviteDto& v) {
+  inline void to_json(nlohmann::json& j, const BaseMembershipInviteDto& v) {
     j["clubKey"] = v.clubKey;
     j["clubName"] = v.clubName;
     j["inviteePlatformId"] = v.inviteePlatformId;
@@ -33,7 +33,7 @@ namespace leagueapi {
     j["status"] = v.status;
   }
 
-  void from_json(const nlohmann::json& j, BaseMembershipInviteDto& v) {
+  inline void from_json(const nlohmann::json& j, BaseMembershipInviteDto& v) {
     v.clubKey = j.at("clubKey").get<std::string>;
     v.clubName = j.at("clubName").get<std::string>;
     v.inviteePlatformId = j.at("inviteePlatformId").get<std::string>;

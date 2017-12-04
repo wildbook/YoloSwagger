@@ -14,14 +14,14 @@ namespace leagueapi {
     std::string offenses;
   };
 
-  void to_json(nlohmann::json& j, const EndOfGameLcdsClientReportV1& v) {
+  inline void to_json(nlohmann::json& j, const EndOfGameLcdsClientReportV1& v) {
     j["comments"] = v.comments;
     j["gameId"] = v.gameId;
     j["offenderSummonerId"] = v.offenderSummonerId;
     j["offenses"] = v.offenses;
   }
 
-  void from_json(const nlohmann::json& j, EndOfGameLcdsClientReportV1& v) {
+  inline void from_json(const nlohmann::json& j, EndOfGameLcdsClientReportV1& v) {
     v.comments = j.at("comments").get<std::string>;
     v.gameId = j.at("gameId").get<uint64_t>;
     v.offenderSummonerId = j.at("offenderSummonerId").get<uint64_t>;

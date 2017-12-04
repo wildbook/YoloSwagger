@@ -11,12 +11,12 @@ namespace leagueapi {
     uint64_t summonerId;
   };
 
-  void to_json(nlohmann::json& j, const LolChatChatRankedData& v) {
+  inline void to_json(nlohmann::json& j, const LolChatChatRankedData& v) {
     j["rankedData"] = v.rankedData;
     j["summonerId"] = v.summonerId;
   }
 
-  void from_json(const nlohmann::json& j, LolChatChatRankedData& v) {
+  inline void from_json(const nlohmann::json& j, LolChatChatRankedData& v) {
     v.rankedData = j.at("rankedData").get<std::vector<LolChatChatRankedEntry>>;
     v.summonerId = j.at("summonerId").get<uint64_t>;
   }

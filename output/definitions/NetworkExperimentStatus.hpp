@@ -14,7 +14,7 @@ namespace leagueapi {
     Skipped = 1,
   };
 
-  void to_json(nlohmann::json& j, const NetworkExperimentStatus& v) {
+  inline void to_json(nlohmann::json& j, const NetworkExperimentStatus& v) {
     switch(v) {
       case NetworkExperimentStatus::Completed:
         j = "Completed";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, NetworkExperimentStatus& v) {
+  inline void from_json(const nlohmann::json& j, NetworkExperimentStatus& v) {
     const auto s& = j.get<std::string>();
     if(s == "Completed"){
       v = NetworkExperimentStatus::Completed;

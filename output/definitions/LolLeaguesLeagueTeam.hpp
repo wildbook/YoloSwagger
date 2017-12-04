@@ -13,13 +13,13 @@ namespace leagueapi {
     std::string name;
   };
 
-  void to_json(nlohmann::json& j, const LolLeaguesLeagueTeam& v) {
+  inline void to_json(nlohmann::json& j, const LolLeaguesLeagueTeam& v) {
     j["id"] = v.id;
     j["members"] = v.members;
     j["name"] = v.name;
   }
 
-  void from_json(const nlohmann::json& j, LolLeaguesLeagueTeam& v) {
+  inline void from_json(const nlohmann::json& j, LolLeaguesLeagueTeam& v) {
     v.id = j.at("id").get<std::string>;
     v.members = j.at("members").get<std::vector<LolLeaguesLeagueTeamMember>>;
     v.name = j.at("name").get<std::string>;

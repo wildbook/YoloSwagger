@@ -1,11 +1,11 @@
 #ifndef SWAGGER_TYPES_LolMatchmakingMatchmakingSearchResource_HPP
 #define SWAGGER_TYPES_LolMatchmakingMatchmakingSearchResource_HPP
 #include <json.hpp>
-#include "LolMatchmakingMatchmakingSearchErrorResource.hpp"
 #include "LolMatchmakingMatchmakingSearchState.hpp"
+#include "LolMatchmakingMatchmakingLowPriorityData.hpp"
 #include "LolMatchmakingMatchmakingReadyCheckResource.hpp"
 #include "LolMatchmakingMatchmakingDodgeData.hpp"
-#include "LolMatchmakingMatchmakingLowPriorityData.hpp"
+#include "LolMatchmakingMatchmakingSearchErrorResource.hpp"
 namespace leagueapi {
   // 
   struct LolMatchmakingMatchmakingSearchResource {
@@ -31,7 +31,7 @@ namespace leagueapi {
     float timeInQueue;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingSearchResource& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingSearchResource& v) {
     j["dodgeData"] = v.dodgeData;
     j["errors"] = v.errors;
     j["estimatedQueueTime"] = v.estimatedQueueTime;
@@ -44,7 +44,7 @@ namespace leagueapi {
     j["timeInQueue"] = v.timeInQueue;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingSearchResource& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingSearchResource& v) {
     v.dodgeData = j.at("dodgeData").get<LolMatchmakingMatchmakingDodgeData>;
     v.errors = j.at("errors").get<std::vector<LolMatchmakingMatchmakingSearchErrorResource>>;
     v.estimatedQueueTime = j.at("estimatedQueueTime").get<float>;

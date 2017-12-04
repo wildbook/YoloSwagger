@@ -26,7 +26,7 @@ namespace leagueapi {
     int32_t teamId;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderCellV1& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderCellV1& v) {
     j["assignedPosition"] = v.assignedPosition;
     j["cellId"] = v.cellId;
     j["championId"] = v.championId;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["teamId"] = v.teamId;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderCellV1& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderCellV1& v) {
     v.assignedPosition = j.at("assignedPosition").get<std::string>;
     v.cellId = j.at("cellId").get<int32_t>;
     v.championId = j.at("championId").get<int32_t>;

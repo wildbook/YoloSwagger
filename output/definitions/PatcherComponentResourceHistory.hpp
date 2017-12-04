@@ -10,7 +10,7 @@ namespace leagueapi {
     none = 0,
   };
 
-  void to_json(nlohmann::json& j, const PatcherComponentResourceHistory& v) {
+  inline void to_json(nlohmann::json& j, const PatcherComponentResourceHistory& v) {
     switch(v) {
       case PatcherComponentResourceHistory::keep:
         j = "keep";
@@ -21,7 +21,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, PatcherComponentResourceHistory& v) {
+  inline void from_json(const nlohmann::json& j, PatcherComponentResourceHistory& v) {
     const auto s& = j.get<std::string>();
     if(s == "keep"){
       v = PatcherComponentResourceHistory::keep;

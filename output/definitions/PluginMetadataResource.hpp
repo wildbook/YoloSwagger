@@ -25,7 +25,7 @@ namespace leagueapi {
     std::string type;
   };
 
-  void to_json(nlohmann::json& j, const PluginMetadataResource& v) {
+  inline void to_json(nlohmann::json& j, const PluginMetadataResource& v) {
     j["app"] = v.app;
     j["feature"] = v.feature;
     j["globalAssetBundles"] = v.globalAssetBundles;
@@ -37,7 +37,7 @@ namespace leagueapi {
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, PluginMetadataResource& v) {
+  inline void from_json(const nlohmann::json& j, PluginMetadataResource& v) {
     v.app = j.at("app").get<std::string>;
     v.feature = j.at("feature").get<std::string>;
     v.globalAssetBundles = j.at("globalAssetBundles").get<std::vector<std::string>>;

@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_ClubDto_HPP
 #define SWAGGER_TYPES_ClubDto_HPP
 #include <json.hpp>
-#include "ClubMembershipDto.hpp"
 #include "ClubDataDto.hpp"
+#include "ClubMembershipDto.hpp"
 namespace leagueapi {
   // 
   struct ClubDto {
@@ -16,14 +16,14 @@ namespace leagueapi {
     std::string resourceUri;
   };
 
-  void to_json(nlohmann::json& j, const ClubDto& v) {
+  inline void to_json(nlohmann::json& j, const ClubDto& v) {
     j["clubData"] = v.clubData;
     j["membership"] = v.membership;
     j["platformId"] = v.platformId;
     j["resourceUri"] = v.resourceUri;
   }
 
-  void from_json(const nlohmann::json& j, ClubDto& v) {
+  inline void from_json(const nlohmann::json& j, ClubDto& v) {
     v.clubData = j.at("clubData").get<ClubDataDto>;
     v.membership = j.at("membership").get<ClubMembershipDto>;
     v.platformId = j.at("platformId").get<std::string>;

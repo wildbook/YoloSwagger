@@ -34,7 +34,7 @@ namespace leagueapi {
     int32_t team2Count;
   };
 
-  void to_json(nlohmann::json& j, const LcdsPracticeGameSearchResult& v) {
+  inline void to_json(nlohmann::json& j, const LcdsPracticeGameSearchResult& v) {
     j["allowSpectators"] = v.allowSpectators;
     j["gameMap"] = v.gameMap;
     j["gameMapId"] = v.gameMapId;
@@ -50,7 +50,7 @@ namespace leagueapi {
     j["team2Count"] = v.team2Count;
   }
 
-  void from_json(const nlohmann::json& j, LcdsPracticeGameSearchResult& v) {
+  inline void from_json(const nlohmann::json& j, LcdsPracticeGameSearchResult& v) {
     v.allowSpectators = j.at("allowSpectators").get<std::string>;
     v.gameMap = j.at("gameMap").get<LcdsGameMap>;
     v.gameMapId = j.at("gameMapId").get<int32_t>;

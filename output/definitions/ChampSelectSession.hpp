@@ -9,11 +9,11 @@ namespace leagueapi {
     ChampSelectTimer timer;
   };
 
-  void to_json(nlohmann::json& j, const ChampSelectSession& v) {
+  inline void to_json(nlohmann::json& j, const ChampSelectSession& v) {
     j["timer"] = v.timer;
   }
 
-  void from_json(const nlohmann::json& j, ChampSelectSession& v) {
+  inline void from_json(const nlohmann::json& j, ChampSelectSession& v) {
     v.timer = j.at("timer").get<ChampSelectTimer>;
   }
 

@@ -218,7 +218,7 @@ namespace leagueapi {
     bool win;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryParticipantStatistics& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryParticipantStatistics& v) {
     j["assists"] = v.assists;
     j["causedEarlySurrender"] = v.causedEarlySurrender;
     j["champLevel"] = v.champLevel;
@@ -327,7 +327,7 @@ namespace leagueapi {
     j["win"] = v.win;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryParticipantStatistics& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryParticipantStatistics& v) {
     v.assists = j.at("assists").get<int64_t>;
     v.causedEarlySurrender = j.at("causedEarlySurrender").get<bool>;
     v.champLevel = j.at("champLevel").get<int64_t>;

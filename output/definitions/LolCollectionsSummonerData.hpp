@@ -12,12 +12,12 @@ namespace leagueapi {
     CollectionsLcdsSpellBookDTO spellBook;
   };
 
-  void to_json(nlohmann::json& j, const LolCollectionsSummonerData& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsSummonerData& v) {
     j["masteryBook"] = v.masteryBook;
     j["spellBook"] = v.spellBook;
   }
 
-  void from_json(const nlohmann::json& j, LolCollectionsSummonerData& v) {
+  inline void from_json(const nlohmann::json& j, LolCollectionsSummonerData& v) {
     v.masteryBook = j.at("masteryBook").get<CollectionsLcdsMasteryBookDTO>;
     v.spellBook = j.at("spellBook").get<CollectionsLcdsSpellBookDTO>;
   }

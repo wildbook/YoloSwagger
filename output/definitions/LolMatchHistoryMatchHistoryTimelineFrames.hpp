@@ -9,11 +9,11 @@ namespace leagueapi {
     std::vector<LolMatchHistoryMatchHistoryTimelineFrame> frames;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryTimelineFrames& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryTimelineFrames& v) {
     j["frames"] = v.frames;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryTimelineFrames& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryTimelineFrames& v) {
     v.frames = j.at("frames").get<std::vector<LolMatchHistoryMatchHistoryTimelineFrame>>;
   }
 

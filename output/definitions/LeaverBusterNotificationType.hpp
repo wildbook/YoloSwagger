@@ -16,7 +16,7 @@ namespace leagueapi {
     TaintedWarning = 1,
   };
 
-  void to_json(nlohmann::json& j, const LeaverBusterNotificationType& v) {
+  inline void to_json(nlohmann::json& j, const LeaverBusterNotificationType& v) {
     switch(v) {
       case LeaverBusterNotificationType::Invalid:
         j = "Invalid";
@@ -36,7 +36,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LeaverBusterNotificationType& v) {
+  inline void from_json(const nlohmann::json& j, LeaverBusterNotificationType& v) {
     const auto s& = j.get<std::string>();
     if(s == "Invalid"){
       v = LeaverBusterNotificationType::Invalid;

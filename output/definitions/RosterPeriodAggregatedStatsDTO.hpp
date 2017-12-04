@@ -15,14 +15,14 @@ namespace leagueapi {
     int64_t time;
   };
 
-  void to_json(nlohmann::json& j, const RosterPeriodAggregatedStatsDTO& v) {
+  inline void to_json(nlohmann::json& j, const RosterPeriodAggregatedStatsDTO& v) {
     j["bracketSize"] = v.bracketSize;
     j["matchStats"] = v.matchStats;
     j["period"] = v.period;
     j["time"] = v.time;
   }
 
-  void from_json(const nlohmann::json& j, RosterPeriodAggregatedStatsDTO& v) {
+  inline void from_json(const nlohmann::json& j, RosterPeriodAggregatedStatsDTO& v) {
     v.bracketSize = j.at("bracketSize").get<int32_t>;
     v.matchStats = j.at("matchStats").get<std::vector<RosterMatchAggregatedStatsDTO>>;
     v.period = j.at("period").get<int32_t>;

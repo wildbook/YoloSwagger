@@ -12,13 +12,13 @@ namespace leagueapi {
     bool rewardsLocked;
   };
 
-  void to_json(nlohmann::json& j, const LolHonorV2VendedHonorState& v) {
+  inline void to_json(nlohmann::json& j, const LolHonorV2VendedHonorState& v) {
     j["checkpoint"] = v.checkpoint;
     j["level"] = v.level;
     j["rewardsLocked"] = v.rewardsLocked;
   }
 
-  void from_json(const nlohmann::json& j, LolHonorV2VendedHonorState& v) {
+  inline void from_json(const nlohmann::json& j, LolHonorV2VendedHonorState& v) {
     v.checkpoint = j.at("checkpoint").get<int32_t>;
     v.level = j.at("level").get<int32_t>;
     v.rewardsLocked = j.at("rewardsLocked").get<bool>;

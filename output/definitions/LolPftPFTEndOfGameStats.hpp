@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolPftPFTEndOfGameStats_HPP
 #define SWAGGER_TYPES_LolPftPFTEndOfGameStats_HPP
 #include <json.hpp>
-#include "LolPftPFTEndOfGamePoints.hpp"
 #include "LolPftPFTEndOfGameTeam.hpp"
+#include "LolPftPFTEndOfGamePoints.hpp"
 namespace leagueapi {
   // 
   struct LolPftPFTEndOfGameStats {
@@ -124,7 +124,7 @@ namespace leagueapi {
     uint64_t userId;
   };
 
-  void to_json(nlohmann::json& j, const LolPftPFTEndOfGameStats& v) {
+  inline void to_json(nlohmann::json& j, const LolPftPFTEndOfGameStats& v) {
     j["accountId"] = v.accountId;
     j["basePoints"] = v.basePoints;
     j["battleBoostIpEarned"] = v.battleBoostIpEarned;
@@ -185,7 +185,7 @@ namespace leagueapi {
     j["userId"] = v.userId;
   }
 
-  void from_json(const nlohmann::json& j, LolPftPFTEndOfGameStats& v) {
+  inline void from_json(const nlohmann::json& j, LolPftPFTEndOfGameStats& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.basePoints = j.at("basePoints").get<int32_t>;
     v.battleBoostIpEarned = j.at("battleBoostIpEarned").get<int32_t>;

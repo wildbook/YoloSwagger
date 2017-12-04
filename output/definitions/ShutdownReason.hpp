@@ -14,7 +14,7 @@ namespace leagueapi {
     PlayerBanned = 3,
   };
 
-  void to_json(nlohmann::json& j, const ShutdownReason& v) {
+  inline void to_json(nlohmann::json& j, const ShutdownReason& v) {
     switch(v) {
       case ShutdownReason::Invalid:
         j = "Invalid";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, ShutdownReason& v) {
+  inline void from_json(const nlohmann::json& j, ShutdownReason& v) {
     const auto s& = j.get<std::string>();
     if(s == "Invalid"){
       v = ShutdownReason::Invalid;

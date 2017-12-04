@@ -32,7 +32,7 @@ namespace leagueapi {
     std::string type;
   };
 
-  void to_json(nlohmann::json& j, const PlayerNotificationResource& v) {
+  inline void to_json(nlohmann::json& j, const PlayerNotificationResource& v) {
     j["backgroundUrl"] = v.backgroundUrl;
     j["created"] = v.created;
     j["critical"] = v.critical;
@@ -48,7 +48,7 @@ namespace leagueapi {
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, PlayerNotificationResource& v) {
+  inline void from_json(const nlohmann::json& j, PlayerNotificationResource& v) {
     v.backgroundUrl = j.at("backgroundUrl").get<std::string>;
     v.created = j.at("created").get<std::string>;
     v.critical = j.at("critical").get<bool>;

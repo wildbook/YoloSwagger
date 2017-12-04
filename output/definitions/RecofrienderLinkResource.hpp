@@ -12,13 +12,13 @@ namespace leagueapi {
     std::string reason;
   };
 
-  void to_json(nlohmann::json& j, const RecofrienderLinkResource& v) {
+  inline void to_json(nlohmann::json& j, const RecofrienderLinkResource& v) {
     j["linked"] = v.linked;
     j["name"] = v.name;
     j["reason"] = v.reason;
   }
 
-  void from_json(const nlohmann::json& j, RecofrienderLinkResource& v) {
+  inline void from_json(const nlohmann::json& j, RecofrienderLinkResource& v) {
     v.linked = j.at("linked").get<bool>;
     v.name = j.at("name").get<std::string>;
     v.reason = j.at("reason").get<std::string>;

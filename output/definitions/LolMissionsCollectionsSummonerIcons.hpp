@@ -8,11 +8,11 @@ namespace leagueapi {
     std::vector<int32_t> icons;
   };
 
-  void to_json(nlohmann::json& j, const LolMissionsCollectionsSummonerIcons& v) {
+  inline void to_json(nlohmann::json& j, const LolMissionsCollectionsSummonerIcons& v) {
     j["icons"] = v.icons;
   }
 
-  void from_json(const nlohmann::json& j, LolMissionsCollectionsSummonerIcons& v) {
+  inline void from_json(const nlohmann::json& j, LolMissionsCollectionsSummonerIcons& v) {
     v.icons = j.at("icons").get<std::vector<int32_t>>;
   }
 

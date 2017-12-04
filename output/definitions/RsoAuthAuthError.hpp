@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string errorDescription;
   };
 
-  void to_json(nlohmann::json& j, const RsoAuthAuthError& v) {
+  inline void to_json(nlohmann::json& j, const RsoAuthAuthError& v) {
     j["error"] = v.error;
     j["errorDescription"] = v.errorDescription;
   }
 
-  void from_json(const nlohmann::json& j, RsoAuthAuthError& v) {
+  inline void from_json(const nlohmann::json& j, RsoAuthAuthError& v) {
     v.error = j.at("error").get<std::string>;
     v.errorDescription = j.at("errorDescription").get<std::string>;
   }

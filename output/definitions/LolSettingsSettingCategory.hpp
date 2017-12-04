@@ -10,12 +10,12 @@ namespace leagueapi {
     int32_t schemaVersion;
   };
 
-  void to_json(nlohmann::json& j, const LolSettingsSettingCategory& v) {
+  inline void to_json(nlohmann::json& j, const LolSettingsSettingCategory& v) {
     j["data"] = v.data;
     j["schemaVersion"] = v.schemaVersion;
   }
 
-  void from_json(const nlohmann::json& j, LolSettingsSettingCategory& v) {
+  inline void from_json(const nlohmann::json& j, LolSettingsSettingCategory& v) {
     v.data = j.at("data").get<nlohmann::json>;
     v.schemaVersion = j.at("schemaVersion").get<int32_t>;
   }

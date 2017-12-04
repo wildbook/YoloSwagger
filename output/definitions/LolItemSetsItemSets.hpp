@@ -13,13 +13,13 @@ namespace leagueapi {
     uint64_t timestamp;
   };
 
-  void to_json(nlohmann::json& j, const LolItemSetsItemSets& v) {
+  inline void to_json(nlohmann::json& j, const LolItemSetsItemSets& v) {
     j["accountId"] = v.accountId;
     j["itemSets"] = v.itemSets;
     j["timestamp"] = v.timestamp;
   }
 
-  void from_json(const nlohmann::json& j, LolItemSetsItemSets& v) {
+  inline void from_json(const nlohmann::json& j, LolItemSetsItemSets& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.itemSets = j.at("itemSets").get<std::vector<LolItemSetsItemSet>>;
     v.timestamp = j.at("timestamp").get<uint64_t>;

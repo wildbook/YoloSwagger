@@ -12,7 +12,7 @@ namespace leagueapi {
     rsoRefresh = 2,
   };
 
-  void to_json(nlohmann::json& j, const LolChatAuthType& v) {
+  inline void to_json(nlohmann::json& j, const LolChatAuthType& v) {
     switch(v) {
       case LolChatAuthType::plain:
         j = "plain";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolChatAuthType& v) {
+  inline void from_json(const nlohmann::json& j, LolChatAuthType& v) {
     const auto s& = j.get<std::string>();
     if(s == "plain"){
       v = LolChatAuthType::plain;

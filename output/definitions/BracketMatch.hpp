@@ -29,7 +29,7 @@ namespace leagueapi {
     int64_t winnerId;
   };
 
-  void to_json(nlohmann::json& j, const BracketMatch& v) {
+  inline void to_json(nlohmann::json& j, const BracketMatch& v) {
     j["gameId"] = v.gameId;
     j["gameStartTime"] = v.gameStartTime;
     j["id"] = v.id;
@@ -43,7 +43,7 @@ namespace leagueapi {
     j["winnerId"] = v.winnerId;
   }
 
-  void from_json(const nlohmann::json& j, BracketMatch& v) {
+  inline void from_json(const nlohmann::json& j, BracketMatch& v) {
     v.gameId = j.at("gameId").get<int64_t>;
     v.gameStartTime = j.at("gameStartTime").get<int64_t>;
     v.id = j.at("id").get<int64_t>;

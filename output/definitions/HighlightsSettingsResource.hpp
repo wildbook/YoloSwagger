@@ -9,11 +9,11 @@ namespace leagueapi {
     HighlightsSettingsData data;
   };
 
-  void to_json(nlohmann::json& j, const HighlightsSettingsResource& v) {
+  inline void to_json(nlohmann::json& j, const HighlightsSettingsResource& v) {
     j["data"] = v.data;
   }
 
-  void from_json(const nlohmann::json& j, HighlightsSettingsResource& v) {
+  inline void from_json(const nlohmann::json& j, HighlightsSettingsResource& v) {
     v.data = j.at("data").get<HighlightsSettingsData>;
   }
 

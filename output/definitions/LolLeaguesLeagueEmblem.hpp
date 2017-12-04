@@ -12,7 +12,7 @@ namespace leagueapi {
     VETERAN = 0,
   };
 
-  void to_json(nlohmann::json& j, const LolLeaguesLeagueEmblem& v) {
+  inline void to_json(nlohmann::json& j, const LolLeaguesLeagueEmblem& v) {
     switch(v) {
       case LolLeaguesLeagueEmblem::FRESHBLOOD:
         j = "FRESHBLOOD";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLeaguesLeagueEmblem& v) {
+  inline void from_json(const nlohmann::json& j, LolLeaguesLeagueEmblem& v) {
     const auto s& = j.get<std::string>();
     if(s == "FRESHBLOOD"){
       v = LolLeaguesLeagueEmblem::FRESHBLOOD;

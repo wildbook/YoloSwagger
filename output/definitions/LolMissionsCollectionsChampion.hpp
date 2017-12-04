@@ -16,14 +16,14 @@ namespace leagueapi {
     std::vector<LolMissionsCollectionsChampionSkin> skins;
   };
 
-  void to_json(nlohmann::json& j, const LolMissionsCollectionsChampion& v) {
+  inline void to_json(nlohmann::json& j, const LolMissionsCollectionsChampion& v) {
     j["freeToPlay"] = v.freeToPlay;
     j["id"] = v.id;
     j["ownership"] = v.ownership;
     j["skins"] = v.skins;
   }
 
-  void from_json(const nlohmann::json& j, LolMissionsCollectionsChampion& v) {
+  inline void from_json(const nlohmann::json& j, LolMissionsCollectionsChampion& v) {
     v.freeToPlay = j.at("freeToPlay").get<bool>;
     v.id = j.at("id").get<int32_t>;
     v.ownership = j.at("ownership").get<LolMissionsCollectionsOwnership>;

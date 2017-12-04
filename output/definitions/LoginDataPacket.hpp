@@ -8,11 +8,11 @@ namespace leagueapi {
     uint64_t timeUntilFirstWinOfDay;
   };
 
-  void to_json(nlohmann::json& j, const LoginDataPacket& v) {
+  inline void to_json(nlohmann::json& j, const LoginDataPacket& v) {
     j["timeUntilFirstWinOfDay"] = v.timeUntilFirstWinOfDay;
   }
 
-  void from_json(const nlohmann::json& j, LoginDataPacket& v) {
+  inline void from_json(const nlohmann::json& j, LoginDataPacket& v) {
     v.timeUntilFirstWinOfDay = j.at("timeUntilFirstWinOfDay").get<uint64_t>;
   }
 

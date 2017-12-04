@@ -20,7 +20,7 @@ namespace leagueapi {
     uint32_t xpLoyaltyBoost;
   };
 
-  void to_json(nlohmann::json& j, const ActiveBoostsLcdsSummonerActiveBoostsDTO& v) {
+  inline void to_json(nlohmann::json& j, const ActiveBoostsLcdsSummonerActiveBoostsDTO& v) {
     j["ipBoostEndDate"] = v.ipBoostEndDate;
     j["ipBoostPerWinCount"] = v.ipBoostPerWinCount;
     j["ipLoyaltyBoost"] = v.ipLoyaltyBoost;
@@ -30,7 +30,7 @@ namespace leagueapi {
     j["xpLoyaltyBoost"] = v.xpLoyaltyBoost;
   }
 
-  void from_json(const nlohmann::json& j, ActiveBoostsLcdsSummonerActiveBoostsDTO& v) {
+  inline void from_json(const nlohmann::json& j, ActiveBoostsLcdsSummonerActiveBoostsDTO& v) {
     v.ipBoostEndDate = j.at("ipBoostEndDate").get<int64_t>;
     v.ipBoostPerWinCount = j.at("ipBoostPerWinCount").get<uint32_t>;
     v.ipLoyaltyBoost = j.at("ipLoyaltyBoost").get<uint32_t>;

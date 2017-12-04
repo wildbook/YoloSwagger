@@ -15,14 +15,14 @@ namespace leagueapi {
     uint64_t playerId;
   };
 
-  void to_json(nlohmann::json& j, const BuybackMember& v) {
+  inline void to_json(nlohmann::json& j, const BuybackMember& v) {
     j["bet"] = v.bet;
     j["buybackState"] = v.buybackState;
     j["pay"] = v.pay;
     j["playerId"] = v.playerId;
   }
 
-  void from_json(const nlohmann::json& j, BuybackMember& v) {
+  inline void from_json(const nlohmann::json& j, BuybackMember& v) {
     v.bet = j.at("bet").get<int32_t>;
     v.buybackState = j.at("buybackState").get<BuybackState>;
     v.pay = j.at("pay").get<int32_t>;

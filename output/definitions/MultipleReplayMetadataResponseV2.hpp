@@ -9,11 +9,11 @@ namespace leagueapi {
     std::vector<MultipleReplayMetadataResponseItemV2> metadataResponses;
   };
 
-  void to_json(nlohmann::json& j, const MultipleReplayMetadataResponseV2& v) {
+  inline void to_json(nlohmann::json& j, const MultipleReplayMetadataResponseV2& v) {
     j["metadataResponses"] = v.metadataResponses;
   }
 
-  void from_json(const nlohmann::json& j, MultipleReplayMetadataResponseV2& v) {
+  inline void from_json(const nlohmann::json& j, MultipleReplayMetadataResponseV2& v) {
     v.metadataResponses = j.at("metadataResponses").get<std::vector<MultipleReplayMetadataResponseItemV2>>;
   }
 

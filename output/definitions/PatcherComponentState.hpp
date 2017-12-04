@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_PatcherComponentState_HPP
 #define SWAGGER_TYPES_PatcherComponentState_HPP
 #include <json.hpp>
-#include "PatcherComponentActionProgress.hpp"
 #include "PatcherComponentStateAction.hpp"
+#include "PatcherComponentActionProgress.hpp"
 namespace leagueapi {
   // 
   struct PatcherComponentState {
@@ -22,7 +22,7 @@ namespace leagueapi {
     std::string timeOfLastUpToDateCheckISO8601;
   };
 
-  void to_json(nlohmann::json& j, const PatcherComponentState& v) {
+  inline void to_json(nlohmann::json& j, const PatcherComponentState& v) {
     j["action"] = v.action;
     j["id"] = v.id;
     j["isCorrupted"] = v.isCorrupted;
@@ -32,7 +32,7 @@ namespace leagueapi {
     j["timeOfLastUpToDateCheckISO8601"] = v.timeOfLastUpToDateCheckISO8601;
   }
 
-  void from_json(const nlohmann::json& j, PatcherComponentState& v) {
+  inline void from_json(const nlohmann::json& j, PatcherComponentState& v) {
     v.action = j.at("action").get<PatcherComponentStateAction>;
     v.id = j.at("id").get<std::string>;
     v.isCorrupted = j.at("isCorrupted").get<bool>;

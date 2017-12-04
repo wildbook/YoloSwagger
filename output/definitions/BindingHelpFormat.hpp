@@ -10,7 +10,7 @@ namespace leagueapi {
     Full = 1,
   };
 
-  void to_json(nlohmann::json& j, const BindingHelpFormat& v) {
+  inline void to_json(nlohmann::json& j, const BindingHelpFormat& v) {
     switch(v) {
       case BindingHelpFormat::Epytext:
         j = "Epytext";
@@ -21,7 +21,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, BindingHelpFormat& v) {
+  inline void from_json(const nlohmann::json& j, BindingHelpFormat& v) {
     const auto s& = j.get<std::string>();
     if(s == "Epytext"){
       v = BindingHelpFormat::Epytext;

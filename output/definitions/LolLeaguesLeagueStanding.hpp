@@ -38,7 +38,7 @@ namespace leagueapi {
     uint64_t wins;
   };
 
-  void to_json(nlohmann::json& j, const LolLeaguesLeagueStanding& v) {
+  inline void to_json(nlohmann::json& j, const LolLeaguesLeagueStanding& v) {
     j["apexDaysUntilDecay"] = v.apexDaysUntilDecay;
     j["emblems"] = v.emblems;
     j["id"] = v.id;
@@ -56,7 +56,7 @@ namespace leagueapi {
     j["wins"] = v.wins;
   }
 
-  void from_json(const nlohmann::json& j, LolLeaguesLeagueStanding& v) {
+  inline void from_json(const nlohmann::json& j, LolLeaguesLeagueStanding& v) {
     v.apexDaysUntilDecay = j.at("apexDaysUntilDecay").get<int64_t>;
     v.emblems = j.at("emblems").get<std::vector<LolLeaguesLeagueEmblem>>;
     v.id = j.at("id").get<std::string>;

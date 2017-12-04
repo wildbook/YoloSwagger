@@ -13,13 +13,13 @@ namespace leagueapi {
     LolInventoryItemOwnershipType ownershipType;
   };
 
-  void to_json(nlohmann::json& j, const LolInventoryInventoryItem& v) {
+  inline void to_json(nlohmann::json& j, const LolInventoryInventoryItem& v) {
     j["inventoryType"] = v.inventoryType;
     j["itemId"] = v.itemId;
     j["ownershipType"] = v.ownershipType;
   }
 
-  void from_json(const nlohmann::json& j, LolInventoryInventoryItem& v) {
+  inline void from_json(const nlohmann::json& j, LolInventoryInventoryItem& v) {
     v.inventoryType = j.at("inventoryType").get<std::string>;
     v.itemId = j.at("itemId").get<int32_t>;
     v.ownershipType = j.at("ownershipType").get<LolInventoryItemOwnershipType>;

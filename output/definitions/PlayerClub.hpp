@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerClub_HPP
 #define SWAGGER_TYPES_PlayerClub_HPP
 #include <json.hpp>
+#include "ClubMemberLists.hpp"
 #include "ClubMember.hpp"
 #include "ClubPermissions.hpp"
 #include "ClubRole.hpp"
-#include "ClubMemberLists.hpp"
 namespace leagueapi {
   // 
   struct PlayerClub {
@@ -38,7 +38,7 @@ namespace leagueapi {
     std::string tag;
   };
 
-  void to_json(nlohmann::json& j, const PlayerClub& v) {
+  inline void to_json(nlohmann::json& j, const PlayerClub& v) {
     j["created"] = v.created;
     j["description"] = v.description;
     j["isClubTagEligible"] = v.isClubTagEligible;
@@ -55,7 +55,7 @@ namespace leagueapi {
     j["tag"] = v.tag;
   }
 
-  void from_json(const nlohmann::json& j, PlayerClub& v) {
+  inline void from_json(const nlohmann::json& j, PlayerClub& v) {
     v.created = j.at("created").get<int64_t>;
     v.description = j.at("description").get<std::string>;
     v.isClubTagEligible = j.at("isClubTagEligible").get<bool>;

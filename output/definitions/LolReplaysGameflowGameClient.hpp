@@ -8,11 +8,11 @@ namespace leagueapi {
     bool running;
   };
 
-  void to_json(nlohmann::json& j, const LolReplaysGameflowGameClient& v) {
+  inline void to_json(nlohmann::json& j, const LolReplaysGameflowGameClient& v) {
     j["running"] = v.running;
   }
 
-  void from_json(const nlohmann::json& j, LolReplaysGameflowGameClient& v) {
+  inline void from_json(const nlohmann::json& j, LolReplaysGameflowGameClient& v) {
     v.running = j.at("running").get<bool>;
   }
 

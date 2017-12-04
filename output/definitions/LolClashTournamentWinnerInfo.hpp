@@ -24,7 +24,7 @@ namespace leagueapi {
     int32_t tier;
   };
 
-  void to_json(nlohmann::json& j, const LolClashTournamentWinnerInfo& v) {
+  inline void to_json(nlohmann::json& j, const LolClashTournamentWinnerInfo& v) {
     j["averageWinDuration"] = v.averageWinDuration;
     j["createTime"] = v.createTime;
     j["logo"] = v.logo;
@@ -36,7 +36,7 @@ namespace leagueapi {
     j["tier"] = v.tier;
   }
 
-  void from_json(const nlohmann::json& j, LolClashTournamentWinnerInfo& v) {
+  inline void from_json(const nlohmann::json& j, LolClashTournamentWinnerInfo& v) {
     v.averageWinDuration = j.at("averageWinDuration").get<int64_t>;
     v.createTime = j.at("createTime").get<int64_t>;
     v.logo = j.at("logo").get<int32_t>;

@@ -12,7 +12,7 @@ namespace leagueapi {
     out = 1,
   };
 
-  void to_json(nlohmann::json& j, const LolChatFriendRequestDirection& v) {
+  inline void to_json(nlohmann::json& j, const LolChatFriendRequestDirection& v) {
     switch(v) {
       case LolChatFriendRequestDirection::both:
         j = "both";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolChatFriendRequestDirection& v) {
+  inline void from_json(const nlohmann::json& j, LolChatFriendRequestDirection& v) {
     const auto s& = j.get<std::string>();
     if(s == "both"){
       v = LolChatFriendRequestDirection::both;

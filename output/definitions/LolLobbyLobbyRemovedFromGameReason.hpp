@@ -24,7 +24,7 @@ namespace leagueapi {
     Timeout = 6,
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyRemovedFromGameReason& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyRemovedFromGameReason& v) {
     switch(v) {
       case LolLobbyLobbyRemovedFromGameReason::Disbanded:
         j = "Disbanded";
@@ -56,7 +56,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyRemovedFromGameReason& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyRemovedFromGameReason& v) {
     const auto s& = j.get<std::string>();
     if(s == "Disbanded"){
       v = LolLobbyLobbyRemovedFromGameReason::Disbanded;

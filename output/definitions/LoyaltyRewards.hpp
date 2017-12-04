@@ -14,14 +14,14 @@ namespace leagueapi {
     int32_t xpBoost;
   };
 
-  void to_json(nlohmann::json& j, const LoyaltyRewards& v) {
+  inline void to_json(nlohmann::json& j, const LoyaltyRewards& v) {
     j["freeRewardedChampionsCount"] = v.freeRewardedChampionsCount;
     j["freeRewardedSkinsCount"] = v.freeRewardedSkinsCount;
     j["ipBoost"] = v.ipBoost;
     j["xpBoost"] = v.xpBoost;
   }
 
-  void from_json(const nlohmann::json& j, LoyaltyRewards& v) {
+  inline void from_json(const nlohmann::json& j, LoyaltyRewards& v) {
     v.freeRewardedChampionsCount = j.at("freeRewardedChampionsCount").get<int32_t>;
     v.freeRewardedSkinsCount = j.at("freeRewardedSkinsCount").get<int32_t>;
     v.ipBoost = j.at("ipBoost").get<int32_t>;

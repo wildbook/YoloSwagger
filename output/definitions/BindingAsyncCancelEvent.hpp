@@ -8,11 +8,11 @@ namespace leagueapi {
     uint32_t asyncToken;
   };
 
-  void to_json(nlohmann::json& j, const BindingAsyncCancelEvent& v) {
+  inline void to_json(nlohmann::json& j, const BindingAsyncCancelEvent& v) {
     j["asyncToken"] = v.asyncToken;
   }
 
-  void from_json(const nlohmann::json& j, BindingAsyncCancelEvent& v) {
+  inline void from_json(const nlohmann::json& j, BindingAsyncCancelEvent& v) {
     v.asyncToken = j.at("asyncToken").get<uint32_t>;
   }
 

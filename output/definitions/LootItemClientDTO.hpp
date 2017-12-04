@@ -30,7 +30,7 @@ namespace leagueapi {
     int32_t value;
   };
 
-  void to_json(nlohmann::json& j, const LootItemClientDTO& v) {
+  inline void to_json(nlohmann::json& j, const LootItemClientDTO& v) {
     j["asset"] = v.asset;
     j["displayCategories"] = v.displayCategories;
     j["expiryTime"] = v.expiryTime;
@@ -45,7 +45,7 @@ namespace leagueapi {
     j["value"] = v.value;
   }
 
-  void from_json(const nlohmann::json& j, LootItemClientDTO& v) {
+  inline void from_json(const nlohmann::json& j, LootItemClientDTO& v) {
     v.asset = j.at("asset").get<std::string>;
     v.displayCategories = j.at("displayCategories").get<std::string>;
     v.expiryTime = j.at("expiryTime").get<int64_t>;

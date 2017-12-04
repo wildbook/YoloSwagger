@@ -16,7 +16,7 @@ namespace leagueapi {
     std::string version;
   };
 
-  void to_json(nlohmann::json& j, const RiotMessagingServiceMessage& v) {
+  inline void to_json(nlohmann::json& j, const RiotMessagingServiceMessage& v) {
     j["payload"] = v.payload;
     j["resource"] = v.resource;
     j["service"] = v.service;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["version"] = v.version;
   }
 
-  void from_json(const nlohmann::json& j, RiotMessagingServiceMessage& v) {
+  inline void from_json(const nlohmann::json& j, RiotMessagingServiceMessage& v) {
     v.payload = j.at("payload").get<std::string>;
     v.resource = j.at("resource").get<std::string>;
     v.service = j.at("service").get<std::string>;

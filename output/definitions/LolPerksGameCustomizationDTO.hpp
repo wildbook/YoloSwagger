@@ -12,13 +12,13 @@ namespace leagueapi {
     uint64_t queueType;
   };
 
-  void to_json(nlohmann::json& j, const LolPerksGameCustomizationDTO& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksGameCustomizationDTO& v) {
     j["category"] = v.category;
     j["content"] = v.content;
     j["queueType"] = v.queueType;
   }
 
-  void from_json(const nlohmann::json& j, LolPerksGameCustomizationDTO& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksGameCustomizationDTO& v) {
     v.category = j.at("category").get<std::string>;
     v.content = j.at("content").get<std::string>;
     v.queueType = j.at("queueType").get<uint64_t>;

@@ -14,14 +14,14 @@ namespace leagueapi {
     bool willRestartOnSelfUpdate;
   };
 
-  void to_json(nlohmann::json& j, const PatcherStatus& v) {
+  inline void to_json(nlohmann::json& j, const PatcherStatus& v) {
     j["connectedToPatchServer"] = v.connectedToPatchServer;
     j["hasUpdatesOnRestart"] = v.hasUpdatesOnRestart;
     j["successfullyInstalledVersion"] = v.successfullyInstalledVersion;
     j["willRestartOnSelfUpdate"] = v.willRestartOnSelfUpdate;
   }
 
-  void from_json(const nlohmann::json& j, PatcherStatus& v) {
+  inline void from_json(const nlohmann::json& j, PatcherStatus& v) {
     v.connectedToPatchServer = j.at("connectedToPatchServer").get<bool>;
     v.hasUpdatesOnRestart = j.at("hasUpdatesOnRestart").get<bool>;
     v.successfullyInstalledVersion = j.at("successfullyInstalledVersion").get<uint32_t>;

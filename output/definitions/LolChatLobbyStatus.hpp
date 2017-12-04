@@ -17,7 +17,7 @@ namespace leagueapi {
     int32_t queueId;
   };
 
-  void to_json(nlohmann::json& j, const LolChatLobbyStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolChatLobbyStatus& v) {
     j["customSpectatorPolicy"] = v.customSpectatorPolicy;
     j["isCustom"] = v.isCustom;
     j["isLeader"] = v.isLeader;
@@ -25,7 +25,7 @@ namespace leagueapi {
     j["queueId"] = v.queueId;
   }
 
-  void from_json(const nlohmann::json& j, LolChatLobbyStatus& v) {
+  inline void from_json(const nlohmann::json& j, LolChatLobbyStatus& v) {
     v.customSpectatorPolicy = j.at("customSpectatorPolicy").get<LolChatQueueCustomGameSpectatorPolicy>;
     v.isCustom = j.at("isCustom").get<bool>;
     v.isLeader = j.at("isLeader").get<bool>;

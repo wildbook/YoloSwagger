@@ -22,7 +22,7 @@ namespace leagueapi {
     std::string value;
   };
 
-  void to_json(nlohmann::json& j, const cookie& v) {
+  inline void to_json(nlohmann::json& j, const cookie& v) {
     j["domain"] = v.domain;
     j["expires"] = v.expires;
     j["httponly"] = v.httponly;
@@ -33,7 +33,7 @@ namespace leagueapi {
     j["value"] = v.value;
   }
 
-  void from_json(const nlohmann::json& j, cookie& v) {
+  inline void from_json(const nlohmann::json& j, cookie& v) {
     v.domain = j.at("domain").get<std::string>;
     v.expires = j.at("expires").get<int64_t>;
     v.httponly = j.at("httponly").get<bool>;

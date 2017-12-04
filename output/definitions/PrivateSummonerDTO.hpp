@@ -26,7 +26,7 @@ namespace leagueapi {
     bool tutorialFlag;
   };
 
-  void to_json(nlohmann::json& j, const PrivateSummonerDTO& v) {
+  inline void to_json(nlohmann::json& j, const PrivateSummonerDTO& v) {
     j["acctId"] = v.acctId;
     j["advancedTutorialFlag"] = v.advancedTutorialFlag;
     j["displayEloQuestionaire"] = v.displayEloQuestionaire;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["tutorialFlag"] = v.tutorialFlag;
   }
 
-  void from_json(const nlohmann::json& j, PrivateSummonerDTO& v) {
+  inline void from_json(const nlohmann::json& j, PrivateSummonerDTO& v) {
     v.acctId = j.at("acctId").get<uint64_t>;
     v.advancedTutorialFlag = j.at("advancedTutorialFlag").get<bool>;
     v.displayEloQuestionaire = j.at("displayEloQuestionaire").get<bool>;

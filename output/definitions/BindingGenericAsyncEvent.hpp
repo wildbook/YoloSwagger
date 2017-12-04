@@ -10,12 +10,12 @@ namespace leagueapi {
     nlohmann::json data;
   };
 
-  void to_json(nlohmann::json& j, const BindingGenericAsyncEvent& v) {
+  inline void to_json(nlohmann::json& j, const BindingGenericAsyncEvent& v) {
     j["asyncToken"] = v.asyncToken;
     j["data"] = v.data;
   }
 
-  void from_json(const nlohmann::json& j, BindingGenericAsyncEvent& v) {
+  inline void from_json(const nlohmann::json& j, BindingGenericAsyncEvent& v) {
     v.asyncToken = j.at("asyncToken").get<uint32_t>;
     v.data = j.at("data").get<nlohmann::json>;
   }

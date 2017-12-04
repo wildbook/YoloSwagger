@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PendingRosterDTO_HPP
 #define SWAGGER_TYPES_PendingRosterDTO_HPP
 #include <json.hpp>
-#include "PendingRosterInviteeDTO.hpp"
-#include "FailedInvite.hpp"
 #include "TicketOfferDTO.hpp"
+#include "FailedInvite.hpp"
 #include "PendingRosterMemberDTO.hpp"
+#include "PendingRosterInviteeDTO.hpp"
 namespace leagueapi {
   // 
   struct PendingRosterDTO {
@@ -34,7 +34,7 @@ namespace leagueapi {
     int64_t tournamentId;
   };
 
-  void to_json(nlohmann::json& j, const PendingRosterDTO& v) {
+  inline void to_json(nlohmann::json& j, const PendingRosterDTO& v) {
     j["captainId"] = v.captainId;
     j["invitationId"] = v.invitationId;
     j["inviteFaileds"] = v.inviteFaileds;
@@ -49,7 +49,7 @@ namespace leagueapi {
     j["tournamentId"] = v.tournamentId;
   }
 
-  void from_json(const nlohmann::json& j, PendingRosterDTO& v) {
+  inline void from_json(const nlohmann::json& j, PendingRosterDTO& v) {
     v.captainId = j.at("captainId").get<uint64_t>;
     v.invitationId = j.at("invitationId").get<std::string>;
     v.inviteFaileds = j.at("inviteFaileds").get<std::vector<FailedInvite>>;

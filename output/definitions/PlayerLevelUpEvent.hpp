@@ -28,7 +28,7 @@ namespace leagueapi {
     bool switchedToStandardFreeToPlayChampRotation;
   };
 
-  void to_json(nlohmann::json& j, const PlayerLevelUpEvent& v) {
+  inline void to_json(nlohmann::json& j, const PlayerLevelUpEvent& v) {
     j["leveledUp"] = v.leveledUp;
     j["newMasterySlotUnlocked"] = v.newMasterySlotUnlocked;
     j["newQueues"] = v.newQueues;
@@ -42,7 +42,7 @@ namespace leagueapi {
     j["switchedToStandardFreeToPlayChampRotation"] = v.switchedToStandardFreeToPlayChampRotation;
   }
 
-  void from_json(const nlohmann::json& j, PlayerLevelUpEvent& v) {
+  inline void from_json(const nlohmann::json& j, PlayerLevelUpEvent& v) {
     v.leveledUp = j.at("leveledUp").get<bool>;
     v.newMasterySlotUnlocked = j.at("newMasterySlotUnlocked").get<bool>;
     v.newQueues = j.at("newQueues").get<std::vector<int32_t>>;

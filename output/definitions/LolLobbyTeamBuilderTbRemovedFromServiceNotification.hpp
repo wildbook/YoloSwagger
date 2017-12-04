@@ -11,12 +11,12 @@ namespace leagueapi {
     std::string reason;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTbRemovedFromServiceNotification& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTbRemovedFromServiceNotification& v) {
     j["backwardsTransitionInfo"] = v.backwardsTransitionInfo;
     j["reason"] = v.reason;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTbRemovedFromServiceNotification& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTbRemovedFromServiceNotification& v) {
     v.backwardsTransitionInfo = j.at("backwardsTransitionInfo").get<LolLobbyTeamBuilderBackwardsTransitionInfoV1>;
     v.reason = j.at("reason").get<std::string>;
   }

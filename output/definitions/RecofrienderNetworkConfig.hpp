@@ -14,14 +14,14 @@ namespace leagueapi {
     std::string unlinkUrlTemplate;
   };
 
-  void to_json(nlohmann::json& j, const RecofrienderNetworkConfig& v) {
+  inline void to_json(nlohmann::json& j, const RecofrienderNetworkConfig& v) {
     j["enabled"] = v.enabled;
     j["linkUrlTemplate"] = v.linkUrlTemplate;
     j["name"] = v.name;
     j["unlinkUrlTemplate"] = v.unlinkUrlTemplate;
   }
 
-  void from_json(const nlohmann::json& j, RecofrienderNetworkConfig& v) {
+  inline void from_json(const nlohmann::json& j, RecofrienderNetworkConfig& v) {
     v.enabled = j.at("enabled").get<bool>;
     v.linkUrlTemplate = j.at("linkUrlTemplate").get<std::string>;
     v.name = j.at("name").get<std::string>;

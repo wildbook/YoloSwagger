@@ -11,12 +11,12 @@ namespace leagueapi {
     LolSummonerRerollDataBagForClientV1 rerollDataBag;
   };
 
-  void to_json(nlohmann::json& j, const LolSummonerGameloopPlayerInfoV1& v) {
+  inline void to_json(nlohmann::json& j, const LolSummonerGameloopPlayerInfoV1& v) {
     j["autoFillDataBagByQueueId"] = v.autoFillDataBagByQueueId;
     j["rerollDataBag"] = v.rerollDataBag;
   }
 
-  void from_json(const nlohmann::json& j, LolSummonerGameloopPlayerInfoV1& v) {
+  inline void from_json(const nlohmann::json& j, LolSummonerGameloopPlayerInfoV1& v) {
     v.autoFillDataBagByQueueId = j.at("autoFillDataBagByQueueId").get<nlohmann::json>;
     v.rerollDataBag = j.at("rerollDataBag").get<LolSummonerRerollDataBagForClientV1>;
   }

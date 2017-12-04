@@ -10,12 +10,12 @@ namespace leagueapi {
     bool owned;
   };
 
-  void to_json(nlohmann::json& j, const PersonalizedOffersLcdsChampionDTO& v) {
+  inline void to_json(nlohmann::json& j, const PersonalizedOffersLcdsChampionDTO& v) {
     j["championId"] = v.championId;
     j["owned"] = v.owned;
   }
 
-  void from_json(const nlohmann::json& j, PersonalizedOffersLcdsChampionDTO& v) {
+  inline void from_json(const nlohmann::json& j, PersonalizedOffersLcdsChampionDTO& v) {
     v.championId = j.at("championId").get<int32_t>;
     v.owned = j.at("owned").get<bool>;
   }

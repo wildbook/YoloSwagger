@@ -15,14 +15,14 @@ namespace leagueapi {
     bool success;
   };
 
-  void to_json(nlohmann::json& j, const LolGeoinfoGeoInfoResponse& v) {
+  inline void to_json(nlohmann::json& j, const LolGeoinfoGeoInfoResponse& v) {
     j["errorMessage"] = v.errorMessage;
     j["geoInfo"] = v.geoInfo;
     j["isLatest"] = v.isLatest;
     j["success"] = v.success;
   }
 
-  void from_json(const nlohmann::json& j, LolGeoinfoGeoInfoResponse& v) {
+  inline void from_json(const nlohmann::json& j, LolGeoinfoGeoInfoResponse& v) {
     v.errorMessage = j.at("errorMessage").get<std::string>;
     v.geoInfo = j.at("geoInfo").get<LolGeoinfoGeoInfo>;
     v.isLatest = j.at("isLatest").get<bool>;

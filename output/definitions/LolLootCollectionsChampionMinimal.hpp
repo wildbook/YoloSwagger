@@ -11,12 +11,12 @@ namespace leagueapi {
     LolLootCollectionsOwnership ownership;
   };
 
-  void to_json(nlohmann::json& j, const LolLootCollectionsChampionMinimal& v) {
+  inline void to_json(nlohmann::json& j, const LolLootCollectionsChampionMinimal& v) {
     j["id"] = v.id;
     j["ownership"] = v.ownership;
   }
 
-  void from_json(const nlohmann::json& j, LolLootCollectionsChampionMinimal& v) {
+  inline void from_json(const nlohmann::json& j, LolLootCollectionsChampionMinimal& v) {
     v.id = j.at("id").get<int32_t>;
     v.ownership = j.at("ownership").get<LolLootCollectionsOwnership>;
   }

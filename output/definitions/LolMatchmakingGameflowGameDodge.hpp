@@ -11,12 +11,12 @@ namespace leagueapi {
     LolMatchmakingMatchmakingDodgeState state;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchmakingGameflowGameDodge& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchmakingGameflowGameDodge& v) {
     j["dodgeIds"] = v.dodgeIds;
     j["state"] = v.state;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchmakingGameflowGameDodge& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchmakingGameflowGameDodge& v) {
     v.dodgeIds = j.at("dodgeIds").get<std::vector<uint64_t>>;
     v.state = j.at("state").get<LolMatchmakingMatchmakingDodgeState>;
   }

@@ -14,7 +14,7 @@ namespace leagueapi {
     Warning = 1,
   };
 
-  void to_json(nlohmann::json& j, const LogSeverityLevels& v) {
+  inline void to_json(nlohmann::json& j, const LogSeverityLevels& v) {
     switch(v) {
       case LogSeverityLevels::Always:
         j = "Always";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LogSeverityLevels& v) {
+  inline void from_json(const nlohmann::json& j, LogSeverityLevels& v) {
     const auto s& = j.get<std::string>();
     if(s == "Always"){
       v = LogSeverityLevels::Always;

@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolChampionsGameDataChampionSkin_HPP
 #define SWAGGER_TYPES_LolChampionsGameDataChampionSkin_HPP
 #include <json.hpp>
-#include "LolChampionsGameDataChampionChroma.hpp"
 #include "LolChampionsCollectionsChampionSkinEmblem.hpp"
+#include "LolChampionsGameDataChampionChroma.hpp"
 namespace leagueapi {
   // 
   struct LolChampionsGameDataChampionSkin {
@@ -34,7 +34,7 @@ namespace leagueapi {
     std::string uncenteredSplashPath;
   };
 
-  void to_json(nlohmann::json& j, const LolChampionsGameDataChampionSkin& v) {
+  inline void to_json(nlohmann::json& j, const LolChampionsGameDataChampionSkin& v) {
     j["cardPath"] = v.cardPath;
     j["chromaPath"] = v.chromaPath;
     j["chromas"] = v.chromas;
@@ -50,7 +50,7 @@ namespace leagueapi {
     j["uncenteredSplashPath"] = v.uncenteredSplashPath;
   }
 
-  void from_json(const nlohmann::json& j, LolChampionsGameDataChampionSkin& v) {
+  inline void from_json(const nlohmann::json& j, LolChampionsGameDataChampionSkin& v) {
     v.cardPath = j.at("cardPath").get<std::string>;
     v.chromaPath = j.at("chromaPath").get<std::string>;
     v.chromas = j.at("chromas").get<std::vector<LolChampionsGameDataChampionChroma>>;

@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyGameConfigDto_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyGameConfigDto_HPP
 #include <json.hpp>
-#include "LolLobbyQueueCustomGameSpectatorPolicy.hpp"
 #include "LolLobbyLobbyParticipantDto.hpp"
+#include "LolLobbyQueueCustomGameSpectatorPolicy.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyLobbyGameConfigDto {
@@ -50,7 +50,7 @@ namespace leagueapi {
     bool showPositionSelector;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyGameConfigDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyGameConfigDto& v) {
     j["allowablePremadeSizes"] = v.allowablePremadeSizes;
     j["customLobbyName"] = v.customLobbyName;
     j["customMutatorName"] = v.customMutatorName;
@@ -74,7 +74,7 @@ namespace leagueapi {
     j["showPositionSelector"] = v.showPositionSelector;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyGameConfigDto& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyGameConfigDto& v) {
     v.allowablePremadeSizes = j.at("allowablePremadeSizes").get<std::vector<int32_t>>;
     v.customLobbyName = j.at("customLobbyName").get<std::string>;
     v.customMutatorName = j.at("customMutatorName").get<std::string>;

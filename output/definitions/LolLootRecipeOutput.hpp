@@ -10,12 +10,12 @@ namespace leagueapi {
     int32_t quantity;
   };
 
-  void to_json(nlohmann::json& j, const LolLootRecipeOutput& v) {
+  inline void to_json(nlohmann::json& j, const LolLootRecipeOutput& v) {
     j["lootName"] = v.lootName;
     j["quantity"] = v.quantity;
   }
 
-  void from_json(const nlohmann::json& j, LolLootRecipeOutput& v) {
+  inline void from_json(const nlohmann::json& j, LolLootRecipeOutput& v) {
     v.lootName = j.at("lootName").get<std::string>;
     v.quantity = j.at("quantity").get<int32_t>;
   }

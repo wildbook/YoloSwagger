@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string region;
   };
 
-  void to_json(nlohmann::json& j, const RiotMessagingServicePluginRegionLocaleChangedEvent& v) {
+  inline void to_json(nlohmann::json& j, const RiotMessagingServicePluginRegionLocaleChangedEvent& v) {
     j["locale"] = v.locale;
     j["region"] = v.region;
   }
 
-  void from_json(const nlohmann::json& j, RiotMessagingServicePluginRegionLocaleChangedEvent& v) {
+  inline void from_json(const nlohmann::json& j, RiotMessagingServicePluginRegionLocaleChangedEvent& v) {
     v.locale = j.at("locale").get<std::string>;
     v.region = j.at("region").get<std::string>;
   }

@@ -1,11 +1,11 @@
 #ifndef SWAGGER_TYPES_LolClashRoster_HPP
 #define SWAGGER_TYPES_LolClashRoster_HPP
 #include <json.hpp>
+#include "LolClashSuggestedInvite.hpp"
+#include "RosterWithdraw.hpp"
+#include "RewardIcon.hpp"
 #include "LolClashRosterPhaseInfo.hpp"
 #include "LolClashRosterMember.hpp"
-#include "LolClashSuggestedInvite.hpp"
-#include "RewardIcon.hpp"
-#include "RosterWithdraw.hpp"
 namespace leagueapi {
   // 
   struct LolClashRoster {
@@ -53,7 +53,7 @@ namespace leagueapi {
     RosterWithdraw withdraw;
   };
 
-  void to_json(nlohmann::json& j, const LolClashRoster& v) {
+  inline void to_json(nlohmann::json& j, const LolClashRoster& v) {
     j["availableIcons"] = v.availableIcons;
     j["captainSummonerId"] = v.captainSummonerId;
     j["currentBracketWins"] = v.currentBracketWins;
@@ -77,7 +77,7 @@ namespace leagueapi {
     j["withdraw"] = v.withdraw;
   }
 
-  void from_json(const nlohmann::json& j, LolClashRoster& v) {
+  inline void from_json(const nlohmann::json& j, LolClashRoster& v) {
     v.availableIcons = j.at("availableIcons").get<std::vector<RewardIcon>>;
     v.captainSummonerId = j.at("captainSummonerId").get<uint64_t>;
     v.currentBracketWins = j.at("currentBracketWins").get<int32_t>;

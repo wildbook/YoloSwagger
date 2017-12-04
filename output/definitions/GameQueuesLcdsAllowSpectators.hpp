@@ -14,7 +14,7 @@ namespace leagueapi {
     NONE = 0,
   };
 
-  void to_json(nlohmann::json& j, const GameQueuesLcdsAllowSpectators& v) {
+  inline void to_json(nlohmann::json& j, const GameQueuesLcdsAllowSpectators& v) {
     switch(v) {
       case GameQueuesLcdsAllowSpectators::ALL:
         j = "ALL";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, GameQueuesLcdsAllowSpectators& v) {
+  inline void from_json(const nlohmann::json& j, GameQueuesLcdsAllowSpectators& v) {
     const auto s& = j.get<std::string>();
     if(s == "ALL"){
       v = GameQueuesLcdsAllowSpectators::ALL;

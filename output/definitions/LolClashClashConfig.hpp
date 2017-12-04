@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolClashClashConfig_HPP
 #define SWAGGER_TYPES_LolClashClashConfig_HPP
 #include <json.hpp>
-#include "LolClashClashVisibility.hpp"
 #include "LolClashClashState.hpp"
+#include "LolClashClashVisibility.hpp"
 namespace leagueapi {
   // 
   struct LolClashClashConfig {
@@ -20,7 +20,7 @@ namespace leagueapi {
     LolClashClashVisibility Visibility;
   };
 
-  void to_json(nlohmann::json& j, const LolClashClashConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolClashClashConfig& v) {
     j["DarkModeEntitlement"] = v.DarkModeEntitlement;
     j["EnabledState"] = v.EnabledState;
     j["IconConfig"] = v.IconConfig;
@@ -29,7 +29,7 @@ namespace leagueapi {
     j["Visibility"] = v.Visibility;
   }
 
-  void from_json(const nlohmann::json& j, LolClashClashConfig& v) {
+  inline void from_json(const nlohmann::json& j, LolClashClashConfig& v) {
     v.DarkModeEntitlement = j.at("DarkModeEntitlement").get<std::string>;
     v.EnabledState = j.at("EnabledState").get<LolClashClashState>;
     v.IconConfig = j.at("IconConfig").get<std::string>;

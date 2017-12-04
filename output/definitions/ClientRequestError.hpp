@@ -138,7 +138,7 @@ namespace leagueapi {
     WITHDRAW_NOT_ALLOWED = 63,
   };
 
-  void to_json(nlohmann::json& j, const ClientRequestError& v) {
+  inline void to_json(nlohmann::json& j, const ClientRequestError& v) {
     switch(v) {
       case ClientRequestError::ALREADY_DECLINE_WITHDRAW:
         j = "ALREADY_DECLINE_WITHDRAW";
@@ -341,7 +341,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, ClientRequestError& v) {
+  inline void from_json(const nlohmann::json& j, ClientRequestError& v) {
     const auto s& = j.get<std::string>();
     if(s == "ALREADY_DECLINE_WITHDRAW"){
       v = ClientRequestError::ALREADY_DECLINE_WITHDRAW;

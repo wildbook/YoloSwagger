@@ -2,8 +2,8 @@
 #define SWAGGER_TYPES_RankedLeagueItemDTO_HPP
 #include <json.hpp>
 #include "LolRankedStatsRankedQueue.hpp"
-#include "RankedLeagueMiniSeriesDTO.hpp"
 #include "LolRankedStatsRankedTier.hpp"
+#include "RankedLeagueMiniSeriesDTO.hpp"
 #include "RankedDivision.hpp"
 namespace leagueapi {
   // 
@@ -34,7 +34,7 @@ namespace leagueapi {
     uint32_t wins;
   };
 
-  void to_json(nlohmann::json& j, const RankedLeagueItemDTO& v) {
+  inline void to_json(nlohmann::json& j, const RankedLeagueItemDTO& v) {
     j["apexDaysUntilDecay"] = v.apexDaysUntilDecay;
     j["inactive"] = v.inactive;
     j["leagueName"] = v.leagueName;
@@ -49,7 +49,7 @@ namespace leagueapi {
     j["wins"] = v.wins;
   }
 
-  void from_json(const nlohmann::json& j, RankedLeagueItemDTO& v) {
+  inline void from_json(const nlohmann::json& j, RankedLeagueItemDTO& v) {
     v.apexDaysUntilDecay = j.at("apexDaysUntilDecay").get<int32_t>;
     v.inactive = j.at("inactive").get<bool>;
     v.leagueName = j.at("leagueName").get<std::string>;

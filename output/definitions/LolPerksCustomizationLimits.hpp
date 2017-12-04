@@ -18,7 +18,7 @@ namespace leagueapi {
     Locked = 0,
   };
 
-  void to_json(nlohmann::json& j, const LolPerksCustomizationLimits& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksCustomizationLimits& v) {
     switch(v) {
       case LolPerksCustomizationLimits::CanSelectKeystones:
         j = "CanSelectKeystones";
@@ -41,7 +41,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolPerksCustomizationLimits& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksCustomizationLimits& v) {
     const auto s& = j.get<std::string>();
     if(s == "CanSelectKeystones"){
       v = LolPerksCustomizationLimits::CanSelectKeystones;

@@ -14,7 +14,7 @@ namespace leagueapi {
     TournamentDodged = 51,
   };
 
-  void to_json(nlohmann::json& j, const LolGameflowGameflowGameDodgeState& v) {
+  inline void to_json(nlohmann::json& j, const LolGameflowGameflowGameDodgeState& v) {
     switch(v) {
       case LolGameflowGameflowGameDodgeState::Invalid:
         j = "Invalid";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolGameflowGameflowGameDodgeState& v) {
+  inline void from_json(const nlohmann::json& j, LolGameflowGameflowGameDodgeState& v) {
     const auto s& = j.get<std::string>();
     if(s == "Invalid"){
       v = LolGameflowGameflowGameDodgeState::Invalid;

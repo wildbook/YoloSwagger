@@ -8,11 +8,11 @@ namespace leagueapi {
     bool battleBoost;
   };
 
-  void to_json(nlohmann::json& j, const QueueGameTypeConfig& v) {
+  inline void to_json(nlohmann::json& j, const QueueGameTypeConfig& v) {
     j["battleBoost"] = v.battleBoost;
   }
 
-  void from_json(const nlohmann::json& j, QueueGameTypeConfig& v) {
+  inline void from_json(const nlohmann::json& j, QueueGameTypeConfig& v) {
     v.battleBoost = j.at("battleBoost").get<bool>;
   }
 

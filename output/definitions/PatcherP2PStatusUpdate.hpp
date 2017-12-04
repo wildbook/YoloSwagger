@@ -8,11 +8,11 @@ namespace leagueapi {
     bool isAllowedByUser;
   };
 
-  void to_json(nlohmann::json& j, const PatcherP2PStatusUpdate& v) {
+  inline void to_json(nlohmann::json& j, const PatcherP2PStatusUpdate& v) {
     j["isAllowedByUser"] = v.isAllowedByUser;
   }
 
-  void from_json(const nlohmann::json& j, PatcherP2PStatusUpdate& v) {
+  inline void from_json(const nlohmann::json& j, PatcherP2PStatusUpdate& v) {
     v.isAllowedByUser = j.at("isAllowedByUser").get<bool>;
   }
 

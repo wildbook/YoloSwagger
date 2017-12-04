@@ -12,13 +12,13 @@ namespace leagueapi {
     std::string username;
   };
 
-  void to_json(nlohmann::json& j, const LolChatAuthResourcePlain& v) {
+  inline void to_json(nlohmann::json& j, const LolChatAuthResourcePlain& v) {
     j["gasToken"] = v.gasToken;
     j["password"] = v.password;
     j["username"] = v.username;
   }
 
-  void from_json(const nlohmann::json& j, LolChatAuthResourcePlain& v) {
+  inline void from_json(const nlohmann::json& j, LolChatAuthResourcePlain& v) {
     v.gasToken = j.at("gasToken").get<nlohmann::json>;
     v.password = j.at("password").get<std::string>;
     v.username = j.at("username").get<std::string>;

@@ -14,14 +14,14 @@ namespace leagueapi {
     std::string versionMinor;
   };
 
-  void to_json(nlohmann::json& j, const basicOperatingSystemInfo& v) {
+  inline void to_json(nlohmann::json& j, const basicOperatingSystemInfo& v) {
     j["edition"] = v.edition;
     j["platform"] = v.platform;
     j["versionMajor"] = v.versionMajor;
     j["versionMinor"] = v.versionMinor;
   }
 
-  void from_json(const nlohmann::json& j, basicOperatingSystemInfo& v) {
+  inline void from_json(const nlohmann::json& j, basicOperatingSystemInfo& v) {
     v.edition = j.at("edition").get<std::string>;
     v.platform = j.at("platform").get<std::string>;
     v.versionMajor = j.at("versionMajor").get<std::string>;

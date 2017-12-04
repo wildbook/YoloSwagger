@@ -15,14 +15,14 @@ namespace leagueapi {
     std::string type;
   };
 
-  void to_json(nlohmann::json& j, const PlayerMissionObjectiveDTO& v) {
+  inline void to_json(nlohmann::json& j, const PlayerMissionObjectiveDTO& v) {
     j["description"] = v.description;
     j["progress"] = v.progress;
     j["sequence"] = v.sequence;
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, PlayerMissionObjectiveDTO& v) {
+  inline void from_json(const nlohmann::json& j, PlayerMissionObjectiveDTO& v) {
     v.description = j.at("description").get<std::string>;
     v.progress = j.at("progress").get<MissionProgressDTO>;
     v.sequence = j.at("sequence").get<int32_t>;

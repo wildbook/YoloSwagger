@@ -18,7 +18,7 @@ namespace leagueapi {
     MEMBER = 1,
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyPartyMemberRoleEnum& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyPartyMemberRoleEnum& v) {
     switch(v) {
       case LolLobbyPartyMemberRoleEnum::DECLINED:
         j = "DECLINED";
@@ -41,7 +41,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyPartyMemberRoleEnum& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyPartyMemberRoleEnum& v) {
     const auto s& = j.get<std::string>();
     if(s == "DECLINED"){
       v = LolLobbyPartyMemberRoleEnum::DECLINED;

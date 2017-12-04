@@ -14,7 +14,7 @@ namespace leagueapi {
     RENTAL = 2,
   };
 
-  void to_json(nlohmann::json& j, const LolLootItemOwnershipStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolLootItemOwnershipStatus& v) {
     switch(v) {
       case LolLootItemOwnershipStatus::FREE:
         j = "FREE";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLootItemOwnershipStatus& v) {
+  inline void from_json(const nlohmann::json& j, LolLootItemOwnershipStatus& v) {
     const auto s& = j.get<std::string>();
     if(s == "FREE"){
       v = LolLootItemOwnershipStatus::FREE;

@@ -9,11 +9,11 @@ namespace leagueapi {
     LolCollectionsGameDataChampionMasteryTree tree;
   };
 
-  void to_json(nlohmann::json& j, const LolCollectionsGameDataChampionMasteries& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsGameDataChampionMasteries& v) {
     j["tree"] = v.tree;
   }
 
-  void from_json(const nlohmann::json& j, LolCollectionsGameDataChampionMasteries& v) {
+  inline void from_json(const nlohmann::json& j, LolCollectionsGameDataChampionMasteries& v) {
     v.tree = j.at("tree").get<LolCollectionsGameDataChampionMasteryTree>;
   }
 

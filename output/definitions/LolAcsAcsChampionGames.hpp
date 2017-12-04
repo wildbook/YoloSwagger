@@ -14,14 +14,14 @@ namespace leagueapi {
     std::string role;
   };
 
-  void to_json(nlohmann::json& j, const LolAcsAcsChampionGames& v) {
+  inline void to_json(nlohmann::json& j, const LolAcsAcsChampionGames& v) {
     j["championId"] = v.championId;
     j["lane"] = v.lane;
     j["queue"] = v.queue;
     j["role"] = v.role;
   }
 
-  void from_json(const nlohmann::json& j, LolAcsAcsChampionGames& v) {
+  inline void from_json(const nlohmann::json& j, LolAcsAcsChampionGames& v) {
     v.championId = j.at("championId").get<int32_t>;
     v.lane = j.at("lane").get<std::string>;
     v.queue = j.at("queue").get<int32_t>;

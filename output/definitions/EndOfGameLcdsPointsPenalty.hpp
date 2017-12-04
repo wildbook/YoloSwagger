@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string type;
   };
 
-  void to_json(nlohmann::json& j, const EndOfGameLcdsPointsPenalty& v) {
+  inline void to_json(nlohmann::json& j, const EndOfGameLcdsPointsPenalty& v) {
     j["penalty"] = v.penalty;
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, EndOfGameLcdsPointsPenalty& v) {
+  inline void from_json(const nlohmann::json& j, EndOfGameLcdsPointsPenalty& v) {
     v.penalty = j.at("penalty").get<double>;
     v.type = j.at("type").get<std::string>;
   }

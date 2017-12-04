@@ -12,7 +12,7 @@ namespace leagueapi {
     PROGRESSED = 2,
   };
 
-  void to_json(nlohmann::json& j, const LcdsRemovalReason& v) {
+  inline void to_json(nlohmann::json& j, const LcdsRemovalReason& v) {
     switch(v) {
       case LcdsRemovalReason::DESTROYED:
         j = "DESTROYED";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LcdsRemovalReason& v) {
+  inline void from_json(const nlohmann::json& j, LcdsRemovalReason& v) {
     const auto s& = j.get<std::string>();
     if(s == "DESTROYED"){
       v = LcdsRemovalReason::DESTROYED;

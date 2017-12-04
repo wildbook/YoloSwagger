@@ -16,14 +16,14 @@ namespace leagueapi {
     ClashRewardTime show;
   };
 
-  void to_json(nlohmann::json& j, const ClashRewardOutput& v) {
+  inline void to_json(nlohmann::json& j, const ClashRewardOutput& v) {
     j["alternative"] = v.alternative;
     j["grant"] = v.grant;
     j["primary"] = v.primary;
     j["show"] = v.show;
   }
 
-  void from_json(const nlohmann::json& j, ClashRewardOutput& v) {
+  inline void from_json(const nlohmann::json& j, ClashRewardOutput& v) {
     v.alternative = j.at("alternative").get<ClashRewardDefinition>;
     v.grant = j.at("grant").get<ClashRewardTime>;
     v.primary = j.at("primary").get<ClashRewardDefinition>;

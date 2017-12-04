@@ -12,7 +12,7 @@ namespace leagueapi {
     RENTED = 1,
   };
 
-  void to_json(nlohmann::json& j, const LolLootInventoryOwnership& v) {
+  inline void to_json(nlohmann::json& j, const LolLootInventoryOwnership& v) {
     switch(v) {
       case LolLootInventoryOwnership::F2P:
         j = "F2P";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLootInventoryOwnership& v) {
+  inline void from_json(const nlohmann::json& j, LolLootInventoryOwnership& v) {
     const auto s& = j.get<std::string>();
     if(s == "F2P"){
       v = LolLootInventoryOwnership::F2P;

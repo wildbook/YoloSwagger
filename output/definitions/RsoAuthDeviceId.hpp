@@ -16,7 +16,7 @@ namespace leagueapi {
     std::string sessionId;
   };
 
-  void to_json(nlohmann::json& j, const RsoAuthDeviceId& v) {
+  inline void to_json(nlohmann::json& j, const RsoAuthDeviceId& v) {
     j["collectorServerName"] = v.collectorServerName;
     j["frameUrl"] = v.frameUrl;
     j["installId"] = v.installId;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["sessionId"] = v.sessionId;
   }
 
-  void from_json(const nlohmann::json& j, RsoAuthDeviceId& v) {
+  inline void from_json(const nlohmann::json& j, RsoAuthDeviceId& v) {
     v.collectorServerName = j.at("collectorServerName").get<std::string>;
     v.frameUrl = j.at("frameUrl").get<std::string>;
     v.installId = j.at("installId").get<std::string>;

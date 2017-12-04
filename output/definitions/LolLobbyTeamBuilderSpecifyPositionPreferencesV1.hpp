@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string secondPreference;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderSpecifyPositionPreferencesV1& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderSpecifyPositionPreferencesV1& v) {
     j["firstPreference"] = v.firstPreference;
     j["secondPreference"] = v.secondPreference;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderSpecifyPositionPreferencesV1& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderSpecifyPositionPreferencesV1& v) {
     v.firstPreference = j.at("firstPreference").get<std::string>;
     v.secondPreference = j.at("secondPreference").get<std::string>;
   }

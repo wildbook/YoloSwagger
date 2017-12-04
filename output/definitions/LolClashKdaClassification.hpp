@@ -12,7 +12,7 @@ namespace leagueapi {
     LOW = 0,
   };
 
-  void to_json(nlohmann::json& j, const LolClashKdaClassification& v) {
+  inline void to_json(nlohmann::json& j, const LolClashKdaClassification& v) {
     switch(v) {
       case LolClashKdaClassification::AVERAGE:
         j = "AVERAGE";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolClashKdaClassification& v) {
+  inline void from_json(const nlohmann::json& j, LolClashKdaClassification& v) {
     const auto s& = j.get<std::string>();
     if(s == "AVERAGE"){
       v = LolClashKdaClassification::AVERAGE;

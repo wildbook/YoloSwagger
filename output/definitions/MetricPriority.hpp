@@ -12,7 +12,7 @@ namespace leagueapi {
     medium = 1,
   };
 
-  void to_json(nlohmann::json& j, const MetricPriority& v) {
+  inline void to_json(nlohmann::json& j, const MetricPriority& v) {
     switch(v) {
       case MetricPriority::high:
         j = "high";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, MetricPriority& v) {
+  inline void from_json(const nlohmann::json& j, MetricPriority& v) {
     const auto s& = j.get<std::string>();
     if(s == "high"){
       v = MetricPriority::high;

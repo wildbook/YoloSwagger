@@ -8,11 +8,11 @@ namespace leagueapi {
     bool Enabled;
   };
 
-  void to_json(nlohmann::json& j, const LolGeoinfoGeoInfoConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolGeoinfoGeoInfoConfig& v) {
     j["Enabled"] = v.Enabled;
   }
 
-  void from_json(const nlohmann::json& j, LolGeoinfoGeoInfoConfig& v) {
+  inline void from_json(const nlohmann::json& j, LolGeoinfoGeoInfoConfig& v) {
     v.Enabled = j.at("Enabled").get<bool>;
   }
 

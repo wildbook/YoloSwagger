@@ -18,7 +18,7 @@ namespace leagueapi {
     std::string FaqLink;
   };
 
-  void to_json(nlohmann::json& j, const RecofrienderConfig& v) {
+  inline void to_json(nlohmann::json& j, const RecofrienderConfig& v) {
     j["ContactDetailsUrlTemplate"] = v.ContactDetailsUrlTemplate;
     j["ContactsUrlTemplate"] = v.ContactsUrlTemplate;
     j["EnableSocial"] = v.EnableSocial;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["FaqLink"] = v.FaqLink;
   }
 
-  void from_json(const nlohmann::json& j, RecofrienderConfig& v) {
+  inline void from_json(const nlohmann::json& j, RecofrienderConfig& v) {
     v.ContactDetailsUrlTemplate = j.at("ContactDetailsUrlTemplate").get<std::string>;
     v.ContactsUrlTemplate = j.at("ContactsUrlTemplate").get<std::string>;
     v.EnableSocial = j.at("EnableSocial").get<bool>;

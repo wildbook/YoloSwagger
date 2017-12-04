@@ -13,13 +13,13 @@ namespace leagueapi {
     std::string teamId;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyBotParams& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyBotParams& v) {
     j["botDifficulty"] = v.botDifficulty;
     j["championId"] = v.championId;
     j["teamId"] = v.teamId;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyBotParams& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyBotParams& v) {
     v.botDifficulty = j.at("botDifficulty").get<LolLobbyLobbyBotDifficulty>;
     v.championId = j.at("championId").get<int32_t>;
     v.teamId = j.at("teamId").get<std::string>;

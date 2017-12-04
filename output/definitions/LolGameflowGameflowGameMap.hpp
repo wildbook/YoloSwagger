@@ -30,7 +30,7 @@ namespace leagueapi {
     nlohmann::json properties;
   };
 
-  void to_json(nlohmann::json& j, const LolGameflowGameflowGameMap& v) {
+  inline void to_json(nlohmann::json& j, const LolGameflowGameflowGameMap& v) {
     j["assets"] = v.assets;
     j["description"] = v.description;
     j["gameMode"] = v.gameMode;
@@ -45,7 +45,7 @@ namespace leagueapi {
     j["properties"] = v.properties;
   }
 
-  void from_json(const nlohmann::json& j, LolGameflowGameflowGameMap& v) {
+  inline void from_json(const nlohmann::json& j, LolGameflowGameflowGameMap& v) {
     v.assets = j.at("assets").get<nlohmann::json>;
     v.description = j.at("description").get<std::string>;
     v.gameMode = j.at("gameMode").get<std::string>;

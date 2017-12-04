@@ -10,7 +10,7 @@ namespace leagueapi {
     PluginsInitialized = 1,
   };
 
-  void to_json(nlohmann::json& j, const PluginManagerState& v) {
+  inline void to_json(nlohmann::json& j, const PluginManagerState& v) {
     switch(v) {
       case PluginManagerState::NotReady:
         j = "NotReady";
@@ -21,7 +21,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, PluginManagerState& v) {
+  inline void from_json(const nlohmann::json& j, PluginManagerState& v) {
     const auto s& = j.get<std::string>();
     if(s == "NotReady"){
       v = PluginManagerState::NotReady;

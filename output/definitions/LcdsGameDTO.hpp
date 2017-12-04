@@ -47,7 +47,7 @@ namespace leagueapi {
     std::vector<LcdsPlayerParticipant> teamTwo;
   };
 
-  void to_json(nlohmann::json& j, const LcdsGameDTO& v) {
+  inline void to_json(nlohmann::json& j, const LcdsGameDTO& v) {
     j["gameMode"] = v.gameMode;
     j["gameMutators"] = v.gameMutators;
     j["gameState"] = v.gameState;
@@ -70,7 +70,7 @@ namespace leagueapi {
     j["teamTwo"] = v.teamTwo;
   }
 
-  void from_json(const nlohmann::json& j, LcdsGameDTO& v) {
+  inline void from_json(const nlohmann::json& j, LcdsGameDTO& v) {
     v.gameMode = j.at("gameMode").get<std::string>;
     v.gameMutators = j.at("gameMutators").get<std::vector<std::string>>;
     v.gameState = j.at("gameState").get<std::string>;

@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string password;
   };
 
-  void to_json(nlohmann::json& j, const LolEmailVerificationEmailUpdate& v) {
+  inline void to_json(nlohmann::json& j, const LolEmailVerificationEmailUpdate& v) {
     j["email"] = v.email;
     j["password"] = v.password;
   }
 
-  void from_json(const nlohmann::json& j, LolEmailVerificationEmailUpdate& v) {
+  inline void from_json(const nlohmann::json& j, LolEmailVerificationEmailUpdate& v) {
     v.email = j.at("email").get<std::string>;
     v.password = j.at("password").get<std::string>;
   }

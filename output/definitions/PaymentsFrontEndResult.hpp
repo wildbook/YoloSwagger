@@ -8,11 +8,11 @@ namespace leagueapi {
     std::string url;
   };
 
-  void to_json(nlohmann::json& j, const PaymentsFrontEndResult& v) {
+  inline void to_json(nlohmann::json& j, const PaymentsFrontEndResult& v) {
     j["url"] = v.url;
   }
 
-  void from_json(const nlohmann::json& j, PaymentsFrontEndResult& v) {
+  inline void from_json(const nlohmann::json& j, PaymentsFrontEndResult& v) {
     v.url = j.at("url").get<std::string>;
   }
 

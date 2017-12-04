@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_PlayerMembershipDto_HPP
 #define SWAGGER_TYPES_PlayerMembershipDto_HPP
 #include <json.hpp>
-#include "ClubsServerConfigDto.hpp"
 #include "ClubReferenceDto.hpp"
-#include "PlayerMembershipPreferencesDto.hpp"
 #include "ClubDto.hpp"
-#include "MembershipInviteDto.hpp"
+#include "ClubsServerConfigDto.hpp"
 #include "PlayerInfoDto.hpp"
+#include "PlayerMembershipPreferencesDto.hpp"
+#include "MembershipInviteDto.hpp"
 namespace leagueapi {
   // 
   struct PlayerMembershipDto {
@@ -30,7 +30,7 @@ namespace leagueapi {
     std::string secureClubPresenceInfoString;
   };
 
-  void to_json(nlohmann::json& j, const PlayerMembershipDto& v) {
+  inline void to_json(nlohmann::json& j, const PlayerMembershipDto& v) {
     j["activeClubs"] = v.activeClubs;
     j["clubsServerConfig"] = v.clubsServerConfig;
     j["pendingInvites"] = v.pendingInvites;
@@ -42,7 +42,7 @@ namespace leagueapi {
     j["secureClubPresenceInfoString"] = v.secureClubPresenceInfoString;
   }
 
-  void from_json(const nlohmann::json& j, PlayerMembershipDto& v) {
+  inline void from_json(const nlohmann::json& j, PlayerMembershipDto& v) {
     v.activeClubs = j.at("activeClubs").get<std::vector<ClubDto>>;
     v.clubsServerConfig = j.at("clubsServerConfig").get<ClubsServerConfigDto>;
     v.pendingInvites = j.at("pendingInvites").get<std::vector<MembershipInviteDto>>;

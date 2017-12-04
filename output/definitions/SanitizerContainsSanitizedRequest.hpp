@@ -16,7 +16,7 @@ namespace leagueapi {
     std::string text;
   };
 
-  void to_json(nlohmann::json& j, const SanitizerContainsSanitizedRequest& v) {
+  inline void to_json(nlohmann::json& j, const SanitizerContainsSanitizedRequest& v) {
     j["aggressiveScan"] = v.aggressiveScan;
     j["includeEmbedded"] = v.includeEmbedded;
     j["level"] = v.level;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["text"] = v.text;
   }
 
-  void from_json(const nlohmann::json& j, SanitizerContainsSanitizedRequest& v) {
+  inline void from_json(const nlohmann::json& j, SanitizerContainsSanitizedRequest& v) {
     v.aggressiveScan = j.at("aggressiveScan").get<bool>;
     v.includeEmbedded = j.at("includeEmbedded").get<bool>;
     v.level = j.at("level").get<uint32_t>;

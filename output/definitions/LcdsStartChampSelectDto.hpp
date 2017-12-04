@@ -9,11 +9,11 @@ namespace leagueapi {
     std::vector<LcdsFailedJoinPlayer> invalidPlayers;
   };
 
-  void to_json(nlohmann::json& j, const LcdsStartChampSelectDto& v) {
+  inline void to_json(nlohmann::json& j, const LcdsStartChampSelectDto& v) {
     j["invalidPlayers"] = v.invalidPlayers;
   }
 
-  void from_json(const nlohmann::json& j, LcdsStartChampSelectDto& v) {
+  inline void from_json(const nlohmann::json& j, LcdsStartChampSelectDto& v) {
     v.invalidPlayers = j.at("invalidPlayers").get<std::vector<LcdsFailedJoinPlayer>>;
   }
 

@@ -14,14 +14,14 @@ namespace leagueapi {
     int32_t queueId;
   };
 
-  void to_json(nlohmann::json& j, const LolSummonerAutoFillQueueDto& v) {
+  inline void to_json(nlohmann::json& j, const LolSummonerAutoFillQueueDto& v) {
     j["autoFillEligible"] = v.autoFillEligible;
     j["autoFillProtectedForPromos"] = v.autoFillProtectedForPromos;
     j["autoFillProtectedForStreaking"] = v.autoFillProtectedForStreaking;
     j["queueId"] = v.queueId;
   }
 
-  void from_json(const nlohmann::json& j, LolSummonerAutoFillQueueDto& v) {
+  inline void from_json(const nlohmann::json& j, LolSummonerAutoFillQueueDto& v) {
     v.autoFillEligible = j.at("autoFillEligible").get<bool>;
     v.autoFillProtectedForPromos = j.at("autoFillProtectedForPromos").get<bool>;
     v.autoFillProtectedForStreaking = j.at("autoFillProtectedForStreaking").get<bool>;

@@ -11,12 +11,12 @@ namespace leagueapi {
     LolChampSelectLegacyQueueGameTypeConfig gameTypeConfig;
   };
 
-  void to_json(nlohmann::json& j, const LolChampSelectLegacyQueue& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyQueue& v) {
     j["areFreeChampionsAllowed"] = v.areFreeChampionsAllowed;
     j["gameTypeConfig"] = v.gameTypeConfig;
   }
 
-  void from_json(const nlohmann::json& j, LolChampSelectLegacyQueue& v) {
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyQueue& v) {
     v.areFreeChampionsAllowed = j.at("areFreeChampionsAllowed").get<bool>;
     v.gameTypeConfig = j.at("gameTypeConfig").get<LolChampSelectLegacyQueueGameTypeConfig>;
   }

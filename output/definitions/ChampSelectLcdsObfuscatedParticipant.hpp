@@ -8,11 +8,11 @@ namespace leagueapi {
     uint64_t gameUniqueId;
   };
 
-  void to_json(nlohmann::json& j, const ChampSelectLcdsObfuscatedParticipant& v) {
+  inline void to_json(nlohmann::json& j, const ChampSelectLcdsObfuscatedParticipant& v) {
     j["gameUniqueId"] = v.gameUniqueId;
   }
 
-  void from_json(const nlohmann::json& j, ChampSelectLcdsObfuscatedParticipant& v) {
+  inline void from_json(const nlohmann::json& j, ChampSelectLcdsObfuscatedParticipant& v) {
     v.gameUniqueId = j.at("gameUniqueId").get<uint64_t>;
   }
 

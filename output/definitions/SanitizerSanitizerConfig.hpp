@@ -22,7 +22,7 @@ namespace leagueapi {
     std::string Level3Unfilter;
   };
 
-  void to_json(nlohmann::json& j, const SanitizerSanitizerConfig& v) {
+  inline void to_json(nlohmann::json& j, const SanitizerSanitizerConfig& v) {
     j["Level0Filter"] = v.Level0Filter;
     j["Level0Unfilter"] = v.Level0Unfilter;
     j["Level1Filter"] = v.Level1Filter;
@@ -33,7 +33,7 @@ namespace leagueapi {
     j["Level3Unfilter"] = v.Level3Unfilter;
   }
 
-  void from_json(const nlohmann::json& j, SanitizerSanitizerConfig& v) {
+  inline void from_json(const nlohmann::json& j, SanitizerSanitizerConfig& v) {
     v.Level0Filter = j.at("Level0Filter").get<std::string>;
     v.Level0Unfilter = j.at("Level0Unfilter").get<std::string>;
     v.Level1Filter = j.at("Level1Filter").get<std::string>;

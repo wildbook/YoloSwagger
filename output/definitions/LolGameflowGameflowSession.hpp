@@ -1,11 +1,11 @@
 #ifndef SWAGGER_TYPES_LolGameflowGameflowSession_HPP
 #define SWAGGER_TYPES_LolGameflowGameflowSession_HPP
 #include <json.hpp>
-#include "LolGameflowGameflowPhase.hpp"
-#include "LolGameflowGameflowGameData.hpp"
 #include "LolGameflowGameflowGameClient.hpp"
-#include "LolGameflowGameflowGameDodge.hpp"
 #include "LolGameflowGameflowGameMap.hpp"
+#include "LolGameflowGameflowPhase.hpp"
+#include "LolGameflowGameflowGameDodge.hpp"
+#include "LolGameflowGameflowGameData.hpp"
 namespace leagueapi {
   // 
   struct LolGameflowGameflowSession {
@@ -21,7 +21,7 @@ namespace leagueapi {
     LolGameflowGameflowPhase phase;
   };
 
-  void to_json(nlohmann::json& j, const LolGameflowGameflowSession& v) {
+  inline void to_json(nlohmann::json& j, const LolGameflowGameflowSession& v) {
     j["gameClient"] = v.gameClient;
     j["gameData"] = v.gameData;
     j["gameDodge"] = v.gameDodge;
@@ -29,7 +29,7 @@ namespace leagueapi {
     j["phase"] = v.phase;
   }
 
-  void from_json(const nlohmann::json& j, LolGameflowGameflowSession& v) {
+  inline void from_json(const nlohmann::json& j, LolGameflowGameflowSession& v) {
     v.gameClient = j.at("gameClient").get<LolGameflowGameflowGameClient>;
     v.gameData = j.at("gameData").get<LolGameflowGameflowGameData>;
     v.gameDodge = j.at("gameDodge").get<LolGameflowGameflowGameDodge>;

@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_EndOfGameLcdsEndOfGameStats_HPP
 #define SWAGGER_TYPES_EndOfGameLcdsEndOfGameStats_HPP
 #include <json.hpp>
-#include "EndOfGameLcdsTeamInfo.hpp"
-#include "EndOfGameLcdsPlayerParticipantStatsSummary.hpp"
-#include "EndOfGameLcdsSpell.hpp"
 #include "EndOfGameLcdsPointsPenalty.hpp"
+#include "EndOfGameLcdsTeamInfo.hpp"
+#include "EndOfGameLcdsSpell.hpp"
+#include "EndOfGameLcdsPlayerParticipantStatsSummary.hpp"
 namespace leagueapi {
   // 
   struct EndOfGameLcdsEndOfGameStats {
@@ -122,7 +122,7 @@ namespace leagueapi {
     uint64_t userId;
   };
 
-  void to_json(nlohmann::json& j, const EndOfGameLcdsEndOfGameStats& v) {
+  inline void to_json(nlohmann::json& j, const EndOfGameLcdsEndOfGameStats& v) {
     j["basePoints"] = v.basePoints;
     j["battleBoostIpEarned"] = v.battleBoostIpEarned;
     j["boostIpEarned"] = v.boostIpEarned;
@@ -181,7 +181,7 @@ namespace leagueapi {
     j["userId"] = v.userId;
   }
 
-  void from_json(const nlohmann::json& j, EndOfGameLcdsEndOfGameStats& v) {
+  inline void from_json(const nlohmann::json& j, EndOfGameLcdsEndOfGameStats& v) {
     v.basePoints = j.at("basePoints").get<int32_t>;
     v.battleBoostIpEarned = j.at("battleBoostIpEarned").get<int32_t>;
     v.boostIpEarned = j.at("boostIpEarned").get<int32_t>;

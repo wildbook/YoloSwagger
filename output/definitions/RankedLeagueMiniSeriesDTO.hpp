@@ -16,7 +16,7 @@ namespace leagueapi {
     uint64_t wins;
   };
 
-  void to_json(nlohmann::json& j, const RankedLeagueMiniSeriesDTO& v) {
+  inline void to_json(nlohmann::json& j, const RankedLeagueMiniSeriesDTO& v) {
     j["losses"] = v.losses;
     j["progress"] = v.progress;
     j["target"] = v.target;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["wins"] = v.wins;
   }
 
-  void from_json(const nlohmann::json& j, RankedLeagueMiniSeriesDTO& v) {
+  inline void from_json(const nlohmann::json& j, RankedLeagueMiniSeriesDTO& v) {
     v.losses = j.at("losses").get<uint64_t>;
     v.progress = j.at("progress").get<std::string>;
     v.target = j.at("target").get<uint64_t>;

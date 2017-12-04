@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLootLootItemGdsResource_HPP
 #define SWAGGER_TYPES_LolLootLootItemGdsResource_HPP
 #include <json.hpp>
-#include "LolLootLootType.hpp"
 #include "LolLootLootRarity.hpp"
+#include "LolLootLootType.hpp"
 namespace leagueapi {
   // 
   struct LolLootLootItemGdsResource {
@@ -30,7 +30,7 @@ namespace leagueapi {
     LolLootLootType type;
   };
 
-  void to_json(nlohmann::json& j, const LolLootLootItemGdsResource& v) {
+  inline void to_json(nlohmann::json& j, const LolLootLootItemGdsResource& v) {
     j["autoRedeem"] = v.autoRedeem;
     j["description"] = v.description;
     j["endDate"] = v.endDate;
@@ -44,7 +44,7 @@ namespace leagueapi {
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, LolLootLootItemGdsResource& v) {
+  inline void from_json(const nlohmann::json& j, LolLootLootItemGdsResource& v) {
     v.autoRedeem = j.at("autoRedeem").get<bool>;
     v.description = j.at("description").get<std::string>;
     v.endDate = j.at("endDate").get<std::string>;

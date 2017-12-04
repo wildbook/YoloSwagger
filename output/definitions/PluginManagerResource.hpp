@@ -9,11 +9,11 @@ namespace leagueapi {
     PluginManagerState state;
   };
 
-  void to_json(nlohmann::json& j, const PluginManagerResource& v) {
+  inline void to_json(nlohmann::json& j, const PluginManagerResource& v) {
     j["state"] = v.state;
   }
 
-  void from_json(const nlohmann::json& j, PluginManagerResource& v) {
+  inline void from_json(const nlohmann::json& j, PluginManagerResource& v) {
     v.state = j.at("state").get<PluginManagerState>;
   }
 

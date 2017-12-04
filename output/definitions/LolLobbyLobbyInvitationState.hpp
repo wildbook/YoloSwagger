@@ -22,7 +22,7 @@ namespace leagueapi {
     Requested = 0,
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyInvitationState& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyInvitationState& v) {
     switch(v) {
       case LolLobbyLobbyInvitationState::Accepted:
         j = "Accepted";
@@ -51,7 +51,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyInvitationState& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyInvitationState& v) {
     const auto s& = j.get<std::string>();
     if(s == "Accepted"){
       v = LolLobbyLobbyInvitationState::Accepted;

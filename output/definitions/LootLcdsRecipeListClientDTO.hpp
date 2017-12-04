@@ -11,12 +11,12 @@ namespace leagueapi {
     std::vector<LootLcdsRecipeClientDTO> recipes;
   };
 
-  void to_json(nlohmann::json& j, const LootLcdsRecipeListClientDTO& v) {
+  inline void to_json(nlohmann::json& j, const LootLcdsRecipeListClientDTO& v) {
     j["lastUpdate"] = v.lastUpdate;
     j["recipes"] = v.recipes;
   }
 
-  void from_json(const nlohmann::json& j, LootLcdsRecipeListClientDTO& v) {
+  inline void from_json(const nlohmann::json& j, LootLcdsRecipeListClientDTO& v) {
     v.lastUpdate = j.at("lastUpdate").get<int64_t>;
     v.recipes = j.at("recipes").get<std::vector<LootLcdsRecipeClientDTO>>;
   }

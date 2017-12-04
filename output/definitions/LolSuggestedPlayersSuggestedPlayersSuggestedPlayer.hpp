@@ -17,7 +17,7 @@ namespace leagueapi {
     std::string summonerName;
   };
 
-  void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersSuggestedPlayer& v) {
+  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersSuggestedPlayer& v) {
     j["commonFriendId"] = v.commonFriendId;
     j["commonFriendName"] = v.commonFriendName;
     j["reason"] = v.reason;
@@ -25,7 +25,7 @@ namespace leagueapi {
     j["summonerName"] = v.summonerName;
   }
 
-  void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersSuggestedPlayer& v) {
+  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersSuggestedPlayer& v) {
     v.commonFriendId = j.at("commonFriendId").get<uint64_t>;
     v.commonFriendName = j.at("commonFriendName").get<std::string>;
     v.reason = j.at("reason").get<LolSuggestedPlayersSuggestedPlayersReason>;

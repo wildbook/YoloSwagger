@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LcdsLobbyStatus_HPP
 #define SWAGGER_TYPES_LcdsLobbyStatus_HPP
 #include <json.hpp>
-#include "LcdsMember.hpp"
-#include "LcdsInvitee.hpp"
 #include "LcdsPlayer.hpp"
+#include "LcdsInvitee.hpp"
+#include "LcdsMember.hpp"
 namespace leagueapi {
   // 
   struct LcdsLobbyStatus {
@@ -21,7 +21,7 @@ namespace leagueapi {
     LcdsPlayer owner;
   };
 
-  void to_json(nlohmann::json& j, const LcdsLobbyStatus& v) {
+  inline void to_json(nlohmann::json& j, const LcdsLobbyStatus& v) {
     j["chatKey"] = v.chatKey;
     j["gameMetaData"] = v.gameMetaData;
     j["invitationId"] = v.invitationId;
@@ -30,7 +30,7 @@ namespace leagueapi {
     j["owner"] = v.owner;
   }
 
-  void from_json(const nlohmann::json& j, LcdsLobbyStatus& v) {
+  inline void from_json(const nlohmann::json& j, LcdsLobbyStatus& v) {
     v.chatKey = j.at("chatKey").get<std::string>;
     v.gameMetaData = j.at("gameMetaData").get<std::string>;
     v.invitationId = j.at("invitationId").get<std::string>;

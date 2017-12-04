@@ -19,7 +19,7 @@ namespace leagueapi {
     int64_t tournamentId;
   };
 
-  void to_json(nlohmann::json& j, const RosterMemberDTO& v) {
+  inline void to_json(nlohmann::json& j, const RosterMemberDTO& v) {
     j["currentBid"] = v.currentBid;
     j["joinTime"] = v.joinTime;
     j["playerId"] = v.playerId;
@@ -28,7 +28,7 @@ namespace leagueapi {
     j["tournamentId"] = v.tournamentId;
   }
 
-  void from_json(const nlohmann::json& j, RosterMemberDTO& v) {
+  inline void from_json(const nlohmann::json& j, RosterMemberDTO& v) {
     v.currentBid = j.at("currentBid").get<int32_t>;
     v.joinTime = j.at("joinTime").get<int64_t>;
     v.playerId = j.at("playerId").get<uint64_t>;

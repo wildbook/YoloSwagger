@@ -6,10 +6,10 @@ namespace leagueapi {
   struct SuggestedPlayersEndOfGameStats {
   };
 
-  void to_json(nlohmann::json& j, const SuggestedPlayersEndOfGameStats& v) {
+  inline void to_json(nlohmann::json& j, const SuggestedPlayersEndOfGameStats& v) {
   }
 
-  void from_json(const nlohmann::json& j, SuggestedPlayersEndOfGameStats& v) {
+  inline void from_json(const nlohmann::json& j, SuggestedPlayersEndOfGameStats& v) {
   }
 
 }

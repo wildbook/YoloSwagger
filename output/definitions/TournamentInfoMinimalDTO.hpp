@@ -11,12 +11,12 @@ namespace leagueapi {
     std::vector<TournamentInfoDTO> tournamentInfo;
   };
 
-  void to_json(nlohmann::json& j, const TournamentInfoMinimalDTO& v) {
+  inline void to_json(nlohmann::json& j, const TournamentInfoMinimalDTO& v) {
     j["time"] = v.time;
     j["tournamentInfo"] = v.tournamentInfo;
   }
 
-  void from_json(const nlohmann::json& j, TournamentInfoMinimalDTO& v) {
+  inline void from_json(const nlohmann::json& j, TournamentInfoMinimalDTO& v) {
     v.time = j.at("time").get<int64_t>;
     v.tournamentInfo = j.at("tournamentInfo").get<std::vector<TournamentInfoDTO>>;
   }

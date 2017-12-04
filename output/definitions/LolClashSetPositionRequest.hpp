@@ -9,11 +9,11 @@ namespace leagueapi {
     Position position;
   };
 
-  void to_json(nlohmann::json& j, const LolClashSetPositionRequest& v) {
+  inline void to_json(nlohmann::json& j, const LolClashSetPositionRequest& v) {
     j["position"] = v.position;
   }
 
-  void from_json(const nlohmann::json& j, LolClashSetPositionRequest& v) {
+  inline void from_json(const nlohmann::json& j, LolClashSetPositionRequest& v) {
     v.position = j.at("position").get<Position>;
   }
 

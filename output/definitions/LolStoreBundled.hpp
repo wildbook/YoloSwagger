@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolStoreBundled_HPP
 #define SWAGGER_TYPES_LolStoreBundled_HPP
 #include <json.hpp>
-#include "LolStoreBundledItem.hpp"
 #include "LolStoreBundledItemCost.hpp"
+#include "LolStoreBundledItem.hpp"
 namespace leagueapi {
   // 
   struct LolStoreBundled {
@@ -14,13 +14,13 @@ namespace leagueapi {
     std::vector<LolStoreBundledItemCost> minimumPrices;
   };
 
-  void to_json(nlohmann::json& j, const LolStoreBundled& v) {
+  inline void to_json(nlohmann::json& j, const LolStoreBundled& v) {
     j["flexible"] = v.flexible;
     j["items"] = v.items;
     j["minimumPrices"] = v.minimumPrices;
   }
 
-  void from_json(const nlohmann::json& j, LolStoreBundled& v) {
+  inline void from_json(const nlohmann::json& j, LolStoreBundled& v) {
     v.flexible = j.at("flexible").get<bool>;
     v.items = j.at("items").get<std::vector<LolStoreBundledItem>>;
     v.minimumPrices = j.at("minimumPrices").get<std::vector<LolStoreBundledItemCost>>;

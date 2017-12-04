@@ -10,12 +10,12 @@ namespace leagueapi {
     uint64_t summonerId;
   };
 
-  void to_json(nlohmann::json& j, const LolLeaguesLeaguesSummoner& v) {
+  inline void to_json(nlohmann::json& j, const LolLeaguesLeaguesSummoner& v) {
     j["accountId"] = v.accountId;
     j["summonerId"] = v.summonerId;
   }
 
-  void from_json(const nlohmann::json& j, LolLeaguesLeaguesSummoner& v) {
+  inline void from_json(const nlohmann::json& j, LolLeaguesLeaguesSummoner& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.summonerId = j.at("summonerId").get<uint64_t>;
   }

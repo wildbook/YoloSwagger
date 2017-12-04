@@ -2,8 +2,8 @@
 #define SWAGGER_TYPES_LolLobbyQueue_HPP
 #include <json.hpp>
 #include "LolLobbyQueueGameTypeConfig.hpp"
-#include "LolLobbyQueueReward.hpp"
 #include "LolLobbyQueueAvailability.hpp"
+#include "LolLobbyQueueReward.hpp"
 #include "LolLobbyQueueGameCategory.hpp"
 namespace leagueapi {
   // 
@@ -60,7 +60,7 @@ namespace leagueapi {
     std::string type;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyQueue& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyQueue& v) {
     j["allowablePremadeSizes"] = v.allowablePremadeSizes;
     j["areFreeChampionsAllowed"] = v.areFreeChampionsAllowed;
     j["category"] = v.category;
@@ -88,7 +88,7 @@ namespace leagueapi {
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyQueue& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyQueue& v) {
     v.allowablePremadeSizes = j.at("allowablePremadeSizes").get<std::vector<int32_t>>;
     v.areFreeChampionsAllowed = j.at("areFreeChampionsAllowed").get<bool>;
     v.category = j.at("category").get<LolLobbyQueueGameCategory>;

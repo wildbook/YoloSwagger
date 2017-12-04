@@ -11,12 +11,12 @@ namespace leagueapi {
     uint64_t gameId;
   };
 
-  void to_json(nlohmann::json& j, const LolHonorV2Ballot& v) {
+  inline void to_json(nlohmann::json& j, const LolHonorV2Ballot& v) {
     j["eligiblePlayers"] = v.eligiblePlayers;
     j["gameId"] = v.gameId;
   }
 
-  void from_json(const nlohmann::json& j, LolHonorV2Ballot& v) {
+  inline void from_json(const nlohmann::json& j, LolHonorV2Ballot& v) {
     v.eligiblePlayers = j.at("eligiblePlayers").get<std::vector<LolHonorV2EligiblePlayer>>;
     v.gameId = j.at("gameId").get<uint64_t>;
   }

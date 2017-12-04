@@ -8,11 +8,11 @@ namespace leagueapi {
     bool isHttpLoggingEnabled;
   };
 
-  void to_json(nlohmann::json& j, const RecofrienderDebugConfig& v) {
+  inline void to_json(nlohmann::json& j, const RecofrienderDebugConfig& v) {
     j["isHttpLoggingEnabled"] = v.isHttpLoggingEnabled;
   }
 
-  void from_json(const nlohmann::json& j, RecofrienderDebugConfig& v) {
+  inline void from_json(const nlohmann::json& j, RecofrienderDebugConfig& v) {
     v.isHttpLoggingEnabled = j.at("isHttpLoggingEnabled").get<bool>;
   }
 

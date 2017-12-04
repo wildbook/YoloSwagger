@@ -13,13 +13,13 @@ namespace leagueapi {
     LolReplaysMetadataState state;
   };
 
-  void to_json(nlohmann::json& j, const LolReplaysReplayMetadata& v) {
+  inline void to_json(nlohmann::json& j, const LolReplaysReplayMetadata& v) {
     j["downloadProgress"] = v.downloadProgress;
     j["gameId"] = v.gameId;
     j["state"] = v.state;
   }
 
-  void from_json(const nlohmann::json& j, LolReplaysReplayMetadata& v) {
+  inline void from_json(const nlohmann::json& j, LolReplaysReplayMetadata& v) {
     v.downloadProgress = j.at("downloadProgress").get<uint32_t>;
     v.gameId = j.at("gameId").get<uint64_t>;
     v.state = j.at("state").get<LolReplaysMetadataState>;

@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string version;
   };
 
-  void to_json(nlohmann::json& j, const PluginResourceContract& v) {
+  inline void to_json(nlohmann::json& j, const PluginResourceContract& v) {
     j["fullName"] = v.fullName;
     j["version"] = v.version;
   }
 
-  void from_json(const nlohmann::json& j, PluginResourceContract& v) {
+  inline void from_json(const nlohmann::json& j, PluginResourceContract& v) {
     v.fullName = j.at("fullName").get<std::string>;
     v.version = j.at("version").get<std::string>;
   }

@@ -16,7 +16,7 @@ namespace leagueapi {
     int64_t remainingMillis;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyGatekeeperRestrictionDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyGatekeeperRestrictionDto& v) {
     j["accountId"] = v.accountId;
     j["payload"] = v.payload;
     j["queueId"] = v.queueId;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["remainingMillis"] = v.remainingMillis;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyGatekeeperRestrictionDto& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyGatekeeperRestrictionDto& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.payload = j.at("payload").get<std::string>;
     v.queueId = j.at("queueId").get<int32_t>;

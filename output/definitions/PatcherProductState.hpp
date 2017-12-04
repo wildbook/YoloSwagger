@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_PatcherProductState_HPP
 #define SWAGGER_TYPES_PatcherProductState_HPP
 #include <json.hpp>
-#include "PatcherComponentState.hpp"
 #include "PatcherComponentStateAction.hpp"
+#include "PatcherComponentState.hpp"
 namespace leagueapi {
   // 
   struct PatcherProductState {
@@ -24,7 +24,7 @@ namespace leagueapi {
     double percentPatched;
   };
 
-  void to_json(nlohmann::json& j, const PatcherProductState& v) {
+  inline void to_json(nlohmann::json& j, const PatcherProductState& v) {
     j["action"] = v.action;
     j["components"] = v.components;
     j["id"] = v.id;
@@ -35,7 +35,7 @@ namespace leagueapi {
     j["percentPatched"] = v.percentPatched;
   }
 
-  void from_json(const nlohmann::json& j, PatcherProductState& v) {
+  inline void from_json(const nlohmann::json& j, PatcherProductState& v) {
     v.action = j.at("action").get<PatcherComponentStateAction>;
     v.components = j.at("components").get<std::vector<PatcherComponentState>>;
     v.id = j.at("id").get<std::string>;

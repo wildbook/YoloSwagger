@@ -9,11 +9,11 @@ namespace leagueapi {
     LolMatchmakingGameflowGameTypeConfig gameTypeConfig;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchmakingGameflowQueue& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchmakingGameflowQueue& v) {
     j["gameTypeConfig"] = v.gameTypeConfig;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchmakingGameflowQueue& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchmakingGameflowQueue& v) {
     v.gameTypeConfig = j.at("gameTypeConfig").get<LolMatchmakingGameflowGameTypeConfig>;
   }
 

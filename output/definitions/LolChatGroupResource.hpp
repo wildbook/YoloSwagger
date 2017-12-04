@@ -16,7 +16,7 @@ namespace leagueapi {
     int32_t priority;
   };
 
-  void to_json(nlohmann::json& j, const LolChatGroupResource& v) {
+  inline void to_json(nlohmann::json& j, const LolChatGroupResource& v) {
     j["collapsed"] = v.collapsed;
     j["id"] = v.id;
     j["isMetaGroup"] = v.isMetaGroup;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["priority"] = v.priority;
   }
 
-  void from_json(const nlohmann::json& j, LolChatGroupResource& v) {
+  inline void from_json(const nlohmann::json& j, LolChatGroupResource& v) {
     v.collapsed = j.at("collapsed").get<bool>;
     v.id = j.at("id").get<uint32_t>;
     v.isMetaGroup = j.at("isMetaGroup").get<bool>;

@@ -18,7 +18,7 @@ namespace leagueapi {
     WillRestoreClientBackupOnRestart = 4,
   };
 
-  void to_json(nlohmann::json& j, const PatcherNotificationId& v) {
+  inline void to_json(nlohmann::json& j, const PatcherNotificationId& v) {
     switch(v) {
       case PatcherNotificationId::ConnectionError:
         j = "ConnectionError";
@@ -41,7 +41,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, PatcherNotificationId& v) {
+  inline void from_json(const nlohmann::json& j, PatcherNotificationId& v) {
     const auto s& = j.get<std::string>();
     if(s == "ConnectionError"){
       v = PatcherNotificationId::ConnectionError;

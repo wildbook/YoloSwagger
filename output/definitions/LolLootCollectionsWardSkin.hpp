@@ -17,7 +17,7 @@ namespace leagueapi {
     std::string wardShadowImagePath;
   };
 
-  void to_json(nlohmann::json& j, const LolLootCollectionsWardSkin& v) {
+  inline void to_json(nlohmann::json& j, const LolLootCollectionsWardSkin& v) {
     j["id"] = v.id;
     j["name"] = v.name;
     j["ownership"] = v.ownership;
@@ -25,7 +25,7 @@ namespace leagueapi {
     j["wardShadowImagePath"] = v.wardShadowImagePath;
   }
 
-  void from_json(const nlohmann::json& j, LolLootCollectionsWardSkin& v) {
+  inline void from_json(const nlohmann::json& j, LolLootCollectionsWardSkin& v) {
     v.id = j.at("id").get<int64_t>;
     v.name = j.at("name").get<std::string>;
     v.ownership = j.at("ownership").get<LolLootCollectionsOwnership>;

@@ -29,7 +29,7 @@ namespace leagueapi {
     std::string type;
   };
 
-  void to_json(nlohmann::json& j, const LolQueueEligibilityQueue& v) {
+  inline void to_json(nlohmann::json& j, const LolQueueEligibilityQueue& v) {
     j["areFreeChampionsAllowed"] = v.areFreeChampionsAllowed;
     j["championsRequiredToPlay"] = v.championsRequiredToPlay;
     j["id"] = v.id;
@@ -43,7 +43,7 @@ namespace leagueapi {
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, LolQueueEligibilityQueue& v) {
+  inline void from_json(const nlohmann::json& j, LolQueueEligibilityQueue& v) {
     v.areFreeChampionsAllowed = j.at("areFreeChampionsAllowed").get<bool>;
     v.championsRequiredToPlay = j.at("championsRequiredToPlay").get<uint32_t>;
     v.id = j.at("id").get<int32_t>;

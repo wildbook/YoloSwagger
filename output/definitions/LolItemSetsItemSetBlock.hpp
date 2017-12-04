@@ -15,14 +15,14 @@ namespace leagueapi {
     std::string type;
   };
 
-  void to_json(nlohmann::json& j, const LolItemSetsItemSetBlock& v) {
+  inline void to_json(nlohmann::json& j, const LolItemSetsItemSetBlock& v) {
     j["hideIfSummonerSpell"] = v.hideIfSummonerSpell;
     j["items"] = v.items;
     j["showIfSummonerSpell"] = v.showIfSummonerSpell;
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, LolItemSetsItemSetBlock& v) {
+  inline void from_json(const nlohmann::json& j, LolItemSetsItemSetBlock& v) {
     v.hideIfSummonerSpell = j.at("hideIfSummonerSpell").get<std::string>;
     v.items = j.at("items").get<std::vector<LolItemSetsItemSetItem>>;
     v.showIfSummonerSpell = j.at("showIfSummonerSpell").get<std::string>;

@@ -9,11 +9,11 @@ namespace leagueapi {
     LolSuggestedPlayersSuggestedPlayersConfig SuggestedPlayers;
   };
 
-  void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersDynamicClientConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersDynamicClientConfig& v) {
     j["SuggestedPlayers"] = v.SuggestedPlayers;
   }
 
-  void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersDynamicClientConfig& v) {
+  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersDynamicClientConfig& v) {
     v.SuggestedPlayers = j.at("SuggestedPlayers").get<LolSuggestedPlayersSuggestedPlayersConfig>;
   }
 

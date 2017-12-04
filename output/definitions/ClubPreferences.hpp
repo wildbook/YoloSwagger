@@ -10,12 +10,12 @@ namespace leagueapi {
     bool shareClubAffiliation;
   };
 
-  void to_json(nlohmann::json& j, const ClubPreferences& v) {
+  inline void to_json(nlohmann::json& j, const ClubPreferences& v) {
     j["primaryClubKey"] = v.primaryClubKey;
     j["shareClubAffiliation"] = v.shareClubAffiliation;
   }
 
-  void from_json(const nlohmann::json& j, ClubPreferences& v) {
+  inline void from_json(const nlohmann::json& j, ClubPreferences& v) {
     v.primaryClubKey = j.at("primaryClubKey").get<std::string>;
     v.shareClubAffiliation = j.at("shareClubAffiliation").get<bool>;
   }

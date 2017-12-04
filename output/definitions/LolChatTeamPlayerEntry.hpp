@@ -12,13 +12,13 @@ namespace leagueapi {
     std::string summonerName;
   };
 
-  void to_json(nlohmann::json& j, const LolChatTeamPlayerEntry& v) {
+  inline void to_json(nlohmann::json& j, const LolChatTeamPlayerEntry& v) {
     j["summonerId"] = v.summonerId;
     j["summonerInternalName"] = v.summonerInternalName;
     j["summonerName"] = v.summonerName;
   }
 
-  void from_json(const nlohmann::json& j, LolChatTeamPlayerEntry& v) {
+  inline void from_json(const nlohmann::json& j, LolChatTeamPlayerEntry& v) {
     v.summonerId = j.at("summonerId").get<uint64_t>;
     v.summonerInternalName = j.at("summonerInternalName").get<std::string>;
     v.summonerName = j.at("summonerName").get<std::string>;

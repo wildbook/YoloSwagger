@@ -26,7 +26,7 @@ namespace leagueapi {
     uint32_t spotIndex;
   };
 
-  void to_json(nlohmann::json& j, const LolPersonalizedOffersOffer& v) {
+  inline void to_json(nlohmann::json& j, const LolPersonalizedOffersOffer& v) {
     j["discountPrice"] = v.discountPrice;
     j["expirationDate"] = v.expirationDate;
     j["inventoryType"] = v.inventoryType;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["spotIndex"] = v.spotIndex;
   }
 
-  void from_json(const nlohmann::json& j, LolPersonalizedOffersOffer& v) {
+  inline void from_json(const nlohmann::json& j, LolPersonalizedOffersOffer& v) {
     v.discountPrice = j.at("discountPrice").get<int64_t>;
     v.expirationDate = j.at("expirationDate").get<std::string>;
     v.inventoryType = j.at("inventoryType").get<std::string>;

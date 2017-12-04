@@ -10,12 +10,12 @@ namespace leagueapi {
     uint32_t runeId;
   };
 
-  void to_json(nlohmann::json& j, const LolCollectionsCollectionsRuneQuantity& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsRuneQuantity& v) {
     j["quantity"] = v.quantity;
     j["runeId"] = v.runeId;
   }
 
-  void from_json(const nlohmann::json& j, LolCollectionsCollectionsRuneQuantity& v) {
+  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsRuneQuantity& v) {
     v.quantity = j.at("quantity").get<int32_t>;
     v.runeId = j.at("runeId").get<uint32_t>;
   }

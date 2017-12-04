@@ -20,7 +20,7 @@ namespace leagueapi {
     uint64_t teamId;
   };
 
-  void to_json(nlohmann::json& j, const MatchmakingLcdsMatchMakerParams& v) {
+  inline void to_json(nlohmann::json& j, const MatchmakingLcdsMatchMakerParams& v) {
     j["botDifficulty"] = v.botDifficulty;
     j["invitationId"] = v.invitationId;
     j["languages"] = v.languages;
@@ -30,7 +30,7 @@ namespace leagueapi {
     j["teamId"] = v.teamId;
   }
 
-  void from_json(const nlohmann::json& j, MatchmakingLcdsMatchMakerParams& v) {
+  inline void from_json(const nlohmann::json& j, MatchmakingLcdsMatchMakerParams& v) {
     v.botDifficulty = j.at("botDifficulty").get<std::string>;
     v.invitationId = j.at("invitationId").get<std::string>;
     v.languages = j.at("languages").get<std::string>;

@@ -14,7 +14,7 @@ namespace leagueapi {
     WatchStarted = 1,
   };
 
-  void to_json(nlohmann::json& j, const LolReplaysGameflowWatchPhase& v) {
+  inline void to_json(nlohmann::json& j, const LolReplaysGameflowWatchPhase& v) {
     switch(v) {
       case LolReplaysGameflowWatchPhase::None:
         j = "None";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolReplaysGameflowWatchPhase& v) {
+  inline void from_json(const nlohmann::json& j, LolReplaysGameflowWatchPhase& v) {
     const auto s& = j.get<std::string>();
     if(s == "None"){
       v = LolReplaysGameflowWatchPhase::None;

@@ -30,7 +30,7 @@ namespace leagueapi {
     std::string tooltip;
   };
 
-  void to_json(nlohmann::json& j, const LolPerksPerkStyleResource& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksPerkStyleResource& v) {
     j["allowedSubStyles"] = v.allowedSubStyles;
     j["defaultPageName"] = v.defaultPageName;
     j["defaultPerks"] = v.defaultPerks;
@@ -44,7 +44,7 @@ namespace leagueapi {
     j["tooltip"] = v.tooltip;
   }
 
-  void from_json(const nlohmann::json& j, LolPerksPerkStyleResource& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksPerkStyleResource& v) {
     v.allowedSubStyles = j.at("allowedSubStyles").get<std::vector<int32_t>>;
     v.defaultPageName = j.at("defaultPageName").get<std::string>;
     v.defaultPerks = j.at("defaultPerks").get<std::vector<int32_t>>;

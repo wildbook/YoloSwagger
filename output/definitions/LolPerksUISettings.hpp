@@ -12,13 +12,13 @@ namespace leagueapi {
     bool showPresetPages;
   };
 
-  void to_json(nlohmann::json& j, const LolPerksUISettings& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksUISettings& v) {
     j["gridModeEnabled"] = v.gridModeEnabled;
     j["showLongDescriptions"] = v.showLongDescriptions;
     j["showPresetPages"] = v.showPresetPages;
   }
 
-  void from_json(const nlohmann::json& j, LolPerksUISettings& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksUISettings& v) {
     v.gridModeEnabled = j.at("gridModeEnabled").get<bool>;
     v.showLongDescriptions = j.at("showLongDescriptions").get<bool>;
     v.showPresetPages = j.at("showPresetPages").get<bool>;

@@ -10,7 +10,7 @@ namespace leagueapi {
     TermsOfUse = 1,
   };
 
-  void to_json(nlohmann::json& j, const LolLicenseAgreementLicenseAgreementType& v) {
+  inline void to_json(nlohmann::json& j, const LolLicenseAgreementLicenseAgreementType& v) {
     switch(v) {
       case LolLicenseAgreementLicenseAgreementType::Eula:
         j = "Eula";
@@ -21,7 +21,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLicenseAgreementLicenseAgreementType& v) {
+  inline void from_json(const nlohmann::json& j, LolLicenseAgreementLicenseAgreementType& v) {
     const auto s& = j.get<std::string>();
     if(s == "Eula"){
       v = LolLicenseAgreementLicenseAgreementType::Eula;

@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolGameQueuesQueueCustomGameSubcategory_HPP
 #define SWAGGER_TYPES_LolGameQueuesQueueCustomGameSubcategory_HPP
 #include <json.hpp>
-#include "LolGameQueuesQueueAvailability.hpp"
 #include "LolGameQueuesQueueGameTypeConfig.hpp"
+#include "LolGameQueuesQueueAvailability.hpp"
 namespace leagueapi {
   // 
   struct LolGameQueuesQueueCustomGameSubcategory {
@@ -30,7 +30,7 @@ namespace leagueapi {
     LolGameQueuesQueueAvailability queueAvailability;
   };
 
-  void to_json(nlohmann::json& j, const LolGameQueuesQueueCustomGameSubcategory& v) {
+  inline void to_json(nlohmann::json& j, const LolGameQueuesQueueCustomGameSubcategory& v) {
     j["gameMode"] = v.gameMode;
     j["gameMutator"] = v.gameMutator;
     j["mapId"] = v.mapId;
@@ -44,7 +44,7 @@ namespace leagueapi {
     j["queueAvailability"] = v.queueAvailability;
   }
 
-  void from_json(const nlohmann::json& j, LolGameQueuesQueueCustomGameSubcategory& v) {
+  inline void from_json(const nlohmann::json& j, LolGameQueuesQueueCustomGameSubcategory& v) {
     v.gameMode = j.at("gameMode").get<std::string>;
     v.gameMutator = j.at("gameMutator").get<std::string>;
     v.mapId = j.at("mapId").get<int32_t>;

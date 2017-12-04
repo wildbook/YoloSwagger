@@ -25,7 +25,7 @@ namespace leagueapi {
     std::vector<nlohmann::json> teamTwo;
   };
 
-  void to_json(nlohmann::json& j, const LolGameflowGameflowGameData& v) {
+  inline void to_json(nlohmann::json& j, const LolGameflowGameflowGameData& v) {
     j["gameId"] = v.gameId;
     j["gameName"] = v.gameName;
     j["isCustomGame"] = v.isCustomGame;
@@ -37,7 +37,7 @@ namespace leagueapi {
     j["teamTwo"] = v.teamTwo;
   }
 
-  void from_json(const nlohmann::json& j, LolGameflowGameflowGameData& v) {
+  inline void from_json(const nlohmann::json& j, LolGameflowGameflowGameData& v) {
     v.gameId = j.at("gameId").get<uint64_t>;
     v.gameName = j.at("gameName").get<std::string>;
     v.isCustomGame = j.at("isCustomGame").get<bool>;

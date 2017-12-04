@@ -16,7 +16,7 @@ namespace leagueapi {
     VictoriousComrade = 5,
   };
 
-  void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersReason& v) {
+  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersReason& v) {
     switch(v) {
       case LolSuggestedPlayersSuggestedPlayersReason::FriendOfFriend:
         j = "FriendOfFriend";
@@ -36,7 +36,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersReason& v) {
+  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersReason& v) {
     const auto s& = j.get<std::string>();
     if(s == "FriendOfFriend"){
       v = LolSuggestedPlayersSuggestedPlayersReason::FriendOfFriend;

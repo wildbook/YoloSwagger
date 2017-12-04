@@ -33,7 +33,7 @@ namespace leagueapi {
     std::string username;
   };
 
-  void to_json(nlohmann::json& j, const LolLoginLoginSession& v) {
+  inline void to_json(nlohmann::json& j, const LolLoginLoginSession& v) {
     j["accountId"] = v.accountId;
     j["connected"] = v.connected;
     j["error"] = v.error;
@@ -48,7 +48,7 @@ namespace leagueapi {
     j["username"] = v.username;
   }
 
-  void from_json(const nlohmann::json& j, LolLoginLoginSession& v) {
+  inline void from_json(const nlohmann::json& j, LolLoginLoginSession& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.connected = j.at("connected").get<bool>;
     v.error = j.at("error").get<LolLoginLoginError>;

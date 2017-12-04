@@ -20,7 +20,7 @@ namespace leagueapi {
     std::string region;
   };
 
-  void to_json(nlohmann::json& j, const SanitizerSanitizerStatus& v) {
+  inline void to_json(nlohmann::json& j, const SanitizerSanitizerStatus& v) {
     j["allowedCharsCount"] = v.allowedCharsCount;
     j["breakingCharsCount"] = v.breakingCharsCount;
     j["filteredWordCountsByLevel"] = v.filteredWordCountsByLevel;
@@ -30,7 +30,7 @@ namespace leagueapi {
     j["region"] = v.region;
   }
 
-  void from_json(const nlohmann::json& j, SanitizerSanitizerStatus& v) {
+  inline void from_json(const nlohmann::json& j, SanitizerSanitizerStatus& v) {
     v.allowedCharsCount = j.at("allowedCharsCount").get<uint32_t>;
     v.breakingCharsCount = j.at("breakingCharsCount").get<uint32_t>;
     v.filteredWordCountsByLevel = j.at("filteredWordCountsByLevel").get<std::map<std::string, uint32_t>>;

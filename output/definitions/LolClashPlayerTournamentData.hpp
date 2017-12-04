@@ -13,13 +13,13 @@ namespace leagueapi {
     LolClashPlayerState state;
   };
 
-  void to_json(nlohmann::json& j, const LolClashPlayerTournamentData& v) {
+  inline void to_json(nlohmann::json& j, const LolClashPlayerTournamentData& v) {
     j["bracketId"] = v.bracketId;
     j["rosterId"] = v.rosterId;
     j["state"] = v.state;
   }
 
-  void from_json(const nlohmann::json& j, LolClashPlayerTournamentData& v) {
+  inline void from_json(const nlohmann::json& j, LolClashPlayerTournamentData& v) {
     v.bracketId = j.at("bracketId").get<int64_t>;
     v.rosterId = j.at("rosterId").get<std::string>;
     v.state = j.at("state").get<LolClashPlayerState>;

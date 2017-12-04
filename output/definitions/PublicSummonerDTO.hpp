@@ -22,7 +22,7 @@ namespace leagueapi {
     uint32_t summonerLevel;
   };
 
-  void to_json(nlohmann::json& j, const PublicSummonerDTO& v) {
+  inline void to_json(nlohmann::json& j, const PublicSummonerDTO& v) {
     j["acctId"] = v.acctId;
     j["internalName"] = v.internalName;
     j["name"] = v.name;
@@ -33,7 +33,7 @@ namespace leagueapi {
     j["summonerLevel"] = v.summonerLevel;
   }
 
-  void from_json(const nlohmann::json& j, PublicSummonerDTO& v) {
+  inline void from_json(const nlohmann::json& j, PublicSummonerDTO& v) {
     v.acctId = j.at("acctId").get<uint64_t>;
     v.internalName = j.at("internalName").get<std::string>;
     v.name = j.at("name").get<std::string>;

@@ -36,7 +36,7 @@ namespace leagueapi {
     std::vector<std::string> tags;
   };
 
-  void to_json(nlohmann::json& j, const LolStoreCatalogItem& v) {
+  inline void to_json(nlohmann::json& j, const LolStoreCatalogItem& v) {
     j["active"] = v.active;
     j["bundled"] = v.bundled;
     j["inactiveDate"] = v.inactiveDate;
@@ -52,7 +52,7 @@ namespace leagueapi {
     j["tags"] = v.tags;
   }
 
-  void from_json(const nlohmann::json& j, LolStoreCatalogItem& v) {
+  inline void from_json(const nlohmann::json& j, LolStoreCatalogItem& v) {
     v.active = j.at("active").get<bool>;
     v.bundled = j.at("bundled").get<LolStoreBundled>;
     v.inactiveDate = j.at("inactiveDate").get<std::string>;

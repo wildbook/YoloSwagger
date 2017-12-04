@@ -10,7 +10,7 @@ namespace leagueapi {
     Currency = 1,
   };
 
-  void to_json(nlohmann::json& j, const LolLootLootType& v) {
+  inline void to_json(nlohmann::json& j, const LolLootLootType& v) {
     switch(v) {
       case LolLootLootType::Chest:
         j = "Chest";
@@ -21,7 +21,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLootLootType& v) {
+  inline void from_json(const nlohmann::json& j, LolLootLootType& v) {
     const auto s& = j.get<std::string>();
     if(s == "Chest"){
       v = LolLootLootType::Chest;

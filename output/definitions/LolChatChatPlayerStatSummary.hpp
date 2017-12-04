@@ -18,7 +18,7 @@ namespace leagueapi {
     uint64_t wins;
   };
 
-  void to_json(nlohmann::json& j, const LolChatChatPlayerStatSummary& v) {
+  inline void to_json(nlohmann::json& j, const LolChatChatPlayerStatSummary& v) {
     j["leaves"] = v.leaves;
     j["losses"] = v.losses;
     j["maxRating"] = v.maxRating;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["wins"] = v.wins;
   }
 
-  void from_json(const nlohmann::json& j, LolChatChatPlayerStatSummary& v) {
+  inline void from_json(const nlohmann::json& j, LolChatChatPlayerStatSummary& v) {
     v.leaves = j.at("leaves").get<uint64_t>;
     v.losses = j.at("losses").get<uint64_t>;
     v.maxRating = j.at("maxRating").get<uint64_t>;

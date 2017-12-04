@@ -9,11 +9,11 @@ namespace leagueapi {
     std::vector<LolLobbyTeamBuilderGatekeeperRestriction> gatekeeperRestrictions;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderGatekeeperRestricted& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderGatekeeperRestricted& v) {
     j["gatekeeperRestrictions"] = v.gatekeeperRestrictions;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderGatekeeperRestricted& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderGatekeeperRestricted& v) {
     v.gatekeeperRestrictions = j.at("gatekeeperRestrictions").get<std::vector<LolLobbyTeamBuilderGatekeeperRestriction>>;
   }
 

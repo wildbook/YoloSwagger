@@ -12,13 +12,13 @@ namespace leagueapi {
     std::string username;
   };
 
-  void to_json(nlohmann::json& j, const RsoAuthRSOPlayerCredentials& v) {
+  inline void to_json(nlohmann::json& j, const RsoAuthRSOPlayerCredentials& v) {
     j["password"] = v.password;
     j["platformId"] = v.platformId;
     j["username"] = v.username;
   }
 
-  void from_json(const nlohmann::json& j, RsoAuthRSOPlayerCredentials& v) {
+  inline void from_json(const nlohmann::json& j, RsoAuthRSOPlayerCredentials& v) {
     v.password = j.at("password").get<std::string>;
     v.platformId = j.at("platformId").get<std::string>;
     v.username = j.at("username").get<std::string>;

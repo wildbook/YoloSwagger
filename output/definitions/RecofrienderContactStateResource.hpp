@@ -12,13 +12,13 @@ namespace leagueapi {
     std::string displayState;
   };
 
-  void to_json(nlohmann::json& j, const RecofrienderContactStateResource& v) {
+  inline void to_json(nlohmann::json& j, const RecofrienderContactStateResource& v) {
     j["accountId"] = v.accountId;
     j["action"] = v.action;
     j["displayState"] = v.displayState;
   }
 
-  void from_json(const nlohmann::json& j, RecofrienderContactStateResource& v) {
+  inline void from_json(const nlohmann::json& j, RecofrienderContactStateResource& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.action = j.at("action").get<std::string>;
     v.displayState = j.at("displayState").get<std::string>;

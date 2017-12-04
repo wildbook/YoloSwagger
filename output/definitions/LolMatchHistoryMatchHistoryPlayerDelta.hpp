@@ -13,13 +13,13 @@ namespace leagueapi {
     std::string originalPlatformId;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryPlayerDelta& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryPlayerDelta& v) {
     j["deltas"] = v.deltas;
     j["originalAccountId"] = v.originalAccountId;
     j["originalPlatformId"] = v.originalPlatformId;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryPlayerDelta& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryPlayerDelta& v) {
     v.deltas = j.at("deltas").get<std::vector<LolMatchHistoryMatchHistoryPlayerGameDelta>>;
     v.originalAccountId = j.at("originalAccountId").get<uint64_t>;
     v.originalPlatformId = j.at("originalPlatformId").get<std::string>;

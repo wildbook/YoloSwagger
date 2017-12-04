@@ -16,7 +16,7 @@ namespace leagueapi {
     READY = 2,
   };
 
-  void to_json(nlohmann::json& j, const PendingRosterMemberState& v) {
+  inline void to_json(nlohmann::json& j, const PendingRosterMemberState& v) {
     switch(v) {
       case PendingRosterMemberState::FORCED_NOT_READY:
         j = "FORCED_NOT_READY";
@@ -36,7 +36,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, PendingRosterMemberState& v) {
+  inline void from_json(const nlohmann::json& j, PendingRosterMemberState& v) {
     const auto s& = j.get<std::string>();
     if(s == "FORCED_NOT_READY"){
       v = PendingRosterMemberState::FORCED_NOT_READY;

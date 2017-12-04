@@ -24,7 +24,7 @@ namespace leagueapi {
     uint64_t playerId;
   };
 
-  void to_json(nlohmann::json& j, const LolLootLootGrantNotification& v) {
+  inline void to_json(nlohmann::json& j, const LolLootLootGrantNotification& v) {
     j["accountId"] = v.accountId;
     j["championId"] = v.championId;
     j["gameId"] = v.gameId;
@@ -36,7 +36,7 @@ namespace leagueapi {
     j["playerId"] = v.playerId;
   }
 
-  void from_json(const nlohmann::json& j, LolLootLootGrantNotification& v) {
+  inline void from_json(const nlohmann::json& j, LolLootLootGrantNotification& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.championId = j.at("championId").get<int32_t>;
     v.gameId = j.at("gameId").get<uint64_t>;

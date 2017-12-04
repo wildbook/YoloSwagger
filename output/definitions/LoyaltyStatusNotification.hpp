@@ -12,12 +12,12 @@ namespace leagueapi {
     LoyaltyStatus status;
   };
 
-  void to_json(nlohmann::json& j, const LoyaltyStatusNotification& v) {
+  inline void to_json(nlohmann::json& j, const LoyaltyStatusNotification& v) {
     j["rewards"] = v.rewards;
     j["status"] = v.status;
   }
 
-  void from_json(const nlohmann::json& j, LoyaltyStatusNotification& v) {
+  inline void from_json(const nlohmann::json& j, LoyaltyStatusNotification& v) {
     v.rewards = j.at("rewards").get<LoyaltyRewards>;
     v.status = j.at("status").get<LoyaltyStatus>;
   }

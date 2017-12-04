@@ -12,7 +12,7 @@ namespace leagueapi {
     YAML = 2,
   };
 
-  void to_json(nlohmann::json& j, const RemotingSerializedFormat& v) {
+  inline void to_json(nlohmann::json& j, const RemotingSerializedFormat& v) {
     switch(v) {
       case RemotingSerializedFormat::JSON:
         j = "JSON";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, RemotingSerializedFormat& v) {
+  inline void from_json(const nlohmann::json& j, RemotingSerializedFormat& v) {
     const auto s& = j.get<std::string>();
     if(s == "JSON"){
       v = RemotingSerializedFormat::JSON;

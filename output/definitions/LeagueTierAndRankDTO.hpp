@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LeagueTierAndRankDTO_HPP
 #define SWAGGER_TYPES_LeagueTierAndRankDTO_HPP
 #include <json.hpp>
-#include "LeaguesLcdsLeagueTier.hpp"
 #include "LeaguesLcdsQueueType.hpp"
+#include "LeaguesLcdsLeagueTier.hpp"
 #include "LeaguesLcdsLeagueRank.hpp"
 namespace leagueapi {
   // 
@@ -19,7 +19,7 @@ namespace leagueapi {
     LeaguesLcdsLeagueTier tier;
   };
 
-  void to_json(nlohmann::json& j, const LeagueTierAndRankDTO& v) {
+  inline void to_json(nlohmann::json& j, const LeagueTierAndRankDTO& v) {
     j["playerOrTeamId"] = v.playerOrTeamId;
     j["playerOrTeamName"] = v.playerOrTeamName;
     j["queueType"] = v.queueType;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["tier"] = v.tier;
   }
 
-  void from_json(const nlohmann::json& j, LeagueTierAndRankDTO& v) {
+  inline void from_json(const nlohmann::json& j, LeagueTierAndRankDTO& v) {
     v.playerOrTeamId = j.at("playerOrTeamId").get<std::string>;
     v.playerOrTeamName = j.at("playerOrTeamName").get<std::string>;
     v.queueType = j.at("queueType").get<LeaguesLcdsQueueType>;

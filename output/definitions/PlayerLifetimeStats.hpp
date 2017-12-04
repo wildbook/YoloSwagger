@@ -9,11 +9,11 @@ namespace leagueapi {
     PlayerStatSummaries playerStatSummaries;
   };
 
-  void to_json(nlohmann::json& j, const PlayerLifetimeStats& v) {
+  inline void to_json(nlohmann::json& j, const PlayerLifetimeStats& v) {
     j["playerStatSummaries"] = v.playerStatSummaries;
   }
 
-  void from_json(const nlohmann::json& j, PlayerLifetimeStats& v) {
+  inline void from_json(const nlohmann::json& j, PlayerLifetimeStats& v) {
     v.playerStatSummaries = j.at("playerStatSummaries").get<PlayerStatSummaries>;
   }
 

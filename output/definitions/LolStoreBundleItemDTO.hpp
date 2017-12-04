@@ -26,7 +26,7 @@ namespace leagueapi {
     int64_t rp;
   };
 
-  void to_json(nlohmann::json& j, const LolStoreBundleItemDTO& v) {
+  inline void to_json(nlohmann::json& j, const LolStoreBundleItemDTO& v) {
     j["description"] = v.description;
     j["discountedRp"] = v.discountedRp;
     j["iconUrl"] = v.iconUrl;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["rp"] = v.rp;
   }
 
-  void from_json(const nlohmann::json& j, LolStoreBundleItemDTO& v) {
+  inline void from_json(const nlohmann::json& j, LolStoreBundleItemDTO& v) {
     v.description = j.at("description").get<std::string>;
     v.discountedRp = j.at("discountedRp").get<int64_t>;
     v.iconUrl = j.at("iconUrl").get<std::string>;

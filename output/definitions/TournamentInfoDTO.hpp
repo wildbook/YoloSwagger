@@ -2,8 +2,8 @@
 #define SWAGGER_TYPES_TournamentInfoDTO_HPP
 #include <json.hpp>
 #include "RosterDTO.hpp"
-#include "TournamentDTO.hpp"
 #include "PendingRosterDTO.hpp"
+#include "TournamentDTO.hpp"
 namespace leagueapi {
   // 
   struct TournamentInfoDTO {
@@ -19,7 +19,7 @@ namespace leagueapi {
     TournamentDTO tournament;
   };
 
-  void to_json(nlohmann::json& j, const TournamentInfoDTO& v) {
+  inline void to_json(nlohmann::json& j, const TournamentInfoDTO& v) {
     j["inviteePendingRosters"] = v.inviteePendingRosters;
     j["pendingRoster"] = v.pendingRoster;
     j["roster"] = v.roster;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["tournament"] = v.tournament;
   }
 
-  void from_json(const nlohmann::json& j, TournamentInfoDTO& v) {
+  inline void from_json(const nlohmann::json& j, TournamentInfoDTO& v) {
     v.inviteePendingRosters = j.at("inviteePendingRosters").get<std::vector<PendingRosterDTO>>;
     v.pendingRoster = j.at("pendingRoster").get<PendingRosterDTO>;
     v.roster = j.at("roster").get<RosterDTO>;

@@ -13,13 +13,13 @@ namespace leagueapi {
     int32_t queueId;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyChangeGameDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyChangeGameDto& v) {
     j["customGameLobby"] = v.customGameLobby;
     j["isCustom"] = v.isCustom;
     j["queueId"] = v.queueId;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyChangeGameDto& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyChangeGameDto& v) {
     v.customGameLobby = j.at("customGameLobby").get<LolLobbyLobbyCustomGameLobby>;
     v.isCustom = j.at("isCustom").get<bool>;
     v.queueId = j.at("queueId").get<int32_t>;

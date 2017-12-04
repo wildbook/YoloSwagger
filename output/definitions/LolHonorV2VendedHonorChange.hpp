@@ -16,14 +16,14 @@ namespace leagueapi {
     LolHonorV2Reward reward;
   };
 
-  void to_json(nlohmann::json& j, const LolHonorV2VendedHonorChange& v) {
+  inline void to_json(nlohmann::json& j, const LolHonorV2VendedHonorChange& v) {
     j["actionType"] = v.actionType;
     j["currentState"] = v.currentState;
     j["previousState"] = v.previousState;
     j["reward"] = v.reward;
   }
 
-  void from_json(const nlohmann::json& j, LolHonorV2VendedHonorChange& v) {
+  inline void from_json(const nlohmann::json& j, LolHonorV2VendedHonorChange& v) {
     v.actionType = j.at("actionType").get<std::string>;
     v.currentState = j.at("currentState").get<LolHonorV2VendedHonorState>;
     v.previousState = j.at("previousState").get<LolHonorV2VendedHonorState>;

@@ -14,7 +14,7 @@ namespace leagueapi {
     UnspecifiedError = 0,
   };
 
-  void to_json(nlohmann::json& j, const PatcherInjectedPatcherError& v) {
+  inline void to_json(nlohmann::json& j, const PatcherInjectedPatcherError& v) {
     switch(v) {
       case PatcherInjectedPatcherError::FailedFailedToWriteFile:
         j = "FailedFailedToWriteFile";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, PatcherInjectedPatcherError& v) {
+  inline void from_json(const nlohmann::json& j, PatcherInjectedPatcherError& v) {
     const auto s& = j.get<std::string>();
     if(s == "FailedFailedToWriteFile"){
       v = PatcherInjectedPatcherError::FailedFailedToWriteFile;

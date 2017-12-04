@@ -8,11 +8,11 @@ namespace leagueapi {
     uint64_t id;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyLastQueuedMember& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyLastQueuedMember& v) {
     j["id"] = v.id;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyLastQueuedMember& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyLastQueuedMember& v) {
     v.id = j.at("id").get<uint64_t>;
   }
 

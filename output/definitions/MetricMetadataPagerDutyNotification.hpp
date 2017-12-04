@@ -8,11 +8,11 @@ namespace leagueapi {
     std::string apikey;
   };
 
-  void to_json(nlohmann::json& j, const MetricMetadataPagerDutyNotification& v) {
+  inline void to_json(nlohmann::json& j, const MetricMetadataPagerDutyNotification& v) {
     j["apikey"] = v.apikey;
   }
 
-  void from_json(const nlohmann::json& j, MetricMetadataPagerDutyNotification& v) {
+  inline void from_json(const nlohmann::json& j, MetricMetadataPagerDutyNotification& v) {
     v.apikey = j.at("apikey").get<std::string>;
   }
 

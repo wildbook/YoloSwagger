@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolClashTournamentGameEndNotification_HPP
 #define SWAGGER_TYPES_LolClashTournamentGameEndNotification_HPP
 #include <json.hpp>
-#include "LolClashRosterNotifyReason.hpp"
 #include "Bracket.hpp"
+#include "LolClashRosterNotifyReason.hpp"
 namespace leagueapi {
   // 
   struct LolClashTournamentGameEndNotification {
@@ -18,7 +18,7 @@ namespace leagueapi {
     int64_t tournamentId;
   };
 
-  void to_json(nlohmann::json& j, const LolClashTournamentGameEndNotification& v) {
+  inline void to_json(nlohmann::json& j, const LolClashTournamentGameEndNotification& v) {
     j["bracket"] = v.bracket;
     j["currentMatchId"] = v.currentMatchId;
     j["notifyReason"] = v.notifyReason;
@@ -26,7 +26,7 @@ namespace leagueapi {
     j["tournamentId"] = v.tournamentId;
   }
 
-  void from_json(const nlohmann::json& j, LolClashTournamentGameEndNotification& v) {
+  inline void from_json(const nlohmann::json& j, LolClashTournamentGameEndNotification& v) {
     v.bracket = j.at("bracket").get<Bracket>;
     v.currentMatchId = j.at("currentMatchId").get<int64_t>;
     v.notifyReason = j.at("notifyReason").get<LolClashRosterNotifyReason>;

@@ -19,7 +19,7 @@ namespace leagueapi {
     std::string rewardType;
   };
 
-  void to_json(nlohmann::json& j, const PlayerMissionRewardDTO& v) {
+  inline void to_json(nlohmann::json& j, const PlayerMissionRewardDTO& v) {
     j["description"] = v.description;
     j["iconUrl"] = v.iconUrl;
     j["itemId"] = v.itemId;
@@ -28,7 +28,7 @@ namespace leagueapi {
     j["rewardType"] = v.rewardType;
   }
 
-  void from_json(const nlohmann::json& j, PlayerMissionRewardDTO& v) {
+  inline void from_json(const nlohmann::json& j, PlayerMissionRewardDTO& v) {
     v.description = j.at("description").get<std::string>;
     v.iconUrl = j.at("iconUrl").get<std::string>;
     v.itemId = j.at("itemId").get<std::string>;

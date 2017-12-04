@@ -20,7 +20,7 @@ namespace leagueapi {
     UTILITY = 4,
   };
 
-  void to_json(nlohmann::json& j, const Position& v) {
+  inline void to_json(nlohmann::json& j, const Position& v) {
     switch(v) {
       case Position::BOTTOM:
         j = "BOTTOM";
@@ -46,7 +46,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, Position& v) {
+  inline void from_json(const nlohmann::json& j, Position& v) {
     const auto s& = j.get<std::string>();
     if(s == "BOTTOM"){
       v = Position::BOTTOM;

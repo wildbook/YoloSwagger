@@ -10,12 +10,12 @@ namespace leagueapi {
     std::vector<uint64_t> initiatorSummonerIds;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderBackwardsTransitionInfoV1& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderBackwardsTransitionInfoV1& v) {
     j["backwardsTransitionReason"] = v.backwardsTransitionReason;
     j["initiatorSummonerIds"] = v.initiatorSummonerIds;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderBackwardsTransitionInfoV1& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderBackwardsTransitionInfoV1& v) {
     v.backwardsTransitionReason = j.at("backwardsTransitionReason").get<std::string>;
     v.initiatorSummonerIds = j.at("initiatorSummonerIds").get<std::vector<uint64_t>>;
   }

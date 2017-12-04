@@ -14,14 +14,14 @@ namespace leagueapi {
     std::string refId;
   };
 
-  void to_json(nlohmann::json& j, const PlayerLootDTO& v) {
+  inline void to_json(nlohmann::json& j, const PlayerLootDTO& v) {
     j["count"] = v.count;
     j["expiryTime"] = v.expiryTime;
     j["lootName"] = v.lootName;
     j["refId"] = v.refId;
   }
 
-  void from_json(const nlohmann::json& j, PlayerLootDTO& v) {
+  inline void from_json(const nlohmann::json& j, PlayerLootDTO& v) {
     v.count = j.at("count").get<int32_t>;
     v.expiryTime = j.at("expiryTime").get<int64_t>;
     v.lootName = j.at("lootName").get<std::string>;

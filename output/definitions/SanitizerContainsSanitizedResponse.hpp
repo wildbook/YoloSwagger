@@ -8,11 +8,11 @@ namespace leagueapi {
     bool contains;
   };
 
-  void to_json(nlohmann::json& j, const SanitizerContainsSanitizedResponse& v) {
+  inline void to_json(nlohmann::json& j, const SanitizerContainsSanitizedResponse& v) {
     j["contains"] = v.contains;
   }
 
-  void from_json(const nlohmann::json& j, SanitizerContainsSanitizedResponse& v) {
+  inline void from_json(const nlohmann::json& j, SanitizerContainsSanitizedResponse& v) {
     v.contains = j.at("contains").get<bool>;
   }
 

@@ -16,7 +16,7 @@ namespace leagueapi {
     double penaltyTimeRemaining;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingSearchErrorResource& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingSearchErrorResource& v) {
     j["errorType"] = v.errorType;
     j["id"] = v.id;
     j["message"] = v.message;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["penaltyTimeRemaining"] = v.penaltyTimeRemaining;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingSearchErrorResource& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingSearchErrorResource& v) {
     v.errorType = j.at("errorType").get<std::string>;
     v.id = j.at("id").get<int32_t>;
     v.message = j.at("message").get<std::string>;

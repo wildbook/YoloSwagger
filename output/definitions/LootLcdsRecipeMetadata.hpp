@@ -13,13 +13,13 @@ namespace leagueapi {
     bool tooltipsDisabled;
   };
 
-  void to_json(nlohmann::json& j, const LootLcdsRecipeMetadata& v) {
+  inline void to_json(nlohmann::json& j, const LootLcdsRecipeMetadata& v) {
     j["bonusDescriptions"] = v.bonusDescriptions;
     j["guaranteedDescriptions"] = v.guaranteedDescriptions;
     j["tooltipsDisabled"] = v.tooltipsDisabled;
   }
 
-  void from_json(const nlohmann::json& j, LootLcdsRecipeMetadata& v) {
+  inline void from_json(const nlohmann::json& j, LootLcdsRecipeMetadata& v) {
     v.bonusDescriptions = j.at("bonusDescriptions").get<std::vector<LootLcdsLootDescriptionDTO>>;
     v.guaranteedDescriptions = j.at("guaranteedDescriptions").get<std::vector<LootLcdsLootDescriptionDTO>>;
     v.tooltipsDisabled = j.at("tooltipsDisabled").get<bool>;

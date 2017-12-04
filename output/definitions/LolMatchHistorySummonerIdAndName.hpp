@@ -8,11 +8,11 @@ namespace leagueapi {
     std::string displayName;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistorySummonerIdAndName& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistorySummonerIdAndName& v) {
     j["displayName"] = v.displayName;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistorySummonerIdAndName& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistorySummonerIdAndName& v) {
     v.displayName = j.at("displayName").get<std::string>;
   }
 

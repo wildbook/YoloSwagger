@@ -26,7 +26,7 @@ namespace leagueapi {
     std::map<std::string, double> xpPerMinDeltas;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryTimeline& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryTimeline& v) {
     j["creepsPerMinDeltas"] = v.creepsPerMinDeltas;
     j["csDiffPerMinDeltas"] = v.csDiffPerMinDeltas;
     j["damageTakenDiffPerMinDeltas"] = v.damageTakenDiffPerMinDeltas;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["xpPerMinDeltas"] = v.xpPerMinDeltas;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryTimeline& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryTimeline& v) {
     v.creepsPerMinDeltas = j.at("creepsPerMinDeltas").get<std::map<std::string, double>>;
     v.csDiffPerMinDeltas = j.at("csDiffPerMinDeltas").get<std::map<std::string, double>>;
     v.damageTakenDiffPerMinDeltas = j.at("damageTakenDiffPerMinDeltas").get<std::map<std::string, double>>;

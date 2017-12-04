@@ -22,7 +22,7 @@ namespace leagueapi {
     std::string summonerName;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryParticipantIdentityPlayer& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryParticipantIdentityPlayer& v) {
     j["accountId"] = v.accountId;
     j["currentAccountId"] = v.currentAccountId;
     j["currentPlatformId"] = v.currentPlatformId;
@@ -33,7 +33,7 @@ namespace leagueapi {
     j["summonerName"] = v.summonerName;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryParticipantIdentityPlayer& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryParticipantIdentityPlayer& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.currentAccountId = j.at("currentAccountId").get<uint64_t>;
     v.currentPlatformId = j.at("currentPlatformId").get<std::string>;

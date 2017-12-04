@@ -14,7 +14,7 @@ namespace leagueapi {
     Repairing = 3,
   };
 
-  void to_json(nlohmann::json& j, const PatcherComponentStateAction& v) {
+  inline void to_json(nlohmann::json& j, const PatcherComponentStateAction& v) {
     switch(v) {
       case PatcherComponentStateAction::CheckingForUpdates:
         j = "CheckingForUpdates";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, PatcherComponentStateAction& v) {
+  inline void from_json(const nlohmann::json& j, PatcherComponentStateAction& v) {
     const auto s& = j.get<std::string>();
     if(s == "CheckingForUpdates"){
       v = PatcherComponentStateAction::CheckingForUpdates;

@@ -8,11 +8,11 @@ namespace leagueapi {
     nlohmann::json invitationMetaData;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLobbyInvitation& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLobbyInvitation& v) {
     j["invitationMetaData"] = v.invitationMetaData;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLobbyInvitation& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLobbyInvitation& v) {
     v.invitationMetaData = j.at("invitationMetaData").get<nlohmann::json>;
   }
 

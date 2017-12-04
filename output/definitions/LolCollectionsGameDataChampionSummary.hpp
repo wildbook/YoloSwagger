@@ -8,11 +8,11 @@ namespace leagueapi {
     int32_t id;
   };
 
-  void to_json(nlohmann::json& j, const LolCollectionsGameDataChampionSummary& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsGameDataChampionSummary& v) {
     j["id"] = v.id;
   }
 
-  void from_json(const nlohmann::json& j, LolCollectionsGameDataChampionSummary& v) {
+  inline void from_json(const nlohmann::json& j, LolCollectionsGameDataChampionSummary& v) {
     v.id = j.at("id").get<int32_t>;
   }
 

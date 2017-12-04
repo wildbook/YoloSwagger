@@ -13,13 +13,13 @@ namespace leagueapi {
     int32_t totalGamesPlayed;
   };
 
-  void to_json(nlohmann::json& j, const LeaguesLcdsChampionStatInfo& v) {
+  inline void to_json(nlohmann::json& j, const LeaguesLcdsChampionStatInfo& v) {
     j["championId"] = v.championId;
     j["stats"] = v.stats;
     j["totalGamesPlayed"] = v.totalGamesPlayed;
   }
 
-  void from_json(const nlohmann::json& j, LeaguesLcdsChampionStatInfo& v) {
+  inline void from_json(const nlohmann::json& j, LeaguesLcdsChampionStatInfo& v) {
     v.championId = j.at("championId").get<int32_t>;
     v.stats = j.at("stats").get<std::vector<LeaguesLcdsAggregatedStat>>;
     v.totalGamesPlayed = j.at("totalGamesPlayed").get<int32_t>;

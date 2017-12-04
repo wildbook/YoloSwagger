@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderChampionSelectStateV1_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderChampionSelectStateV1_HPP
 #include <json.hpp>
-#include "LolLobbyTeamBuilderTradeV1.hpp"
-#include "LolLobbyTeamBuilderTeamBuilderBoostInfo.hpp"
 #include "LolLobbyTeamBuilderRerollStateV1.hpp"
+#include "LolLobbyTeamBuilderTeamBuilderBoostInfo.hpp"
 #include "LolLobbyTeamBuilderCellsV1.hpp"
+#include "LolLobbyTeamBuilderTradeV1.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderChampionSelectStateV1 {
@@ -42,7 +42,7 @@ namespace leagueapi {
     std::vector<LolLobbyTeamBuilderTradeV1> trades;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderChampionSelectStateV1& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderChampionSelectStateV1& v) {
     j["actionSetList"] = v.actionSetList;
     j["allowOptingOutOfBanning"] = v.allowOptingOutOfBanning;
     j["allowSkinSelection"] = v.allowSkinSelection;
@@ -61,7 +61,7 @@ namespace leagueapi {
     j["trades"] = v.trades;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderChampionSelectStateV1& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderChampionSelectStateV1& v) {
     v.actionSetList = j.at("actionSetList").get<std::vector<nlohmann::json>>;
     v.allowOptingOutOfBanning = j.at("allowOptingOutOfBanning").get<bool>;
     v.allowSkinSelection = j.at("allowSkinSelection").get<bool>;

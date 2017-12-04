@@ -10,7 +10,7 @@ namespace leagueapi {
     WARNING = 0,
   };
 
-  void to_json(nlohmann::json& j, const LolLeaguesSeverity& v) {
+  inline void to_json(nlohmann::json& j, const LolLeaguesSeverity& v) {
     switch(v) {
       case LolLeaguesSeverity::ALERT:
         j = "ALERT";
@@ -21,7 +21,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLeaguesSeverity& v) {
+  inline void from_json(const nlohmann::json& j, LolLeaguesSeverity& v) {
     const auto s& = j.get<std::string>();
     if(s == "ALERT"){
       v = LolLeaguesSeverity::ALERT;

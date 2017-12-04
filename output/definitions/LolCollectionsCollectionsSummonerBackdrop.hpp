@@ -23,7 +23,7 @@ namespace leagueapi {
     uint64_t summonerId;
   };
 
-  void to_json(nlohmann::json& j, const LolCollectionsCollectionsSummonerBackdrop& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsSummonerBackdrop& v) {
     j["accountId"] = v.accountId;
     j["backdropImage"] = v.backdropImage;
     j["backdropMaskColor"] = v.backdropMaskColor;
@@ -34,7 +34,7 @@ namespace leagueapi {
     j["summonerId"] = v.summonerId;
   }
 
-  void from_json(const nlohmann::json& j, LolCollectionsCollectionsSummonerBackdrop& v) {
+  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsSummonerBackdrop& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.backdropImage = j.at("backdropImage").get<std::string>;
     v.backdropMaskColor = j.at("backdropMaskColor").get<std::string>;

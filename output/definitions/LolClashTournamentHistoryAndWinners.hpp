@@ -12,12 +12,12 @@ namespace leagueapi {
     LolClashTournamentWinnerHistory tournamentWinners;
   };
 
-  void to_json(nlohmann::json& j, const LolClashTournamentHistoryAndWinners& v) {
+  inline void to_json(nlohmann::json& j, const LolClashTournamentHistoryAndWinners& v) {
     j["tournamentHistory"] = v.tournamentHistory;
     j["tournamentWinners"] = v.tournamentWinners;
   }
 
-  void from_json(const nlohmann::json& j, LolClashTournamentHistoryAndWinners& v) {
+  inline void from_json(const nlohmann::json& j, LolClashTournamentHistoryAndWinners& v) {
     v.tournamentHistory = j.at("tournamentHistory").get<std::vector<LolClashTournament>>;
     v.tournamentWinners = j.at("tournamentWinners").get<LolClashTournamentWinnerHistory>;
   }

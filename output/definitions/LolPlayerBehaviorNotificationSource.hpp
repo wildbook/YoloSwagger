@@ -14,7 +14,7 @@ namespace leagueapi {
     Message = 3,
   };
 
-  void to_json(nlohmann::json& j, const LolPlayerBehaviorNotificationSource& v) {
+  inline void to_json(nlohmann::json& j, const LolPlayerBehaviorNotificationSource& v) {
     switch(v) {
       case LolPlayerBehaviorNotificationSource::ForcedShutdown:
         j = "ForcedShutdown";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolPlayerBehaviorNotificationSource& v) {
+  inline void from_json(const nlohmann::json& j, LolPlayerBehaviorNotificationSource& v) {
     const auto s& = j.get<std::string>();
     if(s == "ForcedShutdown"){
       v = LolPlayerBehaviorNotificationSource::ForcedShutdown;

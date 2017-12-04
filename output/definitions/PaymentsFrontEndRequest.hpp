@@ -18,7 +18,7 @@ namespace leagueapi {
     int16_t summonerLevel;
   };
 
-  void to_json(nlohmann::json& j, const PaymentsFrontEndRequest& v) {
+  inline void to_json(nlohmann::json& j, const PaymentsFrontEndRequest& v) {
     j["gifteeAccountId"] = v.gifteeAccountId;
     j["gifteeMessage"] = v.gifteeMessage;
     j["isPrepaid"] = v.isPrepaid;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["summonerLevel"] = v.summonerLevel;
   }
 
-  void from_json(const nlohmann::json& j, PaymentsFrontEndRequest& v) {
+  inline void from_json(const nlohmann::json& j, PaymentsFrontEndRequest& v) {
     v.gifteeAccountId = j.at("gifteeAccountId").get<int32_t>;
     v.gifteeMessage = j.at("gifteeMessage").get<std::string>;
     v.isPrepaid = j.at("isPrepaid").get<bool>;

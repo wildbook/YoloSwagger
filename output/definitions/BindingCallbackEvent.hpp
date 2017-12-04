@@ -10,12 +10,12 @@ namespace leagueapi {
     std::vector<nlohmann::json> parameters;
   };
 
-  void to_json(nlohmann::json& j, const BindingCallbackEvent& v) {
+  inline void to_json(nlohmann::json& j, const BindingCallbackEvent& v) {
     j["id"] = v.id;
     j["parameters"] = v.parameters;
   }
 
-  void from_json(const nlohmann::json& j, BindingCallbackEvent& v) {
+  inline void from_json(const nlohmann::json& j, BindingCallbackEvent& v) {
     v.id = j.at("id").get<uint32_t>;
     v.parameters = j.at("parameters").get<std::vector<nlohmann::json>>;
   }

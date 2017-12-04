@@ -15,14 +15,14 @@ namespace leagueapi {
     TicketOfferState ticketOfferState;
   };
 
-  void to_json(nlohmann::json& j, const TicketOfferDTO& v) {
+  inline void to_json(nlohmann::json& j, const TicketOfferDTO& v) {
     j["count"] = v.count;
     j["offerPlayerId"] = v.offerPlayerId;
     j["receivePlayerId"] = v.receivePlayerId;
     j["ticketOfferState"] = v.ticketOfferState;
   }
 
-  void from_json(const nlohmann::json& j, TicketOfferDTO& v) {
+  inline void from_json(const nlohmann::json& j, TicketOfferDTO& v) {
     v.count = j.at("count").get<int32_t>;
     v.offerPlayerId = j.at("offerPlayerId").get<uint64_t>;
     v.receivePlayerId = j.at("receivePlayerId").get<uint64_t>;

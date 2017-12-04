@@ -14,14 +14,14 @@ namespace leagueapi {
     float value;
   };
 
-  void to_json(nlohmann::json& j, const LeaguesLcdsAggregatedStat& v) {
+  inline void to_json(nlohmann::json& j, const LeaguesLcdsAggregatedStat& v) {
     j["championId"] = v.championId;
     j["id"] = v.id;
     j["statType"] = v.statType;
     j["value"] = v.value;
   }
 
-  void from_json(const nlohmann::json& j, LeaguesLcdsAggregatedStat& v) {
+  inline void from_json(const nlohmann::json& j, LeaguesLcdsAggregatedStat& v) {
     v.championId = j.at("championId").get<int32_t>;
     v.id = j.at("id").get<uint64_t>;
     v.statType = j.at("statType").get<std::string>;

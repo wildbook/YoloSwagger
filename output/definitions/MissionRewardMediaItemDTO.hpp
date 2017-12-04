@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string video;
   };
 
-  void to_json(nlohmann::json& j, const MissionRewardMediaItemDTO& v) {
+  inline void to_json(nlohmann::json& j, const MissionRewardMediaItemDTO& v) {
     j["sound"] = v.sound;
     j["video"] = v.video;
   }
 
-  void from_json(const nlohmann::json& j, MissionRewardMediaItemDTO& v) {
+  inline void from_json(const nlohmann::json& j, MissionRewardMediaItemDTO& v) {
     v.sound = j.at("sound").get<std::string>;
     v.video = j.at("video").get<std::string>;
   }

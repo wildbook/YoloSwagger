@@ -12,7 +12,7 @@ namespace leagueapi {
     READY = 2,
   };
 
-  void to_json(nlohmann::json& j, const BuybackState& v) {
+  inline void to_json(nlohmann::json& j, const BuybackState& v) {
     switch(v) {
       case BuybackState::FORCED_NOT_READY:
         j = "FORCED_NOT_READY";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, BuybackState& v) {
+  inline void from_json(const nlohmann::json& j, BuybackState& v) {
     const auto s& = j.get<std::string>();
     if(s == "FORCED_NOT_READY"){
       v = BuybackState::FORCED_NOT_READY;

@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string vertical;
   };
 
-  void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionSkinEmblemPosition& v) {
+  inline void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionSkinEmblemPosition& v) {
     j["horizontal"] = v.horizontal;
     j["vertical"] = v.vertical;
   }
 
-  void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionSkinEmblemPosition& v) {
+  inline void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionSkinEmblemPosition& v) {
     v.horizontal = j.at("horizontal").get<std::string>;
     v.vertical = j.at("vertical").get<std::string>;
   }

@@ -43,7 +43,7 @@ namespace leagueapi {
     std::vector<LolHonorV2EndOfGameTeam> teams;
   };
 
-  void to_json(nlohmann::json& j, const LolHonorV2EndOfGameStats& v) {
+  inline void to_json(nlohmann::json& j, const LolHonorV2EndOfGameStats& v) {
     j["accountId"] = v.accountId;
     j["championId"] = v.championId;
     j["difficulty"] = v.difficulty;
@@ -64,7 +64,7 @@ namespace leagueapi {
     j["teams"] = v.teams;
   }
 
-  void from_json(const nlohmann::json& j, LolHonorV2EndOfGameStats& v) {
+  inline void from_json(const nlohmann::json& j, LolHonorV2EndOfGameStats& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.championId = j.at("championId").get<int32_t>;
     v.difficulty = j.at("difficulty").get<std::string>;

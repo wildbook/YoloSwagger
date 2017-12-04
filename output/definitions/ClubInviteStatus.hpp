@@ -14,7 +14,7 @@ namespace leagueapi {
     REJECTED = 2,
   };
 
-  void to_json(nlohmann::json& j, const ClubInviteStatus& v) {
+  inline void to_json(nlohmann::json& j, const ClubInviteStatus& v) {
     switch(v) {
       case ClubInviteStatus::ACCEPTED:
         j = "ACCEPTED";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, ClubInviteStatus& v) {
+  inline void from_json(const nlohmann::json& j, ClubInviteStatus& v) {
     const auto s& = j.get<std::string>();
     if(s == "ACCEPTED"){
       v = ClubInviteStatus::ACCEPTED;

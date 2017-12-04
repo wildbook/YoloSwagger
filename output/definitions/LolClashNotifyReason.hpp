@@ -60,7 +60,7 @@ namespace leagueapi {
     UNREADY = 5,
   };
 
-  void to_json(nlohmann::json& j, const LolClashNotifyReason& v) {
+  inline void to_json(nlohmann::json& j, const LolClashNotifyReason& v) {
     switch(v) {
       case LolClashNotifyReason::ACCEPT_INVITE:
         j = "ACCEPT_INVITE";
@@ -146,7 +146,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolClashNotifyReason& v) {
+  inline void from_json(const nlohmann::json& j, LolClashNotifyReason& v) {
     const auto s& = j.get<std::string>();
     if(s == "ACCEPT_INVITE"){
       v = LolClashNotifyReason::ACCEPT_INVITE;

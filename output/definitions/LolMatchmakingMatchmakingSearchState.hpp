@@ -22,7 +22,7 @@ namespace leagueapi {
     ServiceShutdown = 7,
   };
 
-  void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingSearchState& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingSearchState& v) {
     switch(v) {
       case LolMatchmakingMatchmakingSearchState::AbandonedLowPriorityQueue:
         j = "AbandonedLowPriorityQueue";
@@ -51,7 +51,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingSearchState& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingSearchState& v) {
     const auto s& = j.get<std::string>();
     if(s == "AbandonedLowPriorityQueue"){
       v = LolMatchmakingMatchmakingSearchState::AbandonedLowPriorityQueue;

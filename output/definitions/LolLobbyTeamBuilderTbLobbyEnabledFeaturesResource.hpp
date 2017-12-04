@@ -8,11 +8,11 @@ namespace leagueapi {
     std::vector<std::string> enabledFeatures;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource& v) {
     j["enabledFeatures"] = v.enabledFeatures;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource& v) {
     v.enabledFeatures = j.at("enabledFeatures").get<std::vector<std::string>>;
   }
 

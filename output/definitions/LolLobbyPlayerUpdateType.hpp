@@ -14,7 +14,7 @@ namespace leagueapi {
     ServiceProxy = 2,
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyPlayerUpdateType& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyPlayerUpdateType& v) {
     switch(v) {
       case LolLobbyPlayerUpdateType::Direct:
         j = "Direct";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyPlayerUpdateType& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyPlayerUpdateType& v) {
     const auto s& = j.get<std::string>();
     if(s == "Direct"){
       v = LolLobbyPlayerUpdateType::Direct;

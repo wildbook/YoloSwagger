@@ -11,12 +11,12 @@ namespace leagueapi {
     PatcherNotificationId notificationId;
   };
 
-  void to_json(nlohmann::json& j, const PatcherNotification& v) {
+  inline void to_json(nlohmann::json& j, const PatcherNotification& v) {
     j["id"] = v.id;
     j["notificationId"] = v.notificationId;
   }
 
-  void from_json(const nlohmann::json& j, PatcherNotification& v) {
+  inline void from_json(const nlohmann::json& j, PatcherNotification& v) {
     v.id = j.at("id").get<std::string>;
     v.notificationId = j.at("notificationId").get<PatcherNotificationId>;
   }

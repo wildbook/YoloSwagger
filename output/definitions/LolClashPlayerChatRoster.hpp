@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolClashPlayerChatRoster_HPP
 #define SWAGGER_TYPES_LolClashPlayerChatRoster_HPP
 #include <json.hpp>
-#include "LolClashTournamentState.hpp"
 #include "LolClashPlayerState.hpp"
+#include "LolClashTournamentState.hpp"
 namespace leagueapi {
   // 
   struct LolClashPlayerChatRoster {
@@ -30,7 +30,7 @@ namespace leagueapi {
     LolClashTournamentState tournamentState;
   };
 
-  void to_json(nlohmann::json& j, const LolClashPlayerChatRoster& v) {
+  inline void to_json(nlohmann::json& j, const LolClashPlayerChatRoster& v) {
     j["endTimeMs"] = v.endTimeMs;
     j["iconColorId"] = v.iconColorId;
     j["iconId"] = v.iconId;
@@ -44,7 +44,7 @@ namespace leagueapi {
     j["tournamentState"] = v.tournamentState;
   }
 
-  void from_json(const nlohmann::json& j, LolClashPlayerChatRoster& v) {
+  inline void from_json(const nlohmann::json& j, LolClashPlayerChatRoster& v) {
     v.endTimeMs = j.at("endTimeMs").get<int64_t>;
     v.iconColorId = j.at("iconColorId").get<int32_t>;
     v.iconId = j.at("iconId").get<int32_t>;

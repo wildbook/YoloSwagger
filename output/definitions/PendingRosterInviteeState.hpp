@@ -14,7 +14,7 @@ namespace leagueapi {
     SUGGESTED = 0,
   };
 
-  void to_json(nlohmann::json& j, const PendingRosterInviteeState& v) {
+  inline void to_json(nlohmann::json& j, const PendingRosterInviteeState& v) {
     switch(v) {
       case PendingRosterInviteeState::DECLINED:
         j = "DECLINED";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, PendingRosterInviteeState& v) {
+  inline void from_json(const nlohmann::json& j, PendingRosterInviteeState& v) {
     const auto s& = j.get<std::string>();
     if(s == "DECLINED"){
       v = PendingRosterInviteeState::DECLINED;

@@ -9,11 +9,11 @@ namespace leagueapi {
     std::vector<PlayerStatSummary> playerStatSummarySet;
   };
 
-  void to_json(nlohmann::json& j, const PlayerStatSummaries& v) {
+  inline void to_json(nlohmann::json& j, const PlayerStatSummaries& v) {
     j["playerStatSummarySet"] = v.playerStatSummarySet;
   }
 
-  void from_json(const nlohmann::json& j, PlayerStatSummaries& v) {
+  inline void from_json(const nlohmann::json& j, PlayerStatSummaries& v) {
     v.playerStatSummarySet = j.at("playerStatSummarySet").get<std::vector<PlayerStatSummary>>;
   }
 

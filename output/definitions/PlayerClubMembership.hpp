@@ -2,11 +2,11 @@
 #define SWAGGER_TYPES_PlayerClubMembership_HPP
 #include <json.hpp>
 #include "Club.hpp"
-#include "PlayerClub.hpp"
-#include "ClubPlayer.hpp"
-#include "ClubInvite.hpp"
 #include "ClubsConfig.hpp"
+#include "ClubInvite.hpp"
+#include "ClubPlayer.hpp"
 #include "ClubPreferences.hpp"
+#include "PlayerClub.hpp"
 namespace leagueapi {
   // 
   struct PlayerClubMembership {
@@ -28,7 +28,7 @@ namespace leagueapi {
     std::string secureClubPresenceInfoString;
   };
 
-  void to_json(nlohmann::json& j, const PlayerClubMembership& v) {
+  inline void to_json(nlohmann::json& j, const PlayerClubMembership& v) {
     j["activeClubs"] = v.activeClubs;
     j["clubsServerConfig"] = v.clubsServerConfig;
     j["info"] = v.info;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["secureClubPresenceInfoString"] = v.secureClubPresenceInfoString;
   }
 
-  void from_json(const nlohmann::json& j, PlayerClubMembership& v) {
+  inline void from_json(const nlohmann::json& j, PlayerClubMembership& v) {
     v.activeClubs = j.at("activeClubs").get<std::vector<PlayerClub>>;
     v.clubsServerConfig = j.at("clubsServerConfig").get<ClubsConfig>;
     v.info = j.at("info").get<ClubPlayer>;

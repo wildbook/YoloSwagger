@@ -12,7 +12,7 @@ namespace leagueapi {
     Update = 1,
   };
 
-  void to_json(nlohmann::json& j, const PluginResourceEventType& v) {
+  inline void to_json(nlohmann::json& j, const PluginResourceEventType& v) {
     switch(v) {
       case PluginResourceEventType::Create:
         j = "Create";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, PluginResourceEventType& v) {
+  inline void from_json(const nlohmann::json& j, PluginResourceEventType& v) {
     const auto s& = j.get<std::string>();
     if(s == "Create"){
       v = PluginResourceEventType::Create;

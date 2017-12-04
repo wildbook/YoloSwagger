@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string status;
   };
 
-  void to_json(nlohmann::json& j, const ProcessControlProcess& v) {
+  inline void to_json(nlohmann::json& j, const ProcessControlProcess& v) {
     j["restart-countdown-seconds"] = v.restart-countdown-seconds;
     j["status"] = v.status;
   }
 
-  void from_json(const nlohmann::json& j, ProcessControlProcess& v) {
+  inline void from_json(const nlohmann::json& j, ProcessControlProcess& v) {
     v.restart-countdown-seconds = j.at("restart-countdown-seconds").get<float>;
     v.status = j.at("status").get<std::string>;
   }

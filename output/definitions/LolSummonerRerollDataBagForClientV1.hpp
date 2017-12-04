@@ -18,7 +18,7 @@ namespace leagueapi {
     int64_t totalPoints;
   };
 
-  void to_json(nlohmann::json& j, const LolSummonerRerollDataBagForClientV1& v) {
+  inline void to_json(nlohmann::json& j, const LolSummonerRerollDataBagForClientV1& v) {
     j["maximumRerolls"] = v.maximumRerolls;
     j["pointCostOfReroll"] = v.pointCostOfReroll;
     j["pointsGainedLastGame"] = v.pointsGainedLastGame;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["totalPoints"] = v.totalPoints;
   }
 
-  void from_json(const nlohmann::json& j, LolSummonerRerollDataBagForClientV1& v) {
+  inline void from_json(const nlohmann::json& j, LolSummonerRerollDataBagForClientV1& v) {
     v.maximumRerolls = j.at("maximumRerolls").get<uint32_t>;
     v.pointCostOfReroll = j.at("pointCostOfReroll").get<int64_t>;
     v.pointsGainedLastGame = j.at("pointsGainedLastGame").get<int64_t>;

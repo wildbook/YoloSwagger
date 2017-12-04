@@ -133,7 +133,7 @@ namespace leagueapi {
     uint64_t userId;
   };
 
-  void to_json(nlohmann::json& j, const LolEndOfGameEndOfGameStats& v) {
+  inline void to_json(nlohmann::json& j, const LolEndOfGameEndOfGameStats& v) {
     j["accountId"] = v.accountId;
     j["basePoints"] = v.basePoints;
     j["battleBoostIpEarned"] = v.battleBoostIpEarned;
@@ -198,7 +198,7 @@ namespace leagueapi {
     j["userId"] = v.userId;
   }
 
-  void from_json(const nlohmann::json& j, LolEndOfGameEndOfGameStats& v) {
+  inline void from_json(const nlohmann::json& j, LolEndOfGameEndOfGameStats& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.basePoints = j.at("basePoints").get<int32_t>;
     v.battleBoostIpEarned = j.at("battleBoostIpEarned").get<int32_t>;

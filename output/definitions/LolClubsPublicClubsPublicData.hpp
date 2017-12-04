@@ -19,7 +19,7 @@ namespace leagueapi {
     LolClubsPublicClubTag tag;
   };
 
-  void to_json(nlohmann::json& j, const LolClubsPublicClubsPublicData& v) {
+  inline void to_json(nlohmann::json& j, const LolClubsPublicClubsPublicData& v) {
     j["availability"] = v.availability;
     j["lastSeenOnlineTimestamp"] = v.lastSeenOnlineTimestamp;
     j["summonerIconId"] = v.summonerIconId;
@@ -28,7 +28,7 @@ namespace leagueapi {
     j["tag"] = v.tag;
   }
 
-  void from_json(const nlohmann::json& j, LolClubsPublicClubsPublicData& v) {
+  inline void from_json(const nlohmann::json& j, LolClubsPublicClubsPublicData& v) {
     v.availability = j.at("availability").get<std::string>;
     v.lastSeenOnlineTimestamp = j.at("lastSeenOnlineTimestamp").get<std::string>;
     v.summonerIconId = j.at("summonerIconId").get<int32_t>;

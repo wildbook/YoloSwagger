@@ -12,13 +12,13 @@ namespace leagueapi {
     int32_t totalCount;
   };
 
-  void to_json(nlohmann::json& j, const MissionProgressDTO& v) {
+  inline void to_json(nlohmann::json& j, const MissionProgressDTO& v) {
     j["currentProgress"] = v.currentProgress;
     j["lastViewedProgress"] = v.lastViewedProgress;
     j["totalCount"] = v.totalCount;
   }
 
-  void from_json(const nlohmann::json& j, MissionProgressDTO& v) {
+  inline void from_json(const nlohmann::json& j, MissionProgressDTO& v) {
     v.currentProgress = j.at("currentProgress").get<int32_t>;
     v.lastViewedProgress = j.at("lastViewedProgress").get<int32_t>;
     v.totalCount = j.at("totalCount").get<int32_t>;

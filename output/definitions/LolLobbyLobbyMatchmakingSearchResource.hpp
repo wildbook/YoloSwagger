@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyMatchmakingSearchResource_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyMatchmakingSearchResource_HPP
 #include <json.hpp>
-#include "LolLobbyLobbyMatchmakingSearchErrorResource.hpp"
 #include "LolLobbyLobbyMatchmakingSearchState.hpp"
+#include "LolLobbyLobbyMatchmakingSearchErrorResource.hpp"
 #include "LolLobbyLobbyMatchmakingLowPriorityDataResource.hpp"
 namespace leagueapi {
   // 
@@ -15,13 +15,13 @@ namespace leagueapi {
     LolLobbyLobbyMatchmakingSearchState searchState;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyMatchmakingSearchResource& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyMatchmakingSearchResource& v) {
     j["errors"] = v.errors;
     j["lowPriorityData"] = v.lowPriorityData;
     j["searchState"] = v.searchState;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyMatchmakingSearchResource& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyMatchmakingSearchResource& v) {
     v.errors = j.at("errors").get<std::vector<LolLobbyLobbyMatchmakingSearchErrorResource>>;
     v.lowPriorityData = j.at("lowPriorityData").get<LolLobbyLobbyMatchmakingLowPriorityDataResource>;
     v.searchState = j.at("searchState").get<LolLobbyLobbyMatchmakingSearchState>;

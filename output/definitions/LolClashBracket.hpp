@@ -28,7 +28,7 @@ namespace leagueapi {
     int64_t tournamentId;
   };
 
-  void to_json(nlohmann::json& j, const LolClashBracket& v) {
+  inline void to_json(nlohmann::json& j, const LolClashBracket& v) {
     j["currentLoserRound"] = v.currentLoserRound;
     j["currentRound"] = v.currentRound;
     j["id"] = v.id;
@@ -41,7 +41,7 @@ namespace leagueapi {
     j["tournamentId"] = v.tournamentId;
   }
 
-  void from_json(const nlohmann::json& j, LolClashBracket& v) {
+  inline void from_json(const nlohmann::json& j, LolClashBracket& v) {
     v.currentLoserRound = j.at("currentLoserRound").get<int32_t>;
     v.currentRound = j.at("currentRound").get<int32_t>;
     v.id = j.at("id").get<int64_t>;

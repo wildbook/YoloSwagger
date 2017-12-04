@@ -12,7 +12,7 @@ namespace leagueapi {
     party = 2,
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyInvitationType& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyInvitationType& v) {
     switch(v) {
       case LolLobbyInvitationType::invalid:
         j = "invalid";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyInvitationType& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyInvitationType& v) {
     const auto s& = j.get<std::string>();
     if(s == "invalid"){
       v = LolLobbyInvitationType::invalid;

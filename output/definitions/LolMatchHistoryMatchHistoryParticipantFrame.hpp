@@ -27,7 +27,7 @@ namespace leagueapi {
     uint32_t xp;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryParticipantFrame& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryParticipantFrame& v) {
     j["currentGold"] = v.currentGold;
     j["dominionScore"] = v.dominionScore;
     j["jungleMinionsKilled"] = v.jungleMinionsKilled;
@@ -40,7 +40,7 @@ namespace leagueapi {
     j["xp"] = v.xp;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryParticipantFrame& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryParticipantFrame& v) {
     v.currentGold = j.at("currentGold").get<int32_t>;
     v.dominionScore = j.at("dominionScore").get<uint16_t>;
     v.jungleMinionsKilled = j.at("jungleMinionsKilled").get<uint16_t>;

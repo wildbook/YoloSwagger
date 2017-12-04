@@ -14,14 +14,14 @@ namespace leagueapi {
     int32_t winCountRemaining;
   };
 
-  void to_json(nlohmann::json& j, const LolChampionsCollectionsRental& v) {
+  inline void to_json(nlohmann::json& j, const LolChampionsCollectionsRental& v) {
     j["endDate"] = v.endDate;
     j["purchaseDate"] = v.purchaseDate;
     j["rented"] = v.rented;
     j["winCountRemaining"] = v.winCountRemaining;
   }
 
-  void from_json(const nlohmann::json& j, LolChampionsCollectionsRental& v) {
+  inline void from_json(const nlohmann::json& j, LolChampionsCollectionsRental& v) {
     v.endDate = j.at("endDate").get<uint64_t>;
     v.purchaseDate = j.at("purchaseDate").get<uint64_t>;
     v.rented = j.at("rented").get<bool>;

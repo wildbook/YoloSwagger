@@ -24,7 +24,7 @@ namespace leagueapi {
     std::string requiredTokens;
   };
 
-  void to_json(nlohmann::json& j, const LolLootContextMenu& v) {
+  inline void to_json(nlohmann::json& j, const LolLootContextMenu& v) {
     j["actionType"] = v.actionType;
     j["enabled"] = v.enabled;
     j["essenceQuantity"] = v.essenceQuantity;
@@ -36,7 +36,7 @@ namespace leagueapi {
     j["requiredTokens"] = v.requiredTokens;
   }
 
-  void from_json(const nlohmann::json& j, LolLootContextMenu& v) {
+  inline void from_json(const nlohmann::json& j, LolLootContextMenu& v) {
     v.actionType = j.at("actionType").get<std::string>;
     v.enabled = j.at("enabled").get<bool>;
     v.essenceQuantity = j.at("essenceQuantity").get<int32_t>;

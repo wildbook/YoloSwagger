@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LeaguesLcdsSummonerLeagueListDTO_HPP
 #define SWAGGER_TYPES_LeaguesLcdsSummonerLeagueListDTO_HPP
 #include <json.hpp>
+#include "LeaguesLcdsQueueType.hpp"
+#include "LeaguesLcdsLeagueRank.hpp"
 #include "LeaguesLcdsLeagueTier.hpp"
 #include "LeaguesLcdsLeagueItemDTO.hpp"
-#include "LeaguesLcdsLeagueRank.hpp"
-#include "LeaguesLcdsQueueType.hpp"
 namespace leagueapi {
   // 
   struct LeaguesLcdsSummonerLeagueListDTO {
@@ -24,7 +24,7 @@ namespace leagueapi {
     LeaguesLcdsLeagueTier tier;
   };
 
-  void to_json(nlohmann::json& j, const LeaguesLcdsSummonerLeagueListDTO& v) {
+  inline void to_json(nlohmann::json& j, const LeaguesLcdsSummonerLeagueListDTO& v) {
     j["entries"] = v.entries;
     j["name"] = v.name;
     j["nextApexUpdate"] = v.nextApexUpdate;
@@ -34,7 +34,7 @@ namespace leagueapi {
     j["tier"] = v.tier;
   }
 
-  void from_json(const nlohmann::json& j, LeaguesLcdsSummonerLeagueListDTO& v) {
+  inline void from_json(const nlohmann::json& j, LeaguesLcdsSummonerLeagueListDTO& v) {
     v.entries = j.at("entries").get<std::vector<LeaguesLcdsLeagueItemDTO>>;
     v.name = j.at("name").get<std::string>;
     v.nextApexUpdate = j.at("nextApexUpdate").get<uint64_t>;

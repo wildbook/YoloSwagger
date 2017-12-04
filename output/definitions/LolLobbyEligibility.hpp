@@ -13,13 +13,13 @@ namespace leagueapi {
     std::vector<LolLobbyEligibilityRestriction> restrictions;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyEligibility& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyEligibility& v) {
     j["eligible"] = v.eligible;
     j["queueId"] = v.queueId;
     j["restrictions"] = v.restrictions;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyEligibility& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyEligibility& v) {
     v.eligible = j.at("eligible").get<bool>;
     v.queueId = j.at("queueId").get<int32_t>;
     v.restrictions = j.at("restrictions").get<std::vector<LolLobbyEligibilityRestriction>>;

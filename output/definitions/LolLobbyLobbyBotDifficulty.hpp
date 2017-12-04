@@ -20,7 +20,7 @@ namespace leagueapi {
     UBER = 3,
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyBotDifficulty& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyBotDifficulty& v) {
     switch(v) {
       case LolLobbyLobbyBotDifficulty::EASY:
         j = "EASY";
@@ -46,7 +46,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyBotDifficulty& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyBotDifficulty& v) {
     const auto s& = j.get<std::string>();
     if(s == "EASY"){
       v = LolLobbyLobbyBotDifficulty::EASY;

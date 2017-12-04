@@ -8,11 +8,11 @@ namespace leagueapi {
     bool isDisabled;
   };
 
-  void to_json(nlohmann::json& j, const LolKrShutdownLawQueueShutdownStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolKrShutdownLawQueueShutdownStatus& v) {
     j["isDisabled"] = v.isDisabled;
   }
 
-  void from_json(const nlohmann::json& j, LolKrShutdownLawQueueShutdownStatus& v) {
+  inline void from_json(const nlohmann::json& j, LolKrShutdownLawQueueShutdownStatus& v) {
     v.isDisabled = j.at("isDisabled").get<bool>;
   }
 

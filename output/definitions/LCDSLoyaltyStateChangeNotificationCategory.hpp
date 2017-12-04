@@ -18,7 +18,7 @@ namespace leagueapi {
     revoke = 4,
   };
 
-  void to_json(nlohmann::json& j, const LCDSLoyaltyStateChangeNotificationCategory& v) {
+  inline void to_json(nlohmann::json& j, const LCDSLoyaltyStateChangeNotificationCategory& v) {
     switch(v) {
       case LCDSLoyaltyStateChangeNotificationCategory::change:
         j = "change";
@@ -41,7 +41,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LCDSLoyaltyStateChangeNotificationCategory& v) {
+  inline void from_json(const nlohmann::json& j, LCDSLoyaltyStateChangeNotificationCategory& v) {
     const auto s& = j.get<std::string>();
     if(s == "change"){
       v = LCDSLoyaltyStateChangeNotificationCategory::change;

@@ -19,7 +19,7 @@ namespace leagueapi {
     uint64_t timeUntilBanExpires;
   };
 
-  void to_json(nlohmann::json& j, const LolPlayerBehaviorBanNotification& v) {
+  inline void to_json(nlohmann::json& j, const LolPlayerBehaviorBanNotification& v) {
     j["displayReformCard"] = v.displayReformCard;
     j["id"] = v.id;
     j["isPermaBan"] = v.isPermaBan;
@@ -28,7 +28,7 @@ namespace leagueapi {
     j["timeUntilBanExpires"] = v.timeUntilBanExpires;
   }
 
-  void from_json(const nlohmann::json& j, LolPlayerBehaviorBanNotification& v) {
+  inline void from_json(const nlohmann::json& j, LolPlayerBehaviorBanNotification& v) {
     v.displayReformCard = j.at("displayReformCard").get<bool>;
     v.id = j.at("id").get<uint64_t>;
     v.isPermaBan = j.at("isPermaBan").get<bool>;

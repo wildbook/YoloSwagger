@@ -18,7 +18,7 @@ namespace leagueapi {
     Succeeded = 4,
   };
 
-  void to_json(nlohmann::json& j, const BindingAsyncState& v) {
+  inline void to_json(nlohmann::json& j, const BindingAsyncState& v) {
     switch(v) {
       case BindingAsyncState::Cancelled:
         j = "Cancelled";
@@ -41,7 +41,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, BindingAsyncState& v) {
+  inline void from_json(const nlohmann::json& j, BindingAsyncState& v) {
     const auto s& = j.get<std::string>();
     if(s == "Cancelled"){
       v = BindingAsyncState::Cancelled;

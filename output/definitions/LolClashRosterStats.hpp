@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolClashRosterStats_HPP
 #define SWAGGER_TYPES_LolClashRosterStats_HPP
 #include <json.hpp>
-#include "LolClashRosterPeriodAggregatedStats.hpp"
 #include "LolClashRosterPlayerAggregatedStats.hpp"
+#include "LolClashRosterPeriodAggregatedStats.hpp"
 namespace leagueapi {
   // 
   struct LolClashRosterStats {
@@ -30,7 +30,7 @@ namespace leagueapi {
     int32_t tournamentThemeId;
   };
 
-  void to_json(nlohmann::json& j, const LolClashRosterStats& v) {
+  inline void to_json(nlohmann::json& j, const LolClashRosterStats& v) {
     j["periodStats"] = v.periodStats;
     j["playerStats"] = v.playerStats;
     j["rosterIconColorId"] = v.rosterIconColorId;
@@ -44,7 +44,7 @@ namespace leagueapi {
     j["tournamentThemeId"] = v.tournamentThemeId;
   }
 
-  void from_json(const nlohmann::json& j, LolClashRosterStats& v) {
+  inline void from_json(const nlohmann::json& j, LolClashRosterStats& v) {
     v.periodStats = j.at("periodStats").get<std::vector<LolClashRosterPeriodAggregatedStats>>;
     v.playerStats = j.at("playerStats").get<std::map<std::string, LolClashRosterPlayerAggregatedStats>>;
     v.rosterIconColorId = j.at("rosterIconColorId").get<int32_t>;

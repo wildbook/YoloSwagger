@@ -12,7 +12,7 @@ namespace leagueapi {
     None = 48,
   };
 
-  void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingReadyCheckResponse& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingReadyCheckResponse& v) {
     switch(v) {
       case LolMatchmakingMatchmakingReadyCheckResponse::Accepted:
         j = "Accepted";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingReadyCheckResponse& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingReadyCheckResponse& v) {
     const auto s& = j.get<std::string>();
     if(s == "Accepted"){
       v = LolMatchmakingMatchmakingReadyCheckResponse::Accepted;

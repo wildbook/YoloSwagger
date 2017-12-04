@@ -1,11 +1,11 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobby_HPP
 #define SWAGGER_TYPES_LolLobbyLobby_HPP
 #include <json.hpp>
-#include "LolLobbyLobbyMember.hpp"
-#include "LolLobbyLobbyInvitation.hpp"
+#include "LolLobbyLobbyRemovedFromGameReason.hpp"
 #include "LolLobbyLobbyCustomGameLobby.hpp"
 #include "LolLobbyQueueAvailability.hpp"
-#include "LolLobbyLobbyRemovedFromGameReason.hpp"
+#include "LolLobbyLobbyMember.hpp"
+#include "LolLobbyLobbyInvitation.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyLobby {
@@ -63,7 +63,7 @@ namespace leagueapi {
     bool wasKicked;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobby& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobby& v) {
     j["allowablePremadeSizes"] = v.allowablePremadeSizes;
     j["autoFillEligible"] = v.autoFillEligible;
     j["autoFillProtectedForPromos"] = v.autoFillProtectedForPromos;
@@ -92,7 +92,7 @@ namespace leagueapi {
     j["wasKicked"] = v.wasKicked;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobby& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobby& v) {
     v.allowablePremadeSizes = j.at("allowablePremadeSizes").get<std::vector<int32_t>>;
     v.autoFillEligible = j.at("autoFillEligible").get<bool>;
     v.autoFillProtectedForPromos = j.at("autoFillProtectedForPromos").get<bool>;

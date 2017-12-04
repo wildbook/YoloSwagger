@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolChampionsCollectionsChampionSkin_HPP
 #define SWAGGER_TYPES_LolChampionsCollectionsChampionSkin_HPP
 #include <json.hpp>
-#include "LolChampionsCollectionsOwnership.hpp"
 #include "LolChampionsCollectionsChampionSkinEmblem.hpp"
+#include "LolChampionsCollectionsOwnership.hpp"
 #include "LolChampionsCollectionsChampionChroma.hpp"
 namespace leagueapi {
   // 
@@ -47,7 +47,7 @@ namespace leagueapi {
     std::string uncenteredSplashPath;
   };
 
-  void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionSkin& v) {
+  inline void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionSkin& v) {
     j["cardPath"] = v.cardPath;
     j["championId"] = v.championId;
     j["chromaPath"] = v.chromaPath;
@@ -69,7 +69,7 @@ namespace leagueapi {
     j["uncenteredSplashPath"] = v.uncenteredSplashPath;
   }
 
-  void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionSkin& v) {
+  inline void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionSkin& v) {
     v.cardPath = j.at("cardPath").get<std::string>;
     v.championId = j.at("championId").get<int32_t>;
     v.chromaPath = j.at("chromaPath").get<std::string>;

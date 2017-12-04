@@ -12,7 +12,7 @@ namespace leagueapi {
     WARNING = 1,
   };
 
-  void to_json(nlohmann::json& j, const LolKrShutdownLawShutdownLawStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolKrShutdownLawShutdownLawStatus& v) {
     switch(v) {
       case LolKrShutdownLawShutdownLawStatus::CUT_OFF:
         j = "CUT_OFF";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolKrShutdownLawShutdownLawStatus& v) {
+  inline void from_json(const nlohmann::json& j, LolKrShutdownLawShutdownLawStatus& v) {
     const auto s& = j.get<std::string>();
     if(s == "CUT_OFF"){
       v = LolKrShutdownLawShutdownLawStatus::CUT_OFF;

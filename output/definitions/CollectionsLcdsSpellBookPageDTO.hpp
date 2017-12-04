@@ -19,7 +19,7 @@ namespace leagueapi {
     uint64_t summonerId;
   };
 
-  void to_json(nlohmann::json& j, const CollectionsLcdsSpellBookPageDTO& v) {
+  inline void to_json(nlohmann::json& j, const CollectionsLcdsSpellBookPageDTO& v) {
     j["createDate"] = v.createDate;
     j["current"] = v.current;
     j["name"] = v.name;
@@ -28,7 +28,7 @@ namespace leagueapi {
     j["summonerId"] = v.summonerId;
   }
 
-  void from_json(const nlohmann::json& j, CollectionsLcdsSpellBookPageDTO& v) {
+  inline void from_json(const nlohmann::json& j, CollectionsLcdsSpellBookPageDTO& v) {
     v.createDate = j.at("createDate").get<uint64_t>;
     v.current = j.at("current").get<bool>;
     v.name = j.at("name").get<std::string>;

@@ -11,12 +11,12 @@ namespace leagueapi {
     std::string purchaseDate;
   };
 
-  void to_json(nlohmann::json& j, const LolBannersTournamentFlagInventoryItem& v) {
+  inline void to_json(nlohmann::json& j, const LolBannersTournamentFlagInventoryItem& v) {
     j["payload"] = v.payload;
     j["purchaseDate"] = v.purchaseDate;
   }
 
-  void from_json(const nlohmann::json& j, LolBannersTournamentFlagInventoryItem& v) {
+  inline void from_json(const nlohmann::json& j, LolBannersTournamentFlagInventoryItem& v) {
     v.payload = j.at("payload").get<LolBannersCapClashFlagEntitlementPayload>;
     v.purchaseDate = j.at("purchaseDate").get<std::string>;
   }

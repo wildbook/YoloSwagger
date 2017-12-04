@@ -18,7 +18,7 @@ namespace leagueapi {
     int32_t queueId;
   };
 
-  void to_json(nlohmann::json& j, const LolChampSelectLegacyLobbyStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyLobbyStatus& v) {
     j["allowedPlayAgain"] = v.allowedPlayAgain;
     j["isCustom"] = v.isCustom;
     j["isLeader"] = v.isLeader;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["queueId"] = v.queueId;
   }
 
-  void from_json(const nlohmann::json& j, LolChampSelectLegacyLobbyStatus& v) {
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyLobbyStatus& v) {
     v.allowedPlayAgain = j.at("allowedPlayAgain").get<bool>;
     v.isCustom = j.at("isCustom").get<bool>;
     v.isLeader = j.at("isLeader").get<bool>;

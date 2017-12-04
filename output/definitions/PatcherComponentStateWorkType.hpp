@@ -12,7 +12,7 @@ namespace leagueapi {
     Scanning = 0,
   };
 
-  void to_json(nlohmann::json& j, const PatcherComponentStateWorkType& v) {
+  inline void to_json(nlohmann::json& j, const PatcherComponentStateWorkType& v) {
     switch(v) {
       case PatcherComponentStateWorkType::Disk:
         j = "Disk";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, PatcherComponentStateWorkType& v) {
+  inline void from_json(const nlohmann::json& j, PatcherComponentStateWorkType& v) {
     const auto s& = j.get<std::string>();
     if(s == "Disk"){
       v = PatcherComponentStateWorkType::Disk;

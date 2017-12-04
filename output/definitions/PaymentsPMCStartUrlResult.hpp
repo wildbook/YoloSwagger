@@ -20,7 +20,7 @@ namespace leagueapi {
     std::string userId;
   };
 
-  void to_json(nlohmann::json& j, const PaymentsPMCStartUrlResult& v) {
+  inline void to_json(nlohmann::json& j, const PaymentsPMCStartUrlResult& v) {
     j["createdAt"] = v.createdAt;
     j["id"] = v.id;
     j["localeId"] = v.localeId;
@@ -30,7 +30,7 @@ namespace leagueapi {
     j["userId"] = v.userId;
   }
 
-  void from_json(const nlohmann::json& j, PaymentsPMCStartUrlResult& v) {
+  inline void from_json(const nlohmann::json& j, PaymentsPMCStartUrlResult& v) {
     v.createdAt = j.at("createdAt").get<std::string>;
     v.id = j.at("id").get<std::string>;
     v.localeId = j.at("localeId").get<std::string>;

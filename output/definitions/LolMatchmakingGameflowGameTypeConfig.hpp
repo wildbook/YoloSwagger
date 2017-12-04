@@ -8,11 +8,11 @@ namespace leagueapi {
     bool reroll;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchmakingGameflowGameTypeConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchmakingGameflowGameTypeConfig& v) {
     j["reroll"] = v.reroll;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchmakingGameflowGameTypeConfig& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchmakingGameflowGameTypeConfig& v) {
     v.reroll = j.at("reroll").get<bool>;
   }
 

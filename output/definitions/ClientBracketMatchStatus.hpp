@@ -12,7 +12,7 @@ namespace leagueapi {
     UPCOMING = 0,
   };
 
-  void to_json(nlohmann::json& j, const ClientBracketMatchStatus& v) {
+  inline void to_json(nlohmann::json& j, const ClientBracketMatchStatus& v) {
     switch(v) {
       case ClientBracketMatchStatus::COMPLETED:
         j = "COMPLETED";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, ClientBracketMatchStatus& v) {
+  inline void from_json(const nlohmann::json& j, ClientBracketMatchStatus& v) {
     const auto s& = j.get<std::string>();
     if(s == "COMPLETED"){
       v = ClientBracketMatchStatus::COMPLETED;

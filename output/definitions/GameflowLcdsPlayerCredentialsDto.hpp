@@ -24,7 +24,7 @@ namespace leagueapi {
     uint64_t summonerId;
   };
 
-  void to_json(nlohmann::json& j, const GameflowLcdsPlayerCredentialsDto& v) {
+  inline void to_json(nlohmann::json& j, const GameflowLcdsPlayerCredentialsDto& v) {
     j["encryptionKey"] = v.encryptionKey;
     j["gameId"] = v.gameId;
     j["observer"] = v.observer;
@@ -36,7 +36,7 @@ namespace leagueapi {
     j["summonerId"] = v.summonerId;
   }
 
-  void from_json(const nlohmann::json& j, GameflowLcdsPlayerCredentialsDto& v) {
+  inline void from_json(const nlohmann::json& j, GameflowLcdsPlayerCredentialsDto& v) {
     v.encryptionKey = j.at("encryptionKey").get<std::string>;
     v.gameId = j.at("gameId").get<uint64_t>;
     v.observer = j.at("observer").get<bool>;

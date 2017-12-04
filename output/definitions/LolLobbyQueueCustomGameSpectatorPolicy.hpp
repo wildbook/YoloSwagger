@@ -14,7 +14,7 @@ namespace leagueapi {
     NotAllowed = 0,
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyQueueCustomGameSpectatorPolicy& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyQueueCustomGameSpectatorPolicy& v) {
     switch(v) {
       case LolLobbyQueueCustomGameSpectatorPolicy::AllAllowed:
         j = "AllAllowed";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyQueueCustomGameSpectatorPolicy& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyQueueCustomGameSpectatorPolicy& v) {
     const auto s& = j.get<std::string>();
     if(s == "AllAllowed"){
       v = LolLobbyQueueCustomGameSpectatorPolicy::AllAllowed;

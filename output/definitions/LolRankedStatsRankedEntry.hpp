@@ -26,7 +26,7 @@ namespace leagueapi {
     uint64_t wins;
   };
 
-  void to_json(nlohmann::json& j, const LolRankedStatsRankedEntry& v) {
+  inline void to_json(nlohmann::json& j, const LolRankedStatsRankedEntry& v) {
     j["apexDaysUntilDecay"] = v.apexDaysUntilDecay;
     j["division"] = v.division;
     j["games"] = v.games;
@@ -38,7 +38,7 @@ namespace leagueapi {
     j["wins"] = v.wins;
   }
 
-  void from_json(const nlohmann::json& j, LolRankedStatsRankedEntry& v) {
+  inline void from_json(const nlohmann::json& j, LolRankedStatsRankedEntry& v) {
     v.apexDaysUntilDecay = j.at("apexDaysUntilDecay").get<int64_t>;
     v.division = j.at("division").get<uint64_t>;
     v.games = j.at("games").get<uint64_t>;

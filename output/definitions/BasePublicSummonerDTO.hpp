@@ -20,7 +20,7 @@ namespace leagueapi {
     uint64_t sumId;
   };
 
-  void to_json(nlohmann::json& j, const BasePublicSummonerDTO& v) {
+  inline void to_json(nlohmann::json& j, const BasePublicSummonerDTO& v) {
     j["acctId"] = v.acctId;
     j["internalName"] = v.internalName;
     j["name"] = v.name;
@@ -30,7 +30,7 @@ namespace leagueapi {
     j["sumId"] = v.sumId;
   }
 
-  void from_json(const nlohmann::json& j, BasePublicSummonerDTO& v) {
+  inline void from_json(const nlohmann::json& j, BasePublicSummonerDTO& v) {
     v.acctId = j.at("acctId").get<uint64_t>;
     v.internalName = j.at("internalName").get<std::string>;
     v.name = j.at("name").get<std::string>;

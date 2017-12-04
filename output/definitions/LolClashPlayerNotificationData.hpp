@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolClashPlayerNotificationData_HPP
 #define SWAGGER_TYPES_LolClashPlayerNotificationData_HPP
 #include <json.hpp>
-#include "LolClashRosterNotifyReason.hpp"
-#include "LolClashPlayerNotification.hpp"
 #include "LolClashNotifyReason.hpp"
+#include "LolClashPlayerNotification.hpp"
+#include "LolClashRosterNotifyReason.hpp"
 namespace leagueapi {
   // 
   struct LolClashPlayerNotificationData {
@@ -19,7 +19,7 @@ namespace leagueapi {
     uint64_t targetSummonerId;
   };
 
-  void to_json(nlohmann::json& j, const LolClashPlayerNotificationData& v) {
+  inline void to_json(nlohmann::json& j, const LolClashPlayerNotificationData& v) {
     j["notification"] = v.notification;
     j["notifyReason"] = v.notifyReason;
     j["rosterNotifyReason"] = v.rosterNotifyReason;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["targetSummonerId"] = v.targetSummonerId;
   }
 
-  void from_json(const nlohmann::json& j, LolClashPlayerNotificationData& v) {
+  inline void from_json(const nlohmann::json& j, LolClashPlayerNotificationData& v) {
     v.notification = j.at("notification").get<LolClashPlayerNotification>;
     v.notifyReason = j.at("notifyReason").get<LolClashNotifyReason>;
     v.rosterNotifyReason = j.at("rosterNotifyReason").get<LolClashRosterNotifyReason>;

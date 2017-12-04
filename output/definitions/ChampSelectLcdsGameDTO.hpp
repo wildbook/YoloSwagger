@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_ChampSelectLcdsGameDTO_HPP
 #define SWAGGER_TYPES_ChampSelectLcdsGameDTO_HPP
 #include <json.hpp>
-#include "ChampSelectLcdsPlayerChampionSelectionDTO.hpp"
 #include "BannedChampion.hpp"
+#include "ChampSelectLcdsPlayerChampionSelectionDTO.hpp"
 namespace leagueapi {
   // 
   struct ChampSelectLcdsGameDTO {
@@ -38,7 +38,7 @@ namespace leagueapi {
     std::vector<nlohmann::json> teamTwo;
   };
 
-  void to_json(nlohmann::json& j, const ChampSelectLcdsGameDTO& v) {
+  inline void to_json(nlohmann::json& j, const ChampSelectLcdsGameDTO& v) {
     j["bannedChampions"] = v.bannedChampions;
     j["gameMutators"] = v.gameMutators;
     j["gameState"] = v.gameState;
@@ -56,7 +56,7 @@ namespace leagueapi {
     j["teamTwo"] = v.teamTwo;
   }
 
-  void from_json(const nlohmann::json& j, ChampSelectLcdsGameDTO& v) {
+  inline void from_json(const nlohmann::json& j, ChampSelectLcdsGameDTO& v) {
     v.bannedChampions = j.at("bannedChampions").get<std::vector<BannedChampion>>;
     v.gameMutators = j.at("gameMutators").get<std::vector<std::string>>;
     v.gameState = j.at("gameState").get<std::string>;

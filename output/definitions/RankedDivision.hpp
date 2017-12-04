@@ -16,7 +16,7 @@ namespace leagueapi {
     V = 5,
   };
 
-  void to_json(nlohmann::json& j, const RankedDivision& v) {
+  inline void to_json(nlohmann::json& j, const RankedDivision& v) {
     switch(v) {
       case RankedDivision::I:
         j = "I";
@@ -36,7 +36,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, RankedDivision& v) {
+  inline void from_json(const nlohmann::json& j, RankedDivision& v) {
     const auto s& = j.get<std::string>();
     if(s == "I"){
       v = RankedDivision::I;

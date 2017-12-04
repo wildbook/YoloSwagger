@@ -13,13 +13,13 @@ namespace leagueapi {
     std::vector<LolStoreItemKey> items;
   };
 
-  void to_json(nlohmann::json& j, const LolStorePageGroupingDTO& v) {
+  inline void to_json(nlohmann::json& j, const LolStorePageGroupingDTO& v) {
     j["grouped"] = v.grouped;
     j["hidden"] = v.hidden;
     j["items"] = v.items;
   }
 
-  void from_json(const nlohmann::json& j, LolStorePageGroupingDTO& v) {
+  inline void from_json(const nlohmann::json& j, LolStorePageGroupingDTO& v) {
     v.grouped = j.at("grouped").get<bool>;
     v.hidden = j.at("hidden").get<bool>;
     v.items = j.at("items").get<std::vector<LolStoreItemKey>>;

@@ -16,7 +16,7 @@ namespace leagueapi {
     unknown = 0,
   };
 
-  void to_json(nlohmann::json& j, const ServiceStatusResource_Status& v) {
+  inline void to_json(nlohmann::json& j, const ServiceStatusResource_Status& v) {
     switch(v) {
       case ServiceStatusResource_Status::degraded:
         j = "degraded";
@@ -36,7 +36,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, ServiceStatusResource_Status& v) {
+  inline void from_json(const nlohmann::json& j, ServiceStatusResource_Status& v) {
     const auto s& = j.get<std::string>();
     if(s == "degraded"){
       v = ServiceStatusResource_Status::degraded;

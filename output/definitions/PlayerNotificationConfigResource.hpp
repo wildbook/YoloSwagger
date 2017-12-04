@@ -8,11 +8,11 @@ namespace leagueapi {
     uint64_t ExpirationCheckFrequency;
   };
 
-  void to_json(nlohmann::json& j, const PlayerNotificationConfigResource& v) {
+  inline void to_json(nlohmann::json& j, const PlayerNotificationConfigResource& v) {
     j["ExpirationCheckFrequency"] = v.ExpirationCheckFrequency;
   }
 
-  void from_json(const nlohmann::json& j, PlayerNotificationConfigResource& v) {
+  inline void from_json(const nlohmann::json& j, PlayerNotificationConfigResource& v) {
     v.ExpirationCheckFrequency = j.at("ExpirationCheckFrequency").get<uint64_t>;
   }
 

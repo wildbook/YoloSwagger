@@ -14,7 +14,7 @@ namespace leagueapi {
     REVOKED = 3,
   };
 
-  void to_json(nlohmann::json& j, const TicketOfferState& v) {
+  inline void to_json(nlohmann::json& j, const TicketOfferState& v) {
     switch(v) {
       case TicketOfferState::ACCEPTED:
         j = "ACCEPTED";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, TicketOfferState& v) {
+  inline void from_json(const nlohmann::json& j, TicketOfferState& v) {
     const auto s& = j.get<std::string>();
     if(s == "ACCEPTED"){
       v = TicketOfferState::ACCEPTED;

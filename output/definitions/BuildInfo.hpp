@@ -26,7 +26,7 @@ namespace leagueapi {
     std::string version;
   };
 
-  void to_json(nlohmann::json& j, const BuildInfo& v) {
+  inline void to_json(nlohmann::json& j, const BuildInfo& v) {
     j["branch"] = v.branch;
     j["branchFull"] = v.branchFull;
     j["codeBuildId"] = v.codeBuildId;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["version"] = v.version;
   }
 
-  void from_json(const nlohmann::json& j, BuildInfo& v) {
+  inline void from_json(const nlohmann::json& j, BuildInfo& v) {
     v.branch = j.at("branch").get<std::string>;
     v.branchFull = j.at("branchFull").get<std::string>;
     v.codeBuildId = j.at("codeBuildId").get<int32_t>;

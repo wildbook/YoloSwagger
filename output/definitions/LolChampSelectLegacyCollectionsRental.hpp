@@ -8,11 +8,11 @@ namespace leagueapi {
     bool rented;
   };
 
-  void to_json(nlohmann::json& j, const LolChampSelectLegacyCollectionsRental& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyCollectionsRental& v) {
     j["rented"] = v.rented;
   }
 
-  void from_json(const nlohmann::json& j, LolChampSelectLegacyCollectionsRental& v) {
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyCollectionsRental& v) {
     v.rented = j.at("rented").get<bool>;
   }
 

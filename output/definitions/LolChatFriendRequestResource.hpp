@@ -15,14 +15,14 @@ namespace leagueapi {
     std::string note;
   };
 
-  void to_json(nlohmann::json& j, const LolChatFriendRequestResource& v) {
+  inline void to_json(nlohmann::json& j, const LolChatFriendRequestResource& v) {
     j["direction"] = v.direction;
     j["id"] = v.id;
     j["name"] = v.name;
     j["note"] = v.note;
   }
 
-  void from_json(const nlohmann::json& j, LolChatFriendRequestResource& v) {
+  inline void from_json(const nlohmann::json& j, LolChatFriendRequestResource& v) {
     v.direction = j.at("direction").get<LolChatFriendRequestDirection>;
     v.id = j.at("id").get<uint64_t>;
     v.name = j.at("name").get<std::string>;

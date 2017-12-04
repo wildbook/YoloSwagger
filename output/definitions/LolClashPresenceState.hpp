@@ -12,7 +12,7 @@ namespace leagueapi {
     SCOUTING = 2,
   };
 
-  void to_json(nlohmann::json& j, const LolClashPresenceState& v) {
+  inline void to_json(nlohmann::json& j, const LolClashPresenceState& v) {
     switch(v) {
       case LolClashPresenceState::LOCKED_IN:
         j = "LOCKED_IN";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolClashPresenceState& v) {
+  inline void from_json(const nlohmann::json& j, LolClashPresenceState& v) {
     const auto s& = j.get<std::string>();
     if(s == "LOCKED_IN"){
       v = LolClashPresenceState::LOCKED_IN;

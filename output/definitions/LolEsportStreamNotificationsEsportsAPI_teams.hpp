@@ -18,7 +18,7 @@ namespace leagueapi {
     std::string slug;
   };
 
-  void to_json(nlohmann::json& j, const LolEsportStreamNotificationsEsportsAPI_teams& v) {
+  inline void to_json(nlohmann::json& j, const LolEsportStreamNotificationsEsportsAPI_teams& v) {
     j["acronym"] = v.acronym;
     j["guid"] = v.guid;
     j["id"] = v.id;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["slug"] = v.slug;
   }
 
-  void from_json(const nlohmann::json& j, LolEsportStreamNotificationsEsportsAPI_teams& v) {
+  inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsEsportsAPI_teams& v) {
     v.acronym = j.at("acronym").get<std::string>;
     v.guid = j.at("guid").get<std::string>;
     v.id = j.at("id").get<int64_t>;

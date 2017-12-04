@@ -16,7 +16,7 @@ namespace leagueapi {
     std::string state;
   };
 
-  void to_json(nlohmann::json& j, const ChampSelectLcdsTradeContractDTO& v) {
+  inline void to_json(nlohmann::json& j, const ChampSelectLcdsTradeContractDTO& v) {
     j["requesterChampionId"] = v.requesterChampionId;
     j["requesterInternalSummonerName"] = v.requesterInternalSummonerName;
     j["responderChampionId"] = v.responderChampionId;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["state"] = v.state;
   }
 
-  void from_json(const nlohmann::json& j, ChampSelectLcdsTradeContractDTO& v) {
+  inline void from_json(const nlohmann::json& j, ChampSelectLcdsTradeContractDTO& v) {
     v.requesterChampionId = j.at("requesterChampionId").get<int32_t>;
     v.requesterInternalSummonerName = j.at("requesterInternalSummonerName").get<std::string>;
     v.responderChampionId = j.at("responderChampionId").get<int32_t>;

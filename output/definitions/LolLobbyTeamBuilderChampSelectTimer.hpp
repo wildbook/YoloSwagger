@@ -22,7 +22,7 @@ namespace leagueapi {
     int64_t totalTimeInPhase;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderChampSelectTimer& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderChampSelectTimer& v) {
     j["adjustedTimeLeftInPhase"] = v.adjustedTimeLeftInPhase;
     j["adjustedTimeLeftInPhaseInSec"] = v.adjustedTimeLeftInPhaseInSec;
     j["internalNowInEpochMs"] = v.internalNowInEpochMs;
@@ -33,7 +33,7 @@ namespace leagueapi {
     j["totalTimeInPhase"] = v.totalTimeInPhase;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderChampSelectTimer& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderChampSelectTimer& v) {
     v.adjustedTimeLeftInPhase = j.at("adjustedTimeLeftInPhase").get<int64_t>;
     v.adjustedTimeLeftInPhaseInSec = j.at("adjustedTimeLeftInPhaseInSec").get<int32_t>;
     v.internalNowInEpochMs = j.at("internalNowInEpochMs").get<uint64_t>;

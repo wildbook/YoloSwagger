@@ -9,11 +9,11 @@ namespace leagueapi {
     std::vector<LolSimpleDialogMessagesSimpleMessage> simpleMessages;
   };
 
-  void to_json(nlohmann::json& j, const LolSimpleDialogMessagesLoginDataPacket& v) {
+  inline void to_json(nlohmann::json& j, const LolSimpleDialogMessagesLoginDataPacket& v) {
     j["simpleMessages"] = v.simpleMessages;
   }
 
-  void from_json(const nlohmann::json& j, LolSimpleDialogMessagesLoginDataPacket& v) {
+  inline void from_json(const nlohmann::json& j, LolSimpleDialogMessagesLoginDataPacket& v) {
     v.simpleMessages = j.at("simpleMessages").get<std::vector<LolSimpleDialogMessagesSimpleMessage>>;
   }
 

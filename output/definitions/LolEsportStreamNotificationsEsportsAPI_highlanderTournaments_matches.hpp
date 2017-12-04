@@ -11,12 +11,12 @@ namespace leagueapi {
     std::vector<LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_roster> input;
   };
 
-  void to_json(nlohmann::json& j, const LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_matches& v) {
+  inline void to_json(nlohmann::json& j, const LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_matches& v) {
     j["id"] = v.id;
     j["input"] = v.input;
   }
 
-  void from_json(const nlohmann::json& j, LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_matches& v) {
+  inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_matches& v) {
     v.id = j.at("id").get<std::string>;
     v.input = j.at("input").get<std::vector<LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_roster>>;
   }

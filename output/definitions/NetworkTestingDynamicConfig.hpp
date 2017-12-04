@@ -22,7 +22,7 @@ namespace leagueapi {
     std::string IPv6SupportProbeServers;
   };
 
-  void to_json(nlohmann::json& j, const NetworkTestingDynamicConfig& v) {
+  inline void to_json(nlohmann::json& j, const NetworkTestingDynamicConfig& v) {
     j["IPv4OptionsProbability"] = v.IPv4OptionsProbability;
     j["IPv4OptionsProbeCount"] = v.IPv4OptionsProbeCount;
     j["IPv4OptionsProbePort"] = v.IPv4OptionsProbePort;
@@ -33,7 +33,7 @@ namespace leagueapi {
     j["IPv6SupportProbeServers"] = v.IPv6SupportProbeServers;
   }
 
-  void from_json(const nlohmann::json& j, NetworkTestingDynamicConfig& v) {
+  inline void from_json(const nlohmann::json& j, NetworkTestingDynamicConfig& v) {
     v.IPv4OptionsProbability = j.at("IPv4OptionsProbability").get<double>;
     v.IPv4OptionsProbeCount = j.at("IPv4OptionsProbeCount").get<uint8_t>;
     v.IPv4OptionsProbePort = j.at("IPv4OptionsProbePort").get<uint16_t>;

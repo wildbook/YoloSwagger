@@ -32,7 +32,7 @@ namespace leagueapi {
     std::string tournamentPassbackUrl;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyCustomGameConfiguration& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyCustomGameConfiguration& v) {
     j["gameMode"] = v.gameMode;
     j["gameMutator"] = v.gameMutator;
     j["gameServerRegion"] = v.gameServerRegion;
@@ -47,7 +47,7 @@ namespace leagueapi {
     j["tournamentPassbackUrl"] = v.tournamentPassbackUrl;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyCustomGameConfiguration& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyCustomGameConfiguration& v) {
     v.gameMode = j.at("gameMode").get<std::string>;
     v.gameMutator = j.at("gameMutator").get<std::string>;
     v.gameServerRegion = j.at("gameServerRegion").get<std::string>;

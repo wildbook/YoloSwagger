@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryGame_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryGame_HPP
 #include <json.hpp>
-#include "LolMatchHistoryMatchHistoryTeam.hpp"
-#include "LolMatchHistoryMatchHistoryParticipantIdentities.hpp"
 #include "LolMatchHistoryMatchHistoryParticipant.hpp"
+#include "LolMatchHistoryMatchHistoryParticipantIdentities.hpp"
+#include "LolMatchHistoryMatchHistoryTeam.hpp"
 namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryGame {
@@ -37,7 +37,7 @@ namespace leagueapi {
     std::vector<LolMatchHistoryMatchHistoryTeam> teams;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryGame& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryGame& v) {
     j["gameCreation"] = v.gameCreation;
     j["gameCreationDate"] = v.gameCreationDate;
     j["gameDuration"] = v.gameDuration;
@@ -54,7 +54,7 @@ namespace leagueapi {
     j["teams"] = v.teams;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryGame& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryGame& v) {
     v.gameCreation = j.at("gameCreation").get<uint64_t>;
     v.gameCreationDate = j.at("gameCreationDate").get<std::string>;
     v.gameDuration = j.at("gameDuration").get<uint32_t>;

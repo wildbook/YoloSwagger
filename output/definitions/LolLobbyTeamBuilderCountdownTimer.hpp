@@ -12,13 +12,13 @@ namespace leagueapi {
     int64_t timer;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderCountdownTimer& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderCountdownTimer& v) {
     j["counter"] = v.counter;
     j["phaseName"] = v.phaseName;
     j["timer"] = v.timer;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderCountdownTimer& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderCountdownTimer& v) {
     v.counter = j.at("counter").get<int32_t>;
     v.phaseName = j.at("phaseName").get<std::string>;
     v.timer = j.at("timer").get<int64_t>;

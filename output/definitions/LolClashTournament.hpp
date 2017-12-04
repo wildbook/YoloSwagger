@@ -36,7 +36,7 @@ namespace leagueapi {
     int32_t themeId;
   };
 
-  void to_json(nlohmann::json& j, const LolClashTournament& v) {
+  inline void to_json(nlohmann::json& j, const LolClashTournament& v) {
     j["allowRosterCreation"] = v.allowRosterCreation;
     j["allowRosterDisband"] = v.allowRosterDisband;
     j["buyInOptions"] = v.buyInOptions;
@@ -53,7 +53,7 @@ namespace leagueapi {
     j["themeId"] = v.themeId;
   }
 
-  void from_json(const nlohmann::json& j, LolClashTournament& v) {
+  inline void from_json(const nlohmann::json& j, LolClashTournament& v) {
     v.allowRosterCreation = j.at("allowRosterCreation").get<bool>;
     v.allowRosterDisband = j.at("allowRosterDisband").get<bool>;
     v.buyInOptions = j.at("buyInOptions").get<std::vector<int32_t>>;

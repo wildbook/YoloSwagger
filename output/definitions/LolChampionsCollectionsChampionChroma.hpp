@@ -25,7 +25,7 @@ namespace leagueapi {
     bool stillObtainable;
   };
 
-  void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionChroma& v) {
+  inline void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionChroma& v) {
     j["championId"] = v.championId;
     j["chromaPath"] = v.chromaPath;
     j["colors"] = v.colors;
@@ -37,7 +37,7 @@ namespace leagueapi {
     j["stillObtainable"] = v.stillObtainable;
   }
 
-  void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionChroma& v) {
+  inline void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionChroma& v) {
     v.championId = j.at("championId").get<int32_t>;
     v.chromaPath = j.at("chromaPath").get<std::string>;
     v.colors = j.at("colors").get<std::vector<std::string>>;

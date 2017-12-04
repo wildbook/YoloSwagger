@@ -17,7 +17,7 @@ namespace leagueapi {
     std::string terminatedCondition;
   };
 
-  void to_json(nlohmann::json& j, const MatchmakingLcdsGameDTO& v) {
+  inline void to_json(nlohmann::json& j, const MatchmakingLcdsGameDTO& v) {
     j["gameState"] = v.gameState;
     j["statusOfParticipants"] = v.statusOfParticipants;
     j["teamOne"] = v.teamOne;
@@ -25,7 +25,7 @@ namespace leagueapi {
     j["terminatedCondition"] = v.terminatedCondition;
   }
 
-  void from_json(const nlohmann::json& j, MatchmakingLcdsGameDTO& v) {
+  inline void from_json(const nlohmann::json& j, MatchmakingLcdsGameDTO& v) {
     v.gameState = j.at("gameState").get<std::string>;
     v.statusOfParticipants = j.at("statusOfParticipants").get<std::string>;
     v.teamOne = j.at("teamOne").get<std::vector<MatchmakingLcdsPlayerParticipant>>;

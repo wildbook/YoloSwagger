@@ -15,14 +15,14 @@ namespace leagueapi {
     std::string version;
   };
 
-  void to_json(nlohmann::json& j, const PluginDescriptionResource& v) {
+  inline void to_json(nlohmann::json& j, const PluginDescriptionResource& v) {
     j["name"] = v.name;
     j["pluginDependencies"] = v.pluginDependencies;
     j["riotMeta"] = v.riotMeta;
     j["version"] = v.version;
   }
 
-  void from_json(const nlohmann::json& j, PluginDescriptionResource& v) {
+  inline void from_json(const nlohmann::json& j, PluginDescriptionResource& v) {
     v.name = j.at("name").get<std::string>;
     v.pluginDependencies = j.at("pluginDependencies").get<std::map<std::string, std::string>>;
     v.riotMeta = j.at("riotMeta").get<PluginMetadataResource>;

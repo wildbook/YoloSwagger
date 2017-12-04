@@ -12,13 +12,13 @@ namespace leagueapi {
     uint64_t totalPoints;
   };
 
-  void to_json(nlohmann::json& j, const LolSummonerEndOfGamePoints& v) {
+  inline void to_json(nlohmann::json& j, const LolSummonerEndOfGamePoints& v) {
     j["pointsUntilNextReroll"] = v.pointsUntilNextReroll;
     j["rerollCount"] = v.rerollCount;
     j["totalPoints"] = v.totalPoints;
   }
 
-  void from_json(const nlohmann::json& j, LolSummonerEndOfGamePoints& v) {
+  inline void from_json(const nlohmann::json& j, LolSummonerEndOfGamePoints& v) {
     v.pointsUntilNextReroll = j.at("pointsUntilNextReroll").get<uint64_t>;
     v.rerollCount = j.at("rerollCount").get<uint32_t>;
     v.totalPoints = j.at("totalPoints").get<uint64_t>;

@@ -8,11 +8,11 @@ namespace leagueapi {
     nlohmann::json DisabledChampions;
   };
 
-  void to_json(nlohmann::json& j, const LolChampionsLcdsDynamicClientConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolChampionsLcdsDynamicClientConfig& v) {
     j["DisabledChampions"] = v.DisabledChampions;
   }
 
-  void from_json(const nlohmann::json& j, LolChampionsLcdsDynamicClientConfig& v) {
+  inline void from_json(const nlohmann::json& j, LolChampionsLcdsDynamicClientConfig& v) {
     v.DisabledChampions = j.at("DisabledChampions").get<nlohmann::json>;
   }
 

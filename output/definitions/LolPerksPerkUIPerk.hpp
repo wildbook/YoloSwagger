@@ -18,7 +18,7 @@ namespace leagueapi {
     std::string tooltip;
   };
 
-  void to_json(nlohmann::json& j, const LolPerksPerkUIPerk& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksPerkUIPerk& v) {
     j["iconPath"] = v.iconPath;
     j["id"] = v.id;
     j["longDesc"] = v.longDesc;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["tooltip"] = v.tooltip;
   }
 
-  void from_json(const nlohmann::json& j, LolPerksPerkUIPerk& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksPerkUIPerk& v) {
     v.iconPath = j.at("iconPath").get<std::string>;
     v.id = j.at("id").get<int32_t>;
     v.longDesc = j.at("longDesc").get<std::string>;

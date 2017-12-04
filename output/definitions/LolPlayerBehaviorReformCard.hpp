@@ -26,7 +26,7 @@ namespace leagueapi {
     uint64_t timeWhenPunishmentExpires;
   };
 
-  void to_json(nlohmann::json& j, const LolPlayerBehaviorReformCard& v) {
+  inline void to_json(nlohmann::json& j, const LolPlayerBehaviorReformCard& v) {
     j["chatLogs"] = v.chatLogs;
     j["gameIds"] = v.gameIds;
     j["id"] = v.id;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["timeWhenPunishmentExpires"] = v.timeWhenPunishmentExpires;
   }
 
-  void from_json(const nlohmann::json& j, LolPlayerBehaviorReformCard& v) {
+  inline void from_json(const nlohmann::json& j, LolPlayerBehaviorReformCard& v) {
     v.chatLogs = j.at("chatLogs").get<std::vector<std::string>>;
     v.gameIds = j.at("gameIds").get<std::vector<uint64_t>>;
     v.id = j.at("id").get<uint64_t>;

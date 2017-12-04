@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_TournamentPlayerInfoDTO_HPP
 #define SWAGGER_TYPES_TournamentPlayerInfoDTO_HPP
 #include <json.hpp>
-#include "TournamentInfoDTO.hpp"
-#include "ThemeVp.hpp"
-#include "RosterStatsDTO.hpp"
 #include "PlayerDTO.hpp"
+#include "TournamentInfoDTO.hpp"
+#include "RosterStatsDTO.hpp"
+#include "ThemeVp.hpp"
 namespace leagueapi {
   // 
   struct TournamentPlayerInfoDTO {
@@ -22,7 +22,7 @@ namespace leagueapi {
     std::vector<TournamentInfoDTO> tournamentInfo;
   };
 
-  void to_json(nlohmann::json& j, const TournamentPlayerInfoDTO& v) {
+  inline void to_json(nlohmann::json& j, const TournamentPlayerInfoDTO& v) {
     j["player"] = v.player;
     j["rosterStats"] = v.rosterStats;
     j["seasonVp"] = v.seasonVp;
@@ -31,7 +31,7 @@ namespace leagueapi {
     j["tournamentInfo"] = v.tournamentInfo;
   }
 
-  void from_json(const nlohmann::json& j, TournamentPlayerInfoDTO& v) {
+  inline void from_json(const nlohmann::json& j, TournamentPlayerInfoDTO& v) {
     v.player = j.at("player").get<PlayerDTO>;
     v.rosterStats = j.at("rosterStats").get<std::vector<RosterStatsDTO>>;
     v.seasonVp = j.at("seasonVp").get<int32_t>;

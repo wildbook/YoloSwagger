@@ -28,7 +28,7 @@ namespace leagueapi {
     std::string toSummonerName;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyInvitation& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyInvitation& v) {
     j["eligibility"] = v.eligibility;
     j["errorType"] = v.errorType;
     j["fromSummonerId"] = v.fromSummonerId;
@@ -41,7 +41,7 @@ namespace leagueapi {
     j["toSummonerName"] = v.toSummonerName;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyInvitation& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyInvitation& v) {
     v.eligibility = j.at("eligibility").get<LolLobbyEligibility>;
     v.errorType = j.at("errorType").get<std::string>;
     v.fromSummonerId = j.at("fromSummonerId").get<uint64_t>;

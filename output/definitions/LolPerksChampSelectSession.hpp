@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolPerksChampSelectSession_HPP
 #define SWAGGER_TYPES_LolPerksChampSelectSession_HPP
 #include <json.hpp>
+#include "LolPerksChampSelectBannedChampions.hpp"
 #include "LolPerksChampSelectTradeContract.hpp"
 #include "LolPerksChampSelectTimer.hpp"
 #include "LolPerksChampSelectPlayerSelection.hpp"
-#include "LolPerksChampSelectBannedChampions.hpp"
 #include "LolPerksChampSelectChatRoomDetails.hpp"
 namespace leagueapi {
   // 
@@ -29,7 +29,7 @@ namespace leagueapi {
     std::vector<LolPerksChampSelectTradeContract> trades;
   };
 
-  void to_json(nlohmann::json& j, const LolPerksChampSelectSession& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksChampSelectSession& v) {
     j["actions"] = v.actions;
     j["bans"] = v.bans;
     j["chatDetails"] = v.chatDetails;
@@ -41,7 +41,7 @@ namespace leagueapi {
     j["trades"] = v.trades;
   }
 
-  void from_json(const nlohmann::json& j, LolPerksChampSelectSession& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksChampSelectSession& v) {
     v.actions = j.at("actions").get<std::vector<nlohmann::json>>;
     v.bans = j.at("bans").get<LolPerksChampSelectBannedChampions>;
     v.chatDetails = j.at("chatDetails").get<LolPerksChampSelectChatRoomDetails>;

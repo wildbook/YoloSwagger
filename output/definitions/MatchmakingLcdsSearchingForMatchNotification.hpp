@@ -11,12 +11,12 @@ namespace leagueapi {
     std::vector<nlohmann::json> playerJoinFailures;
   };
 
-  void to_json(nlohmann::json& j, const MatchmakingLcdsSearchingForMatchNotification& v) {
+  inline void to_json(nlohmann::json& j, const MatchmakingLcdsSearchingForMatchNotification& v) {
     j["joinedQueues"] = v.joinedQueues;
     j["playerJoinFailures"] = v.playerJoinFailures;
   }
 
-  void from_json(const nlohmann::json& j, MatchmakingLcdsSearchingForMatchNotification& v) {
+  inline void from_json(const nlohmann::json& j, MatchmakingLcdsSearchingForMatchNotification& v) {
     v.joinedQueues = j.at("joinedQueues").get<std::vector<MatchmakingLcdsQueueInfo>>;
     v.playerJoinFailures = j.at("playerJoinFailures").get<std::vector<nlohmann::json>>;
   }

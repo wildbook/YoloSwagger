@@ -18,7 +18,7 @@ namespace leagueapi {
     UNKNOWN = 0,
   };
 
-  void to_json(nlohmann::json& j, const ClubRole& v) {
+  inline void to_json(nlohmann::json& j, const ClubRole& v) {
     switch(v) {
       case ClubRole::INVITEE:
         j = "INVITEE";
@@ -41,7 +41,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, ClubRole& v) {
+  inline void from_json(const nlohmann::json& j, ClubRole& v) {
     const auto s& = j.get<std::string>();
     if(s == "INVITEE"){
       v = ClubRole::INVITEE;

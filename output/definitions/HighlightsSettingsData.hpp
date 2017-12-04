@@ -8,11 +8,11 @@ namespace leagueapi {
     std::string highlights-folder-path;
   };
 
-  void to_json(nlohmann::json& j, const HighlightsSettingsData& v) {
+  inline void to_json(nlohmann::json& j, const HighlightsSettingsData& v) {
     j["highlights-folder-path"] = v.highlights-folder-path;
   }
 
-  void from_json(const nlohmann::json& j, HighlightsSettingsData& v) {
+  inline void from_json(const nlohmann::json& j, HighlightsSettingsData& v) {
     v.highlights-folder-path = j.at("highlights-folder-path").get<std::string>;
   }
 

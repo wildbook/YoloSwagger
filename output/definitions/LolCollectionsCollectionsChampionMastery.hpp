@@ -24,7 +24,7 @@ namespace leagueapi {
     uint64_t playerId;
   };
 
-  void to_json(nlohmann::json& j, const LolCollectionsCollectionsChampionMastery& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsChampionMastery& v) {
     j["championId"] = v.championId;
     j["championLevel"] = v.championLevel;
     j["championPoints"] = v.championPoints;
@@ -36,7 +36,7 @@ namespace leagueapi {
     j["playerId"] = v.playerId;
   }
 
-  void from_json(const nlohmann::json& j, LolCollectionsCollectionsChampionMastery& v) {
+  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsChampionMastery& v) {
     v.championId = j.at("championId").get<int32_t>;
     v.championLevel = j.at("championLevel").get<int32_t>;
     v.championPoints = j.at("championPoints").get<int32_t>;

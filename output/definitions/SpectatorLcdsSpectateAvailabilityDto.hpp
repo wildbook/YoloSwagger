@@ -8,11 +8,11 @@ namespace leagueapi {
     std::vector<std::string> teamOrSummonerIds;
   };
 
-  void to_json(nlohmann::json& j, const SpectatorLcdsSpectateAvailabilityDto& v) {
+  inline void to_json(nlohmann::json& j, const SpectatorLcdsSpectateAvailabilityDto& v) {
     j["teamOrSummonerIds"] = v.teamOrSummonerIds;
   }
 
-  void from_json(const nlohmann::json& j, SpectatorLcdsSpectateAvailabilityDto& v) {
+  inline void from_json(const nlohmann::json& j, SpectatorLcdsSpectateAvailabilityDto& v) {
     v.teamOrSummonerIds = j.at("teamOrSummonerIds").get<std::vector<std::string>>;
   }
 

@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_SeriesDTO_HPP
 #define SWAGGER_TYPES_SeriesDTO_HPP
 #include <json.hpp>
-#include "SeriesAlertDTO.hpp"
 #include "SeriesMediaDTO.hpp"
+#include "SeriesAlertDTO.hpp"
 namespace leagueapi {
   // 
   struct SeriesDTO {
@@ -28,7 +28,7 @@ namespace leagueapi {
     std::vector<SeriesAlertDTO> warnings;
   };
 
-  void to_json(nlohmann::json& j, const SeriesDTO& v) {
+  inline void to_json(nlohmann::json& j, const SeriesDTO& v) {
     j["description"] = v.description;
     j["endDate"] = v.endDate;
     j["id"] = v.id;
@@ -41,7 +41,7 @@ namespace leagueapi {
     j["warnings"] = v.warnings;
   }
 
-  void from_json(const nlohmann::json& j, SeriesDTO& v) {
+  inline void from_json(const nlohmann::json& j, SeriesDTO& v) {
     v.description = j.at("description").get<std::string>;
     v.endDate = j.at("endDate").get<int64_t>;
     v.id = j.at("id").get<std::string>;

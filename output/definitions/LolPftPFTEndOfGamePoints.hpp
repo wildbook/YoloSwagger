@@ -20,7 +20,7 @@ namespace leagueapi {
     int32_t totalPoints;
   };
 
-  void to_json(nlohmann::json& j, const LolPftPFTEndOfGamePoints& v) {
+  inline void to_json(nlohmann::json& j, const LolPftPFTEndOfGamePoints& v) {
     j["pointChangeFromChampionsOwned"] = v.pointChangeFromChampionsOwned;
     j["pointChangeFromGameplay"] = v.pointChangeFromGameplay;
     j["pointsUntilNextReroll"] = v.pointsUntilNextReroll;
@@ -30,7 +30,7 @@ namespace leagueapi {
     j["totalPoints"] = v.totalPoints;
   }
 
-  void from_json(const nlohmann::json& j, LolPftPFTEndOfGamePoints& v) {
+  inline void from_json(const nlohmann::json& j, LolPftPFTEndOfGamePoints& v) {
     v.pointChangeFromChampionsOwned = j.at("pointChangeFromChampionsOwned").get<int32_t>;
     v.pointChangeFromGameplay = j.at("pointChangeFromGameplay").get<int32_t>;
     v.pointsUntilNextReroll = j.at("pointsUntilNextReroll").get<int32_t>;

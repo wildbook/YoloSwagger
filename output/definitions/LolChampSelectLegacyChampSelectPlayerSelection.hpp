@@ -30,7 +30,7 @@ namespace leagueapi {
     int64_t wardSkinId;
   };
 
-  void to_json(nlohmann::json& j, const LolChampSelectLegacyChampSelectPlayerSelection& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyChampSelectPlayerSelection& v) {
     j["assignedPosition"] = v.assignedPosition;
     j["cellId"] = v.cellId;
     j["championId"] = v.championId;
@@ -45,7 +45,7 @@ namespace leagueapi {
     j["wardSkinId"] = v.wardSkinId;
   }
 
-  void from_json(const nlohmann::json& j, LolChampSelectLegacyChampSelectPlayerSelection& v) {
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyChampSelectPlayerSelection& v) {
     v.assignedPosition = j.at("assignedPosition").get<std::string>;
     v.cellId = j.at("cellId").get<int64_t>;
     v.championId = j.at("championId").get<int32_t>;

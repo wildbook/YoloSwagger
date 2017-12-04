@@ -34,7 +34,7 @@ namespace leagueapi {
     WaitingForStats = 10,
   };
 
-  void to_json(nlohmann::json& j, const LolClashGameflowPhase& v) {
+  inline void to_json(nlohmann::json& j, const LolClashGameflowPhase& v) {
     switch(v) {
       case LolClashGameflowPhase::ChampSelect:
         j = "ChampSelect";
@@ -81,7 +81,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolClashGameflowPhase& v) {
+  inline void from_json(const nlohmann::json& j, LolClashGameflowPhase& v) {
     const auto s& = j.get<std::string>();
     if(s == "ChampSelect"){
       v = LolClashGameflowPhase::ChampSelect;

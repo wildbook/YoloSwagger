@@ -13,13 +13,13 @@ namespace leagueapi {
     int32_t repeat;
   };
 
-  void to_json(nlohmann::json& j, const CraftLootRefTransactionDTO& v) {
+  inline void to_json(nlohmann::json& j, const CraftLootRefTransactionDTO& v) {
     j["lootNameRefIds"] = v.lootNameRefIds;
     j["recipeName"] = v.recipeName;
     j["repeat"] = v.repeat;
   }
 
-  void from_json(const nlohmann::json& j, CraftLootRefTransactionDTO& v) {
+  inline void from_json(const nlohmann::json& j, CraftLootRefTransactionDTO& v) {
     v.lootNameRefIds = j.at("lootNameRefIds").get<std::vector<LootNameRefId>>;
     v.recipeName = j.at("recipeName").get<std::string>;
     v.repeat = j.at("repeat").get<int32_t>;

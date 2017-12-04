@@ -14,7 +14,7 @@ namespace leagueapi {
     NONE = 0,
   };
 
-  void to_json(nlohmann::json& j, const ClashRewardTime& v) {
+  inline void to_json(nlohmann::json& j, const ClashRewardTime& v) {
     switch(v) {
       case ClashRewardTime::EOB:
         j = "EOB";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, ClashRewardTime& v) {
+  inline void from_json(const nlohmann::json& j, ClashRewardTime& v) {
     const auto s& = j.get<std::string>();
     if(s == "EOB"){
       v = ClashRewardTime::EOB;

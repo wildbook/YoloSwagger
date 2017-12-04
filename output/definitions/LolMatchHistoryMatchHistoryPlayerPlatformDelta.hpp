@@ -14,14 +14,14 @@ namespace leagueapi {
     uint64_t xpDelta;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryPlayerPlatformDelta& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryPlayerPlatformDelta& v) {
     j["compensationModeEnabled"] = v.compensationModeEnabled;
     j["ipDelta"] = v.ipDelta;
     j["timestamp"] = v.timestamp;
     j["xpDelta"] = v.xpDelta;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryPlayerPlatformDelta& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryPlayerPlatformDelta& v) {
     v.compensationModeEnabled = j.at("compensationModeEnabled").get<bool>;
     v.ipDelta = j.at("ipDelta").get<uint64_t>;
     v.timestamp = j.at("timestamp").get<uint64_t>;

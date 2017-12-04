@@ -8,11 +8,11 @@ namespace leagueapi {
     std::string rootCauseClassname;
   };
 
-  void to_json(nlohmann::json& j, const LcdsGameInviteBaseRuntimeException& v) {
+  inline void to_json(nlohmann::json& j, const LcdsGameInviteBaseRuntimeException& v) {
     j["rootCauseClassname"] = v.rootCauseClassname;
   }
 
-  void from_json(const nlohmann::json& j, LcdsGameInviteBaseRuntimeException& v) {
+  inline void from_json(const nlohmann::json& j, LcdsGameInviteBaseRuntimeException& v) {
     v.rootCauseClassname = j.at("rootCauseClassname").get<std::string>;
   }
 

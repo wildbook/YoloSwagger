@@ -17,7 +17,7 @@ namespace leagueapi {
     std::string updatedAt;
   };
 
-  void to_json(nlohmann::json& j, const TickerMessage& v) {
+  inline void to_json(nlohmann::json& j, const TickerMessage& v) {
     j["createdAt"] = v.createdAt;
     j["heading"] = v.heading;
     j["message"] = v.message;
@@ -25,7 +25,7 @@ namespace leagueapi {
     j["updatedAt"] = v.updatedAt;
   }
 
-  void from_json(const nlohmann::json& j, TickerMessage& v) {
+  inline void from_json(const nlohmann::json& j, TickerMessage& v) {
     v.createdAt = j.at("createdAt").get<std::string>;
     v.heading = j.at("heading").get<std::string>;
     v.message = j.at("message").get<std::string>;

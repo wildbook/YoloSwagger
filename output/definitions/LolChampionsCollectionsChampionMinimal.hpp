@@ -37,7 +37,7 @@ namespace leagueapi {
     std::string stingerSfxPath;
   };
 
-  void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionMinimal& v) {
+  inline void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionMinimal& v) {
     j["active"] = v.active;
     j["alias"] = v.alias;
     j["banVoPath"] = v.banVoPath;
@@ -55,7 +55,7 @@ namespace leagueapi {
     j["stingerSfxPath"] = v.stingerSfxPath;
   }
 
-  void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionMinimal& v) {
+  inline void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionMinimal& v) {
     v.active = j.at("active").get<bool>;
     v.alias = j.at("alias").get<std::string>;
     v.banVoPath = j.at("banVoPath").get<std::string>;

@@ -10,12 +10,12 @@ namespace leagueapi {
     bool isOwner;
   };
 
-  void to_json(nlohmann::json& j, const LolChatLobbyMember& v) {
+  inline void to_json(nlohmann::json& j, const LolChatLobbyMember& v) {
     j["id"] = v.id;
     j["isOwner"] = v.isOwner;
   }
 
-  void from_json(const nlohmann::json& j, LolChatLobbyMember& v) {
+  inline void from_json(const nlohmann::json& j, LolChatLobbyMember& v) {
     v.id = j.at("id").get<uint64_t>;
     v.isOwner = j.at("isOwner").get<bool>;
   }

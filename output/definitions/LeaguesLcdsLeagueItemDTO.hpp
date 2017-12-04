@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LeaguesLcdsLeagueItemDTO_HPP
 #define SWAGGER_TYPES_LeaguesLcdsLeagueItemDTO_HPP
 #include <json.hpp>
-#include "LeaguesLcdsLeagueTier.hpp"
 #include "LeaguesLcdsMiniSeriesDTO.hpp"
 #include "LeaguesLcdsQueueType.hpp"
 #include "LeaguesLcdsLeagueRank.hpp"
+#include "LeaguesLcdsLeagueTier.hpp"
 namespace leagueapi {
   // 
   struct LeaguesLcdsLeagueItemDTO {
@@ -48,7 +48,7 @@ namespace leagueapi {
     uint64_t wins;
   };
 
-  void to_json(nlohmann::json& j, const LeaguesLcdsLeagueItemDTO& v) {
+  inline void to_json(nlohmann::json& j, const LeaguesLcdsLeagueItemDTO& v) {
     j["apexDaysUntilDecay"] = v.apexDaysUntilDecay;
     j["demotionWarning"] = v.demotionWarning;
     j["displayDecayWarning"] = v.displayDecayWarning;
@@ -70,7 +70,7 @@ namespace leagueapi {
     j["wins"] = v.wins;
   }
 
-  void from_json(const nlohmann::json& j, LeaguesLcdsLeagueItemDTO& v) {
+  inline void from_json(const nlohmann::json& j, LeaguesLcdsLeagueItemDTO& v) {
     v.apexDaysUntilDecay = j.at("apexDaysUntilDecay").get<int32_t>;
     v.demotionWarning = j.at("demotionWarning").get<uint64_t>;
     v.displayDecayWarning = j.at("displayDecayWarning").get<bool>;

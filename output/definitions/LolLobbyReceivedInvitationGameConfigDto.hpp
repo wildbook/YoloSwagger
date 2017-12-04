@@ -16,7 +16,7 @@ namespace leagueapi {
     int32_t queueId;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyReceivedInvitationGameConfigDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyReceivedInvitationGameConfigDto& v) {
     j["gameMode"] = v.gameMode;
     j["gameMutator"] = v.gameMutator;
     j["inviteGameType"] = v.inviteGameType;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["queueId"] = v.queueId;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyReceivedInvitationGameConfigDto& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyReceivedInvitationGameConfigDto& v) {
     v.gameMode = j.at("gameMode").get<std::string>;
     v.gameMutator = j.at("gameMutator").get<std::string>;
     v.inviteGameType = j.at("inviteGameType").get<std::string>;

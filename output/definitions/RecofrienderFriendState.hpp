@@ -12,7 +12,7 @@ namespace leagueapi {
     NONE = 0,
   };
 
-  void to_json(nlohmann::json& j, const RecofrienderFriendState& v) {
+  inline void to_json(nlohmann::json& j, const RecofrienderFriendState& v) {
     switch(v) {
       case RecofrienderFriendState::BLOCKED:
         j = "BLOCKED";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, RecofrienderFriendState& v) {
+  inline void from_json(const nlohmann::json& j, RecofrienderFriendState& v) {
     const auto s& = j.get<std::string>();
     if(s == "BLOCKED"){
       v = RecofrienderFriendState::BLOCKED;

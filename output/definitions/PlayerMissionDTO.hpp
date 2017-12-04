@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerMissionDTO_HPP
 #define SWAGGER_TYPES_PlayerMissionDTO_HPP
 #include <json.hpp>
-#include "PlayerMissionObjectiveDTO.hpp"
+#include "MissionRequirementDTO.hpp"
 #include "PlayerMissionRewardDTO.hpp"
 #include "MissionAlertDTO.hpp"
-#include "MissionRequirementDTO.hpp"
+#include "PlayerMissionObjectiveDTO.hpp"
 namespace leagueapi {
   // 
   struct PlayerMissionDTO {
@@ -58,7 +58,7 @@ namespace leagueapi {
     bool viewed;
   };
 
-  void to_json(nlohmann::json& j, const PlayerMissionDTO& v) {
+  inline void to_json(nlohmann::json& j, const PlayerMissionDTO& v) {
     j["backgroundImageUrl"] = v.backgroundImageUrl;
     j["celebrationType"] = v.celebrationType;
     j["completedDate"] = v.completedDate;
@@ -85,7 +85,7 @@ namespace leagueapi {
     j["viewed"] = v.viewed;
   }
 
-  void from_json(const nlohmann::json& j, PlayerMissionDTO& v) {
+  inline void from_json(const nlohmann::json& j, PlayerMissionDTO& v) {
     v.backgroundImageUrl = j.at("backgroundImageUrl").get<std::string>;
     v.celebrationType = j.at("celebrationType").get<std::string>;
     v.completedDate = j.at("completedDate").get<int64_t>;

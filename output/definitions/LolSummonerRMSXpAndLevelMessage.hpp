@@ -11,12 +11,12 @@ namespace leagueapi {
     nlohmann::json xp;
   };
 
-  void to_json(nlohmann::json& j, const LolSummonerRMSXpAndLevelMessage& v) {
+  inline void to_json(nlohmann::json& j, const LolSummonerRMSXpAndLevelMessage& v) {
     j["level"] = v.level;
     j["xp"] = v.xp;
   }
 
-  void from_json(const nlohmann::json& j, LolSummonerRMSXpAndLevelMessage& v) {
+  inline void from_json(const nlohmann::json& j, LolSummonerRMSXpAndLevelMessage& v) {
     v.level = j.at("level").get<LolSummonerRMSLevelField>;
     v.xp = j.at("xp").get<nlohmann::json>;
   }

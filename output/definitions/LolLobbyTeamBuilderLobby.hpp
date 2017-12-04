@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderLobby_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderLobby_HPP
 #include <json.hpp>
-#include "LolLobbyTeamBuilderLobbyInvitation.hpp"
 #include "LolLobbyTeamBuilderLobbyMember.hpp"
+#include "LolLobbyTeamBuilderLobbyInvitation.hpp"
 #include "LolLobbyTeamBuilderLobbyRemovedFromGameReason.hpp"
 namespace leagueapi {
   // 
@@ -49,7 +49,7 @@ namespace leagueapi {
     bool wasKicked;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLobby& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLobby& v) {
     j["allowablePremadeSizes"] = v.allowablePremadeSizes;
     j["autoFillEligible"] = v.autoFillEligible;
     j["autoFillProtectedForPromos"] = v.autoFillProtectedForPromos;
@@ -72,7 +72,7 @@ namespace leagueapi {
     j["wasKicked"] = v.wasKicked;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLobby& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLobby& v) {
     v.allowablePremadeSizes = j.at("allowablePremadeSizes").get<std::vector<int32_t>>;
     v.autoFillEligible = j.at("autoFillEligible").get<bool>;
     v.autoFillProtectedForPromos = j.at("autoFillProtectedForPromos").get<bool>;

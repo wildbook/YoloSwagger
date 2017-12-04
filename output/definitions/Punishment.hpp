@@ -24,7 +24,7 @@ namespace leagueapi {
     std::string punishmentType;
   };
 
-  void to_json(nlohmann::json& j, const Punishment& v) {
+  inline void to_json(nlohmann::json& j, const Punishment& v) {
     j["permaBan"] = v.permaBan;
     j["playerFacingMessage"] = v.playerFacingMessage;
     j["punishedForChatLogs"] = v.punishedForChatLogs;
@@ -36,7 +36,7 @@ namespace leagueapi {
     j["punishmentType"] = v.punishmentType;
   }
 
-  void from_json(const nlohmann::json& j, Punishment& v) {
+  inline void from_json(const nlohmann::json& j, Punishment& v) {
     v.permaBan = j.at("permaBan").get<bool>;
     v.playerFacingMessage = j.at("playerFacingMessage").get<std::string>;
     v.punishedForChatLogs = j.at("punishedForChatLogs").get<std::vector<std::string>>;

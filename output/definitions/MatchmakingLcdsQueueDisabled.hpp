@@ -15,14 +15,14 @@ namespace leagueapi {
     MatchmakingLcdsSummoner summoner;
   };
 
-  void to_json(nlohmann::json& j, const MatchmakingLcdsQueueDisabled& v) {
+  inline void to_json(nlohmann::json& j, const MatchmakingLcdsQueueDisabled& v) {
     j["message"] = v.message;
     j["queueId"] = v.queueId;
     j["reasonFailed"] = v.reasonFailed;
     j["summoner"] = v.summoner;
   }
 
-  void from_json(const nlohmann::json& j, MatchmakingLcdsQueueDisabled& v) {
+  inline void from_json(const nlohmann::json& j, MatchmakingLcdsQueueDisabled& v) {
     v.message = j.at("message").get<std::string>;
     v.queueId = j.at("queueId").get<int32_t>;
     v.reasonFailed = j.at("reasonFailed").get<std::string>;

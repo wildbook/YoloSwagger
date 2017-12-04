@@ -8,11 +8,11 @@ namespace leagueapi {
     std::string ipAddress;
   };
 
-  void to_json(nlohmann::json& j, const LolGeoinfoWhereAmIRequest& v) {
+  inline void to_json(nlohmann::json& j, const LolGeoinfoWhereAmIRequest& v) {
     j["ipAddress"] = v.ipAddress;
   }
 
-  void from_json(const nlohmann::json& j, LolGeoinfoWhereAmIRequest& v) {
+  inline void from_json(const nlohmann::json& j, LolGeoinfoWhereAmIRequest& v) {
     v.ipAddress = j.at("ipAddress").get<std::string>;
   }
 

@@ -18,7 +18,7 @@ namespace leagueapi {
     VP = 5,
   };
 
-  void to_json(nlohmann::json& j, const ClashRewardType& v) {
+  inline void to_json(nlohmann::json& j, const ClashRewardType& v) {
     switch(v) {
       case ClashRewardType::FLAG:
         j = "FLAG";
@@ -41,7 +41,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, ClashRewardType& v) {
+  inline void from_json(const nlohmann::json& j, ClashRewardType& v) {
     const auto s& = j.get<std::string>();
     if(s == "FLAG"){
       v = ClashRewardType::FLAG;

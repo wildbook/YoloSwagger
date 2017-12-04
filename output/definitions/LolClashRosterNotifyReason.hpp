@@ -70,7 +70,7 @@ namespace leagueapi {
     WITHDRAW = 30,
   };
 
-  void to_json(nlohmann::json& j, const LolClashRosterNotifyReason& v) {
+  inline void to_json(nlohmann::json& j, const LolClashRosterNotifyReason& v) {
     switch(v) {
       case LolClashRosterNotifyReason::BUYBACK:
         j = "BUYBACK";
@@ -171,7 +171,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolClashRosterNotifyReason& v) {
+  inline void from_json(const nlohmann::json& j, LolClashRosterNotifyReason& v) {
     const auto s& = j.get<std::string>();
     if(s == "BUYBACK"){
       v = LolClashRosterNotifyReason::BUYBACK;

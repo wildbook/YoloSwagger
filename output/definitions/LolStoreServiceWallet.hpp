@@ -11,12 +11,12 @@ namespace leagueapi {
     std::vector<LolStoreServiceBalance> balances;
   };
 
-  void to_json(nlohmann::json& j, const LolStoreServiceWallet& v) {
+  inline void to_json(nlohmann::json& j, const LolStoreServiceWallet& v) {
     j["accountId"] = v.accountId;
     j["balances"] = v.balances;
   }
 
-  void from_json(const nlohmann::json& j, LolStoreServiceWallet& v) {
+  inline void from_json(const nlohmann::json& j, LolStoreServiceWallet& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.balances = j.at("balances").get<std::vector<LolStoreServiceBalance>>;
   }

@@ -16,7 +16,7 @@ namespace leagueapi {
     SCOUTING = 2,
   };
 
-  void to_json(nlohmann::json& j, const LolClashTournamentState& v) {
+  inline void to_json(nlohmann::json& j, const LolClashTournamentState& v) {
     switch(v) {
       case LolClashTournamentState::IDLE:
         j = "IDLE";
@@ -36,7 +36,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolClashTournamentState& v) {
+  inline void from_json(const nlohmann::json& j, LolClashTournamentState& v) {
     const auto s& = j.get<std::string>();
     if(s == "IDLE"){
       v = LolClashTournamentState::IDLE;

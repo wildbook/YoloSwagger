@@ -9,11 +9,11 @@ namespace leagueapi {
     LolLoginAccountStateType state;
   };
 
-  void to_json(nlohmann::json& j, const LolLoginAccountStateResource& v) {
+  inline void to_json(nlohmann::json& j, const LolLoginAccountStateResource& v) {
     j["state"] = v.state;
   }
 
-  void from_json(const nlohmann::json& j, LolLoginAccountStateResource& v) {
+  inline void from_json(const nlohmann::json& j, LolLoginAccountStateResource& v) {
     v.state = j.at("state").get<LolLoginAccountStateType>;
   }
 

@@ -9,11 +9,11 @@ namespace leagueapi {
     LolInventoryInventoryDTO data;
   };
 
-  void to_json(nlohmann::json& j, const LolInventoryInventoryResponseDTO& v) {
+  inline void to_json(nlohmann::json& j, const LolInventoryInventoryResponseDTO& v) {
     j["data"] = v.data;
   }
 
-  void from_json(const nlohmann::json& j, LolInventoryInventoryResponseDTO& v) {
+  inline void from_json(const nlohmann::json& j, LolInventoryInventoryResponseDTO& v) {
     v.data = j.at("data").get<LolInventoryInventoryDTO>;
   }
 

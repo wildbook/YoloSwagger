@@ -16,7 +16,7 @@ namespace leagueapi {
     OK = 0,
   };
 
-  void to_json(nlohmann::json& j, const ReplayResponseStatus& v) {
+  inline void to_json(nlohmann::json& j, const ReplayResponseStatus& v) {
     switch(v) {
       case ReplayResponseStatus::BAD_REQUEST:
         j = "BAD_REQUEST";
@@ -36,7 +36,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, ReplayResponseStatus& v) {
+  inline void from_json(const nlohmann::json& j, ReplayResponseStatus& v) {
     const auto s& = j.get<std::string>();
     if(s == "BAD_REQUEST"){
       v = ReplayResponseStatus::BAD_REQUEST;

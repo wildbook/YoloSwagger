@@ -17,7 +17,7 @@ namespace leagueapi {
     EndOfGameLcdsTeamId teamId;
   };
 
-  void to_json(nlohmann::json& j, const EndOfGameLcdsTeamInfo& v) {
+  inline void to_json(nlohmann::json& j, const EndOfGameLcdsTeamInfo& v) {
     j["memberStatusString"] = v.memberStatusString;
     j["name"] = v.name;
     j["secondsUntilEligibleForDeletion"] = v.secondsUntilEligibleForDeletion;
@@ -25,7 +25,7 @@ namespace leagueapi {
     j["teamId"] = v.teamId;
   }
 
-  void from_json(const nlohmann::json& j, EndOfGameLcdsTeamInfo& v) {
+  inline void from_json(const nlohmann::json& j, EndOfGameLcdsTeamInfo& v) {
     v.memberStatusString = j.at("memberStatusString").get<std::string>;
     v.name = j.at("name").get<std::string>;
     v.secondsUntilEligibleForDeletion = j.at("secondsUntilEligibleForDeletion").get<int64_t>;

@@ -12,13 +12,13 @@ namespace leagueapi {
     bool valid;
   };
 
-  void to_json(nlohmann::json& j, const LolInventoryCacheEntry& v) {
+  inline void to_json(nlohmann::json& j, const LolInventoryCacheEntry& v) {
     j["expirationMS"] = v.expirationMS;
     j["signedInventoryJwt"] = v.signedInventoryJwt;
     j["valid"] = v.valid;
   }
 
-  void from_json(const nlohmann::json& j, LolInventoryCacheEntry& v) {
+  inline void from_json(const nlohmann::json& j, LolInventoryCacheEntry& v) {
     v.expirationMS = j.at("expirationMS").get<uint64_t>;
     v.signedInventoryJwt = j.at("signedInventoryJwt").get<std::string>;
     v.valid = j.at("valid").get<bool>;

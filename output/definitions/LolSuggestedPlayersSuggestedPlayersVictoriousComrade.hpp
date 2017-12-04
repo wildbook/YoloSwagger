@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string summonerName;
   };
 
-  void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersVictoriousComrade& v) {
+  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersVictoriousComrade& v) {
     j["summonerId"] = v.summonerId;
     j["summonerName"] = v.summonerName;
   }
 
-  void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersVictoriousComrade& v) {
+  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersVictoriousComrade& v) {
     v.summonerId = j.at("summonerId").get<uint64_t>;
     v.summonerName = j.at("summonerName").get<std::string>;
   }

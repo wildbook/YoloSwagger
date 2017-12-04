@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolClashQueue_HPP
 #define SWAGGER_TYPES_LolClashQueue_HPP
 #include <json.hpp>
-#include "LolClashQueueAvailability.hpp"
-#include "LolClashQueueGameTypeConfig.hpp"
 #include "LolClashQueueReward.hpp"
+#include "LolClashQueueAvailability.hpp"
 #include "LolClashQueueGameCategory.hpp"
+#include "LolClashQueueGameTypeConfig.hpp"
 namespace leagueapi {
   // 
   struct LolClashQueue {
@@ -58,7 +58,7 @@ namespace leagueapi {
     std::string type;
   };
 
-  void to_json(nlohmann::json& j, const LolClashQueue& v) {
+  inline void to_json(nlohmann::json& j, const LolClashQueue& v) {
     j["areFreeChampionsAllowed"] = v.areFreeChampionsAllowed;
     j["category"] = v.category;
     j["description"] = v.description;
@@ -85,7 +85,7 @@ namespace leagueapi {
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, LolClashQueue& v) {
+  inline void from_json(const nlohmann::json& j, LolClashQueue& v) {
     v.areFreeChampionsAllowed = j.at("areFreeChampionsAllowed").get<bool>;
     v.category = j.at("category").get<LolClashQueueGameCategory>;
     v.description = j.at("description").get<std::string>;

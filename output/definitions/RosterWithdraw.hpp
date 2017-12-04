@@ -20,7 +20,7 @@ namespace leagueapi {
     std::vector<int64_t> voteWithdrawMembers;
   };
 
-  void to_json(nlohmann::json& j, const RosterWithdraw& v) {
+  inline void to_json(nlohmann::json& j, const RosterWithdraw& v) {
     j["declineWithdrawMembers"] = v.declineWithdrawMembers;
     j["gameStartBufferMs"] = v.gameStartBufferMs;
     j["initVoteMember"] = v.initVoteMember;
@@ -30,7 +30,7 @@ namespace leagueapi {
     j["voteWithdrawMembers"] = v.voteWithdrawMembers;
   }
 
-  void from_json(const nlohmann::json& j, RosterWithdraw& v) {
+  inline void from_json(const nlohmann::json& j, RosterWithdraw& v) {
     v.declineWithdrawMembers = j.at("declineWithdrawMembers").get<std::vector<int64_t>>;
     v.gameStartBufferMs = j.at("gameStartBufferMs").get<int64_t>;
     v.initVoteMember = j.at("initVoteMember").get<uint64_t>;

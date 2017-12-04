@@ -21,7 +21,7 @@ namespace leagueapi {
     LolPurchaseWidgetSale sale;
   };
 
-  void to_json(nlohmann::json& j, const LolPurchaseWidgetValidationResponseItem& v) {
+  inline void to_json(nlohmann::json& j, const LolPurchaseWidgetValidationResponseItem& v) {
     j["description"] = v.description;
     j["itemKey"] = v.itemKey;
     j["name"] = v.name;
@@ -30,7 +30,7 @@ namespace leagueapi {
     j["sale"] = v.sale;
   }
 
-  void from_json(const nlohmann::json& j, LolPurchaseWidgetValidationResponseItem& v) {
+  inline void from_json(const nlohmann::json& j, LolPurchaseWidgetValidationResponseItem& v) {
     v.description = j.at("description").get<std::string>;
     v.itemKey = j.at("itemKey").get<LolPurchaseWidgetItemKey>;
     v.name = j.at("name").get<std::string>;

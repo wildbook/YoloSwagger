@@ -14,14 +14,14 @@ namespace leagueapi {
     uint64_t initialXp;
   };
 
-  void to_json(nlohmann::json& j, const LolSummonerRMSLevelProgression& v) {
+  inline void to_json(nlohmann::json& j, const LolSummonerRMSLevelProgression& v) {
     j["finalLevelBoundary"] = v.finalLevelBoundary;
     j["finalXp"] = v.finalXp;
     j["initialLevelBoundary"] = v.initialLevelBoundary;
     j["initialXp"] = v.initialXp;
   }
 
-  void from_json(const nlohmann::json& j, LolSummonerRMSLevelProgression& v) {
+  inline void from_json(const nlohmann::json& j, LolSummonerRMSLevelProgression& v) {
     v.finalLevelBoundary = j.at("finalLevelBoundary").get<uint64_t>;
     v.finalXp = j.at("finalXp").get<uint64_t>;
     v.initialLevelBoundary = j.at("initialLevelBoundary").get<uint64_t>;

@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string chatRoomPassword;
   };
 
-  void to_json(nlohmann::json& j, const LolPerksChampSelectChatRoomDetails& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksChampSelectChatRoomDetails& v) {
     j["chatRoomName"] = v.chatRoomName;
     j["chatRoomPassword"] = v.chatRoomPassword;
   }
 
-  void from_json(const nlohmann::json& j, LolPerksChampSelectChatRoomDetails& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksChampSelectChatRoomDetails& v) {
     v.chatRoomName = j.at("chatRoomName").get<std::string>;
     v.chatRoomPassword = j.at("chatRoomPassword").get<std::string>;
   }

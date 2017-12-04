@@ -33,7 +33,7 @@ namespace leagueapi {
     std::string tournamentName;
   };
 
-  void to_json(nlohmann::json& j, const ClashEventData& v) {
+  inline void to_json(nlohmann::json& j, const ClashEventData& v) {
     j["bracket"] = v.bracket;
     j["earnedDate"] = v.earnedDate;
     j["playerUUIDs"] = v.playerUUIDs;
@@ -49,7 +49,7 @@ namespace leagueapi {
     j["tournamentName"] = v.tournamentName;
   }
 
-  void from_json(const nlohmann::json& j, ClashEventData& v) {
+  inline void from_json(const nlohmann::json& j, ClashEventData& v) {
     v.bracket = j.at("bracket").get<int32_t>;
     v.earnedDate = j.at("earnedDate").get<std::string>;
     v.playerUUIDs = j.at("playerUUIDs").get<std::vector<std::string>>;

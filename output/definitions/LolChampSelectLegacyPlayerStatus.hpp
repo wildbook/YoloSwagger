@@ -11,12 +11,12 @@ namespace leagueapi {
     LolChampSelectLegacyLobbyStatus lastQueuedLobbyStatus;
   };
 
-  void to_json(nlohmann::json& j, const LolChampSelectLegacyPlayerStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyPlayerStatus& v) {
     j["currentLobbyStatus"] = v.currentLobbyStatus;
     j["lastQueuedLobbyStatus"] = v.lastQueuedLobbyStatus;
   }
 
-  void from_json(const nlohmann::json& j, LolChampSelectLegacyPlayerStatus& v) {
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyPlayerStatus& v) {
     v.currentLobbyStatus = j.at("currentLobbyStatus").get<LolChampSelectLegacyLobbyStatus>;
     v.lastQueuedLobbyStatus = j.at("lastQueuedLobbyStatus").get<LolChampSelectLegacyLobbyStatus>;
   }

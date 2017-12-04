@@ -18,7 +18,7 @@ namespace leagueapi {
     RANKED_TEAM_5x5 = 5,
   };
 
-  void to_json(nlohmann::json& j, const LolRankedStatsRankedQueue& v) {
+  inline void to_json(nlohmann::json& j, const LolRankedStatsRankedQueue& v) {
     switch(v) {
       case LolRankedStatsRankedQueue::INVALID:
         j = "INVALID";
@@ -41,7 +41,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolRankedStatsRankedQueue& v) {
+  inline void from_json(const nlohmann::json& j, LolRankedStatsRankedQueue& v) {
     const auto s& = j.get<std::string>();
     if(s == "INVALID"){
       v = LolRankedStatsRankedQueue::INVALID;

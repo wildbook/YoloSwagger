@@ -12,7 +12,7 @@ namespace leagueapi {
     REVOKED = 2,
   };
 
-  void to_json(nlohmann::json& j, const LcdsInvitationState& v) {
+  inline void to_json(nlohmann::json& j, const LcdsInvitationState& v) {
     switch(v) {
       case LcdsInvitationState::ACTIVE:
         j = "ACTIVE";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LcdsInvitationState& v) {
+  inline void from_json(const nlohmann::json& j, LcdsInvitationState& v) {
     const auto s& = j.get<std::string>();
     if(s == "ACTIVE"){
       v = LcdsInvitationState::ACTIVE;

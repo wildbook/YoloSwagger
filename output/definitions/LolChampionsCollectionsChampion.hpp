@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolChampionsCollectionsChampion_HPP
 #define SWAGGER_TYPES_LolChampionsCollectionsChampion_HPP
 #include <json.hpp>
+#include "LolChampionsCollectionsChampionSpell.hpp"
 #include "LolChampionsCollectionsOwnership.hpp"
 #include "LolChampionsCollectionsChampionSkin.hpp"
-#include "LolChampionsCollectionsChampionSpell.hpp"
 namespace leagueapi {
   // 
   struct LolChampionsCollectionsChampion {
@@ -45,7 +45,7 @@ namespace leagueapi {
     std::string stingerSfxPath;
   };
 
-  void to_json(nlohmann::json& j, const LolChampionsCollectionsChampion& v) {
+  inline void to_json(nlohmann::json& j, const LolChampionsCollectionsChampion& v) {
     j["active"] = v.active;
     j["alias"] = v.alias;
     j["banVoPath"] = v.banVoPath;
@@ -66,7 +66,7 @@ namespace leagueapi {
     j["stingerSfxPath"] = v.stingerSfxPath;
   }
 
-  void from_json(const nlohmann::json& j, LolChampionsCollectionsChampion& v) {
+  inline void from_json(const nlohmann::json& j, LolChampionsCollectionsChampion& v) {
     v.active = j.at("active").get<bool>;
     v.alias = j.at("alias").get<std::string>;
     v.banVoPath = j.at("banVoPath").get<std::string>;

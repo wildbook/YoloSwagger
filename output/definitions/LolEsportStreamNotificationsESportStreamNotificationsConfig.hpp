@@ -26,7 +26,7 @@ namespace leagueapi {
     bool useServiceEndpointV2;
   };
 
-  void to_json(nlohmann::json& j, const LolEsportStreamNotificationsESportStreamNotificationsConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolEsportStreamNotificationsESportStreamNotificationsConfig& v) {
     j["beappFailureLongPollMinutes"] = v.beappFailureLongPollMinutes;
     j["notificationsAssetMagickURL"] = v.notificationsAssetMagickURL;
     j["notificationsEnabled"] = v.notificationsEnabled;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["useServiceEndpointV2"] = v.useServiceEndpointV2;
   }
 
-  void from_json(const nlohmann::json& j, LolEsportStreamNotificationsESportStreamNotificationsConfig& v) {
+  inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsESportStreamNotificationsConfig& v) {
     v.beappFailureLongPollMinutes = j.at("beappFailureLongPollMinutes").get<int64_t>;
     v.notificationsAssetMagickURL = j.at("notificationsAssetMagickURL").get<std::string>;
     v.notificationsEnabled = j.at("notificationsEnabled").get<bool>;

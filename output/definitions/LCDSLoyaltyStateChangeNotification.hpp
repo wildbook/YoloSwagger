@@ -14,13 +14,13 @@ namespace leagueapi {
     LCDSLoyaltyRewards rewards;
   };
 
-  void to_json(nlohmann::json& j, const LCDSLoyaltyStateChangeNotification& v) {
+  inline void to_json(nlohmann::json& j, const LCDSLoyaltyStateChangeNotification& v) {
     j["accountId"] = v.accountId;
     j["notificationCategory"] = v.notificationCategory;
     j["rewards"] = v.rewards;
   }
 
-  void from_json(const nlohmann::json& j, LCDSLoyaltyStateChangeNotification& v) {
+  inline void from_json(const nlohmann::json& j, LCDSLoyaltyStateChangeNotification& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.notificationCategory = j.at("notificationCategory").get<LCDSLoyaltyStateChangeNotificationCategory>;
     v.rewards = j.at("rewards").get<LCDSLoyaltyRewards>;

@@ -37,7 +37,7 @@ namespace leagueapi {
     uint16_t victimId;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryEvent& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryEvent& v) {
     j["assistingParticipantIds"] = v.assistingParticipantIds;
     j["buildingType"] = v.buildingType;
     j["itemId"] = v.itemId;
@@ -55,7 +55,7 @@ namespace leagueapi {
     j["victimId"] = v.victimId;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryEvent& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryEvent& v) {
     v.assistingParticipantIds = j.at("assistingParticipantIds").get<std::vector<uint16_t>>;
     v.buildingType = j.at("buildingType").get<std::string>;
     v.itemId = j.at("itemId").get<uint16_t>;

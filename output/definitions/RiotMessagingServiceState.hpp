@@ -14,7 +14,7 @@ namespace leagueapi {
     Disconnecting = 0,
   };
 
-  void to_json(nlohmann::json& j, const RiotMessagingServiceState& v) {
+  inline void to_json(nlohmann::json& j, const RiotMessagingServiceState& v) {
     switch(v) {
       case RiotMessagingServiceState::Connected:
         j = "Connected";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, RiotMessagingServiceState& v) {
+  inline void from_json(const nlohmann::json& j, RiotMessagingServiceState& v) {
     const auto s& = j.get<std::string>();
     if(s == "Connected"){
       v = RiotMessagingServiceState::Connected;

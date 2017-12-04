@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolChampSelectChampSelectSession_HPP
 #define SWAGGER_TYPES_LolChampSelectChampSelectSession_HPP
 #include <json.hpp>
-#include "LolChampSelectChampSelectTimer.hpp"
-#include "LolChampSelectChampSelectTradeContract.hpp"
-#include "LolChampSelectChampSelectBannedChampions.hpp"
 #include "LolChampSelectChampSelectChatRoomDetails.hpp"
+#include "LolChampSelectChampSelectTradeContract.hpp"
+#include "LolChampSelectChampSelectTimer.hpp"
+#include "LolChampSelectChampSelectBannedChampions.hpp"
 #include "LolChampSelectChampSelectPlayerSelection.hpp"
 namespace leagueapi {
   // 
@@ -37,7 +37,7 @@ namespace leagueapi {
     std::vector<LolChampSelectChampSelectTradeContract> trades;
   };
 
-  void to_json(nlohmann::json& j, const LolChampSelectChampSelectSession& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectChampSelectSession& v) {
     j["actions"] = v.actions;
     j["allowBattleBoost"] = v.allowBattleBoost;
     j["allowRerolling"] = v.allowRerolling;
@@ -53,7 +53,7 @@ namespace leagueapi {
     j["trades"] = v.trades;
   }
 
-  void from_json(const nlohmann::json& j, LolChampSelectChampSelectSession& v) {
+  inline void from_json(const nlohmann::json& j, LolChampSelectChampSelectSession& v) {
     v.actions = j.at("actions").get<std::vector<nlohmann::json>>;
     v.allowBattleBoost = j.at("allowBattleBoost").get<bool>;
     v.allowRerolling = j.at("allowRerolling").get<bool>;

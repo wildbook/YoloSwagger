@@ -20,7 +20,7 @@ namespace leagueapi {
     SUGGESTED = 0,
   };
 
-  void to_json(nlohmann::json& j, const SubState& v) {
+  inline void to_json(nlohmann::json& j, const SubState& v) {
     switch(v) {
       case SubState::DECLINED:
         j = "DECLINED";
@@ -46,7 +46,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, SubState& v) {
+  inline void from_json(const nlohmann::json& j, SubState& v) {
     const auto s& = j.get<std::string>();
     if(s == "DECLINED"){
       v = SubState::DECLINED;

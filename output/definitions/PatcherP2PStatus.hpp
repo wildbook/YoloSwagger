@@ -12,13 +12,13 @@ namespace leagueapi {
     bool requiresRestart;
   };
 
-  void to_json(nlohmann::json& j, const PatcherP2PStatus& v) {
+  inline void to_json(nlohmann::json& j, const PatcherP2PStatus& v) {
     j["isAllowedByUser"] = v.isAllowedByUser;
     j["isEnabledForPatchline"] = v.isEnabledForPatchline;
     j["requiresRestart"] = v.requiresRestart;
   }
 
-  void from_json(const nlohmann::json& j, PatcherP2PStatus& v) {
+  inline void from_json(const nlohmann::json& j, PatcherP2PStatus& v) {
     v.isAllowedByUser = j.at("isAllowedByUser").get<bool>;
     v.isEnabledForPatchline = j.at("isEnabledForPatchline").get<bool>;
     v.requiresRestart = j.at("requiresRestart").get<bool>;

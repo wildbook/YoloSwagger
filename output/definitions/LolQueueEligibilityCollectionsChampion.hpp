@@ -17,7 +17,7 @@ namespace leagueapi {
     bool rankedPlayEnabled;
   };
 
-  void to_json(nlohmann::json& j, const LolQueueEligibilityCollectionsChampion& v) {
+  inline void to_json(nlohmann::json& j, const LolQueueEligibilityCollectionsChampion& v) {
     j["disabledQueues"] = v.disabledQueues;
     j["freeToPlay"] = v.freeToPlay;
     j["ownership"] = v.ownership;
@@ -25,7 +25,7 @@ namespace leagueapi {
     j["rankedPlayEnabled"] = v.rankedPlayEnabled;
   }
 
-  void from_json(const nlohmann::json& j, LolQueueEligibilityCollectionsChampion& v) {
+  inline void from_json(const nlohmann::json& j, LolQueueEligibilityCollectionsChampion& v) {
     v.disabledQueues = j.at("disabledQueues").get<std::vector<std::string>>;
     v.freeToPlay = j.at("freeToPlay").get<bool>;
     v.ownership = j.at("ownership").get<LolQueueEligibilityCollectionsOwnership>;

@@ -15,14 +15,14 @@ namespace leagueapi {
     uint64_t userId;
   };
 
-  void to_json(nlohmann::json& j, const PlayerGameStats& v) {
+  inline void to_json(nlohmann::json& j, const PlayerGameStats& v) {
     j["createDate"] = v.createDate;
     j["fellowPlayers"] = v.fellowPlayers;
     j["gameId"] = v.gameId;
     j["userId"] = v.userId;
   }
 
-  void from_json(const nlohmann::json& j, PlayerGameStats& v) {
+  inline void from_json(const nlohmann::json& j, PlayerGameStats& v) {
     v.createDate = j.at("createDate").get<uint64_t>;
     v.fellowPlayers = j.at("fellowPlayers").get<std::vector<FellowPlayerInfo>>;
     v.gameId = j.at("gameId").get<uint64_t>;

@@ -21,7 +21,7 @@ namespace leagueapi {
     bool winner;
   };
 
-  void to_json(nlohmann::json& j, const LolClashEogPlayerUpdateDTO& v) {
+  inline void to_json(nlohmann::json& j, const LolClashEogPlayerUpdateDTO& v) {
     j["earnedRewards"] = v.earnedRewards;
     j["gameId"] = v.gameId;
     j["rewardProgress"] = v.rewardProgress;
@@ -31,7 +31,7 @@ namespace leagueapi {
     j["winner"] = v.winner;
   }
 
-  void from_json(const nlohmann::json& j, LolClashEogPlayerUpdateDTO& v) {
+  inline void from_json(const nlohmann::json& j, LolClashEogPlayerUpdateDTO& v) {
     v.earnedRewards = j.at("earnedRewards").get<std::vector<ClashRewardDefinition>>;
     v.gameId = j.at("gameId").get<int64_t>;
     v.rewardProgress = j.at("rewardProgress").get<std::vector<ClashRewardDefinition>>;

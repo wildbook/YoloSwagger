@@ -26,7 +26,7 @@ namespace leagueapi {
     std::string type;
   };
 
-  void to_json(nlohmann::json& j, const LolChampionsPlayerNotification& v) {
+  inline void to_json(nlohmann::json& j, const LolChampionsPlayerNotification& v) {
     j["backgroundUrl"] = v.backgroundUrl;
     j["critical"] = v.critical;
     j["data"] = v.data;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, LolChampionsPlayerNotification& v) {
+  inline void from_json(const nlohmann::json& j, LolChampionsPlayerNotification& v) {
     v.backgroundUrl = j.at("backgroundUrl").get<std::string>;
     v.critical = j.at("critical").get<bool>;
     v.data = j.at("data").get<std::map<std::string, std::string>>;

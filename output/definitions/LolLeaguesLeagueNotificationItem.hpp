@@ -68,7 +68,7 @@ namespace leagueapi {
     uint64_t wins;
   };
 
-  void to_json(nlohmann::json& j, const LolLeaguesLeagueNotificationItem& v) {
+  inline void to_json(nlohmann::json& j, const LolLeaguesLeagueNotificationItem& v) {
     j["demotionWarning"] = v.demotionWarning;
     j["displayDecayWarning"] = v.displayDecayWarning;
     j["emblems"] = v.emblems;
@@ -101,7 +101,7 @@ namespace leagueapi {
     j["wins"] = v.wins;
   }
 
-  void from_json(const nlohmann::json& j, LolLeaguesLeagueNotificationItem& v) {
+  inline void from_json(const nlohmann::json& j, LolLeaguesLeagueNotificationItem& v) {
     v.demotionWarning = j.at("demotionWarning").get<int64_t>;
     v.displayDecayWarning = j.at("displayDecayWarning").get<bool>;
     v.emblems = j.at("emblems").get<std::vector<LolLeaguesLeagueEmblem>>;

@@ -9,11 +9,11 @@ namespace leagueapi {
     std::vector<LolLobbyPlayerDto> players;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyPlayerCollectionDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyPlayerCollectionDto& v) {
     j["players"] = v.players;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyPlayerCollectionDto& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyPlayerCollectionDto& v) {
     v.players = j.at("players").get<std::vector<LolLobbyPlayerDto>>;
   }
 

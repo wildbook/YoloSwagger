@@ -10,12 +10,12 @@ namespace leagueapi {
     bool visible;
   };
 
-  void to_json(nlohmann::json& j, const LolChampSelectLegacyGameflowGameClient& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyGameflowGameClient& v) {
     j["running"] = v.running;
     j["visible"] = v.visible;
   }
 
-  void from_json(const nlohmann::json& j, LolChampSelectLegacyGameflowGameClient& v) {
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyGameflowGameClient& v) {
     v.running = j.at("running").get<bool>;
     v.visible = j.at("visible").get<bool>;
   }

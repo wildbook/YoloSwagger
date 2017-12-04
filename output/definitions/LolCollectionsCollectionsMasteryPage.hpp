@@ -17,7 +17,7 @@ namespace leagueapi {
     std::map<std::string, uint32_t> summary;
   };
 
-  void to_json(nlohmann::json& j, const LolCollectionsCollectionsMasteryPage& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsMasteryPage& v) {
     j["current"] = v.current;
     j["id"] = v.id;
     j["masteries"] = v.masteries;
@@ -25,7 +25,7 @@ namespace leagueapi {
     j["summary"] = v.summary;
   }
 
-  void from_json(const nlohmann::json& j, LolCollectionsCollectionsMasteryPage& v) {
+  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsMasteryPage& v) {
     v.current = j.at("current").get<bool>;
     v.id = j.at("id").get<uint32_t>;
     v.masteries = j.at("masteries").get<std::vector<LolCollectionsCollectionsMastery>>;

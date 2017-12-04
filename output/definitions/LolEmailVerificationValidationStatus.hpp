@@ -8,11 +8,11 @@ namespace leagueapi {
     std::string emailStatus;
   };
 
-  void to_json(nlohmann::json& j, const LolEmailVerificationValidationStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolEmailVerificationValidationStatus& v) {
     j["emailStatus"] = v.emailStatus;
   }
 
-  void from_json(const nlohmann::json& j, LolEmailVerificationValidationStatus& v) {
+  inline void from_json(const nlohmann::json& j, LolEmailVerificationValidationStatus& v) {
     v.emailStatus = j.at("emailStatus").get<std::string>;
   }
 

@@ -16,7 +16,7 @@ namespace leagueapi {
     std::string title;
   };
 
-  void to_json(nlohmann::json& j, const PlayerMessagingNotificationResource& v) {
+  inline void to_json(nlohmann::json& j, const PlayerMessagingNotificationResource& v) {
     j["body"] = v.body;
     j["id"] = v.id;
     j["msgId"] = v.msgId;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["title"] = v.title;
   }
 
-  void from_json(const nlohmann::json& j, PlayerMessagingNotificationResource& v) {
+  inline void from_json(const nlohmann::json& j, PlayerMessagingNotificationResource& v) {
     v.body = j.at("body").get<std::string>;
     v.id = j.at("id").get<int32_t>;
     v.msgId = j.at("msgId").get<std::string>;

@@ -10,12 +10,12 @@ namespace leagueapi {
     double remainingTimeInMillis;
   };
 
-  void to_json(nlohmann::json& j, const ChampSelectLcdsGameTimerDTO& v) {
+  inline void to_json(nlohmann::json& j, const ChampSelectLcdsGameTimerDTO& v) {
     j["currentGameState"] = v.currentGameState;
     j["remainingTimeInMillis"] = v.remainingTimeInMillis;
   }
 
-  void from_json(const nlohmann::json& j, ChampSelectLcdsGameTimerDTO& v) {
+  inline void from_json(const nlohmann::json& j, ChampSelectLcdsGameTimerDTO& v) {
     v.currentGameState = j.at("currentGameState").get<std::string>;
     v.remainingTimeInMillis = j.at("remainingTimeInMillis").get<double>;
   }

@@ -31,7 +31,7 @@ namespace leagueapi {
     uint64_t xpUntilNextLevel;
   };
 
-  void to_json(nlohmann::json& j, const LolPerksSummoner& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksSummoner& v) {
     j["accountId"] = v.accountId;
     j["displayName"] = v.displayName;
     j["internalName"] = v.internalName;
@@ -46,7 +46,7 @@ namespace leagueapi {
     j["xpUntilNextLevel"] = v.xpUntilNextLevel;
   }
 
-  void from_json(const nlohmann::json& j, LolPerksSummoner& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksSummoner& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.displayName = j.at("displayName").get<std::string>;
     v.internalName = j.at("internalName").get<std::string>;

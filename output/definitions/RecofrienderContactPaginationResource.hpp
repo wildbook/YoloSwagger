@@ -18,7 +18,7 @@ namespace leagueapi {
     uint64_t total;
   };
 
-  void to_json(nlohmann::json& j, const RecofrienderContactPaginationResource& v) {
+  inline void to_json(nlohmann::json& j, const RecofrienderContactPaginationResource& v) {
     j["cached"] = v.cached;
     j["count"] = v.count;
     j["limit"] = v.limit;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["total"] = v.total;
   }
 
-  void from_json(const nlohmann::json& j, RecofrienderContactPaginationResource& v) {
+  inline void from_json(const nlohmann::json& j, RecofrienderContactPaginationResource& v) {
     v.cached = j.at("cached").get<uint64_t>;
     v.count = j.at("count").get<uint64_t>;
     v.limit = j.at("limit").get<uint64_t>;

@@ -14,14 +14,14 @@ namespace leagueapi {
     int64_t rp;
   };
 
-  void to_json(nlohmann::json& j, const StoreLcdsStoreFulfillmentNotification& v) {
+  inline void to_json(nlohmann::json& j, const StoreLcdsStoreFulfillmentNotification& v) {
     j["data"] = v.data;
     j["inventoryType"] = v.inventoryType;
     j["ip"] = v.ip;
     j["rp"] = v.rp;
   }
 
-  void from_json(const nlohmann::json& j, StoreLcdsStoreFulfillmentNotification& v) {
+  inline void from_json(const nlohmann::json& j, StoreLcdsStoreFulfillmentNotification& v) {
     v.data = j.at("data").get<nlohmann::json>;
     v.inventoryType = j.at("inventoryType").get<std::string>;
     v.ip = j.at("ip").get<int64_t>;

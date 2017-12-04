@@ -16,7 +16,7 @@ namespace leagueapi {
     unknown = 0,
   };
 
-  void to_json(nlohmann::json& j, const MetricType& v) {
+  inline void to_json(nlohmann::json& j, const MetricType& v) {
     switch(v) {
       case MetricType::count:
         j = "count";
@@ -36,7 +36,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, MetricType& v) {
+  inline void from_json(const nlohmann::json& j, MetricType& v) {
     const auto s& = j.get<std::string>();
     if(s == "count"){
       v = MetricType::count;

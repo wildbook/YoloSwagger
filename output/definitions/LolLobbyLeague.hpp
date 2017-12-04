@@ -10,12 +10,12 @@ namespace leagueapi {
     std::string queueType;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLeague& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLeague& v) {
     j["leagueTier"] = v.leagueTier;
     j["queueType"] = v.queueType;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLeague& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLeague& v) {
     v.leagueTier = j.at("leagueTier").get<std::string>;
     v.queueType = j.at("queueType").get<std::string>;
   }

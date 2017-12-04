@@ -25,7 +25,7 @@ namespace leagueapi {
     std::string username;
   };
 
-  void to_json(nlohmann::json& j, const LolChatChatPlatformLoginSession& v) {
+  inline void to_json(nlohmann::json& j, const LolChatChatPlatformLoginSession& v) {
     j["accountId"] = v.accountId;
     j["gasToken"] = v.gasToken;
     j["idToken"] = v.idToken;
@@ -37,7 +37,7 @@ namespace leagueapi {
     j["username"] = v.username;
   }
 
-  void from_json(const nlohmann::json& j, LolChatChatPlatformLoginSession& v) {
+  inline void from_json(const nlohmann::json& j, LolChatChatPlatformLoginSession& v) {
     v.accountId = j.at("accountId").get<uint64_t>;
     v.gasToken = j.at("gasToken").get<nlohmann::json>;
     v.idToken = j.at("idToken").get<std::string>;

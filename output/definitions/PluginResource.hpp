@@ -51,7 +51,7 @@ namespace leagueapi {
     std::string version;
   };
 
-  void to_json(nlohmann::json& j, const PluginResource& v) {
+  inline void to_json(nlohmann::json& j, const PluginResource& v) {
     j["app"] = v.app;
     j["assetBundleNames"] = v.assetBundleNames;
     j["dependencies"] = v.dependencies;
@@ -76,7 +76,7 @@ namespace leagueapi {
     j["version"] = v.version;
   }
 
-  void from_json(const nlohmann::json& j, PluginResource& v) {
+  inline void from_json(const nlohmann::json& j, PluginResource& v) {
     v.app = j.at("app").get<std::string>;
     v.assetBundleNames = j.at("assetBundleNames").get<std::vector<std::string>>;
     v.dependencies = j.at("dependencies").get<std::vector<PluginResourceContract>>;

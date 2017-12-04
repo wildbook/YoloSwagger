@@ -12,13 +12,13 @@ namespace leagueapi {
     bool delta;
   };
 
-  void to_json(nlohmann::json& j, const ClientDynamicConfig& v) {
+  inline void to_json(nlohmann::json& j, const ClientDynamicConfig& v) {
     j["compressed"] = v.compressed;
     j["configs"] = v.configs;
     j["delta"] = v.delta;
   }
 
-  void from_json(const nlohmann::json& j, ClientDynamicConfig& v) {
+  inline void from_json(const nlohmann::json& j, ClientDynamicConfig& v) {
     v.compressed = j.at("compressed").get<bool>;
     v.configs = j.at("configs").get<std::string>;
     v.delta = j.at("delta").get<bool>;

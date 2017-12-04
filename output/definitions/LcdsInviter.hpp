@@ -12,13 +12,13 @@ namespace leagueapi {
     std::string summonerName;
   };
 
-  void to_json(nlohmann::json& j, const LcdsInviter& v) {
+  inline void to_json(nlohmann::json& j, const LcdsInviter& v) {
     j["previousSeasonHighestTier"] = v.previousSeasonHighestTier;
     j["summonerId"] = v.summonerId;
     j["summonerName"] = v.summonerName;
   }
 
-  void from_json(const nlohmann::json& j, LcdsInviter& v) {
+  inline void from_json(const nlohmann::json& j, LcdsInviter& v) {
     v.previousSeasonHighestTier = j.at("previousSeasonHighestTier").get<std::string>;
     v.summonerId = j.at("summonerId").get<uint64_t>;
     v.summonerName = j.at("summonerName").get<std::string>;

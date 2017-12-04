@@ -18,7 +18,7 @@ namespace leagueapi {
     std::string shortName;
   };
 
-  void to_json(nlohmann::json& j, const PublicRosterDTO& v) {
+  inline void to_json(nlohmann::json& j, const PublicRosterDTO& v) {
     j["id"] = v.id;
     j["logo"] = v.logo;
     j["logoColor"] = v.logoColor;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["shortName"] = v.shortName;
   }
 
-  void from_json(const nlohmann::json& j, PublicRosterDTO& v) {
+  inline void from_json(const nlohmann::json& j, PublicRosterDTO& v) {
     v.id = j.at("id").get<int64_t>;
     v.logo = j.at("logo").get<int32_t>;
     v.logoColor = j.at("logoColor").get<int32_t>;

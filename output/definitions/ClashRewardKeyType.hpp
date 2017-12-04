@@ -22,7 +22,7 @@ namespace leagueapi {
     WINS = 4,
   };
 
-  void to_json(nlohmann::json& j, const ClashRewardKeyType& v) {
+  inline void to_json(nlohmann::json& j, const ClashRewardKeyType& v) {
     switch(v) {
       case ClashRewardKeyType::CUP:
         j = "CUP";
@@ -51,7 +51,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, ClashRewardKeyType& v) {
+  inline void from_json(const nlohmann::json& j, ClashRewardKeyType& v) {
     const auto s& = j.get<std::string>();
     if(s == "CUP"){
       v = ClashRewardKeyType::CUP;

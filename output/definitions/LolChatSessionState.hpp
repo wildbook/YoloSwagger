@@ -16,7 +16,7 @@ namespace leagueapi {
     shuttingdown = 4,
   };
 
-  void to_json(nlohmann::json& j, const LolChatSessionState& v) {
+  inline void to_json(nlohmann::json& j, const LolChatSessionState& v) {
     switch(v) {
       case LolChatSessionState::connected:
         j = "connected";
@@ -36,7 +36,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolChatSessionState& v) {
+  inline void from_json(const nlohmann::json& j, LolChatSessionState& v) {
     const auto s& = j.get<std::string>();
     if(s == "connected"){
       v = LolChatSessionState::connected;

@@ -22,7 +22,7 @@ namespace leagueapi {
     std::vector<BindingFullEnumValueHelp> values;
   };
 
-  void to_json(nlohmann::json& j, const BindingFullTypeHelp& v) {
+  inline void to_json(nlohmann::json& j, const BindingFullTypeHelp& v) {
     j["description"] = v.description;
     j["fields"] = v.fields;
     j["name"] = v.name;
@@ -32,7 +32,7 @@ namespace leagueapi {
     j["values"] = v.values;
   }
 
-  void from_json(const nlohmann::json& j, BindingFullTypeHelp& v) {
+  inline void from_json(const nlohmann::json& j, BindingFullTypeHelp& v) {
     v.description = j.at("description").get<std::string>;
     v.fields = j.at("fields").get<std::vector<BindingFullFieldHelp>>;
     v.name = j.at("name").get<std::string>;

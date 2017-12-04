@@ -12,12 +12,12 @@ namespace leagueapi {
     std::vector<LolLootLootRecipeGdsResource> LootRecipes;
   };
 
-  void to_json(nlohmann::json& j, const LolLootLootDataGdsResource& v) {
+  inline void to_json(nlohmann::json& j, const LolLootLootDataGdsResource& v) {
     j["LootItems"] = v.LootItems;
     j["LootRecipes"] = v.LootRecipes;
   }
 
-  void from_json(const nlohmann::json& j, LolLootLootDataGdsResource& v) {
+  inline void from_json(const nlohmann::json& j, LolLootLootDataGdsResource& v) {
     v.LootItems = j.at("LootItems").get<std::vector<LolLootLootItemGdsResource>>;
     v.LootRecipes = j.at("LootRecipes").get<std::vector<LolLootLootRecipeGdsResource>>;
   }

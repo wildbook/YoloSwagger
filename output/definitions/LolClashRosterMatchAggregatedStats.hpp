@@ -24,7 +24,7 @@ namespace leagueapi {
     bool win;
   };
 
-  void to_json(nlohmann::json& j, const LolClashRosterMatchAggregatedStats& v) {
+  inline void to_json(nlohmann::json& j, const LolClashRosterMatchAggregatedStats& v) {
     j["durationMs"] = v.durationMs;
     j["gameId"] = v.gameId;
     j["loserBracket"] = v.loserBracket;
@@ -36,7 +36,7 @@ namespace leagueapi {
     j["win"] = v.win;
   }
 
-  void from_json(const nlohmann::json& j, LolClashRosterMatchAggregatedStats& v) {
+  inline void from_json(const nlohmann::json& j, LolClashRosterMatchAggregatedStats& v) {
     v.durationMs = j.at("durationMs").get<int64_t>;
     v.gameId = j.at("gameId").get<int64_t>;
     v.loserBracket = j.at("loserBracket").get<bool>;

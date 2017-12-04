@@ -14,7 +14,7 @@ namespace leagueapi {
     VersusAi = 3,
   };
 
-  void to_json(nlohmann::json& j, const LolClashQueueGameCategory& v) {
+  inline void to_json(nlohmann::json& j, const LolClashQueueGameCategory& v) {
     switch(v) {
       case LolClashQueueGameCategory::Custom:
         j = "Custom";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolClashQueueGameCategory& v) {
+  inline void from_json(const nlohmann::json& j, LolClashQueueGameCategory& v) {
     const auto s& = j.get<std::string>();
     if(s == "Custom"){
       v = LolClashQueueGameCategory::Custom;

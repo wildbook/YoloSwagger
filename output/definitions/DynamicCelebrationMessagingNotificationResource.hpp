@@ -26,7 +26,7 @@ namespace leagueapi {
     int32_t status;
   };
 
-  void to_json(nlohmann::json& j, const DynamicCelebrationMessagingNotificationResource& v) {
+  inline void to_json(nlohmann::json& j, const DynamicCelebrationMessagingNotificationResource& v) {
     j["celebrationBody"] = v.celebrationBody;
     j["celebrationMessage"] = v.celebrationMessage;
     j["celebrationTitle"] = v.celebrationTitle;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["status"] = v.status;
   }
 
-  void from_json(const nlohmann::json& j, DynamicCelebrationMessagingNotificationResource& v) {
+  inline void from_json(const nlohmann::json& j, DynamicCelebrationMessagingNotificationResource& v) {
     v.celebrationBody = j.at("celebrationBody").get<std::string>;
     v.celebrationMessage = j.at("celebrationMessage").get<std::string>;
     v.celebrationTitle = j.at("celebrationTitle").get<std::string>;

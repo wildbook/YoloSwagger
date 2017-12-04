@@ -23,7 +23,7 @@ namespace leagueapi {
     uint64_t unreadMessageCount;
   };
 
-  void to_json(nlohmann::json& j, const LolChatConversationResource& v) {
+  inline void to_json(nlohmann::json& j, const LolChatConversationResource& v) {
     j["id"] = v.id;
     j["inviterId"] = v.inviterId;
     j["isMuted"] = v.isMuted;
@@ -34,7 +34,7 @@ namespace leagueapi {
     j["unreadMessageCount"] = v.unreadMessageCount;
   }
 
-  void from_json(const nlohmann::json& j, LolChatConversationResource& v) {
+  inline void from_json(const nlohmann::json& j, LolChatConversationResource& v) {
     v.id = j.at("id").get<std::string>;
     v.inviterId = j.at("inviterId").get<std::string>;
     v.isMuted = j.at("isMuted").get<bool>;

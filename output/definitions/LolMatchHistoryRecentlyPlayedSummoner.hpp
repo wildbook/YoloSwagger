@@ -18,7 +18,7 @@ namespace leagueapi {
     uint64_t teamId;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistoryRecentlyPlayedSummoner& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryRecentlyPlayedSummoner& v) {
     j["championId"] = v.championId;
     j["gameCreationDate"] = v.gameCreationDate;
     j["gameId"] = v.gameId;
@@ -27,7 +27,7 @@ namespace leagueapi {
     j["teamId"] = v.teamId;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistoryRecentlyPlayedSummoner& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryRecentlyPlayedSummoner& v) {
     v.championId = j.at("championId").get<uint64_t>;
     v.gameCreationDate = j.at("gameCreationDate").get<std::string>;
     v.gameId = j.at("gameId").get<uint64_t>;

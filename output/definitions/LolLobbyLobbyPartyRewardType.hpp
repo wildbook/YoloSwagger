@@ -12,7 +12,7 @@ namespace leagueapi {
     None = 9999,
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyPartyRewardType& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyPartyRewardType& v) {
     switch(v) {
       case LolLobbyLobbyPartyRewardType::Icon:
         j = "Icon";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyPartyRewardType& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyPartyRewardType& v) {
     const auto s& = j.get<std::string>();
     if(s == "Icon"){
       v = LolLobbyLobbyPartyRewardType::Icon;

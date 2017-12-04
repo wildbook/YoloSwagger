@@ -69,7 +69,7 @@ namespace leagueapi {
     std::string typeString;
   };
 
-  void to_json(nlohmann::json& j, const GameQueuesLcdsGameQueueConfig& v) {
+  inline void to_json(nlohmann::json& j, const GameQueuesLcdsGameQueueConfig& v) {
     j["blockedMinutesThreshold"] = v.blockedMinutesThreshold;
     j["botsCanSpawnOnBlueSide"] = v.botsCanSpawnOnBlueSide;
     j["cacheName"] = v.cacheName;
@@ -103,7 +103,7 @@ namespace leagueapi {
     j["typeString"] = v.typeString;
   }
 
-  void from_json(const nlohmann::json& j, GameQueuesLcdsGameQueueConfig& v) {
+  inline void from_json(const nlohmann::json& j, GameQueuesLcdsGameQueueConfig& v) {
     v.blockedMinutesThreshold = j.at("blockedMinutesThreshold").get<uint32_t>;
     v.botsCanSpawnOnBlueSide = j.at("botsCanSpawnOnBlueSide").get<bool>;
     v.cacheName = j.at("cacheName").get<std::string>;

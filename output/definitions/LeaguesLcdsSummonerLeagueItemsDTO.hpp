@@ -9,11 +9,11 @@ namespace leagueapi {
     std::vector<LeaguesLcdsLeagueItemDTO> summonerLeagues;
   };
 
-  void to_json(nlohmann::json& j, const LeaguesLcdsSummonerLeagueItemsDTO& v) {
+  inline void to_json(nlohmann::json& j, const LeaguesLcdsSummonerLeagueItemsDTO& v) {
     j["summonerLeagues"] = v.summonerLeagues;
   }
 
-  void from_json(const nlohmann::json& j, LeaguesLcdsSummonerLeagueItemsDTO& v) {
+  inline void from_json(const nlohmann::json& j, LeaguesLcdsSummonerLeagueItemsDTO& v) {
     v.summonerLeagues = j.at("summonerLeagues").get<std::vector<LeaguesLcdsLeagueItemDTO>>;
   }
 

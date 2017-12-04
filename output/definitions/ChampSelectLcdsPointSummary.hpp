@@ -16,7 +16,7 @@ namespace leagueapi {
     int32_t pointsToNextRoll;
   };
 
-  void to_json(nlohmann::json& j, const ChampSelectLcdsPointSummary& v) {
+  inline void to_json(nlohmann::json& j, const ChampSelectLcdsPointSummary& v) {
     j["currentPoints"] = v.currentPoints;
     j["maxRolls"] = v.maxRolls;
     j["numberOfRolls"] = v.numberOfRolls;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["pointsToNextRoll"] = v.pointsToNextRoll;
   }
 
-  void from_json(const nlohmann::json& j, ChampSelectLcdsPointSummary& v) {
+  inline void from_json(const nlohmann::json& j, ChampSelectLcdsPointSummary& v) {
     v.currentPoints = j.at("currentPoints").get<int32_t>;
     v.maxRolls = j.at("maxRolls").get<int32_t>;
     v.numberOfRolls = j.at("numberOfRolls").get<int32_t>;

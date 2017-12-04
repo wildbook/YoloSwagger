@@ -23,7 +23,7 @@ namespace leagueapi {
     std::string tier;
   };
 
-  void to_json(nlohmann::json& j, const RankedLeagueListDTO& v) {
+  inline void to_json(nlohmann::json& j, const RankedLeagueListDTO& v) {
     j["entries"] = v.entries;
     j["maxLeagueSize"] = v.maxLeagueSize;
     j["name"] = v.name;
@@ -34,7 +34,7 @@ namespace leagueapi {
     j["tier"] = v.tier;
   }
 
-  void from_json(const nlohmann::json& j, RankedLeagueListDTO& v) {
+  inline void from_json(const nlohmann::json& j, RankedLeagueListDTO& v) {
     v.entries = j.at("entries").get<std::vector<RankedLeagueItemDTO>>;
     v.maxLeagueSize = j.at("maxLeagueSize").get<uint32_t>;
     v.name = j.at("name").get<std::string>;

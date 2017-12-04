@@ -17,7 +17,7 @@ namespace leagueapi {
     std::string tournamentDescription;
   };
 
-  void to_json(nlohmann::json& j, const LolEsportStreamNotificationsLiveMatch& v) {
+  inline void to_json(nlohmann::json& j, const LolEsportStreamNotificationsLiveMatch& v) {
     j["id"] = v.id;
     j["streamGroup"] = v.streamGroup;
     j["teams"] = v.teams;
@@ -25,7 +25,7 @@ namespace leagueapi {
     j["tournamentDescription"] = v.tournamentDescription;
   }
 
-  void from_json(const nlohmann::json& j, LolEsportStreamNotificationsLiveMatch& v) {
+  inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsLiveMatch& v) {
     v.id = j.at("id").get<std::string>;
     v.streamGroup = j.at("streamGroup").get<std::string>;
     v.teams = j.at("teams").get<std::vector<LolEsportStreamNotificationsLiveMatchTeam>>;

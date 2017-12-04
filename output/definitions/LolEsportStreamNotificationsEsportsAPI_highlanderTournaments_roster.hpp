@@ -8,11 +8,11 @@ namespace leagueapi {
     std::string roster;
   };
 
-  void to_json(nlohmann::json& j, const LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_roster& v) {
+  inline void to_json(nlohmann::json& j, const LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_roster& v) {
     j["roster"] = v.roster;
   }
 
-  void from_json(const nlohmann::json& j, LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_roster& v) {
+  inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_roster& v) {
     v.roster = j.at("roster").get<std::string>;
   }
 

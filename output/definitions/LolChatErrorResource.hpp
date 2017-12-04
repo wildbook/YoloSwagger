@@ -16,7 +16,7 @@ namespace leagueapi {
     std::string text;
   };
 
-  void to_json(nlohmann::json& j, const LolChatErrorResource& v) {
+  inline void to_json(nlohmann::json& j, const LolChatErrorResource& v) {
     j["code"] = v.code;
     j["from"] = v.from;
     j["id"] = v.id;
@@ -24,7 +24,7 @@ namespace leagueapi {
     j["text"] = v.text;
   }
 
-  void from_json(const nlohmann::json& j, LolChatErrorResource& v) {
+  inline void from_json(const nlohmann::json& j, LolChatErrorResource& v) {
     v.code = j.at("code").get<uint64_t>;
     v.from = j.at("from").get<std::string>;
     v.id = j.at("id").get<uint64_t>;

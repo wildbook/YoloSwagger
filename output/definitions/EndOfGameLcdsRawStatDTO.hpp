@@ -10,12 +10,12 @@ namespace leagueapi {
     int64_t value;
   };
 
-  void to_json(nlohmann::json& j, const EndOfGameLcdsRawStatDTO& v) {
+  inline void to_json(nlohmann::json& j, const EndOfGameLcdsRawStatDTO& v) {
     j["statTypeName"] = v.statTypeName;
     j["value"] = v.value;
   }
 
-  void from_json(const nlohmann::json& j, EndOfGameLcdsRawStatDTO& v) {
+  inline void from_json(const nlohmann::json& j, EndOfGameLcdsRawStatDTO& v) {
     v.statTypeName = j.at("statTypeName").get<std::string>;
     v.value = j.at("value").get<int64_t>;
   }

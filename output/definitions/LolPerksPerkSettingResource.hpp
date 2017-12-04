@@ -12,13 +12,13 @@ namespace leagueapi {
     int32_t perkSubStyle;
   };
 
-  void to_json(nlohmann::json& j, const LolPerksPerkSettingResource& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksPerkSettingResource& v) {
     j["perkIds"] = v.perkIds;
     j["perkStyle"] = v.perkStyle;
     j["perkSubStyle"] = v.perkSubStyle;
   }
 
-  void from_json(const nlohmann::json& j, LolPerksPerkSettingResource& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksPerkSettingResource& v) {
     v.perkIds = j.at("perkIds").get<std::vector<int32_t>>;
     v.perkStyle = j.at("perkStyle").get<int32_t>;
     v.perkSubStyle = j.at("perkSubStyle").get<int32_t>;

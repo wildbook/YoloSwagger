@@ -10,12 +10,12 @@ namespace leagueapi {
     int32_t minPlayers;
   };
 
-  void to_json(nlohmann::json& j, const LolGameQueuesPlatformConfigEnabledMap& v) {
+  inline void to_json(nlohmann::json& j, const LolGameQueuesPlatformConfigEnabledMap& v) {
     j["gameMapId"] = v.gameMapId;
     j["minPlayers"] = v.minPlayers;
   }
 
-  void from_json(const nlohmann::json& j, LolGameQueuesPlatformConfigEnabledMap& v) {
+  inline void from_json(const nlohmann::json& j, LolGameQueuesPlatformConfigEnabledMap& v) {
     v.gameMapId = j.at("gameMapId").get<int32_t>;
     v.minPlayers = j.at("minPlayers").get<int32_t>;
   }

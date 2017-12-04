@@ -9,11 +9,11 @@ namespace leagueapi {
     LolEndOfGameRerollDataBagForClientV1 rerollDataBag;
   };
 
-  void to_json(nlohmann::json& j, const LolEndOfGameGameloopPlayerInfoV1& v) {
+  inline void to_json(nlohmann::json& j, const LolEndOfGameGameloopPlayerInfoV1& v) {
     j["rerollDataBag"] = v.rerollDataBag;
   }
 
-  void from_json(const nlohmann::json& j, LolEndOfGameGameloopPlayerInfoV1& v) {
+  inline void from_json(const nlohmann::json& j, LolEndOfGameGameloopPlayerInfoV1& v) {
     v.rerollDataBag = j.at("rerollDataBag").get<LolEndOfGameRerollDataBagForClientV1>;
   }
 

@@ -13,13 +13,13 @@ namespace leagueapi {
     std::string summonerName;
   };
 
-  void to_json(nlohmann::json& j, const LcdsInviteFailed& v) {
+  inline void to_json(nlohmann::json& j, const LcdsInviteFailed& v) {
     j["exception"] = v.exception;
     j["summonerId"] = v.summonerId;
     j["summonerName"] = v.summonerName;
   }
 
-  void from_json(const nlohmann::json& j, LcdsInviteFailed& v) {
+  inline void from_json(const nlohmann::json& j, LcdsInviteFailed& v) {
     v.exception = j.at("exception").get<LcdsGameInviteBaseRuntimeException>;
     v.summonerId = j.at("summonerId").get<uint64_t>;
     v.summonerName = j.at("summonerName").get<std::string>;

@@ -12,7 +12,7 @@ namespace leagueapi {
     sum = 1,
   };
 
-  void to_json(nlohmann::json& j, const AggregationType& v) {
+  inline void to_json(nlohmann::json& j, const AggregationType& v) {
     switch(v) {
       case AggregationType::average:
         j = "average";
@@ -26,7 +26,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, AggregationType& v) {
+  inline void from_json(const nlohmann::json& j, AggregationType& v) {
     const auto s& = j.get<std::string>();
     if(s == "average"){
       v = AggregationType::average;

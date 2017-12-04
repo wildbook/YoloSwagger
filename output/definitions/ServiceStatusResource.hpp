@@ -11,12 +11,12 @@ namespace leagueapi {
     ServiceStatusResource_Status status;
   };
 
-  void to_json(nlohmann::json& j, const ServiceStatusResource& v) {
+  inline void to_json(nlohmann::json& j, const ServiceStatusResource& v) {
     j["humanReadableUrl"] = v.humanReadableUrl;
     j["status"] = v.status;
   }
 
-  void from_json(const nlohmann::json& j, ServiceStatusResource& v) {
+  inline void from_json(const nlohmann::json& j, ServiceStatusResource& v) {
     v.humanReadableUrl = j.at("humanReadableUrl").get<std::string>;
     v.status = j.at("status").get<ServiceStatusResource_Status>;
   }

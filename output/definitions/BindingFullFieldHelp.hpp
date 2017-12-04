@@ -17,7 +17,7 @@ namespace leagueapi {
     BindingFullTypeIdentifier type;
   };
 
-  void to_json(nlohmann::json& j, const BindingFullFieldHelp& v) {
+  inline void to_json(nlohmann::json& j, const BindingFullFieldHelp& v) {
     j["description"] = v.description;
     j["name"] = v.name;
     j["offset"] = v.offset;
@@ -25,7 +25,7 @@ namespace leagueapi {
     j["type"] = v.type;
   }
 
-  void from_json(const nlohmann::json& j, BindingFullFieldHelp& v) {
+  inline void from_json(const nlohmann::json& j, BindingFullFieldHelp& v) {
     v.description = j.at("description").get<std::string>;
     v.name = j.at("name").get<std::string>;
     v.offset = j.at("offset").get<uint32_t>;

@@ -12,13 +12,13 @@ namespace leagueapi {
     bool success;
   };
 
-  void to_json(nlohmann::json& j, const LolAccountVerificationDeviceResponse& v) {
+  inline void to_json(nlohmann::json& j, const LolAccountVerificationDeviceResponse& v) {
     j["message"] = v.message;
     j["status"] = v.status;
     j["success"] = v.success;
   }
 
-  void from_json(const nlohmann::json& j, LolAccountVerificationDeviceResponse& v) {
+  inline void from_json(const nlohmann::json& j, LolAccountVerificationDeviceResponse& v) {
     v.message = j.at("message").get<std::string>;
     v.status = j.at("status").get<int32_t>;
     v.success = j.at("success").get<bool>;

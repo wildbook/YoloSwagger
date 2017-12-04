@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_RosterDTO_HPP
 #define SWAGGER_TYPES_RosterDTO_HPP
 #include <json.hpp>
-#include "RosterDynamicStateDTO.hpp"
 #include "PhaseRosterDTO.hpp"
+#include "RosterDynamicStateDTO.hpp"
 #include "RosterMemberDTO.hpp"
 namespace leagueapi {
   // 
@@ -37,7 +37,7 @@ namespace leagueapi {
     int32_t wins;
   };
 
-  void to_json(nlohmann::json& j, const RosterDTO& v) {
+  inline void to_json(nlohmann::json& j, const RosterDTO& v) {
     j["captainId"] = v.captainId;
     j["dynamicState"] = v.dynamicState;
     j["eliminated"] = v.eliminated;
@@ -54,7 +54,7 @@ namespace leagueapi {
     j["wins"] = v.wins;
   }
 
-  void from_json(const nlohmann::json& j, RosterDTO& v) {
+  inline void from_json(const nlohmann::json& j, RosterDTO& v) {
     v.captainId = j.at("captainId").get<uint64_t>;
     v.dynamicState = j.at("dynamicState").get<RosterDynamicStateDTO>;
     v.eliminated = j.at("eliminated").get<bool>;

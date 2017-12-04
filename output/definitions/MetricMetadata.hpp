@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_MetricMetadata_HPP
 #define SWAGGER_TYPES_MetricMetadata_HPP
 #include <json.hpp>
-#include "MetricMetadataAlert.hpp"
-#include "AggregationType.hpp"
-#include "MetricDataType.hpp"
-#include "MetricMetadataNotify.hpp"
-#include "MetricPriority.hpp"
 #include "MetricType.hpp"
+#include "MetricPriority.hpp"
+#include "AggregationType.hpp"
+#include "MetricMetadataNotify.hpp"
+#include "MetricMetadataAlert.hpp"
+#include "MetricDataType.hpp"
 namespace leagueapi {
   // 
   struct MetricMetadata {
@@ -40,7 +40,7 @@ namespace leagueapi {
     std::string units;
   };
 
-  void to_json(nlohmann::json& j, const MetricMetadata& v) {
+  inline void to_json(nlohmann::json& j, const MetricMetadata& v) {
     j["alerts"] = v.alerts;
     j["category"] = v.category;
     j["data_type"] = v.data_type;
@@ -57,7 +57,7 @@ namespace leagueapi {
     j["units"] = v.units;
   }
 
-  void from_json(const nlohmann::json& j, MetricMetadata& v) {
+  inline void from_json(const nlohmann::json& j, MetricMetadata& v) {
     v.alerts = j.at("alerts").get<std::vector<MetricMetadataAlert>>;
     v.category = j.at("category").get<std::string>;
     v.data_type = j.at("data_type").get<MetricDataType>;

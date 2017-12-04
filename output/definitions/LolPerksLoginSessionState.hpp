@@ -14,7 +14,7 @@ namespace leagueapi {
     SUCCEEDED = 1,
   };
 
-  void to_json(nlohmann::json& j, const LolPerksLoginSessionState& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksLoginSessionState& v) {
     switch(v) {
       case LolPerksLoginSessionState::ERROR:
         j = "ERROR";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, LolPerksLoginSessionState& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksLoginSessionState& v) {
     const auto s& = j.get<std::string>();
     if(s == "ERROR"){
       v = LolPerksLoginSessionState::ERROR;

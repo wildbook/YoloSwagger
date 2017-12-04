@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryParticipant_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryParticipant_HPP
 #include <json.hpp>
-#include "LolMatchHistoryMatchHistoryTimeline.hpp"
 #include "LolMatchHistoryMatchHistoryParticipantStatistics.hpp"
+#include "LolMatchHistoryMatchHistoryTimeline.hpp"
 namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryParticipant {
@@ -24,7 +24,7 @@ namespace leagueapi {
     LolMatchHistoryMatchHistoryTimeline timeline;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryParticipant& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryParticipant& v) {
     j["championId"] = v.championId;
     j["highestAchievedSeasonTier"] = v.highestAchievedSeasonTier;
     j["participantId"] = v.participantId;
@@ -35,7 +35,7 @@ namespace leagueapi {
     j["timeline"] = v.timeline;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryParticipant& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryParticipant& v) {
     v.championId = j.at("championId").get<int32_t>;
     v.highestAchievedSeasonTier = j.at("highestAchievedSeasonTier").get<std::string>;
     v.participantId = j.at("participantId").get<uint16_t>;

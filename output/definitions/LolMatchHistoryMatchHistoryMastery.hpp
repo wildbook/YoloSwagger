@@ -10,12 +10,12 @@ namespace leagueapi {
     uint16_t rank;
   };
 
-  void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryMastery& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryMastery& v) {
     j["masteryId"] = v.masteryId;
     j["rank"] = v.rank;
   }
 
-  void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryMastery& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryMastery& v) {
     v.masteryId = j.at("masteryId").get<uint16_t>;
     v.rank = j.at("rank").get<uint16_t>;
   }

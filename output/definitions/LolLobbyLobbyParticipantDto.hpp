@@ -55,7 +55,7 @@ namespace leagueapi {
     int32_t teamId;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyLobbyParticipantDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyParticipantDto& v) {
     j["allowedChangeActivity"] = v.allowedChangeActivity;
     j["allowedInviteOthers"] = v.allowedInviteOthers;
     j["allowedKickOthers"] = v.allowedKickOthers;
@@ -82,7 +82,7 @@ namespace leagueapi {
     j["teamId"] = v.teamId;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyLobbyParticipantDto& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyParticipantDto& v) {
     v.allowedChangeActivity = j.at("allowedChangeActivity").get<bool>;
     v.allowedInviteOthers = j.at("allowedInviteOthers").get<bool>;
     v.allowedKickOthers = j.at("allowedKickOthers").get<bool>;

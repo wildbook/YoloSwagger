@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolLobbyReceivedInvitationDto_HPP
 #define SWAGGER_TYPES_LolLobbyReceivedInvitationDto_HPP
 #include <json.hpp>
+#include "LolLobbyLobbyInvitationState.hpp"
 #include "LolLobbyEligibilityRestriction.hpp"
 #include "LolLobbyReceivedInvitationGameConfigDto.hpp"
-#include "LolLobbyLobbyInvitationState.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyReceivedInvitationDto {
@@ -25,7 +25,7 @@ namespace leagueapi {
     std::string timestamp;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyReceivedInvitationDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyReceivedInvitationDto& v) {
     j["canAcceptInvitation"] = v.canAcceptInvitation;
     j["fromSummonerId"] = v.fromSummonerId;
     j["fromSummonerName"] = v.fromSummonerName;
@@ -36,7 +36,7 @@ namespace leagueapi {
     j["timestamp"] = v.timestamp;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyReceivedInvitationDto& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyReceivedInvitationDto& v) {
     v.canAcceptInvitation = j.at("canAcceptInvitation").get<bool>;
     v.fromSummonerId = j.at("fromSummonerId").get<uint64_t>;
     v.fromSummonerName = j.at("fromSummonerName").get<std::string>;

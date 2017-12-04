@@ -26,7 +26,7 @@ namespace leagueapi {
     int32_t winCountRemaining;
   };
 
-  void to_json(nlohmann::json& j, const CollectionsLcdsChampionSkinDTO& v) {
+  inline void to_json(nlohmann::json& j, const CollectionsLcdsChampionSkinDTO& v) {
     j["championId"] = v.championId;
     j["endDate"] = v.endDate;
     j["freeToPlayReward"] = v.freeToPlayReward;
@@ -39,7 +39,7 @@ namespace leagueapi {
     j["winCountRemaining"] = v.winCountRemaining;
   }
 
-  void from_json(const nlohmann::json& j, CollectionsLcdsChampionSkinDTO& v) {
+  inline void from_json(const nlohmann::json& j, CollectionsLcdsChampionSkinDTO& v) {
     v.championId = j.at("championId").get<int32_t>;
     v.endDate = j.at("endDate").get<uint64_t>;
     v.freeToPlayReward = j.at("freeToPlayReward").get<bool>;

@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLeaguesLeagueDivision_HPP
 #define SWAGGER_TYPES_LolLeaguesLeagueDivision_HPP
 #include <json.hpp>
-#include "LolLeaguesLeagueStanding.hpp"
 #include "LolLeaguesLeagueRank.hpp"
+#include "LolLeaguesLeagueStanding.hpp"
 namespace leagueapi {
   // 
   struct LolLeaguesLeagueDivision {
@@ -12,12 +12,12 @@ namespace leagueapi {
     std::vector<LolLeaguesLeagueStanding> standings;
   };
 
-  void to_json(nlohmann::json& j, const LolLeaguesLeagueDivision& v) {
+  inline void to_json(nlohmann::json& j, const LolLeaguesLeagueDivision& v) {
     j["leagueRank"] = v.leagueRank;
     j["standings"] = v.standings;
   }
 
-  void from_json(const nlohmann::json& j, LolLeaguesLeagueDivision& v) {
+  inline void from_json(const nlohmann::json& j, LolLeaguesLeagueDivision& v) {
     v.leagueRank = j.at("leagueRank").get<LolLeaguesLeagueRank>;
     v.standings = j.at("standings").get<std::vector<LolLeaguesLeagueStanding>>;
   }

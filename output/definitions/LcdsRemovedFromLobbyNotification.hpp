@@ -9,11 +9,11 @@ namespace leagueapi {
     LcdsRemovalReason removalReason;
   };
 
-  void to_json(nlohmann::json& j, const LcdsRemovedFromLobbyNotification& v) {
+  inline void to_json(nlohmann::json& j, const LcdsRemovedFromLobbyNotification& v) {
     j["removalReason"] = v.removalReason;
   }
 
-  void from_json(const nlohmann::json& j, LcdsRemovedFromLobbyNotification& v) {
+  inline void from_json(const nlohmann::json& j, LcdsRemovedFromLobbyNotification& v) {
     v.removalReason = j.at("removalReason").get<LcdsRemovalReason>;
   }
 

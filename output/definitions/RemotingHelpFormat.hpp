@@ -14,7 +14,7 @@ namespace leagueapi {
     Full = 1,
   };
 
-  void to_json(nlohmann::json& j, const RemotingHelpFormat& v) {
+  inline void to_json(nlohmann::json& j, const RemotingHelpFormat& v) {
     switch(v) {
       case RemotingHelpFormat::Brief:
         j = "Brief";
@@ -31,7 +31,7 @@ namespace leagueapi {
     }
   }
 
-  void from_json(const nlohmann::json& j, RemotingHelpFormat& v) {
+  inline void from_json(const nlohmann::json& j, RemotingHelpFormat& v) {
     const auto s& = j.get<std::string>();
     if(s == "Brief"){
       v = RemotingHelpFormat::Brief;

@@ -10,12 +10,12 @@ namespace leagueapi {
     uint32_t rerollsRemaining;
   };
 
-  void to_json(nlohmann::json& j, const LolLobbyTeamBuilderRerollStateV1& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderRerollStateV1& v) {
     j["allowRerolling"] = v.allowRerolling;
     j["rerollsRemaining"] = v.rerollsRemaining;
   }
 
-  void from_json(const nlohmann::json& j, LolLobbyTeamBuilderRerollStateV1& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderRerollStateV1& v) {
     v.allowRerolling = j.at("allowRerolling").get<bool>;
     v.rerollsRemaining = j.at("rerollsRemaining").get<uint32_t>;
   }
