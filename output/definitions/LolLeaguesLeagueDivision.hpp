@@ -1,0 +1,26 @@
+#ifndef SWAGGER_TYPES_LolLeaguesLeagueDivision_HPP
+#define SWAGGER_TYPES_LolLeaguesLeagueDivision_HPP
+#include <json.hpp>
+#include "LolLeaguesLeagueRank.hpp"
+#include "LolLeaguesLeagueStanding.hpp"
+namespace test {
+  // 
+  struct LolLeaguesLeagueDivision {
+'    // 
+    LolLeaguesLeagueRank leagueRank;
+    // 
+    std::vector<LolLeaguesLeagueStanding> standings;
+  };
+
+  void to_json(nlohmann::json& j, const LolLeaguesLeagueDivision& v) {
+    j["leagueRank"] = v.leagueRank;
+    j["standings"] = v.standings;
+  }
+
+  void from_json(const nlohmann::json& j, LolLeaguesLeagueDivision& v) {
+    v.leagueRank = j.at("leagueRank").get<LolLeaguesLeagueRank>;
+    v.standings = j.at("standings").get<std::vector<LolLeaguesLeagueStanding>>;
+  }
+
+}
+#endif // SWAGGER_TYPES_LolLeaguesLeagueDivision_HPP

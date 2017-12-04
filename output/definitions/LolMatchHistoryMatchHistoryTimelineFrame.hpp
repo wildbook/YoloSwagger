@@ -1,0 +1,30 @@
+#ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryTimelineFrame_HPP
+#define SWAGGER_TYPES_LolMatchHistoryMatchHistoryTimelineFrame_HPP
+#include <json.hpp>
+#include "LolMatchHistoryMatchHistoryEvent.hpp"
+#include "LolMatchHistoryMatchHistoryParticipantFrame.hpp"
+namespace test {
+  // 
+  struct LolMatchHistoryMatchHistoryTimelineFrame {
+'    // 
+    std::vector<LolMatchHistoryMatchHistoryEvent> events;
+    // 
+    std::map<std::string, LolMatchHistoryMatchHistoryParticipantFrame> participantFrames;
+    // 
+    uint64_t timestamp;
+  };
+
+  void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryTimelineFrame& v) {
+    j["events"] = v.events;
+    j["participantFrames"] = v.participantFrames;
+    j["timestamp"] = v.timestamp;
+  }
+
+  void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryTimelineFrame& v) {
+    v.events = j.at("events").get<std::vector<LolMatchHistoryMatchHistoryEvent>>;
+    v.participantFrames = j.at("participantFrames").get<std::map<std::string, LolMatchHistoryMatchHistoryParticipantFrame>>;
+    v.timestamp = j.at("timestamp").get<uint64_t>;
+  }
+
+}
+#endif // SWAGGER_TYPES_LolMatchHistoryMatchHistoryTimelineFrame_HPP
