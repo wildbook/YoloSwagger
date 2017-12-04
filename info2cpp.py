@@ -41,7 +41,7 @@ def generate_enum(file, namespace, name,  enum):
     file.write("  }\n\n")
     # from json
     file.write("  inline void from_json(const nlohmann::json& j, {0}& v) {{\n".format(name))
-    file.write("    const auto s& = j.get<std::string>();\n")
+    file.write("    const auto& s = j.get<std::string>();\n")
     for value in enum["values"]:
         file.write("    if(s == \"{0}\"){{\n".format(value))
         file.write("      v = {0}::{1};\n".format(name,  value))
