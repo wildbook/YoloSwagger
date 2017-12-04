@@ -25,7 +25,7 @@ def generate_enum(file, namespace, name,  enum):
     # definition
     file.write("namespace {0} {{\n".format(namespace))
     file.write("  // {0}\n".format(enum["description"]))
-    file.write("  enum class {0} {{\n'".format(name))
+    file.write("  enum class {0} {{\n".format(name))
     for value,  details in enum["values"].items():
         file.write("    // {0}\n".format(details["description"]))
         file.write("    {0} = {1},\n".format(value,  details["value"]))
@@ -57,7 +57,7 @@ def generate_struct(file, namespace,  name, struct):
     file.write("namespace {0} {{\n".format(namespace))
     # definition
     file.write("  // {0}\n".format(struct["description"]))
-    file.write("  struct {0} {{\n'".format(name))
+    file.write("  struct {0} {{\n".format(name))
     for field, details in struct["fields"].items():
         file.write("    // {0}\n".format(details["description"]))
         file.write("    {0} {1};\n".format(type2cpp(details["type"]),  field))
@@ -93,4 +93,4 @@ def generate_defintions(info,  folder,  namespace):
         file.write("#endif // SWAGGER_TYPES_{0}_HPP\n".format(name))
 
 # json_save( info_init(json_load("help.json"),  json_load("lol.json")),  "info.json")       
-generate_defintions(json_load("info.json"),  "output",  "output")
+generate_defintions(json_load("info.json"),  "output",  "leagueapi")
