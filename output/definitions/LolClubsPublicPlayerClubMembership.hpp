@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolClubsPublicPlayerClubMembership_HPP
 #define SWAGGER_TYPES_LolClubsPublicPlayerClubMembership_HPP
 #include <json.hpp>
-#include "LolClubsPublicPlayerClub.hpp"
-#include "LolClubsPublicClubPreferences.hpp"
 #include "LolClubsPublicClubPlayer.hpp"
+#include "LolClubsPublicClubPreferences.hpp"
+#include "LolClubsPublicPlayerClub.hpp"
 namespace leagueapi {
   // 
   struct LolClubsPublicPlayerClubMembership {

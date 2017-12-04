@@ -37,7 +37,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LeaguesLcdsLeagueRank& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "I"){
       v = LeaguesLcdsLeagueRank::I;
       return;

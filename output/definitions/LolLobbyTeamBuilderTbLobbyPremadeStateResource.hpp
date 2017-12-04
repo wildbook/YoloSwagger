@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyPremadeStateResource_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyPremadeStateResource_HPP
 #include <json.hpp>
-#include "LolLobbyTeamBuilderTbLobbyBackwardsToPremadeTransitionResource.hpp"
 #include "LolLobbyTeamBuilderReadyStateV1.hpp"
 #include "LolLobbyTeamBuilderTbLobbySlotResource.hpp"
+#include "LolLobbyTeamBuilderTbLobbyBackwardsToPremadeTransitionResource.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderTbLobbyPremadeStateResource {

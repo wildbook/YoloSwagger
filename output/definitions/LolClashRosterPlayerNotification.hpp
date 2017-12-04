@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolClashRosterPlayerNotification_HPP
 #define SWAGGER_TYPES_LolClashRosterPlayerNotification_HPP
 #include <json.hpp>
-#include "LolClashRosterNotifyReason.hpp"
 #include "RosterDTO.hpp"
+#include "LolClashRosterNotifyReason.hpp"
 #include "PlayerDTO.hpp"
 namespace leagueapi {
   // 

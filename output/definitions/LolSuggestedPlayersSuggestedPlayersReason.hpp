@@ -37,7 +37,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersReason& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "FriendOfFriend"){
       v = LolSuggestedPlayersSuggestedPlayersReason::FriendOfFriend;
       return;

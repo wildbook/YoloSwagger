@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_Bracket_HPP
 #define SWAGGER_TYPES_Bracket_HPP
 #include <json.hpp>
-#include "BracketRoster.hpp"
 #include "BracketMatch.hpp"
+#include "BracketRoster.hpp"
 namespace leagueapi {
   // 
   struct Bracket {

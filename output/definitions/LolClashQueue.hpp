@@ -2,9 +2,9 @@
 #define SWAGGER_TYPES_LolClashQueue_HPP
 #include <json.hpp>
 #include "LolClashQueueReward.hpp"
+#include "LolClashQueueGameTypeConfig.hpp"
 #include "LolClashQueueAvailability.hpp"
 #include "LolClashQueueGameCategory.hpp"
-#include "LolClashQueueGameTypeConfig.hpp"
 namespace leagueapi {
   // 
   struct LolClashQueue {

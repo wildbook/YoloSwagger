@@ -57,7 +57,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLootRedeemableStatus& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "ALREADY_OWNED"){
       v = LolLootRedeemableStatus::ALREADY_OWNED;
       return;

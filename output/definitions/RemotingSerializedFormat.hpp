@@ -27,7 +27,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, RemotingSerializedFormat& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "JSON"){
       v = RemotingSerializedFormat::JSON;
       return;

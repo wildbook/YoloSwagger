@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolChampionsGameDataChampionSkin_HPP
 #define SWAGGER_TYPES_LolChampionsGameDataChampionSkin_HPP
 #include <json.hpp>
-#include "LolChampionsCollectionsChampionSkinEmblem.hpp"
 #include "LolChampionsGameDataChampionChroma.hpp"
+#include "LolChampionsCollectionsChampionSkinEmblem.hpp"
 namespace leagueapi {
   // 
   struct LolChampionsGameDataChampionSkin {

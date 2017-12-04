@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_PatcherComponentState_HPP
 #define SWAGGER_TYPES_PatcherComponentState_HPP
 #include <json.hpp>
-#include "PatcherComponentStateAction.hpp"
 #include "PatcherComponentActionProgress.hpp"
+#include "PatcherComponentStateAction.hpp"
 namespace leagueapi {
   // 
   struct PatcherComponentState {

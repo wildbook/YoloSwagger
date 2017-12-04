@@ -2,8 +2,8 @@
 #define SWAGGER_TYPES_LolLobbyGameflowSession_HPP
 #include <json.hpp>
 #include "LolLobbyGameflowPhase.hpp"
-#include "LolLobbyGameflowGameClient.hpp"
 #include "LolLobbyGameflowGameDodge.hpp"
+#include "LolLobbyGameflowGameClient.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyGameflowSession {

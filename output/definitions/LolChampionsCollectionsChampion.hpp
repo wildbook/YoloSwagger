@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolChampionsCollectionsChampion_HPP
 #define SWAGGER_TYPES_LolChampionsCollectionsChampion_HPP
 #include <json.hpp>
-#include "LolChampionsCollectionsChampionSpell.hpp"
-#include "LolChampionsCollectionsOwnership.hpp"
 #include "LolChampionsCollectionsChampionSkin.hpp"
+#include "LolChampionsCollectionsOwnership.hpp"
+#include "LolChampionsCollectionsChampionSpell.hpp"
 namespace leagueapi {
   // 
   struct LolChampionsCollectionsChampion {

@@ -2,10 +2,10 @@
 #define SWAGGER_TYPES_LolChampSelectLegacyChampSelectSession_HPP
 #include <json.hpp>
 #include "LolChampSelectLegacyChampSelectBannedChampions.hpp"
-#include "LolChampSelectLegacyChampSelectPlayerSelection.hpp"
-#include "LolChampSelectLegacyChampSelectTradeContract.hpp"
-#include "LolChampSelectLegacyChampSelectChatRoomDetails.hpp"
 #include "LolChampSelectLegacyChampSelectTimer.hpp"
+#include "LolChampSelectLegacyChampSelectChatRoomDetails.hpp"
+#include "LolChampSelectLegacyChampSelectTradeContract.hpp"
+#include "LolChampSelectLegacyChampSelectPlayerSelection.hpp"
 namespace leagueapi {
   // 
   struct LolChampSelectLegacyChampSelectSession {

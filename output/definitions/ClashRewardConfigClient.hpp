@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_ClashRewardConfigClient_HPP
 #define SWAGGER_TYPES_ClashRewardConfigClient_HPP
 #include <json.hpp>
-#include "ClashRewardConfigEntry.hpp"
 #include "ClashRewardKeyType.hpp"
+#include "ClashRewardConfigEntry.hpp"
 namespace leagueapi {
   // 
   struct ClashRewardConfigClient {

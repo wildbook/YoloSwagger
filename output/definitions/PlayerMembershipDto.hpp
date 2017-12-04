@@ -1,11 +1,11 @@
 #ifndef SWAGGER_TYPES_PlayerMembershipDto_HPP
 #define SWAGGER_TYPES_PlayerMembershipDto_HPP
 #include <json.hpp>
-#include "ClubReferenceDto.hpp"
 #include "ClubDto.hpp"
-#include "ClubsServerConfigDto.hpp"
-#include "PlayerInfoDto.hpp"
 #include "PlayerMembershipPreferencesDto.hpp"
+#include "PlayerInfoDto.hpp"
+#include "ClubReferenceDto.hpp"
+#include "ClubsServerConfigDto.hpp"
 #include "MembershipInviteDto.hpp"
 namespace leagueapi {
   // 

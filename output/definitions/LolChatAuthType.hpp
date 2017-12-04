@@ -27,7 +27,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChatAuthType& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "plain"){
       v = LolChatAuthType::plain;
       return;

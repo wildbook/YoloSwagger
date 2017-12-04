@@ -52,7 +52,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingSearchState& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "AbandonedLowPriorityQueue"){
       v = LolLobbyTeamBuilderMatchmakingSearchState::AbandonedLowPriorityQueue;
       return;

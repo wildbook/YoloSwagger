@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLootLootItemGdsResource_HPP
 #define SWAGGER_TYPES_LolLootLootItemGdsResource_HPP
 #include <json.hpp>
-#include "LolLootLootRarity.hpp"
 #include "LolLootLootType.hpp"
+#include "LolLootLootRarity.hpp"
 namespace leagueapi {
   // 
   struct LolLootLootItemGdsResource {

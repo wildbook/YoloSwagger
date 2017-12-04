@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolStorePageDTO_HPP
 #define SWAGGER_TYPES_LolStorePageDTO_HPP
 #include <json.hpp>
-#include "LolStorePageGroupingDTO.hpp"
 #include "LolStorePlayer.hpp"
+#include "LolStorePageGroupingDTO.hpp"
 #include "LolStoreCatalogItem.hpp"
 namespace leagueapi {
   // 

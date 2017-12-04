@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolClashRosterDynamicStateNotification_HPP
 #define SWAGGER_TYPES_LolClashRosterDynamicStateNotification_HPP
 #include <json.hpp>
-#include "RosterDynamicStateDTO.hpp"
 #include "LolClashRosterNotifyReason.hpp"
+#include "RosterDynamicStateDTO.hpp"
 namespace leagueapi {
   // 
   struct LolClashRosterDynamicStateNotification {

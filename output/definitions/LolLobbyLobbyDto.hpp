@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyDto_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyDto_HPP
 #include <json.hpp>
-#include "LolLobbyLobbyGameConfigDto.hpp"
-#include "LolLobbyLobbyParticipantDto.hpp"
 #include "LolLobbyEligibilityRestriction.hpp"
 #include "LolLobbyLobbyInvitationDto.hpp"
+#include "LolLobbyLobbyGameConfigDto.hpp"
+#include "LolLobbyLobbyParticipantDto.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyLobbyDto {

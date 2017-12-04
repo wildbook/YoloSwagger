@@ -147,7 +147,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolClashNotifyReason& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "ACCEPT_INVITE"){
       v = LolClashNotifyReason::ACCEPT_INVITE;
       return;

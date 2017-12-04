@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_AllPublicSummonerDataDTO_HPP
 #define SWAGGER_TYPES_AllPublicSummonerDataDTO_HPP
 #include <json.hpp>
-#include "SummonerLevelAndPoints.hpp"
 #include "SummonerLevel.hpp"
+#include "SummonerLevelAndPoints.hpp"
 #include "BasePublicSummonerDTO.hpp"
 namespace leagueapi {
   // 

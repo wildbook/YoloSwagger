@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLeaguesLeague_HPP
 #define SWAGGER_TYPES_LolLeaguesLeague_HPP
 #include <json.hpp>
-#include "LolLeaguesLeagueRank.hpp"
-#include "LolLeaguesLeagueQueueType.hpp"
 #include "LolLeaguesLeagueDivision.hpp"
 #include "LolLeaguesLeagueTier.hpp"
+#include "LolLeaguesLeagueQueueType.hpp"
+#include "LolLeaguesLeagueRank.hpp"
 namespace leagueapi {
   // 
   struct LolLeaguesLeague {

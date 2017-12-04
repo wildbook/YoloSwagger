@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderChampionSelectStateV1_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderChampionSelectStateV1_HPP
 #include <json.hpp>
-#include "LolLobbyTeamBuilderRerollStateV1.hpp"
 #include "LolLobbyTeamBuilderTeamBuilderBoostInfo.hpp"
-#include "LolLobbyTeamBuilderCellsV1.hpp"
+#include "LolLobbyTeamBuilderRerollStateV1.hpp"
 #include "LolLobbyTeamBuilderTradeV1.hpp"
+#include "LolLobbyTeamBuilderCellsV1.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderChampionSelectStateV1 {

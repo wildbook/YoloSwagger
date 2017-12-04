@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LootLcdsRecipeClientDTO_HPP
 #define SWAGGER_TYPES_LootLcdsRecipeClientDTO_HPP
 #include <json.hpp>
-#include "LootLcdsRecipeOutputDTO.hpp"
 #include "LootLcdsRecipeSlotClientDTO.hpp"
+#include "LootLcdsRecipeOutputDTO.hpp"
 #include "LootLcdsRecipeMetadata.hpp"
 namespace leagueapi {
   // 

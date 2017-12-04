@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolLobbyReceivedInvitationDto_HPP
 #define SWAGGER_TYPES_LolLobbyReceivedInvitationDto_HPP
 #include <json.hpp>
-#include "LolLobbyLobbyInvitationState.hpp"
 #include "LolLobbyEligibilityRestriction.hpp"
 #include "LolLobbyReceivedInvitationGameConfigDto.hpp"
+#include "LolLobbyLobbyInvitationState.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyReceivedInvitationDto {

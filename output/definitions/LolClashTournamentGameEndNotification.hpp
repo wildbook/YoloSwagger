@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolClashTournamentGameEndNotification_HPP
 #define SWAGGER_TYPES_LolClashTournamentGameEndNotification_HPP
 #include <json.hpp>
-#include "Bracket.hpp"
 #include "LolClashRosterNotifyReason.hpp"
+#include "Bracket.hpp"
 namespace leagueapi {
   // 
   struct LolClashTournamentGameEndNotification {

@@ -32,7 +32,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolPlayerBehaviorPlayerBehavior_LoginSessionState& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "ERROR"){
       v = LolPlayerBehaviorPlayerBehavior_LoginSessionState::ERROR;
       return;

@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolGameQueuesQueueCustomGame_HPP
 #define SWAGGER_TYPES_LolGameQueuesQueueCustomGame_HPP
 #include <json.hpp>
-#include "LolGameQueuesQueueCustomGameSpectatorPolicy.hpp"
-#include "LolGameQueuesQueueCustomGameSubcategory.hpp"
 #include "LolGameQueuesQueueAvailability.hpp"
+#include "LolGameQueuesQueueCustomGameSubcategory.hpp"
+#include "LolGameQueuesQueueCustomGameSpectatorPolicy.hpp"
 namespace leagueapi {
   // 
   struct LolGameQueuesQueueCustomGame {

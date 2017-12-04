@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolEndOfGameEndOfGameStats_HPP
 #define SWAGGER_TYPES_LolEndOfGameEndOfGameStats_HPP
 #include <json.hpp>
+#include "LolEndOfGameEndOfGamePoints.hpp"
 #include "LolEndOfGameEndOfGameTeam.hpp"
 #include "LolEndOfGameEndOfGameTeamBoost.hpp"
-#include "LolEndOfGameEndOfGamePoints.hpp"
 namespace leagueapi {
   // 
   struct LolEndOfGameEndOfGameStats {

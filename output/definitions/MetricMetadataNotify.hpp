@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_MetricMetadataNotify_HPP
 #define SWAGGER_TYPES_MetricMetadataNotify_HPP
 #include <json.hpp>
-#include "MetricMetadataHipchatNotification.hpp"
 #include "MetricMetadataPagerDutyNotification.hpp"
+#include "MetricMetadataHipchatNotification.hpp"
 namespace leagueapi {
   // 
   struct MetricMetadataNotify {

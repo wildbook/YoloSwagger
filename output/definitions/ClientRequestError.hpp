@@ -342,7 +342,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, ClientRequestError& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "ALREADY_DECLINE_WITHDRAW"){
       v = ClientRequestError::ALREADY_DECLINE_WITHDRAW;
       return;

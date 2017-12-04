@@ -27,7 +27,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyMatchmakingDodgeState& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "Invalid"){
       v = LolLobbyMatchmakingDodgeState::Invalid;
       return;

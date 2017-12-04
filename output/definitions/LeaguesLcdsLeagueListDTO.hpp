@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LeaguesLcdsLeagueListDTO_HPP
 #define SWAGGER_TYPES_LeaguesLcdsLeagueListDTO_HPP
 #include <json.hpp>
-#include "LeaguesLcdsQueueType.hpp"
-#include "LeaguesLcdsLeagueTier.hpp"
 #include "LeaguesLcdsLeagueItemDTO.hpp"
+#include "LeaguesLcdsLeagueTier.hpp"
+#include "LeaguesLcdsQueueType.hpp"
 namespace leagueapi {
   // 
   struct LeaguesLcdsLeagueListDTO {

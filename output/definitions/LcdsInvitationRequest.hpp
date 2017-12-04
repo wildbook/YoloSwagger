@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LcdsInvitationRequest_HPP
 #define SWAGGER_TYPES_LcdsInvitationRequest_HPP
 #include <json.hpp>
-#include "LcdsPlayer.hpp"
-#include "LcdsInviter.hpp"
 #include "LcdsInvitationState.hpp"
+#include "LcdsInviter.hpp"
+#include "LcdsPlayer.hpp"
 namespace leagueapi {
   // 
   struct LcdsInvitationRequest {

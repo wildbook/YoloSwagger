@@ -1,12 +1,12 @@
 #ifndef SWAGGER_TYPES_MetricMetadata_HPP
 #define SWAGGER_TYPES_MetricMetadata_HPP
 #include <json.hpp>
-#include "MetricType.hpp"
-#include "MetricPriority.hpp"
 #include "AggregationType.hpp"
-#include "MetricMetadataNotify.hpp"
-#include "MetricMetadataAlert.hpp"
 #include "MetricDataType.hpp"
+#include "MetricMetadataAlert.hpp"
+#include "MetricPriority.hpp"
+#include "MetricMetadataNotify.hpp"
+#include "MetricType.hpp"
 namespace leagueapi {
   // 
   struct MetricMetadata {

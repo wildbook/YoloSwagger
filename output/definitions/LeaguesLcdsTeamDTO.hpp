@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LeaguesLcdsTeamDTO_HPP
 #define SWAGGER_TYPES_LeaguesLcdsTeamDTO_HPP
 #include <json.hpp>
-#include "LeaguesLcdsTeamIdDTO.hpp"
 #include "LeaguesLcdsRosterDTO.hpp"
+#include "LeaguesLcdsTeamIdDTO.hpp"
 namespace leagueapi {
   // 
   struct LeaguesLcdsTeamDTO {

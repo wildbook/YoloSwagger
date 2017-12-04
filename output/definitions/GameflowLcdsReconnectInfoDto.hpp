@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_GameflowLcdsReconnectInfoDto_HPP
 #define SWAGGER_TYPES_GameflowLcdsReconnectInfoDto_HPP
 #include <json.hpp>
-#include "GameflowLcdsGameDTO.hpp"
 #include "GameflowLcdsPlayerCredentialsDto.hpp"
+#include "GameflowLcdsGameDTO.hpp"
 namespace leagueapi {
   // 
   struct GameflowLcdsReconnectInfoDto {

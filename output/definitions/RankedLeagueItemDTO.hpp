@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RankedLeagueItemDTO_HPP
 #define SWAGGER_TYPES_RankedLeagueItemDTO_HPP
 #include <json.hpp>
+#include "RankedDivision.hpp"
+#include "RankedLeagueMiniSeriesDTO.hpp"
 #include "LolRankedStatsRankedQueue.hpp"
 #include "LolRankedStatsRankedTier.hpp"
-#include "RankedLeagueMiniSeriesDTO.hpp"
-#include "RankedDivision.hpp"
 namespace leagueapi {
   // 
   struct RankedLeagueItemDTO {

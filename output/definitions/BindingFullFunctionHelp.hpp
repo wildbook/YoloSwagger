@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_BindingFullFunctionHelp_HPP
 #define SWAGGER_TYPES_BindingFullFunctionHelp_HPP
 #include <json.hpp>
-#include "BindingFullTypeIdentifier.hpp"
 #include "BindingFullArgumentHelp.hpp"
+#include "BindingFullTypeIdentifier.hpp"
 namespace leagueapi {
   // Describes a function.
   struct BindingFullFunctionHelp {

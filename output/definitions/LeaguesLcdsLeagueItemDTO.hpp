@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LeaguesLcdsLeagueItemDTO_HPP
 #define SWAGGER_TYPES_LeaguesLcdsLeagueItemDTO_HPP
 #include <json.hpp>
-#include "LeaguesLcdsMiniSeriesDTO.hpp"
-#include "LeaguesLcdsQueueType.hpp"
-#include "LeaguesLcdsLeagueRank.hpp"
 #include "LeaguesLcdsLeagueTier.hpp"
+#include "LeaguesLcdsQueueType.hpp"
+#include "LeaguesLcdsMiniSeriesDTO.hpp"
+#include "LeaguesLcdsLeagueRank.hpp"
 namespace leagueapi {
   // 
   struct LeaguesLcdsLeagueItemDTO {

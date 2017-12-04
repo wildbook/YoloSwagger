@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolPerksPerkUIStyle_HPP
 #define SWAGGER_TYPES_LolPerksPerkUIStyle_HPP
 #include <json.hpp>
-#include "LolPerksPerkUISlot.hpp"
 #include "LolPerksPerkSubStyleBonusResource.hpp"
+#include "LolPerksPerkUISlot.hpp"
 namespace leagueapi {
   // 
   struct LolPerksPerkUIStyle {

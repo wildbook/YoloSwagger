@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolPftPFTEndOfGameStats_HPP
 #define SWAGGER_TYPES_LolPftPFTEndOfGameStats_HPP
 #include <json.hpp>
-#include "LolPftPFTEndOfGameTeam.hpp"
 #include "LolPftPFTEndOfGamePoints.hpp"
+#include "LolPftPFTEndOfGameTeam.hpp"
 namespace leagueapi {
   // 
   struct LolPftPFTEndOfGameStats {

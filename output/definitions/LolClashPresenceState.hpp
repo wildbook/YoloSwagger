@@ -27,7 +27,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolClashPresenceState& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "LOCKED_IN"){
       v = LolClashPresenceState::LOCKED_IN;
       return;

@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolClashTournamentHistoryAndWinners_HPP
 #define SWAGGER_TYPES_LolClashTournamentHistoryAndWinners_HPP
 #include <json.hpp>
-#include "LolClashTournamentWinnerHistory.hpp"
 #include "LolClashTournament.hpp"
+#include "LolClashTournamentWinnerHistory.hpp"
 namespace leagueapi {
   // 
   struct LolClashTournamentHistoryAndWinners {

@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_RosterDTO_HPP
 #define SWAGGER_TYPES_RosterDTO_HPP
 #include <json.hpp>
-#include "PhaseRosterDTO.hpp"
 #include "RosterDynamicStateDTO.hpp"
+#include "PhaseRosterDTO.hpp"
 #include "RosterMemberDTO.hpp"
 namespace leagueapi {
   // 

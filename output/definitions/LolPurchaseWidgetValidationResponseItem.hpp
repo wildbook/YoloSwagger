@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolPurchaseWidgetValidationResponseItem_HPP
 #define SWAGGER_TYPES_LolPurchaseWidgetValidationResponseItem_HPP
 #include <json.hpp>
-#include "LolPurchaseWidgetSale.hpp"
 #include "LolPurchaseWidgetItemKey.hpp"
 #include "LolPurchaseWidgetItemPrice.hpp"
+#include "LolPurchaseWidgetSale.hpp"
 namespace leagueapi {
   // 
   struct LolPurchaseWidgetValidationResponseItem {

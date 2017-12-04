@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_PendingRosterMemberDTO_HPP
 #define SWAGGER_TYPES_PendingRosterMemberDTO_HPP
 #include <json.hpp>
-#include "Position.hpp"
 #include "PendingRosterMemberState.hpp"
+#include "Position.hpp"
 namespace leagueapi {
   // 
   struct PendingRosterMemberDTO {

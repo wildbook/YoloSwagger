@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyGameConfigDto_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyGameConfigDto_HPP
 #include <json.hpp>
-#include "LolLobbyLobbyParticipantDto.hpp"
 #include "LolLobbyQueueCustomGameSpectatorPolicy.hpp"
+#include "LolLobbyLobbyParticipantDto.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyLobbyGameConfigDto {

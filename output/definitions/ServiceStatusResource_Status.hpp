@@ -37,7 +37,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, ServiceStatusResource_Status& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "degraded"){
       v = ServiceStatusResource_Status::degraded;
       return;

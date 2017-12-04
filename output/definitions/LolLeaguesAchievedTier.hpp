@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLeaguesAchievedTier_HPP
 #define SWAGGER_TYPES_LolLeaguesAchievedTier_HPP
 #include <json.hpp>
-#include "LolLeaguesLeagueTier.hpp"
 #include "LolLeaguesLeagueQueueType.hpp"
+#include "LolLeaguesLeagueTier.hpp"
 namespace leagueapi {
   // 
   struct LolLeaguesAchievedTier {

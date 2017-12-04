@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolPurchaseWidgetPurchaseResponse_HPP
 #define SWAGGER_TYPES_LolPurchaseWidgetPurchaseResponse_HPP
 #include <json.hpp>
+#include "LolPurchaseWidgetTransaction.hpp"
 #include "LolPurchaseWidgetWallet.hpp"
 #include "LolPurchaseWidgetPurchaseItem.hpp"
-#include "LolPurchaseWidgetTransaction.hpp"
 namespace leagueapi {
   // 
   struct LolPurchaseWidgetPurchaseResponse {

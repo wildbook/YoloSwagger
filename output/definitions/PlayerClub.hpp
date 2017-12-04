@@ -2,9 +2,9 @@
 #define SWAGGER_TYPES_PlayerClub_HPP
 #include <json.hpp>
 #include "ClubMemberLists.hpp"
-#include "ClubMember.hpp"
-#include "ClubPermissions.hpp"
 #include "ClubRole.hpp"
+#include "ClubPermissions.hpp"
+#include "ClubMember.hpp"
 namespace leagueapi {
   // 
   struct PlayerClub {

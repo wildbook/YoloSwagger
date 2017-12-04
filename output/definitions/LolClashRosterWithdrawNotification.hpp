@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolClashRosterWithdrawNotification_HPP
 #define SWAGGER_TYPES_LolClashRosterWithdrawNotification_HPP
 #include <json.hpp>
-#include "RosterWithdraw.hpp"
 #include "LolClashRosterNotifyReason.hpp"
+#include "RosterWithdraw.hpp"
 namespace leagueapi {
   // 
   struct LolClashRosterWithdrawNotification {

@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLootLoginDataPacket_HPP
 #define SWAGGER_TYPES_LolLootLoginDataPacket_HPP
 #include <json.hpp>
-#include "LolLootLoginAllSummonerData.hpp"
 #include "LolLootLoginSimpleMessage.hpp"
+#include "LolLootLoginAllSummonerData.hpp"
 namespace leagueapi {
   // 
   struct LolLootLoginDataPacket {

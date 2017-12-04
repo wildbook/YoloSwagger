@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolGameQueuesQueue_HPP
 #define SWAGGER_TYPES_LolGameQueuesQueue_HPP
 #include <json.hpp>
-#include "LolGameQueuesQueueGameTypeConfig.hpp"
-#include "LolGameQueuesQueueAvailability.hpp"
 #include "LolGameQueuesQueueGameCategory.hpp"
 #include "LolGameQueuesQueueReward.hpp"
+#include "LolGameQueuesQueueGameTypeConfig.hpp"
+#include "LolGameQueuesQueueAvailability.hpp"
 namespace leagueapi {
   // 
   struct LolGameQueuesQueue {

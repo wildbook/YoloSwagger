@@ -1,11 +1,11 @@
 #ifndef SWAGGER_TYPES_LolClashRoster_HPP
 #define SWAGGER_TYPES_LolClashRoster_HPP
 #include <json.hpp>
+#include "LolClashRosterMember.hpp"
 #include "LolClashSuggestedInvite.hpp"
-#include "RosterWithdraw.hpp"
 #include "RewardIcon.hpp"
 #include "LolClashRosterPhaseInfo.hpp"
-#include "LolClashRosterMember.hpp"
+#include "RosterWithdraw.hpp"
 namespace leagueapi {
   // 
   struct LolClashRoster {

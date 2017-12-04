@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LeagueTierAndRankDTO_HPP
 #define SWAGGER_TYPES_LeagueTierAndRankDTO_HPP
 #include <json.hpp>
-#include "LeaguesLcdsQueueType.hpp"
-#include "LeaguesLcdsLeagueTier.hpp"
 #include "LeaguesLcdsLeagueRank.hpp"
+#include "LeaguesLcdsLeagueTier.hpp"
+#include "LeaguesLcdsQueueType.hpp"
 namespace leagueapi {
   // 
   struct LeagueTierAndRankDTO {

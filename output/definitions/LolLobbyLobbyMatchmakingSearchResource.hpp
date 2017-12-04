@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyMatchmakingSearchResource_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyMatchmakingSearchResource_HPP
 #include <json.hpp>
-#include "LolLobbyLobbyMatchmakingSearchState.hpp"
-#include "LolLobbyLobbyMatchmakingSearchErrorResource.hpp"
 #include "LolLobbyLobbyMatchmakingLowPriorityDataResource.hpp"
+#include "LolLobbyLobbyMatchmakingSearchErrorResource.hpp"
+#include "LolLobbyLobbyMatchmakingSearchState.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyLobbyMatchmakingSearchResource {

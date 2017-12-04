@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolPersonalizedOffersPurchaseResponse_HPP
 #define SWAGGER_TYPES_LolPersonalizedOffersPurchaseResponse_HPP
 #include <json.hpp>
-#include "LolPersonalizedOffersWallet.hpp"
 #include "LolPersonalizedOffersPurchaseItem.hpp"
+#include "LolPersonalizedOffersWallet.hpp"
 namespace leagueapi {
   // 
   struct LolPersonalizedOffersPurchaseResponse {

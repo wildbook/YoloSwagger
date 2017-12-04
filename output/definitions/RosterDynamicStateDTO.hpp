@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_RosterDynamicStateDTO_HPP
 #define SWAGGER_TYPES_RosterDynamicStateDTO_HPP
 #include <json.hpp>
-#include "TicketOfferDTO.hpp"
 #include "RosterWithdraw.hpp"
-#include "PhaseRosterSubDTO.hpp"
 #include "BuybackMember.hpp"
+#include "PhaseRosterSubDTO.hpp"
+#include "TicketOfferDTO.hpp"
 namespace leagueapi {
   // 
   struct RosterDynamicStateDTO {

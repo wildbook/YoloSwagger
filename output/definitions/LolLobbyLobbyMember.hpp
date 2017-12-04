@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyMember_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyMember_HPP
 #include <json.hpp>
-#include "LolLobbyLobbyBotDifficulty.hpp"
 #include "LolLobbyLobbyPositionPreferences.hpp"
+#include "LolLobbyLobbyBotDifficulty.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyLobbyMember {

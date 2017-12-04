@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLoadoutsGameflowSession_HPP
 #define SWAGGER_TYPES_LolLoadoutsGameflowSession_HPP
 #include <json.hpp>
-#include "LolLoadoutsGameflowGameData.hpp"
 #include "LolLoadoutsGameflowPhase.hpp"
+#include "LolLoadoutsGameflowGameData.hpp"
 namespace leagueapi {
   // 
   struct LolLoadoutsGameflowSession {

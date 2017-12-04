@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolLobbyTeamBuilderLobby_HPP
 #define SWAGGER_TYPES_LolLobbyTeamBuilderLobby_HPP
 #include <json.hpp>
+#include "LolLobbyTeamBuilderLobbyRemovedFromGameReason.hpp"
 #include "LolLobbyTeamBuilderLobbyMember.hpp"
 #include "LolLobbyTeamBuilderLobbyInvitation.hpp"
-#include "LolLobbyTeamBuilderLobbyRemovedFromGameReason.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyTeamBuilderLobby {

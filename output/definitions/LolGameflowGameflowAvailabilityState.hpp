@@ -42,7 +42,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolGameflowGameflowAvailabilityState& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "Available"){
       v = LolGameflowGameflowAvailabilityState::Available;
       return;

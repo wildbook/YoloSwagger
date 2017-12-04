@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_PlayerMembershipWithNotificationsDto_HPP
 #define SWAGGER_TYPES_PlayerMembershipWithNotificationsDto_HPP
 #include <json.hpp>
-#include "PlayerMembershipDto.hpp"
 #include "MembershipNoficationsDto.hpp"
+#include "PlayerMembershipDto.hpp"
 namespace leagueapi {
   // 
   struct PlayerMembershipWithNotificationsDto {

@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolPerksGameflowSession_HPP
 #define SWAGGER_TYPES_LolPerksGameflowSession_HPP
 #include <json.hpp>
-#include "LolPerksGameflowPhase.hpp"
 #include "LolPerksGameflowGameData.hpp"
+#include "LolPerksGameflowPhase.hpp"
 namespace leagueapi {
   // 
   struct LolPerksGameflowSession {

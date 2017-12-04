@@ -27,7 +27,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LeaguesLcdsQueueType& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "RANKED_FLEX_SR"){
       v = LeaguesLcdsQueueType::RANKED_FLEX_SR;
       return;

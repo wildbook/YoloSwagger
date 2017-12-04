@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolLobbyPartyMemberDto_HPP
 #define SWAGGER_TYPES_LolLobbyPartyMemberDto_HPP
 #include <json.hpp>
-#include "LolLobbyPartyMemberMetadataDto.hpp"
-#include "LolLobbyPartyMemberRoleEnum.hpp"
 #include "LolLobbyGameModeDto.hpp"
+#include "LolLobbyPartyMemberRoleEnum.hpp"
+#include "LolLobbyPartyMemberMetadataDto.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyPartyMemberDto {

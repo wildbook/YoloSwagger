@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolStoreAllSummonerData_HPP
 #define SWAGGER_TYPES_LolStoreAllSummonerData_HPP
 #include <json.hpp>
-#include "LolStoreSummoner.hpp"
 #include "LolStoreSummonerLevelAndPoints.hpp"
+#include "LolStoreSummoner.hpp"
 namespace leagueapi {
   // 
   struct LolStoreAllSummonerData {

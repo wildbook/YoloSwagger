@@ -1,11 +1,11 @@
 #ifndef SWAGGER_TYPES_LolChampSelectChampSelectSession_HPP
 #define SWAGGER_TYPES_LolChampSelectChampSelectSession_HPP
 #include <json.hpp>
-#include "LolChampSelectChampSelectChatRoomDetails.hpp"
 #include "LolChampSelectChampSelectTradeContract.hpp"
+#include "LolChampSelectChampSelectChatRoomDetails.hpp"
+#include "LolChampSelectChampSelectPlayerSelection.hpp"
 #include "LolChampSelectChampSelectTimer.hpp"
 #include "LolChampSelectChampSelectBannedChampions.hpp"
-#include "LolChampSelectChampSelectPlayerSelection.hpp"
 namespace leagueapi {
   // 
   struct LolChampSelectChampSelectSession {

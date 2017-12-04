@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolClashPendingRosterNotification_HPP
 #define SWAGGER_TYPES_LolClashPendingRosterNotification_HPP
 #include <json.hpp>
-#include "LolClashNotifyReason.hpp"
 #include "PendingRosterDTO.hpp"
+#include "LolClashNotifyReason.hpp"
 namespace leagueapi {
   // 
   struct LolClashPendingRosterNotification {

@@ -22,7 +22,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PatcherComponentResourceHistory& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "keep"){
       v = PatcherComponentResourceHistory::keep;
       return;

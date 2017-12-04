@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolStoreCatalogItem_HPP
 #define SWAGGER_TYPES_LolStoreCatalogItem_HPP
 #include <json.hpp>
-#include "LolStoreItemKey.hpp"
-#include "LolStoreItemCost.hpp"
-#include "LolStoreSale.hpp"
 #include "LolStoreBundled.hpp"
+#include "LolStoreItemCost.hpp"
+#include "LolStoreItemKey.hpp"
+#include "LolStoreSale.hpp"
 namespace leagueapi {
   // 
   struct LolStoreCatalogItem {

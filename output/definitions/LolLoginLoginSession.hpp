@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLoginLoginSession_HPP
 #define SWAGGER_TYPES_LolLoginLoginSession_HPP
 #include <json.hpp>
-#include "LolLoginLoginError.hpp"
 #include "LolLoginLoginSessionStates.hpp"
+#include "LolLoginLoginError.hpp"
 #include "LolLoginLoginQueue.hpp"
 namespace leagueapi {
   // 

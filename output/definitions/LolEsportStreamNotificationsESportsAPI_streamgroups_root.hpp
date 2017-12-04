@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolEsportStreamNotificationsESportsAPI_streamgroups_root_HPP
 #define SWAGGER_TYPES_LolEsportStreamNotificationsESportsAPI_streamgroups_root_HPP
 #include <json.hpp>
-#include "LolEsportStreamNotificationsEsportsAPI_highlanderTournaments.hpp"
 #include "LolEsportStreamNotificationsEsportsAPI_teams.hpp"
+#include "LolEsportStreamNotificationsEsportsAPI_highlanderTournaments.hpp"
 #include "LolEsportStreamNotificationsESportsAPI_streamgroups.hpp"
 namespace leagueapi {
   // 

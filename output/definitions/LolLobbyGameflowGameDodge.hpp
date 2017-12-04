@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLobbyGameflowGameDodge_HPP
 #define SWAGGER_TYPES_LolLobbyGameflowGameDodge_HPP
 #include <json.hpp>
-#include "LolLobbyMatchmakingDodgeState.hpp"
 #include "LolLobbyGameflowPhase.hpp"
+#include "LolLobbyMatchmakingDodgeState.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyGameflowGameDodge {

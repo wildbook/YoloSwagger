@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_PlayerLootDefinitionsDTO_HPP
 #define SWAGGER_TYPES_PlayerLootDefinitionsDTO_HPP
 #include <json.hpp>
-#include "PlayerLootDTO.hpp"
 #include "QueryResultDTO.hpp"
 #include "LootItemListClientDTO.hpp"
 #include "LootLcdsRecipeListClientDTO.hpp"
+#include "PlayerLootDTO.hpp"
 namespace leagueapi {
   // 
   struct PlayerLootDefinitionsDTO {

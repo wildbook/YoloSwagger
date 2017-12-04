@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolClashClashConfig_HPP
 #define SWAGGER_TYPES_LolClashClashConfig_HPP
 #include <json.hpp>
-#include "LolClashClashState.hpp"
 #include "LolClashClashVisibility.hpp"
+#include "LolClashClashState.hpp"
 namespace leagueapi {
   // 
   struct LolClashClashConfig {

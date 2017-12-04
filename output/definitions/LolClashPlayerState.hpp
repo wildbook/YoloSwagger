@@ -32,7 +32,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolClashPlayerState& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "BRACKET_ROSTER"){
       v = LolClashPlayerState::BRACKET_ROSTER;
       return;

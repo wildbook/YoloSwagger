@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryGame_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryGame_HPP
 #include <json.hpp>
-#include "LolMatchHistoryMatchHistoryParticipant.hpp"
 #include "LolMatchHistoryMatchHistoryParticipantIdentities.hpp"
+#include "LolMatchHistoryMatchHistoryParticipant.hpp"
 #include "LolMatchHistoryMatchHistoryTeam.hpp"
 namespace leagueapi {
   // 

@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolItemSetsItemSet_HPP
 #define SWAGGER_TYPES_LolItemSetsItemSet_HPP
 #include <json.hpp>
-#include "LolItemSetsPreferredItemSlot.hpp"
 #include "LolItemSetsItemSetBlock.hpp"
+#include "LolItemSetsPreferredItemSlot.hpp"
 namespace leagueapi {
   // 
   struct LolItemSetsItemSet {

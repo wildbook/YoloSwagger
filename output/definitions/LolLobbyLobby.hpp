@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobby_HPP
 #define SWAGGER_TYPES_LolLobbyLobby_HPP
 #include <json.hpp>
-#include "LolLobbyLobbyRemovedFromGameReason.hpp"
 #include "LolLobbyLobbyCustomGameLobby.hpp"
-#include "LolLobbyQueueAvailability.hpp"
 #include "LolLobbyLobbyMember.hpp"
+#include "LolLobbyLobbyRemovedFromGameReason.hpp"
+#include "LolLobbyQueueAvailability.hpp"
 #include "LolLobbyLobbyInvitation.hpp"
 namespace leagueapi {
   // 

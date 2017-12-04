@@ -2,8 +2,8 @@
 #define SWAGGER_TYPES_LolChatGameflowGameData_HPP
 #include <json.hpp>
 #include "LolChatQueue.hpp"
-#include "LolChatChampSelection.hpp"
 #include "LolChatTeamPlayerEntry.hpp"
+#include "LolChatChampSelection.hpp"
 namespace leagueapi {
   // 
   struct LolChatGameflowGameData {

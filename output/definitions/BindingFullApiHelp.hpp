@@ -2,8 +2,8 @@
 #define SWAGGER_TYPES_BindingFullApiHelp_HPP
 #include <json.hpp>
 #include "BindingFullTypeHelp.hpp"
-#include "BindingFullFunctionHelp.hpp"
 #include "BindingFullEventHelp.hpp"
+#include "BindingFullFunctionHelp.hpp"
 namespace leagueapi {
   // Describes the exposed native API.
   struct BindingFullApiHelp {

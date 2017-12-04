@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LcdsLobbyStatus_HPP
 #define SWAGGER_TYPES_LcdsLobbyStatus_HPP
 #include <json.hpp>
+#include "LcdsMember.hpp"
 #include "LcdsPlayer.hpp"
 #include "LcdsInvitee.hpp"
-#include "LcdsMember.hpp"
 namespace leagueapi {
   // 
   struct LcdsLobbyStatus {

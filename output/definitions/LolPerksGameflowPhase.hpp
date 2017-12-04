@@ -82,7 +82,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolPerksGameflowPhase& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "ChampSelect"){
       v = LolPerksGameflowPhase::ChampSelect;
       return;

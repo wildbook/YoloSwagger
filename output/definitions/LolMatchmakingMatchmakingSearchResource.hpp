@@ -1,11 +1,11 @@
 #ifndef SWAGGER_TYPES_LolMatchmakingMatchmakingSearchResource_HPP
 #define SWAGGER_TYPES_LolMatchmakingMatchmakingSearchResource_HPP
 #include <json.hpp>
+#include "LolMatchmakingMatchmakingDodgeData.hpp"
+#include "LolMatchmakingMatchmakingReadyCheckResource.hpp"
+#include "LolMatchmakingMatchmakingSearchErrorResource.hpp"
 #include "LolMatchmakingMatchmakingSearchState.hpp"
 #include "LolMatchmakingMatchmakingLowPriorityData.hpp"
-#include "LolMatchmakingMatchmakingReadyCheckResource.hpp"
-#include "LolMatchmakingMatchmakingDodgeData.hpp"
-#include "LolMatchmakingMatchmakingSearchErrorResource.hpp"
 namespace leagueapi {
   // 
   struct LolMatchmakingMatchmakingSearchResource {

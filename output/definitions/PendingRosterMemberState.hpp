@@ -37,7 +37,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PendingRosterMemberState& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "FORCED_NOT_READY"){
       v = PendingRosterMemberState::FORCED_NOT_READY;
       return;

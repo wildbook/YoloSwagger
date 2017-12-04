@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_PatcherComponentResource_HPP
 #define SWAGGER_TYPES_PatcherComponentResource_HPP
 #include <json.hpp>
-#include "PatcherHeaderEntry.hpp"
 #include "PatcherComponentResourceType.hpp"
 #include "PatcherComponentResourceHistory.hpp"
+#include "PatcherHeaderEntry.hpp"
 namespace leagueapi {
   // 
   struct PatcherComponentResource {

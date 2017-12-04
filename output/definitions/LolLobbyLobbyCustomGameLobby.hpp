@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLobbyLobbyCustomGameLobby_HPP
 #define SWAGGER_TYPES_LolLobbyLobbyCustomGameLobby_HPP
 #include <json.hpp>
-#include "LolLobbyLobbyMember.hpp"
 #include "LolLobbyLobbyCustomGameConfiguration.hpp"
+#include "LolLobbyLobbyMember.hpp"
 namespace leagueapi {
   // 
   struct LolLobbyLobbyCustomGameLobby {

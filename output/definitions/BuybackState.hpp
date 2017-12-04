@@ -27,7 +27,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, BuybackState& v) {
-    const auto s& = j.get<std::string>();
+    const auto& s = j.get<std::string>();
     if(s == "FORCED_NOT_READY"){
       v = BuybackState::FORCED_NOT_READY;
       return;

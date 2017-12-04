@@ -1,9 +1,9 @@
 #ifndef SWAGGER_TYPES_LolLootRecipe_HPP
 #define SWAGGER_TYPES_LolLootRecipe_HPP
 #include <json.hpp>
+#include "LolLootRecipeMetadata.hpp"
 #include "LolLootRecipeOutput.hpp"
 #include "LolLootRecipeSlot.hpp"
-#include "LolLootRecipeMetadata.hpp"
 namespace leagueapi {
   // 
   struct LolLootRecipe {

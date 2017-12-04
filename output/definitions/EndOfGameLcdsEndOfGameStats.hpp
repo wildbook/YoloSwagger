@@ -1,10 +1,10 @@
 #ifndef SWAGGER_TYPES_EndOfGameLcdsEndOfGameStats_HPP
 #define SWAGGER_TYPES_EndOfGameLcdsEndOfGameStats_HPP
 #include <json.hpp>
-#include "EndOfGameLcdsPointsPenalty.hpp"
 #include "EndOfGameLcdsTeamInfo.hpp"
-#include "EndOfGameLcdsSpell.hpp"
 #include "EndOfGameLcdsPlayerParticipantStatsSummary.hpp"
+#include "EndOfGameLcdsSpell.hpp"
+#include "EndOfGameLcdsPointsPenalty.hpp"
 namespace leagueapi {
   // 
   struct EndOfGameLcdsEndOfGameStats {

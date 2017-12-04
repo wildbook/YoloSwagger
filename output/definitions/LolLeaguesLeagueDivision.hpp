@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolLeaguesLeagueDivision_HPP
 #define SWAGGER_TYPES_LolLeaguesLeagueDivision_HPP
 #include <json.hpp>
-#include "LolLeaguesLeagueRank.hpp"
 #include "LolLeaguesLeagueStanding.hpp"
+#include "LolLeaguesLeagueRank.hpp"
 namespace leagueapi {
   // 
   struct LolLeaguesLeagueDivision {

@@ -1,8 +1,8 @@
 #ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryTimelineFrame_HPP
 #define SWAGGER_TYPES_LolMatchHistoryMatchHistoryTimelineFrame_HPP
 #include <json.hpp>
-#include "LolMatchHistoryMatchHistoryParticipantFrame.hpp"
 #include "LolMatchHistoryMatchHistoryEvent.hpp"
+#include "LolMatchHistoryMatchHistoryParticipantFrame.hpp"
 namespace leagueapi {
   // 
   struct LolMatchHistoryMatchHistoryTimelineFrame {
