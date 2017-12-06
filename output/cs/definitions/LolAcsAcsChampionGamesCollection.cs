@@ -1,22 +1,25 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi {
-  struct LolAcsAcsChampionGamesCollection {
-    [DataMember(Name = "gameCount")]
-    uint GameCount {get; set;}
-
-    [DataMember(Name = "champions")]
-    LolAcsAcsChampionGames[] Champions {get; set;}
-
-    public override string ToString()
+namespace leagueapi
+{
+    [DataContract]
+    struct LolAcsAcsChampionGamesCollection
     {
-      var sb = new StringBuilder();
-      sb.Append("class LolAcsAcsChampionGamesCollection {\n");
-      sb.Append("  GameCount: ").Append(GameCount).Append("\n");
-      sb.Append("  Champions: ").Append(Champions).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
+        [DataMember(Name = "champions")]
+        LolAcsAcsChampionGames[] Champions { get; set; }
+
+        [DataMember(Name = "gameCount")]
+        uint GameCount { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class LolAcsAcsChampionGamesCollection {\n");
+            sb.Append("  Champions: ").Append(Champions).Append("\n");
+            sb.Append("  GameCount: ").Append(GameCount).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
     }
-  }
 }

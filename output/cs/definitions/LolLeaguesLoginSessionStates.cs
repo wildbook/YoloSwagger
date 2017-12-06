@@ -1,17 +1,17 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LolLeaguesLoginSessionStates {
-    [DataMember(Name = "LOGGING_OUT")]
-    LOGGING_OUT = 2,
+  [DataContract]  enum LolLeaguesLoginSessionStates {
+    [DataMember(Name = "ERROR")]
+    ERROR = 3,
 
     [DataMember(Name = "IN_PROGRESS")]
     IN_PROGRESS = 0,
 
+    [DataMember(Name = "LOGGING_OUT")]
+    LOGGING_OUT = 2,
+
     [DataMember(Name = "SUCCEEDED")]
     SUCCEEDED = 1,
-
-    [DataMember(Name = "ERROR")]
-    ERROR = 3,
 
   }
 }

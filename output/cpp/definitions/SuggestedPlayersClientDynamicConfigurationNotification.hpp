@@ -3,17 +3,17 @@
 #include <optional>
 namespace leagueapi {
   struct SuggestedPlayersClientDynamicConfigurationNotification_t {
-    bool delta;
     std::string configs;
+    bool delta;
   };
 
   inline void to_json(nlohmann::json& j, const SuggestedPlayersClientDynamicConfigurationNotification_t& v) {
-    j["delta"] = v.delta;
     j["configs"] = v.configs;
+    j["delta"] = v.delta;
   }
 
   inline void from_json(const nlohmann::json& j, SuggestedPlayersClientDynamicConfigurationNotification_t& v) {
-    v.delta = j.at("delta").get<bool>();
     v.configs = j.at("configs").get<std::string>();
+    v.delta = j.at("delta").get<bool>();
   }
 }

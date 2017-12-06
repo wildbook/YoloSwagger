@@ -4,17 +4,17 @@
 #include "LolMatchHistoryMatchHistoryParticipantIdentityPlayer.hpp"
 namespace leagueapi {
   struct LolMatchHistoryMatchHistoryParticipantIdentities_t {
-    LolMatchHistoryMatchHistoryParticipantIdentityPlayer_t player;
     uint16_t participantId;
+    LolMatchHistoryMatchHistoryParticipantIdentityPlayer_t player;
   };
 
   inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryParticipantIdentities_t& v) {
-    j["player"] = v.player;
     j["participantId"] = v.participantId;
+    j["player"] = v.player;
   }
 
   inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryParticipantIdentities_t& v) {
-    v.player = j.at("player").get<LolMatchHistoryMatchHistoryParticipantIdentityPlayer_t>();
     v.participantId = j.at("participantId").get<uint16_t>();
+    v.player = j.at("player").get<LolMatchHistoryMatchHistoryParticipantIdentityPlayer_t>();
   }
 }

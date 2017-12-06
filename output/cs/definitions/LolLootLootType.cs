@@ -1,11 +1,11 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LolLootLootType {
-    [DataMember(Name = "Currency")]
-    Currency = 1,
-
+  [DataContract]  enum LolLootLootType {
     [DataMember(Name = "Chest")]
     Chest = 0,
+
+    [DataMember(Name = "Currency")]
+    Currency = 1,
 
   }
 }

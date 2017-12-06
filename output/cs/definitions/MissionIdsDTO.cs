@@ -1,18 +1,21 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi {
-  struct MissionIdsDTO {
-    [DataMember(Name = "missionIds")]
-    string[] MissionIds {get; set;}
-
-    public override string ToString()
+namespace leagueapi
+{
+    [DataContract]
+    struct MissionIdsDTO
     {
-      var sb = new StringBuilder();
-      sb.Append("class MissionIdsDTO {\n");
-      sb.Append("  MissionIds: ").Append(MissionIds).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
+        [DataMember(Name = "missionIds")]
+        string[] MissionIds { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class MissionIdsDTO {\n");
+            sb.Append("  MissionIds: ").Append(MissionIds).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
     }
-  }
 }

@@ -4,56 +4,56 @@
 #include "LolMatchHistoryMatchHistoryPosition.hpp"
 namespace leagueapi {
   struct LolMatchHistoryMatchHistoryEvent_t {
-    std::string type;
-    uint16_t skillSlot;
-    std::string towerType;
-    uint16_t participantId;
-    uint64_t timestamp;
-    std::string monsterType;
-    std::string buildingType;
-    uint16_t killerId;
     std::vector<uint16_t> assistingParticipantIds;
-    std::string laneType;
-    uint16_t victimId;
+    std::string buildingType;
     uint16_t itemId;
+    uint16_t killerId;
+    std::string laneType;
     std::string monsterSubType;
-    uint16_t teamId;
+    std::string monsterType;
+    uint16_t participantId;
     LolMatchHistoryMatchHistoryPosition_t position;
+    uint16_t skillSlot;
+    uint16_t teamId;
+    uint64_t timestamp;
+    std::string towerType;
+    std::string type;
+    uint16_t victimId;
   };
 
   inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryEvent_t& v) {
-    j["type"] = v.type;
-    j["skillSlot"] = v.skillSlot;
-    j["towerType"] = v.towerType;
-    j["participantId"] = v.participantId;
-    j["timestamp"] = v.timestamp;
-    j["monsterType"] = v.monsterType;
-    j["buildingType"] = v.buildingType;
-    j["killerId"] = v.killerId;
     j["assistingParticipantIds"] = v.assistingParticipantIds;
-    j["laneType"] = v.laneType;
-    j["victimId"] = v.victimId;
+    j["buildingType"] = v.buildingType;
     j["itemId"] = v.itemId;
+    j["killerId"] = v.killerId;
+    j["laneType"] = v.laneType;
     j["monsterSubType"] = v.monsterSubType;
-    j["teamId"] = v.teamId;
+    j["monsterType"] = v.monsterType;
+    j["participantId"] = v.participantId;
     j["position"] = v.position;
+    j["skillSlot"] = v.skillSlot;
+    j["teamId"] = v.teamId;
+    j["timestamp"] = v.timestamp;
+    j["towerType"] = v.towerType;
+    j["type"] = v.type;
+    j["victimId"] = v.victimId;
   }
 
   inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryEvent_t& v) {
-    v.type = j.at("type").get<std::string>();
-    v.skillSlot = j.at("skillSlot").get<uint16_t>();
-    v.towerType = j.at("towerType").get<std::string>();
-    v.participantId = j.at("participantId").get<uint16_t>();
-    v.timestamp = j.at("timestamp").get<uint64_t>();
-    v.monsterType = j.at("monsterType").get<std::string>();
-    v.buildingType = j.at("buildingType").get<std::string>();
-    v.killerId = j.at("killerId").get<uint16_t>();
     v.assistingParticipantIds = j.at("assistingParticipantIds").get<std::vector<uint16_t>>();
-    v.laneType = j.at("laneType").get<std::string>();
-    v.victimId = j.at("victimId").get<uint16_t>();
+    v.buildingType = j.at("buildingType").get<std::string>();
     v.itemId = j.at("itemId").get<uint16_t>();
+    v.killerId = j.at("killerId").get<uint16_t>();
+    v.laneType = j.at("laneType").get<std::string>();
     v.monsterSubType = j.at("monsterSubType").get<std::string>();
-    v.teamId = j.at("teamId").get<uint16_t>();
+    v.monsterType = j.at("monsterType").get<std::string>();
+    v.participantId = j.at("participantId").get<uint16_t>();
     v.position = j.at("position").get<LolMatchHistoryMatchHistoryPosition_t>();
+    v.skillSlot = j.at("skillSlot").get<uint16_t>();
+    v.teamId = j.at("teamId").get<uint16_t>();
+    v.timestamp = j.at("timestamp").get<uint64_t>();
+    v.towerType = j.at("towerType").get<std::string>();
+    v.type = j.at("type").get<std::string>();
+    v.victimId = j.at("victimId").get<uint16_t>();
   }
 }

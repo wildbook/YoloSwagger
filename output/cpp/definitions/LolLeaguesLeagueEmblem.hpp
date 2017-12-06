@@ -3,8 +3,8 @@
 namespace leagueapi {
   enum class LolLeaguesLeagueEmblem_t {
     FRESHBLOOD_E = 2,
-    VETERAN_E = 0,
     HOTSTREAK_E = 1,
+    VETERAN_E = 0,
   };
 
   inline void to_json(nlohmann::json& j, const LolLeaguesLeagueEmblem_t& v) {
@@ -12,11 +12,11 @@ namespace leagueapi {
       case LolLeaguesLeagueEmblem_t::FRESHBLOOD_E:
         j = "FRESHBLOOD";
       break;
-      case LolLeaguesLeagueEmblem_t::VETERAN_E:
-        j = "VETERAN";
-      break;
       case LolLeaguesLeagueEmblem_t::HOTSTREAK_E:
         j = "HOTSTREAK";
+      break;
+      case LolLeaguesLeagueEmblem_t::VETERAN_E:
+        j = "VETERAN";
       break;
     }
   }
@@ -27,12 +27,12 @@ namespace leagueapi {
       v = LolLeaguesLeagueEmblem_t::FRESHBLOOD_E;
       return;
     }
-    if(s == "VETERAN"){
-      v = LolLeaguesLeagueEmblem_t::VETERAN_E;
-      return;
-    }
     if(s == "HOTSTREAK"){
       v = LolLeaguesLeagueEmblem_t::HOTSTREAK_E;
+      return;
+    }
+    if(s == "VETERAN"){
+      v = LolLeaguesLeagueEmblem_t::VETERAN_E;
       return;
     }
   }

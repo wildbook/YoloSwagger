@@ -1,20 +1,20 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LolLobbyLobbyRemovedFromGameReason {
-    [DataMember(Name = "None")]
-    None = 0,
-
-    [DataMember(Name = "Kicked")]
-    Kicked = 1,
+  [DataContract]  enum LolLobbyLobbyRemovedFromGameReason {
+    [DataMember(Name = "Disbanded")]
+    Disbanded = 2,
 
     [DataMember(Name = "GameStartError")]
     GameStartError = 7,
 
-    [DataMember(Name = "ServiceShutdown")]
-    ServiceShutdown = 8,
+    [DataMember(Name = "Kicked")]
+    Kicked = 1,
 
-    [DataMember(Name = "Disbanded")]
-    Disbanded = 2,
+    [DataMember(Name = "Left")]
+    Left = 3,
+
+    [DataMember(Name = "None")]
+    None = 0,
 
     [DataMember(Name = "Other")]
     Other = 5,
@@ -22,11 +22,11 @@ namespace leagueapi {
     [DataMember(Name = "ServiceError")]
     ServiceError = 4,
 
+    [DataMember(Name = "ServiceShutdown")]
+    ServiceShutdown = 8,
+
     [DataMember(Name = "Timeout")]
     Timeout = 6,
-
-    [DataMember(Name = "Left")]
-    Left = 3,
 
   }
 }

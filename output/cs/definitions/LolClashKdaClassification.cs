@@ -1,11 +1,11 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LolClashKdaClassification {
-    [DataMember(Name = "HIGH")]
-    HIGH = 2,
-
+  [DataContract]  enum LolClashKdaClassification {
     [DataMember(Name = "AVERAGE")]
     AVERAGE = 1,
+
+    [DataMember(Name = "HIGH")]
+    HIGH = 2,
 
     [DataMember(Name = "LOW")]
     LOW = 0,

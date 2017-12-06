@@ -2,16 +2,16 @@
 #include <json.hpp>
 namespace leagueapi {
   enum class LolPlayerBehaviorNotificationSource_t {
-    Message_E = 3,
+    ForcedShutdown_E = 2,
     Invalid_E = 0,
     Login_E = 1,
-    ForcedShutdown_E = 2,
+    Message_E = 3,
   };
 
   inline void to_json(nlohmann::json& j, const LolPlayerBehaviorNotificationSource_t& v) {
     switch(v) {
-      case LolPlayerBehaviorNotificationSource_t::Message_E:
-        j = "Message";
+      case LolPlayerBehaviorNotificationSource_t::ForcedShutdown_E:
+        j = "ForcedShutdown";
       break;
       case LolPlayerBehaviorNotificationSource_t::Invalid_E:
         j = "Invalid";
@@ -19,16 +19,16 @@ namespace leagueapi {
       case LolPlayerBehaviorNotificationSource_t::Login_E:
         j = "Login";
       break;
-      case LolPlayerBehaviorNotificationSource_t::ForcedShutdown_E:
-        j = "ForcedShutdown";
+      case LolPlayerBehaviorNotificationSource_t::Message_E:
+        j = "Message";
       break;
     }
   }
 
   inline void from_json(const nlohmann::json& j, LolPlayerBehaviorNotificationSource_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "Message"){
-      v = LolPlayerBehaviorNotificationSource_t::Message_E;
+    if(s == "ForcedShutdown"){
+      v = LolPlayerBehaviorNotificationSource_t::ForcedShutdown_E;
       return;
     }
     if(s == "Invalid"){
@@ -39,8 +39,8 @@ namespace leagueapi {
       v = LolPlayerBehaviorNotificationSource_t::Login_E;
       return;
     }
-    if(s == "ForcedShutdown"){
-      v = LolPlayerBehaviorNotificationSource_t::ForcedShutdown_E;
+    if(s == "Message"){
+      v = LolPlayerBehaviorNotificationSource_t::Message_E;
       return;
     }
   }

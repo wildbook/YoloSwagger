@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolReplaysGameflowGameClient.hpp"
 #include "LolReplaysGameflowPhase.hpp"
+#include "LolReplaysGameflowGameClient.hpp"
 namespace leagueapi {
   struct LolReplaysGameflowSession_t {
     LolReplaysGameflowGameClient_t gameClient;

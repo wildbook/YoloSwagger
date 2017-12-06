@@ -1,8 +1,8 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum PatcherComponentStateAction {
-    [DataMember(Name = "Repairing")]
-    Repairing = 3,
+  [DataContract]  enum PatcherComponentStateAction {
+    [DataMember(Name = "CheckingForUpdates")]
+    CheckingForUpdates = 1,
 
     [DataMember(Name = "Idle")]
     Idle = 0,
@@ -10,8 +10,8 @@ namespace leagueapi {
     [DataMember(Name = "Patching")]
     Patching = 2,
 
-    [DataMember(Name = "CheckingForUpdates")]
-    CheckingForUpdates = 1,
+    [DataMember(Name = "Repairing")]
+    Repairing = 3,
 
   }
 }

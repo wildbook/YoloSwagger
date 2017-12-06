@@ -5,11 +5,11 @@ namespace leagueapi {
     Accepted_E = 2,
     Declined_E = 4,
     Error_E = 7,
+    Joined_E = 3,
     Kicked_E = 5,
+    OnHold_E = 6,
     Pending_E = 1,
     Requested_E = 0,
-    OnHold_E = 6,
-    Joined_E = 3,
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyLobbyInvitationState_t& v) {
@@ -23,20 +23,20 @@ namespace leagueapi {
       case LolLobbyLobbyInvitationState_t::Error_E:
         j = "Error";
       break;
+      case LolLobbyLobbyInvitationState_t::Joined_E:
+        j = "Joined";
+      break;
       case LolLobbyLobbyInvitationState_t::Kicked_E:
         j = "Kicked";
+      break;
+      case LolLobbyLobbyInvitationState_t::OnHold_E:
+        j = "OnHold";
       break;
       case LolLobbyLobbyInvitationState_t::Pending_E:
         j = "Pending";
       break;
       case LolLobbyLobbyInvitationState_t::Requested_E:
         j = "Requested";
-      break;
-      case LolLobbyLobbyInvitationState_t::OnHold_E:
-        j = "OnHold";
-      break;
-      case LolLobbyLobbyInvitationState_t::Joined_E:
-        j = "Joined";
       break;
     }
   }
@@ -55,8 +55,16 @@ namespace leagueapi {
       v = LolLobbyLobbyInvitationState_t::Error_E;
       return;
     }
+    if(s == "Joined"){
+      v = LolLobbyLobbyInvitationState_t::Joined_E;
+      return;
+    }
     if(s == "Kicked"){
       v = LolLobbyLobbyInvitationState_t::Kicked_E;
+      return;
+    }
+    if(s == "OnHold"){
+      v = LolLobbyLobbyInvitationState_t::OnHold_E;
       return;
     }
     if(s == "Pending"){
@@ -65,14 +73,6 @@ namespace leagueapi {
     }
     if(s == "Requested"){
       v = LolLobbyLobbyInvitationState_t::Requested_E;
-      return;
-    }
-    if(s == "OnHold"){
-      v = LolLobbyLobbyInvitationState_t::OnHold_E;
-      return;
-    }
-    if(s == "Joined"){
-      v = LolLobbyLobbyInvitationState_t::Joined_E;
       return;
     }
   }

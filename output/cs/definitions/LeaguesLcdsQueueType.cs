@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LeaguesLcdsQueueType {
+  [DataContract]  enum LeaguesLcdsQueueType {
     [DataMember(Name = "RANKED_FLEX_SR")]
     RANKED_FLEX_SR = 2,
 

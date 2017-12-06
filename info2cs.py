@@ -9,14 +9,32 @@ builtins = {
     "uint16": "ushort",
     "int32": "int", 
     "uint32": "uint",
-    "int64": "long", 
-    "uint64": "ulong", 
-    "float": "float", 
-    "double": "double", 
+    "int64": "long",
+    "uint64": "ulong",
+    "float": "float",
+    "double": "double",
+    "object": "dynamic",
+    "string": "string",
+    "map": "Dictionary<string, {0}>", 
+    "vector": "{0}[]" 
+}
+
+builtins_optional = {
+    "bool": "bool?", 
+    "int8": "sbyte?", 
+    "uint8": "byte?",
+    "int16": "short?", 
+    "uint16": "ushort?",
+    "int32": "int?", 
+    "uint32": "uint?",
+    "int64": "long?", 
+    "uint64": "ulong?", 
+    "float": "float?", 
+    "double": "double?", 
     "object": "dynamic",
     "string": "string", 
     "map": "Dictionary<string, {0}>", 
-    "vector": "{0}[]" 
+    "vector": "{0}[]"
 }
 
 def fix_case(str):
@@ -27,6 +45,11 @@ def type2cs(type):
     if not type["type"] in builtins:
         return fix_case(type["type"])
     return info_type_convert(type, builtins)
+    
+def type2cs_optional(type):
+    if not type["type"] in builtins_optional:
+        return fix_case(type["type"]) + "?"
+    return info_type_convert(type, builtins_optional)
 
 def generate_enum(file, namespace, name,  enum):
     # definition
@@ -34,7 +57,7 @@ def generate_enum(file, namespace, name,  enum):
     file.write("namespace {0} {{\n".format(namespace))
     if enum["description"]:
         file.write("  // {0}\n".format(enum["description"]))
-	file.write("  [DataContract]");
+    file.write("  [DataContract]")
     file.write("  enum {0} {{\n".format(name))
     for value,  details in enum["values"].items():
         if details["description"]:
@@ -49,35 +72,38 @@ def generate_struct(file, namespace,  name, struct):
     file.write("using System.Runtime.Serialization;\n")
     file.write("using System.Collections.Generic;\n")
 
-    file.write("namespace {0} {{\n".format(namespace))
+    file.write("namespace {0}\n{{\n".format(namespace))
     # definition
     if struct["description"]:
-        file.write("  // {0}\n".format(struct["description"]))
-	file.write("  [DataContract]");
-    file.write("  struct {0} {{\n".format(name))
+        file.write("    // {0}\n".format(struct["description"]))
+    file.write("    [DataContract]\n");
+    file.write("    struct {0}\n    {{\n".format(name))
     for field, details in struct["fields"].items():
         if details["description"]: 
-            file.write("    // {0}\n".format(details["description"]))
-        file.write("    [DataMember(Name = \"{0}\")]\n".format(field))
+            file.write("        // {0}\n".format(details["description"]))
+        file.write("        [DataMember(Name = \"{0}\")]\n".format(field))
         field_name = fix_case(field)
         if field_name == name:
             field_name = "_" + field_name
-        file.write("    {0} {1} {{get; set;}}\n\n".format(type2cs(details["type"]), field_name))
+        if details["optional"]:
+            file.write("        {0} {1} {{ get; set; }}\n\n".format(type2cs_optional(details["type"]), field_name))
+        else:
+            file.write("        {0} {1} {{ get; set; }}\n\n".format(type2cs(details["type"]), field_name))
     file.write((
-        "    public override string ToString()\n"
-        "    {\n"
-        "      var sb = new StringBuilder();\n"
-        "      sb.Append(\"class " + name + " {\\n\");\n"))
+        "        public override string ToString()\n"
+        "        {\n"
+        "            var sb = new StringBuilder();\n"
+        "            sb.Append(\"class " + name + " {\\n\");\n"))
     for field, details in struct["fields"].items():
         field_name = fix_case(field)
         if field_name == name:
             field_name = "_" + field_name
-        file.write("      sb.Append(\"  {0}: \").Append({0}).Append(\"\\n\");\n".format(field_name))
+        file.write("            sb.Append(\"  {0}: \").Append({0}).Append(\"\\n\");\n".format(field_name))
     file.write((
-        "      sb.Append(\"}\\n\");\n"
-        "      return sb.ToString();\n"
-        "    }\n"));
-    file.write("  }\n")
+        "            sb.Append(\"}\\n\");\n"
+        "            return sb.ToString();\n"
+        "        }\n"));
+    file.write("    }\n")
     file.write("}")
 
 def generate_defintions(info,  folder,  namespace):

@@ -1,14 +1,8 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LolLobbyLobbyBotDifficulty {
-    [DataMember(Name = "UBER")]
-    UBER = 3,
-
-    [DataMember(Name = "NONE")]
-    NONE = -1,
-
-    [DataMember(Name = "MEDIUM")]
-    MEDIUM = 1,
+  [DataContract]  enum LolLobbyLobbyBotDifficulty {
+    [DataMember(Name = "EASY")]
+    EASY = 0,
 
     [DataMember(Name = "HARD")]
     HARD = 2,
@@ -16,11 +10,17 @@ namespace leagueapi {
     [DataMember(Name = "INTRO")]
     INTRO = 5,
 
-    [DataMember(Name = "EASY")]
-    EASY = 0,
+    [DataMember(Name = "MEDIUM")]
+    MEDIUM = 1,
+
+    [DataMember(Name = "NONE")]
+    NONE = -1,
 
     [DataMember(Name = "TUTORIAL")]
     TUTORIAL = 4,
+
+    [DataMember(Name = "UBER")]
+    UBER = 3,
 
   }
 }

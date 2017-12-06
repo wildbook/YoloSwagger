@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LolLootLootRarity {
+  [DataContract]  enum LolLootLootRarity {
     [DataMember(Name = "Default")]
     Default = 0,
 

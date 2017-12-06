@@ -2,181 +2,181 @@
 #include <json.hpp>
 namespace leagueapi {
   enum class LolQueueEligibilityEligibilityRestrictionCode_t {
-    TeamMaxSizeRestriction_E = 7,
-    PlayerMinLevelRestriction_E = 15,
-    QueueDisabled_E = 0,
-    TeamHighMMRMaxSizeRestriction_E = 18,
-    PlayerLevelRestriction_E = 2,
-    PlayerMinorRestriction_E = 16,
-    PrerequisiteQueuesNotPlayedRestriction_E = 19,
     PlayerAvailableChampionRestriction_E = 5,
-    QueueUnsupported_E = 1,
-    UnknownRestriction_E = 20,
-    PlayerInGameRestriction_E = 11,
     PlayerBannedRestriction_E = 4,
-    PlayerTimedRestriction_E = 3,
-    TeamMinSizeRestriction_E = 8,
-    PlayerLeaverTaintedWarningRestriction_E = 13,
-    PlayerMaxLevelRestriction_E = 14,
-    PlayerLeaverBustedRestriction_E = 12,
-    TeamDivisionRestriction_E = 6,
-    PlayerDodgeRestriction_E = 10,
-    PlayerRankedSuspensionRestriction_E = 17,
     PlayerBingeRestriction_E = 9,
+    PlayerDodgeRestriction_E = 10,
+    PlayerInGameRestriction_E = 11,
+    PlayerLeaverBustedRestriction_E = 12,
+    PlayerLeaverTaintedWarningRestriction_E = 13,
+    PlayerLevelRestriction_E = 2,
+    PlayerMaxLevelRestriction_E = 14,
+    PlayerMinLevelRestriction_E = 15,
+    PlayerMinorRestriction_E = 16,
+    PlayerRankedSuspensionRestriction_E = 17,
+    PlayerTimedRestriction_E = 3,
+    PrerequisiteQueuesNotPlayedRestriction_E = 19,
+    QueueDisabled_E = 0,
+    QueueUnsupported_E = 1,
+    TeamDivisionRestriction_E = 6,
+    TeamHighMMRMaxSizeRestriction_E = 18,
+    TeamMaxSizeRestriction_E = 7,
+    TeamMinSizeRestriction_E = 8,
+    UnknownRestriction_E = 20,
   };
 
   inline void to_json(nlohmann::json& j, const LolQueueEligibilityEligibilityRestrictionCode_t& v) {
     switch(v) {
-      case LolQueueEligibilityEligibilityRestrictionCode_t::TeamMaxSizeRestriction_E:
-        j = "TeamMaxSizeRestriction";
-      break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerMinLevelRestriction_E:
-        j = "PlayerMinLevelRestriction";
-      break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::QueueDisabled_E:
-        j = "QueueDisabled";
-      break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::TeamHighMMRMaxSizeRestriction_E:
-        j = "TeamHighMMRMaxSizeRestriction";
-      break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerLevelRestriction_E:
-        j = "PlayerLevelRestriction";
-      break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerMinorRestriction_E:
-        j = "PlayerMinorRestriction";
-      break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::PrerequisiteQueuesNotPlayedRestriction_E:
-        j = "PrerequisiteQueuesNotPlayedRestriction";
-      break;
       case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerAvailableChampionRestriction_E:
         j = "PlayerAvailableChampionRestriction";
-      break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::QueueUnsupported_E:
-        j = "QueueUnsupported";
-      break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::UnknownRestriction_E:
-        j = "UnknownRestriction";
-      break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerInGameRestriction_E:
-        j = "PlayerInGameRestriction";
       break;
       case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerBannedRestriction_E:
         j = "PlayerBannedRestriction";
       break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerTimedRestriction_E:
-        j = "PlayerTimedRestriction";
-      break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::TeamMinSizeRestriction_E:
-        j = "TeamMinSizeRestriction";
-      break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerLeaverTaintedWarningRestriction_E:
-        j = "PlayerLeaverTaintedWarningRestriction";
-      break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerMaxLevelRestriction_E:
-        j = "PlayerMaxLevelRestriction";
-      break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerLeaverBustedRestriction_E:
-        j = "PlayerLeaverBustedRestriction";
-      break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::TeamDivisionRestriction_E:
-        j = "TeamDivisionRestriction";
+      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerBingeRestriction_E:
+        j = "PlayerBingeRestriction";
       break;
       case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerDodgeRestriction_E:
         j = "PlayerDodgeRestriction";
       break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerInGameRestriction_E:
+        j = "PlayerInGameRestriction";
+      break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerLeaverBustedRestriction_E:
+        j = "PlayerLeaverBustedRestriction";
+      break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerLeaverTaintedWarningRestriction_E:
+        j = "PlayerLeaverTaintedWarningRestriction";
+      break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerLevelRestriction_E:
+        j = "PlayerLevelRestriction";
+      break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerMaxLevelRestriction_E:
+        j = "PlayerMaxLevelRestriction";
+      break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerMinLevelRestriction_E:
+        j = "PlayerMinLevelRestriction";
+      break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerMinorRestriction_E:
+        j = "PlayerMinorRestriction";
+      break;
       case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerRankedSuspensionRestriction_E:
         j = "PlayerRankedSuspensionRestriction";
       break;
-      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerBingeRestriction_E:
-        j = "PlayerBingeRestriction";
+      case LolQueueEligibilityEligibilityRestrictionCode_t::PlayerTimedRestriction_E:
+        j = "PlayerTimedRestriction";
+      break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::PrerequisiteQueuesNotPlayedRestriction_E:
+        j = "PrerequisiteQueuesNotPlayedRestriction";
+      break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::QueueDisabled_E:
+        j = "QueueDisabled";
+      break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::QueueUnsupported_E:
+        j = "QueueUnsupported";
+      break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::TeamDivisionRestriction_E:
+        j = "TeamDivisionRestriction";
+      break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::TeamHighMMRMaxSizeRestriction_E:
+        j = "TeamHighMMRMaxSizeRestriction";
+      break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::TeamMaxSizeRestriction_E:
+        j = "TeamMaxSizeRestriction";
+      break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::TeamMinSizeRestriction_E:
+        j = "TeamMinSizeRestriction";
+      break;
+      case LolQueueEligibilityEligibilityRestrictionCode_t::UnknownRestriction_E:
+        j = "UnknownRestriction";
       break;
     }
   }
 
   inline void from_json(const nlohmann::json& j, LolQueueEligibilityEligibilityRestrictionCode_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "TeamMaxSizeRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::TeamMaxSizeRestriction_E;
-      return;
-    }
-    if(s == "PlayerMinLevelRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerMinLevelRestriction_E;
-      return;
-    }
-    if(s == "QueueDisabled"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::QueueDisabled_E;
-      return;
-    }
-    if(s == "TeamHighMMRMaxSizeRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::TeamHighMMRMaxSizeRestriction_E;
-      return;
-    }
-    if(s == "PlayerLevelRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerLevelRestriction_E;
-      return;
-    }
-    if(s == "PlayerMinorRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerMinorRestriction_E;
-      return;
-    }
-    if(s == "PrerequisiteQueuesNotPlayedRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::PrerequisiteQueuesNotPlayedRestriction_E;
-      return;
-    }
     if(s == "PlayerAvailableChampionRestriction"){
       v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerAvailableChampionRestriction_E;
-      return;
-    }
-    if(s == "QueueUnsupported"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::QueueUnsupported_E;
-      return;
-    }
-    if(s == "UnknownRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::UnknownRestriction_E;
-      return;
-    }
-    if(s == "PlayerInGameRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerInGameRestriction_E;
       return;
     }
     if(s == "PlayerBannedRestriction"){
       v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerBannedRestriction_E;
       return;
     }
-    if(s == "PlayerTimedRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerTimedRestriction_E;
-      return;
-    }
-    if(s == "TeamMinSizeRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::TeamMinSizeRestriction_E;
-      return;
-    }
-    if(s == "PlayerLeaverTaintedWarningRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerLeaverTaintedWarningRestriction_E;
-      return;
-    }
-    if(s == "PlayerMaxLevelRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerMaxLevelRestriction_E;
-      return;
-    }
-    if(s == "PlayerLeaverBustedRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerLeaverBustedRestriction_E;
-      return;
-    }
-    if(s == "TeamDivisionRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::TeamDivisionRestriction_E;
+    if(s == "PlayerBingeRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerBingeRestriction_E;
       return;
     }
     if(s == "PlayerDodgeRestriction"){
       v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerDodgeRestriction_E;
       return;
     }
+    if(s == "PlayerInGameRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerInGameRestriction_E;
+      return;
+    }
+    if(s == "PlayerLeaverBustedRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerLeaverBustedRestriction_E;
+      return;
+    }
+    if(s == "PlayerLeaverTaintedWarningRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerLeaverTaintedWarningRestriction_E;
+      return;
+    }
+    if(s == "PlayerLevelRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerLevelRestriction_E;
+      return;
+    }
+    if(s == "PlayerMaxLevelRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerMaxLevelRestriction_E;
+      return;
+    }
+    if(s == "PlayerMinLevelRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerMinLevelRestriction_E;
+      return;
+    }
+    if(s == "PlayerMinorRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerMinorRestriction_E;
+      return;
+    }
     if(s == "PlayerRankedSuspensionRestriction"){
       v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerRankedSuspensionRestriction_E;
       return;
     }
-    if(s == "PlayerBingeRestriction"){
-      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerBingeRestriction_E;
+    if(s == "PlayerTimedRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::PlayerTimedRestriction_E;
+      return;
+    }
+    if(s == "PrerequisiteQueuesNotPlayedRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::PrerequisiteQueuesNotPlayedRestriction_E;
+      return;
+    }
+    if(s == "QueueDisabled"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::QueueDisabled_E;
+      return;
+    }
+    if(s == "QueueUnsupported"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::QueueUnsupported_E;
+      return;
+    }
+    if(s == "TeamDivisionRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::TeamDivisionRestriction_E;
+      return;
+    }
+    if(s == "TeamHighMMRMaxSizeRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::TeamHighMMRMaxSizeRestriction_E;
+      return;
+    }
+    if(s == "TeamMaxSizeRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::TeamMaxSizeRestriction_E;
+      return;
+    }
+    if(s == "TeamMinSizeRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::TeamMinSizeRestriction_E;
+      return;
+    }
+    if(s == "UnknownRestriction"){
+      v = LolQueueEligibilityEligibilityRestrictionCode_t::UnknownRestriction_E;
       return;
     }
   }

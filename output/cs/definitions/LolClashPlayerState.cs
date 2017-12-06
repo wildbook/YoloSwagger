@@ -1,17 +1,17 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LolClashPlayerState {
-    [DataMember(Name = "NO_ROSTER")]
-    NO_ROSTER = 0,
-
-    [DataMember(Name = "HAS_ROSTER")]
-    HAS_ROSTER = 1,
+  [DataContract]  enum LolClashPlayerState {
+    [DataMember(Name = "BRACKET_ROSTER")]
+    BRACKET_ROSTER = 2,
 
     [DataMember(Name = "ELIMINATED")]
     ELIMINATED = 3,
 
-    [DataMember(Name = "BRACKET_ROSTER")]
-    BRACKET_ROSTER = 2,
+    [DataMember(Name = "HAS_ROSTER")]
+    HAS_ROSTER = 1,
+
+    [DataMember(Name = "NO_ROSTER")]
+    NO_ROSTER = 0,
 
   }
 }

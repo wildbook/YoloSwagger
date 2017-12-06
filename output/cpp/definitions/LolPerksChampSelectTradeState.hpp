@@ -2,21 +2,15 @@
 #include <json.hpp>
 namespace leagueapi {
   enum class LolPerksChampSelectTradeState_t {
-    SENT_E = 5,
-    RECEIVED_E = 4,
     AVAILABLE_E = 1,
     BUSY_E = 2,
     INVALID_E = 3,
+    RECEIVED_E = 4,
+    SENT_E = 5,
   };
 
   inline void to_json(nlohmann::json& j, const LolPerksChampSelectTradeState_t& v) {
     switch(v) {
-      case LolPerksChampSelectTradeState_t::SENT_E:
-        j = "SENT";
-      break;
-      case LolPerksChampSelectTradeState_t::RECEIVED_E:
-        j = "RECEIVED";
-      break;
       case LolPerksChampSelectTradeState_t::AVAILABLE_E:
         j = "AVAILABLE";
       break;
@@ -26,19 +20,17 @@ namespace leagueapi {
       case LolPerksChampSelectTradeState_t::INVALID_E:
         j = "INVALID";
       break;
+      case LolPerksChampSelectTradeState_t::RECEIVED_E:
+        j = "RECEIVED";
+      break;
+      case LolPerksChampSelectTradeState_t::SENT_E:
+        j = "SENT";
+      break;
     }
   }
 
   inline void from_json(const nlohmann::json& j, LolPerksChampSelectTradeState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "SENT"){
-      v = LolPerksChampSelectTradeState_t::SENT_E;
-      return;
-    }
-    if(s == "RECEIVED"){
-      v = LolPerksChampSelectTradeState_t::RECEIVED_E;
-      return;
-    }
     if(s == "AVAILABLE"){
       v = LolPerksChampSelectTradeState_t::AVAILABLE_E;
       return;
@@ -49,6 +41,14 @@ namespace leagueapi {
     }
     if(s == "INVALID"){
       v = LolPerksChampSelectTradeState_t::INVALID_E;
+      return;
+    }
+    if(s == "RECEIVED"){
+      v = LolPerksChampSelectTradeState_t::RECEIVED_E;
+      return;
+    }
+    if(s == "SENT"){
+      v = LolPerksChampSelectTradeState_t::SENT_E;
       return;
     }
   }

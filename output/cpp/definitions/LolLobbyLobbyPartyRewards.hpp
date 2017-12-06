@@ -4,23 +4,23 @@
 #include "LolLobbyPartyReward.hpp"
 namespace leagueapi {
   struct LolLobbyLobbyPartyRewards_t {
-    std::vector<LolLobbyPartyReward_t> partyRewards;
     bool isCustom;
-    int32_t queueId;
     bool isEnabled;
+    std::vector<LolLobbyPartyReward_t> partyRewards;
+    int32_t queueId;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyLobbyPartyRewards_t& v) {
-    j["partyRewards"] = v.partyRewards;
     j["isCustom"] = v.isCustom;
-    j["queueId"] = v.queueId;
     j["isEnabled"] = v.isEnabled;
+    j["partyRewards"] = v.partyRewards;
+    j["queueId"] = v.queueId;
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyLobbyPartyRewards_t& v) {
-    v.partyRewards = j.at("partyRewards").get<std::vector<LolLobbyPartyReward_t>>();
     v.isCustom = j.at("isCustom").get<bool>();
-    v.queueId = j.at("queueId").get<int32_t>();
     v.isEnabled = j.at("isEnabled").get<bool>();
+    v.partyRewards = j.at("partyRewards").get<std::vector<LolLobbyPartyReward_t>>();
+    v.queueId = j.at("queueId").get<int32_t>();
   }
 }

@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum PatcherInjectedPatcherError {
+  [DataContract]  enum PatcherInjectedPatcherError {
     [DataMember(Name = "FailedFailedToWriteFile")]
     FailedFailedToWriteFile = 3,
 

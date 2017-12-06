@@ -5,43 +5,43 @@
 namespace leagueapi {
   struct LolHonorV2EndOfGameTeam_t {
     std::vector<int32_t> championBans;
-    std::string memberStatusString;
-    std::string tag;
-    nlohmann::json stats;
-    std::vector<LolHonorV2EndOfGamePlayer_t> players;
-    std::string name;
-    bool isBottomTeam;
     std::string fullId;
-    int32_t teamId;
+    bool isBottomTeam;
     bool isPlayerTeam;
     bool isWinningTeam;
+    std::string memberStatusString;
+    std::string name;
+    std::vector<LolHonorV2EndOfGamePlayer_t> players;
+    nlohmann::json stats;
+    std::string tag;
+    int32_t teamId;
   };
 
   inline void to_json(nlohmann::json& j, const LolHonorV2EndOfGameTeam_t& v) {
     j["championBans"] = v.championBans;
-    j["memberStatusString"] = v.memberStatusString;
-    j["tag"] = v.tag;
-    j["stats"] = v.stats;
-    j["players"] = v.players;
-    j["name"] = v.name;
-    j["isBottomTeam"] = v.isBottomTeam;
     j["fullId"] = v.fullId;
-    j["teamId"] = v.teamId;
+    j["isBottomTeam"] = v.isBottomTeam;
     j["isPlayerTeam"] = v.isPlayerTeam;
     j["isWinningTeam"] = v.isWinningTeam;
+    j["memberStatusString"] = v.memberStatusString;
+    j["name"] = v.name;
+    j["players"] = v.players;
+    j["stats"] = v.stats;
+    j["tag"] = v.tag;
+    j["teamId"] = v.teamId;
   }
 
   inline void from_json(const nlohmann::json& j, LolHonorV2EndOfGameTeam_t& v) {
     v.championBans = j.at("championBans").get<std::vector<int32_t>>();
-    v.memberStatusString = j.at("memberStatusString").get<std::string>();
-    v.tag = j.at("tag").get<std::string>();
-    v.stats = j.at("stats").get<nlohmann::json>();
-    v.players = j.at("players").get<std::vector<LolHonorV2EndOfGamePlayer_t>>();
-    v.name = j.at("name").get<std::string>();
-    v.isBottomTeam = j.at("isBottomTeam").get<bool>();
     v.fullId = j.at("fullId").get<std::string>();
-    v.teamId = j.at("teamId").get<int32_t>();
+    v.isBottomTeam = j.at("isBottomTeam").get<bool>();
     v.isPlayerTeam = j.at("isPlayerTeam").get<bool>();
     v.isWinningTeam = j.at("isWinningTeam").get<bool>();
+    v.memberStatusString = j.at("memberStatusString").get<std::string>();
+    v.name = j.at("name").get<std::string>();
+    v.players = j.at("players").get<std::vector<LolHonorV2EndOfGamePlayer_t>>();
+    v.stats = j.at("stats").get<nlohmann::json>();
+    v.tag = j.at("tag").get<std::string>();
+    v.teamId = j.at("teamId").get<int32_t>();
   }
 }

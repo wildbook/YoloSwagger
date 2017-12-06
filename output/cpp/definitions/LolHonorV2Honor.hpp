@@ -3,17 +3,17 @@
 #include <optional>
 namespace leagueapi {
   struct LolHonorV2Honor_t {
-    std::string voterRelationship;
     std::string honorCategory;
+    std::string voterRelationship;
   };
 
   inline void to_json(nlohmann::json& j, const LolHonorV2Honor_t& v) {
-    j["voterRelationship"] = v.voterRelationship;
     j["honorCategory"] = v.honorCategory;
+    j["voterRelationship"] = v.voterRelationship;
   }
 
   inline void from_json(const nlohmann::json& j, LolHonorV2Honor_t& v) {
-    v.voterRelationship = j.at("voterRelationship").get<std::string>();
     v.honorCategory = j.at("honorCategory").get<std::string>();
+    v.voterRelationship = j.at("voterRelationship").get<std::string>();
   }
 }

@@ -3,10 +3,10 @@
 namespace leagueapi {
   enum class PendingRosterMemberState_t {
     FORCED_NOT_READY_E = 1,
-    READY_E = 2,
     KICK_E = 4,
-    NOT_READY_E = 0,
     LEFT_E = 3,
+    NOT_READY_E = 0,
+    READY_E = 2,
   };
 
   inline void to_json(nlohmann::json& j, const PendingRosterMemberState_t& v) {
@@ -14,17 +14,17 @@ namespace leagueapi {
       case PendingRosterMemberState_t::FORCED_NOT_READY_E:
         j = "FORCED_NOT_READY";
       break;
-      case PendingRosterMemberState_t::READY_E:
-        j = "READY";
-      break;
       case PendingRosterMemberState_t::KICK_E:
         j = "KICK";
+      break;
+      case PendingRosterMemberState_t::LEFT_E:
+        j = "LEFT";
       break;
       case PendingRosterMemberState_t::NOT_READY_E:
         j = "NOT_READY";
       break;
-      case PendingRosterMemberState_t::LEFT_E:
-        j = "LEFT";
+      case PendingRosterMemberState_t::READY_E:
+        j = "READY";
       break;
     }
   }
@@ -35,20 +35,20 @@ namespace leagueapi {
       v = PendingRosterMemberState_t::FORCED_NOT_READY_E;
       return;
     }
-    if(s == "READY"){
-      v = PendingRosterMemberState_t::READY_E;
-      return;
-    }
     if(s == "KICK"){
       v = PendingRosterMemberState_t::KICK_E;
+      return;
+    }
+    if(s == "LEFT"){
+      v = PendingRosterMemberState_t::LEFT_E;
       return;
     }
     if(s == "NOT_READY"){
       v = PendingRosterMemberState_t::NOT_READY_E;
       return;
     }
-    if(s == "LEFT"){
-      v = PendingRosterMemberState_t::LEFT_E;
+    if(s == "READY"){
+      v = PendingRosterMemberState_t::READY_E;
       return;
     }
   }

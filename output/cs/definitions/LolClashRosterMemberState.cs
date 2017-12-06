@@ -1,9 +1,6 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LolClashRosterMemberState {
-    [DataMember(Name = "READY")]
-    READY = 3,
-
+  [DataContract]  enum LolClashRosterMemberState {
     [DataMember(Name = "FORCED_NOT_READY")]
     FORCED_NOT_READY = 2,
 
@@ -12,6 +9,9 @@ namespace leagueapi {
 
     [DataMember(Name = "PENDING")]
     PENDING = 0,
+
+    [DataMember(Name = "READY")]
+    READY = 3,
 
   }
 }

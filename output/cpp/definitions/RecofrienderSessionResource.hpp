@@ -3,17 +3,17 @@
 #include <optional>
 namespace leagueapi {
   struct RecofrienderSessionResource_t {
-    std::string sessionState;
     uint32_t sessionExpire;
+    std::string sessionState;
   };
 
   inline void to_json(nlohmann::json& j, const RecofrienderSessionResource_t& v) {
-    j["sessionState"] = v.sessionState;
     j["sessionExpire"] = v.sessionExpire;
+    j["sessionState"] = v.sessionState;
   }
 
   inline void from_json(const nlohmann::json& j, RecofrienderSessionResource_t& v) {
-    v.sessionState = j.at("sessionState").get<std::string>();
     v.sessionExpire = j.at("sessionExpire").get<uint32_t>();
+    v.sessionState = j.at("sessionState").get<std::string>();
   }
 }

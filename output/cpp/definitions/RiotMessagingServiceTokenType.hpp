@@ -3,8 +3,8 @@
 namespace leagueapi {
   enum class RiotMessagingServiceTokenType_t {
     Access_E = 1,
-    Unavailable_E = 0,
     Identity_E = 2,
+    Unavailable_E = 0,
   };
 
   inline void to_json(nlohmann::json& j, const RiotMessagingServiceTokenType_t& v) {
@@ -12,11 +12,11 @@ namespace leagueapi {
       case RiotMessagingServiceTokenType_t::Access_E:
         j = "Access";
       break;
-      case RiotMessagingServiceTokenType_t::Unavailable_E:
-        j = "Unavailable";
-      break;
       case RiotMessagingServiceTokenType_t::Identity_E:
         j = "Identity";
+      break;
+      case RiotMessagingServiceTokenType_t::Unavailable_E:
+        j = "Unavailable";
       break;
     }
   }
@@ -27,12 +27,12 @@ namespace leagueapi {
       v = RiotMessagingServiceTokenType_t::Access_E;
       return;
     }
-    if(s == "Unavailable"){
-      v = RiotMessagingServiceTokenType_t::Unavailable_E;
-      return;
-    }
     if(s == "Identity"){
       v = RiotMessagingServiceTokenType_t::Identity_E;
+      return;
+    }
+    if(s == "Unavailable"){
+      v = RiotMessagingServiceTokenType_t::Unavailable_E;
       return;
     }
   }

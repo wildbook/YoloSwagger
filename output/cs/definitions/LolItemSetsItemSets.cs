@@ -1,26 +1,29 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi {
-  struct LolItemSetsItemSets {
-    [DataMember(Name = "timestamp")]
-    ulong Timestamp {get; set;}
-
-    [DataMember(Name = "itemSets")]
-    LolItemSetsItemSet[] ItemSets {get; set;}
-
-    [DataMember(Name = "accountId")]
-    ulong AccountId {get; set;}
-
-    public override string ToString()
+namespace leagueapi
+{
+    [DataContract]
+    struct LolItemSetsItemSets
     {
-      var sb = new StringBuilder();
-      sb.Append("class LolItemSetsItemSets {\n");
-      sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
-      sb.Append("  ItemSets: ").Append(ItemSets).Append("\n");
-      sb.Append("  AccountId: ").Append(AccountId).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
+        [DataMember(Name = "accountId")]
+        ulong AccountId { get; set; }
+
+        [DataMember(Name = "itemSets")]
+        LolItemSetsItemSet[] ItemSets { get; set; }
+
+        [DataMember(Name = "timestamp")]
+        ulong Timestamp { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class LolItemSetsItemSets {\n");
+            sb.Append("  AccountId: ").Append(AccountId).Append("\n");
+            sb.Append("  ItemSets: ").Append(ItemSets).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
     }
-  }
 }

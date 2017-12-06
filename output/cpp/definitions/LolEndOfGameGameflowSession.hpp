@@ -1,9 +1,9 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolEndOfGameGameflowPhase.hpp"
-#include "LolEndOfGameGameflowGameData.hpp"
 #include "LolEndOfGameGameflowClient.hpp"
+#include "LolEndOfGameGameflowGameData.hpp"
+#include "LolEndOfGameGameflowPhase.hpp"
 namespace leagueapi {
   struct LolEndOfGameGameflowSession_t {
     LolEndOfGameGameflowClient_t gameClient;

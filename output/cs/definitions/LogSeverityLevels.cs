@@ -6,17 +6,17 @@ namespace leagueapi {
     [DataMember(Name = "Always")]
     Always = 3,
 
-    // Progress expected to continue, despite issues
-    [DataMember(Name = "Warning")]
-    Warning = 1,
+    // Critical failure; thread may terminate
+    [DataMember(Name = "Error")]
+    Error = 2,
 
     // Progress nominal (used for INFO and TRACE)
     [DataMember(Name = "Okay")]
     Okay = 0,
 
-    // Critical failure; thread may terminate
-    [DataMember(Name = "Error")]
-    Error = 2,
+    // Progress expected to continue, despite issues
+    [DataMember(Name = "Warning")]
+    Warning = 1,
 
   }
 }

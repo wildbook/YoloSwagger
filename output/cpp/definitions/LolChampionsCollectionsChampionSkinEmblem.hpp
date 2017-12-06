@@ -1,24 +1,24 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolChampionsCollectionsChampionSkinEmblemPosition.hpp"
 #include "LolChampionsCollectionsChampionSkinEmblemPath.hpp"
+#include "LolChampionsCollectionsChampionSkinEmblemPosition.hpp"
 namespace leagueapi {
   struct LolChampionsCollectionsChampionSkinEmblem_t {
-    LolChampionsCollectionsChampionSkinEmblemPosition_t positions;
-    std::string name;
     LolChampionsCollectionsChampionSkinEmblemPath_t emblemPath;
+    std::string name;
+    LolChampionsCollectionsChampionSkinEmblemPosition_t positions;
   };
 
   inline void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionSkinEmblem_t& v) {
-    j["positions"] = v.positions;
-    j["name"] = v.name;
     j["emblemPath"] = v.emblemPath;
+    j["name"] = v.name;
+    j["positions"] = v.positions;
   }
 
   inline void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionSkinEmblem_t& v) {
-    v.positions = j.at("positions").get<LolChampionsCollectionsChampionSkinEmblemPosition_t>();
-    v.name = j.at("name").get<std::string>();
     v.emblemPath = j.at("emblemPath").get<LolChampionsCollectionsChampionSkinEmblemPath_t>();
+    v.name = j.at("name").get<std::string>();
+    v.positions = j.at("positions").get<LolChampionsCollectionsChampionSkinEmblemPosition_t>();
   }
 }

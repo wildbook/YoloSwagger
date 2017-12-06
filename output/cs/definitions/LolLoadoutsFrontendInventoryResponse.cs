@@ -1,18 +1,21 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi {
-  struct LolLoadoutsFrontendInventoryResponse {
-    [DataMember(Name = "entitlements")]
-    LolLoadoutsItemKey[] Entitlements {get; set;}
-
-    public override string ToString()
+namespace leagueapi
+{
+    [DataContract]
+    struct LolLoadoutsFrontendInventoryResponse
     {
-      var sb = new StringBuilder();
-      sb.Append("class LolLoadoutsFrontendInventoryResponse {\n");
-      sb.Append("  Entitlements: ").Append(Entitlements).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
+        [DataMember(Name = "entitlements")]
+        LolLoadoutsItemKey[] Entitlements { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class LolLoadoutsFrontendInventoryResponse {\n");
+            sb.Append("  Entitlements: ").Append(Entitlements).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
     }
-  }
 }

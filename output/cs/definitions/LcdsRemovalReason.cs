@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LcdsRemovalReason {
+  [DataContract]  enum LcdsRemovalReason {
     [DataMember(Name = "DESTROYED")]
     DESTROYED = 1,
 

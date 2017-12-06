@@ -4,43 +4,43 @@
 #include "LolGameflowQueueCustomGameSpectatorPolicy.hpp"
 namespace leagueapi {
   struct LolGameflowLobbyStatus_t {
-    bool isSpectator;
-    bool isLeader;
-    bool isCustom;
+    bool allowedPlayAgain;
     LolGameflowQueueCustomGameSpectatorPolicy_t customSpectatorPolicy;
     std::vector<uint64_t> invitedSummonerIds;
-    int32_t queueId;
-    std::optional<std::string> lobbyId;
-    bool allowedPlayAgain;
+    bool isCustom;
+    bool isLeader;
     bool isPracticeTool;
+    bool isSpectator;
+    std::optional<std::string> lobbyId;
     std::vector<uint64_t> memberSummonerIds;
+    int32_t queueId;
   };
 
   inline void to_json(nlohmann::json& j, const LolGameflowLobbyStatus_t& v) {
-    j["isSpectator"] = v.isSpectator;
-    j["isLeader"] = v.isLeader;
-    j["isCustom"] = v.isCustom;
+    j["allowedPlayAgain"] = v.allowedPlayAgain;
     j["customSpectatorPolicy"] = v.customSpectatorPolicy;
     j["invitedSummonerIds"] = v.invitedSummonerIds;
-    j["queueId"] = v.queueId;
+    j["isCustom"] = v.isCustom;
+    j["isLeader"] = v.isLeader;
+    j["isPracticeTool"] = v.isPracticeTool;
+    j["isSpectator"] = v.isSpectator;
     if(v.lobbyId)
       j["lobbyId"] = *v.lobbyId;
-    j["allowedPlayAgain"] = v.allowedPlayAgain;
-    j["isPracticeTool"] = v.isPracticeTool;
     j["memberSummonerIds"] = v.memberSummonerIds;
+    j["queueId"] = v.queueId;
   }
 
   inline void from_json(const nlohmann::json& j, LolGameflowLobbyStatus_t& v) {
-    v.isSpectator = j.at("isSpectator").get<bool>();
-    v.isLeader = j.at("isLeader").get<bool>();
-    v.isCustom = j.at("isCustom").get<bool>();
+    v.allowedPlayAgain = j.at("allowedPlayAgain").get<bool>();
     v.customSpectatorPolicy = j.at("customSpectatorPolicy").get<LolGameflowQueueCustomGameSpectatorPolicy_t>();
     v.invitedSummonerIds = j.at("invitedSummonerIds").get<std::vector<uint64_t>>();
-    v.queueId = j.at("queueId").get<int32_t>();
+    v.isCustom = j.at("isCustom").get<bool>();
+    v.isLeader = j.at("isLeader").get<bool>();
+    v.isPracticeTool = j.at("isPracticeTool").get<bool>();
+    v.isSpectator = j.at("isSpectator").get<bool>();
     if(auto it = j.find("lobbyId"); it != j.end() !it->is_null())
       v.lobbyId = it->get<std::string>();
-    v.allowedPlayAgain = j.at("allowedPlayAgain").get<bool>();
-    v.isPracticeTool = j.at("isPracticeTool").get<bool>();
     v.memberSummonerIds = j.at("memberSummonerIds").get<std::vector<uint64_t>>();
+    v.queueId = j.at("queueId").get<int32_t>();
   }
 }

@@ -1,6 +1,15 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LolPerksCustomizationLimits {
+  [DataContract]  enum LolPerksCustomizationLimits {
+    [DataMember(Name = "CanSelectKeystones")]
+    CanSelectKeystones = 2,
+
+    [DataMember(Name = "CanSelectPages")]
+    CanSelectPages = 1,
+
+    [DataMember(Name = "CanSelectPrimaries")]
+    CanSelectPrimaries = 4,
+
     [DataMember(Name = "CanSelectSplash")]
     CanSelectSplash = 8,
 
@@ -9,15 +18,6 @@ namespace leagueapi {
 
     [DataMember(Name = "Locked")]
     Locked = 0,
-
-    [DataMember(Name = "CanSelectPrimaries")]
-    CanSelectPrimaries = 4,
-
-    [DataMember(Name = "CanSelectPages")]
-    CanSelectPages = 1,
-
-    [DataMember(Name = "CanSelectKeystones")]
-    CanSelectKeystones = 2,
 
   }
 }

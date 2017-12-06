@@ -3,8 +3,8 @@
 namespace leagueapi {
   enum class LolGameflowGameflowWatchPhase_t {
     None_E = 0,
-    WatchInProgress_E = 2,
     WatchFailedToLaunch_E = 3,
+    WatchInProgress_E = 2,
     WatchStarted_E = 1,
   };
 
@@ -13,11 +13,11 @@ namespace leagueapi {
       case LolGameflowGameflowWatchPhase_t::None_E:
         j = "None";
       break;
-      case LolGameflowGameflowWatchPhase_t::WatchInProgress_E:
-        j = "WatchInProgress";
-      break;
       case LolGameflowGameflowWatchPhase_t::WatchFailedToLaunch_E:
         j = "WatchFailedToLaunch";
+      break;
+      case LolGameflowGameflowWatchPhase_t::WatchInProgress_E:
+        j = "WatchInProgress";
       break;
       case LolGameflowGameflowWatchPhase_t::WatchStarted_E:
         j = "WatchStarted";
@@ -31,12 +31,12 @@ namespace leagueapi {
       v = LolGameflowGameflowWatchPhase_t::None_E;
       return;
     }
-    if(s == "WatchInProgress"){
-      v = LolGameflowGameflowWatchPhase_t::WatchInProgress_E;
-      return;
-    }
     if(s == "WatchFailedToLaunch"){
       v = LolGameflowGameflowWatchPhase_t::WatchFailedToLaunch_E;
+      return;
+    }
+    if(s == "WatchInProgress"){
+      v = LolGameflowGameflowWatchPhase_t::WatchInProgress_E;
       return;
     }
     if(s == "WatchStarted"){

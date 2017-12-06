@@ -5,12 +5,12 @@ namespace leagueapi {
   enum class LogSeverityLevels_t {
     // Always logged, regardless of program's state
     Always_E = 3,
+    // Critical failure; thread may terminate
+    Error_E = 2,
     // Progress nominal (used for INFO and TRACE)
     Okay_E = 0,
     // Progress expected to continue, despite issues
     Warning_E = 1,
-    // Critical failure; thread may terminate
-    Error_E = 2,
   };
 
   inline void to_json(nlohmann::json& j, const LogSeverityLevels_t& v) {
@@ -18,14 +18,14 @@ namespace leagueapi {
       case LogSeverityLevels_t::Always_E:
         j = "Always";
       break;
+      case LogSeverityLevels_t::Error_E:
+        j = "Error";
+      break;
       case LogSeverityLevels_t::Okay_E:
         j = "Okay";
       break;
       case LogSeverityLevels_t::Warning_E:
         j = "Warning";
-      break;
-      case LogSeverityLevels_t::Error_E:
-        j = "Error";
       break;
     }
   }
@@ -36,16 +36,16 @@ namespace leagueapi {
       v = LogSeverityLevels_t::Always_E;
       return;
     }
+    if(s == "Error"){
+      v = LogSeverityLevels_t::Error_E;
+      return;
+    }
     if(s == "Okay"){
       v = LogSeverityLevels_t::Okay_E;
       return;
     }
     if(s == "Warning"){
       v = LogSeverityLevels_t::Warning_E;
-      return;
-    }
-    if(s == "Error"){
-      v = LogSeverityLevels_t::Error_E;
       return;
     }
   }

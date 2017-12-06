@@ -1,11 +1,11 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum PatcherComponentResourceHistory {
-    [DataMember(Name = "none")]
-    None = 0,
-
+  [DataContract]  enum PatcherComponentResourceHistory {
     [DataMember(Name = "keep")]
     Keep = 1,
+
+    [DataMember(Name = "none")]
+    None = 0,
 
   }
 }

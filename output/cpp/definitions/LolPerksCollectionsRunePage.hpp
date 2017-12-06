@@ -5,22 +5,22 @@
 namespace leagueapi {
   struct LolPerksCollectionsRunePage_t {
     bool current;
-    std::string name;
     uint32_t id;
+    std::string name;
     std::vector<LolPerksCollectionsRune_t> runes;
   };
 
   inline void to_json(nlohmann::json& j, const LolPerksCollectionsRunePage_t& v) {
     j["current"] = v.current;
-    j["name"] = v.name;
     j["id"] = v.id;
+    j["name"] = v.name;
     j["runes"] = v.runes;
   }
 
   inline void from_json(const nlohmann::json& j, LolPerksCollectionsRunePage_t& v) {
     v.current = j.at("current").get<bool>();
-    v.name = j.at("name").get<std::string>();
     v.id = j.at("id").get<uint32_t>();
+    v.name = j.at("name").get<std::string>();
     v.runes = j.at("runes").get<std::vector<LolPerksCollectionsRune_t>>();
   }
 }

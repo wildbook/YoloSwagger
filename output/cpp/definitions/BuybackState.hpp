@@ -3,8 +3,8 @@
 namespace leagueapi {
   enum class BuybackState_t {
     FORCED_NOT_READY_E = 1,
-    READY_E = 2,
     NOT_READY_E = 0,
+    READY_E = 2,
   };
 
   inline void to_json(nlohmann::json& j, const BuybackState_t& v) {
@@ -12,11 +12,11 @@ namespace leagueapi {
       case BuybackState_t::FORCED_NOT_READY_E:
         j = "FORCED_NOT_READY";
       break;
-      case BuybackState_t::READY_E:
-        j = "READY";
-      break;
       case BuybackState_t::NOT_READY_E:
         j = "NOT_READY";
+      break;
+      case BuybackState_t::READY_E:
+        j = "READY";
       break;
     }
   }
@@ -27,12 +27,12 @@ namespace leagueapi {
       v = BuybackState_t::FORCED_NOT_READY_E;
       return;
     }
-    if(s == "READY"){
-      v = BuybackState_t::READY_E;
-      return;
-    }
     if(s == "NOT_READY"){
       v = BuybackState_t::NOT_READY_E;
+      return;
+    }
+    if(s == "READY"){
+      v = BuybackState_t::READY_E;
       return;
     }
   }

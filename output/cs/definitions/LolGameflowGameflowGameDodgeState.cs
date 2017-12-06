@@ -1,17 +1,17 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LolGameflowGameflowGameDodgeState {
-    [DataMember(Name = "PartyDodged")]
-    PartyDodged = 49,
-
-    [DataMember(Name = "TournamentDodged")]
-    TournamentDodged = 51,
-
+  [DataContract]  enum LolGameflowGameflowGameDodgeState {
     [DataMember(Name = "Invalid")]
     Invalid = 48,
 
+    [DataMember(Name = "PartyDodged")]
+    PartyDodged = 49,
+
     [DataMember(Name = "StrangerDodged")]
     StrangerDodged = 50,
+
+    [DataMember(Name = "TournamentDodged")]
+    TournamentDodged = 51,
 
   }
 }

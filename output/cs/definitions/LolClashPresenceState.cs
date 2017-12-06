@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LolClashPresenceState {
+  [DataContract]  enum LolClashPresenceState {
     [DataMember(Name = "LOCKED_IN")]
     LOCKED_IN = 1,
 

@@ -1,30 +1,33 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi {
-  struct LolLoginRegionStatus {
-    [DataMember(Name = "platformId")]
-    string PlatformId {get; set;}
-
-    [DataMember(Name = "isLQFallbackAllowed")]
-    bool IsLQFallbackAllowed {get; set;}
-
-    [DataMember(Name = "enabled")]
-    bool Enabled {get; set;}
-
-    [DataMember(Name = "isUserInfoEnabled")]
-    bool IsUserInfoEnabled {get; set;}
-
-    public override string ToString()
+namespace leagueapi
+{
+    [DataContract]
+    struct LolLoginRegionStatus
     {
-      var sb = new StringBuilder();
-      sb.Append("class LolLoginRegionStatus {\n");
-      sb.Append("  PlatformId: ").Append(PlatformId).Append("\n");
-      sb.Append("  IsLQFallbackAllowed: ").Append(IsLQFallbackAllowed).Append("\n");
-      sb.Append("  Enabled: ").Append(Enabled).Append("\n");
-      sb.Append("  IsUserInfoEnabled: ").Append(IsUserInfoEnabled).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
+        [DataMember(Name = "enabled")]
+        bool Enabled { get; set; }
+
+        [DataMember(Name = "isLQFallbackAllowed")]
+        bool IsLQFallbackAllowed { get; set; }
+
+        [DataMember(Name = "isUserInfoEnabled")]
+        bool IsUserInfoEnabled { get; set; }
+
+        [DataMember(Name = "platformId")]
+        string PlatformId { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class LolLoginRegionStatus {\n");
+            sb.Append("  Enabled: ").Append(Enabled).Append("\n");
+            sb.Append("  IsLQFallbackAllowed: ").Append(IsLQFallbackAllowed).Append("\n");
+            sb.Append("  IsUserInfoEnabled: ").Append(IsUserInfoEnabled).Append("\n");
+            sb.Append("  PlatformId: ").Append(PlatformId).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
     }
-  }
 }

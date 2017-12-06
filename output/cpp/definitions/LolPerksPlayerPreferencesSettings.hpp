@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolPerksPerkPageResource.hpp"
 #include "LolPerksUISettings.hpp"
+#include "LolPerksPerkPageResource.hpp"
 namespace leagueapi {
   struct LolPerksPlayerPreferencesSettings_t {
     std::vector<LolPerksPerkPageResource_t> pages;

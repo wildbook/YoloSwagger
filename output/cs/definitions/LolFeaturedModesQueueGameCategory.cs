@@ -1,17 +1,17 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LolFeaturedModesQueueGameCategory {
-    [DataMember(Name = "VersusAi")]
-    VersusAi = 3,
-
-    [DataMember(Name = "PvP")]
-    PvP = 2,
+  [DataContract]  enum LolFeaturedModesQueueGameCategory {
+    [DataMember(Name = "Custom")]
+    Custom = 1,
 
     [DataMember(Name = "None")]
     None = 0,
 
-    [DataMember(Name = "Custom")]
-    Custom = 1,
+    [DataMember(Name = "PvP")]
+    PvP = 2,
+
+    [DataMember(Name = "VersusAi")]
+    VersusAi = 3,
 
   }
 }

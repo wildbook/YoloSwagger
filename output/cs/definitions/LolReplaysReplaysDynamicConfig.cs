@@ -1,22 +1,25 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi {
-  struct LolReplaysReplaysDynamicConfig {
-    [DataMember(Name = "MinutesUntilReplayConsideredLost")]
-    double MinutesUntilReplayConsideredLost {get; set;}
-
-    [DataMember(Name = "MinSupportedGameServerVersion")]
-    string MinSupportedGameServerVersion {get; set;}
-
-    public override string ToString()
+namespace leagueapi
+{
+    [DataContract]
+    struct LolReplaysReplaysDynamicConfig
     {
-      var sb = new StringBuilder();
-      sb.Append("class LolReplaysReplaysDynamicConfig {\n");
-      sb.Append("  MinutesUntilReplayConsideredLost: ").Append(MinutesUntilReplayConsideredLost).Append("\n");
-      sb.Append("  MinSupportedGameServerVersion: ").Append(MinSupportedGameServerVersion).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
+        [DataMember(Name = "MinSupportedGameServerVersion")]
+        string MinSupportedGameServerVersion { get; set; }
+
+        [DataMember(Name = "MinutesUntilReplayConsideredLost")]
+        double MinutesUntilReplayConsideredLost { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class LolReplaysReplaysDynamicConfig {\n");
+            sb.Append("  MinSupportedGameServerVersion: ").Append(MinSupportedGameServerVersion).Append("\n");
+            sb.Append("  MinutesUntilReplayConsideredLost: ").Append(MinutesUntilReplayConsideredLost).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
     }
-  }
 }

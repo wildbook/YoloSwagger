@@ -1,11 +1,11 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LolLicenseAgreementLicenseAgreementType {
-    [DataMember(Name = "TermsOfUse")]
-    TermsOfUse = 1,
-
+  [DataContract]  enum LolLicenseAgreementLicenseAgreementType {
     [DataMember(Name = "Eula")]
     Eula = 0,
+
+    [DataMember(Name = "TermsOfUse")]
+    TermsOfUse = 1,
 
   }
 }

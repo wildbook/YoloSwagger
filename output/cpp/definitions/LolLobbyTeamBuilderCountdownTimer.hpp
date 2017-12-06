@@ -3,20 +3,20 @@
 #include <optional>
 namespace leagueapi {
   struct LolLobbyTeamBuilderCountdownTimer_t {
-    int64_t timer;
-    std::string phaseName;
     int32_t counter;
+    std::string phaseName;
+    int64_t timer;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderCountdownTimer_t& v) {
-    j["timer"] = v.timer;
-    j["phaseName"] = v.phaseName;
     j["counter"] = v.counter;
+    j["phaseName"] = v.phaseName;
+    j["timer"] = v.timer;
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderCountdownTimer_t& v) {
-    v.timer = j.at("timer").get<int64_t>();
-    v.phaseName = j.at("phaseName").get<std::string>();
     v.counter = j.at("counter").get<int32_t>();
+    v.phaseName = j.at("phaseName").get<std::string>();
+    v.timer = j.at("timer").get<int64_t>();
   }
 }

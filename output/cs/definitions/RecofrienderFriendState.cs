@@ -1,14 +1,14 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum RecofrienderFriendState {
-    [DataMember(Name = "NONE")]
-    NONE = 0,
+  [DataContract]  enum RecofrienderFriendState {
+    [DataMember(Name = "BLOCKED")]
+    BLOCKED = 2,
 
     [DataMember(Name = "FRIEND")]
     FRIEND = 1,
 
-    [DataMember(Name = "BLOCKED")]
-    BLOCKED = 2,
+    [DataMember(Name = "NONE")]
+    NONE = 0,
 
   }
 }

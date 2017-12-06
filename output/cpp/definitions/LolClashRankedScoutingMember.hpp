@@ -4,17 +4,17 @@
 #include "LolClashRankedScoutingTopChampion.hpp"
 namespace leagueapi {
   struct LolClashRankedScoutingMember_t {
-    uint64_t playerId;
     std::vector<LolClashRankedScoutingTopChampion_t> championScoutingData;
+    uint64_t playerId;
   };
 
   inline void to_json(nlohmann::json& j, const LolClashRankedScoutingMember_t& v) {
-    j["playerId"] = v.playerId;
     j["championScoutingData"] = v.championScoutingData;
+    j["playerId"] = v.playerId;
   }
 
   inline void from_json(const nlohmann::json& j, LolClashRankedScoutingMember_t& v) {
-    v.playerId = j.at("playerId").get<uint64_t>();
     v.championScoutingData = j.at("championScoutingData").get<std::vector<LolClashRankedScoutingTopChampion_t>>();
+    v.playerId = j.at("playerId").get<uint64_t>();
   }
 }

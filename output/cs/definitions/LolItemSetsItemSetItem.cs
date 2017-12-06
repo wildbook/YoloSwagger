@@ -1,22 +1,25 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi {
-  struct LolItemSetsItemSetItem {
-    [DataMember(Name = "count")]
-    ushort Count {get; set;}
-
-    [DataMember(Name = "id")]
-    string Id {get; set;}
-
-    public override string ToString()
+namespace leagueapi
+{
+    [DataContract]
+    struct LolItemSetsItemSetItem
     {
-      var sb = new StringBuilder();
-      sb.Append("class LolItemSetsItemSetItem {\n");
-      sb.Append("  Count: ").Append(Count).Append("\n");
-      sb.Append("  Id: ").Append(Id).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
+        [DataMember(Name = "count")]
+        ushort Count { get; set; }
+
+        [DataMember(Name = "id")]
+        string Id { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class LolItemSetsItemSetItem {\n");
+            sb.Append("  Count: ").Append(Count).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
     }
-  }
 }

@@ -1,30 +1,33 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi {
-  struct LolChampSelectLegacyLoginSession {
-    [DataMember(Name = "state")]
-    LolChampSelectLegacyLoginSessionStates State {get; set;}
-
-    [DataMember(Name = "connected")]
-    bool Connected {get; set;}
-
-    [DataMember(Name = "summonerId")]
-    ulong SummonerId {get; set;}
-
-    [DataMember(Name = "accountId")]
-    ulong AccountId {get; set;}
-
-    public override string ToString()
+namespace leagueapi
+{
+    [DataContract]
+    struct LolChampSelectLegacyLoginSession
     {
-      var sb = new StringBuilder();
-      sb.Append("class LolChampSelectLegacyLoginSession {\n");
-      sb.Append("  State: ").Append(State).Append("\n");
-      sb.Append("  Connected: ").Append(Connected).Append("\n");
-      sb.Append("  SummonerId: ").Append(SummonerId).Append("\n");
-      sb.Append("  AccountId: ").Append(AccountId).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
+        [DataMember(Name = "accountId")]
+        ulong AccountId { get; set; }
+
+        [DataMember(Name = "connected")]
+        bool Connected { get; set; }
+
+        [DataMember(Name = "state")]
+        LolChampSelectLegacyLoginSessionStates State { get; set; }
+
+        [DataMember(Name = "summonerId")]
+        ulong SummonerId { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class LolChampSelectLegacyLoginSession {\n");
+            sb.Append("  AccountId: ").Append(AccountId).Append("\n");
+            sb.Append("  Connected: ").Append(Connected).Append("\n");
+            sb.Append("  State: ").Append(State).Append("\n");
+            sb.Append("  SummonerId: ").Append(SummonerId).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
     }
-  }
 }

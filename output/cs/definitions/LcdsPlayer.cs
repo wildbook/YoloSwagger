@@ -1,22 +1,25 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi {
-  struct LcdsPlayer {
-    [DataMember(Name = "summonerId")]
-    ulong SummonerId {get; set;}
-
-    [DataMember(Name = "summonerName")]
-    string SummonerName {get; set;}
-
-    public override string ToString()
+namespace leagueapi
+{
+    [DataContract]
+    struct LcdsPlayer
     {
-      var sb = new StringBuilder();
-      sb.Append("class LcdsPlayer {\n");
-      sb.Append("  SummonerId: ").Append(SummonerId).Append("\n");
-      sb.Append("  SummonerName: ").Append(SummonerName).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
+        [DataMember(Name = "summonerId")]
+        ulong SummonerId { get; set; }
+
+        [DataMember(Name = "summonerName")]
+        string SummonerName { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class LcdsPlayer {\n");
+            sb.Append("  SummonerId: ").Append(SummonerId).Append("\n");
+            sb.Append("  SummonerName: ").Append(SummonerName).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
     }
-  }
 }

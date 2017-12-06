@@ -4,8 +4,8 @@ namespace leagueapi {
   enum class ServiceStatusResource_Status_t {
     degraded_E = 3,
     deploying_E = 4,
-    online_E = 1,
     offline_E = 2,
+    online_E = 1,
     unknown_E = 0,
   };
 
@@ -17,11 +17,11 @@ namespace leagueapi {
       case ServiceStatusResource_Status_t::deploying_E:
         j = "deploying";
       break;
-      case ServiceStatusResource_Status_t::online_E:
-        j = "online";
-      break;
       case ServiceStatusResource_Status_t::offline_E:
         j = "offline";
+      break;
+      case ServiceStatusResource_Status_t::online_E:
+        j = "online";
       break;
       case ServiceStatusResource_Status_t::unknown_E:
         j = "unknown";
@@ -39,12 +39,12 @@ namespace leagueapi {
       v = ServiceStatusResource_Status_t::deploying_E;
       return;
     }
-    if(s == "online"){
-      v = ServiceStatusResource_Status_t::online_E;
-      return;
-    }
     if(s == "offline"){
       v = ServiceStatusResource_Status_t::offline_E;
+      return;
+    }
+    if(s == "online"){
+      v = ServiceStatusResource_Status_t::online_E;
       return;
     }
     if(s == "unknown"){

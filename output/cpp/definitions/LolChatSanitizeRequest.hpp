@@ -5,8 +5,8 @@ namespace leagueapi {
   struct LolChatSanitizeRequest_t {
     std::optional<bool> aggressiveScan;
     std::optional<uint32_t> level;
-    std::vector<std::string> texts;
     std::optional<bool> removeDisallowedChars;
+    std::vector<std::string> texts;
   };
 
   inline void to_json(nlohmann::json& j, const LolChatSanitizeRequest_t& v) {
@@ -14,9 +14,9 @@ namespace leagueapi {
       j["aggressiveScan"] = *v.aggressiveScan;
     if(v.level)
       j["level"] = *v.level;
-    j["texts"] = v.texts;
     if(v.removeDisallowedChars)
       j["removeDisallowedChars"] = *v.removeDisallowedChars;
+    j["texts"] = v.texts;
   }
 
   inline void from_json(const nlohmann::json& j, LolChatSanitizeRequest_t& v) {
@@ -24,8 +24,8 @@ namespace leagueapi {
       v.aggressiveScan = it->get<bool>();
     if(auto it = j.find("level"); it != j.end() !it->is_null())
       v.level = it->get<uint32_t>();
-    v.texts = j.at("texts").get<std::vector<std::string>>();
     if(auto it = j.find("removeDisallowedChars"); it != j.end() !it->is_null())
       v.removeDisallowedChars = it->get<bool>();
+    v.texts = j.at("texts").get<std::vector<std::string>>();
   }
 }

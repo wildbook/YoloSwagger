@@ -2,30 +2,27 @@
 #include <json.hpp>
 namespace leagueapi {
   enum class LcdsInviteeState_t {
-    QUIT_E = 6,
-    PENDING_E = 1,
-    BANNED_E = 8,
     ACCEPTED_E = 3,
+    ACCEPT_FAILED_E = 4,
+    BANNED_E = 8,
     CREATOR_E = 0,
     DECLINED_E = 2,
     JOINED_E = 5,
-    ACCEPT_FAILED_E = 4,
     KICKED_E = 7,
+    PENDING_E = 1,
+    QUIT_E = 6,
   };
 
   inline void to_json(nlohmann::json& j, const LcdsInviteeState_t& v) {
     switch(v) {
-      case LcdsInviteeState_t::QUIT_E:
-        j = "QUIT";
+      case LcdsInviteeState_t::ACCEPTED_E:
+        j = "ACCEPTED";
       break;
-      case LcdsInviteeState_t::PENDING_E:
-        j = "PENDING";
+      case LcdsInviteeState_t::ACCEPT_FAILED_E:
+        j = "ACCEPT_FAILED";
       break;
       case LcdsInviteeState_t::BANNED_E:
         j = "BANNED";
-      break;
-      case LcdsInviteeState_t::ACCEPTED_E:
-        j = "ACCEPTED";
       break;
       case LcdsInviteeState_t::CREATOR_E:
         j = "CREATOR";
@@ -36,31 +33,30 @@ namespace leagueapi {
       case LcdsInviteeState_t::JOINED_E:
         j = "JOINED";
       break;
-      case LcdsInviteeState_t::ACCEPT_FAILED_E:
-        j = "ACCEPT_FAILED";
-      break;
       case LcdsInviteeState_t::KICKED_E:
         j = "KICKED";
+      break;
+      case LcdsInviteeState_t::PENDING_E:
+        j = "PENDING";
+      break;
+      case LcdsInviteeState_t::QUIT_E:
+        j = "QUIT";
       break;
     }
   }
 
   inline void from_json(const nlohmann::json& j, LcdsInviteeState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "QUIT"){
-      v = LcdsInviteeState_t::QUIT_E;
+    if(s == "ACCEPTED"){
+      v = LcdsInviteeState_t::ACCEPTED_E;
       return;
     }
-    if(s == "PENDING"){
-      v = LcdsInviteeState_t::PENDING_E;
+    if(s == "ACCEPT_FAILED"){
+      v = LcdsInviteeState_t::ACCEPT_FAILED_E;
       return;
     }
     if(s == "BANNED"){
       v = LcdsInviteeState_t::BANNED_E;
-      return;
-    }
-    if(s == "ACCEPTED"){
-      v = LcdsInviteeState_t::ACCEPTED_E;
       return;
     }
     if(s == "CREATOR"){
@@ -75,12 +71,16 @@ namespace leagueapi {
       v = LcdsInviteeState_t::JOINED_E;
       return;
     }
-    if(s == "ACCEPT_FAILED"){
-      v = LcdsInviteeState_t::ACCEPT_FAILED_E;
-      return;
-    }
     if(s == "KICKED"){
       v = LcdsInviteeState_t::KICKED_E;
+      return;
+    }
+    if(s == "PENDING"){
+      v = LcdsInviteeState_t::PENDING_E;
+      return;
+    }
+    if(s == "QUIT"){
+      v = LcdsInviteeState_t::QUIT_E;
       return;
     }
   }

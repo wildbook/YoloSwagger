@@ -3,9 +3,9 @@
 namespace leagueapi {
   enum class ClashRewardTime_t {
     EOB_E = 2,
+    EOG_E = 1,
     EOT_E = 3,
     NONE_E = 0,
-    EOG_E = 1,
   };
 
   inline void to_json(nlohmann::json& j, const ClashRewardTime_t& v) {
@@ -13,14 +13,14 @@ namespace leagueapi {
       case ClashRewardTime_t::EOB_E:
         j = "EOB";
       break;
+      case ClashRewardTime_t::EOG_E:
+        j = "EOG";
+      break;
       case ClashRewardTime_t::EOT_E:
         j = "EOT";
       break;
       case ClashRewardTime_t::NONE_E:
         j = "NONE";
-      break;
-      case ClashRewardTime_t::EOG_E:
-        j = "EOG";
       break;
     }
   }
@@ -31,16 +31,16 @@ namespace leagueapi {
       v = ClashRewardTime_t::EOB_E;
       return;
     }
+    if(s == "EOG"){
+      v = ClashRewardTime_t::EOG_E;
+      return;
+    }
     if(s == "EOT"){
       v = ClashRewardTime_t::EOT_E;
       return;
     }
     if(s == "NONE"){
       v = ClashRewardTime_t::NONE_E;
-      return;
-    }
-    if(s == "EOG"){
-      v = ClashRewardTime_t::EOG_E;
       return;
     }
   }

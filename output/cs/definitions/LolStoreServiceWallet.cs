@@ -1,22 +1,25 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi {
-  struct LolStoreServiceWallet {
-    [DataMember(Name = "balances")]
-    LolStoreServiceBalance[] Balances {get; set;}
-
-    [DataMember(Name = "accountId")]
-    ulong AccountId {get; set;}
-
-    public override string ToString()
+namespace leagueapi
+{
+    [DataContract]
+    struct LolStoreServiceWallet
     {
-      var sb = new StringBuilder();
-      sb.Append("class LolStoreServiceWallet {\n");
-      sb.Append("  Balances: ").Append(Balances).Append("\n");
-      sb.Append("  AccountId: ").Append(AccountId).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
+        [DataMember(Name = "accountId")]
+        ulong AccountId { get; set; }
+
+        [DataMember(Name = "balances")]
+        LolStoreServiceBalance[] Balances { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class LolStoreServiceWallet {\n");
+            sb.Append("  AccountId: ").Append(AccountId).Append("\n");
+            sb.Append("  Balances: ").Append(Balances).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
     }
-  }
 }

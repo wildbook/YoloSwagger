@@ -1,14 +1,14 @@
 using System.Runtime.Serialization;
 namespace leagueapi {
-  enum LolChatFriendRequestDirection {
+  [DataContract]  enum LolChatFriendRequestDirection {
     [DataMember(Name = "both")]
     Both = 2,
 
-    [DataMember(Name = "out")]
-    Out = 1,
-
     [DataMember(Name = "in")]
     In = 0,
+
+    [DataMember(Name = "out")]
+    Out = 1,
 
   }
 }

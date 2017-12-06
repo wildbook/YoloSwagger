@@ -4,19 +4,19 @@
 namespace leagueapi {
   struct ClubsSummoner_t {
     std::string displayName;
-    uint64_t summonerId;
     int32_t profileIconId;
+    uint64_t summonerId;
   };
 
   inline void to_json(nlohmann::json& j, const ClubsSummoner_t& v) {
     j["displayName"] = v.displayName;
-    j["summonerId"] = v.summonerId;
     j["profileIconId"] = v.profileIconId;
+    j["summonerId"] = v.summonerId;
   }
 
   inline void from_json(const nlohmann::json& j, ClubsSummoner_t& v) {
     v.displayName = j.at("displayName").get<std::string>();
-    v.summonerId = j.at("summonerId").get<uint64_t>();
     v.profileIconId = j.at("profileIconId").get<int32_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
   }
 }

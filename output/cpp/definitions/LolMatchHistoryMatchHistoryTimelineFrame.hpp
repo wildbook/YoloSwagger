@@ -5,20 +5,20 @@
 #include "LolMatchHistoryMatchHistoryParticipantFrame.hpp"
 namespace leagueapi {
   struct LolMatchHistoryMatchHistoryTimelineFrame_t {
-    uint64_t timestamp;
-    std::map<std::string, LolMatchHistoryMatchHistoryParticipantFrame_t> participantFrames;
     std::vector<LolMatchHistoryMatchHistoryEvent_t> events;
+    std::map<std::string, LolMatchHistoryMatchHistoryParticipantFrame_t> participantFrames;
+    uint64_t timestamp;
   };
 
   inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryTimelineFrame_t& v) {
-    j["timestamp"] = v.timestamp;
-    j["participantFrames"] = v.participantFrames;
     j["events"] = v.events;
+    j["participantFrames"] = v.participantFrames;
+    j["timestamp"] = v.timestamp;
   }
 
   inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryTimelineFrame_t& v) {
-    v.timestamp = j.at("timestamp").get<uint64_t>();
-    v.participantFrames = j.at("participantFrames").get<std::map<std::string, LolMatchHistoryMatchHistoryParticipantFrame_t>>();
     v.events = j.at("events").get<std::vector<LolMatchHistoryMatchHistoryEvent_t>>();
+    v.participantFrames = j.at("participantFrames").get<std::map<std::string, LolMatchHistoryMatchHistoryParticipantFrame_t>>();
+    v.timestamp = j.at("timestamp").get<uint64_t>();
   }
 }
