@@ -1,37 +1,29 @@
-#ifndef SWAGGER_TYPES_LolChatLobbyStatus_HPP
-#define SWAGGER_TYPES_LolChatLobbyStatus_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolChatQueueCustomGameSpectatorPolicy.hpp"
 namespace leagueapi {
-  // 
-  struct LolChatLobbyStatus {
-    // 
-    bool isCustom;
-    // 
-    int32_t queueId;
-    // 
+  struct LolChatLobbyStatus_t {
     bool isLeader;
-    // 
+    bool isCustom;
+    int32_t queueId;
     bool isPracticeTool;
-    // 
-    LolChatQueueCustomGameSpectatorPolicy customSpectatorPolicy;
+    LolChatQueueCustomGameSpectatorPolicy_t customSpectatorPolicy;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatLobbyStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolChatLobbyStatus_t& v) {
+    j["isLeader"] = v.isLeader;
     j["isCustom"] = v.isCustom;
     j["queueId"] = v.queueId;
-    j["isLeader"] = v.isLeader;
     j["isPracticeTool"] = v.isPracticeTool;
     j["customSpectatorPolicy"] = v.customSpectatorPolicy;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatLobbyStatus& v) {
-    v.isCustom = j.at("isCustom").get<bool>;
-    v.queueId = j.at("queueId").get<int32_t>;
-    v.isLeader = j.at("isLeader").get<bool>;
-    v.isPracticeTool = j.at("isPracticeTool").get<bool>;
-    v.customSpectatorPolicy = j.at("customSpectatorPolicy").get<LolChatQueueCustomGameSpectatorPolicy>;
+  inline void from_json(const nlohmann::json& j, LolChatLobbyStatus_t& v) {
+    v.isLeader = j.at("isLeader").get<bool>();
+    v.isCustom = j.at("isCustom").get<bool>();
+    v.queueId = j.at("queueId").get<int32_t>();
+    v.isPracticeTool = j.at("isPracticeTool").get<bool>();
+    v.customSpectatorPolicy = j.at("customSpectatorPolicy").get<LolChatQueueCustomGameSpectatorPolicy_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatLobbyStatus_HPP

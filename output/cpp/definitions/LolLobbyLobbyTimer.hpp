@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolLobbyLobbyTimer_HPP
-#define SWAGGER_TYPES_LolLobbyLobbyTimer_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyLobbyTimer {
-    // 
-    int64_t countdown;
-    // 
+  struct LolLobbyLobbyTimer_t {
     bool enabled;
+    int64_t countdown;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyLobbyTimer& v) {
-    j["countdown"] = v.countdown;
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyTimer_t& v) {
     j["enabled"] = v.enabled;
+    j["countdown"] = v.countdown;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyLobbyTimer& v) {
-    v.countdown = j.at("countdown").get<int64_t>;
-    v.enabled = j.at("enabled").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyTimer_t& v) {
+    v.enabled = j.at("enabled").get<bool>();
+    v.countdown = j.at("countdown").get<int64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyLobbyTimer_HPP

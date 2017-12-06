@@ -1,33 +1,26 @@
-#ifndef SWAGGER_TYPES_LolGameflowLoginSession_HPP
-#define SWAGGER_TYPES_LolGameflowLoginSession_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolGameflowLoginSessionStates.hpp"
 namespace leagueapi {
-  // 
-  struct LolGameflowLoginSession {
-    // 
-    LolGameflowLoginSessionStates state;
-    // 
+  struct LolGameflowLoginSession_t {
     bool connected;
-    // 
-    uint64_t summonerId;
-    // 
     uint64_t accountId;
+    uint64_t summonerId;
+    LolGameflowLoginSessionStates_t state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolGameflowLoginSession& v) {
-    j["state"] = v.state;
+  inline void to_json(nlohmann::json& j, const LolGameflowLoginSession_t& v) {
     j["connected"] = v.connected;
-    j["summonerId"] = v.summonerId;
     j["accountId"] = v.accountId;
+    j["summonerId"] = v.summonerId;
+    j["state"] = v.state;
   }
 
-  inline void from_json(const nlohmann::json& j, LolGameflowLoginSession& v) {
-    v.state = j.at("state").get<LolGameflowLoginSessionStates>;
-    v.connected = j.at("connected").get<bool>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
-    v.accountId = j.at("accountId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolGameflowLoginSession_t& v) {
+    v.connected = j.at("connected").get<bool>();
+    v.accountId = j.at("accountId").get<uint64_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.state = j.at("state").get<LolGameflowLoginSessionStates_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolGameflowLoginSession_HPP

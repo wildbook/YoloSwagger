@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_ClubReferenceDto_HPP
-#define SWAGGER_TYPES_ClubReferenceDto_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct ClubReferenceDto {
-    // 
+  struct ClubReferenceDto_t {
     std::string clubName;
-    // 
     std::string clubKey;
   };
 
-  inline void to_json(nlohmann::json& j, const ClubReferenceDto& v) {
+  inline void to_json(nlohmann::json& j, const ClubReferenceDto_t& v) {
     j["clubName"] = v.clubName;
     j["clubKey"] = v.clubKey;
   }
 
-  inline void from_json(const nlohmann::json& j, ClubReferenceDto& v) {
-    v.clubName = j.at("clubName").get<std::string>;
-    v.clubKey = j.at("clubKey").get<std::string>;
+  inline void from_json(const nlohmann::json& j, ClubReferenceDto_t& v) {
+    v.clubName = j.at("clubName").get<std::string>();
+    v.clubKey = j.at("clubKey").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_ClubReferenceDto_HPP

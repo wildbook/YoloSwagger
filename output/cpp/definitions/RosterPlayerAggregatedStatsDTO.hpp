@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_RosterPlayerAggregatedStatsDTO_HPP
-#define SWAGGER_TYPES_RosterPlayerAggregatedStatsDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct RosterPlayerAggregatedStatsDTO {
-    // 
+  struct RosterPlayerAggregatedStatsDTO_t {
     std::map<std::string, int32_t> rawStatsMax;
-    // 
     std::map<std::string, int32_t> rawStatsSum;
   };
 
-  inline void to_json(nlohmann::json& j, const RosterPlayerAggregatedStatsDTO& v) {
+  inline void to_json(nlohmann::json& j, const RosterPlayerAggregatedStatsDTO_t& v) {
     j["rawStatsMax"] = v.rawStatsMax;
     j["rawStatsSum"] = v.rawStatsSum;
   }
 
-  inline void from_json(const nlohmann::json& j, RosterPlayerAggregatedStatsDTO& v) {
-    v.rawStatsMax = j.at("rawStatsMax").get<std::map<std::string, int32_t>>;
-    v.rawStatsSum = j.at("rawStatsSum").get<std::map<std::string, int32_t>>;
+  inline void from_json(const nlohmann::json& j, RosterPlayerAggregatedStatsDTO_t& v) {
+    v.rawStatsMax = j.at("rawStatsMax").get<std::map<std::string, int32_t>>();
+    v.rawStatsSum = j.at("rawStatsSum").get<std::map<std::string, int32_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_RosterPlayerAggregatedStatsDTO_HPP

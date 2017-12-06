@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolLootCollectionsChampionMinimal_HPP
-#define SWAGGER_TYPES_LolLootCollectionsChampionMinimal_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLootCollectionsOwnership.hpp"
 namespace leagueapi {
-  // 
-  struct LolLootCollectionsChampionMinimal {
-    // 
+  struct LolLootCollectionsChampionMinimal_t {
+    LolLootCollectionsOwnership_t ownership;
     int32_t id;
-    // 
-    LolLootCollectionsOwnership ownership;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLootCollectionsChampionMinimal& v) {
-    j["id"] = v.id;
+  inline void to_json(nlohmann::json& j, const LolLootCollectionsChampionMinimal_t& v) {
     j["ownership"] = v.ownership;
+    j["id"] = v.id;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLootCollectionsChampionMinimal& v) {
-    v.id = j.at("id").get<int32_t>;
-    v.ownership = j.at("ownership").get<LolLootCollectionsOwnership>;
+  inline void from_json(const nlohmann::json& j, LolLootCollectionsChampionMinimal_t& v) {
+    v.ownership = j.at("ownership").get<LolLootCollectionsOwnership_t>();
+    v.id = j.at("id").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLootCollectionsChampionMinimal_HPP

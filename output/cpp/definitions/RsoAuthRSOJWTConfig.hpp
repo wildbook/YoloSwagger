@@ -1,20 +1,18 @@
-#ifndef SWAGGER_TYPES_RsoAuthRSOJWTConfig_HPP
-#define SWAGGER_TYPES_RsoAuthRSOJWTConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct RsoAuthRSOJWTConfig {
-    // 
-    std::string token;
+  struct RsoAuthRSOJWTConfig_t {
+    std::optional<std::string> token;
   };
 
-  inline void to_json(nlohmann::json& j, const RsoAuthRSOJWTConfig& v) {
-    j["token"] = v.token;
+  inline void to_json(nlohmann::json& j, const RsoAuthRSOJWTConfig_t& v) {
+    if(v.token)
+      j["token"] = *v.token;
   }
 
-  inline void from_json(const nlohmann::json& j, RsoAuthRSOJWTConfig& v) {
-    v.token = j.at("token").get<std::string>;
+  inline void from_json(const nlohmann::json& j, RsoAuthRSOJWTConfig_t& v) {
+    if(auto it = j.find("token"); it != j.end() !it->is_null())
+      v.token = it->get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_RsoAuthRSOJWTConfig_HPP

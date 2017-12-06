@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolLootItemOwnershipStatus_HPP
-#define SWAGGER_TYPES_LolLootItemOwnershipStatus_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLootItemOwnershipStatus {
-    // 
-    NONE = 0,
-    // 
-    RENTAL = 2,
-    // 
-    OWNED = 3,
-    // 
-    FREE = 1,
+  enum class LolLootItemOwnershipStatus_t {
+    NONE_E = 0,
+    FREE_E = 1,
+    RENTAL_E = 2,
+    OWNED_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLootItemOwnershipStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolLootItemOwnershipStatus_t& v) {
     switch(v) {
-      case LolLootItemOwnershipStatus::NONE:
+      case LolLootItemOwnershipStatus_t::NONE_E:
         j = "NONE";
       break;
-      case LolLootItemOwnershipStatus::RENTAL:
+      case LolLootItemOwnershipStatus_t::FREE_E:
+        j = "FREE";
+      break;
+      case LolLootItemOwnershipStatus_t::RENTAL_E:
         j = "RENTAL";
       break;
-      case LolLootItemOwnershipStatus::OWNED:
+      case LolLootItemOwnershipStatus_t::OWNED_E:
         j = "OWNED";
-      break;
-      case LolLootItemOwnershipStatus::FREE:
-        j = "FREE";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLootItemOwnershipStatus& v) {
+  inline void from_json(const nlohmann::json& j, LolLootItemOwnershipStatus_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "NONE"){
-      v = LolLootItemOwnershipStatus::NONE;
-      return;
-    }
-    if(s == "RENTAL"){
-      v = LolLootItemOwnershipStatus::RENTAL;
-      return;
-    }
-    if(s == "OWNED"){
-      v = LolLootItemOwnershipStatus::OWNED;
+      v = LolLootItemOwnershipStatus_t::NONE_E;
       return;
     }
     if(s == "FREE"){
-      v = LolLootItemOwnershipStatus::FREE;
+      v = LolLootItemOwnershipStatus_t::FREE_E;
+      return;
+    }
+    if(s == "RENTAL"){
+      v = LolLootItemOwnershipStatus_t::RENTAL_E;
+      return;
+    }
+    if(s == "OWNED"){
+      v = LolLootItemOwnershipStatus_t::OWNED_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLootItemOwnershipStatus_HPP

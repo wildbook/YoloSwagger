@@ -1,32 +1,25 @@
-#ifndef SWAGGER_TYPES_LoyaltyRewards_HPP
-#define SWAGGER_TYPES_LoyaltyRewards_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LoyaltyRewards {
-    // 
-    int32_t freeRewardedSkinsCount;
-    // 
-    int32_t freeRewardedChampionsCount;
-    // 
-    int32_t xpBoost;
-    // 
+  struct LoyaltyRewards_t {
     int32_t ipBoost;
+    int32_t freeRewardedChampionsCount;
+    int32_t xpBoost;
+    int32_t freeRewardedSkinsCount;
   };
 
-  inline void to_json(nlohmann::json& j, const LoyaltyRewards& v) {
-    j["freeRewardedSkinsCount"] = v.freeRewardedSkinsCount;
+  inline void to_json(nlohmann::json& j, const LoyaltyRewards_t& v) {
+    j["ipBoost"] = v.ipBoost;
     j["freeRewardedChampionsCount"] = v.freeRewardedChampionsCount;
     j["xpBoost"] = v.xpBoost;
-    j["ipBoost"] = v.ipBoost;
+    j["freeRewardedSkinsCount"] = v.freeRewardedSkinsCount;
   }
 
-  inline void from_json(const nlohmann::json& j, LoyaltyRewards& v) {
-    v.freeRewardedSkinsCount = j.at("freeRewardedSkinsCount").get<int32_t>;
-    v.freeRewardedChampionsCount = j.at("freeRewardedChampionsCount").get<int32_t>;
-    v.xpBoost = j.at("xpBoost").get<int32_t>;
-    v.ipBoost = j.at("ipBoost").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LoyaltyRewards_t& v) {
+    v.ipBoost = j.at("ipBoost").get<int32_t>();
+    v.freeRewardedChampionsCount = j.at("freeRewardedChampionsCount").get<int32_t>();
+    v.xpBoost = j.at("xpBoost").get<int32_t>();
+    v.freeRewardedSkinsCount = j.at("freeRewardedSkinsCount").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LoyaltyRewards_HPP

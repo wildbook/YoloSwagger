@@ -1,37 +1,29 @@
-#ifndef SWAGGER_TYPES_LolQueueEligibilityCollectionsChampion_HPP
-#define SWAGGER_TYPES_LolQueueEligibilityCollectionsChampion_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolQueueEligibilityCollectionsOwnership.hpp"
 namespace leagueapi {
-  // 
-  struct LolQueueEligibilityCollectionsChampion {
-    // 
+  struct LolQueueEligibilityCollectionsChampion_t {
+    LolQueueEligibilityCollectionsOwnership_t ownership;
     bool freeToPlay;
-    // 
-    std::vector<std::string> disabledQueues;
-    // 
     bool rankedPlayEnabled;
-    // 
+    std::vector<std::string> disabledQueues;
     uint64_t purchased;
-    // 
-    LolQueueEligibilityCollectionsOwnership ownership;
   };
 
-  inline void to_json(nlohmann::json& j, const LolQueueEligibilityCollectionsChampion& v) {
-    j["freeToPlay"] = v.freeToPlay;
-    j["disabledQueues"] = v.disabledQueues;
-    j["rankedPlayEnabled"] = v.rankedPlayEnabled;
-    j["purchased"] = v.purchased;
+  inline void to_json(nlohmann::json& j, const LolQueueEligibilityCollectionsChampion_t& v) {
     j["ownership"] = v.ownership;
+    j["freeToPlay"] = v.freeToPlay;
+    j["rankedPlayEnabled"] = v.rankedPlayEnabled;
+    j["disabledQueues"] = v.disabledQueues;
+    j["purchased"] = v.purchased;
   }
 
-  inline void from_json(const nlohmann::json& j, LolQueueEligibilityCollectionsChampion& v) {
-    v.freeToPlay = j.at("freeToPlay").get<bool>;
-    v.disabledQueues = j.at("disabledQueues").get<std::vector<std::string>>;
-    v.rankedPlayEnabled = j.at("rankedPlayEnabled").get<bool>;
-    v.purchased = j.at("purchased").get<uint64_t>;
-    v.ownership = j.at("ownership").get<LolQueueEligibilityCollectionsOwnership>;
+  inline void from_json(const nlohmann::json& j, LolQueueEligibilityCollectionsChampion_t& v) {
+    v.ownership = j.at("ownership").get<LolQueueEligibilityCollectionsOwnership_t>();
+    v.freeToPlay = j.at("freeToPlay").get<bool>();
+    v.rankedPlayEnabled = j.at("rankedPlayEnabled").get<bool>();
+    v.disabledQueues = j.at("disabledQueues").get<std::vector<std::string>>();
+    v.purchased = j.at("purchased").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolQueueEligibilityCollectionsChampion_HPP

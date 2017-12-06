@@ -1,37 +1,31 @@
-#ifndef SWAGGER_TYPES_PatcherComponentResourceHistory_HPP
-#define SWAGGER_TYPES_PatcherComponentResourceHistory_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class PatcherComponentResourceHistory {
-    // 
-    none = 0,
-    // 
-    keep = 1,
+  enum class PatcherComponentResourceHistory_t {
+    keep_E = 1,
+    none_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const PatcherComponentResourceHistory& v) {
+  inline void to_json(nlohmann::json& j, const PatcherComponentResourceHistory_t& v) {
     switch(v) {
-      case PatcherComponentResourceHistory::none:
-        j = "none";
-      break;
-      case PatcherComponentResourceHistory::keep:
+      case PatcherComponentResourceHistory_t::keep_E:
         j = "keep";
       break;
+      case PatcherComponentResourceHistory_t::none_E:
+        j = "none";
+      break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, PatcherComponentResourceHistory& v) {
+  inline void from_json(const nlohmann::json& j, PatcherComponentResourceHistory_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "none"){
-      v = PatcherComponentResourceHistory::none;
+    if(s == "keep"){
+      v = PatcherComponentResourceHistory_t::keep_E;
       return;
     }
-    if(s == "keep"){
-      v = PatcherComponentResourceHistory::keep;
+    if(s == "none"){
+      v = PatcherComponentResourceHistory_t::none_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_PatcherComponentResourceHistory_HPP

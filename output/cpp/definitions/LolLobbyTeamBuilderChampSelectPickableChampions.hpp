@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderChampSelectPickableChampions_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderChampSelectPickableChampions_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyTeamBuilderChampSelectPickableChampions {
-    // 
+  struct LolLobbyTeamBuilderChampSelectPickableChampions_t {
     std::vector<int32_t> championIds;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderChampSelectPickableChampions& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderChampSelectPickableChampions_t& v) {
     j["championIds"] = v.championIds;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderChampSelectPickableChampions& v) {
-    v.championIds = j.at("championIds").get<std::vector<int32_t>>;
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderChampSelectPickableChampions_t& v) {
+    v.championIds = j.at("championIds").get<std::vector<int32_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderChampSelectPickableChampions_HPP

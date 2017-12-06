@@ -1,33 +1,26 @@
-#ifndef SWAGGER_TYPES_LolQueueEligibilityEligibilityRestriction_HPP
-#define SWAGGER_TYPES_LolQueueEligibilityEligibilityRestriction_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolQueueEligibilityEligibilityRestrictionCode.hpp"
 namespace leagueapi {
-  // 
-  struct LolQueueEligibilityEligibilityRestriction {
-    // 
-    std::map<std::string, std::string> restrictionArgs;
-    // 
+  struct LolQueueEligibilityEligibilityRestriction_t {
     uint64_t expiredTimestamp;
-    // 
-    LolQueueEligibilityEligibilityRestrictionCode restrictionCode;
-    // 
     std::vector<uint64_t> summonerIds;
+    LolQueueEligibilityEligibilityRestrictionCode_t restrictionCode;
+    std::map<std::string, std::string> restrictionArgs;
   };
 
-  inline void to_json(nlohmann::json& j, const LolQueueEligibilityEligibilityRestriction& v) {
-    j["restrictionArgs"] = v.restrictionArgs;
+  inline void to_json(nlohmann::json& j, const LolQueueEligibilityEligibilityRestriction_t& v) {
     j["expiredTimestamp"] = v.expiredTimestamp;
-    j["restrictionCode"] = v.restrictionCode;
     j["summonerIds"] = v.summonerIds;
+    j["restrictionCode"] = v.restrictionCode;
+    j["restrictionArgs"] = v.restrictionArgs;
   }
 
-  inline void from_json(const nlohmann::json& j, LolQueueEligibilityEligibilityRestriction& v) {
-    v.restrictionArgs = j.at("restrictionArgs").get<std::map<std::string, std::string>>;
-    v.expiredTimestamp = j.at("expiredTimestamp").get<uint64_t>;
-    v.restrictionCode = j.at("restrictionCode").get<LolQueueEligibilityEligibilityRestrictionCode>;
-    v.summonerIds = j.at("summonerIds").get<std::vector<uint64_t>>;
+  inline void from_json(const nlohmann::json& j, LolQueueEligibilityEligibilityRestriction_t& v) {
+    v.expiredTimestamp = j.at("expiredTimestamp").get<uint64_t>();
+    v.summonerIds = j.at("summonerIds").get<std::vector<uint64_t>>();
+    v.restrictionCode = j.at("restrictionCode").get<LolQueueEligibilityEligibilityRestrictionCode_t>();
+    v.restrictionArgs = j.at("restrictionArgs").get<std::map<std::string, std::string>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolQueueEligibilityEligibilityRestriction_HPP

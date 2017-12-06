@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_RsoAuthRSOPlayerCredentials_HPP
-#define SWAGGER_TYPES_RsoAuthRSOPlayerCredentials_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct RsoAuthRSOPlayerCredentials {
-    // 
-    std::string platformId;
-    // 
+  struct RsoAuthRSOPlayerCredentials_t {
     std::string username;
-    // 
     std::string password;
+    std::string platformId;
   };
 
-  inline void to_json(nlohmann::json& j, const RsoAuthRSOPlayerCredentials& v) {
-    j["platformId"] = v.platformId;
+  inline void to_json(nlohmann::json& j, const RsoAuthRSOPlayerCredentials_t& v) {
     j["username"] = v.username;
     j["password"] = v.password;
+    j["platformId"] = v.platformId;
   }
 
-  inline void from_json(const nlohmann::json& j, RsoAuthRSOPlayerCredentials& v) {
-    v.platformId = j.at("platformId").get<std::string>;
-    v.username = j.at("username").get<std::string>;
-    v.password = j.at("password").get<std::string>;
+  inline void from_json(const nlohmann::json& j, RsoAuthRSOPlayerCredentials_t& v) {
+    v.username = j.at("username").get<std::string>();
+    v.password = j.at("password").get<std::string>();
+    v.platformId = j.at("platformId").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_RsoAuthRSOPlayerCredentials_HPP

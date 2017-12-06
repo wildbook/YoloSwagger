@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_ChampSelectSession_HPP
-#define SWAGGER_TYPES_ChampSelectSession_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "ChampSelectTimer.hpp"
 namespace leagueapi {
-  // 
-  struct ChampSelectSession {
-    // 
-    ChampSelectTimer timer;
+  struct ChampSelectSession_t {
+    ChampSelectTimer_t timer;
   };
 
-  inline void to_json(nlohmann::json& j, const ChampSelectSession& v) {
+  inline void to_json(nlohmann::json& j, const ChampSelectSession_t& v) {
     j["timer"] = v.timer;
   }
 
-  inline void from_json(const nlohmann::json& j, ChampSelectSession& v) {
-    v.timer = j.at("timer").get<ChampSelectTimer>;
+  inline void from_json(const nlohmann::json& j, ChampSelectSession_t& v) {
+    v.timer = j.at("timer").get<ChampSelectTimer_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_ChampSelectSession_HPP

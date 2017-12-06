@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolFeaturedModesLoginSessionStates_HPP
-#define SWAGGER_TYPES_LolFeaturedModesLoginSessionStates_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolFeaturedModesLoginSessionStates {
-    // 
-    LOGGING_OUT = 2,
-    // 
-    IN_PROGRESS = 0,
-    // 
-    SUCCEEDED = 1,
-    // 
-    ERROR = 3,
+  enum class LolFeaturedModesLoginSessionStates_t {
+    LOGGING_OUT_E = 2,
+    SUCCEEDED_E = 1,
+    IN_PROGRESS_E = 0,
+    ERROR_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolFeaturedModesLoginSessionStates& v) {
+  inline void to_json(nlohmann::json& j, const LolFeaturedModesLoginSessionStates_t& v) {
     switch(v) {
-      case LolFeaturedModesLoginSessionStates::LOGGING_OUT:
+      case LolFeaturedModesLoginSessionStates_t::LOGGING_OUT_E:
         j = "LOGGING_OUT";
       break;
-      case LolFeaturedModesLoginSessionStates::IN_PROGRESS:
-        j = "IN_PROGRESS";
-      break;
-      case LolFeaturedModesLoginSessionStates::SUCCEEDED:
+      case LolFeaturedModesLoginSessionStates_t::SUCCEEDED_E:
         j = "SUCCEEDED";
       break;
-      case LolFeaturedModesLoginSessionStates::ERROR:
+      case LolFeaturedModesLoginSessionStates_t::IN_PROGRESS_E:
+        j = "IN_PROGRESS";
+      break;
+      case LolFeaturedModesLoginSessionStates_t::ERROR_E:
         j = "ERROR";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolFeaturedModesLoginSessionStates& v) {
+  inline void from_json(const nlohmann::json& j, LolFeaturedModesLoginSessionStates_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "LOGGING_OUT"){
-      v = LolFeaturedModesLoginSessionStates::LOGGING_OUT;
-      return;
-    }
-    if(s == "IN_PROGRESS"){
-      v = LolFeaturedModesLoginSessionStates::IN_PROGRESS;
+      v = LolFeaturedModesLoginSessionStates_t::LOGGING_OUT_E;
       return;
     }
     if(s == "SUCCEEDED"){
-      v = LolFeaturedModesLoginSessionStates::SUCCEEDED;
+      v = LolFeaturedModesLoginSessionStates_t::SUCCEEDED_E;
+      return;
+    }
+    if(s == "IN_PROGRESS"){
+      v = LolFeaturedModesLoginSessionStates_t::IN_PROGRESS_E;
       return;
     }
     if(s == "ERROR"){
-      v = LolFeaturedModesLoginSessionStates::ERROR;
+      v = LolFeaturedModesLoginSessionStates_t::ERROR_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolFeaturedModesLoginSessionStates_HPP

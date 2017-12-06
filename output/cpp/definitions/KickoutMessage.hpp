@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_KickoutMessage_HPP
-#define SWAGGER_TYPES_KickoutMessage_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct KickoutMessage {
-    // 
+  struct KickoutMessage_t {
     std::string message;
   };
 
-  inline void to_json(nlohmann::json& j, const KickoutMessage& v) {
+  inline void to_json(nlohmann::json& j, const KickoutMessage_t& v) {
     j["message"] = v.message;
   }
 
-  inline void from_json(const nlohmann::json& j, KickoutMessage& v) {
-    v.message = j.at("message").get<std::string>;
+  inline void from_json(const nlohmann::json& j, KickoutMessage_t& v) {
+    v.message = j.at("message").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_KickoutMessage_HPP

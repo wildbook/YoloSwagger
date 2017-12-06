@@ -1,78 +1,62 @@
-#ifndef SWAGGER_TYPES_LolLobbyLobbyMember_HPP
-#define SWAGGER_TYPES_LolLobbyLobbyMember_HPP
+#pragma once
 #include <json.hpp>
-#include "LolLobbyLobbyBotDifficulty.hpp"
+#include <optional>
 #include "LolLobbyLobbyPositionPreferences.hpp"
+#include "LolLobbyLobbyBotDifficulty.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyLobbyMember {
-    // 
+  struct LolLobbyLobbyMember_t {
     std::string summonerInternalName;
-    // 
-    LolLobbyLobbyPositionPreferences positionPreferences;
-    // 
-    bool autoFillProtectedForPromos;
-    // 
-    bool autoFillEligible;
-    // 
-    int32_t botChampionId;
-    // 
     bool isOwner;
-    // 
-    std::string excludedPositionPreference;
-    // 
-    bool showPositionExcluder;
-    // 
-    bool isBot;
-    // 
-    bool canInviteOthers;
-    // 
     bool autoFillProtectedForStreaking;
-    // 
-    LolLobbyLobbyBotDifficulty botDifficulty;
-    // 
+    std::optional<std::string> excludedPositionPreference;
     bool autoFillProtectedForSoloing;
-    // 
+    LolLobbyLobbyPositionPreferences_t positionPreferences;
+    bool autoFillProtectedForPromos;
     bool isSpectator;
-    // 
+    LolLobbyLobbyBotDifficulty_t botDifficulty;
     uint64_t id;
+    bool autoFillEligible;
+    bool showPositionExcluder;
+    bool isBot;
+    bool canInviteOthers;
+    int32_t botChampionId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyLobbyMember& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyMember_t& v) {
     j["summonerInternalName"] = v.summonerInternalName;
+    j["isOwner"] = v.isOwner;
+    j["autoFillProtectedForStreaking"] = v.autoFillProtectedForStreaking;
+    if(v.excludedPositionPreference)
+      j["excludedPositionPreference"] = *v.excludedPositionPreference;
+    j["autoFillProtectedForSoloing"] = v.autoFillProtectedForSoloing;
     j["positionPreferences"] = v.positionPreferences;
     j["autoFillProtectedForPromos"] = v.autoFillProtectedForPromos;
+    j["isSpectator"] = v.isSpectator;
+    j["botDifficulty"] = v.botDifficulty;
+    j["id"] = v.id;
     j["autoFillEligible"] = v.autoFillEligible;
-    j["botChampionId"] = v.botChampionId;
-    j["isOwner"] = v.isOwner;
-    j["excludedPositionPreference"] = v.excludedPositionPreference;
     j["showPositionExcluder"] = v.showPositionExcluder;
     j["isBot"] = v.isBot;
     j["canInviteOthers"] = v.canInviteOthers;
-    j["autoFillProtectedForStreaking"] = v.autoFillProtectedForStreaking;
-    j["botDifficulty"] = v.botDifficulty;
-    j["autoFillProtectedForSoloing"] = v.autoFillProtectedForSoloing;
-    j["isSpectator"] = v.isSpectator;
-    j["id"] = v.id;
+    j["botChampionId"] = v.botChampionId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyLobbyMember& v) {
-    v.summonerInternalName = j.at("summonerInternalName").get<std::string>;
-    v.positionPreferences = j.at("positionPreferences").get<LolLobbyLobbyPositionPreferences>;
-    v.autoFillProtectedForPromos = j.at("autoFillProtectedForPromos").get<bool>;
-    v.autoFillEligible = j.at("autoFillEligible").get<bool>;
-    v.botChampionId = j.at("botChampionId").get<int32_t>;
-    v.isOwner = j.at("isOwner").get<bool>;
-    v.excludedPositionPreference = j.at("excludedPositionPreference").get<std::string>;
-    v.showPositionExcluder = j.at("showPositionExcluder").get<bool>;
-    v.isBot = j.at("isBot").get<bool>;
-    v.canInviteOthers = j.at("canInviteOthers").get<bool>;
-    v.autoFillProtectedForStreaking = j.at("autoFillProtectedForStreaking").get<bool>;
-    v.botDifficulty = j.at("botDifficulty").get<LolLobbyLobbyBotDifficulty>;
-    v.autoFillProtectedForSoloing = j.at("autoFillProtectedForSoloing").get<bool>;
-    v.isSpectator = j.at("isSpectator").get<bool>;
-    v.id = j.at("id").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyMember_t& v) {
+    v.summonerInternalName = j.at("summonerInternalName").get<std::string>();
+    v.isOwner = j.at("isOwner").get<bool>();
+    v.autoFillProtectedForStreaking = j.at("autoFillProtectedForStreaking").get<bool>();
+    if(auto it = j.find("excludedPositionPreference"); it != j.end() !it->is_null())
+      v.excludedPositionPreference = it->get<std::string>();
+    v.autoFillProtectedForSoloing = j.at("autoFillProtectedForSoloing").get<bool>();
+    v.positionPreferences = j.at("positionPreferences").get<LolLobbyLobbyPositionPreferences_t>();
+    v.autoFillProtectedForPromos = j.at("autoFillProtectedForPromos").get<bool>();
+    v.isSpectator = j.at("isSpectator").get<bool>();
+    v.botDifficulty = j.at("botDifficulty").get<LolLobbyLobbyBotDifficulty_t>();
+    v.id = j.at("id").get<uint64_t>();
+    v.autoFillEligible = j.at("autoFillEligible").get<bool>();
+    v.showPositionExcluder = j.at("showPositionExcluder").get<bool>();
+    v.isBot = j.at("isBot").get<bool>();
+    v.canInviteOthers = j.at("canInviteOthers").get<bool>();
+    v.botChampionId = j.at("botChampionId").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyLobbyMember_HPP

@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolQueueEligibilityCollectionsRental_HPP
-#define SWAGGER_TYPES_LolQueueEligibilityCollectionsRental_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolQueueEligibilityCollectionsRental {
-    // 
+  struct LolQueueEligibilityCollectionsRental_t {
     bool rented;
   };
 
-  inline void to_json(nlohmann::json& j, const LolQueueEligibilityCollectionsRental& v) {
+  inline void to_json(nlohmann::json& j, const LolQueueEligibilityCollectionsRental_t& v) {
     j["rented"] = v.rented;
   }
 
-  inline void from_json(const nlohmann::json& j, LolQueueEligibilityCollectionsRental& v) {
-    v.rented = j.at("rented").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolQueueEligibilityCollectionsRental_t& v) {
+    v.rented = j.at("rented").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolQueueEligibilityCollectionsRental_HPP

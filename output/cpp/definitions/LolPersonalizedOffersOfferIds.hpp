@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolPersonalizedOffersOfferIds_HPP
-#define SWAGGER_TYPES_LolPersonalizedOffersOfferIds_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolPersonalizedOffersOfferId.hpp"
 namespace leagueapi {
-  // 
-  struct LolPersonalizedOffersOfferIds {
-    // 
-    std::vector<LolPersonalizedOffersOfferId> offers;
+  struct LolPersonalizedOffersOfferIds_t {
+    std::vector<LolPersonalizedOffersOfferId_t> offers;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPersonalizedOffersOfferIds& v) {
+  inline void to_json(nlohmann::json& j, const LolPersonalizedOffersOfferIds_t& v) {
     j["offers"] = v.offers;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPersonalizedOffersOfferIds& v) {
-    v.offers = j.at("offers").get<std::vector<LolPersonalizedOffersOfferId>>;
+  inline void from_json(const nlohmann::json& j, LolPersonalizedOffersOfferIds_t& v) {
+    v.offers = j.at("offers").get<std::vector<LolPersonalizedOffersOfferId_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPersonalizedOffersOfferIds_HPP

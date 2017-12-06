@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolLoginUsernameAndPassword_HPP
-#define SWAGGER_TYPES_LolLoginUsernameAndPassword_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLoginUsernameAndPassword {
-    // 
+  struct LolLoginUsernameAndPassword_t {
     std::string username;
-    // 
     std::string password;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLoginUsernameAndPassword& v) {
+  inline void to_json(nlohmann::json& j, const LolLoginUsernameAndPassword_t& v) {
     j["username"] = v.username;
     j["password"] = v.password;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLoginUsernameAndPassword& v) {
-    v.username = j.at("username").get<std::string>;
-    v.password = j.at("password").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolLoginUsernameAndPassword_t& v) {
+    v.username = j.at("username").get<std::string>();
+    v.password = j.at("password").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLoginUsernameAndPassword_HPP

@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_TicketOfferState_HPP
-#define SWAGGER_TYPES_TicketOfferState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class TicketOfferState {
-    // 
-    ACTIVE = 0,
-    // 
-    ACCEPTED = 1,
-    // 
-    REVOKED = 3,
-    // 
-    REJECTED = 2,
+  enum class TicketOfferState_t {
+    REJECTED_E = 2,
+    REVOKED_E = 3,
+    ACTIVE_E = 0,
+    ACCEPTED_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const TicketOfferState& v) {
+  inline void to_json(nlohmann::json& j, const TicketOfferState_t& v) {
     switch(v) {
-      case TicketOfferState::ACTIVE:
-        j = "ACTIVE";
+      case TicketOfferState_t::REJECTED_E:
+        j = "REJECTED";
       break;
-      case TicketOfferState::ACCEPTED:
-        j = "ACCEPTED";
-      break;
-      case TicketOfferState::REVOKED:
+      case TicketOfferState_t::REVOKED_E:
         j = "REVOKED";
       break;
-      case TicketOfferState::REJECTED:
-        j = "REJECTED";
+      case TicketOfferState_t::ACTIVE_E:
+        j = "ACTIVE";
+      break;
+      case TicketOfferState_t::ACCEPTED_E:
+        j = "ACCEPTED";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, TicketOfferState& v) {
+  inline void from_json(const nlohmann::json& j, TicketOfferState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "ACTIVE"){
-      v = TicketOfferState::ACTIVE;
-      return;
-    }
-    if(s == "ACCEPTED"){
-      v = TicketOfferState::ACCEPTED;
+    if(s == "REJECTED"){
+      v = TicketOfferState_t::REJECTED_E;
       return;
     }
     if(s == "REVOKED"){
-      v = TicketOfferState::REVOKED;
+      v = TicketOfferState_t::REVOKED_E;
       return;
     }
-    if(s == "REJECTED"){
-      v = TicketOfferState::REJECTED;
+    if(s == "ACTIVE"){
+      v = TicketOfferState_t::ACTIVE_E;
+      return;
+    }
+    if(s == "ACCEPTED"){
+      v = TicketOfferState_t::ACCEPTED_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_TicketOfferState_HPP

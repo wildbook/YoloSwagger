@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolQueueEligibilityQueueShutdownStatus_HPP
-#define SWAGGER_TYPES_LolQueueEligibilityQueueShutdownStatus_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolQueueEligibilityQueueShutdownStatus {
-    // 
+  struct LolQueueEligibilityQueueShutdownStatus_t {
     bool isDisabled;
   };
 
-  inline void to_json(nlohmann::json& j, const LolQueueEligibilityQueueShutdownStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolQueueEligibilityQueueShutdownStatus_t& v) {
     j["isDisabled"] = v.isDisabled;
   }
 
-  inline void from_json(const nlohmann::json& j, LolQueueEligibilityQueueShutdownStatus& v) {
-    v.isDisabled = j.at("isDisabled").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolQueueEligibilityQueueShutdownStatus_t& v) {
+    v.isDisabled = j.at("isDisabled").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolQueueEligibilityQueueShutdownStatus_HPP

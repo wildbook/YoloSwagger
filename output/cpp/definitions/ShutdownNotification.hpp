@@ -1,29 +1,23 @@
-#ifndef SWAGGER_TYPES_ShutdownNotification_HPP
-#define SWAGGER_TYPES_ShutdownNotification_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "ShutdownReason.hpp"
 namespace leagueapi {
-  // 
-  struct ShutdownNotification {
-    // 
-    float countdown;
-    // 
+  struct ShutdownNotification_t {
     std::string additionalInfo;
-    // 
-    ShutdownReason reason;
+    float countdown;
+    ShutdownReason_t reason;
   };
 
-  inline void to_json(nlohmann::json& j, const ShutdownNotification& v) {
-    j["countdown"] = v.countdown;
+  inline void to_json(nlohmann::json& j, const ShutdownNotification_t& v) {
     j["additionalInfo"] = v.additionalInfo;
+    j["countdown"] = v.countdown;
     j["reason"] = v.reason;
   }
 
-  inline void from_json(const nlohmann::json& j, ShutdownNotification& v) {
-    v.countdown = j.at("countdown").get<float>;
-    v.additionalInfo = j.at("additionalInfo").get<std::string>;
-    v.reason = j.at("reason").get<ShutdownReason>;
+  inline void from_json(const nlohmann::json& j, ShutdownNotification_t& v) {
+    v.additionalInfo = j.at("additionalInfo").get<std::string>();
+    v.countdown = j.at("countdown").get<float>();
+    v.reason = j.at("reason").get<ShutdownReason_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_ShutdownNotification_HPP

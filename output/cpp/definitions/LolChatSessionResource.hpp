@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolChatSessionResource_HPP
-#define SWAGGER_TYPES_LolChatSessionResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolChatSessionState.hpp"
 namespace leagueapi {
-  // 
-  struct LolChatSessionResource {
-    // 
+  struct LolChatSessionResource_t {
+    LolChatSessionState_t sessionState;
     uint32_t sessionExpire;
-    // 
-    LolChatSessionState sessionState;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatSessionResource& v) {
-    j["sessionExpire"] = v.sessionExpire;
+  inline void to_json(nlohmann::json& j, const LolChatSessionResource_t& v) {
     j["sessionState"] = v.sessionState;
+    j["sessionExpire"] = v.sessionExpire;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatSessionResource& v) {
-    v.sessionExpire = j.at("sessionExpire").get<uint32_t>;
-    v.sessionState = j.at("sessionState").get<LolChatSessionState>;
+  inline void from_json(const nlohmann::json& j, LolChatSessionResource_t& v) {
+    v.sessionState = j.at("sessionState").get<LolChatSessionState_t>();
+    v.sessionExpire = j.at("sessionExpire").get<uint32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatSessionResource_HPP

@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolSummonerSummonerIdAndIcon_HPP
-#define SWAGGER_TYPES_LolSummonerSummonerIdAndIcon_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolSummonerSummonerIdAndIcon {
-    // 
-    int32_t profileIconId;
-    // 
+  struct LolSummonerSummonerIdAndIcon_t {
     uint64_t summonerId;
+    int32_t profileIconId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolSummonerSummonerIdAndIcon& v) {
-    j["profileIconId"] = v.profileIconId;
+  inline void to_json(nlohmann::json& j, const LolSummonerSummonerIdAndIcon_t& v) {
     j["summonerId"] = v.summonerId;
+    j["profileIconId"] = v.profileIconId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolSummonerSummonerIdAndIcon& v) {
-    v.profileIconId = j.at("profileIconId").get<int32_t>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolSummonerSummonerIdAndIcon_t& v) {
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.profileIconId = j.at("profileIconId").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolSummonerSummonerIdAndIcon_HPP

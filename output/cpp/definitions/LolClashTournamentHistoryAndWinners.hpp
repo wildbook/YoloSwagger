@@ -1,26 +1,21 @@
-#ifndef SWAGGER_TYPES_LolClashTournamentHistoryAndWinners_HPP
-#define SWAGGER_TYPES_LolClashTournamentHistoryAndWinners_HPP
+#pragma once
 #include <json.hpp>
-#include "LolClashTournament.hpp"
+#include <optional>
 #include "LolClashTournamentWinnerHistory.hpp"
+#include "LolClashTournament.hpp"
 namespace leagueapi {
-  // 
-  struct LolClashTournamentHistoryAndWinners {
-    // 
-    LolClashTournamentWinnerHistory tournamentWinners;
-    // 
-    std::vector<LolClashTournament> tournamentHistory;
+  struct LolClashTournamentHistoryAndWinners_t {
+    LolClashTournamentWinnerHistory_t tournamentWinners;
+    std::vector<LolClashTournament_t> tournamentHistory;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashTournamentHistoryAndWinners& v) {
+  inline void to_json(nlohmann::json& j, const LolClashTournamentHistoryAndWinners_t& v) {
     j["tournamentWinners"] = v.tournamentWinners;
     j["tournamentHistory"] = v.tournamentHistory;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashTournamentHistoryAndWinners& v) {
-    v.tournamentWinners = j.at("tournamentWinners").get<LolClashTournamentWinnerHistory>;
-    v.tournamentHistory = j.at("tournamentHistory").get<std::vector<LolClashTournament>>;
+  inline void from_json(const nlohmann::json& j, LolClashTournamentHistoryAndWinners_t& v) {
+    v.tournamentWinners = j.at("tournamentWinners").get<LolClashTournamentWinnerHistory_t>();
+    v.tournamentHistory = j.at("tournamentHistory").get<std::vector<LolClashTournament_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashTournamentHistoryAndWinners_HPP

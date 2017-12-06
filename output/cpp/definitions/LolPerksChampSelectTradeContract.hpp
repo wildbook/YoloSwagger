@@ -1,29 +1,23 @@
-#ifndef SWAGGER_TYPES_LolPerksChampSelectTradeContract_HPP
-#define SWAGGER_TYPES_LolPerksChampSelectTradeContract_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolPerksChampSelectTradeState.hpp"
 namespace leagueapi {
-  // 
-  struct LolPerksChampSelectTradeContract {
-    // 
-    LolPerksChampSelectTradeState state;
-    // 
-    int64_t cellId;
-    // 
+  struct LolPerksChampSelectTradeContract_t {
     int64_t id;
+    int64_t cellId;
+    LolPerksChampSelectTradeState_t state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPerksChampSelectTradeContract& v) {
-    j["state"] = v.state;
-    j["cellId"] = v.cellId;
+  inline void to_json(nlohmann::json& j, const LolPerksChampSelectTradeContract_t& v) {
     j["id"] = v.id;
+    j["cellId"] = v.cellId;
+    j["state"] = v.state;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPerksChampSelectTradeContract& v) {
-    v.state = j.at("state").get<LolPerksChampSelectTradeState>;
-    v.cellId = j.at("cellId").get<int64_t>;
-    v.id = j.at("id").get<int64_t>;
+  inline void from_json(const nlohmann::json& j, LolPerksChampSelectTradeContract_t& v) {
+    v.id = j.at("id").get<int64_t>();
+    v.cellId = j.at("cellId").get<int64_t>();
+    v.state = j.at("state").get<LolPerksChampSelectTradeState_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPerksChampSelectTradeContract_HPP

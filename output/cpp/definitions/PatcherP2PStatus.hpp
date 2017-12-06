@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_PatcherP2PStatus_HPP
-#define SWAGGER_TYPES_PatcherP2PStatus_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct PatcherP2PStatus {
-    // 
+  struct PatcherP2PStatus_t {
     bool isAllowedByUser;
-    // 
-    bool requiresRestart;
-    // 
     bool isEnabledForPatchline;
+    bool requiresRestart;
   };
 
-  inline void to_json(nlohmann::json& j, const PatcherP2PStatus& v) {
+  inline void to_json(nlohmann::json& j, const PatcherP2PStatus_t& v) {
     j["isAllowedByUser"] = v.isAllowedByUser;
-    j["requiresRestart"] = v.requiresRestart;
     j["isEnabledForPatchline"] = v.isEnabledForPatchline;
+    j["requiresRestart"] = v.requiresRestart;
   }
 
-  inline void from_json(const nlohmann::json& j, PatcherP2PStatus& v) {
-    v.isAllowedByUser = j.at("isAllowedByUser").get<bool>;
-    v.requiresRestart = j.at("requiresRestart").get<bool>;
-    v.isEnabledForPatchline = j.at("isEnabledForPatchline").get<bool>;
+  inline void from_json(const nlohmann::json& j, PatcherP2PStatus_t& v) {
+    v.isAllowedByUser = j.at("isAllowedByUser").get<bool>();
+    v.isEnabledForPatchline = j.at("isEnabledForPatchline").get<bool>();
+    v.requiresRestart = j.at("requiresRestart").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_PatcherP2PStatus_HPP

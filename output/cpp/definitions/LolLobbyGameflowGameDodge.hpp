@@ -1,30 +1,24 @@
-#ifndef SWAGGER_TYPES_LolLobbyGameflowGameDodge_HPP
-#define SWAGGER_TYPES_LolLobbyGameflowGameDodge_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLobbyMatchmakingDodgeState.hpp"
 #include "LolLobbyGameflowPhase.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyGameflowGameDodge {
-    // 
-    LolLobbyGameflowPhase phase;
-    // 
+  struct LolLobbyGameflowGameDodge_t {
+    LolLobbyMatchmakingDodgeState_t state;
+    LolLobbyGameflowPhase_t phase;
     std::vector<uint64_t> dodgeIds;
-    // 
-    LolLobbyMatchmakingDodgeState state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyGameflowGameDodge& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyGameflowGameDodge_t& v) {
+    j["state"] = v.state;
     j["phase"] = v.phase;
     j["dodgeIds"] = v.dodgeIds;
-    j["state"] = v.state;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyGameflowGameDodge& v) {
-    v.phase = j.at("phase").get<LolLobbyGameflowPhase>;
-    v.dodgeIds = j.at("dodgeIds").get<std::vector<uint64_t>>;
-    v.state = j.at("state").get<LolLobbyMatchmakingDodgeState>;
+  inline void from_json(const nlohmann::json& j, LolLobbyGameflowGameDodge_t& v) {
+    v.state = j.at("state").get<LolLobbyMatchmakingDodgeState_t>();
+    v.phase = j.at("phase").get<LolLobbyGameflowPhase_t>();
+    v.dodgeIds = j.at("dodgeIds").get<std::vector<uint64_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyGameflowGameDodge_HPP

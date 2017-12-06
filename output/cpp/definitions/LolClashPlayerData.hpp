@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolClashPlayerData_HPP
-#define SWAGGER_TYPES_LolClashPlayerData_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolClashPlayerData {
-    // 
+  struct LolClashPlayerData_t {
     int32_t tickets;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashPlayerData& v) {
+  inline void to_json(nlohmann::json& j, const LolClashPlayerData_t& v) {
     j["tickets"] = v.tickets;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashPlayerData& v) {
-    v.tickets = j.at("tickets").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LolClashPlayerData_t& v) {
+    v.tickets = j.at("tickets").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashPlayerData_HPP

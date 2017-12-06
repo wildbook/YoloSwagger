@@ -1,100 +1,87 @@
-#ifndef SWAGGER_TYPES_LolRankedStatsRankedTier_HPP
-#define SWAGGER_TYPES_LolRankedStatsRankedTier_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolRankedStatsRankedTier {
-    // 
-    PLATINUM = 5,
-    // 
-    DIAMOND = 6,
-    // 
-    NOT_RANKED = 0,
-    // 
-    GOLD = 4,
-    // 
-    SILVER = 3,
-    // 
-    CHALLENGER = 8,
-    // 
-    MASTER = 7,
-    // 
-    PROVISIONAL = 1,
-    // 
-    BRONZE = 2,
+  enum class LolRankedStatsRankedTier_t {
+    PLATINUM_E = 5,
+    NOT_RANKED_E = 0,
+    PROVISIONAL_E = 1,
+    MASTER_E = 7,
+    BRONZE_E = 2,
+    DIAMOND_E = 6,
+    SILVER_E = 3,
+    CHALLENGER_E = 8,
+    GOLD_E = 4,
   };
 
-  inline void to_json(nlohmann::json& j, const LolRankedStatsRankedTier& v) {
+  inline void to_json(nlohmann::json& j, const LolRankedStatsRankedTier_t& v) {
     switch(v) {
-      case LolRankedStatsRankedTier::PLATINUM:
+      case LolRankedStatsRankedTier_t::PLATINUM_E:
         j = "PLATINUM";
       break;
-      case LolRankedStatsRankedTier::DIAMOND:
-        j = "DIAMOND";
-      break;
-      case LolRankedStatsRankedTier::NOT_RANKED:
+      case LolRankedStatsRankedTier_t::NOT_RANKED_E:
         j = "NOT_RANKED";
       break;
-      case LolRankedStatsRankedTier::GOLD:
-        j = "GOLD";
-      break;
-      case LolRankedStatsRankedTier::SILVER:
-        j = "SILVER";
-      break;
-      case LolRankedStatsRankedTier::CHALLENGER:
-        j = "CHALLENGER";
-      break;
-      case LolRankedStatsRankedTier::MASTER:
-        j = "MASTER";
-      break;
-      case LolRankedStatsRankedTier::PROVISIONAL:
+      case LolRankedStatsRankedTier_t::PROVISIONAL_E:
         j = "PROVISIONAL";
       break;
-      case LolRankedStatsRankedTier::BRONZE:
+      case LolRankedStatsRankedTier_t::MASTER_E:
+        j = "MASTER";
+      break;
+      case LolRankedStatsRankedTier_t::BRONZE_E:
         j = "BRONZE";
+      break;
+      case LolRankedStatsRankedTier_t::DIAMOND_E:
+        j = "DIAMOND";
+      break;
+      case LolRankedStatsRankedTier_t::SILVER_E:
+        j = "SILVER";
+      break;
+      case LolRankedStatsRankedTier_t::CHALLENGER_E:
+        j = "CHALLENGER";
+      break;
+      case LolRankedStatsRankedTier_t::GOLD_E:
+        j = "GOLD";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolRankedStatsRankedTier& v) {
+  inline void from_json(const nlohmann::json& j, LolRankedStatsRankedTier_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "PLATINUM"){
-      v = LolRankedStatsRankedTier::PLATINUM;
-      return;
-    }
-    if(s == "DIAMOND"){
-      v = LolRankedStatsRankedTier::DIAMOND;
+      v = LolRankedStatsRankedTier_t::PLATINUM_E;
       return;
     }
     if(s == "NOT_RANKED"){
-      v = LolRankedStatsRankedTier::NOT_RANKED;
-      return;
-    }
-    if(s == "GOLD"){
-      v = LolRankedStatsRankedTier::GOLD;
-      return;
-    }
-    if(s == "SILVER"){
-      v = LolRankedStatsRankedTier::SILVER;
-      return;
-    }
-    if(s == "CHALLENGER"){
-      v = LolRankedStatsRankedTier::CHALLENGER;
-      return;
-    }
-    if(s == "MASTER"){
-      v = LolRankedStatsRankedTier::MASTER;
+      v = LolRankedStatsRankedTier_t::NOT_RANKED_E;
       return;
     }
     if(s == "PROVISIONAL"){
-      v = LolRankedStatsRankedTier::PROVISIONAL;
+      v = LolRankedStatsRankedTier_t::PROVISIONAL_E;
+      return;
+    }
+    if(s == "MASTER"){
+      v = LolRankedStatsRankedTier_t::MASTER_E;
       return;
     }
     if(s == "BRONZE"){
-      v = LolRankedStatsRankedTier::BRONZE;
+      v = LolRankedStatsRankedTier_t::BRONZE_E;
+      return;
+    }
+    if(s == "DIAMOND"){
+      v = LolRankedStatsRankedTier_t::DIAMOND_E;
+      return;
+    }
+    if(s == "SILVER"){
+      v = LolRankedStatsRankedTier_t::SILVER_E;
+      return;
+    }
+    if(s == "CHALLENGER"){
+      v = LolRankedStatsRankedTier_t::CHALLENGER_E;
+      return;
+    }
+    if(s == "GOLD"){
+      v = LolRankedStatsRankedTier_t::GOLD_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolRankedStatsRankedTier_HPP

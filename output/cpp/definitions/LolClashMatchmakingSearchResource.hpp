@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolClashMatchmakingSearchResource_HPP
-#define SWAGGER_TYPES_LolClashMatchmakingSearchResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolClashMatchmakingDodgeData.hpp"
 namespace leagueapi {
-  // 
-  struct LolClashMatchmakingSearchResource {
-    // 
+  struct LolClashMatchmakingSearchResource_t {
+    LolClashMatchmakingDodgeData_t dodgeData;
     int32_t queueId;
-    // 
-    LolClashMatchmakingDodgeData dodgeData;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashMatchmakingSearchResource& v) {
-    j["queueId"] = v.queueId;
+  inline void to_json(nlohmann::json& j, const LolClashMatchmakingSearchResource_t& v) {
     j["dodgeData"] = v.dodgeData;
+    j["queueId"] = v.queueId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashMatchmakingSearchResource& v) {
-    v.queueId = j.at("queueId").get<int32_t>;
-    v.dodgeData = j.at("dodgeData").get<LolClashMatchmakingDodgeData>;
+  inline void from_json(const nlohmann::json& j, LolClashMatchmakingSearchResource_t& v) {
+    v.dodgeData = j.at("dodgeData").get<LolClashMatchmakingDodgeData_t>();
+    v.queueId = j.at("queueId").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashMatchmakingSearchResource_HPP

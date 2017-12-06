@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_MissionAlertDTO_HPP
-#define SWAGGER_TYPES_MissionAlertDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct MissionAlertDTO {
-    // 
-    std::string type;
-    // 
+  struct MissionAlertDTO_t {
     std::string message;
-    // 
+    std::string type;
     int64_t alertTime;
   };
 
-  inline void to_json(nlohmann::json& j, const MissionAlertDTO& v) {
-    j["type"] = v.type;
+  inline void to_json(nlohmann::json& j, const MissionAlertDTO_t& v) {
     j["message"] = v.message;
+    j["type"] = v.type;
     j["alertTime"] = v.alertTime;
   }
 
-  inline void from_json(const nlohmann::json& j, MissionAlertDTO& v) {
-    v.type = j.at("type").get<std::string>;
-    v.message = j.at("message").get<std::string>;
-    v.alertTime = j.at("alertTime").get<int64_t>;
+  inline void from_json(const nlohmann::json& j, MissionAlertDTO_t& v) {
+    v.message = j.at("message").get<std::string>();
+    v.type = j.at("type").get<std::string>();
+    v.alertTime = j.at("alertTime").get<int64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_MissionAlertDTO_HPP

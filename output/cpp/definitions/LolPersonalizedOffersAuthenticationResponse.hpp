@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolPersonalizedOffersAuthenticationResponse_HPP
-#define SWAGGER_TYPES_LolPersonalizedOffersAuthenticationResponse_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolPersonalizedOffersAuthenticationResponse {
-    // 
-    std::string token;
-    // 
+  struct LolPersonalizedOffersAuthenticationResponse_t {
     std::string expiration;
+    std::string token;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPersonalizedOffersAuthenticationResponse& v) {
-    j["token"] = v.token;
+  inline void to_json(nlohmann::json& j, const LolPersonalizedOffersAuthenticationResponse_t& v) {
     j["expiration"] = v.expiration;
+    j["token"] = v.token;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPersonalizedOffersAuthenticationResponse& v) {
-    v.token = j.at("token").get<std::string>;
-    v.expiration = j.at("expiration").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolPersonalizedOffersAuthenticationResponse_t& v) {
+    v.expiration = j.at("expiration").get<std::string>();
+    v.token = j.at("token").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPersonalizedOffersAuthenticationResponse_HPP

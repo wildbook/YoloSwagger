@@ -1,118 +1,103 @@
-#ifndef SWAGGER_TYPES_LolReplaysMetadataState_HPP
-#define SWAGGER_TYPES_LolReplaysMetadataState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolReplaysMetadataState {
-    // 
-    downloading = 4,
-    // 
-    lost = 8,
-    // 
-    incompatible = 5,
-    // 
-    checking = 0,
-    // 
-    watch = 2,
-    // 
-    missingOrExpired = 6,
-    // 
-    unsupported = 9,
-    // 
-    error = 10,
-    // 
-    download = 3,
-    // 
-    found = 1,
-    // 
-    retryDownload = 7,
+  enum class LolReplaysMetadataState_t {
+    unsupported_E = 9,
+    lost_E = 8,
+    error_E = 10,
+    download_E = 3,
+    found_E = 1,
+    checking_E = 0,
+    downloading_E = 4,
+    watch_E = 2,
+    incompatible_E = 5,
+    missingOrExpired_E = 6,
+    retryDownload_E = 7,
   };
 
-  inline void to_json(nlohmann::json& j, const LolReplaysMetadataState& v) {
+  inline void to_json(nlohmann::json& j, const LolReplaysMetadataState_t& v) {
     switch(v) {
-      case LolReplaysMetadataState::downloading:
-        j = "downloading";
-      break;
-      case LolReplaysMetadataState::lost:
-        j = "lost";
-      break;
-      case LolReplaysMetadataState::incompatible:
-        j = "incompatible";
-      break;
-      case LolReplaysMetadataState::checking:
-        j = "checking";
-      break;
-      case LolReplaysMetadataState::watch:
-        j = "watch";
-      break;
-      case LolReplaysMetadataState::missingOrExpired:
-        j = "missingOrExpired";
-      break;
-      case LolReplaysMetadataState::unsupported:
+      case LolReplaysMetadataState_t::unsupported_E:
         j = "unsupported";
       break;
-      case LolReplaysMetadataState::error:
+      case LolReplaysMetadataState_t::lost_E:
+        j = "lost";
+      break;
+      case LolReplaysMetadataState_t::error_E:
         j = "error";
       break;
-      case LolReplaysMetadataState::download:
+      case LolReplaysMetadataState_t::download_E:
         j = "download";
       break;
-      case LolReplaysMetadataState::found:
+      case LolReplaysMetadataState_t::found_E:
         j = "found";
       break;
-      case LolReplaysMetadataState::retryDownload:
+      case LolReplaysMetadataState_t::checking_E:
+        j = "checking";
+      break;
+      case LolReplaysMetadataState_t::downloading_E:
+        j = "downloading";
+      break;
+      case LolReplaysMetadataState_t::watch_E:
+        j = "watch";
+      break;
+      case LolReplaysMetadataState_t::incompatible_E:
+        j = "incompatible";
+      break;
+      case LolReplaysMetadataState_t::missingOrExpired_E:
+        j = "missingOrExpired";
+      break;
+      case LolReplaysMetadataState_t::retryDownload_E:
         j = "retryDownload";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolReplaysMetadataState& v) {
+  inline void from_json(const nlohmann::json& j, LolReplaysMetadataState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "downloading"){
-      v = LolReplaysMetadataState::downloading;
+    if(s == "unsupported"){
+      v = LolReplaysMetadataState_t::unsupported_E;
       return;
     }
     if(s == "lost"){
-      v = LolReplaysMetadataState::lost;
-      return;
-    }
-    if(s == "incompatible"){
-      v = LolReplaysMetadataState::incompatible;
-      return;
-    }
-    if(s == "checking"){
-      v = LolReplaysMetadataState::checking;
-      return;
-    }
-    if(s == "watch"){
-      v = LolReplaysMetadataState::watch;
-      return;
-    }
-    if(s == "missingOrExpired"){
-      v = LolReplaysMetadataState::missingOrExpired;
-      return;
-    }
-    if(s == "unsupported"){
-      v = LolReplaysMetadataState::unsupported;
+      v = LolReplaysMetadataState_t::lost_E;
       return;
     }
     if(s == "error"){
-      v = LolReplaysMetadataState::error;
+      v = LolReplaysMetadataState_t::error_E;
       return;
     }
     if(s == "download"){
-      v = LolReplaysMetadataState::download;
+      v = LolReplaysMetadataState_t::download_E;
       return;
     }
     if(s == "found"){
-      v = LolReplaysMetadataState::found;
+      v = LolReplaysMetadataState_t::found_E;
+      return;
+    }
+    if(s == "checking"){
+      v = LolReplaysMetadataState_t::checking_E;
+      return;
+    }
+    if(s == "downloading"){
+      v = LolReplaysMetadataState_t::downloading_E;
+      return;
+    }
+    if(s == "watch"){
+      v = LolReplaysMetadataState_t::watch_E;
+      return;
+    }
+    if(s == "incompatible"){
+      v = LolReplaysMetadataState_t::incompatible_E;
+      return;
+    }
+    if(s == "missingOrExpired"){
+      v = LolReplaysMetadataState_t::missingOrExpired_E;
       return;
     }
     if(s == "retryDownload"){
-      v = LolReplaysMetadataState::retryDownload;
+      v = LolReplaysMetadataState_t::retryDownload_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolReplaysMetadataState_HPP

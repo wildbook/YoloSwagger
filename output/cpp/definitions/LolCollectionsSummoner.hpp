@@ -1,32 +1,25 @@
-#ifndef SWAGGER_TYPES_LolCollectionsSummoner_HPP
-#define SWAGGER_TYPES_LolCollectionsSummoner_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolCollectionsSummoner {
-    // 
-    int32_t profileIconId;
-    // 
-    uint32_t summonerLevel;
-    // 
-    uint64_t summonerId;
-    // 
+  struct LolCollectionsSummoner_t {
     uint64_t accountId;
+    uint32_t summonerLevel;
+    uint64_t summonerId;
+    int32_t profileIconId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolCollectionsSummoner& v) {
-    j["profileIconId"] = v.profileIconId;
+  inline void to_json(nlohmann::json& j, const LolCollectionsSummoner_t& v) {
+    j["accountId"] = v.accountId;
     j["summonerLevel"] = v.summonerLevel;
     j["summonerId"] = v.summonerId;
-    j["accountId"] = v.accountId;
+    j["profileIconId"] = v.profileIconId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolCollectionsSummoner& v) {
-    v.profileIconId = j.at("profileIconId").get<int32_t>;
-    v.summonerLevel = j.at("summonerLevel").get<uint32_t>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
-    v.accountId = j.at("accountId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolCollectionsSummoner_t& v) {
+    v.accountId = j.at("accountId").get<uint64_t>();
+    v.summonerLevel = j.at("summonerLevel").get<uint32_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.profileIconId = j.at("profileIconId").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolCollectionsSummoner_HPP

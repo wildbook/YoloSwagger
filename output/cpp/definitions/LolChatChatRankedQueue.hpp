@@ -1,73 +1,63 @@
-#ifndef SWAGGER_TYPES_LolChatChatRankedQueue_HPP
-#define SWAGGER_TYPES_LolChatChatRankedQueue_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolChatChatRankedQueue {
-    // 
-    RANKED_TEAM_3x3 = 4,
-    // 
-    INVALID = 0,
-    // 
-    RANKED_FLEX_SR = 2,
-    // 
-    RANKED_FLEX_TT = 1,
-    // 
-    RANKED_TEAM_5x5 = 5,
-    // 
-    RANKED_SOLO_5x5 = 3,
+  enum class LolChatChatRankedQueue_t {
+    RANKED_SOLO_5x5_E = 3,
+    RANKED_TEAM_5x5_E = 5,
+    INVALID_E = 0,
+    RANKED_TEAM_3x3_E = 4,
+    RANKED_FLEX_SR_E = 2,
+    RANKED_FLEX_TT_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatChatRankedQueue& v) {
+  inline void to_json(nlohmann::json& j, const LolChatChatRankedQueue_t& v) {
     switch(v) {
-      case LolChatChatRankedQueue::RANKED_TEAM_3x3:
-        j = "RANKED_TEAM_3x3";
+      case LolChatChatRankedQueue_t::RANKED_SOLO_5x5_E:
+        j = "RANKED_SOLO_5x5";
       break;
-      case LolChatChatRankedQueue::INVALID:
-        j = "INVALID";
-      break;
-      case LolChatChatRankedQueue::RANKED_FLEX_SR:
-        j = "RANKED_FLEX_SR";
-      break;
-      case LolChatChatRankedQueue::RANKED_FLEX_TT:
-        j = "RANKED_FLEX_TT";
-      break;
-      case LolChatChatRankedQueue::RANKED_TEAM_5x5:
+      case LolChatChatRankedQueue_t::RANKED_TEAM_5x5_E:
         j = "RANKED_TEAM_5x5";
       break;
-      case LolChatChatRankedQueue::RANKED_SOLO_5x5:
-        j = "RANKED_SOLO_5x5";
+      case LolChatChatRankedQueue_t::INVALID_E:
+        j = "INVALID";
+      break;
+      case LolChatChatRankedQueue_t::RANKED_TEAM_3x3_E:
+        j = "RANKED_TEAM_3x3";
+      break;
+      case LolChatChatRankedQueue_t::RANKED_FLEX_SR_E:
+        j = "RANKED_FLEX_SR";
+      break;
+      case LolChatChatRankedQueue_t::RANKED_FLEX_TT_E:
+        j = "RANKED_FLEX_TT";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatChatRankedQueue& v) {
+  inline void from_json(const nlohmann::json& j, LolChatChatRankedQueue_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "RANKED_TEAM_3x3"){
-      v = LolChatChatRankedQueue::RANKED_TEAM_3x3;
-      return;
-    }
-    if(s == "INVALID"){
-      v = LolChatChatRankedQueue::INVALID;
-      return;
-    }
-    if(s == "RANKED_FLEX_SR"){
-      v = LolChatChatRankedQueue::RANKED_FLEX_SR;
-      return;
-    }
-    if(s == "RANKED_FLEX_TT"){
-      v = LolChatChatRankedQueue::RANKED_FLEX_TT;
+    if(s == "RANKED_SOLO_5x5"){
+      v = LolChatChatRankedQueue_t::RANKED_SOLO_5x5_E;
       return;
     }
     if(s == "RANKED_TEAM_5x5"){
-      v = LolChatChatRankedQueue::RANKED_TEAM_5x5;
+      v = LolChatChatRankedQueue_t::RANKED_TEAM_5x5_E;
       return;
     }
-    if(s == "RANKED_SOLO_5x5"){
-      v = LolChatChatRankedQueue::RANKED_SOLO_5x5;
+    if(s == "INVALID"){
+      v = LolChatChatRankedQueue_t::INVALID_E;
+      return;
+    }
+    if(s == "RANKED_TEAM_3x3"){
+      v = LolChatChatRankedQueue_t::RANKED_TEAM_3x3_E;
+      return;
+    }
+    if(s == "RANKED_FLEX_SR"){
+      v = LolChatChatRankedQueue_t::RANKED_FLEX_SR_E;
+      return;
+    }
+    if(s == "RANKED_FLEX_TT"){
+      v = LolChatChatRankedQueue_t::RANKED_FLEX_TT_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatChatRankedQueue_HPP

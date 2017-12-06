@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolMissionsCollectionsWardSkin_HPP
-#define SWAGGER_TYPES_LolMissionsCollectionsWardSkin_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolMissionsCollectionsOwnership.hpp"
 namespace leagueapi {
-  // 
-  struct LolMissionsCollectionsWardSkin {
-    // 
+  struct LolMissionsCollectionsWardSkin_t {
+    LolMissionsCollectionsOwnership_t ownership;
     int64_t id;
-    // 
-    LolMissionsCollectionsOwnership ownership;
   };
 
-  inline void to_json(nlohmann::json& j, const LolMissionsCollectionsWardSkin& v) {
-    j["id"] = v.id;
+  inline void to_json(nlohmann::json& j, const LolMissionsCollectionsWardSkin_t& v) {
     j["ownership"] = v.ownership;
+    j["id"] = v.id;
   }
 
-  inline void from_json(const nlohmann::json& j, LolMissionsCollectionsWardSkin& v) {
-    v.id = j.at("id").get<int64_t>;
-    v.ownership = j.at("ownership").get<LolMissionsCollectionsOwnership>;
+  inline void from_json(const nlohmann::json& j, LolMissionsCollectionsWardSkin_t& v) {
+    v.ownership = j.at("ownership").get<LolMissionsCollectionsOwnership_t>();
+    v.id = j.at("id").get<int64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolMissionsCollectionsWardSkin_HPP

@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolSimpleDialogMessagesLoginDataPacket_HPP
-#define SWAGGER_TYPES_LolSimpleDialogMessagesLoginDataPacket_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolSimpleDialogMessagesSimpleMessage.hpp"
 namespace leagueapi {
-  // 
-  struct LolSimpleDialogMessagesLoginDataPacket {
-    // 
-    std::vector<LolSimpleDialogMessagesSimpleMessage> simpleMessages;
+  struct LolSimpleDialogMessagesLoginDataPacket_t {
+    std::vector<LolSimpleDialogMessagesSimpleMessage_t> simpleMessages;
   };
 
-  inline void to_json(nlohmann::json& j, const LolSimpleDialogMessagesLoginDataPacket& v) {
+  inline void to_json(nlohmann::json& j, const LolSimpleDialogMessagesLoginDataPacket_t& v) {
     j["simpleMessages"] = v.simpleMessages;
   }
 
-  inline void from_json(const nlohmann::json& j, LolSimpleDialogMessagesLoginDataPacket& v) {
-    v.simpleMessages = j.at("simpleMessages").get<std::vector<LolSimpleDialogMessagesSimpleMessage>>;
+  inline void from_json(const nlohmann::json& j, LolSimpleDialogMessagesLoginDataPacket_t& v) {
+    v.simpleMessages = j.at("simpleMessages").get<std::vector<LolSimpleDialogMessagesSimpleMessage_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolSimpleDialogMessagesLoginDataPacket_HPP

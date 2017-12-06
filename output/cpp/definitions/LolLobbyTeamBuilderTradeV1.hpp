@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderTradeV1_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderTradeV1_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyTeamBuilderTradeV1 {
-    // 
-    std::string state;
-    // 
-    int32_t cellId;
-    // 
+  struct LolLobbyTeamBuilderTradeV1_t {
     int32_t id;
+    int32_t cellId;
+    std::string state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTradeV1& v) {
-    j["state"] = v.state;
-    j["cellId"] = v.cellId;
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTradeV1_t& v) {
     j["id"] = v.id;
+    j["cellId"] = v.cellId;
+    j["state"] = v.state;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTradeV1& v) {
-    v.state = j.at("state").get<std::string>;
-    v.cellId = j.at("cellId").get<int32_t>;
-    v.id = j.at("id").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTradeV1_t& v) {
+    v.id = j.at("id").get<int32_t>();
+    v.cellId = j.at("cellId").get<int32_t>();
+    v.state = j.at("state").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderTradeV1_HPP

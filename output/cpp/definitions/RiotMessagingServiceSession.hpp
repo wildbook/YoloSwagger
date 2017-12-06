@@ -1,30 +1,24 @@
-#ifndef SWAGGER_TYPES_RiotMessagingServiceSession_HPP
-#define SWAGGER_TYPES_RiotMessagingServiceSession_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "RiotMessagingServiceState.hpp"
 #include "RiotMessagingServiceTokenType.hpp"
 namespace leagueapi {
-  // 
-  struct RiotMessagingServiceSession {
-    // 
-    RiotMessagingServiceState state;
-    // 
+  struct RiotMessagingServiceSession_t {
+    RiotMessagingServiceTokenType_t tokenType;
+    RiotMessagingServiceState_t state;
     std::string token;
-    // 
-    RiotMessagingServiceTokenType tokenType;
   };
 
-  inline void to_json(nlohmann::json& j, const RiotMessagingServiceSession& v) {
+  inline void to_json(nlohmann::json& j, const RiotMessagingServiceSession_t& v) {
+    j["tokenType"] = v.tokenType;
     j["state"] = v.state;
     j["token"] = v.token;
-    j["tokenType"] = v.tokenType;
   }
 
-  inline void from_json(const nlohmann::json& j, RiotMessagingServiceSession& v) {
-    v.state = j.at("state").get<RiotMessagingServiceState>;
-    v.token = j.at("token").get<std::string>;
-    v.tokenType = j.at("tokenType").get<RiotMessagingServiceTokenType>;
+  inline void from_json(const nlohmann::json& j, RiotMessagingServiceSession_t& v) {
+    v.tokenType = j.at("tokenType").get<RiotMessagingServiceTokenType_t>();
+    v.state = j.at("state").get<RiotMessagingServiceState_t>();
+    v.token = j.at("token").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_RiotMessagingServiceSession_HPP

@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LootLcdsClientConfigurationDTO_HPP
-#define SWAGGER_TYPES_LootLcdsClientConfigurationDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LootLcdsClientConfigurationDTO {
-    // 
-    std::vector<std::string> currenciesUsingCapWallets;
-    // 
-    std::vector<std::string> lootItemsUsingBreakoutRecipeMenu;
-    // 
+  struct LootLcdsClientConfigurationDTO_t {
     std::vector<std::string> lootMaterialsToAlwaysRender;
+    std::vector<std::string> currenciesUsingCapWallets;
+    std::vector<std::string> lootItemsUsingBreakoutRecipeMenu;
   };
 
-  inline void to_json(nlohmann::json& j, const LootLcdsClientConfigurationDTO& v) {
+  inline void to_json(nlohmann::json& j, const LootLcdsClientConfigurationDTO_t& v) {
+    j["lootMaterialsToAlwaysRender"] = v.lootMaterialsToAlwaysRender;
     j["currenciesUsingCapWallets"] = v.currenciesUsingCapWallets;
     j["lootItemsUsingBreakoutRecipeMenu"] = v.lootItemsUsingBreakoutRecipeMenu;
-    j["lootMaterialsToAlwaysRender"] = v.lootMaterialsToAlwaysRender;
   }
 
-  inline void from_json(const nlohmann::json& j, LootLcdsClientConfigurationDTO& v) {
-    v.currenciesUsingCapWallets = j.at("currenciesUsingCapWallets").get<std::vector<std::string>>;
-    v.lootItemsUsingBreakoutRecipeMenu = j.at("lootItemsUsingBreakoutRecipeMenu").get<std::vector<std::string>>;
-    v.lootMaterialsToAlwaysRender = j.at("lootMaterialsToAlwaysRender").get<std::vector<std::string>>;
+  inline void from_json(const nlohmann::json& j, LootLcdsClientConfigurationDTO_t& v) {
+    v.lootMaterialsToAlwaysRender = j.at("lootMaterialsToAlwaysRender").get<std::vector<std::string>>();
+    v.currenciesUsingCapWallets = j.at("currenciesUsingCapWallets").get<std::vector<std::string>>();
+    v.lootItemsUsingBreakoutRecipeMenu = j.at("lootItemsUsingBreakoutRecipeMenu").get<std::vector<std::string>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LootLcdsClientConfigurationDTO_HPP

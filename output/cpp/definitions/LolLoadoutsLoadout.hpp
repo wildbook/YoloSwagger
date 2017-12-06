@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolLoadoutsLoadout_HPP
-#define SWAGGER_TYPES_LolLoadoutsLoadout_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLoadoutsLoadout {
-    // 
-    std::map<std::string, nlohmann::json> items;
-    // 
-    uint32_t id;
-    // 
+  struct LolLoadoutsLoadout_t {
     std::string name;
+    uint32_t id;
+    std::map<std::string, nlohmann::json> items;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLoadoutsLoadout& v) {
-    j["items"] = v.items;
-    j["id"] = v.id;
+  inline void to_json(nlohmann::json& j, const LolLoadoutsLoadout_t& v) {
     j["name"] = v.name;
+    j["id"] = v.id;
+    j["items"] = v.items;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLoadoutsLoadout& v) {
-    v.items = j.at("items").get<std::map<std::string, nlohmann::json>>;
-    v.id = j.at("id").get<uint32_t>;
-    v.name = j.at("name").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolLoadoutsLoadout_t& v) {
+    v.name = j.at("name").get<std::string>();
+    v.id = j.at("id").get<uint32_t>();
+    v.items = j.at("items").get<std::map<std::string, nlohmann::json>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLoadoutsLoadout_HPP

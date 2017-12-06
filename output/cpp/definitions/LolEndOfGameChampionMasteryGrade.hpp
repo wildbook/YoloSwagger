@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolEndOfGameChampionMasteryGrade_HPP
-#define SWAGGER_TYPES_LolEndOfGameChampionMasteryGrade_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolEndOfGameChampionMasteryGrade {
-    // 
-    std::string grade;
-    // 
-    uint64_t playerId;
-    // 
+  struct LolEndOfGameChampionMasteryGrade_t {
     int32_t championId;
+    uint64_t playerId;
+    std::string grade;
   };
 
-  inline void to_json(nlohmann::json& j, const LolEndOfGameChampionMasteryGrade& v) {
-    j["grade"] = v.grade;
-    j["playerId"] = v.playerId;
+  inline void to_json(nlohmann::json& j, const LolEndOfGameChampionMasteryGrade_t& v) {
     j["championId"] = v.championId;
+    j["playerId"] = v.playerId;
+    j["grade"] = v.grade;
   }
 
-  inline void from_json(const nlohmann::json& j, LolEndOfGameChampionMasteryGrade& v) {
-    v.grade = j.at("grade").get<std::string>;
-    v.playerId = j.at("playerId").get<uint64_t>;
-    v.championId = j.at("championId").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LolEndOfGameChampionMasteryGrade_t& v) {
+    v.championId = j.at("championId").get<int32_t>();
+    v.playerId = j.at("playerId").get<uint64_t>();
+    v.grade = j.at("grade").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolEndOfGameChampionMasteryGrade_HPP

@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryTimelineFrames_HPP
-#define SWAGGER_TYPES_LolMatchHistoryMatchHistoryTimelineFrames_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolMatchHistoryMatchHistoryTimelineFrame.hpp"
 namespace leagueapi {
-  // 
-  struct LolMatchHistoryMatchHistoryTimelineFrames {
-    // 
-    std::vector<LolMatchHistoryMatchHistoryTimelineFrame> frames;
+  struct LolMatchHistoryMatchHistoryTimelineFrames_t {
+    std::vector<LolMatchHistoryMatchHistoryTimelineFrame_t> frames;
   };
 
-  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryTimelineFrames& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryTimelineFrames_t& v) {
     j["frames"] = v.frames;
   }
 
-  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryTimelineFrames& v) {
-    v.frames = j.at("frames").get<std::vector<LolMatchHistoryMatchHistoryTimelineFrame>>;
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryTimelineFrames_t& v) {
+    v.frames = j.at("frames").get<std::vector<LolMatchHistoryMatchHistoryTimelineFrame_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolMatchHistoryMatchHistoryTimelineFrames_HPP

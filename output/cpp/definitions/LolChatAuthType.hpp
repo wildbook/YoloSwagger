@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_LolChatAuthType_HPP
-#define SWAGGER_TYPES_LolChatAuthType_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolChatAuthType {
-    // 
-    plain = 0,
-    // 
-    rsoRefresh = 2,
-    // 
-    rsoCreate = 1,
+  enum class LolChatAuthType_t {
+    plain_E = 0,
+    rsoRefresh_E = 2,
+    rsoCreate_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatAuthType& v) {
+  inline void to_json(nlohmann::json& j, const LolChatAuthType_t& v) {
     switch(v) {
-      case LolChatAuthType::plain:
+      case LolChatAuthType_t::plain_E:
         j = "plain";
       break;
-      case LolChatAuthType::rsoRefresh:
+      case LolChatAuthType_t::rsoRefresh_E:
         j = "rsoRefresh";
       break;
-      case LolChatAuthType::rsoCreate:
+      case LolChatAuthType_t::rsoCreate_E:
         j = "rsoCreate";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatAuthType& v) {
+  inline void from_json(const nlohmann::json& j, LolChatAuthType_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "plain"){
-      v = LolChatAuthType::plain;
+      v = LolChatAuthType_t::plain_E;
       return;
     }
     if(s == "rsoRefresh"){
-      v = LolChatAuthType::rsoRefresh;
+      v = LolChatAuthType_t::rsoRefresh_E;
       return;
     }
     if(s == "rsoCreate"){
-      v = LolChatAuthType::rsoCreate;
+      v = LolChatAuthType_t::rsoCreate_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatAuthType_HPP

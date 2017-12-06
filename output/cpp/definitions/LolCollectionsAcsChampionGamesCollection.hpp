@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolCollectionsAcsChampionGamesCollection_HPP
-#define SWAGGER_TYPES_LolCollectionsAcsChampionGamesCollection_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolCollectionsAcsChampionGames.hpp"
 namespace leagueapi {
-  // 
-  struct LolCollectionsAcsChampionGamesCollection {
-    // 
+  struct LolCollectionsAcsChampionGamesCollection_t {
+    std::vector<LolCollectionsAcsChampionGames_t> champions;
     uint32_t gameCount;
-    // 
-    std::vector<LolCollectionsAcsChampionGames> champions;
   };
 
-  inline void to_json(nlohmann::json& j, const LolCollectionsAcsChampionGamesCollection& v) {
-    j["gameCount"] = v.gameCount;
+  inline void to_json(nlohmann::json& j, const LolCollectionsAcsChampionGamesCollection_t& v) {
     j["champions"] = v.champions;
+    j["gameCount"] = v.gameCount;
   }
 
-  inline void from_json(const nlohmann::json& j, LolCollectionsAcsChampionGamesCollection& v) {
-    v.gameCount = j.at("gameCount").get<uint32_t>;
-    v.champions = j.at("champions").get<std::vector<LolCollectionsAcsChampionGames>>;
+  inline void from_json(const nlohmann::json& j, LolCollectionsAcsChampionGamesCollection_t& v) {
+    v.champions = j.at("champions").get<std::vector<LolCollectionsAcsChampionGames_t>>();
+    v.gameCount = j.at("gameCount").get<uint32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolCollectionsAcsChampionGamesCollection_HPP

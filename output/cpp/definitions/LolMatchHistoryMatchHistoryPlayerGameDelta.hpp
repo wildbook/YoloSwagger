@@ -1,39 +1,31 @@
-#ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerGameDelta_HPP
-#define SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerGameDelta_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
+#include "LolMatchHistoryMatchHistoryPlayerLeagueDelta.hpp"
 #include "LolMatchHistoryMatchHistoryPlayerPlatformDelta.hpp"
 #include "LolMatchHistoryMatchHistoryPlayerChampMasteryDelta.hpp"
-#include "LolMatchHistoryMatchHistoryPlayerLeagueDelta.hpp"
 namespace leagueapi {
-  // 
-  struct LolMatchHistoryMatchHistoryPlayerGameDelta {
-    // 
-    LolMatchHistoryMatchHistoryPlayerLeagueDelta leagueDelta;
-    // 
-    LolMatchHistoryMatchHistoryPlayerPlatformDelta platformDelta;
-    // 
-    std::string gamePlatformId;
-    // 
+  struct LolMatchHistoryMatchHistoryPlayerGameDelta_t {
+    LolMatchHistoryMatchHistoryPlayerPlatformDelta_t platformDelta;
     uint64_t gameId;
-    // 
-    LolMatchHistoryMatchHistoryPlayerChampMasteryDelta champMastery;
+    std::string gamePlatformId;
+    LolMatchHistoryMatchHistoryPlayerChampMasteryDelta_t champMastery;
+    LolMatchHistoryMatchHistoryPlayerLeagueDelta_t leagueDelta;
   };
 
-  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryPlayerGameDelta& v) {
-    j["leagueDelta"] = v.leagueDelta;
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryPlayerGameDelta_t& v) {
     j["platformDelta"] = v.platformDelta;
-    j["gamePlatformId"] = v.gamePlatformId;
     j["gameId"] = v.gameId;
+    j["gamePlatformId"] = v.gamePlatformId;
     j["champMastery"] = v.champMastery;
+    j["leagueDelta"] = v.leagueDelta;
   }
 
-  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryPlayerGameDelta& v) {
-    v.leagueDelta = j.at("leagueDelta").get<LolMatchHistoryMatchHistoryPlayerLeagueDelta>;
-    v.platformDelta = j.at("platformDelta").get<LolMatchHistoryMatchHistoryPlayerPlatformDelta>;
-    v.gamePlatformId = j.at("gamePlatformId").get<std::string>;
-    v.gameId = j.at("gameId").get<uint64_t>;
-    v.champMastery = j.at("champMastery").get<LolMatchHistoryMatchHistoryPlayerChampMasteryDelta>;
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryPlayerGameDelta_t& v) {
+    v.platformDelta = j.at("platformDelta").get<LolMatchHistoryMatchHistoryPlayerPlatformDelta_t>();
+    v.gameId = j.at("gameId").get<uint64_t>();
+    v.gamePlatformId = j.at("gamePlatformId").get<std::string>();
+    v.champMastery = j.at("champMastery").get<LolMatchHistoryMatchHistoryPlayerChampMasteryDelta_t>();
+    v.leagueDelta = j.at("leagueDelta").get<LolMatchHistoryMatchHistoryPlayerLeagueDelta_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerGameDelta_HPP

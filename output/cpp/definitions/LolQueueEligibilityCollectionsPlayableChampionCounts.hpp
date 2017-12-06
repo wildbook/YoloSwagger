@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolQueueEligibilityCollectionsPlayableChampionCounts_HPP
-#define SWAGGER_TYPES_LolQueueEligibilityCollectionsPlayableChampionCounts_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolQueueEligibilityCollectionsPlayableChampionCounts {
-    // 
+  struct LolQueueEligibilityCollectionsPlayableChampionCounts_t {
     uint32_t championsOwned;
   };
 
-  inline void to_json(nlohmann::json& j, const LolQueueEligibilityCollectionsPlayableChampionCounts& v) {
+  inline void to_json(nlohmann::json& j, const LolQueueEligibilityCollectionsPlayableChampionCounts_t& v) {
     j["championsOwned"] = v.championsOwned;
   }
 
-  inline void from_json(const nlohmann::json& j, LolQueueEligibilityCollectionsPlayableChampionCounts& v) {
-    v.championsOwned = j.at("championsOwned").get<uint32_t>;
+  inline void from_json(const nlohmann::json& j, LolQueueEligibilityCollectionsPlayableChampionCounts_t& v) {
+    v.championsOwned = j.at("championsOwned").get<uint32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolQueueEligibilityCollectionsPlayableChampionCounts_HPP

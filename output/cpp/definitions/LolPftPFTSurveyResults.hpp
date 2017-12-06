@@ -1,26 +1,21 @@
-#ifndef SWAGGER_TYPES_LolPftPFTSurveyResults_HPP
-#define SWAGGER_TYPES_LolPftPFTSurveyResults_HPP
+#pragma once
 #include <json.hpp>
-#include "LolPftPFTQuestionResponse.hpp"
+#include <optional>
 #include "LolPftPFTEvent.hpp"
+#include "LolPftPFTQuestionResponse.hpp"
 namespace leagueapi {
-  // 
-  struct LolPftPFTSurveyResults {
-    // 
-    std::vector<LolPftPFTQuestionResponse> questionResponses;
-    // 
-    std::vector<LolPftPFTEvent> actions;
+  struct LolPftPFTSurveyResults_t {
+    std::vector<LolPftPFTQuestionResponse_t> questionResponses;
+    std::vector<LolPftPFTEvent_t> actions;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPftPFTSurveyResults& v) {
+  inline void to_json(nlohmann::json& j, const LolPftPFTSurveyResults_t& v) {
     j["questionResponses"] = v.questionResponses;
     j["actions"] = v.actions;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPftPFTSurveyResults& v) {
-    v.questionResponses = j.at("questionResponses").get<std::vector<LolPftPFTQuestionResponse>>;
-    v.actions = j.at("actions").get<std::vector<LolPftPFTEvent>>;
+  inline void from_json(const nlohmann::json& j, LolPftPFTSurveyResults_t& v) {
+    v.questionResponses = j.at("questionResponses").get<std::vector<LolPftPFTQuestionResponse_t>>();
+    v.actions = j.at("actions").get<std::vector<LolPftPFTEvent_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPftPFTSurveyResults_HPP

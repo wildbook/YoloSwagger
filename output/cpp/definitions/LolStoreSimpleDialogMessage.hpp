@@ -1,32 +1,25 @@
-#ifndef SWAGGER_TYPES_LolStoreSimpleDialogMessage_HPP
-#define SWAGGER_TYPES_LolStoreSimpleDialogMessage_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolStoreSimpleDialogMessage {
-    // 
-    std::string msgId;
-    // 
-    std::string type;
-    // 
-    std::vector<std::string> params;
-    // 
+  struct LolStoreSimpleDialogMessage_t {
     uint64_t accountId;
+    std::string msgId;
+    std::string type;
+    std::vector<std::string> params;
   };
 
-  inline void to_json(nlohmann::json& j, const LolStoreSimpleDialogMessage& v) {
+  inline void to_json(nlohmann::json& j, const LolStoreSimpleDialogMessage_t& v) {
+    j["accountId"] = v.accountId;
     j["msgId"] = v.msgId;
     j["type"] = v.type;
     j["params"] = v.params;
-    j["accountId"] = v.accountId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolStoreSimpleDialogMessage& v) {
-    v.msgId = j.at("msgId").get<std::string>;
-    v.type = j.at("type").get<std::string>;
-    v.params = j.at("params").get<std::vector<std::string>>;
-    v.accountId = j.at("accountId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolStoreSimpleDialogMessage_t& v) {
+    v.accountId = j.at("accountId").get<uint64_t>();
+    v.msgId = j.at("msgId").get<std::string>();
+    v.type = j.at("type").get<std::string>();
+    v.params = j.at("params").get<std::vector<std::string>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolStoreSimpleDialogMessage_HPP

@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolChampionsLcdsDynamicClientConfig_HPP
-#define SWAGGER_TYPES_LolChampionsLcdsDynamicClientConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChampionsLcdsDynamicClientConfig {
-    // 
+  struct LolChampionsLcdsDynamicClientConfig_t {
     nlohmann::json DisabledChampions;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampionsLcdsDynamicClientConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolChampionsLcdsDynamicClientConfig_t& v) {
     j["DisabledChampions"] = v.DisabledChampions;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampionsLcdsDynamicClientConfig& v) {
-    v.DisabledChampions = j.at("DisabledChampions").get<nlohmann::json>;
+  inline void from_json(const nlohmann::json& j, LolChampionsLcdsDynamicClientConfig_t& v) {
+    v.DisabledChampions = j.at("DisabledChampions").get<nlohmann::json>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampionsLcdsDynamicClientConfig_HPP

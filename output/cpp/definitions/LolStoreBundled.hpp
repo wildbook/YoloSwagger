@@ -1,30 +1,24 @@
-#ifndef SWAGGER_TYPES_LolStoreBundled_HPP
-#define SWAGGER_TYPES_LolStoreBundled_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolStoreBundledItemCost.hpp"
 #include "LolStoreBundledItem.hpp"
 namespace leagueapi {
-  // 
-  struct LolStoreBundled {
-    // 
+  struct LolStoreBundled_t {
+    std::vector<LolStoreBundledItemCost_t> minimumPrices;
     bool flexible;
-    // 
-    std::vector<LolStoreBundledItemCost> minimumPrices;
-    // 
-    std::vector<LolStoreBundledItem> items;
+    std::vector<LolStoreBundledItem_t> items;
   };
 
-  inline void to_json(nlohmann::json& j, const LolStoreBundled& v) {
-    j["flexible"] = v.flexible;
+  inline void to_json(nlohmann::json& j, const LolStoreBundled_t& v) {
     j["minimumPrices"] = v.minimumPrices;
+    j["flexible"] = v.flexible;
     j["items"] = v.items;
   }
 
-  inline void from_json(const nlohmann::json& j, LolStoreBundled& v) {
-    v.flexible = j.at("flexible").get<bool>;
-    v.minimumPrices = j.at("minimumPrices").get<std::vector<LolStoreBundledItemCost>>;
-    v.items = j.at("items").get<std::vector<LolStoreBundledItem>>;
+  inline void from_json(const nlohmann::json& j, LolStoreBundled_t& v) {
+    v.minimumPrices = j.at("minimumPrices").get<std::vector<LolStoreBundledItemCost_t>>();
+    v.flexible = j.at("flexible").get<bool>();
+    v.items = j.at("items").get<std::vector<LolStoreBundledItem_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolStoreBundled_HPP

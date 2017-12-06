@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerChampMasteryDelta_HPP
-#define SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerChampMasteryDelta_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolMatchHistoryMatchHistoryPlayerChampMasteryDelta {
-    // 
+  struct LolMatchHistoryMatchHistoryPlayerChampMasteryDelta_t {
     std::string grade;
   };
 
-  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryPlayerChampMasteryDelta& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryPlayerChampMasteryDelta_t& v) {
     j["grade"] = v.grade;
   }
 
-  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryPlayerChampMasteryDelta& v) {
-    v.grade = j.at("grade").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryPlayerChampMasteryDelta_t& v) {
+    v.grade = j.at("grade").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolMatchHistoryMatchHistoryPlayerChampMasteryDelta_HPP

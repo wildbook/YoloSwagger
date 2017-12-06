@@ -1,34 +1,27 @@
-#ifndef SWAGGER_TYPES_LolClashPendingRosterNotification_HPP
-#define SWAGGER_TYPES_LolClashPendingRosterNotification_HPP
+#pragma once
 #include <json.hpp>
-#include "LolClashNotifyReason.hpp"
+#include <optional>
 #include "PendingRosterDTO.hpp"
+#include "LolClashNotifyReason.hpp"
 namespace leagueapi {
-  // 
-  struct LolClashPendingRosterNotification {
-    // 
+  struct LolClashPendingRosterNotification_t {
     uint64_t sourcePlayerId;
-    // 
-    LolClashNotifyReason notifyReason;
-    // 
-    PendingRosterDTO pendingRoster;
-    // 
+    LolClashNotifyReason_t notifyReason;
+    PendingRosterDTO_t pendingRoster;
     uint64_t targetPlayerId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashPendingRosterNotification& v) {
+  inline void to_json(nlohmann::json& j, const LolClashPendingRosterNotification_t& v) {
     j["sourcePlayerId"] = v.sourcePlayerId;
     j["notifyReason"] = v.notifyReason;
     j["pendingRoster"] = v.pendingRoster;
     j["targetPlayerId"] = v.targetPlayerId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashPendingRosterNotification& v) {
-    v.sourcePlayerId = j.at("sourcePlayerId").get<uint64_t>;
-    v.notifyReason = j.at("notifyReason").get<LolClashNotifyReason>;
-    v.pendingRoster = j.at("pendingRoster").get<PendingRosterDTO>;
-    v.targetPlayerId = j.at("targetPlayerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolClashPendingRosterNotification_t& v) {
+    v.sourcePlayerId = j.at("sourcePlayerId").get<uint64_t>();
+    v.notifyReason = j.at("notifyReason").get<LolClashNotifyReason_t>();
+    v.pendingRoster = j.at("pendingRoster").get<PendingRosterDTO_t>();
+    v.targetPlayerId = j.at("targetPlayerId").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashPendingRosterNotification_HPP

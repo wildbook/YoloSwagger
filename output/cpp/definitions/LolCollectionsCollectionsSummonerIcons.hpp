@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolCollectionsCollectionsSummonerIcons_HPP
-#define SWAGGER_TYPES_LolCollectionsCollectionsSummonerIcons_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolCollectionsCollectionsSummonerIcons {
-    // 
+  struct LolCollectionsCollectionsSummonerIcons_t {
     uint64_t summonerId;
-    // 
     std::vector<int32_t> icons;
   };
 
-  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsSummonerIcons& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsSummonerIcons_t& v) {
     j["summonerId"] = v.summonerId;
     j["icons"] = v.icons;
   }
 
-  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsSummonerIcons& v) {
-    v.summonerId = j.at("summonerId").get<uint64_t>;
-    v.icons = j.at("icons").get<std::vector<int32_t>>;
+  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsSummonerIcons_t& v) {
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.icons = j.at("icons").get<std::vector<int32_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolCollectionsCollectionsSummonerIcons_HPP

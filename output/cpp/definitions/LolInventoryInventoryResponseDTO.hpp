@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolInventoryInventoryResponseDTO_HPP
-#define SWAGGER_TYPES_LolInventoryInventoryResponseDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolInventoryInventoryDTO.hpp"
 namespace leagueapi {
-  // 
-  struct LolInventoryInventoryResponseDTO {
-    // 
-    LolInventoryInventoryDTO data;
+  struct LolInventoryInventoryResponseDTO_t {
+    LolInventoryInventoryDTO_t data;
   };
 
-  inline void to_json(nlohmann::json& j, const LolInventoryInventoryResponseDTO& v) {
+  inline void to_json(nlohmann::json& j, const LolInventoryInventoryResponseDTO_t& v) {
     j["data"] = v.data;
   }
 
-  inline void from_json(const nlohmann::json& j, LolInventoryInventoryResponseDTO& v) {
-    v.data = j.at("data").get<LolInventoryInventoryDTO>;
+  inline void from_json(const nlohmann::json& j, LolInventoryInventoryResponseDTO_t& v) {
+    v.data = j.at("data").get<LolInventoryInventoryDTO_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolInventoryInventoryResponseDTO_HPP

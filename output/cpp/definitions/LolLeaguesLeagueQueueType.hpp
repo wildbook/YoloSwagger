@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolLeaguesLeagueQueueType_HPP
-#define SWAGGER_TYPES_LolLeaguesLeagueQueueType_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLeaguesLeagueQueueType {
-    // 
-    FLEXSR = 3,
-    // 
-    NONE = 0,
-    // 
-    FLEXTT = 2,
-    // 
-    SOLO5V5 = 1,
+  enum class LolLeaguesLeagueQueueType_t {
+    FLEXTT_E = 2,
+    FLEXSR_E = 3,
+    SOLO5V5_E = 1,
+    NONE_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLeaguesLeagueQueueType& v) {
+  inline void to_json(nlohmann::json& j, const LolLeaguesLeagueQueueType_t& v) {
     switch(v) {
-      case LolLeaguesLeagueQueueType::FLEXSR:
-        j = "FLEXSR";
-      break;
-      case LolLeaguesLeagueQueueType::NONE:
-        j = "NONE";
-      break;
-      case LolLeaguesLeagueQueueType::FLEXTT:
+      case LolLeaguesLeagueQueueType_t::FLEXTT_E:
         j = "FLEXTT";
       break;
-      case LolLeaguesLeagueQueueType::SOLO5V5:
+      case LolLeaguesLeagueQueueType_t::FLEXSR_E:
+        j = "FLEXSR";
+      break;
+      case LolLeaguesLeagueQueueType_t::SOLO5V5_E:
         j = "SOLO5V5";
+      break;
+      case LolLeaguesLeagueQueueType_t::NONE_E:
+        j = "NONE";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLeaguesLeagueQueueType& v) {
+  inline void from_json(const nlohmann::json& j, LolLeaguesLeagueQueueType_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "FLEXSR"){
-      v = LolLeaguesLeagueQueueType::FLEXSR;
-      return;
-    }
-    if(s == "NONE"){
-      v = LolLeaguesLeagueQueueType::NONE;
-      return;
-    }
     if(s == "FLEXTT"){
-      v = LolLeaguesLeagueQueueType::FLEXTT;
+      v = LolLeaguesLeagueQueueType_t::FLEXTT_E;
+      return;
+    }
+    if(s == "FLEXSR"){
+      v = LolLeaguesLeagueQueueType_t::FLEXSR_E;
       return;
     }
     if(s == "SOLO5V5"){
-      v = LolLeaguesLeagueQueueType::SOLO5V5;
+      v = LolLeaguesLeagueQueueType_t::SOLO5V5_E;
+      return;
+    }
+    if(s == "NONE"){
+      v = LolLeaguesLeagueQueueType_t::NONE_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLeaguesLeagueQueueType_HPP

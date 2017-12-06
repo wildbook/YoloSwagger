@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_HighlightsConfig_HPP
-#define SWAGGER_TYPES_HighlightsConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct HighlightsConfig {
-    // 
-    std::string invalidHighlightNameCharacters;
-    // 
+  struct HighlightsConfig_t {
     bool isHighlightsEnabled;
+    std::string invalidHighlightNameCharacters;
   };
 
-  inline void to_json(nlohmann::json& j, const HighlightsConfig& v) {
-    j["invalidHighlightNameCharacters"] = v.invalidHighlightNameCharacters;
+  inline void to_json(nlohmann::json& j, const HighlightsConfig_t& v) {
     j["isHighlightsEnabled"] = v.isHighlightsEnabled;
+    j["invalidHighlightNameCharacters"] = v.invalidHighlightNameCharacters;
   }
 
-  inline void from_json(const nlohmann::json& j, HighlightsConfig& v) {
-    v.invalidHighlightNameCharacters = j.at("invalidHighlightNameCharacters").get<std::string>;
-    v.isHighlightsEnabled = j.at("isHighlightsEnabled").get<bool>;
+  inline void from_json(const nlohmann::json& j, HighlightsConfig_t& v) {
+    v.isHighlightsEnabled = j.at("isHighlightsEnabled").get<bool>();
+    v.invalidHighlightNameCharacters = j.at("invalidHighlightNameCharacters").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_HighlightsConfig_HPP

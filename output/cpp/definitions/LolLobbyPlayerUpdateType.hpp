@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolLobbyPlayerUpdateType_HPP
-#define SWAGGER_TYPES_LolLobbyPlayerUpdateType_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLobbyPlayerUpdateType {
-    // 
-    RMS = 3,
-    // 
-    None = 0,
-    // 
-    ServiceProxy = 2,
-    // 
-    Direct = 1,
+  enum class LolLobbyPlayerUpdateType_t {
+    RMS_E = 3,
+    None_E = 0,
+    Direct_E = 1,
+    ServiceProxy_E = 2,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyPlayerUpdateType& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyPlayerUpdateType_t& v) {
     switch(v) {
-      case LolLobbyPlayerUpdateType::RMS:
+      case LolLobbyPlayerUpdateType_t::RMS_E:
         j = "RMS";
       break;
-      case LolLobbyPlayerUpdateType::None:
+      case LolLobbyPlayerUpdateType_t::None_E:
         j = "None";
       break;
-      case LolLobbyPlayerUpdateType::ServiceProxy:
-        j = "ServiceProxy";
-      break;
-      case LolLobbyPlayerUpdateType::Direct:
+      case LolLobbyPlayerUpdateType_t::Direct_E:
         j = "Direct";
+      break;
+      case LolLobbyPlayerUpdateType_t::ServiceProxy_E:
+        j = "ServiceProxy";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyPlayerUpdateType& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyPlayerUpdateType_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "RMS"){
-      v = LolLobbyPlayerUpdateType::RMS;
+      v = LolLobbyPlayerUpdateType_t::RMS_E;
       return;
     }
     if(s == "None"){
-      v = LolLobbyPlayerUpdateType::None;
-      return;
-    }
-    if(s == "ServiceProxy"){
-      v = LolLobbyPlayerUpdateType::ServiceProxy;
+      v = LolLobbyPlayerUpdateType_t::None_E;
       return;
     }
     if(s == "Direct"){
-      v = LolLobbyPlayerUpdateType::Direct;
+      v = LolLobbyPlayerUpdateType_t::Direct_E;
+      return;
+    }
+    if(s == "ServiceProxy"){
+      v = LolLobbyPlayerUpdateType_t::ServiceProxy_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyPlayerUpdateType_HPP

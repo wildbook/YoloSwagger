@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LootItemListClientDTO_HPP
-#define SWAGGER_TYPES_LootItemListClientDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LootItemClientDTO.hpp"
 namespace leagueapi {
-  // 
-  struct LootItemListClientDTO {
-    // 
+  struct LootItemListClientDTO_t {
     int64_t lastUpdate;
-    // 
-    std::vector<LootItemClientDTO> lootItems;
+    std::vector<LootItemClientDTO_t> lootItems;
   };
 
-  inline void to_json(nlohmann::json& j, const LootItemListClientDTO& v) {
+  inline void to_json(nlohmann::json& j, const LootItemListClientDTO_t& v) {
     j["lastUpdate"] = v.lastUpdate;
     j["lootItems"] = v.lootItems;
   }
 
-  inline void from_json(const nlohmann::json& j, LootItemListClientDTO& v) {
-    v.lastUpdate = j.at("lastUpdate").get<int64_t>;
-    v.lootItems = j.at("lootItems").get<std::vector<LootItemClientDTO>>;
+  inline void from_json(const nlohmann::json& j, LootItemListClientDTO_t& v) {
+    v.lastUpdate = j.at("lastUpdate").get<int64_t>();
+    v.lootItems = j.at("lootItems").get<std::vector<LootItemClientDTO_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LootItemListClientDTO_HPP

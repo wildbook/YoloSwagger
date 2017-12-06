@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolEndOfGameGameloopPlayerInfoV1_HPP
-#define SWAGGER_TYPES_LolEndOfGameGameloopPlayerInfoV1_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolEndOfGameRerollDataBagForClientV1.hpp"
 namespace leagueapi {
-  // 
-  struct LolEndOfGameGameloopPlayerInfoV1 {
-    // 
-    LolEndOfGameRerollDataBagForClientV1 rerollDataBag;
+  struct LolEndOfGameGameloopPlayerInfoV1_t {
+    LolEndOfGameRerollDataBagForClientV1_t rerollDataBag;
   };
 
-  inline void to_json(nlohmann::json& j, const LolEndOfGameGameloopPlayerInfoV1& v) {
+  inline void to_json(nlohmann::json& j, const LolEndOfGameGameloopPlayerInfoV1_t& v) {
     j["rerollDataBag"] = v.rerollDataBag;
   }
 
-  inline void from_json(const nlohmann::json& j, LolEndOfGameGameloopPlayerInfoV1& v) {
-    v.rerollDataBag = j.at("rerollDataBag").get<LolEndOfGameRerollDataBagForClientV1>;
+  inline void from_json(const nlohmann::json& j, LolEndOfGameGameloopPlayerInfoV1_t& v) {
+    v.rerollDataBag = j.at("rerollDataBag").get<LolEndOfGameRerollDataBagForClientV1_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolEndOfGameGameloopPlayerInfoV1_HPP

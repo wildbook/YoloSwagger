@@ -1,28 +1,24 @@
-#ifndef SWAGGER_TYPES_LolLoginLoginQueue_HPP
-#define SWAGGER_TYPES_LolLoginLoginQueue_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLoginLoginQueue {
-    // 
-    uint64_t approximateWaitTimeSeconds;
-    // 
-    bool isPositionCapped;
-    // 
+  struct LolLoginLoginQueue_t {
+    std::optional<uint64_t> approximateWaitTimeSeconds;
     uint64_t estimatedPositionInQueue;
+    bool isPositionCapped;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLoginLoginQueue& v) {
-    j["approximateWaitTimeSeconds"] = v.approximateWaitTimeSeconds;
-    j["isPositionCapped"] = v.isPositionCapped;
+  inline void to_json(nlohmann::json& j, const LolLoginLoginQueue_t& v) {
+    if(v.approximateWaitTimeSeconds)
+      j["approximateWaitTimeSeconds"] = *v.approximateWaitTimeSeconds;
     j["estimatedPositionInQueue"] = v.estimatedPositionInQueue;
+    j["isPositionCapped"] = v.isPositionCapped;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLoginLoginQueue& v) {
-    v.approximateWaitTimeSeconds = j.at("approximateWaitTimeSeconds").get<uint64_t>;
-    v.isPositionCapped = j.at("isPositionCapped").get<bool>;
-    v.estimatedPositionInQueue = j.at("estimatedPositionInQueue").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolLoginLoginQueue_t& v) {
+    if(auto it = j.find("approximateWaitTimeSeconds"); it != j.end() !it->is_null())
+      v.approximateWaitTimeSeconds = it->get<uint64_t>();
+    v.estimatedPositionInQueue = j.at("estimatedPositionInQueue").get<uint64_t>();
+    v.isPositionCapped = j.at("isPositionCapped").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLoginLoginQueue_HPP

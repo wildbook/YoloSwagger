@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolReplaysGameflowWatchPhase_HPP
-#define SWAGGER_TYPES_LolReplaysGameflowWatchPhase_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolReplaysGameflowWatchPhase {
-    // 
-    None = 0,
-    // 
-    WatchStarted = 1,
-    // 
-    WatchInProgress = 2,
-    // 
-    WatchFailedToLaunch = 3,
+  enum class LolReplaysGameflowWatchPhase_t {
+    None_E = 0,
+    WatchInProgress_E = 2,
+    WatchFailedToLaunch_E = 3,
+    WatchStarted_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LolReplaysGameflowWatchPhase& v) {
+  inline void to_json(nlohmann::json& j, const LolReplaysGameflowWatchPhase_t& v) {
     switch(v) {
-      case LolReplaysGameflowWatchPhase::None:
+      case LolReplaysGameflowWatchPhase_t::None_E:
         j = "None";
       break;
-      case LolReplaysGameflowWatchPhase::WatchStarted:
-        j = "WatchStarted";
-      break;
-      case LolReplaysGameflowWatchPhase::WatchInProgress:
+      case LolReplaysGameflowWatchPhase_t::WatchInProgress_E:
         j = "WatchInProgress";
       break;
-      case LolReplaysGameflowWatchPhase::WatchFailedToLaunch:
+      case LolReplaysGameflowWatchPhase_t::WatchFailedToLaunch_E:
         j = "WatchFailedToLaunch";
+      break;
+      case LolReplaysGameflowWatchPhase_t::WatchStarted_E:
+        j = "WatchStarted";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolReplaysGameflowWatchPhase& v) {
+  inline void from_json(const nlohmann::json& j, LolReplaysGameflowWatchPhase_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "None"){
-      v = LolReplaysGameflowWatchPhase::None;
-      return;
-    }
-    if(s == "WatchStarted"){
-      v = LolReplaysGameflowWatchPhase::WatchStarted;
+      v = LolReplaysGameflowWatchPhase_t::None_E;
       return;
     }
     if(s == "WatchInProgress"){
-      v = LolReplaysGameflowWatchPhase::WatchInProgress;
+      v = LolReplaysGameflowWatchPhase_t::WatchInProgress_E;
       return;
     }
     if(s == "WatchFailedToLaunch"){
-      v = LolReplaysGameflowWatchPhase::WatchFailedToLaunch;
+      v = LolReplaysGameflowWatchPhase_t::WatchFailedToLaunch_E;
+      return;
+    }
+    if(s == "WatchStarted"){
+      v = LolReplaysGameflowWatchPhase_t::WatchStarted_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolReplaysGameflowWatchPhase_HPP

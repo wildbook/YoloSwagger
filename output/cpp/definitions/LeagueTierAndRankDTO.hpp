@@ -1,39 +1,31 @@
-#ifndef SWAGGER_TYPES_LeagueTierAndRankDTO_HPP
-#define SWAGGER_TYPES_LeagueTierAndRankDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LeaguesLcdsQueueType.hpp"
-#include "LeaguesLcdsLeagueTier.hpp"
 #include "LeaguesLcdsLeagueRank.hpp"
+#include "LeaguesLcdsLeagueTier.hpp"
 namespace leagueapi {
-  // 
-  struct LeagueTierAndRankDTO {
-    // 
-    LeaguesLcdsLeagueTier tier;
-    // 
+  struct LeagueTierAndRankDTO_t {
+    LeaguesLcdsLeagueRank_t rank;
+    LeaguesLcdsLeagueTier_t tier;
     std::string playerOrTeamName;
-    // 
-    LeaguesLcdsQueueType queueType;
-    // 
-    LeaguesLcdsLeagueRank rank;
-    // 
+    LeaguesLcdsQueueType_t queueType;
     std::string playerOrTeamId;
   };
 
-  inline void to_json(nlohmann::json& j, const LeagueTierAndRankDTO& v) {
+  inline void to_json(nlohmann::json& j, const LeagueTierAndRankDTO_t& v) {
+    j["rank"] = v.rank;
     j["tier"] = v.tier;
     j["playerOrTeamName"] = v.playerOrTeamName;
     j["queueType"] = v.queueType;
-    j["rank"] = v.rank;
     j["playerOrTeamId"] = v.playerOrTeamId;
   }
 
-  inline void from_json(const nlohmann::json& j, LeagueTierAndRankDTO& v) {
-    v.tier = j.at("tier").get<LeaguesLcdsLeagueTier>;
-    v.playerOrTeamName = j.at("playerOrTeamName").get<std::string>;
-    v.queueType = j.at("queueType").get<LeaguesLcdsQueueType>;
-    v.rank = j.at("rank").get<LeaguesLcdsLeagueRank>;
-    v.playerOrTeamId = j.at("playerOrTeamId").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LeagueTierAndRankDTO_t& v) {
+    v.rank = j.at("rank").get<LeaguesLcdsLeagueRank_t>();
+    v.tier = j.at("tier").get<LeaguesLcdsLeagueTier_t>();
+    v.playerOrTeamName = j.at("playerOrTeamName").get<std::string>();
+    v.queueType = j.at("queueType").get<LeaguesLcdsQueueType_t>();
+    v.playerOrTeamId = j.at("playerOrTeamId").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LeagueTierAndRankDTO_HPP

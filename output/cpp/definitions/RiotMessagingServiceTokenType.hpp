@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_RiotMessagingServiceTokenType_HPP
-#define SWAGGER_TYPES_RiotMessagingServiceTokenType_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class RiotMessagingServiceTokenType {
-    // 
-    Access = 1,
-    // 
-    Unavailable = 0,
-    // 
-    Identity = 2,
+  enum class RiotMessagingServiceTokenType_t {
+    Access_E = 1,
+    Unavailable_E = 0,
+    Identity_E = 2,
   };
 
-  inline void to_json(nlohmann::json& j, const RiotMessagingServiceTokenType& v) {
+  inline void to_json(nlohmann::json& j, const RiotMessagingServiceTokenType_t& v) {
     switch(v) {
-      case RiotMessagingServiceTokenType::Access:
+      case RiotMessagingServiceTokenType_t::Access_E:
         j = "Access";
       break;
-      case RiotMessagingServiceTokenType::Unavailable:
+      case RiotMessagingServiceTokenType_t::Unavailable_E:
         j = "Unavailable";
       break;
-      case RiotMessagingServiceTokenType::Identity:
+      case RiotMessagingServiceTokenType_t::Identity_E:
         j = "Identity";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, RiotMessagingServiceTokenType& v) {
+  inline void from_json(const nlohmann::json& j, RiotMessagingServiceTokenType_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "Access"){
-      v = RiotMessagingServiceTokenType::Access;
+      v = RiotMessagingServiceTokenType_t::Access_E;
       return;
     }
     if(s == "Unavailable"){
-      v = RiotMessagingServiceTokenType::Unavailable;
+      v = RiotMessagingServiceTokenType_t::Unavailable_E;
       return;
     }
     if(s == "Identity"){
-      v = RiotMessagingServiceTokenType::Identity;
+      v = RiotMessagingServiceTokenType_t::Identity_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_RiotMessagingServiceTokenType_HPP

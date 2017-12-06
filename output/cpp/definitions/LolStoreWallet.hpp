@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolStoreWallet_HPP
-#define SWAGGER_TYPES_LolStoreWallet_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolStoreWallet {
-    // 
-    int64_t ip;
-    // 
+  struct LolStoreWallet_t {
     int64_t rp;
+    int64_t ip;
   };
 
-  inline void to_json(nlohmann::json& j, const LolStoreWallet& v) {
-    j["ip"] = v.ip;
+  inline void to_json(nlohmann::json& j, const LolStoreWallet_t& v) {
     j["rp"] = v.rp;
+    j["ip"] = v.ip;
   }
 
-  inline void from_json(const nlohmann::json& j, LolStoreWallet& v) {
-    v.ip = j.at("ip").get<int64_t>;
-    v.rp = j.at("rp").get<int64_t>;
+  inline void from_json(const nlohmann::json& j, LolStoreWallet_t& v) {
+    v.rp = j.at("rp").get<int64_t>();
+    v.ip = j.at("ip").get<int64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolStoreWallet_HPP

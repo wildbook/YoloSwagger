@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolGameQueuesLoginDataPacket_HPP
-#define SWAGGER_TYPES_LolGameQueuesLoginDataPacket_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolGameQueuesQueueGameTypeConfig.hpp"
 namespace leagueapi {
-  // 
-  struct LolGameQueuesLoginDataPacket {
-    // 
-    std::vector<LolGameQueuesQueueGameTypeConfig> gameTypeConfigs;
+  struct LolGameQueuesLoginDataPacket_t {
+    std::vector<LolGameQueuesQueueGameTypeConfig_t> gameTypeConfigs;
   };
 
-  inline void to_json(nlohmann::json& j, const LolGameQueuesLoginDataPacket& v) {
+  inline void to_json(nlohmann::json& j, const LolGameQueuesLoginDataPacket_t& v) {
     j["gameTypeConfigs"] = v.gameTypeConfigs;
   }
 
-  inline void from_json(const nlohmann::json& j, LolGameQueuesLoginDataPacket& v) {
-    v.gameTypeConfigs = j.at("gameTypeConfigs").get<std::vector<LolGameQueuesQueueGameTypeConfig>>;
+  inline void from_json(const nlohmann::json& j, LolGameQueuesLoginDataPacket_t& v) {
+    v.gameTypeConfigs = j.at("gameTypeConfigs").get<std::vector<LolGameQueuesQueueGameTypeConfig_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolGameQueuesLoginDataPacket_HPP

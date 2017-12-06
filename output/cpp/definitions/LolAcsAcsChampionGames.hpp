@@ -1,32 +1,25 @@
-#ifndef SWAGGER_TYPES_LolAcsAcsChampionGames_HPP
-#define SWAGGER_TYPES_LolAcsAcsChampionGames_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolAcsAcsChampionGames {
-    // 
-    int32_t queue;
-    // 
-    std::string role;
-    // 
-    std::string lane;
-    // 
+  struct LolAcsAcsChampionGames_t {
     int32_t championId;
+    std::string role;
+    int32_t queue;
+    std::string lane;
   };
 
-  inline void to_json(nlohmann::json& j, const LolAcsAcsChampionGames& v) {
-    j["queue"] = v.queue;
-    j["role"] = v.role;
-    j["lane"] = v.lane;
+  inline void to_json(nlohmann::json& j, const LolAcsAcsChampionGames_t& v) {
     j["championId"] = v.championId;
+    j["role"] = v.role;
+    j["queue"] = v.queue;
+    j["lane"] = v.lane;
   }
 
-  inline void from_json(const nlohmann::json& j, LolAcsAcsChampionGames& v) {
-    v.queue = j.at("queue").get<int32_t>;
-    v.role = j.at("role").get<std::string>;
-    v.lane = j.at("lane").get<std::string>;
-    v.championId = j.at("championId").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LolAcsAcsChampionGames_t& v) {
+    v.championId = j.at("championId").get<int32_t>();
+    v.role = j.at("role").get<std::string>();
+    v.queue = j.at("queue").get<int32_t>();
+    v.lane = j.at("lane").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolAcsAcsChampionGames_HPP

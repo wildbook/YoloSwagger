@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_RiotMessagingServiceState_HPP
-#define SWAGGER_TYPES_RiotMessagingServiceState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class RiotMessagingServiceState {
-    // 
-    Connecting = 3,
-    // 
-    Connected = 5,
-    // 
-    Disconnected = 1,
-    // 
-    Disconnecting = 0,
+  enum class RiotMessagingServiceState_t {
+    Disconnecting_E = 0,
+    Disconnected_E = 1,
+    Connected_E = 5,
+    Connecting_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const RiotMessagingServiceState& v) {
+  inline void to_json(nlohmann::json& j, const RiotMessagingServiceState_t& v) {
     switch(v) {
-      case RiotMessagingServiceState::Connecting:
-        j = "Connecting";
+      case RiotMessagingServiceState_t::Disconnecting_E:
+        j = "Disconnecting";
       break;
-      case RiotMessagingServiceState::Connected:
-        j = "Connected";
-      break;
-      case RiotMessagingServiceState::Disconnected:
+      case RiotMessagingServiceState_t::Disconnected_E:
         j = "Disconnected";
       break;
-      case RiotMessagingServiceState::Disconnecting:
-        j = "Disconnecting";
+      case RiotMessagingServiceState_t::Connected_E:
+        j = "Connected";
+      break;
+      case RiotMessagingServiceState_t::Connecting_E:
+        j = "Connecting";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, RiotMessagingServiceState& v) {
+  inline void from_json(const nlohmann::json& j, RiotMessagingServiceState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "Connecting"){
-      v = RiotMessagingServiceState::Connecting;
-      return;
-    }
-    if(s == "Connected"){
-      v = RiotMessagingServiceState::Connected;
+    if(s == "Disconnecting"){
+      v = RiotMessagingServiceState_t::Disconnecting_E;
       return;
     }
     if(s == "Disconnected"){
-      v = RiotMessagingServiceState::Disconnected;
+      v = RiotMessagingServiceState_t::Disconnected_E;
       return;
     }
-    if(s == "Disconnecting"){
-      v = RiotMessagingServiceState::Disconnecting;
+    if(s == "Connected"){
+      v = RiotMessagingServiceState_t::Connected_E;
+      return;
+    }
+    if(s == "Connecting"){
+      v = RiotMessagingServiceState_t::Connecting_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_RiotMessagingServiceState_HPP

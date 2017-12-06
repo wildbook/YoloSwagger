@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_RecofrienderContactCountResource_HPP
-#define SWAGGER_TYPES_RecofrienderContactCountResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct RecofrienderContactCountResource {
-    // 
+  struct RecofrienderContactCountResource_t {
     uint64_t count;
   };
 
-  inline void to_json(nlohmann::json& j, const RecofrienderContactCountResource& v) {
+  inline void to_json(nlohmann::json& j, const RecofrienderContactCountResource_t& v) {
     j["count"] = v.count;
   }
 
-  inline void from_json(const nlohmann::json& j, RecofrienderContactCountResource& v) {
-    v.count = j.at("count").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, RecofrienderContactCountResource_t& v) {
+    v.count = j.at("count").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_RecofrienderContactCountResource_HPP

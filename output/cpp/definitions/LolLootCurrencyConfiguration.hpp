@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolLootCurrencyConfiguration_HPP
-#define SWAGGER_TYPES_LolLootCurrencyConfiguration_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLootCurrencyConfiguration {
-    // 
+  struct LolLootCurrencyConfiguration_t {
     std::vector<std::string> currenciesUsingCapWallets;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLootCurrencyConfiguration& v) {
+  inline void to_json(nlohmann::json& j, const LolLootCurrencyConfiguration_t& v) {
     j["currenciesUsingCapWallets"] = v.currenciesUsingCapWallets;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLootCurrencyConfiguration& v) {
-    v.currenciesUsingCapWallets = j.at("currenciesUsingCapWallets").get<std::vector<std::string>>;
+  inline void from_json(const nlohmann::json& j, LolLootCurrencyConfiguration_t& v) {
+    v.currenciesUsingCapWallets = j.at("currenciesUsingCapWallets").get<std::vector<std::string>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLootCurrencyConfiguration_HPP

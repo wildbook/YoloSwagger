@@ -1,33 +1,26 @@
-#ifndef SWAGGER_TYPES_LolItemSetsItemSetBlock_HPP
-#define SWAGGER_TYPES_LolItemSetsItemSetBlock_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolItemSetsItemSetItem.hpp"
 namespace leagueapi {
-  // 
-  struct LolItemSetsItemSetBlock {
-    // 
-    std::vector<LolItemSetsItemSetItem> items;
-    // 
-    std::string hideIfSummonerSpell;
-    // 
-    std::string type;
-    // 
+  struct LolItemSetsItemSetBlock_t {
     std::string showIfSummonerSpell;
+    std::vector<LolItemSetsItemSetItem_t> items;
+    std::string type;
+    std::string hideIfSummonerSpell;
   };
 
-  inline void to_json(nlohmann::json& j, const LolItemSetsItemSetBlock& v) {
-    j["items"] = v.items;
-    j["hideIfSummonerSpell"] = v.hideIfSummonerSpell;
-    j["type"] = v.type;
+  inline void to_json(nlohmann::json& j, const LolItemSetsItemSetBlock_t& v) {
     j["showIfSummonerSpell"] = v.showIfSummonerSpell;
+    j["items"] = v.items;
+    j["type"] = v.type;
+    j["hideIfSummonerSpell"] = v.hideIfSummonerSpell;
   }
 
-  inline void from_json(const nlohmann::json& j, LolItemSetsItemSetBlock& v) {
-    v.items = j.at("items").get<std::vector<LolItemSetsItemSetItem>>;
-    v.hideIfSummonerSpell = j.at("hideIfSummonerSpell").get<std::string>;
-    v.type = j.at("type").get<std::string>;
-    v.showIfSummonerSpell = j.at("showIfSummonerSpell").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolItemSetsItemSetBlock_t& v) {
+    v.showIfSummonerSpell = j.at("showIfSummonerSpell").get<std::string>();
+    v.items = j.at("items").get<std::vector<LolItemSetsItemSetItem_t>>();
+    v.type = j.at("type").get<std::string>();
+    v.hideIfSummonerSpell = j.at("hideIfSummonerSpell").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolItemSetsItemSetBlock_HPP

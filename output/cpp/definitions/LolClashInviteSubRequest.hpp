@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolClashInviteSubRequest_HPP
-#define SWAGGER_TYPES_LolClashInviteSubRequest_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolClashInviteSubRequest {
-    // 
+  struct LolClashInviteSubRequest_t {
     uint64_t replacedSummonerId;
-    // 
     uint64_t substituteSummonerId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashInviteSubRequest& v) {
+  inline void to_json(nlohmann::json& j, const LolClashInviteSubRequest_t& v) {
     j["replacedSummonerId"] = v.replacedSummonerId;
     j["substituteSummonerId"] = v.substituteSummonerId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashInviteSubRequest& v) {
-    v.replacedSummonerId = j.at("replacedSummonerId").get<uint64_t>;
-    v.substituteSummonerId = j.at("substituteSummonerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolClashInviteSubRequest_t& v) {
+    v.replacedSummonerId = j.at("replacedSummonerId").get<uint64_t>();
+    v.substituteSummonerId = j.at("substituteSummonerId").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashInviteSubRequest_HPP

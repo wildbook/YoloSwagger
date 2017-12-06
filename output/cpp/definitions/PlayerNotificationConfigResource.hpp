@@ -1,20 +1,18 @@
-#ifndef SWAGGER_TYPES_PlayerNotificationConfigResource_HPP
-#define SWAGGER_TYPES_PlayerNotificationConfigResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct PlayerNotificationConfigResource {
-    // 
-    uint64_t ExpirationCheckFrequency;
+  struct PlayerNotificationConfigResource_t {
+    std::optional<uint64_t> ExpirationCheckFrequency;
   };
 
-  inline void to_json(nlohmann::json& j, const PlayerNotificationConfigResource& v) {
-    j["ExpirationCheckFrequency"] = v.ExpirationCheckFrequency;
+  inline void to_json(nlohmann::json& j, const PlayerNotificationConfigResource_t& v) {
+    if(v.ExpirationCheckFrequency)
+      j["ExpirationCheckFrequency"] = *v.ExpirationCheckFrequency;
   }
 
-  inline void from_json(const nlohmann::json& j, PlayerNotificationConfigResource& v) {
-    v.ExpirationCheckFrequency = j.at("ExpirationCheckFrequency").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, PlayerNotificationConfigResource_t& v) {
+    if(auto it = j.find("ExpirationCheckFrequency"); it != j.end() !it->is_null())
+      v.ExpirationCheckFrequency = it->get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_PlayerNotificationConfigResource_HPP

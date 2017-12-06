@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolGeoinfoGeoInfoConfig_HPP
-#define SWAGGER_TYPES_LolGeoinfoGeoInfoConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolGeoinfoGeoInfoConfig {
-    // 
+  struct LolGeoinfoGeoInfoConfig_t {
     bool Enabled;
   };
 
-  inline void to_json(nlohmann::json& j, const LolGeoinfoGeoInfoConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolGeoinfoGeoInfoConfig_t& v) {
     j["Enabled"] = v.Enabled;
   }
 
-  inline void from_json(const nlohmann::json& j, LolGeoinfoGeoInfoConfig& v) {
-    v.Enabled = j.at("Enabled").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolGeoinfoGeoInfoConfig_t& v) {
+    v.Enabled = j.at("Enabled").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolGeoinfoGeoInfoConfig_HPP

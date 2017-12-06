@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_SanitizerContainsSanitizedResponse_HPP
-#define SWAGGER_TYPES_SanitizerContainsSanitizedResponse_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct SanitizerContainsSanitizedResponse {
-    // 
+  struct SanitizerContainsSanitizedResponse_t {
     bool contains;
   };
 
-  inline void to_json(nlohmann::json& j, const SanitizerContainsSanitizedResponse& v) {
+  inline void to_json(nlohmann::json& j, const SanitizerContainsSanitizedResponse_t& v) {
     j["contains"] = v.contains;
   }
 
-  inline void from_json(const nlohmann::json& j, SanitizerContainsSanitizedResponse& v) {
-    v.contains = j.at("contains").get<bool>;
+  inline void from_json(const nlohmann::json& j, SanitizerContainsSanitizedResponse_t& v) {
+    v.contains = j.at("contains").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_SanitizerContainsSanitizedResponse_HPP

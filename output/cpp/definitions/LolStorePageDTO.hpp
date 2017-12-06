@@ -1,35 +1,28 @@
-#ifndef SWAGGER_TYPES_LolStorePageDTO_HPP
-#define SWAGGER_TYPES_LolStorePageDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolStorePageGroupingDTO.hpp"
-#include "LolStorePlayer.hpp"
 #include "LolStoreCatalogItem.hpp"
+#include "LolStorePlayer.hpp"
 namespace leagueapi {
-  // 
-  struct LolStorePageDTO {
-    // 
-    LolStorePlayer Player;
-    // 
-    std::vector<LolStoreCatalogItem> catalog;
-    // 
+  struct LolStorePageDTO_t {
+    std::map<std::string, LolStorePageGroupingDTO_t> itemGroups;
     std::vector<std::string> groupOrder;
-    // 
-    std::map<std::string, LolStorePageGroupingDTO> itemGroups;
+    LolStorePlayer_t Player;
+    std::vector<LolStoreCatalogItem_t> catalog;
   };
 
-  inline void to_json(nlohmann::json& j, const LolStorePageDTO& v) {
+  inline void to_json(nlohmann::json& j, const LolStorePageDTO_t& v) {
+    j["itemGroups"] = v.itemGroups;
+    j["groupOrder"] = v.groupOrder;
     j["Player"] = v.Player;
     j["catalog"] = v.catalog;
-    j["groupOrder"] = v.groupOrder;
-    j["itemGroups"] = v.itemGroups;
   }
 
-  inline void from_json(const nlohmann::json& j, LolStorePageDTO& v) {
-    v.Player = j.at("Player").get<LolStorePlayer>;
-    v.catalog = j.at("catalog").get<std::vector<LolStoreCatalogItem>>;
-    v.groupOrder = j.at("groupOrder").get<std::vector<std::string>>;
-    v.itemGroups = j.at("itemGroups").get<std::map<std::string, LolStorePageGroupingDTO>>;
+  inline void from_json(const nlohmann::json& j, LolStorePageDTO_t& v) {
+    v.itemGroups = j.at("itemGroups").get<std::map<std::string, LolStorePageGroupingDTO_t>>();
+    v.groupOrder = j.at("groupOrder").get<std::vector<std::string>>();
+    v.Player = j.at("Player").get<LolStorePlayer_t>();
+    v.catalog = j.at("catalog").get<std::vector<LolStoreCatalogItem_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolStorePageDTO_HPP

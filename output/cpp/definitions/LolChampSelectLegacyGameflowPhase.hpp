@@ -1,145 +1,127 @@
-#ifndef SWAGGER_TYPES_LolChampSelectLegacyGameflowPhase_HPP
-#define SWAGGER_TYPES_LolChampSelectLegacyGameflowPhase_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolChampSelectLegacyGameflowPhase {
-    // 
-    CheckedIntoTournament = 3,
-    // 
-    None = 0,
-    // 
-    EndOfGame = 12,
-    // 
-    ChampSelect = 5,
-    // 
-    FailedToLaunch = 7,
-    // 
-    WaitingForStats = 10,
-    // 
-    TerminatedInError = 13,
-    // 
-    Reconnect = 9,
-    // 
-    GameStart = 6,
-    // 
-    ReadyCheck = 4,
-    // 
-    InProgress = 8,
-    // 
-    PreEndOfGame = 11,
-    // 
-    Lobby = 1,
-    // 
-    Matchmaking = 2,
+  enum class LolChampSelectLegacyGameflowPhase_t {
+    WaitingForStats_E = 10,
+    Lobby_E = 1,
+    ChampSelect_E = 5,
+    ReadyCheck_E = 4,
+    None_E = 0,
+    CheckedIntoTournament_E = 3,
+    TerminatedInError_E = 13,
+    FailedToLaunch_E = 7,
+    PreEndOfGame_E = 11,
+    Matchmaking_E = 2,
+    InProgress_E = 8,
+    Reconnect_E = 9,
+    EndOfGame_E = 12,
+    GameStart_E = 6,
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyGameflowPhase& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyGameflowPhase_t& v) {
     switch(v) {
-      case LolChampSelectLegacyGameflowPhase::CheckedIntoTournament:
-        j = "CheckedIntoTournament";
-      break;
-      case LolChampSelectLegacyGameflowPhase::None:
-        j = "None";
-      break;
-      case LolChampSelectLegacyGameflowPhase::EndOfGame:
-        j = "EndOfGame";
-      break;
-      case LolChampSelectLegacyGameflowPhase::ChampSelect:
-        j = "ChampSelect";
-      break;
-      case LolChampSelectLegacyGameflowPhase::FailedToLaunch:
-        j = "FailedToLaunch";
-      break;
-      case LolChampSelectLegacyGameflowPhase::WaitingForStats:
+      case LolChampSelectLegacyGameflowPhase_t::WaitingForStats_E:
         j = "WaitingForStats";
       break;
-      case LolChampSelectLegacyGameflowPhase::TerminatedInError:
-        j = "TerminatedInError";
-      break;
-      case LolChampSelectLegacyGameflowPhase::Reconnect:
-        j = "Reconnect";
-      break;
-      case LolChampSelectLegacyGameflowPhase::GameStart:
-        j = "GameStart";
-      break;
-      case LolChampSelectLegacyGameflowPhase::ReadyCheck:
-        j = "ReadyCheck";
-      break;
-      case LolChampSelectLegacyGameflowPhase::InProgress:
-        j = "InProgress";
-      break;
-      case LolChampSelectLegacyGameflowPhase::PreEndOfGame:
-        j = "PreEndOfGame";
-      break;
-      case LolChampSelectLegacyGameflowPhase::Lobby:
+      case LolChampSelectLegacyGameflowPhase_t::Lobby_E:
         j = "Lobby";
       break;
-      case LolChampSelectLegacyGameflowPhase::Matchmaking:
+      case LolChampSelectLegacyGameflowPhase_t::ChampSelect_E:
+        j = "ChampSelect";
+      break;
+      case LolChampSelectLegacyGameflowPhase_t::ReadyCheck_E:
+        j = "ReadyCheck";
+      break;
+      case LolChampSelectLegacyGameflowPhase_t::None_E:
+        j = "None";
+      break;
+      case LolChampSelectLegacyGameflowPhase_t::CheckedIntoTournament_E:
+        j = "CheckedIntoTournament";
+      break;
+      case LolChampSelectLegacyGameflowPhase_t::TerminatedInError_E:
+        j = "TerminatedInError";
+      break;
+      case LolChampSelectLegacyGameflowPhase_t::FailedToLaunch_E:
+        j = "FailedToLaunch";
+      break;
+      case LolChampSelectLegacyGameflowPhase_t::PreEndOfGame_E:
+        j = "PreEndOfGame";
+      break;
+      case LolChampSelectLegacyGameflowPhase_t::Matchmaking_E:
         j = "Matchmaking";
+      break;
+      case LolChampSelectLegacyGameflowPhase_t::InProgress_E:
+        j = "InProgress";
+      break;
+      case LolChampSelectLegacyGameflowPhase_t::Reconnect_E:
+        j = "Reconnect";
+      break;
+      case LolChampSelectLegacyGameflowPhase_t::EndOfGame_E:
+        j = "EndOfGame";
+      break;
+      case LolChampSelectLegacyGameflowPhase_t::GameStart_E:
+        j = "GameStart";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyGameflowPhase& v) {
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyGameflowPhase_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "CheckedIntoTournament"){
-      v = LolChampSelectLegacyGameflowPhase::CheckedIntoTournament;
-      return;
-    }
-    if(s == "None"){
-      v = LolChampSelectLegacyGameflowPhase::None;
-      return;
-    }
-    if(s == "EndOfGame"){
-      v = LolChampSelectLegacyGameflowPhase::EndOfGame;
-      return;
-    }
-    if(s == "ChampSelect"){
-      v = LolChampSelectLegacyGameflowPhase::ChampSelect;
-      return;
-    }
-    if(s == "FailedToLaunch"){
-      v = LolChampSelectLegacyGameflowPhase::FailedToLaunch;
-      return;
-    }
     if(s == "WaitingForStats"){
-      v = LolChampSelectLegacyGameflowPhase::WaitingForStats;
-      return;
-    }
-    if(s == "TerminatedInError"){
-      v = LolChampSelectLegacyGameflowPhase::TerminatedInError;
-      return;
-    }
-    if(s == "Reconnect"){
-      v = LolChampSelectLegacyGameflowPhase::Reconnect;
-      return;
-    }
-    if(s == "GameStart"){
-      v = LolChampSelectLegacyGameflowPhase::GameStart;
-      return;
-    }
-    if(s == "ReadyCheck"){
-      v = LolChampSelectLegacyGameflowPhase::ReadyCheck;
-      return;
-    }
-    if(s == "InProgress"){
-      v = LolChampSelectLegacyGameflowPhase::InProgress;
-      return;
-    }
-    if(s == "PreEndOfGame"){
-      v = LolChampSelectLegacyGameflowPhase::PreEndOfGame;
+      v = LolChampSelectLegacyGameflowPhase_t::WaitingForStats_E;
       return;
     }
     if(s == "Lobby"){
-      v = LolChampSelectLegacyGameflowPhase::Lobby;
+      v = LolChampSelectLegacyGameflowPhase_t::Lobby_E;
+      return;
+    }
+    if(s == "ChampSelect"){
+      v = LolChampSelectLegacyGameflowPhase_t::ChampSelect_E;
+      return;
+    }
+    if(s == "ReadyCheck"){
+      v = LolChampSelectLegacyGameflowPhase_t::ReadyCheck_E;
+      return;
+    }
+    if(s == "None"){
+      v = LolChampSelectLegacyGameflowPhase_t::None_E;
+      return;
+    }
+    if(s == "CheckedIntoTournament"){
+      v = LolChampSelectLegacyGameflowPhase_t::CheckedIntoTournament_E;
+      return;
+    }
+    if(s == "TerminatedInError"){
+      v = LolChampSelectLegacyGameflowPhase_t::TerminatedInError_E;
+      return;
+    }
+    if(s == "FailedToLaunch"){
+      v = LolChampSelectLegacyGameflowPhase_t::FailedToLaunch_E;
+      return;
+    }
+    if(s == "PreEndOfGame"){
+      v = LolChampSelectLegacyGameflowPhase_t::PreEndOfGame_E;
       return;
     }
     if(s == "Matchmaking"){
-      v = LolChampSelectLegacyGameflowPhase::Matchmaking;
+      v = LolChampSelectLegacyGameflowPhase_t::Matchmaking_E;
+      return;
+    }
+    if(s == "InProgress"){
+      v = LolChampSelectLegacyGameflowPhase_t::InProgress_E;
+      return;
+    }
+    if(s == "Reconnect"){
+      v = LolChampSelectLegacyGameflowPhase_t::Reconnect_E;
+      return;
+    }
+    if(s == "EndOfGame"){
+      v = LolChampSelectLegacyGameflowPhase_t::EndOfGame_E;
+      return;
+    }
+    if(s == "GameStart"){
+      v = LolChampSelectLegacyGameflowPhase_t::GameStart_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampSelectLegacyGameflowPhase_HPP

@@ -1,24 +1,21 @@
-#ifndef SWAGGER_TYPES_LolChampSelectLegacyChampSelectChatRoomDetails_HPP
-#define SWAGGER_TYPES_LolChampSelectLegacyChampSelectChatRoomDetails_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChampSelectLegacyChampSelectChatRoomDetails {
-    // 
-    std::string chatRoomPassword;
-    // 
+  struct LolChampSelectLegacyChampSelectChatRoomDetails_t {
+    std::optional<std::string> chatRoomPassword;
     std::string chatRoomName;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyChampSelectChatRoomDetails& v) {
-    j["chatRoomPassword"] = v.chatRoomPassword;
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyChampSelectChatRoomDetails_t& v) {
+    if(v.chatRoomPassword)
+      j["chatRoomPassword"] = *v.chatRoomPassword;
     j["chatRoomName"] = v.chatRoomName;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyChampSelectChatRoomDetails& v) {
-    v.chatRoomPassword = j.at("chatRoomPassword").get<std::string>;
-    v.chatRoomName = j.at("chatRoomName").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyChampSelectChatRoomDetails_t& v) {
+    if(auto it = j.find("chatRoomPassword"); it != j.end() !it->is_null())
+      v.chatRoomPassword = it->get<std::string>();
+    v.chatRoomName = j.at("chatRoomName").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampSelectLegacyChampSelectChatRoomDetails_HPP

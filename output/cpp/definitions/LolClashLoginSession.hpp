@@ -1,25 +1,22 @@
-#ifndef SWAGGER_TYPES_LolClashLoginSession_HPP
-#define SWAGGER_TYPES_LolClashLoginSession_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolClashLoginSessionState.hpp"
 namespace leagueapi {
-  // 
-  struct LolClashLoginSession {
-    // 
-    LolClashLoginSessionState state;
-    // 
-    uint64_t summonerId;
+  struct LolClashLoginSession_t {
+    std::optional<uint64_t> summonerId;
+    LolClashLoginSessionState_t state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashLoginSession& v) {
+  inline void to_json(nlohmann::json& j, const LolClashLoginSession_t& v) {
+    if(v.summonerId)
+      j["summonerId"] = *v.summonerId;
     j["state"] = v.state;
-    j["summonerId"] = v.summonerId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashLoginSession& v) {
-    v.state = j.at("state").get<LolClashLoginSessionState>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolClashLoginSession_t& v) {
+    if(auto it = j.find("summonerId"); it != j.end() !it->is_null())
+      v.summonerId = it->get<uint64_t>();
+    v.state = j.at("state").get<LolClashLoginSessionState_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashLoginSession_HPP

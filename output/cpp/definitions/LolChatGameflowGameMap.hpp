@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolChatGameflowGameMap_HPP
-#define SWAGGER_TYPES_LolChatGameflowGameMap_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChatGameflowGameMap {
-    // 
+  struct LolChatGameflowGameMap_t {
     int64_t id;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatGameflowGameMap& v) {
+  inline void to_json(nlohmann::json& j, const LolChatGameflowGameMap_t& v) {
     j["id"] = v.id;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatGameflowGameMap& v) {
-    v.id = j.at("id").get<int64_t>;
+  inline void from_json(const nlohmann::json& j, LolChatGameflowGameMap_t& v) {
+    v.id = j.at("id").get<int64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatGameflowGameMap_HPP

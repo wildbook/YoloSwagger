@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderCellsV1_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderCellsV1_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLobbyTeamBuilderCellV1.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyTeamBuilderCellsV1 {
-    // 
-    std::vector<LolLobbyTeamBuilderCellV1> alliedTeam;
-    // 
-    std::vector<LolLobbyTeamBuilderCellV1> enemyTeam;
+  struct LolLobbyTeamBuilderCellsV1_t {
+    std::vector<LolLobbyTeamBuilderCellV1_t> alliedTeam;
+    std::vector<LolLobbyTeamBuilderCellV1_t> enemyTeam;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderCellsV1& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderCellsV1_t& v) {
     j["alliedTeam"] = v.alliedTeam;
     j["enemyTeam"] = v.enemyTeam;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderCellsV1& v) {
-    v.alliedTeam = j.at("alliedTeam").get<std::vector<LolLobbyTeamBuilderCellV1>>;
-    v.enemyTeam = j.at("enemyTeam").get<std::vector<LolLobbyTeamBuilderCellV1>>;
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderCellsV1_t& v) {
+    v.alliedTeam = j.at("alliedTeam").get<std::vector<LolLobbyTeamBuilderCellV1_t>>();
+    v.enemyTeam = j.at("enemyTeam").get<std::vector<LolLobbyTeamBuilderCellV1_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderCellsV1_HPP

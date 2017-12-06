@@ -1,26 +1,25 @@
-#ifndef SWAGGER_TYPES_LolChatChatServiceDynamicClientConfig_HPP
-#define SWAGGER_TYPES_LolChatChatServiceDynamicClientConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolChatLcuSocialConfig.hpp"
 #include "LolChatChatDomainConfig.hpp"
 namespace leagueapi {
-  // 
-  struct LolChatChatServiceDynamicClientConfig {
-    // 
-    LolChatLcuSocialConfig LcuSocial;
-    // 
-    LolChatChatDomainConfig ChatDomain;
+  struct LolChatChatServiceDynamicClientConfig_t {
+    std::optional<LolChatLcuSocialConfig_t> LcuSocial;
+    std::optional<LolChatChatDomainConfig_t> ChatDomain;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatChatServiceDynamicClientConfig& v) {
-    j["LcuSocial"] = v.LcuSocial;
-    j["ChatDomain"] = v.ChatDomain;
+  inline void to_json(nlohmann::json& j, const LolChatChatServiceDynamicClientConfig_t& v) {
+    if(v.LcuSocial)
+      j["LcuSocial"] = *v.LcuSocial;
+    if(v.ChatDomain)
+      j["ChatDomain"] = *v.ChatDomain;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatChatServiceDynamicClientConfig& v) {
-    v.LcuSocial = j.at("LcuSocial").get<LolChatLcuSocialConfig>;
-    v.ChatDomain = j.at("ChatDomain").get<LolChatChatDomainConfig>;
+  inline void from_json(const nlohmann::json& j, LolChatChatServiceDynamicClientConfig_t& v) {
+    if(auto it = j.find("LcuSocial"); it != j.end() !it->is_null())
+      v.LcuSocial = it->get<LolChatLcuSocialConfig_t>();
+    if(auto it = j.find("ChatDomain"); it != j.end() !it->is_null())
+      v.ChatDomain = it->get<LolChatChatDomainConfig_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatChatServiceDynamicClientConfig_HPP

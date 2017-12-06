@@ -1,30 +1,24 @@
-#ifndef SWAGGER_TYPES_LolChampionsCollectionsChampionSkinEmblem_HPP
-#define SWAGGER_TYPES_LolChampionsCollectionsChampionSkinEmblem_HPP
+#pragma once
 #include <json.hpp>
-#include "LolChampionsCollectionsChampionSkinEmblemPath.hpp"
+#include <optional>
 #include "LolChampionsCollectionsChampionSkinEmblemPosition.hpp"
+#include "LolChampionsCollectionsChampionSkinEmblemPath.hpp"
 namespace leagueapi {
-  // 
-  struct LolChampionsCollectionsChampionSkinEmblem {
-    // 
-    LolChampionsCollectionsChampionSkinEmblemPosition positions;
-    // 
-    LolChampionsCollectionsChampionSkinEmblemPath emblemPath;
-    // 
+  struct LolChampionsCollectionsChampionSkinEmblem_t {
+    LolChampionsCollectionsChampionSkinEmblemPosition_t positions;
     std::string name;
+    LolChampionsCollectionsChampionSkinEmblemPath_t emblemPath;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionSkinEmblem& v) {
+  inline void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionSkinEmblem_t& v) {
     j["positions"] = v.positions;
-    j["emblemPath"] = v.emblemPath;
     j["name"] = v.name;
+    j["emblemPath"] = v.emblemPath;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionSkinEmblem& v) {
-    v.positions = j.at("positions").get<LolChampionsCollectionsChampionSkinEmblemPosition>;
-    v.emblemPath = j.at("emblemPath").get<LolChampionsCollectionsChampionSkinEmblemPath>;
-    v.name = j.at("name").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionSkinEmblem_t& v) {
+    v.positions = j.at("positions").get<LolChampionsCollectionsChampionSkinEmblemPosition_t>();
+    v.name = j.at("name").get<std::string>();
+    v.emblemPath = j.at("emblemPath").get<LolChampionsCollectionsChampionSkinEmblemPath_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampionsCollectionsChampionSkinEmblem_HPP

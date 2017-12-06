@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolClubsPublicClubServiceTag_HPP
-#define SWAGGER_TYPES_LolClubsPublicClubServiceTag_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolClubsPublicClubServiceTag {
-    // 
-    std::string tag;
-    // 
-    std::string name;
-    // 
+  struct LolClubsPublicClubServiceTag_t {
     uint64_t summonerId;
+    std::string name;
+    std::string tag;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClubsPublicClubServiceTag& v) {
-    j["tag"] = v.tag;
-    j["name"] = v.name;
+  inline void to_json(nlohmann::json& j, const LolClubsPublicClubServiceTag_t& v) {
     j["summonerId"] = v.summonerId;
+    j["name"] = v.name;
+    j["tag"] = v.tag;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClubsPublicClubServiceTag& v) {
-    v.tag = j.at("tag").get<std::string>;
-    v.name = j.at("name").get<std::string>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolClubsPublicClubServiceTag_t& v) {
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.name = j.at("name").get<std::string>();
+    v.tag = j.at("tag").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClubsPublicClubServiceTag_HPP

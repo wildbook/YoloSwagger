@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_ActiveBoostsLcdsStoreFulfillmentNotification_HPP
-#define SWAGGER_TYPES_ActiveBoostsLcdsStoreFulfillmentNotification_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct ActiveBoostsLcdsStoreFulfillmentNotification {
-    // 
+  struct ActiveBoostsLcdsStoreFulfillmentNotification_t {
     std::string inventoryType;
-    // 
     nlohmann::json data;
   };
 
-  inline void to_json(nlohmann::json& j, const ActiveBoostsLcdsStoreFulfillmentNotification& v) {
+  inline void to_json(nlohmann::json& j, const ActiveBoostsLcdsStoreFulfillmentNotification_t& v) {
     j["inventoryType"] = v.inventoryType;
     j["data"] = v.data;
   }
 
-  inline void from_json(const nlohmann::json& j, ActiveBoostsLcdsStoreFulfillmentNotification& v) {
-    v.inventoryType = j.at("inventoryType").get<std::string>;
-    v.data = j.at("data").get<nlohmann::json>;
+  inline void from_json(const nlohmann::json& j, ActiveBoostsLcdsStoreFulfillmentNotification_t& v) {
+    v.inventoryType = j.at("inventoryType").get<std::string>();
+    v.data = j.at("data").get<nlohmann::json>();
   }
-
 }
-#endif // SWAGGER_TYPES_ActiveBoostsLcdsStoreFulfillmentNotification_HPP

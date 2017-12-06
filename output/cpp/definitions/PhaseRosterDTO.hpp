@@ -1,29 +1,25 @@
-#ifndef SWAGGER_TYPES_PhaseRosterDTO_HPP
-#define SWAGGER_TYPES_PhaseRosterDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "Bracket.hpp"
 namespace leagueapi {
-  // 
-  struct PhaseRosterDTO {
-    // 
-    Bracket bracketDTO;
-    // 
+  struct PhaseRosterDTO_t {
     int32_t period;
-    // 
+    std::optional<Bracket_t> bracketDTO;
     int64_t phaseId;
   };
 
-  inline void to_json(nlohmann::json& j, const PhaseRosterDTO& v) {
-    j["bracketDTO"] = v.bracketDTO;
+  inline void to_json(nlohmann::json& j, const PhaseRosterDTO_t& v) {
     j["period"] = v.period;
+    if(v.bracketDTO)
+      j["bracketDTO"] = *v.bracketDTO;
     j["phaseId"] = v.phaseId;
   }
 
-  inline void from_json(const nlohmann::json& j, PhaseRosterDTO& v) {
-    v.bracketDTO = j.at("bracketDTO").get<Bracket>;
-    v.period = j.at("period").get<int32_t>;
-    v.phaseId = j.at("phaseId").get<int64_t>;
+  inline void from_json(const nlohmann::json& j, PhaseRosterDTO_t& v) {
+    v.period = j.at("period").get<int32_t>();
+    if(auto it = j.find("bracketDTO"); it != j.end() !it->is_null())
+      v.bracketDTO = it->get<Bracket_t>();
+    v.phaseId = j.at("phaseId").get<int64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_PhaseRosterDTO_HPP

@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_SpectateGameInfo_HPP
-#define SWAGGER_TYPES_SpectateGameInfo_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct SpectateGameInfo {
-    // 
-    std::string dropInSpectateGameId;
-    // 
+  struct SpectateGameInfo_t {
     std::string allowObserveMode;
-    // 
     std::string gameQueueType;
+    std::string dropInSpectateGameId;
   };
 
-  inline void to_json(nlohmann::json& j, const SpectateGameInfo& v) {
-    j["dropInSpectateGameId"] = v.dropInSpectateGameId;
+  inline void to_json(nlohmann::json& j, const SpectateGameInfo_t& v) {
     j["allowObserveMode"] = v.allowObserveMode;
     j["gameQueueType"] = v.gameQueueType;
+    j["dropInSpectateGameId"] = v.dropInSpectateGameId;
   }
 
-  inline void from_json(const nlohmann::json& j, SpectateGameInfo& v) {
-    v.dropInSpectateGameId = j.at("dropInSpectateGameId").get<std::string>;
-    v.allowObserveMode = j.at("allowObserveMode").get<std::string>;
-    v.gameQueueType = j.at("gameQueueType").get<std::string>;
+  inline void from_json(const nlohmann::json& j, SpectateGameInfo_t& v) {
+    v.allowObserveMode = j.at("allowObserveMode").get<std::string>();
+    v.gameQueueType = j.at("gameQueueType").get<std::string>();
+    v.dropInSpectateGameId = j.at("dropInSpectateGameId").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_SpectateGameInfo_HPP

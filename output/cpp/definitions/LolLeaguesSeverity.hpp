@@ -1,37 +1,31 @@
-#ifndef SWAGGER_TYPES_LolLeaguesSeverity_HPP
-#define SWAGGER_TYPES_LolLeaguesSeverity_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLeaguesSeverity {
-    // 
-    WARNING = 0,
-    // 
-    ALERT = 1,
+  enum class LolLeaguesSeverity_t {
+    ALERT_E = 1,
+    WARNING_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLeaguesSeverity& v) {
+  inline void to_json(nlohmann::json& j, const LolLeaguesSeverity_t& v) {
     switch(v) {
-      case LolLeaguesSeverity::WARNING:
-        j = "WARNING";
-      break;
-      case LolLeaguesSeverity::ALERT:
+      case LolLeaguesSeverity_t::ALERT_E:
         j = "ALERT";
       break;
+      case LolLeaguesSeverity_t::WARNING_E:
+        j = "WARNING";
+      break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLeaguesSeverity& v) {
+  inline void from_json(const nlohmann::json& j, LolLeaguesSeverity_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "WARNING"){
-      v = LolLeaguesSeverity::WARNING;
+    if(s == "ALERT"){
+      v = LolLeaguesSeverity_t::ALERT_E;
       return;
     }
-    if(s == "ALERT"){
-      v = LolLeaguesSeverity::ALERT;
+    if(s == "WARNING"){
+      v = LolLeaguesSeverity_t::WARNING_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLeaguesSeverity_HPP

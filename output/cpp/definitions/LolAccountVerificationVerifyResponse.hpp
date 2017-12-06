@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolAccountVerificationVerifyResponse_HPP
-#define SWAGGER_TYPES_LolAccountVerificationVerifyResponse_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolAccountVerificationVerifyResponse {
-    // 
-    int32_t status;
-    // 
+  struct LolAccountVerificationVerifyResponse_t {
     std::string message;
-    // 
     bool success;
+    int32_t status;
   };
 
-  inline void to_json(nlohmann::json& j, const LolAccountVerificationVerifyResponse& v) {
-    j["status"] = v.status;
+  inline void to_json(nlohmann::json& j, const LolAccountVerificationVerifyResponse_t& v) {
     j["message"] = v.message;
     j["success"] = v.success;
+    j["status"] = v.status;
   }
 
-  inline void from_json(const nlohmann::json& j, LolAccountVerificationVerifyResponse& v) {
-    v.status = j.at("status").get<int32_t>;
-    v.message = j.at("message").get<std::string>;
-    v.success = j.at("success").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolAccountVerificationVerifyResponse_t& v) {
+    v.message = j.at("message").get<std::string>();
+    v.success = j.at("success").get<bool>();
+    v.status = j.at("status").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolAccountVerificationVerifyResponse_HPP

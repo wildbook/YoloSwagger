@@ -1,24 +1,23 @@
-#ifndef SWAGGER_TYPES_LolLobbyLobbyCustomJoinParameters_HPP
-#define SWAGGER_TYPES_LolLobbyLobbyCustomJoinParameters_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyLobbyCustomJoinParameters {
-    // 
-    std::string password;
-    // 
-    bool asSpectator;
+  struct LolLobbyLobbyCustomJoinParameters_t {
+    std::optional<bool> asSpectator;
+    std::optional<std::string> password;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyLobbyCustomJoinParameters& v) {
-    j["password"] = v.password;
-    j["asSpectator"] = v.asSpectator;
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyCustomJoinParameters_t& v) {
+    if(v.asSpectator)
+      j["asSpectator"] = *v.asSpectator;
+    if(v.password)
+      j["password"] = *v.password;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyLobbyCustomJoinParameters& v) {
-    v.password = j.at("password").get<std::string>;
-    v.asSpectator = j.at("asSpectator").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyCustomJoinParameters_t& v) {
+    if(auto it = j.find("asSpectator"); it != j.end() !it->is_null())
+      v.asSpectator = it->get<bool>();
+    if(auto it = j.find("password"); it != j.end() !it->is_null())
+      v.password = it->get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyLobbyCustomJoinParameters_HPP

@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_RecofrienderFriendState_HPP
-#define SWAGGER_TYPES_RecofrienderFriendState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class RecofrienderFriendState {
-    // 
-    NONE = 0,
-    // 
-    FRIEND = 1,
-    // 
-    BLOCKED = 2,
+  enum class RecofrienderFriendState_t {
+    NONE_E = 0,
+    FRIEND_E = 1,
+    BLOCKED_E = 2,
   };
 
-  inline void to_json(nlohmann::json& j, const RecofrienderFriendState& v) {
+  inline void to_json(nlohmann::json& j, const RecofrienderFriendState_t& v) {
     switch(v) {
-      case RecofrienderFriendState::NONE:
+      case RecofrienderFriendState_t::NONE_E:
         j = "NONE";
       break;
-      case RecofrienderFriendState::FRIEND:
+      case RecofrienderFriendState_t::FRIEND_E:
         j = "FRIEND";
       break;
-      case RecofrienderFriendState::BLOCKED:
+      case RecofrienderFriendState_t::BLOCKED_E:
         j = "BLOCKED";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, RecofrienderFriendState& v) {
+  inline void from_json(const nlohmann::json& j, RecofrienderFriendState_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "NONE"){
-      v = RecofrienderFriendState::NONE;
+      v = RecofrienderFriendState_t::NONE_E;
       return;
     }
     if(s == "FRIEND"){
-      v = RecofrienderFriendState::FRIEND;
+      v = RecofrienderFriendState_t::FRIEND_E;
       return;
     }
     if(s == "BLOCKED"){
-      v = RecofrienderFriendState::BLOCKED;
+      v = RecofrienderFriendState_t::BLOCKED_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_RecofrienderFriendState_HPP

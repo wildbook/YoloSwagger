@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolAccountVerificationLoginSessionState_HPP
-#define SWAGGER_TYPES_LolAccountVerificationLoginSessionState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolAccountVerificationLoginSessionState {
-    // 
-    LOGGING_OUT = 2,
-    // 
-    IN_PROGRESS = 0,
-    // 
-    SUCCEEDED = 1,
-    // 
-    ERROR = 3,
+  enum class LolAccountVerificationLoginSessionState_t {
+    LOGGING_OUT_E = 2,
+    SUCCEEDED_E = 1,
+    IN_PROGRESS_E = 0,
+    ERROR_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolAccountVerificationLoginSessionState& v) {
+  inline void to_json(nlohmann::json& j, const LolAccountVerificationLoginSessionState_t& v) {
     switch(v) {
-      case LolAccountVerificationLoginSessionState::LOGGING_OUT:
+      case LolAccountVerificationLoginSessionState_t::LOGGING_OUT_E:
         j = "LOGGING_OUT";
       break;
-      case LolAccountVerificationLoginSessionState::IN_PROGRESS:
-        j = "IN_PROGRESS";
-      break;
-      case LolAccountVerificationLoginSessionState::SUCCEEDED:
+      case LolAccountVerificationLoginSessionState_t::SUCCEEDED_E:
         j = "SUCCEEDED";
       break;
-      case LolAccountVerificationLoginSessionState::ERROR:
+      case LolAccountVerificationLoginSessionState_t::IN_PROGRESS_E:
+        j = "IN_PROGRESS";
+      break;
+      case LolAccountVerificationLoginSessionState_t::ERROR_E:
         j = "ERROR";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolAccountVerificationLoginSessionState& v) {
+  inline void from_json(const nlohmann::json& j, LolAccountVerificationLoginSessionState_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "LOGGING_OUT"){
-      v = LolAccountVerificationLoginSessionState::LOGGING_OUT;
-      return;
-    }
-    if(s == "IN_PROGRESS"){
-      v = LolAccountVerificationLoginSessionState::IN_PROGRESS;
+      v = LolAccountVerificationLoginSessionState_t::LOGGING_OUT_E;
       return;
     }
     if(s == "SUCCEEDED"){
-      v = LolAccountVerificationLoginSessionState::SUCCEEDED;
+      v = LolAccountVerificationLoginSessionState_t::SUCCEEDED_E;
+      return;
+    }
+    if(s == "IN_PROGRESS"){
+      v = LolAccountVerificationLoginSessionState_t::IN_PROGRESS_E;
       return;
     }
     if(s == "ERROR"){
-      v = LolAccountVerificationLoginSessionState::ERROR;
+      v = LolAccountVerificationLoginSessionState_t::ERROR_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolAccountVerificationLoginSessionState_HPP

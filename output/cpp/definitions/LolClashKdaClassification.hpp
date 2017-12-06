@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_LolClashKdaClassification_HPP
-#define SWAGGER_TYPES_LolClashKdaClassification_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolClashKdaClassification {
-    // 
-    HIGH = 2,
-    // 
-    AVERAGE = 1,
-    // 
-    LOW = 0,
+  enum class LolClashKdaClassification_t {
+    HIGH_E = 2,
+    AVERAGE_E = 1,
+    LOW_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashKdaClassification& v) {
+  inline void to_json(nlohmann::json& j, const LolClashKdaClassification_t& v) {
     switch(v) {
-      case LolClashKdaClassification::HIGH:
+      case LolClashKdaClassification_t::HIGH_E:
         j = "HIGH";
       break;
-      case LolClashKdaClassification::AVERAGE:
+      case LolClashKdaClassification_t::AVERAGE_E:
         j = "AVERAGE";
       break;
-      case LolClashKdaClassification::LOW:
+      case LolClashKdaClassification_t::LOW_E:
         j = "LOW";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashKdaClassification& v) {
+  inline void from_json(const nlohmann::json& j, LolClashKdaClassification_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "HIGH"){
-      v = LolClashKdaClassification::HIGH;
+      v = LolClashKdaClassification_t::HIGH_E;
       return;
     }
     if(s == "AVERAGE"){
-      v = LolClashKdaClassification::AVERAGE;
+      v = LolClashKdaClassification_t::AVERAGE_E;
       return;
     }
     if(s == "LOW"){
-      v = LolClashKdaClassification::LOW;
+      v = LolClashKdaClassification_t::LOW_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashKdaClassification_HPP

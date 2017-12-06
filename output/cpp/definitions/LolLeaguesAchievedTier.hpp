@@ -1,30 +1,24 @@
-#ifndef SWAGGER_TYPES_LolLeaguesAchievedTier_HPP
-#define SWAGGER_TYPES_LolLeaguesAchievedTier_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLeaguesLeagueQueueType.hpp"
 #include "LolLeaguesLeagueTier.hpp"
 namespace leagueapi {
-  // 
-  struct LolLeaguesAchievedTier {
-    // 
-    LolLeaguesLeagueTier tier;
-    // 
+  struct LolLeaguesAchievedTier_t {
     uint64_t division;
-    // 
-    LolLeaguesLeagueQueueType queueType;
+    LolLeaguesLeagueQueueType_t queueType;
+    LolLeaguesLeagueTier_t tier;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLeaguesAchievedTier& v) {
-    j["tier"] = v.tier;
+  inline void to_json(nlohmann::json& j, const LolLeaguesAchievedTier_t& v) {
     j["division"] = v.division;
     j["queueType"] = v.queueType;
+    j["tier"] = v.tier;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLeaguesAchievedTier& v) {
-    v.tier = j.at("tier").get<LolLeaguesLeagueTier>;
-    v.division = j.at("division").get<uint64_t>;
-    v.queueType = j.at("queueType").get<LolLeaguesLeagueQueueType>;
+  inline void from_json(const nlohmann::json& j, LolLeaguesAchievedTier_t& v) {
+    v.division = j.at("division").get<uint64_t>();
+    v.queueType = j.at("queueType").get<LolLeaguesLeagueQueueType_t>();
+    v.tier = j.at("tier").get<LolLeaguesLeagueTier_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLeaguesAchievedTier_HPP

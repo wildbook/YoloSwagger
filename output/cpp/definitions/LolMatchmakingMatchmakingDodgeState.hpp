@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolMatchmakingMatchmakingDodgeState_HPP
-#define SWAGGER_TYPES_LolMatchmakingMatchmakingDodgeState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolMatchmakingMatchmakingDodgeState {
-    // 
-    PartyDodged = 49,
-    // 
-    TournamentDodged = 51,
-    // 
-    Invalid = 48,
-    // 
-    StrangerDodged = 50,
+  enum class LolMatchmakingMatchmakingDodgeState_t {
+    TournamentDodged_E = 51,
+    Invalid_E = 48,
+    PartyDodged_E = 49,
+    StrangerDodged_E = 50,
   };
 
-  inline void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingDodgeState& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingDodgeState_t& v) {
     switch(v) {
-      case LolMatchmakingMatchmakingDodgeState::PartyDodged:
-        j = "PartyDodged";
-      break;
-      case LolMatchmakingMatchmakingDodgeState::TournamentDodged:
+      case LolMatchmakingMatchmakingDodgeState_t::TournamentDodged_E:
         j = "TournamentDodged";
       break;
-      case LolMatchmakingMatchmakingDodgeState::Invalid:
+      case LolMatchmakingMatchmakingDodgeState_t::Invalid_E:
         j = "Invalid";
       break;
-      case LolMatchmakingMatchmakingDodgeState::StrangerDodged:
+      case LolMatchmakingMatchmakingDodgeState_t::PartyDodged_E:
+        j = "PartyDodged";
+      break;
+      case LolMatchmakingMatchmakingDodgeState_t::StrangerDodged_E:
         j = "StrangerDodged";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingDodgeState& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingDodgeState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "PartyDodged"){
-      v = LolMatchmakingMatchmakingDodgeState::PartyDodged;
-      return;
-    }
     if(s == "TournamentDodged"){
-      v = LolMatchmakingMatchmakingDodgeState::TournamentDodged;
+      v = LolMatchmakingMatchmakingDodgeState_t::TournamentDodged_E;
       return;
     }
     if(s == "Invalid"){
-      v = LolMatchmakingMatchmakingDodgeState::Invalid;
+      v = LolMatchmakingMatchmakingDodgeState_t::Invalid_E;
+      return;
+    }
+    if(s == "PartyDodged"){
+      v = LolMatchmakingMatchmakingDodgeState_t::PartyDodged_E;
       return;
     }
     if(s == "StrangerDodged"){
-      v = LolMatchmakingMatchmakingDodgeState::StrangerDodged;
+      v = LolMatchmakingMatchmakingDodgeState_t::StrangerDodged_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolMatchmakingMatchmakingDodgeState_HPP

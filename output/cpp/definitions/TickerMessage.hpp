@@ -1,37 +1,29 @@
-#ifndef SWAGGER_TYPES_TickerMessage_HPP
-#define SWAGGER_TYPES_TickerMessage_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "ServiceStatusIncident_Severity.hpp"
 namespace leagueapi {
-  // 
-  struct TickerMessage {
-    // 
-    std::string message;
-    // 
-    std::string updatedAt;
-    // 
+  struct TickerMessage_t {
+    ServiceStatusIncident_Severity_t severity;
     std::string heading;
-    // 
+    std::string updatedAt;
+    std::string message;
     std::string createdAt;
-    // 
-    ServiceStatusIncident_Severity severity;
   };
 
-  inline void to_json(nlohmann::json& j, const TickerMessage& v) {
-    j["message"] = v.message;
-    j["updatedAt"] = v.updatedAt;
-    j["heading"] = v.heading;
-    j["createdAt"] = v.createdAt;
+  inline void to_json(nlohmann::json& j, const TickerMessage_t& v) {
     j["severity"] = v.severity;
+    j["heading"] = v.heading;
+    j["updatedAt"] = v.updatedAt;
+    j["message"] = v.message;
+    j["createdAt"] = v.createdAt;
   }
 
-  inline void from_json(const nlohmann::json& j, TickerMessage& v) {
-    v.message = j.at("message").get<std::string>;
-    v.updatedAt = j.at("updatedAt").get<std::string>;
-    v.heading = j.at("heading").get<std::string>;
-    v.createdAt = j.at("createdAt").get<std::string>;
-    v.severity = j.at("severity").get<ServiceStatusIncident_Severity>;
+  inline void from_json(const nlohmann::json& j, TickerMessage_t& v) {
+    v.severity = j.at("severity").get<ServiceStatusIncident_Severity_t>();
+    v.heading = j.at("heading").get<std::string>();
+    v.updatedAt = j.at("updatedAt").get<std::string>();
+    v.message = j.at("message").get<std::string>();
+    v.createdAt = j.at("createdAt").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_TickerMessage_HPP

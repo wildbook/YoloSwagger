@@ -1,57 +1,45 @@
-#ifndef SWAGGER_TYPES_LolPerksChampSelectSession_HPP
-#define SWAGGER_TYPES_LolPerksChampSelectSession_HPP
+#pragma once
 #include <json.hpp>
-#include "LolPerksChampSelectTimer.hpp"
-#include "LolPerksChampSelectPlayerSelection.hpp"
+#include <optional>
 #include "LolPerksChampSelectBannedChampions.hpp"
-#include "LolPerksChampSelectChatRoomDetails.hpp"
 #include "LolPerksChampSelectTradeContract.hpp"
+#include "LolPerksChampSelectTimer.hpp"
+#include "LolPerksChampSelectChatRoomDetails.hpp"
+#include "LolPerksChampSelectPlayerSelection.hpp"
 namespace leagueapi {
-  // 
-  struct LolPerksChampSelectSession {
-    // 
-    std::vector<LolPerksChampSelectPlayerSelection> theirTeam;
-    // 
-    LolPerksChampSelectBannedChampions bans;
-    // 
-    std::vector<LolPerksChampSelectTradeContract> trades;
-    // 
-    bool isSpectating;
-    // 
-    std::vector<nlohmann::json> actions;
-    // 
-    std::vector<LolPerksChampSelectPlayerSelection> myTeam;
-    // 
-    LolPerksChampSelectTimer timer;
-    // 
-    LolPerksChampSelectChatRoomDetails chatDetails;
-    // 
+  struct LolPerksChampSelectSession_t {
     int64_t localPlayerCellId;
+    std::vector<LolPerksChampSelectTradeContract_t> trades;
+    std::vector<LolPerksChampSelectPlayerSelection_t> myTeam;
+    bool isSpectating;
+    LolPerksChampSelectBannedChampions_t bans;
+    LolPerksChampSelectChatRoomDetails_t chatDetails;
+    std::vector<LolPerksChampSelectPlayerSelection_t> theirTeam;
+    std::vector<nlohmann::json> actions;
+    LolPerksChampSelectTimer_t timer;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPerksChampSelectSession& v) {
-    j["theirTeam"] = v.theirTeam;
-    j["bans"] = v.bans;
-    j["trades"] = v.trades;
-    j["isSpectating"] = v.isSpectating;
-    j["actions"] = v.actions;
-    j["myTeam"] = v.myTeam;
-    j["timer"] = v.timer;
-    j["chatDetails"] = v.chatDetails;
+  inline void to_json(nlohmann::json& j, const LolPerksChampSelectSession_t& v) {
     j["localPlayerCellId"] = v.localPlayerCellId;
+    j["trades"] = v.trades;
+    j["myTeam"] = v.myTeam;
+    j["isSpectating"] = v.isSpectating;
+    j["bans"] = v.bans;
+    j["chatDetails"] = v.chatDetails;
+    j["theirTeam"] = v.theirTeam;
+    j["actions"] = v.actions;
+    j["timer"] = v.timer;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPerksChampSelectSession& v) {
-    v.theirTeam = j.at("theirTeam").get<std::vector<LolPerksChampSelectPlayerSelection>>;
-    v.bans = j.at("bans").get<LolPerksChampSelectBannedChampions>;
-    v.trades = j.at("trades").get<std::vector<LolPerksChampSelectTradeContract>>;
-    v.isSpectating = j.at("isSpectating").get<bool>;
-    v.actions = j.at("actions").get<std::vector<nlohmann::json>>;
-    v.myTeam = j.at("myTeam").get<std::vector<LolPerksChampSelectPlayerSelection>>;
-    v.timer = j.at("timer").get<LolPerksChampSelectTimer>;
-    v.chatDetails = j.at("chatDetails").get<LolPerksChampSelectChatRoomDetails>;
-    v.localPlayerCellId = j.at("localPlayerCellId").get<int64_t>;
+  inline void from_json(const nlohmann::json& j, LolPerksChampSelectSession_t& v) {
+    v.localPlayerCellId = j.at("localPlayerCellId").get<int64_t>();
+    v.trades = j.at("trades").get<std::vector<LolPerksChampSelectTradeContract_t>>();
+    v.myTeam = j.at("myTeam").get<std::vector<LolPerksChampSelectPlayerSelection_t>>();
+    v.isSpectating = j.at("isSpectating").get<bool>();
+    v.bans = j.at("bans").get<LolPerksChampSelectBannedChampions_t>();
+    v.chatDetails = j.at("chatDetails").get<LolPerksChampSelectChatRoomDetails_t>();
+    v.theirTeam = j.at("theirTeam").get<std::vector<LolPerksChampSelectPlayerSelection_t>>();
+    v.actions = j.at("actions").get<std::vector<nlohmann::json>>();
+    v.timer = j.at("timer").get<LolPerksChampSelectTimer_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPerksChampSelectSession_HPP

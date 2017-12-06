@@ -1,145 +1,127 @@
-#ifndef SWAGGER_TYPES_LolPftGameflowPhase_HPP
-#define SWAGGER_TYPES_LolPftGameflowPhase_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolPftGameflowPhase {
-    // 
-    CheckedIntoTournament = 3,
-    // 
-    None = 0,
-    // 
-    EndOfGame = 12,
-    // 
-    ChampSelect = 5,
-    // 
-    FailedToLaunch = 7,
-    // 
-    WaitingForStats = 10,
-    // 
-    TerminatedInError = 13,
-    // 
-    Reconnect = 9,
-    // 
-    GameStart = 6,
-    // 
-    ReadyCheck = 4,
-    // 
-    InProgress = 8,
-    // 
-    PreEndOfGame = 11,
-    // 
-    Lobby = 1,
-    // 
-    Matchmaking = 2,
+  enum class LolPftGameflowPhase_t {
+    WaitingForStats_E = 10,
+    Lobby_E = 1,
+    ChampSelect_E = 5,
+    ReadyCheck_E = 4,
+    None_E = 0,
+    CheckedIntoTournament_E = 3,
+    TerminatedInError_E = 13,
+    FailedToLaunch_E = 7,
+    PreEndOfGame_E = 11,
+    Matchmaking_E = 2,
+    InProgress_E = 8,
+    Reconnect_E = 9,
+    EndOfGame_E = 12,
+    GameStart_E = 6,
   };
 
-  inline void to_json(nlohmann::json& j, const LolPftGameflowPhase& v) {
+  inline void to_json(nlohmann::json& j, const LolPftGameflowPhase_t& v) {
     switch(v) {
-      case LolPftGameflowPhase::CheckedIntoTournament:
-        j = "CheckedIntoTournament";
-      break;
-      case LolPftGameflowPhase::None:
-        j = "None";
-      break;
-      case LolPftGameflowPhase::EndOfGame:
-        j = "EndOfGame";
-      break;
-      case LolPftGameflowPhase::ChampSelect:
-        j = "ChampSelect";
-      break;
-      case LolPftGameflowPhase::FailedToLaunch:
-        j = "FailedToLaunch";
-      break;
-      case LolPftGameflowPhase::WaitingForStats:
+      case LolPftGameflowPhase_t::WaitingForStats_E:
         j = "WaitingForStats";
       break;
-      case LolPftGameflowPhase::TerminatedInError:
-        j = "TerminatedInError";
-      break;
-      case LolPftGameflowPhase::Reconnect:
-        j = "Reconnect";
-      break;
-      case LolPftGameflowPhase::GameStart:
-        j = "GameStart";
-      break;
-      case LolPftGameflowPhase::ReadyCheck:
-        j = "ReadyCheck";
-      break;
-      case LolPftGameflowPhase::InProgress:
-        j = "InProgress";
-      break;
-      case LolPftGameflowPhase::PreEndOfGame:
-        j = "PreEndOfGame";
-      break;
-      case LolPftGameflowPhase::Lobby:
+      case LolPftGameflowPhase_t::Lobby_E:
         j = "Lobby";
       break;
-      case LolPftGameflowPhase::Matchmaking:
+      case LolPftGameflowPhase_t::ChampSelect_E:
+        j = "ChampSelect";
+      break;
+      case LolPftGameflowPhase_t::ReadyCheck_E:
+        j = "ReadyCheck";
+      break;
+      case LolPftGameflowPhase_t::None_E:
+        j = "None";
+      break;
+      case LolPftGameflowPhase_t::CheckedIntoTournament_E:
+        j = "CheckedIntoTournament";
+      break;
+      case LolPftGameflowPhase_t::TerminatedInError_E:
+        j = "TerminatedInError";
+      break;
+      case LolPftGameflowPhase_t::FailedToLaunch_E:
+        j = "FailedToLaunch";
+      break;
+      case LolPftGameflowPhase_t::PreEndOfGame_E:
+        j = "PreEndOfGame";
+      break;
+      case LolPftGameflowPhase_t::Matchmaking_E:
         j = "Matchmaking";
+      break;
+      case LolPftGameflowPhase_t::InProgress_E:
+        j = "InProgress";
+      break;
+      case LolPftGameflowPhase_t::Reconnect_E:
+        j = "Reconnect";
+      break;
+      case LolPftGameflowPhase_t::EndOfGame_E:
+        j = "EndOfGame";
+      break;
+      case LolPftGameflowPhase_t::GameStart_E:
+        j = "GameStart";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolPftGameflowPhase& v) {
+  inline void from_json(const nlohmann::json& j, LolPftGameflowPhase_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "CheckedIntoTournament"){
-      v = LolPftGameflowPhase::CheckedIntoTournament;
-      return;
-    }
-    if(s == "None"){
-      v = LolPftGameflowPhase::None;
-      return;
-    }
-    if(s == "EndOfGame"){
-      v = LolPftGameflowPhase::EndOfGame;
-      return;
-    }
-    if(s == "ChampSelect"){
-      v = LolPftGameflowPhase::ChampSelect;
-      return;
-    }
-    if(s == "FailedToLaunch"){
-      v = LolPftGameflowPhase::FailedToLaunch;
-      return;
-    }
     if(s == "WaitingForStats"){
-      v = LolPftGameflowPhase::WaitingForStats;
-      return;
-    }
-    if(s == "TerminatedInError"){
-      v = LolPftGameflowPhase::TerminatedInError;
-      return;
-    }
-    if(s == "Reconnect"){
-      v = LolPftGameflowPhase::Reconnect;
-      return;
-    }
-    if(s == "GameStart"){
-      v = LolPftGameflowPhase::GameStart;
-      return;
-    }
-    if(s == "ReadyCheck"){
-      v = LolPftGameflowPhase::ReadyCheck;
-      return;
-    }
-    if(s == "InProgress"){
-      v = LolPftGameflowPhase::InProgress;
-      return;
-    }
-    if(s == "PreEndOfGame"){
-      v = LolPftGameflowPhase::PreEndOfGame;
+      v = LolPftGameflowPhase_t::WaitingForStats_E;
       return;
     }
     if(s == "Lobby"){
-      v = LolPftGameflowPhase::Lobby;
+      v = LolPftGameflowPhase_t::Lobby_E;
+      return;
+    }
+    if(s == "ChampSelect"){
+      v = LolPftGameflowPhase_t::ChampSelect_E;
+      return;
+    }
+    if(s == "ReadyCheck"){
+      v = LolPftGameflowPhase_t::ReadyCheck_E;
+      return;
+    }
+    if(s == "None"){
+      v = LolPftGameflowPhase_t::None_E;
+      return;
+    }
+    if(s == "CheckedIntoTournament"){
+      v = LolPftGameflowPhase_t::CheckedIntoTournament_E;
+      return;
+    }
+    if(s == "TerminatedInError"){
+      v = LolPftGameflowPhase_t::TerminatedInError_E;
+      return;
+    }
+    if(s == "FailedToLaunch"){
+      v = LolPftGameflowPhase_t::FailedToLaunch_E;
+      return;
+    }
+    if(s == "PreEndOfGame"){
+      v = LolPftGameflowPhase_t::PreEndOfGame_E;
       return;
     }
     if(s == "Matchmaking"){
-      v = LolPftGameflowPhase::Matchmaking;
+      v = LolPftGameflowPhase_t::Matchmaking_E;
+      return;
+    }
+    if(s == "InProgress"){
+      v = LolPftGameflowPhase_t::InProgress_E;
+      return;
+    }
+    if(s == "Reconnect"){
+      v = LolPftGameflowPhase_t::Reconnect_E;
+      return;
+    }
+    if(s == "EndOfGame"){
+      v = LolPftGameflowPhase_t::EndOfGame_E;
+      return;
+    }
+    if(s == "GameStart"){
+      v = LolPftGameflowPhase_t::GameStart_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolPftGameflowPhase_HPP

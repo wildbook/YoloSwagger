@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolCollectionsCollectionsWardSkinList_HPP
-#define SWAGGER_TYPES_LolCollectionsCollectionsWardSkinList_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolCollectionsCollectionsWardSkinList {
-    // 
+  struct LolCollectionsCollectionsWardSkinList_t {
     std::vector<int64_t> wardSkinList;
   };
 
-  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsWardSkinList& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsWardSkinList_t& v) {
     j["wardSkinList"] = v.wardSkinList;
   }
 
-  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsWardSkinList& v) {
-    v.wardSkinList = j.at("wardSkinList").get<std::vector<int64_t>>;
+  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsWardSkinList_t& v) {
+    v.wardSkinList = j.at("wardSkinList").get<std::vector<int64_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolCollectionsCollectionsWardSkinList_HPP

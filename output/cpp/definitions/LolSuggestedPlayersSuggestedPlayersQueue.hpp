@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersQueue_HPP
-#define SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersQueue_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolSuggestedPlayersSuggestedPlayersQueue {
-    // 
-    int32_t id;
-    // 
+  struct LolSuggestedPlayersSuggestedPlayersQueue_t {
     uint32_t minLevel;
+    int32_t id;
   };
 
-  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersQueue& v) {
-    j["id"] = v.id;
+  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersQueue_t& v) {
     j["minLevel"] = v.minLevel;
+    j["id"] = v.id;
   }
 
-  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersQueue& v) {
-    v.id = j.at("id").get<int32_t>;
-    v.minLevel = j.at("minLevel").get<uint32_t>;
+  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersQueue_t& v) {
+    v.minLevel = j.at("minLevel").get<uint32_t>();
+    v.id = j.at("id").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersQueue_HPP

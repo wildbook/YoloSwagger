@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LcdsMember_HPP
-#define SWAGGER_TYPES_LcdsMember_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LcdsMember {
-    // 
-    bool hasDelegatedInvitePower;
-    // 
-    uint64_t summonerId;
-    // 
+  struct LcdsMember_t {
     std::string summonerName;
+    uint64_t summonerId;
+    bool hasDelegatedInvitePower;
   };
 
-  inline void to_json(nlohmann::json& j, const LcdsMember& v) {
-    j["hasDelegatedInvitePower"] = v.hasDelegatedInvitePower;
-    j["summonerId"] = v.summonerId;
+  inline void to_json(nlohmann::json& j, const LcdsMember_t& v) {
     j["summonerName"] = v.summonerName;
+    j["summonerId"] = v.summonerId;
+    j["hasDelegatedInvitePower"] = v.hasDelegatedInvitePower;
   }
 
-  inline void from_json(const nlohmann::json& j, LcdsMember& v) {
-    v.hasDelegatedInvitePower = j.at("hasDelegatedInvitePower").get<bool>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
-    v.summonerName = j.at("summonerName").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LcdsMember_t& v) {
+    v.summonerName = j.at("summonerName").get<std::string>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.hasDelegatedInvitePower = j.at("hasDelegatedInvitePower").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LcdsMember_HPP

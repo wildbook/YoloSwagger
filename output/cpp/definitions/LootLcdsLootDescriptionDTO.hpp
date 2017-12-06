@@ -1,32 +1,25 @@
-#ifndef SWAGGER_TYPES_LootLcdsLootDescriptionDTO_HPP
-#define SWAGGER_TYPES_LootLcdsLootDescriptionDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LootLcdsLootDescriptionDTO {
-    // 
-    std::map<std::string, std::string> localizationMap;
-    // 
-    std::map<std::string, std::string> localizationLongDescriptionMap;
-    // 
-    std::string lootName;
-    // 
+  struct LootLcdsLootDescriptionDTO_t {
     std::vector<std::string> childLootTableNames;
+    std::map<std::string, std::string> localizationMap;
+    std::map<std::string, std::string> localizationLongDescriptionMap;
+    std::string lootName;
   };
 
-  inline void to_json(nlohmann::json& j, const LootLcdsLootDescriptionDTO& v) {
+  inline void to_json(nlohmann::json& j, const LootLcdsLootDescriptionDTO_t& v) {
+    j["childLootTableNames"] = v.childLootTableNames;
     j["localizationMap"] = v.localizationMap;
     j["localizationLongDescriptionMap"] = v.localizationLongDescriptionMap;
     j["lootName"] = v.lootName;
-    j["childLootTableNames"] = v.childLootTableNames;
   }
 
-  inline void from_json(const nlohmann::json& j, LootLcdsLootDescriptionDTO& v) {
-    v.localizationMap = j.at("localizationMap").get<std::map<std::string, std::string>>;
-    v.localizationLongDescriptionMap = j.at("localizationLongDescriptionMap").get<std::map<std::string, std::string>>;
-    v.lootName = j.at("lootName").get<std::string>;
-    v.childLootTableNames = j.at("childLootTableNames").get<std::vector<std::string>>;
+  inline void from_json(const nlohmann::json& j, LootLcdsLootDescriptionDTO_t& v) {
+    v.childLootTableNames = j.at("childLootTableNames").get<std::vector<std::string>>();
+    v.localizationMap = j.at("localizationMap").get<std::map<std::string, std::string>>();
+    v.localizationLongDescriptionMap = j.at("localizationLongDescriptionMap").get<std::map<std::string, std::string>>();
+    v.lootName = j.at("lootName").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LootLcdsLootDescriptionDTO_HPP

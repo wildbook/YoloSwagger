@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolClashRosterMemberState_HPP
-#define SWAGGER_TYPES_LolClashRosterMemberState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolClashRosterMemberState {
-    // 
-    READY = 3,
-    // 
-    FORCED_NOT_READY = 2,
-    // 
-    NOT_READY = 1,
-    // 
-    PENDING = 0,
+  enum class LolClashRosterMemberState_t {
+    FORCED_NOT_READY_E = 2,
+    READY_E = 3,
+    NOT_READY_E = 1,
+    PENDING_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashRosterMemberState& v) {
+  inline void to_json(nlohmann::json& j, const LolClashRosterMemberState_t& v) {
     switch(v) {
-      case LolClashRosterMemberState::READY:
-        j = "READY";
-      break;
-      case LolClashRosterMemberState::FORCED_NOT_READY:
+      case LolClashRosterMemberState_t::FORCED_NOT_READY_E:
         j = "FORCED_NOT_READY";
       break;
-      case LolClashRosterMemberState::NOT_READY:
+      case LolClashRosterMemberState_t::READY_E:
+        j = "READY";
+      break;
+      case LolClashRosterMemberState_t::NOT_READY_E:
         j = "NOT_READY";
       break;
-      case LolClashRosterMemberState::PENDING:
+      case LolClashRosterMemberState_t::PENDING_E:
         j = "PENDING";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashRosterMemberState& v) {
+  inline void from_json(const nlohmann::json& j, LolClashRosterMemberState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "READY"){
-      v = LolClashRosterMemberState::READY;
+    if(s == "FORCED_NOT_READY"){
+      v = LolClashRosterMemberState_t::FORCED_NOT_READY_E;
       return;
     }
-    if(s == "FORCED_NOT_READY"){
-      v = LolClashRosterMemberState::FORCED_NOT_READY;
+    if(s == "READY"){
+      v = LolClashRosterMemberState_t::READY_E;
       return;
     }
     if(s == "NOT_READY"){
-      v = LolClashRosterMemberState::NOT_READY;
+      v = LolClashRosterMemberState_t::NOT_READY_E;
       return;
     }
     if(s == "PENDING"){
-      v = LolClashRosterMemberState::PENDING;
+      v = LolClashRosterMemberState_t::PENDING_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashRosterMemberState_HPP

@@ -1,33 +1,26 @@
-#ifndef SWAGGER_TYPES_MatchmakingLcdsBustedLeaver_HPP
-#define SWAGGER_TYPES_MatchmakingLcdsBustedLeaver_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "MatchmakingLcdsSummoner.hpp"
 namespace leagueapi {
-  // 
-  struct MatchmakingLcdsBustedLeaver {
-    // 
-    MatchmakingLcdsSummoner summoner;
-    // 
-    uint64_t leaverPenaltyMillisRemaining;
-    // 
-    std::string accessToken;
-    // 
+  struct MatchmakingLcdsBustedLeaver_t {
     std::string reasonFailed;
+    std::string accessToken;
+    MatchmakingLcdsSummoner_t summoner;
+    uint64_t leaverPenaltyMillisRemaining;
   };
 
-  inline void to_json(nlohmann::json& j, const MatchmakingLcdsBustedLeaver& v) {
+  inline void to_json(nlohmann::json& j, const MatchmakingLcdsBustedLeaver_t& v) {
+    j["reasonFailed"] = v.reasonFailed;
+    j["accessToken"] = v.accessToken;
     j["summoner"] = v.summoner;
     j["leaverPenaltyMillisRemaining"] = v.leaverPenaltyMillisRemaining;
-    j["accessToken"] = v.accessToken;
-    j["reasonFailed"] = v.reasonFailed;
   }
 
-  inline void from_json(const nlohmann::json& j, MatchmakingLcdsBustedLeaver& v) {
-    v.summoner = j.at("summoner").get<MatchmakingLcdsSummoner>;
-    v.leaverPenaltyMillisRemaining = j.at("leaverPenaltyMillisRemaining").get<uint64_t>;
-    v.accessToken = j.at("accessToken").get<std::string>;
-    v.reasonFailed = j.at("reasonFailed").get<std::string>;
+  inline void from_json(const nlohmann::json& j, MatchmakingLcdsBustedLeaver_t& v) {
+    v.reasonFailed = j.at("reasonFailed").get<std::string>();
+    v.accessToken = j.at("accessToken").get<std::string>();
+    v.summoner = j.at("summoner").get<MatchmakingLcdsSummoner_t>();
+    v.leaverPenaltyMillisRemaining = j.at("leaverPenaltyMillisRemaining").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_MatchmakingLcdsBustedLeaver_HPP

@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolEndOfGameLobbyInvitation_HPP
-#define SWAGGER_TYPES_LolEndOfGameLobbyInvitation_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolEndOfGameLobbyInvitation {
-    // 
+  struct LolEndOfGameLobbyInvitation_t {
     std::string state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolEndOfGameLobbyInvitation& v) {
+  inline void to_json(nlohmann::json& j, const LolEndOfGameLobbyInvitation_t& v) {
     j["state"] = v.state;
   }
 
-  inline void from_json(const nlohmann::json& j, LolEndOfGameLobbyInvitation& v) {
-    v.state = j.at("state").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolEndOfGameLobbyInvitation_t& v) {
+    v.state = j.at("state").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolEndOfGameLobbyInvitation_HPP

@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_GameflowSession_HPP
-#define SWAGGER_TYPES_GameflowSession_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "GameflowGameData.hpp"
 namespace leagueapi {
-  // 
-  struct GameflowSession {
-    // 
-    GameflowGameData gameData;
+  struct GameflowSession_t {
+    GameflowGameData_t gameData;
   };
 
-  inline void to_json(nlohmann::json& j, const GameflowSession& v) {
+  inline void to_json(nlohmann::json& j, const GameflowSession_t& v) {
     j["gameData"] = v.gameData;
   }
 
-  inline void from_json(const nlohmann::json& j, GameflowSession& v) {
-    v.gameData = j.at("gameData").get<GameflowGameData>;
+  inline void from_json(const nlohmann::json& j, GameflowSession_t& v) {
+    v.gameData = j.at("gameData").get<GameflowGameData_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_GameflowSession_HPP

@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolLobbyServiceProxyPayload_HPP
-#define SWAGGER_TYPES_LolLobbyServiceProxyPayload_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyServiceProxyPayload {
-    // 
+  struct LolLobbyServiceProxyPayload_t {
     std::string body;
-    // 
-    std::string url;
-    // 
     std::string method;
+    std::string url;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyServiceProxyPayload& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyServiceProxyPayload_t& v) {
     j["body"] = v.body;
-    j["url"] = v.url;
     j["method"] = v.method;
+    j["url"] = v.url;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyServiceProxyPayload& v) {
-    v.body = j.at("body").get<std::string>;
-    v.url = j.at("url").get<std::string>;
-    v.method = j.at("method").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolLobbyServiceProxyPayload_t& v) {
+    v.body = j.at("body").get<std::string>();
+    v.method = j.at("method").get<std::string>();
+    v.url = j.at("url").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyServiceProxyPayload_HPP

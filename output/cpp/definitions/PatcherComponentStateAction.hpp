@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_PatcherComponentStateAction_HPP
-#define SWAGGER_TYPES_PatcherComponentStateAction_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class PatcherComponentStateAction {
-    // 
-    Repairing = 3,
-    // 
-    Idle = 0,
-    // 
-    Patching = 2,
-    // 
-    CheckingForUpdates = 1,
+  enum class PatcherComponentStateAction_t {
+    Idle_E = 0,
+    Repairing_E = 3,
+    Patching_E = 2,
+    CheckingForUpdates_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const PatcherComponentStateAction& v) {
+  inline void to_json(nlohmann::json& j, const PatcherComponentStateAction_t& v) {
     switch(v) {
-      case PatcherComponentStateAction::Repairing:
-        j = "Repairing";
-      break;
-      case PatcherComponentStateAction::Idle:
+      case PatcherComponentStateAction_t::Idle_E:
         j = "Idle";
       break;
-      case PatcherComponentStateAction::Patching:
+      case PatcherComponentStateAction_t::Repairing_E:
+        j = "Repairing";
+      break;
+      case PatcherComponentStateAction_t::Patching_E:
         j = "Patching";
       break;
-      case PatcherComponentStateAction::CheckingForUpdates:
+      case PatcherComponentStateAction_t::CheckingForUpdates_E:
         j = "CheckingForUpdates";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, PatcherComponentStateAction& v) {
+  inline void from_json(const nlohmann::json& j, PatcherComponentStateAction_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "Repairing"){
-      v = PatcherComponentStateAction::Repairing;
+    if(s == "Idle"){
+      v = PatcherComponentStateAction_t::Idle_E;
       return;
     }
-    if(s == "Idle"){
-      v = PatcherComponentStateAction::Idle;
+    if(s == "Repairing"){
+      v = PatcherComponentStateAction_t::Repairing_E;
       return;
     }
     if(s == "Patching"){
-      v = PatcherComponentStateAction::Patching;
+      v = PatcherComponentStateAction_t::Patching_E;
       return;
     }
     if(s == "CheckingForUpdates"){
-      v = PatcherComponentStateAction::CheckingForUpdates;
+      v = PatcherComponentStateAction_t::CheckingForUpdates_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_PatcherComponentStateAction_HPP

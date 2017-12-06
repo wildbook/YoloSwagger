@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolCollectionsCollectionsMastery_HPP
-#define SWAGGER_TYPES_LolCollectionsCollectionsMastery_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolCollectionsCollectionsMastery {
-    // 
-    uint32_t id;
-    // 
+  struct LolCollectionsCollectionsMastery_t {
     int32_t rank;
+    uint32_t id;
   };
 
-  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsMastery& v) {
-    j["id"] = v.id;
+  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsMastery_t& v) {
     j["rank"] = v.rank;
+    j["id"] = v.id;
   }
 
-  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsMastery& v) {
-    v.id = j.at("id").get<uint32_t>;
-    v.rank = j.at("rank").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsMastery_t& v) {
+    v.rank = j.at("rank").get<int32_t>();
+    v.id = j.at("id").get<uint32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolCollectionsCollectionsMastery_HPP

@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolClashGameflowSession_HPP
-#define SWAGGER_TYPES_LolClashGameflowSession_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolClashGameflowPhase.hpp"
 namespace leagueapi {
-  // 
-  struct LolClashGameflowSession {
-    // 
-    LolClashGameflowPhase phase;
+  struct LolClashGameflowSession_t {
+    LolClashGameflowPhase_t phase;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashGameflowSession& v) {
+  inline void to_json(nlohmann::json& j, const LolClashGameflowSession_t& v) {
     j["phase"] = v.phase;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashGameflowSession& v) {
-    v.phase = j.at("phase").get<LolClashGameflowPhase>;
+  inline void from_json(const nlohmann::json& j, LolClashGameflowSession_t& v) {
+    v.phase = j.at("phase").get<LolClashGameflowPhase_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashGameflowSession_HPP

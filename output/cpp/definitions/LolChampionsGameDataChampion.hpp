@@ -1,62 +1,48 @@
-#ifndef SWAGGER_TYPES_LolChampionsGameDataChampion_HPP
-#define SWAGGER_TYPES_LolChampionsGameDataChampion_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolChampionsGameDataChampionSpell.hpp"
 #include "LolChampionsGameDataChampionSkin.hpp"
 namespace leagueapi {
-  // 
-  struct LolChampionsGameDataChampion {
-    // 
-    std::string stingerSfxPath;
-    // 
-    std::string name;
-    // 
-    std::vector<std::string> roles;
-    // 
-    std::string banVoPath;
-    // 
-    std::vector<LolChampionsGameDataChampionSkin> skins;
-    // 
-    LolChampionsGameDataChampionSpell passive;
-    // 
-    std::string alias;
-    // 
-    std::string chooseVoPath;
-    // 
+  struct LolChampionsGameDataChampion_t {
     std::string squarePortraitPath;
-    // 
     int32_t id;
-    // 
-    std::vector<LolChampionsGameDataChampionSpell> spells;
+    std::vector<LolChampionsGameDataChampionSkin_t> skins;
+    std::string alias;
+    LolChampionsGameDataChampionSpell_t passive;
+    std::string name;
+    std::vector<LolChampionsGameDataChampionSpell_t> spells;
+    std::string stingerSfxPath;
+    std::string chooseVoPath;
+    std::vector<std::string> roles;
+    std::string banVoPath;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampionsGameDataChampion& v) {
-    j["stingerSfxPath"] = v.stingerSfxPath;
-    j["name"] = v.name;
-    j["roles"] = v.roles;
-    j["banVoPath"] = v.banVoPath;
-    j["skins"] = v.skins;
-    j["passive"] = v.passive;
-    j["alias"] = v.alias;
-    j["chooseVoPath"] = v.chooseVoPath;
+  inline void to_json(nlohmann::json& j, const LolChampionsGameDataChampion_t& v) {
     j["squarePortraitPath"] = v.squarePortraitPath;
     j["id"] = v.id;
+    j["skins"] = v.skins;
+    j["alias"] = v.alias;
+    j["passive"] = v.passive;
+    j["name"] = v.name;
     j["spells"] = v.spells;
+    j["stingerSfxPath"] = v.stingerSfxPath;
+    j["chooseVoPath"] = v.chooseVoPath;
+    j["roles"] = v.roles;
+    j["banVoPath"] = v.banVoPath;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampionsGameDataChampion& v) {
-    v.stingerSfxPath = j.at("stingerSfxPath").get<std::string>;
-    v.name = j.at("name").get<std::string>;
-    v.roles = j.at("roles").get<std::vector<std::string>>;
-    v.banVoPath = j.at("banVoPath").get<std::string>;
-    v.skins = j.at("skins").get<std::vector<LolChampionsGameDataChampionSkin>>;
-    v.passive = j.at("passive").get<LolChampionsGameDataChampionSpell>;
-    v.alias = j.at("alias").get<std::string>;
-    v.chooseVoPath = j.at("chooseVoPath").get<std::string>;
-    v.squarePortraitPath = j.at("squarePortraitPath").get<std::string>;
-    v.id = j.at("id").get<int32_t>;
-    v.spells = j.at("spells").get<std::vector<LolChampionsGameDataChampionSpell>>;
+  inline void from_json(const nlohmann::json& j, LolChampionsGameDataChampion_t& v) {
+    v.squarePortraitPath = j.at("squarePortraitPath").get<std::string>();
+    v.id = j.at("id").get<int32_t>();
+    v.skins = j.at("skins").get<std::vector<LolChampionsGameDataChampionSkin_t>>();
+    v.alias = j.at("alias").get<std::string>();
+    v.passive = j.at("passive").get<LolChampionsGameDataChampionSpell_t>();
+    v.name = j.at("name").get<std::string>();
+    v.spells = j.at("spells").get<std::vector<LolChampionsGameDataChampionSpell_t>>();
+    v.stingerSfxPath = j.at("stingerSfxPath").get<std::string>();
+    v.chooseVoPath = j.at("chooseVoPath").get<std::string>();
+    v.roles = j.at("roles").get<std::vector<std::string>>();
+    v.banVoPath = j.at("banVoPath").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampionsGameDataChampion_HPP

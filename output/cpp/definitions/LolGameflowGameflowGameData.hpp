@@ -1,53 +1,41 @@
-#ifndef SWAGGER_TYPES_LolGameflowGameflowGameData_HPP
-#define SWAGGER_TYPES_LolGameflowGameflowGameData_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolGameflowQueue.hpp"
 namespace leagueapi {
-  // 
-  struct LolGameflowGameflowGameData {
-    // 
-    std::string password;
-    // 
-    std::vector<nlohmann::json> teamOne;
-    // 
-    bool isCustomGame;
-    // 
-    std::string gameName;
-    // 
-    LolGameflowQueue queue;
-    // 
-    uint64_t gameId;
-    // 
-    bool spectatorsAllowed;
-    // 
+  struct LolGameflowGameflowGameData_t {
     std::vector<nlohmann::json> teamTwo;
-    // 
+    bool isCustomGame;
     std::vector<nlohmann::json> playerChampionSelections;
+    std::vector<nlohmann::json> teamOne;
+    std::string gameName;
+    uint64_t gameId;
+    LolGameflowQueue_t queue;
+    std::string password;
+    bool spectatorsAllowed;
   };
 
-  inline void to_json(nlohmann::json& j, const LolGameflowGameflowGameData& v) {
-    j["password"] = v.password;
-    j["teamOne"] = v.teamOne;
-    j["isCustomGame"] = v.isCustomGame;
-    j["gameName"] = v.gameName;
-    j["queue"] = v.queue;
-    j["gameId"] = v.gameId;
-    j["spectatorsAllowed"] = v.spectatorsAllowed;
+  inline void to_json(nlohmann::json& j, const LolGameflowGameflowGameData_t& v) {
     j["teamTwo"] = v.teamTwo;
+    j["isCustomGame"] = v.isCustomGame;
     j["playerChampionSelections"] = v.playerChampionSelections;
+    j["teamOne"] = v.teamOne;
+    j["gameName"] = v.gameName;
+    j["gameId"] = v.gameId;
+    j["queue"] = v.queue;
+    j["password"] = v.password;
+    j["spectatorsAllowed"] = v.spectatorsAllowed;
   }
 
-  inline void from_json(const nlohmann::json& j, LolGameflowGameflowGameData& v) {
-    v.password = j.at("password").get<std::string>;
-    v.teamOne = j.at("teamOne").get<std::vector<nlohmann::json>>;
-    v.isCustomGame = j.at("isCustomGame").get<bool>;
-    v.gameName = j.at("gameName").get<std::string>;
-    v.queue = j.at("queue").get<LolGameflowQueue>;
-    v.gameId = j.at("gameId").get<uint64_t>;
-    v.spectatorsAllowed = j.at("spectatorsAllowed").get<bool>;
-    v.teamTwo = j.at("teamTwo").get<std::vector<nlohmann::json>>;
-    v.playerChampionSelections = j.at("playerChampionSelections").get<std::vector<nlohmann::json>>;
+  inline void from_json(const nlohmann::json& j, LolGameflowGameflowGameData_t& v) {
+    v.teamTwo = j.at("teamTwo").get<std::vector<nlohmann::json>>();
+    v.isCustomGame = j.at("isCustomGame").get<bool>();
+    v.playerChampionSelections = j.at("playerChampionSelections").get<std::vector<nlohmann::json>>();
+    v.teamOne = j.at("teamOne").get<std::vector<nlohmann::json>>();
+    v.gameName = j.at("gameName").get<std::string>();
+    v.gameId = j.at("gameId").get<uint64_t>();
+    v.queue = j.at("queue").get<LolGameflowQueue_t>();
+    v.password = j.at("password").get<std::string>();
+    v.spectatorsAllowed = j.at("spectatorsAllowed").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolGameflowGameflowGameData_HPP

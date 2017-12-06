@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LeaguesLcdsRosterDTO_HPP
-#define SWAGGER_TYPES_LeaguesLcdsRosterDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LeaguesLcdsTeamMemberInfoDTO.hpp"
 namespace leagueapi {
-  // 
-  struct LeaguesLcdsRosterDTO {
-    // 
-    std::vector<LeaguesLcdsTeamMemberInfoDTO> memberList;
+  struct LeaguesLcdsRosterDTO_t {
+    std::vector<LeaguesLcdsTeamMemberInfoDTO_t> memberList;
   };
 
-  inline void to_json(nlohmann::json& j, const LeaguesLcdsRosterDTO& v) {
+  inline void to_json(nlohmann::json& j, const LeaguesLcdsRosterDTO_t& v) {
     j["memberList"] = v.memberList;
   }
 
-  inline void from_json(const nlohmann::json& j, LeaguesLcdsRosterDTO& v) {
-    v.memberList = j.at("memberList").get<std::vector<LeaguesLcdsTeamMemberInfoDTO>>;
+  inline void from_json(const nlohmann::json& j, LeaguesLcdsRosterDTO_t& v) {
+    v.memberList = j.at("memberList").get<std::vector<LeaguesLcdsTeamMemberInfoDTO_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LeaguesLcdsRosterDTO_HPP

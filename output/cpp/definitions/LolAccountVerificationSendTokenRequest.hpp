@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolAccountVerificationSendTokenRequest_HPP
-#define SWAGGER_TYPES_LolAccountVerificationSendTokenRequest_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolAccountVerificationSendTokenRequest {
-    // 
-    std::string device;
-    // 
-    std::string locale;
-    // 
+  struct LolAccountVerificationSendTokenRequest_t {
     std::string mediator;
+    std::string locale;
+    std::string device;
   };
 
-  inline void to_json(nlohmann::json& j, const LolAccountVerificationSendTokenRequest& v) {
-    j["device"] = v.device;
-    j["locale"] = v.locale;
+  inline void to_json(nlohmann::json& j, const LolAccountVerificationSendTokenRequest_t& v) {
     j["mediator"] = v.mediator;
+    j["locale"] = v.locale;
+    j["device"] = v.device;
   }
 
-  inline void from_json(const nlohmann::json& j, LolAccountVerificationSendTokenRequest& v) {
-    v.device = j.at("device").get<std::string>;
-    v.locale = j.at("locale").get<std::string>;
-    v.mediator = j.at("mediator").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolAccountVerificationSendTokenRequest_t& v) {
+    v.mediator = j.at("mediator").get<std::string>();
+    v.locale = j.at("locale").get<std::string>();
+    v.device = j.at("device").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolAccountVerificationSendTokenRequest_HPP

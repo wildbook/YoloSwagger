@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters_HPP
-#define SWAGGER_TYPES_LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters {
-    // 
-    int64_t team;
-    // 
-    std::string id;
-    // 
+  struct LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters_t {
     std::string name;
+    std::string id;
+    int64_t team;
   };
 
-  inline void to_json(nlohmann::json& j, const LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters& v) {
-    j["team"] = v.team;
-    j["id"] = v.id;
+  inline void to_json(nlohmann::json& j, const LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters_t& v) {
     j["name"] = v.name;
+    j["id"] = v.id;
+    j["team"] = v.team;
   }
 
-  inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters& v) {
-    v.team = j.at("team").get<int64_t>;
-    v.id = j.at("id").get<std::string>;
-    v.name = j.at("name").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters_t& v) {
+    v.name = j.at("name").get<std::string>();
+    v.id = j.at("id").get<std::string>();
+    v.team = j.at("team").get<int64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters_HPP

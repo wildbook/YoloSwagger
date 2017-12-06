@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolPftPFTQuestionResponse_HPP
-#define SWAGGER_TYPES_LolPftPFTQuestionResponse_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolPftPFTQuestionResponse {
-    // 
+  struct LolPftPFTQuestionResponse_t {
     uint64_t questionId;
-    // 
     nlohmann::json responseData;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPftPFTQuestionResponse& v) {
+  inline void to_json(nlohmann::json& j, const LolPftPFTQuestionResponse_t& v) {
     j["questionId"] = v.questionId;
     j["responseData"] = v.responseData;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPftPFTQuestionResponse& v) {
-    v.questionId = j.at("questionId").get<uint64_t>;
-    v.responseData = j.at("responseData").get<nlohmann::json>;
+  inline void from_json(const nlohmann::json& j, LolPftPFTQuestionResponse_t& v) {
+    v.questionId = j.at("questionId").get<uint64_t>();
+    v.responseData = j.at("responseData").get<nlohmann::json>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPftPFTQuestionResponse_HPP

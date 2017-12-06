@@ -1,36 +1,28 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingSearchErrorResource_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingSearchErrorResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyTeamBuilderMatchmakingSearchErrorResource {
-    // 
+  struct LolLobbyTeamBuilderMatchmakingSearchErrorResource_t {
     uint64_t penalizedSummonerId;
-    // 
     std::string message;
-    // 
-    std::string errorType;
-    // 
-    double penaltyTimeRemaining;
-    // 
     int32_t id;
+    std::string errorType;
+    double penaltyTimeRemaining;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingSearchErrorResource& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingSearchErrorResource_t& v) {
     j["penalizedSummonerId"] = v.penalizedSummonerId;
     j["message"] = v.message;
+    j["id"] = v.id;
     j["errorType"] = v.errorType;
     j["penaltyTimeRemaining"] = v.penaltyTimeRemaining;
-    j["id"] = v.id;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingSearchErrorResource& v) {
-    v.penalizedSummonerId = j.at("penalizedSummonerId").get<uint64_t>;
-    v.message = j.at("message").get<std::string>;
-    v.errorType = j.at("errorType").get<std::string>;
-    v.penaltyTimeRemaining = j.at("penaltyTimeRemaining").get<double>;
-    v.id = j.at("id").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingSearchErrorResource_t& v) {
+    v.penalizedSummonerId = j.at("penalizedSummonerId").get<uint64_t>();
+    v.message = j.at("message").get<std::string>();
+    v.id = j.at("id").get<int32_t>();
+    v.errorType = j.at("errorType").get<std::string>();
+    v.penaltyTimeRemaining = j.at("penaltyTimeRemaining").get<double>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingSearchErrorResource_HPP

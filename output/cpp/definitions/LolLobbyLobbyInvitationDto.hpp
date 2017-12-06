@@ -1,33 +1,26 @@
-#ifndef SWAGGER_TYPES_LolLobbyLobbyInvitationDto_HPP
-#define SWAGGER_TYPES_LolLobbyLobbyInvitationDto_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLobbyLobbyInvitationState.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyLobbyInvitationDto {
-    // 
-    uint64_t toSummonerId;
-    // 
-    std::string timestamp;
-    // 
+  struct LolLobbyLobbyInvitationDto_t {
     std::string invitationId;
-    // 
-    LolLobbyLobbyInvitationState state;
+    std::string timestamp;
+    LolLobbyLobbyInvitationState_t state;
+    uint64_t toSummonerId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyLobbyInvitationDto& v) {
-    j["toSummonerId"] = v.toSummonerId;
-    j["timestamp"] = v.timestamp;
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyInvitationDto_t& v) {
     j["invitationId"] = v.invitationId;
+    j["timestamp"] = v.timestamp;
     j["state"] = v.state;
+    j["toSummonerId"] = v.toSummonerId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyLobbyInvitationDto& v) {
-    v.toSummonerId = j.at("toSummonerId").get<uint64_t>;
-    v.timestamp = j.at("timestamp").get<std::string>;
-    v.invitationId = j.at("invitationId").get<std::string>;
-    v.state = j.at("state").get<LolLobbyLobbyInvitationState>;
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyInvitationDto_t& v) {
+    v.invitationId = j.at("invitationId").get<std::string>();
+    v.timestamp = j.at("timestamp").get<std::string>();
+    v.state = j.at("state").get<LolLobbyLobbyInvitationState_t>();
+    v.toSummonerId = j.at("toSummonerId").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyLobbyInvitationDto_HPP

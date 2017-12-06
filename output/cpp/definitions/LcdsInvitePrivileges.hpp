@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LcdsInvitePrivileges_HPP
-#define SWAGGER_TYPES_LcdsInvitePrivileges_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LcdsInvitePrivileges {
-    // 
+  struct LcdsInvitePrivileges_t {
     bool canInvite;
   };
 
-  inline void to_json(nlohmann::json& j, const LcdsInvitePrivileges& v) {
+  inline void to_json(nlohmann::json& j, const LcdsInvitePrivileges_t& v) {
     j["canInvite"] = v.canInvite;
   }
 
-  inline void from_json(const nlohmann::json& j, LcdsInvitePrivileges& v) {
-    v.canInvite = j.at("canInvite").get<bool>;
+  inline void from_json(const nlohmann::json& j, LcdsInvitePrivileges_t& v) {
+    v.canInvite = j.at("canInvite").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LcdsInvitePrivileges_HPP

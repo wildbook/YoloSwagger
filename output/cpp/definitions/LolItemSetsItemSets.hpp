@@ -1,29 +1,23 @@
-#ifndef SWAGGER_TYPES_LolItemSetsItemSets_HPP
-#define SWAGGER_TYPES_LolItemSetsItemSets_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolItemSetsItemSet.hpp"
 namespace leagueapi {
-  // 
-  struct LolItemSetsItemSets {
-    // 
-    uint64_t timestamp;
-    // 
-    std::vector<LolItemSetsItemSet> itemSets;
-    // 
+  struct LolItemSetsItemSets_t {
+    std::vector<LolItemSetsItemSet_t> itemSets;
     uint64_t accountId;
+    uint64_t timestamp;
   };
 
-  inline void to_json(nlohmann::json& j, const LolItemSetsItemSets& v) {
-    j["timestamp"] = v.timestamp;
+  inline void to_json(nlohmann::json& j, const LolItemSetsItemSets_t& v) {
     j["itemSets"] = v.itemSets;
     j["accountId"] = v.accountId;
+    j["timestamp"] = v.timestamp;
   }
 
-  inline void from_json(const nlohmann::json& j, LolItemSetsItemSets& v) {
-    v.timestamp = j.at("timestamp").get<uint64_t>;
-    v.itemSets = j.at("itemSets").get<std::vector<LolItemSetsItemSet>>;
-    v.accountId = j.at("accountId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolItemSetsItemSets_t& v) {
+    v.itemSets = j.at("itemSets").get<std::vector<LolItemSetsItemSet_t>>();
+    v.accountId = j.at("accountId").get<uint64_t>();
+    v.timestamp = j.at("timestamp").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolItemSetsItemSets_HPP

@@ -1,33 +1,26 @@
-#ifndef SWAGGER_TYPES_PlayerMissionObjectiveDTO_HPP
-#define SWAGGER_TYPES_PlayerMissionObjectiveDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "MissionProgressDTO.hpp"
 namespace leagueapi {
-  // 
-  struct PlayerMissionObjectiveDTO {
-    // 
-    MissionProgressDTO progress;
-    // 
-    std::string type;
-    // 
-    std::string description;
-    // 
+  struct PlayerMissionObjectiveDTO_t {
     int32_t sequence;
+    std::string description;
+    MissionProgressDTO_t progress;
+    std::string type;
   };
 
-  inline void to_json(nlohmann::json& j, const PlayerMissionObjectiveDTO& v) {
+  inline void to_json(nlohmann::json& j, const PlayerMissionObjectiveDTO_t& v) {
+    j["sequence"] = v.sequence;
+    j["description"] = v.description;
     j["progress"] = v.progress;
     j["type"] = v.type;
-    j["description"] = v.description;
-    j["sequence"] = v.sequence;
   }
 
-  inline void from_json(const nlohmann::json& j, PlayerMissionObjectiveDTO& v) {
-    v.progress = j.at("progress").get<MissionProgressDTO>;
-    v.type = j.at("type").get<std::string>;
-    v.description = j.at("description").get<std::string>;
-    v.sequence = j.at("sequence").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, PlayerMissionObjectiveDTO_t& v) {
+    v.sequence = j.at("sequence").get<int32_t>();
+    v.description = j.at("description").get<std::string>();
+    v.progress = j.at("progress").get<MissionProgressDTO_t>();
+    v.type = j.at("type").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_PlayerMissionObjectiveDTO_HPP

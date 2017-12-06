@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolSummonerGameloopPlayerInfoV1_HPP
-#define SWAGGER_TYPES_LolSummonerGameloopPlayerInfoV1_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolSummonerRerollDataBagForClientV1.hpp"
 namespace leagueapi {
-  // 
-  struct LolSummonerGameloopPlayerInfoV1 {
-    // 
-    LolSummonerRerollDataBagForClientV1 rerollDataBag;
-    // 
+  struct LolSummonerGameloopPlayerInfoV1_t {
     nlohmann::json autoFillDataBagByQueueId;
+    LolSummonerRerollDataBagForClientV1_t rerollDataBag;
   };
 
-  inline void to_json(nlohmann::json& j, const LolSummonerGameloopPlayerInfoV1& v) {
-    j["rerollDataBag"] = v.rerollDataBag;
+  inline void to_json(nlohmann::json& j, const LolSummonerGameloopPlayerInfoV1_t& v) {
     j["autoFillDataBagByQueueId"] = v.autoFillDataBagByQueueId;
+    j["rerollDataBag"] = v.rerollDataBag;
   }
 
-  inline void from_json(const nlohmann::json& j, LolSummonerGameloopPlayerInfoV1& v) {
-    v.rerollDataBag = j.at("rerollDataBag").get<LolSummonerRerollDataBagForClientV1>;
-    v.autoFillDataBagByQueueId = j.at("autoFillDataBagByQueueId").get<nlohmann::json>;
+  inline void from_json(const nlohmann::json& j, LolSummonerGameloopPlayerInfoV1_t& v) {
+    v.autoFillDataBagByQueueId = j.at("autoFillDataBagByQueueId").get<nlohmann::json>();
+    v.rerollDataBag = j.at("rerollDataBag").get<LolSummonerRerollDataBagForClientV1_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolSummonerGameloopPlayerInfoV1_HPP

@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_PluginResourceEventType_HPP
-#define SWAGGER_TYPES_PluginResourceEventType_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class PluginResourceEventType {
-    // 
-    Create = 0,
-    // 
-    Update = 1,
-    // 
-    Delete = 2,
+  enum class PluginResourceEventType_t {
+    Delete_E = 2,
+    Update_E = 1,
+    Create_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const PluginResourceEventType& v) {
+  inline void to_json(nlohmann::json& j, const PluginResourceEventType_t& v) {
     switch(v) {
-      case PluginResourceEventType::Create:
-        j = "Create";
+      case PluginResourceEventType_t::Delete_E:
+        j = "Delete";
       break;
-      case PluginResourceEventType::Update:
+      case PluginResourceEventType_t::Update_E:
         j = "Update";
       break;
-      case PluginResourceEventType::Delete:
-        j = "Delete";
+      case PluginResourceEventType_t::Create_E:
+        j = "Create";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, PluginResourceEventType& v) {
+  inline void from_json(const nlohmann::json& j, PluginResourceEventType_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "Create"){
-      v = PluginResourceEventType::Create;
+    if(s == "Delete"){
+      v = PluginResourceEventType_t::Delete_E;
       return;
     }
     if(s == "Update"){
-      v = PluginResourceEventType::Update;
+      v = PluginResourceEventType_t::Update_E;
       return;
     }
-    if(s == "Delete"){
-      v = PluginResourceEventType::Delete;
+    if(s == "Create"){
+      v = PluginResourceEventType_t::Create_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_PluginResourceEventType_HPP

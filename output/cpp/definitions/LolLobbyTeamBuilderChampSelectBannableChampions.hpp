@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderChampSelectBannableChampions_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderChampSelectBannableChampions_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyTeamBuilderChampSelectBannableChampions {
-    // 
+  struct LolLobbyTeamBuilderChampSelectBannableChampions_t {
     std::vector<int32_t> championIds;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderChampSelectBannableChampions& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderChampSelectBannableChampions_t& v) {
     j["championIds"] = v.championIds;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderChampSelectBannableChampions& v) {
-    v.championIds = j.at("championIds").get<std::vector<int32_t>>;
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderChampSelectBannableChampions_t& v) {
+    v.championIds = j.at("championIds").get<std::vector<int32_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderChampSelectBannableChampions_HPP

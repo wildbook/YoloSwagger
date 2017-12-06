@@ -1,64 +1,55 @@
-#ifndef SWAGGER_TYPES_LolClashTournamentState_HPP
-#define SWAGGER_TYPES_LolClashTournamentState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolClashTournamentState {
-    // 
-    IN_GAME = 3,
-    // 
-    IDLE = 0,
-    // 
-    LOCK_IN = 1,
-    // 
-    SCOUTING = 2,
-    // 
-    RESULTS = 4,
+  enum class LolClashTournamentState_t {
+    SCOUTING_E = 2,
+    RESULTS_E = 4,
+    IN_GAME_E = 3,
+    IDLE_E = 0,
+    LOCK_IN_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashTournamentState& v) {
+  inline void to_json(nlohmann::json& j, const LolClashTournamentState_t& v) {
     switch(v) {
-      case LolClashTournamentState::IN_GAME:
-        j = "IN_GAME";
-      break;
-      case LolClashTournamentState::IDLE:
-        j = "IDLE";
-      break;
-      case LolClashTournamentState::LOCK_IN:
-        j = "LOCK_IN";
-      break;
-      case LolClashTournamentState::SCOUTING:
+      case LolClashTournamentState_t::SCOUTING_E:
         j = "SCOUTING";
       break;
-      case LolClashTournamentState::RESULTS:
+      case LolClashTournamentState_t::RESULTS_E:
         j = "RESULTS";
+      break;
+      case LolClashTournamentState_t::IN_GAME_E:
+        j = "IN_GAME";
+      break;
+      case LolClashTournamentState_t::IDLE_E:
+        j = "IDLE";
+      break;
+      case LolClashTournamentState_t::LOCK_IN_E:
+        j = "LOCK_IN";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashTournamentState& v) {
+  inline void from_json(const nlohmann::json& j, LolClashTournamentState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "IN_GAME"){
-      v = LolClashTournamentState::IN_GAME;
-      return;
-    }
-    if(s == "IDLE"){
-      v = LolClashTournamentState::IDLE;
-      return;
-    }
-    if(s == "LOCK_IN"){
-      v = LolClashTournamentState::LOCK_IN;
-      return;
-    }
     if(s == "SCOUTING"){
-      v = LolClashTournamentState::SCOUTING;
+      v = LolClashTournamentState_t::SCOUTING_E;
       return;
     }
     if(s == "RESULTS"){
-      v = LolClashTournamentState::RESULTS;
+      v = LolClashTournamentState_t::RESULTS_E;
+      return;
+    }
+    if(s == "IN_GAME"){
+      v = LolClashTournamentState_t::IN_GAME_E;
+      return;
+    }
+    if(s == "IDLE"){
+      v = LolClashTournamentState_t::IDLE_E;
+      return;
+    }
+    if(s == "LOCK_IN"){
+      v = LolClashTournamentState_t::LOCK_IN_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashTournamentState_HPP

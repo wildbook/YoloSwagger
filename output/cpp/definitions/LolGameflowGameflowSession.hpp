@@ -1,41 +1,33 @@
-#ifndef SWAGGER_TYPES_LolGameflowGameflowSession_HPP
-#define SWAGGER_TYPES_LolGameflowGameflowSession_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolGameflowGameflowGameDodge.hpp"
-#include "LolGameflowGameflowGameData.hpp"
+#include "LolGameflowGameflowGameMap.hpp"
 #include "LolGameflowGameflowPhase.hpp"
 #include "LolGameflowGameflowGameClient.hpp"
-#include "LolGameflowGameflowGameMap.hpp"
+#include "LolGameflowGameflowGameData.hpp"
 namespace leagueapi {
-  // 
-  struct LolGameflowGameflowSession {
-    // 
-    LolGameflowGameflowPhase phase;
-    // 
-    LolGameflowGameflowGameClient gameClient;
-    // 
-    LolGameflowGameflowGameDodge gameDodge;
-    // 
-    LolGameflowGameflowGameData gameData;
-    // 
-    LolGameflowGameflowGameMap map;
+  struct LolGameflowGameflowSession_t {
+    LolGameflowGameflowGameClient_t gameClient;
+    LolGameflowGameflowGameData_t gameData;
+    LolGameflowGameflowGameDodge_t gameDodge;
+    LolGameflowGameflowPhase_t phase;
+    LolGameflowGameflowGameMap_t map;
   };
 
-  inline void to_json(nlohmann::json& j, const LolGameflowGameflowSession& v) {
-    j["phase"] = v.phase;
+  inline void to_json(nlohmann::json& j, const LolGameflowGameflowSession_t& v) {
     j["gameClient"] = v.gameClient;
-    j["gameDodge"] = v.gameDodge;
     j["gameData"] = v.gameData;
+    j["gameDodge"] = v.gameDodge;
+    j["phase"] = v.phase;
     j["map"] = v.map;
   }
 
-  inline void from_json(const nlohmann::json& j, LolGameflowGameflowSession& v) {
-    v.phase = j.at("phase").get<LolGameflowGameflowPhase>;
-    v.gameClient = j.at("gameClient").get<LolGameflowGameflowGameClient>;
-    v.gameDodge = j.at("gameDodge").get<LolGameflowGameflowGameDodge>;
-    v.gameData = j.at("gameData").get<LolGameflowGameflowGameData>;
-    v.map = j.at("map").get<LolGameflowGameflowGameMap>;
+  inline void from_json(const nlohmann::json& j, LolGameflowGameflowSession_t& v) {
+    v.gameClient = j.at("gameClient").get<LolGameflowGameflowGameClient_t>();
+    v.gameData = j.at("gameData").get<LolGameflowGameflowGameData_t>();
+    v.gameDodge = j.at("gameDodge").get<LolGameflowGameflowGameDodge_t>();
+    v.phase = j.at("phase").get<LolGameflowGameflowPhase_t>();
+    v.map = j.at("map").get<LolGameflowGameflowGameMap_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolGameflowGameflowSession_HPP

@@ -1,36 +1,36 @@
-#ifndef SWAGGER_TYPES_SanitizerContainsSanitizedRequest_HPP
-#define SWAGGER_TYPES_SanitizerContainsSanitizedRequest_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct SanitizerContainsSanitizedRequest {
-    // 
+  struct SanitizerContainsSanitizedRequest_t {
+    std::optional<bool> includeEmbedded;
+    std::optional<bool> aggressiveScan;
+    std::optional<uint32_t> level;
     std::string text;
-    // 
-    uint32_t level;
-    // 
-    bool aggressiveScan;
-    // 
-    bool removeDisallowedChars;
-    // 
-    bool includeEmbedded;
+    std::optional<bool> removeDisallowedChars;
   };
 
-  inline void to_json(nlohmann::json& j, const SanitizerContainsSanitizedRequest& v) {
+  inline void to_json(nlohmann::json& j, const SanitizerContainsSanitizedRequest_t& v) {
+    if(v.includeEmbedded)
+      j["includeEmbedded"] = *v.includeEmbedded;
+    if(v.aggressiveScan)
+      j["aggressiveScan"] = *v.aggressiveScan;
+    if(v.level)
+      j["level"] = *v.level;
     j["text"] = v.text;
-    j["level"] = v.level;
-    j["aggressiveScan"] = v.aggressiveScan;
-    j["removeDisallowedChars"] = v.removeDisallowedChars;
-    j["includeEmbedded"] = v.includeEmbedded;
+    if(v.removeDisallowedChars)
+      j["removeDisallowedChars"] = *v.removeDisallowedChars;
   }
 
-  inline void from_json(const nlohmann::json& j, SanitizerContainsSanitizedRequest& v) {
-    v.text = j.at("text").get<std::string>;
-    v.level = j.at("level").get<uint32_t>;
-    v.aggressiveScan = j.at("aggressiveScan").get<bool>;
-    v.removeDisallowedChars = j.at("removeDisallowedChars").get<bool>;
-    v.includeEmbedded = j.at("includeEmbedded").get<bool>;
+  inline void from_json(const nlohmann::json& j, SanitizerContainsSanitizedRequest_t& v) {
+    if(auto it = j.find("includeEmbedded"); it != j.end() !it->is_null())
+      v.includeEmbedded = it->get<bool>();
+    if(auto it = j.find("aggressiveScan"); it != j.end() !it->is_null())
+      v.aggressiveScan = it->get<bool>();
+    if(auto it = j.find("level"); it != j.end() !it->is_null())
+      v.level = it->get<uint32_t>();
+    v.text = j.at("text").get<std::string>();
+    if(auto it = j.find("removeDisallowedChars"); it != j.end() !it->is_null())
+      v.removeDisallowedChars = it->get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_SanitizerContainsSanitizedRequest_HPP

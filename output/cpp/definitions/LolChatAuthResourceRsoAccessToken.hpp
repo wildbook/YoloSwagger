@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolChatAuthResourceRsoAccessToken_HPP
-#define SWAGGER_TYPES_LolChatAuthResourceRsoAccessToken_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChatAuthResourceRsoAccessToken {
-    // 
+  struct LolChatAuthResourceRsoAccessToken_t {
     std::vector<std::string> scopes;
-    // 
-    std::string token;
-    // 
     uint64_t expiry;
+    std::string token;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatAuthResourceRsoAccessToken& v) {
+  inline void to_json(nlohmann::json& j, const LolChatAuthResourceRsoAccessToken_t& v) {
     j["scopes"] = v.scopes;
-    j["token"] = v.token;
     j["expiry"] = v.expiry;
+    j["token"] = v.token;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatAuthResourceRsoAccessToken& v) {
-    v.scopes = j.at("scopes").get<std::vector<std::string>>;
-    v.token = j.at("token").get<std::string>;
-    v.expiry = j.at("expiry").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolChatAuthResourceRsoAccessToken_t& v) {
+    v.scopes = j.at("scopes").get<std::vector<std::string>>();
+    v.expiry = j.at("expiry").get<uint64_t>();
+    v.token = j.at("token").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatAuthResourceRsoAccessToken_HPP

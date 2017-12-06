@@ -1,48 +1,39 @@
-#ifndef SWAGGER_TYPES_cookie_HPP
-#define SWAGGER_TYPES_cookie_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct cookie {
-    // 
-    std::string domain;
-    // 
-    std::string name;
-    // 
-    std::string url;
-    // 
-    int64_t expires;
-    // 
-    std::string value;
-    // 
+  struct cookie_t {
     std::string path;
-    // 
+    std::string name;
     bool httponly;
-    // 
+    std::string domain;
     bool secure;
+    std::string url;
+    std::optional<int64_t> expires;
+    std::string value;
   };
 
-  inline void to_json(nlohmann::json& j, const cookie& v) {
-    j["domain"] = v.domain;
-    j["name"] = v.name;
-    j["url"] = v.url;
-    j["expires"] = v.expires;
-    j["value"] = v.value;
+  inline void to_json(nlohmann::json& j, const cookie_t& v) {
     j["path"] = v.path;
+    j["name"] = v.name;
     j["httponly"] = v.httponly;
+    j["domain"] = v.domain;
     j["secure"] = v.secure;
+    j["url"] = v.url;
+    if(v.expires)
+      j["expires"] = *v.expires;
+    j["value"] = v.value;
   }
 
-  inline void from_json(const nlohmann::json& j, cookie& v) {
-    v.domain = j.at("domain").get<std::string>;
-    v.name = j.at("name").get<std::string>;
-    v.url = j.at("url").get<std::string>;
-    v.expires = j.at("expires").get<int64_t>;
-    v.value = j.at("value").get<std::string>;
-    v.path = j.at("path").get<std::string>;
-    v.httponly = j.at("httponly").get<bool>;
-    v.secure = j.at("secure").get<bool>;
+  inline void from_json(const nlohmann::json& j, cookie_t& v) {
+    v.path = j.at("path").get<std::string>();
+    v.name = j.at("name").get<std::string>();
+    v.httponly = j.at("httponly").get<bool>();
+    v.domain = j.at("domain").get<std::string>();
+    v.secure = j.at("secure").get<bool>();
+    v.url = j.at("url").get<std::string>();
+    if(auto it = j.find("expires"); it != j.end() !it->is_null())
+      v.expires = it->get<int64_t>();
+    v.value = j.at("value").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_cookie_HPP

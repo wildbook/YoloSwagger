@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolFeaturedModesGameflowSession_HPP
-#define SWAGGER_TYPES_LolFeaturedModesGameflowSession_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolFeaturedModesGameflowPhase.hpp"
 namespace leagueapi {
-  // 
-  struct LolFeaturedModesGameflowSession {
-    // 
-    LolFeaturedModesGameflowPhase phase;
+  struct LolFeaturedModesGameflowSession_t {
+    LolFeaturedModesGameflowPhase_t phase;
   };
 
-  inline void to_json(nlohmann::json& j, const LolFeaturedModesGameflowSession& v) {
+  inline void to_json(nlohmann::json& j, const LolFeaturedModesGameflowSession_t& v) {
     j["phase"] = v.phase;
   }
 
-  inline void from_json(const nlohmann::json& j, LolFeaturedModesGameflowSession& v) {
-    v.phase = j.at("phase").get<LolFeaturedModesGameflowPhase>;
+  inline void from_json(const nlohmann::json& j, LolFeaturedModesGameflowSession_t& v) {
+    v.phase = j.at("phase").get<LolFeaturedModesGameflowPhase_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolFeaturedModesGameflowSession_HPP

@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolClashSetTicketRequest_HPP
-#define SWAGGER_TYPES_LolClashSetTicketRequest_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolClashSetTicketRequest {
-    // 
+  struct LolClashSetTicketRequest_t {
     int32_t ticketAmount;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashSetTicketRequest& v) {
+  inline void to_json(nlohmann::json& j, const LolClashSetTicketRequest_t& v) {
     j["ticketAmount"] = v.ticketAmount;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashSetTicketRequest& v) {
-    v.ticketAmount = j.at("ticketAmount").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LolClashSetTicketRequest_t& v) {
+    v.ticketAmount = j.at("ticketAmount").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashSetTicketRequest_HPP

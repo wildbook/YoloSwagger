@@ -1,29 +1,23 @@
-#ifndef SWAGGER_TYPES_CollectionsLcdsMasteryBookDTO_HPP
-#define SWAGGER_TYPES_CollectionsLcdsMasteryBookDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "CollectionsLcdsMasteryBookPageDTO.hpp"
 namespace leagueapi {
-  // 
-  struct CollectionsLcdsMasteryBookDTO {
-    // 
-    std::vector<CollectionsLcdsMasteryBookPageDTO> bookPages;
-    // 
-    std::string dateString;
-    // 
+  struct CollectionsLcdsMasteryBookDTO_t {
     uint64_t summonerId;
+    std::string dateString;
+    std::vector<CollectionsLcdsMasteryBookPageDTO_t> bookPages;
   };
 
-  inline void to_json(nlohmann::json& j, const CollectionsLcdsMasteryBookDTO& v) {
-    j["bookPages"] = v.bookPages;
-    j["dateString"] = v.dateString;
+  inline void to_json(nlohmann::json& j, const CollectionsLcdsMasteryBookDTO_t& v) {
     j["summonerId"] = v.summonerId;
+    j["dateString"] = v.dateString;
+    j["bookPages"] = v.bookPages;
   }
 
-  inline void from_json(const nlohmann::json& j, CollectionsLcdsMasteryBookDTO& v) {
-    v.bookPages = j.at("bookPages").get<std::vector<CollectionsLcdsMasteryBookPageDTO>>;
-    v.dateString = j.at("dateString").get<std::string>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, CollectionsLcdsMasteryBookDTO_t& v) {
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.dateString = j.at("dateString").get<std::string>();
+    v.bookPages = j.at("bookPages").get<std::vector<CollectionsLcdsMasteryBookPageDTO_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_CollectionsLcdsMasteryBookDTO_HPP

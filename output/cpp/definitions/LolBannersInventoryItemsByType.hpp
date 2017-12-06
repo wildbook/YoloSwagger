@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolBannersInventoryItemsByType_HPP
-#define SWAGGER_TYPES_LolBannersInventoryItemsByType_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolBannersTournamentFlagInventoryItem.hpp"
 namespace leagueapi {
-  // 
-  struct LolBannersInventoryItemsByType {
-    // 
-    std::vector<LolBannersTournamentFlagInventoryItem> TOURNAMENT_FLAG;
+  struct LolBannersInventoryItemsByType_t {
+    std::vector<LolBannersTournamentFlagInventoryItem_t> TOURNAMENT_FLAG;
   };
 
-  inline void to_json(nlohmann::json& j, const LolBannersInventoryItemsByType& v) {
+  inline void to_json(nlohmann::json& j, const LolBannersInventoryItemsByType_t& v) {
     j["TOURNAMENT_FLAG"] = v.TOURNAMENT_FLAG;
   }
 
-  inline void from_json(const nlohmann::json& j, LolBannersInventoryItemsByType& v) {
-    v.TOURNAMENT_FLAG = j.at("TOURNAMENT_FLAG").get<std::vector<LolBannersTournamentFlagInventoryItem>>;
+  inline void from_json(const nlohmann::json& j, LolBannersInventoryItemsByType_t& v) {
+    v.TOURNAMENT_FLAG = j.at("TOURNAMENT_FLAG").get<std::vector<LolBannersTournamentFlagInventoryItem_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolBannersInventoryItemsByType_HPP

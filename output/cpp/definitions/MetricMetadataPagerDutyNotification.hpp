@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_MetricMetadataPagerDutyNotification_HPP
-#define SWAGGER_TYPES_MetricMetadataPagerDutyNotification_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct MetricMetadataPagerDutyNotification {
-    // 
+  struct MetricMetadataPagerDutyNotification_t {
     std::string apikey;
   };
 
-  inline void to_json(nlohmann::json& j, const MetricMetadataPagerDutyNotification& v) {
+  inline void to_json(nlohmann::json& j, const MetricMetadataPagerDutyNotification_t& v) {
     j["apikey"] = v.apikey;
   }
 
-  inline void from_json(const nlohmann::json& j, MetricMetadataPagerDutyNotification& v) {
-    v.apikey = j.at("apikey").get<std::string>;
+  inline void from_json(const nlohmann::json& j, MetricMetadataPagerDutyNotification_t& v) {
+    v.apikey = j.at("apikey").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_MetricMetadataPagerDutyNotification_HPP

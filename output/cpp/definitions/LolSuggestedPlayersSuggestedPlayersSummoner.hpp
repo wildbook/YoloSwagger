@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersSummoner_HPP
-#define SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersSummoner_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolSuggestedPlayersSuggestedPlayersSummoner {
-    // 
-    std::string displayName;
-    // 
-    uint64_t summonerId;
-    // 
+  struct LolSuggestedPlayersSuggestedPlayersSummoner_t {
     uint32_t summonerLevel;
+    std::string displayName;
+    uint64_t summonerId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersSummoner& v) {
+  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersSummoner_t& v) {
+    j["summonerLevel"] = v.summonerLevel;
     j["displayName"] = v.displayName;
     j["summonerId"] = v.summonerId;
-    j["summonerLevel"] = v.summonerLevel;
   }
 
-  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersSummoner& v) {
-    v.displayName = j.at("displayName").get<std::string>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
-    v.summonerLevel = j.at("summonerLevel").get<uint32_t>;
+  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersSummoner_t& v) {
+    v.summonerLevel = j.at("summonerLevel").get<uint32_t>();
+    v.displayName = j.at("displayName").get<std::string>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersSummoner_HPP

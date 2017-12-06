@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_RsoAuthEntitlementsToken_HPP
-#define SWAGGER_TYPES_RsoAuthEntitlementsToken_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct RsoAuthEntitlementsToken {
-    // 
-    std::vector<std::string> entitlements;
-    // 
-    std::string token;
-    // 
+  struct RsoAuthEntitlementsToken_t {
     uint64_t expiry;
+    std::vector<std::string> entitlements;
+    std::string token;
   };
 
-  inline void to_json(nlohmann::json& j, const RsoAuthEntitlementsToken& v) {
+  inline void to_json(nlohmann::json& j, const RsoAuthEntitlementsToken_t& v) {
+    j["expiry"] = v.expiry;
     j["entitlements"] = v.entitlements;
     j["token"] = v.token;
-    j["expiry"] = v.expiry;
   }
 
-  inline void from_json(const nlohmann::json& j, RsoAuthEntitlementsToken& v) {
-    v.entitlements = j.at("entitlements").get<std::vector<std::string>>;
-    v.token = j.at("token").get<std::string>;
-    v.expiry = j.at("expiry").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, RsoAuthEntitlementsToken_t& v) {
+    v.expiry = j.at("expiry").get<uint64_t>();
+    v.entitlements = j.at("entitlements").get<std::vector<std::string>>();
+    v.token = j.at("token").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_RsoAuthEntitlementsToken_HPP

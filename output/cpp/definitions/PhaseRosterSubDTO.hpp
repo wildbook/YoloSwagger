@@ -1,42 +1,33 @@
-#ifndef SWAGGER_TYPES_PhaseRosterSubDTO_HPP
-#define SWAGGER_TYPES_PhaseRosterSubDTO_HPP
+#pragma once
 #include <json.hpp>
-#include "SubState.hpp"
+#include <optional>
 #include "Position.hpp"
+#include "SubState.hpp"
 namespace leagueapi {
-  // 
-  struct PhaseRosterSubDTO {
-    // 
-    uint64_t replacedPlayerId;
-    // 
-    SubState subState;
-    // 
-    uint64_t playerId;
-    // 
-    int32_t pay;
-    // 
-    Position position;
-    // 
+  struct PhaseRosterSubDTO_t {
     int32_t bet;
+    uint64_t playerId;
+    uint64_t replacedPlayerId;
+    SubState_t subState;
+    int32_t pay;
+    Position_t position;
   };
 
-  inline void to_json(nlohmann::json& j, const PhaseRosterSubDTO& v) {
+  inline void to_json(nlohmann::json& j, const PhaseRosterSubDTO_t& v) {
+    j["bet"] = v.bet;
+    j["playerId"] = v.playerId;
     j["replacedPlayerId"] = v.replacedPlayerId;
     j["subState"] = v.subState;
-    j["playerId"] = v.playerId;
     j["pay"] = v.pay;
     j["position"] = v.position;
-    j["bet"] = v.bet;
   }
 
-  inline void from_json(const nlohmann::json& j, PhaseRosterSubDTO& v) {
-    v.replacedPlayerId = j.at("replacedPlayerId").get<uint64_t>;
-    v.subState = j.at("subState").get<SubState>;
-    v.playerId = j.at("playerId").get<uint64_t>;
-    v.pay = j.at("pay").get<int32_t>;
-    v.position = j.at("position").get<Position>;
-    v.bet = j.at("bet").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, PhaseRosterSubDTO_t& v) {
+    v.bet = j.at("bet").get<int32_t>();
+    v.playerId = j.at("playerId").get<uint64_t>();
+    v.replacedPlayerId = j.at("replacedPlayerId").get<uint64_t>();
+    v.subState = j.at("subState").get<SubState_t>();
+    v.pay = j.at("pay").get<int32_t>();
+    v.position = j.at("position").get<Position_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_PhaseRosterSubDTO_HPP

@@ -1,32 +1,25 @@
-#ifndef SWAGGER_TYPES_LolGameflowQueueReward_HPP
-#define SWAGGER_TYPES_LolGameflowQueueReward_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolGameflowQueueReward {
-    // 
-    bool isChampionPointsEnabled;
-    // 
-    bool isXpEnabled;
-    // 
+  struct LolGameflowQueueReward_t {
     std::vector<int32_t> partySizeIpRewards;
-    // 
+    bool isXpEnabled;
+    bool isChampionPointsEnabled;
     bool isIpEnabled;
   };
 
-  inline void to_json(nlohmann::json& j, const LolGameflowQueueReward& v) {
-    j["isChampionPointsEnabled"] = v.isChampionPointsEnabled;
-    j["isXpEnabled"] = v.isXpEnabled;
+  inline void to_json(nlohmann::json& j, const LolGameflowQueueReward_t& v) {
     j["partySizeIpRewards"] = v.partySizeIpRewards;
+    j["isXpEnabled"] = v.isXpEnabled;
+    j["isChampionPointsEnabled"] = v.isChampionPointsEnabled;
     j["isIpEnabled"] = v.isIpEnabled;
   }
 
-  inline void from_json(const nlohmann::json& j, LolGameflowQueueReward& v) {
-    v.isChampionPointsEnabled = j.at("isChampionPointsEnabled").get<bool>;
-    v.isXpEnabled = j.at("isXpEnabled").get<bool>;
-    v.partySizeIpRewards = j.at("partySizeIpRewards").get<std::vector<int32_t>>;
-    v.isIpEnabled = j.at("isIpEnabled").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolGameflowQueueReward_t& v) {
+    v.partySizeIpRewards = j.at("partySizeIpRewards").get<std::vector<int32_t>>();
+    v.isXpEnabled = j.at("isXpEnabled").get<bool>();
+    v.isChampionPointsEnabled = j.at("isChampionPointsEnabled").get<bool>();
+    v.isIpEnabled = j.at("isIpEnabled").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolGameflowQueueReward_HPP

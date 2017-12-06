@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LcdsGameInviteBaseRuntimeException_HPP
-#define SWAGGER_TYPES_LcdsGameInviteBaseRuntimeException_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LcdsGameInviteBaseRuntimeException {
-    // 
+  struct LcdsGameInviteBaseRuntimeException_t {
     std::string rootCauseClassname;
   };
 
-  inline void to_json(nlohmann::json& j, const LcdsGameInviteBaseRuntimeException& v) {
+  inline void to_json(nlohmann::json& j, const LcdsGameInviteBaseRuntimeException_t& v) {
     j["rootCauseClassname"] = v.rootCauseClassname;
   }
 
-  inline void from_json(const nlohmann::json& j, LcdsGameInviteBaseRuntimeException& v) {
-    v.rootCauseClassname = j.at("rootCauseClassname").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LcdsGameInviteBaseRuntimeException_t& v) {
+    v.rootCauseClassname = j.at("rootCauseClassname").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LcdsGameInviteBaseRuntimeException_HPP

@@ -37,12 +37,12 @@ def info_struct_imports(typedef):
  # converts single {"type": ... . "elementType":... }  to typename
  # example typemape : {"uint32": "UInt32", "map":"Dictionary<string, {0}>"}
  # nonexistant types are returned as is :D
-def info_type_convert(type,  typemap):
+def info_type_convert(type,  typemap,  otherformat = "{0}"):
     if not type["type"] in typemap:
-        return type["type"] 
+        return otherformat.format(type["type"])
     if not type["elementType"] == "":
         if not type["elementType"]  in typemap:
-            return typemap[type["type"]].format(type["elementType"])
+            return typemap[type["type"]].format(otherformat.format(type["elementType"]))
         return typemap[type["type"]].format(typemap[type["elementType"]].format())
     return typemap[type["type"]]
 
@@ -55,7 +55,8 @@ def info_init(helpjson,  swagjson):
                 "fields": {
                     field["name"] : {
                         "description": field["description"], 
-                        "type": field["type"]
+                        "type": field["type"], 
+                        "optional": field["optional"]
                     } for field in entry["fields"]
                 }, 
                 "values": { 
@@ -78,7 +79,7 @@ def info_init(helpjson,  swagjson):
                     } for arg in function["arguments"]
                 }, 
                 "optional":  [ 
-                    arg["name"] for arg in function["arguments"] 
+                    arg["name"] for arg in function["arguments"] if arg["optional"]
                 ], 
                 "required":  [ 
                     arg["name"] for arg in function["arguments"] if not arg["optional"]

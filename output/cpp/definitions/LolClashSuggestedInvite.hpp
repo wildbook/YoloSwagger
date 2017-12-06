@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolClashSuggestedInvite_HPP
-#define SWAGGER_TYPES_LolClashSuggestedInvite_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolClashSuggestedInvite {
-    // 
-    uint64_t suggesterSummonerId;
-    // 
+  struct LolClashSuggestedInvite_t {
     uint64_t summonerId;
+    uint64_t suggesterSummonerId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashSuggestedInvite& v) {
-    j["suggesterSummonerId"] = v.suggesterSummonerId;
+  inline void to_json(nlohmann::json& j, const LolClashSuggestedInvite_t& v) {
     j["summonerId"] = v.summonerId;
+    j["suggesterSummonerId"] = v.suggesterSummonerId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashSuggestedInvite& v) {
-    v.suggesterSummonerId = j.at("suggesterSummonerId").get<uint64_t>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolClashSuggestedInvite_t& v) {
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.suggesterSummonerId = j.at("suggesterSummonerId").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashSuggestedInvite_HPP

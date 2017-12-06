@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LootNameRefId_HPP
-#define SWAGGER_TYPES_LootNameRefId_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LootNameRefId {
-    // 
-    std::string lootName;
-    // 
+  struct LootNameRefId_t {
     std::string refId;
+    std::string lootName;
   };
 
-  inline void to_json(nlohmann::json& j, const LootNameRefId& v) {
-    j["lootName"] = v.lootName;
+  inline void to_json(nlohmann::json& j, const LootNameRefId_t& v) {
     j["refId"] = v.refId;
+    j["lootName"] = v.lootName;
   }
 
-  inline void from_json(const nlohmann::json& j, LootNameRefId& v) {
-    v.lootName = j.at("lootName").get<std::string>;
-    v.refId = j.at("refId").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LootNameRefId_t& v) {
+    v.refId = j.at("refId").get<std::string>();
+    v.lootName = j.at("lootName").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LootNameRefId_HPP

@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolBannersInventoryResponse_HPP
-#define SWAGGER_TYPES_LolBannersInventoryResponse_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolBannersInventoryItemsByType.hpp"
 namespace leagueapi {
-  // 
-  struct LolBannersInventoryResponse {
-    // 
-    LolBannersInventoryItemsByType items;
+  struct LolBannersInventoryResponse_t {
+    LolBannersInventoryItemsByType_t items;
   };
 
-  inline void to_json(nlohmann::json& j, const LolBannersInventoryResponse& v) {
+  inline void to_json(nlohmann::json& j, const LolBannersInventoryResponse_t& v) {
     j["items"] = v.items;
   }
 
-  inline void from_json(const nlohmann::json& j, LolBannersInventoryResponse& v) {
-    v.items = j.at("items").get<LolBannersInventoryItemsByType>;
+  inline void from_json(const nlohmann::json& j, LolBannersInventoryResponse_t& v) {
+    v.items = j.at("items").get<LolBannersInventoryItemsByType_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolBannersInventoryResponse_HPP

@@ -1,73 +1,63 @@
-#ifndef SWAGGER_TYPES_LolFeaturedModesGameflowAvailabilityState_HPP
-#define SWAGGER_TYPES_LolFeaturedModesGameflowAvailabilityState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolFeaturedModesGameflowAvailabilityState {
-    // 
-    Available = 0,
-    // 
-    InGameFlow = 4,
-    // 
-    Patching = 2,
-    // 
-    PlayerBanned = 3,
-    // 
-    Initializing = 1,
-    // 
-    Configuration = 5,
+  enum class LolFeaturedModesGameflowAvailabilityState_t {
+    InGameFlow_E = 4,
+    Configuration_E = 5,
+    Patching_E = 2,
+    PlayerBanned_E = 3,
+    Initializing_E = 1,
+    Available_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const LolFeaturedModesGameflowAvailabilityState& v) {
+  inline void to_json(nlohmann::json& j, const LolFeaturedModesGameflowAvailabilityState_t& v) {
     switch(v) {
-      case LolFeaturedModesGameflowAvailabilityState::Available:
-        j = "Available";
-      break;
-      case LolFeaturedModesGameflowAvailabilityState::InGameFlow:
+      case LolFeaturedModesGameflowAvailabilityState_t::InGameFlow_E:
         j = "InGameFlow";
       break;
-      case LolFeaturedModesGameflowAvailabilityState::Patching:
+      case LolFeaturedModesGameflowAvailabilityState_t::Configuration_E:
+        j = "Configuration";
+      break;
+      case LolFeaturedModesGameflowAvailabilityState_t::Patching_E:
         j = "Patching";
       break;
-      case LolFeaturedModesGameflowAvailabilityState::PlayerBanned:
+      case LolFeaturedModesGameflowAvailabilityState_t::PlayerBanned_E:
         j = "PlayerBanned";
       break;
-      case LolFeaturedModesGameflowAvailabilityState::Initializing:
+      case LolFeaturedModesGameflowAvailabilityState_t::Initializing_E:
         j = "Initializing";
       break;
-      case LolFeaturedModesGameflowAvailabilityState::Configuration:
-        j = "Configuration";
+      case LolFeaturedModesGameflowAvailabilityState_t::Available_E:
+        j = "Available";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolFeaturedModesGameflowAvailabilityState& v) {
+  inline void from_json(const nlohmann::json& j, LolFeaturedModesGameflowAvailabilityState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "Available"){
-      v = LolFeaturedModesGameflowAvailabilityState::Available;
-      return;
-    }
     if(s == "InGameFlow"){
-      v = LolFeaturedModesGameflowAvailabilityState::InGameFlow;
-      return;
-    }
-    if(s == "Patching"){
-      v = LolFeaturedModesGameflowAvailabilityState::Patching;
-      return;
-    }
-    if(s == "PlayerBanned"){
-      v = LolFeaturedModesGameflowAvailabilityState::PlayerBanned;
-      return;
-    }
-    if(s == "Initializing"){
-      v = LolFeaturedModesGameflowAvailabilityState::Initializing;
+      v = LolFeaturedModesGameflowAvailabilityState_t::InGameFlow_E;
       return;
     }
     if(s == "Configuration"){
-      v = LolFeaturedModesGameflowAvailabilityState::Configuration;
+      v = LolFeaturedModesGameflowAvailabilityState_t::Configuration_E;
+      return;
+    }
+    if(s == "Patching"){
+      v = LolFeaturedModesGameflowAvailabilityState_t::Patching_E;
+      return;
+    }
+    if(s == "PlayerBanned"){
+      v = LolFeaturedModesGameflowAvailabilityState_t::PlayerBanned_E;
+      return;
+    }
+    if(s == "Initializing"){
+      v = LolFeaturedModesGameflowAvailabilityState_t::Initializing_E;
+      return;
+    }
+    if(s == "Available"){
+      v = LolFeaturedModesGameflowAvailabilityState_t::Available_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolFeaturedModesGameflowAvailabilityState_HPP

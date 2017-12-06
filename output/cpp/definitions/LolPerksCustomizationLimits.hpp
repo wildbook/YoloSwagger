@@ -1,73 +1,63 @@
-#ifndef SWAGGER_TYPES_LolPerksCustomizationLimits_HPP
-#define SWAGGER_TYPES_LolPerksCustomizationLimits_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolPerksCustomizationLimits {
-    // 
-    CanSelectSplash = 8,
-    // 
-    CanUseAdvancedStyles = 16,
-    // 
-    Locked = 0,
-    // 
-    CanSelectPrimaries = 4,
-    // 
-    CanSelectPages = 1,
-    // 
-    CanSelectKeystones = 2,
+  enum class LolPerksCustomizationLimits_t {
+    Locked_E = 0,
+    CanSelectSplash_E = 8,
+    CanSelectKeystones_E = 2,
+    CanUseAdvancedStyles_E = 16,
+    CanSelectPrimaries_E = 4,
+    CanSelectPages_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LolPerksCustomizationLimits& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksCustomizationLimits_t& v) {
     switch(v) {
-      case LolPerksCustomizationLimits::CanSelectSplash:
-        j = "CanSelectSplash";
-      break;
-      case LolPerksCustomizationLimits::CanUseAdvancedStyles:
-        j = "CanUseAdvancedStyles";
-      break;
-      case LolPerksCustomizationLimits::Locked:
+      case LolPerksCustomizationLimits_t::Locked_E:
         j = "Locked";
       break;
-      case LolPerksCustomizationLimits::CanSelectPrimaries:
+      case LolPerksCustomizationLimits_t::CanSelectSplash_E:
+        j = "CanSelectSplash";
+      break;
+      case LolPerksCustomizationLimits_t::CanSelectKeystones_E:
+        j = "CanSelectKeystones";
+      break;
+      case LolPerksCustomizationLimits_t::CanUseAdvancedStyles_E:
+        j = "CanUseAdvancedStyles";
+      break;
+      case LolPerksCustomizationLimits_t::CanSelectPrimaries_E:
         j = "CanSelectPrimaries";
       break;
-      case LolPerksCustomizationLimits::CanSelectPages:
+      case LolPerksCustomizationLimits_t::CanSelectPages_E:
         j = "CanSelectPages";
-      break;
-      case LolPerksCustomizationLimits::CanSelectKeystones:
-        j = "CanSelectKeystones";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolPerksCustomizationLimits& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksCustomizationLimits_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "CanSelectSplash"){
-      v = LolPerksCustomizationLimits::CanSelectSplash;
-      return;
-    }
-    if(s == "CanUseAdvancedStyles"){
-      v = LolPerksCustomizationLimits::CanUseAdvancedStyles;
-      return;
-    }
     if(s == "Locked"){
-      v = LolPerksCustomizationLimits::Locked;
+      v = LolPerksCustomizationLimits_t::Locked_E;
       return;
     }
-    if(s == "CanSelectPrimaries"){
-      v = LolPerksCustomizationLimits::CanSelectPrimaries;
-      return;
-    }
-    if(s == "CanSelectPages"){
-      v = LolPerksCustomizationLimits::CanSelectPages;
+    if(s == "CanSelectSplash"){
+      v = LolPerksCustomizationLimits_t::CanSelectSplash_E;
       return;
     }
     if(s == "CanSelectKeystones"){
-      v = LolPerksCustomizationLimits::CanSelectKeystones;
+      v = LolPerksCustomizationLimits_t::CanSelectKeystones_E;
+      return;
+    }
+    if(s == "CanUseAdvancedStyles"){
+      v = LolPerksCustomizationLimits_t::CanUseAdvancedStyles_E;
+      return;
+    }
+    if(s == "CanSelectPrimaries"){
+      v = LolPerksCustomizationLimits_t::CanSelectPrimaries_E;
+      return;
+    }
+    if(s == "CanSelectPages"){
+      v = LolPerksCustomizationLimits_t::CanSelectPages_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolPerksCustomizationLimits_HPP

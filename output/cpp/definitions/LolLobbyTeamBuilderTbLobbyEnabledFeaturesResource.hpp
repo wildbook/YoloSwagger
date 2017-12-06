@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource {
-    // 
+  struct LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource_t {
     std::vector<std::string> enabledFeatures;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource_t& v) {
     j["enabledFeatures"] = v.enabledFeatures;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource& v) {
-    v.enabledFeatures = j.at("enabledFeatures").get<std::vector<std::string>>;
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource_t& v) {
+    v.enabledFeatures = j.at("enabledFeatures").get<std::vector<std::string>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource_HPP

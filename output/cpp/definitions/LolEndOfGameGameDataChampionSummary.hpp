@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolEndOfGameGameDataChampionSummary_HPP
-#define SWAGGER_TYPES_LolEndOfGameGameDataChampionSummary_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolEndOfGameGameDataChampionSummary {
-    // 
-    std::string alias;
-    // 
+  struct LolEndOfGameGameDataChampionSummary_t {
     int32_t id;
+    std::string alias;
   };
 
-  inline void to_json(nlohmann::json& j, const LolEndOfGameGameDataChampionSummary& v) {
-    j["alias"] = v.alias;
+  inline void to_json(nlohmann::json& j, const LolEndOfGameGameDataChampionSummary_t& v) {
     j["id"] = v.id;
+    j["alias"] = v.alias;
   }
 
-  inline void from_json(const nlohmann::json& j, LolEndOfGameGameDataChampionSummary& v) {
-    v.alias = j.at("alias").get<std::string>;
-    v.id = j.at("id").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LolEndOfGameGameDataChampionSummary_t& v) {
+    v.id = j.at("id").get<int32_t>();
+    v.alias = j.at("alias").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolEndOfGameGameDataChampionSummary_HPP

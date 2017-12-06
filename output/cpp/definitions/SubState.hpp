@@ -1,82 +1,71 @@
-#ifndef SWAGGER_TYPES_SubState_HPP
-#define SWAGGER_TYPES_SubState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class SubState {
-    // 
-    SUGGESTED = 0,
-    // 
-    REVOKED = 3,
-    // 
-    NOT_READY = 4,
-    // 
-    DECLINED = 2,
-    // 
-    READY = 6,
-    // 
-    FORCED_NOT_READY = 5,
-    // 
-    PENDING = 1,
+  enum class SubState_t {
+    SUGGESTED_E = 0,
+    READY_E = 6,
+    NOT_READY_E = 4,
+    PENDING_E = 1,
+    DECLINED_E = 2,
+    FORCED_NOT_READY_E = 5,
+    REVOKED_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const SubState& v) {
+  inline void to_json(nlohmann::json& j, const SubState_t& v) {
     switch(v) {
-      case SubState::SUGGESTED:
+      case SubState_t::SUGGESTED_E:
         j = "SUGGESTED";
       break;
-      case SubState::REVOKED:
-        j = "REVOKED";
-      break;
-      case SubState::NOT_READY:
-        j = "NOT_READY";
-      break;
-      case SubState::DECLINED:
-        j = "DECLINED";
-      break;
-      case SubState::READY:
+      case SubState_t::READY_E:
         j = "READY";
       break;
-      case SubState::FORCED_NOT_READY:
+      case SubState_t::NOT_READY_E:
+        j = "NOT_READY";
+      break;
+      case SubState_t::PENDING_E:
+        j = "PENDING";
+      break;
+      case SubState_t::DECLINED_E:
+        j = "DECLINED";
+      break;
+      case SubState_t::FORCED_NOT_READY_E:
         j = "FORCED_NOT_READY";
       break;
-      case SubState::PENDING:
-        j = "PENDING";
+      case SubState_t::REVOKED_E:
+        j = "REVOKED";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, SubState& v) {
+  inline void from_json(const nlohmann::json& j, SubState_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "SUGGESTED"){
-      v = SubState::SUGGESTED;
-      return;
-    }
-    if(s == "REVOKED"){
-      v = SubState::REVOKED;
-      return;
-    }
-    if(s == "NOT_READY"){
-      v = SubState::NOT_READY;
-      return;
-    }
-    if(s == "DECLINED"){
-      v = SubState::DECLINED;
+      v = SubState_t::SUGGESTED_E;
       return;
     }
     if(s == "READY"){
-      v = SubState::READY;
+      v = SubState_t::READY_E;
       return;
     }
-    if(s == "FORCED_NOT_READY"){
-      v = SubState::FORCED_NOT_READY;
+    if(s == "NOT_READY"){
+      v = SubState_t::NOT_READY_E;
       return;
     }
     if(s == "PENDING"){
-      v = SubState::PENDING;
+      v = SubState_t::PENDING_E;
+      return;
+    }
+    if(s == "DECLINED"){
+      v = SubState_t::DECLINED_E;
+      return;
+    }
+    if(s == "FORCED_NOT_READY"){
+      v = SubState_t::FORCED_NOT_READY_E;
+      return;
+    }
+    if(s == "REVOKED"){
+      v = SubState_t::REVOKED_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_SubState_HPP

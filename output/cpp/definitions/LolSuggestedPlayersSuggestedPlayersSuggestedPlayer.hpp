@@ -1,37 +1,29 @@
-#ifndef SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersSuggestedPlayer_HPP
-#define SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersSuggestedPlayer_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolSuggestedPlayersSuggestedPlayersReason.hpp"
 namespace leagueapi {
-  // 
-  struct LolSuggestedPlayersSuggestedPlayersSuggestedPlayer {
-    // 
-    std::string summonerName;
-    // 
+  struct LolSuggestedPlayersSuggestedPlayersSuggestedPlayer_t {
     uint64_t commonFriendId;
-    // 
-    LolSuggestedPlayersSuggestedPlayersReason reason;
-    // 
-    std::string commonFriendName;
-    // 
+    std::string summonerName;
+    LolSuggestedPlayersSuggestedPlayersReason_t reason;
     uint64_t summonerId;
+    std::string commonFriendName;
   };
 
-  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersSuggestedPlayer& v) {
-    j["summonerName"] = v.summonerName;
+  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersSuggestedPlayer_t& v) {
     j["commonFriendId"] = v.commonFriendId;
+    j["summonerName"] = v.summonerName;
     j["reason"] = v.reason;
-    j["commonFriendName"] = v.commonFriendName;
     j["summonerId"] = v.summonerId;
+    j["commonFriendName"] = v.commonFriendName;
   }
 
-  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersSuggestedPlayer& v) {
-    v.summonerName = j.at("summonerName").get<std::string>;
-    v.commonFriendId = j.at("commonFriendId").get<uint64_t>;
-    v.reason = j.at("reason").get<LolSuggestedPlayersSuggestedPlayersReason>;
-    v.commonFriendName = j.at("commonFriendName").get<std::string>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersSuggestedPlayer_t& v) {
+    v.commonFriendId = j.at("commonFriendId").get<uint64_t>();
+    v.summonerName = j.at("summonerName").get<std::string>();
+    v.reason = j.at("reason").get<LolSuggestedPlayersSuggestedPlayersReason_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.commonFriendName = j.at("commonFriendName").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersSuggestedPlayer_HPP

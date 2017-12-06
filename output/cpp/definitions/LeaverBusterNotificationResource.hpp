@@ -1,33 +1,26 @@
-#ifndef SWAGGER_TYPES_LeaverBusterNotificationResource_HPP
-#define SWAGGER_TYPES_LeaverBusterNotificationResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LeaverBusterNotificationType.hpp"
 namespace leagueapi {
-  // 
-  struct LeaverBusterNotificationResource {
-    // 
-    std::string msgId;
-    // 
-    LeaverBusterNotificationType type;
-    // 
-    uint32_t id;
-    // 
+  struct LeaverBusterNotificationResource_t {
     int32_t punishedGamesRemaining;
+    std::string msgId;
+    uint32_t id;
+    LeaverBusterNotificationType_t type;
   };
 
-  inline void to_json(nlohmann::json& j, const LeaverBusterNotificationResource& v) {
-    j["msgId"] = v.msgId;
-    j["type"] = v.type;
-    j["id"] = v.id;
+  inline void to_json(nlohmann::json& j, const LeaverBusterNotificationResource_t& v) {
     j["punishedGamesRemaining"] = v.punishedGamesRemaining;
+    j["msgId"] = v.msgId;
+    j["id"] = v.id;
+    j["type"] = v.type;
   }
 
-  inline void from_json(const nlohmann::json& j, LeaverBusterNotificationResource& v) {
-    v.msgId = j.at("msgId").get<std::string>;
-    v.type = j.at("type").get<LeaverBusterNotificationType>;
-    v.id = j.at("id").get<uint32_t>;
-    v.punishedGamesRemaining = j.at("punishedGamesRemaining").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LeaverBusterNotificationResource_t& v) {
+    v.punishedGamesRemaining = j.at("punishedGamesRemaining").get<int32_t>();
+    v.msgId = j.at("msgId").get<std::string>();
+    v.id = j.at("id").get<uint32_t>();
+    v.type = j.at("type").get<LeaverBusterNotificationType_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LeaverBusterNotificationResource_HPP

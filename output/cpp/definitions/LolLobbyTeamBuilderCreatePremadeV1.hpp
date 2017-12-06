@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderCreatePremadeV1_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderCreatePremadeV1_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyTeamBuilderCreatePremadeV1 {
-    // 
+  struct LolLobbyTeamBuilderCreatePremadeV1_t {
     int32_t queueId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderCreatePremadeV1& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderCreatePremadeV1_t& v) {
     j["queueId"] = v.queueId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderCreatePremadeV1& v) {
-    v.queueId = j.at("queueId").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderCreatePremadeV1_t& v) {
+    v.queueId = j.at("queueId").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderCreatePremadeV1_HPP

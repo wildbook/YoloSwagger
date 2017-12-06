@@ -1,26 +1,21 @@
-#ifndef SWAGGER_TYPES_LolPftGameflowSession_HPP
-#define SWAGGER_TYPES_LolPftGameflowSession_HPP
+#pragma once
 #include <json.hpp>
-#include "LolPftGameflowPhase.hpp"
+#include <optional>
 #include "LolPftGameflowGameDodge.hpp"
+#include "LolPftGameflowPhase.hpp"
 namespace leagueapi {
-  // 
-  struct LolPftGameflowSession {
-    // 
-    LolPftGameflowPhase phase;
-    // 
-    LolPftGameflowGameDodge gameDodge;
+  struct LolPftGameflowSession_t {
+    LolPftGameflowGameDodge_t gameDodge;
+    LolPftGameflowPhase_t phase;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPftGameflowSession& v) {
-    j["phase"] = v.phase;
+  inline void to_json(nlohmann::json& j, const LolPftGameflowSession_t& v) {
     j["gameDodge"] = v.gameDodge;
+    j["phase"] = v.phase;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPftGameflowSession& v) {
-    v.phase = j.at("phase").get<LolPftGameflowPhase>;
-    v.gameDodge = j.at("gameDodge").get<LolPftGameflowGameDodge>;
+  inline void from_json(const nlohmann::json& j, LolPftGameflowSession_t& v) {
+    v.gameDodge = j.at("gameDodge").get<LolPftGameflowGameDodge_t>();
+    v.phase = j.at("phase").get<LolPftGameflowPhase_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPftGameflowSession_HPP

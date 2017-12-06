@@ -1,20 +1,18 @@
-#ifndef SWAGGER_TYPES_BindingGenericEvent_HPP
-#define SWAGGER_TYPES_BindingGenericEvent_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
   // Represents generic data for an event.
-  struct BindingGenericEvent {
+  struct BindingGenericEvent_t {
     // Event data
     nlohmann::json data;
   };
 
-  inline void to_json(nlohmann::json& j, const BindingGenericEvent& v) {
+  inline void to_json(nlohmann::json& j, const BindingGenericEvent_t& v) {
     j["data"] = v.data;
   }
 
-  inline void from_json(const nlohmann::json& j, BindingGenericEvent& v) {
-    v.data = j.at("data").get<nlohmann::json>;
+  inline void from_json(const nlohmann::json& j, BindingGenericEvent_t& v) {
+    v.data = j.at("data").get<nlohmann::json>();
   }
-
 }
-#endif // SWAGGER_TYPES_BindingGenericEvent_HPP

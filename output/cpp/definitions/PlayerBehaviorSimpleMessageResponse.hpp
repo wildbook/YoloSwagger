@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_PlayerBehaviorSimpleMessageResponse_HPP
-#define SWAGGER_TYPES_PlayerBehaviorSimpleMessageResponse_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct PlayerBehaviorSimpleMessageResponse {
-    // 
-    std::string msgId;
-    // 
-    std::string command;
-    // 
+  struct PlayerBehaviorSimpleMessageResponse_t {
     uint64_t accountId;
+    std::string msgId;
+    std::string command;
   };
 
-  inline void to_json(nlohmann::json& j, const PlayerBehaviorSimpleMessageResponse& v) {
+  inline void to_json(nlohmann::json& j, const PlayerBehaviorSimpleMessageResponse_t& v) {
+    j["accountId"] = v.accountId;
     j["msgId"] = v.msgId;
     j["command"] = v.command;
-    j["accountId"] = v.accountId;
   }
 
-  inline void from_json(const nlohmann::json& j, PlayerBehaviorSimpleMessageResponse& v) {
-    v.msgId = j.at("msgId").get<std::string>;
-    v.command = j.at("command").get<std::string>;
-    v.accountId = j.at("accountId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, PlayerBehaviorSimpleMessageResponse_t& v) {
+    v.accountId = j.at("accountId").get<uint64_t>();
+    v.msgId = j.at("msgId").get<std::string>();
+    v.command = j.at("command").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_PlayerBehaviorSimpleMessageResponse_HPP

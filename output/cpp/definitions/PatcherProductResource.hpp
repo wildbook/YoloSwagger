@@ -1,29 +1,25 @@
-#ifndef SWAGGER_TYPES_PatcherProductResource_HPP
-#define SWAGGER_TYPES_PatcherProductResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "PatcherComponentResource.hpp"
 namespace leagueapi {
-  // 
-  struct PatcherProductResource {
-    // 
-    uint32_t refresh_period;
-    // 
+  struct PatcherProductResource_t {
     std::string id;
-    // 
-    std::vector<PatcherComponentResource> components;
+    std::optional<uint32_t> refresh_period;
+    std::vector<PatcherComponentResource_t> components;
   };
 
-  inline void to_json(nlohmann::json& j, const PatcherProductResource& v) {
-    j["refresh_period"] = v.refresh_period;
+  inline void to_json(nlohmann::json& j, const PatcherProductResource_t& v) {
     j["id"] = v.id;
+    if(v.refresh_period)
+      j["refresh_period"] = *v.refresh_period;
     j["components"] = v.components;
   }
 
-  inline void from_json(const nlohmann::json& j, PatcherProductResource& v) {
-    v.refresh_period = j.at("refresh_period").get<uint32_t>;
-    v.id = j.at("id").get<std::string>;
-    v.components = j.at("components").get<std::vector<PatcherComponentResource>>;
+  inline void from_json(const nlohmann::json& j, PatcherProductResource_t& v) {
+    v.id = j.at("id").get<std::string>();
+    if(auto it = j.find("refresh_period"); it != j.end() !it->is_null())
+      v.refresh_period = it->get<uint32_t>();
+    v.components = j.at("components").get<std::vector<PatcherComponentResource_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_PatcherProductResource_HPP

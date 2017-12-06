@@ -1,40 +1,31 @@
-#ifndef SWAGGER_TYPES_RecofrienderContactPaginationResource_HPP
-#define SWAGGER_TYPES_RecofrienderContactPaginationResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct RecofrienderContactPaginationResource {
-    // 
-    uint64_t count;
-    // 
+  struct RecofrienderContactPaginationResource_t {
     uint64_t cached;
-    // 
-    uint64_t start;
-    // 
-    uint64_t limit;
-    // 
-    uint64_t total;
-    // 
     bool more;
+    uint64_t total;
+    uint64_t limit;
+    uint64_t start;
+    uint64_t count;
   };
 
-  inline void to_json(nlohmann::json& j, const RecofrienderContactPaginationResource& v) {
-    j["count"] = v.count;
+  inline void to_json(nlohmann::json& j, const RecofrienderContactPaginationResource_t& v) {
     j["cached"] = v.cached;
-    j["start"] = v.start;
-    j["limit"] = v.limit;
-    j["total"] = v.total;
     j["more"] = v.more;
+    j["total"] = v.total;
+    j["limit"] = v.limit;
+    j["start"] = v.start;
+    j["count"] = v.count;
   }
 
-  inline void from_json(const nlohmann::json& j, RecofrienderContactPaginationResource& v) {
-    v.count = j.at("count").get<uint64_t>;
-    v.cached = j.at("cached").get<uint64_t>;
-    v.start = j.at("start").get<uint64_t>;
-    v.limit = j.at("limit").get<uint64_t>;
-    v.total = j.at("total").get<uint64_t>;
-    v.more = j.at("more").get<bool>;
+  inline void from_json(const nlohmann::json& j, RecofrienderContactPaginationResource_t& v) {
+    v.cached = j.at("cached").get<uint64_t>();
+    v.more = j.at("more").get<bool>();
+    v.total = j.at("total").get<uint64_t>();
+    v.limit = j.at("limit").get<uint64_t>();
+    v.start = j.at("start").get<uint64_t>();
+    v.count = j.at("count").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_RecofrienderContactPaginationResource_HPP

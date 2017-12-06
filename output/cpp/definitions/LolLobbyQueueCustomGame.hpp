@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolLobbyQueueCustomGame_HPP
-#define SWAGGER_TYPES_LolLobbyQueueCustomGame_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLobbyQueueAvailability.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyQueueCustomGame {
-    // 
-    LolLobbyQueueAvailability queueAvailability;
+  struct LolLobbyQueueCustomGame_t {
+    LolLobbyQueueAvailability_t queueAvailability;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyQueueCustomGame& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyQueueCustomGame_t& v) {
     j["queueAvailability"] = v.queueAvailability;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyQueueCustomGame& v) {
-    v.queueAvailability = j.at("queueAvailability").get<LolLobbyQueueAvailability>;
+  inline void from_json(const nlohmann::json& j, LolLobbyQueueCustomGame_t& v) {
+    v.queueAvailability = j.at("queueAvailability").get<LolLobbyQueueAvailability_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyQueueCustomGame_HPP

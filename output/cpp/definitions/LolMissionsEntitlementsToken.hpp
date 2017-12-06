@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolMissionsEntitlementsToken_HPP
-#define SWAGGER_TYPES_LolMissionsEntitlementsToken_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolMissionsEntitlementsToken {
-    // 
+  struct LolMissionsEntitlementsToken_t {
     std::vector<std::string> entitlements;
   };
 
-  inline void to_json(nlohmann::json& j, const LolMissionsEntitlementsToken& v) {
+  inline void to_json(nlohmann::json& j, const LolMissionsEntitlementsToken_t& v) {
     j["entitlements"] = v.entitlements;
   }
 
-  inline void from_json(const nlohmann::json& j, LolMissionsEntitlementsToken& v) {
-    v.entitlements = j.at("entitlements").get<std::vector<std::string>>;
+  inline void from_json(const nlohmann::json& j, LolMissionsEntitlementsToken_t& v) {
+    v.entitlements = j.at("entitlements").get<std::vector<std::string>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolMissionsEntitlementsToken_HPP

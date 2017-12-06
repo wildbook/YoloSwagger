@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolChatChatRankedData_HPP
-#define SWAGGER_TYPES_LolChatChatRankedData_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolChatChatRankedEntry.hpp"
 namespace leagueapi {
-  // 
-  struct LolChatChatRankedData {
-    // 
+  struct LolChatChatRankedData_t {
     uint64_t summonerId;
-    // 
-    std::vector<LolChatChatRankedEntry> rankedData;
+    std::vector<LolChatChatRankedEntry_t> rankedData;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatChatRankedData& v) {
+  inline void to_json(nlohmann::json& j, const LolChatChatRankedData_t& v) {
     j["summonerId"] = v.summonerId;
     j["rankedData"] = v.rankedData;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatChatRankedData& v) {
-    v.summonerId = j.at("summonerId").get<uint64_t>;
-    v.rankedData = j.at("rankedData").get<std::vector<LolChatChatRankedEntry>>;
+  inline void from_json(const nlohmann::json& j, LolChatChatRankedData_t& v) {
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.rankedData = j.at("rankedData").get<std::vector<LolChatChatRankedEntry_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatChatRankedData_HPP

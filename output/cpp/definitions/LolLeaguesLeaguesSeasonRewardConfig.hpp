@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolLeaguesLeaguesSeasonRewardConfig_HPP
-#define SWAGGER_TYPES_LolLeaguesLeaguesSeasonRewardConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLeaguesLeaguesSeasonRewardConfig {
-    // 
+  struct LolLeaguesLeaguesSeasonRewardConfig_t {
     bool QualificationWarningEnabled;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLeaguesLeaguesSeasonRewardConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolLeaguesLeaguesSeasonRewardConfig_t& v) {
     j["QualificationWarningEnabled"] = v.QualificationWarningEnabled;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLeaguesLeaguesSeasonRewardConfig& v) {
-    v.QualificationWarningEnabled = j.at("QualificationWarningEnabled").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolLeaguesLeaguesSeasonRewardConfig_t& v) {
+    v.QualificationWarningEnabled = j.at("QualificationWarningEnabled").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLeaguesLeaguesSeasonRewardConfig_HPP

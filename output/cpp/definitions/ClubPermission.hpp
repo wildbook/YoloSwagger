@@ -1,100 +1,87 @@
-#ifndef SWAGGER_TYPES_ClubPermission_HPP
-#define SWAGGER_TYPES_ClubPermission_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class ClubPermission {
-    // 
-    KICK_MEMBER = 3,
-    // 
-    SET_DESCRIPTION = 8,
-    // 
-    INVITE = 0,
-    // 
-    KICK_OFFICER = 4,
-    // 
-    SET_MOTD = 7,
-    // 
-    NOMINATE = 6,
-    // 
-    DEMOTE = 2,
-    // 
-    PROMOTE = 1,
-    // 
-    OWNERSHIP_TRANSFER = 5,
+  enum class ClubPermission_t {
+    INVITE_E = 0,
+    PROMOTE_E = 1,
+    KICK_OFFICER_E = 4,
+    SET_DESCRIPTION_E = 8,
+    KICK_MEMBER_E = 3,
+    SET_MOTD_E = 7,
+    NOMINATE_E = 6,
+    OWNERSHIP_TRANSFER_E = 5,
+    DEMOTE_E = 2,
   };
 
-  inline void to_json(nlohmann::json& j, const ClubPermission& v) {
+  inline void to_json(nlohmann::json& j, const ClubPermission_t& v) {
     switch(v) {
-      case ClubPermission::KICK_MEMBER:
-        j = "KICK_MEMBER";
-      break;
-      case ClubPermission::SET_DESCRIPTION:
-        j = "SET_DESCRIPTION";
-      break;
-      case ClubPermission::INVITE:
+      case ClubPermission_t::INVITE_E:
         j = "INVITE";
       break;
-      case ClubPermission::KICK_OFFICER:
-        j = "KICK_OFFICER";
-      break;
-      case ClubPermission::SET_MOTD:
-        j = "SET_MOTD";
-      break;
-      case ClubPermission::NOMINATE:
-        j = "NOMINATE";
-      break;
-      case ClubPermission::DEMOTE:
-        j = "DEMOTE";
-      break;
-      case ClubPermission::PROMOTE:
+      case ClubPermission_t::PROMOTE_E:
         j = "PROMOTE";
       break;
-      case ClubPermission::OWNERSHIP_TRANSFER:
+      case ClubPermission_t::KICK_OFFICER_E:
+        j = "KICK_OFFICER";
+      break;
+      case ClubPermission_t::SET_DESCRIPTION_E:
+        j = "SET_DESCRIPTION";
+      break;
+      case ClubPermission_t::KICK_MEMBER_E:
+        j = "KICK_MEMBER";
+      break;
+      case ClubPermission_t::SET_MOTD_E:
+        j = "SET_MOTD";
+      break;
+      case ClubPermission_t::NOMINATE_E:
+        j = "NOMINATE";
+      break;
+      case ClubPermission_t::OWNERSHIP_TRANSFER_E:
         j = "OWNERSHIP_TRANSFER";
+      break;
+      case ClubPermission_t::DEMOTE_E:
+        j = "DEMOTE";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, ClubPermission& v) {
+  inline void from_json(const nlohmann::json& j, ClubPermission_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "KICK_MEMBER"){
-      v = ClubPermission::KICK_MEMBER;
-      return;
-    }
-    if(s == "SET_DESCRIPTION"){
-      v = ClubPermission::SET_DESCRIPTION;
-      return;
-    }
     if(s == "INVITE"){
-      v = ClubPermission::INVITE;
-      return;
-    }
-    if(s == "KICK_OFFICER"){
-      v = ClubPermission::KICK_OFFICER;
-      return;
-    }
-    if(s == "SET_MOTD"){
-      v = ClubPermission::SET_MOTD;
-      return;
-    }
-    if(s == "NOMINATE"){
-      v = ClubPermission::NOMINATE;
-      return;
-    }
-    if(s == "DEMOTE"){
-      v = ClubPermission::DEMOTE;
+      v = ClubPermission_t::INVITE_E;
       return;
     }
     if(s == "PROMOTE"){
-      v = ClubPermission::PROMOTE;
+      v = ClubPermission_t::PROMOTE_E;
+      return;
+    }
+    if(s == "KICK_OFFICER"){
+      v = ClubPermission_t::KICK_OFFICER_E;
+      return;
+    }
+    if(s == "SET_DESCRIPTION"){
+      v = ClubPermission_t::SET_DESCRIPTION_E;
+      return;
+    }
+    if(s == "KICK_MEMBER"){
+      v = ClubPermission_t::KICK_MEMBER_E;
+      return;
+    }
+    if(s == "SET_MOTD"){
+      v = ClubPermission_t::SET_MOTD_E;
+      return;
+    }
+    if(s == "NOMINATE"){
+      v = ClubPermission_t::NOMINATE_E;
       return;
     }
     if(s == "OWNERSHIP_TRANSFER"){
-      v = ClubPermission::OWNERSHIP_TRANSFER;
+      v = ClubPermission_t::OWNERSHIP_TRANSFER_E;
+      return;
+    }
+    if(s == "DEMOTE"){
+      v = ClubPermission_t::DEMOTE_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_ClubPermission_HPP

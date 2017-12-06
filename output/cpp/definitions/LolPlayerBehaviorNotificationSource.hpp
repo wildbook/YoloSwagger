@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolPlayerBehaviorNotificationSource_HPP
-#define SWAGGER_TYPES_LolPlayerBehaviorNotificationSource_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolPlayerBehaviorNotificationSource {
-    // 
-    Login = 1,
-    // 
-    Message = 3,
-    // 
-    Invalid = 0,
-    // 
-    ForcedShutdown = 2,
+  enum class LolPlayerBehaviorNotificationSource_t {
+    Message_E = 3,
+    Invalid_E = 0,
+    Login_E = 1,
+    ForcedShutdown_E = 2,
   };
 
-  inline void to_json(nlohmann::json& j, const LolPlayerBehaviorNotificationSource& v) {
+  inline void to_json(nlohmann::json& j, const LolPlayerBehaviorNotificationSource_t& v) {
     switch(v) {
-      case LolPlayerBehaviorNotificationSource::Login:
-        j = "Login";
-      break;
-      case LolPlayerBehaviorNotificationSource::Message:
+      case LolPlayerBehaviorNotificationSource_t::Message_E:
         j = "Message";
       break;
-      case LolPlayerBehaviorNotificationSource::Invalid:
+      case LolPlayerBehaviorNotificationSource_t::Invalid_E:
         j = "Invalid";
       break;
-      case LolPlayerBehaviorNotificationSource::ForcedShutdown:
+      case LolPlayerBehaviorNotificationSource_t::Login_E:
+        j = "Login";
+      break;
+      case LolPlayerBehaviorNotificationSource_t::ForcedShutdown_E:
         j = "ForcedShutdown";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolPlayerBehaviorNotificationSource& v) {
+  inline void from_json(const nlohmann::json& j, LolPlayerBehaviorNotificationSource_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "Login"){
-      v = LolPlayerBehaviorNotificationSource::Login;
-      return;
-    }
     if(s == "Message"){
-      v = LolPlayerBehaviorNotificationSource::Message;
+      v = LolPlayerBehaviorNotificationSource_t::Message_E;
       return;
     }
     if(s == "Invalid"){
-      v = LolPlayerBehaviorNotificationSource::Invalid;
+      v = LolPlayerBehaviorNotificationSource_t::Invalid_E;
+      return;
+    }
+    if(s == "Login"){
+      v = LolPlayerBehaviorNotificationSource_t::Login_E;
       return;
     }
     if(s == "ForcedShutdown"){
-      v = LolPlayerBehaviorNotificationSource::ForcedShutdown;
+      v = LolPlayerBehaviorNotificationSource_t::ForcedShutdown_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolPlayerBehaviorNotificationSource_HPP

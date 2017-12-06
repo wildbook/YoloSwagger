@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_TournamentInfoMinimalDTO_HPP
-#define SWAGGER_TYPES_TournamentInfoMinimalDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "TournamentInfoDTO.hpp"
 namespace leagueapi {
-  // 
-  struct TournamentInfoMinimalDTO {
-    // 
-    std::vector<TournamentInfoDTO> tournamentInfo;
-    // 
+  struct TournamentInfoMinimalDTO_t {
+    std::vector<TournamentInfoDTO_t> tournamentInfo;
     int64_t time;
   };
 
-  inline void to_json(nlohmann::json& j, const TournamentInfoMinimalDTO& v) {
+  inline void to_json(nlohmann::json& j, const TournamentInfoMinimalDTO_t& v) {
     j["tournamentInfo"] = v.tournamentInfo;
     j["time"] = v.time;
   }
 
-  inline void from_json(const nlohmann::json& j, TournamentInfoMinimalDTO& v) {
-    v.tournamentInfo = j.at("tournamentInfo").get<std::vector<TournamentInfoDTO>>;
-    v.time = j.at("time").get<int64_t>;
+  inline void from_json(const nlohmann::json& j, TournamentInfoMinimalDTO_t& v) {
+    v.tournamentInfo = j.at("tournamentInfo").get<std::vector<TournamentInfoDTO_t>>();
+    v.time = j.at("time").get<int64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_TournamentInfoMinimalDTO_HPP

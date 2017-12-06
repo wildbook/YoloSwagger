@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_ClashRewardTime_HPP
-#define SWAGGER_TYPES_ClashRewardTime_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class ClashRewardTime {
-    // 
-    EOB = 2,
-    // 
-    NONE = 0,
-    // 
-    EOG = 1,
-    // 
-    EOT = 3,
+  enum class ClashRewardTime_t {
+    EOB_E = 2,
+    EOT_E = 3,
+    NONE_E = 0,
+    EOG_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const ClashRewardTime& v) {
+  inline void to_json(nlohmann::json& j, const ClashRewardTime_t& v) {
     switch(v) {
-      case ClashRewardTime::EOB:
+      case ClashRewardTime_t::EOB_E:
         j = "EOB";
       break;
-      case ClashRewardTime::NONE:
+      case ClashRewardTime_t::EOT_E:
+        j = "EOT";
+      break;
+      case ClashRewardTime_t::NONE_E:
         j = "NONE";
       break;
-      case ClashRewardTime::EOG:
+      case ClashRewardTime_t::EOG_E:
         j = "EOG";
-      break;
-      case ClashRewardTime::EOT:
-        j = "EOT";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, ClashRewardTime& v) {
+  inline void from_json(const nlohmann::json& j, ClashRewardTime_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "EOB"){
-      v = ClashRewardTime::EOB;
-      return;
-    }
-    if(s == "NONE"){
-      v = ClashRewardTime::NONE;
-      return;
-    }
-    if(s == "EOG"){
-      v = ClashRewardTime::EOG;
+      v = ClashRewardTime_t::EOB_E;
       return;
     }
     if(s == "EOT"){
-      v = ClashRewardTime::EOT;
+      v = ClashRewardTime_t::EOT_E;
+      return;
+    }
+    if(s == "NONE"){
+      v = ClashRewardTime_t::NONE_E;
+      return;
+    }
+    if(s == "EOG"){
+      v = ClashRewardTime_t::EOG_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_ClashRewardTime_HPP

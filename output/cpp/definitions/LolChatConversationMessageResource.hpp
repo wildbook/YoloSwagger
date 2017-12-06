@@ -1,40 +1,31 @@
-#ifndef SWAGGER_TYPES_LolChatConversationMessageResource_HPP
-#define SWAGGER_TYPES_LolChatConversationMessageResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChatConversationMessageResource {
-    // 
-    std::string body;
-    // 
-    std::string timestamp;
-    // 
+  struct LolChatConversationMessageResource_t {
     bool isHistorical;
-    // 
-    uint64_t fromId;
-    // 
-    std::string type;
-    // 
     std::string id;
+    std::string type;
+    std::string body;
+    std::string timestamp;
+    uint64_t fromId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatConversationMessageResource& v) {
+  inline void to_json(nlohmann::json& j, const LolChatConversationMessageResource_t& v) {
+    j["isHistorical"] = v.isHistorical;
+    j["id"] = v.id;
+    j["type"] = v.type;
     j["body"] = v.body;
     j["timestamp"] = v.timestamp;
-    j["isHistorical"] = v.isHistorical;
     j["fromId"] = v.fromId;
-    j["type"] = v.type;
-    j["id"] = v.id;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatConversationMessageResource& v) {
-    v.body = j.at("body").get<std::string>;
-    v.timestamp = j.at("timestamp").get<std::string>;
-    v.isHistorical = j.at("isHistorical").get<bool>;
-    v.fromId = j.at("fromId").get<uint64_t>;
-    v.type = j.at("type").get<std::string>;
-    v.id = j.at("id").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolChatConversationMessageResource_t& v) {
+    v.isHistorical = j.at("isHistorical").get<bool>();
+    v.id = j.at("id").get<std::string>();
+    v.type = j.at("type").get<std::string>();
+    v.body = j.at("body").get<std::string>();
+    v.timestamp = j.at("timestamp").get<std::string>();
+    v.fromId = j.at("fromId").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatConversationMessageResource_HPP

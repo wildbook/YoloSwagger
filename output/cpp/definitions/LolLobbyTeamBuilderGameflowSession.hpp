@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderGameflowSession_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderGameflowSession_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLobbyTeamBuilderGameflowGameClient.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyTeamBuilderGameflowSession {
-    // 
-    LolLobbyTeamBuilderGameflowGameClient gameClient;
+  struct LolLobbyTeamBuilderGameflowSession_t {
+    LolLobbyTeamBuilderGameflowGameClient_t gameClient;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderGameflowSession& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderGameflowSession_t& v) {
     j["gameClient"] = v.gameClient;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderGameflowSession& v) {
-    v.gameClient = j.at("gameClient").get<LolLobbyTeamBuilderGameflowGameClient>;
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderGameflowSession_t& v) {
+    v.gameClient = j.at("gameClient").get<LolLobbyTeamBuilderGameflowGameClient_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderGameflowSession_HPP

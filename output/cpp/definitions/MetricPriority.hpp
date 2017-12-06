@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_MetricPriority_HPP
-#define SWAGGER_TYPES_MetricPriority_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class MetricPriority {
-    // 
-    high = 2,
-    // 
-    medium = 1,
-    // 
-    low = 0,
+  enum class MetricPriority_t {
+    high_E = 2,
+    low_E = 0,
+    medium_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const MetricPriority& v) {
+  inline void to_json(nlohmann::json& j, const MetricPriority_t& v) {
     switch(v) {
-      case MetricPriority::high:
+      case MetricPriority_t::high_E:
         j = "high";
       break;
-      case MetricPriority::medium:
-        j = "medium";
-      break;
-      case MetricPriority::low:
+      case MetricPriority_t::low_E:
         j = "low";
+      break;
+      case MetricPriority_t::medium_E:
+        j = "medium";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, MetricPriority& v) {
+  inline void from_json(const nlohmann::json& j, MetricPriority_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "high"){
-      v = MetricPriority::high;
-      return;
-    }
-    if(s == "medium"){
-      v = MetricPriority::medium;
+      v = MetricPriority_t::high_E;
       return;
     }
     if(s == "low"){
-      v = MetricPriority::low;
+      v = MetricPriority_t::low_E;
+      return;
+    }
+    if(s == "medium"){
+      v = MetricPriority_t::medium_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_MetricPriority_HPP

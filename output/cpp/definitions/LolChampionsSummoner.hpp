@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolChampionsSummoner_HPP
-#define SWAGGER_TYPES_LolChampionsSummoner_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChampionsSummoner {
-    // 
+  struct LolChampionsSummoner_t {
     uint32_t summonerLevel;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampionsSummoner& v) {
+  inline void to_json(nlohmann::json& j, const LolChampionsSummoner_t& v) {
     j["summonerLevel"] = v.summonerLevel;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampionsSummoner& v) {
-    v.summonerLevel = j.at("summonerLevel").get<uint32_t>;
+  inline void from_json(const nlohmann::json& j, LolChampionsSummoner_t& v) {
+    v.summonerLevel = j.at("summonerLevel").get<uint32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampionsSummoner_HPP

@@ -1,36 +1,28 @@
-#ifndef SWAGGER_TYPES_RiotMessagingServiceMessage_HPP
-#define SWAGGER_TYPES_RiotMessagingServiceMessage_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct RiotMessagingServiceMessage {
-    // 
-    int64_t timestamp;
-    // 
-    std::string version;
-    // 
-    std::string resource;
-    // 
-    std::string payload;
-    // 
+  struct RiotMessagingServiceMessage_t {
     std::string service;
+    int64_t timestamp;
+    std::string resource;
+    std::string payload;
+    std::string version;
   };
 
-  inline void to_json(nlohmann::json& j, const RiotMessagingServiceMessage& v) {
+  inline void to_json(nlohmann::json& j, const RiotMessagingServiceMessage_t& v) {
+    j["service"] = v.service;
     j["timestamp"] = v.timestamp;
-    j["version"] = v.version;
     j["resource"] = v.resource;
     j["payload"] = v.payload;
-    j["service"] = v.service;
+    j["version"] = v.version;
   }
 
-  inline void from_json(const nlohmann::json& j, RiotMessagingServiceMessage& v) {
-    v.timestamp = j.at("timestamp").get<int64_t>;
-    v.version = j.at("version").get<std::string>;
-    v.resource = j.at("resource").get<std::string>;
-    v.payload = j.at("payload").get<std::string>;
-    v.service = j.at("service").get<std::string>;
+  inline void from_json(const nlohmann::json& j, RiotMessagingServiceMessage_t& v) {
+    v.service = j.at("service").get<std::string>();
+    v.timestamp = j.at("timestamp").get<int64_t>();
+    v.resource = j.at("resource").get<std::string>();
+    v.payload = j.at("payload").get<std::string>();
+    v.version = j.at("version").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_RiotMessagingServiceMessage_HPP

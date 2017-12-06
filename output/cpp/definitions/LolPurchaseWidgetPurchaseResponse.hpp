@@ -1,31 +1,25 @@
-#ifndef SWAGGER_TYPES_LolPurchaseWidgetPurchaseResponse_HPP
-#define SWAGGER_TYPES_LolPurchaseWidgetPurchaseResponse_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
+#include "LolPurchaseWidgetPurchaseItem.hpp"
 #include "LolPurchaseWidgetTransaction.hpp"
 #include "LolPurchaseWidgetWallet.hpp"
-#include "LolPurchaseWidgetPurchaseItem.hpp"
 namespace leagueapi {
-  // 
-  struct LolPurchaseWidgetPurchaseResponse {
-    // 
-    std::vector<LolPurchaseWidgetPurchaseItem> items;
-    // 
-    LolPurchaseWidgetWallet wallet;
-    // 
-    std::vector<LolPurchaseWidgetTransaction> transactions;
+  struct LolPurchaseWidgetPurchaseResponse_t {
+    LolPurchaseWidgetWallet_t wallet;
+    std::vector<LolPurchaseWidgetTransaction_t> transactions;
+    std::vector<LolPurchaseWidgetPurchaseItem_t> items;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPurchaseWidgetPurchaseResponse& v) {
-    j["items"] = v.items;
+  inline void to_json(nlohmann::json& j, const LolPurchaseWidgetPurchaseResponse_t& v) {
     j["wallet"] = v.wallet;
     j["transactions"] = v.transactions;
+    j["items"] = v.items;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPurchaseWidgetPurchaseResponse& v) {
-    v.items = j.at("items").get<std::vector<LolPurchaseWidgetPurchaseItem>>;
-    v.wallet = j.at("wallet").get<LolPurchaseWidgetWallet>;
-    v.transactions = j.at("transactions").get<std::vector<LolPurchaseWidgetTransaction>>;
+  inline void from_json(const nlohmann::json& j, LolPurchaseWidgetPurchaseResponse_t& v) {
+    v.wallet = j.at("wallet").get<LolPurchaseWidgetWallet_t>();
+    v.transactions = j.at("transactions").get<std::vector<LolPurchaseWidgetTransaction_t>>();
+    v.items = j.at("items").get<std::vector<LolPurchaseWidgetPurchaseItem_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPurchaseWidgetPurchaseResponse_HPP

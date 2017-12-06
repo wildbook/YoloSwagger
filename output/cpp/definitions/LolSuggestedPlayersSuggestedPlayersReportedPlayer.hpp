@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersReportedPlayer_HPP
-#define SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersReportedPlayer_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolSuggestedPlayersSuggestedPlayersReportedPlayer {
-    // 
+  struct LolSuggestedPlayersSuggestedPlayersReportedPlayer_t {
     uint64_t reportedSummonerId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersReportedPlayer& v) {
+  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersReportedPlayer_t& v) {
     j["reportedSummonerId"] = v.reportedSummonerId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersReportedPlayer& v) {
-    v.reportedSummonerId = j.at("reportedSummonerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersReportedPlayer_t& v) {
+    v.reportedSummonerId = j.at("reportedSummonerId").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersReportedPlayer_HPP

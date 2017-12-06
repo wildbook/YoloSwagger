@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_MatchmakingLcdsPlayerParticipant_HPP
-#define SWAGGER_TYPES_MatchmakingLcdsPlayerParticipant_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct MatchmakingLcdsPlayerParticipant {
-    // 
+  struct MatchmakingLcdsPlayerParticipant_t {
     uint64_t summonerId;
   };
 
-  inline void to_json(nlohmann::json& j, const MatchmakingLcdsPlayerParticipant& v) {
+  inline void to_json(nlohmann::json& j, const MatchmakingLcdsPlayerParticipant_t& v) {
     j["summonerId"] = v.summonerId;
   }
 
-  inline void from_json(const nlohmann::json& j, MatchmakingLcdsPlayerParticipant& v) {
-    v.summonerId = j.at("summonerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, MatchmakingLcdsPlayerParticipant_t& v) {
+    v.summonerId = j.at("summonerId").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_MatchmakingLcdsPlayerParticipant_HPP

@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolClashPlayerState_HPP
-#define SWAGGER_TYPES_LolClashPlayerState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolClashPlayerState {
-    // 
-    NO_ROSTER = 0,
-    // 
-    HAS_ROSTER = 1,
-    // 
-    ELIMINATED = 3,
-    // 
-    BRACKET_ROSTER = 2,
+  enum class LolClashPlayerState_t {
+    HAS_ROSTER_E = 1,
+    NO_ROSTER_E = 0,
+    ELIMINATED_E = 3,
+    BRACKET_ROSTER_E = 2,
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashPlayerState& v) {
+  inline void to_json(nlohmann::json& j, const LolClashPlayerState_t& v) {
     switch(v) {
-      case LolClashPlayerState::NO_ROSTER:
-        j = "NO_ROSTER";
-      break;
-      case LolClashPlayerState::HAS_ROSTER:
+      case LolClashPlayerState_t::HAS_ROSTER_E:
         j = "HAS_ROSTER";
       break;
-      case LolClashPlayerState::ELIMINATED:
+      case LolClashPlayerState_t::NO_ROSTER_E:
+        j = "NO_ROSTER";
+      break;
+      case LolClashPlayerState_t::ELIMINATED_E:
         j = "ELIMINATED";
       break;
-      case LolClashPlayerState::BRACKET_ROSTER:
+      case LolClashPlayerState_t::BRACKET_ROSTER_E:
         j = "BRACKET_ROSTER";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashPlayerState& v) {
+  inline void from_json(const nlohmann::json& j, LolClashPlayerState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "NO_ROSTER"){
-      v = LolClashPlayerState::NO_ROSTER;
+    if(s == "HAS_ROSTER"){
+      v = LolClashPlayerState_t::HAS_ROSTER_E;
       return;
     }
-    if(s == "HAS_ROSTER"){
-      v = LolClashPlayerState::HAS_ROSTER;
+    if(s == "NO_ROSTER"){
+      v = LolClashPlayerState_t::NO_ROSTER_E;
       return;
     }
     if(s == "ELIMINATED"){
-      v = LolClashPlayerState::ELIMINATED;
+      v = LolClashPlayerState_t::ELIMINATED_E;
       return;
     }
     if(s == "BRACKET_ROSTER"){
-      v = LolClashPlayerState::BRACKET_ROSTER;
+      v = LolClashPlayerState_t::BRACKET_ROSTER_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashPlayerState_HPP

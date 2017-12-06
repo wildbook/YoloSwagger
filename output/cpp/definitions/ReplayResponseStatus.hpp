@@ -1,64 +1,55 @@
-#ifndef SWAGGER_TYPES_ReplayResponseStatus_HPP
-#define SWAGGER_TYPES_ReplayResponseStatus_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class ReplayResponseStatus {
-    // 
-    OK = 0,
-    // 
-    EXPIRED = 2,
-    // 
-    NOT_FOUND = 1,
-    // 
-    BAD_REQUEST = 3,
-    // 
-    INTERNAL_SERVER_ERROR = 4,
+  enum class ReplayResponseStatus_t {
+    NOT_FOUND_E = 1,
+    OK_E = 0,
+    BAD_REQUEST_E = 3,
+    EXPIRED_E = 2,
+    INTERNAL_SERVER_ERROR_E = 4,
   };
 
-  inline void to_json(nlohmann::json& j, const ReplayResponseStatus& v) {
+  inline void to_json(nlohmann::json& j, const ReplayResponseStatus_t& v) {
     switch(v) {
-      case ReplayResponseStatus::OK:
-        j = "OK";
-      break;
-      case ReplayResponseStatus::EXPIRED:
-        j = "EXPIRED";
-      break;
-      case ReplayResponseStatus::NOT_FOUND:
+      case ReplayResponseStatus_t::NOT_FOUND_E:
         j = "NOT_FOUND";
       break;
-      case ReplayResponseStatus::BAD_REQUEST:
+      case ReplayResponseStatus_t::OK_E:
+        j = "OK";
+      break;
+      case ReplayResponseStatus_t::BAD_REQUEST_E:
         j = "BAD_REQUEST";
       break;
-      case ReplayResponseStatus::INTERNAL_SERVER_ERROR:
+      case ReplayResponseStatus_t::EXPIRED_E:
+        j = "EXPIRED";
+      break;
+      case ReplayResponseStatus_t::INTERNAL_SERVER_ERROR_E:
         j = "INTERNAL_SERVER_ERROR";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, ReplayResponseStatus& v) {
+  inline void from_json(const nlohmann::json& j, ReplayResponseStatus_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "OK"){
-      v = ReplayResponseStatus::OK;
-      return;
-    }
-    if(s == "EXPIRED"){
-      v = ReplayResponseStatus::EXPIRED;
-      return;
-    }
     if(s == "NOT_FOUND"){
-      v = ReplayResponseStatus::NOT_FOUND;
+      v = ReplayResponseStatus_t::NOT_FOUND_E;
+      return;
+    }
+    if(s == "OK"){
+      v = ReplayResponseStatus_t::OK_E;
       return;
     }
     if(s == "BAD_REQUEST"){
-      v = ReplayResponseStatus::BAD_REQUEST;
+      v = ReplayResponseStatus_t::BAD_REQUEST_E;
+      return;
+    }
+    if(s == "EXPIRED"){
+      v = ReplayResponseStatus_t::EXPIRED_E;
       return;
     }
     if(s == "INTERNAL_SERVER_ERROR"){
-      v = ReplayResponseStatus::INTERNAL_SERVER_ERROR;
+      v = ReplayResponseStatus_t::INTERNAL_SERVER_ERROR_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_ReplayResponseStatus_HPP

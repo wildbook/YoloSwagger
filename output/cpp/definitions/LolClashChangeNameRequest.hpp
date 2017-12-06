@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolClashChangeNameRequest_HPP
-#define SWAGGER_TYPES_LolClashChangeNameRequest_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolClashChangeNameRequest {
-    // 
+  struct LolClashChangeNameRequest_t {
     std::string name;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashChangeNameRequest& v) {
+  inline void to_json(nlohmann::json& j, const LolClashChangeNameRequest_t& v) {
     j["name"] = v.name;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashChangeNameRequest& v) {
-    v.name = j.at("name").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolClashChangeNameRequest_t& v) {
+    v.name = j.at("name").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashChangeNameRequest_HPP

@@ -1,244 +1,185 @@
-#ifndef SWAGGER_TYPES_EndOfGameLcdsEndOfGameStats_HPP
-#define SWAGGER_TYPES_EndOfGameLcdsEndOfGameStats_HPP
+#pragma once
 #include <json.hpp>
-#include "EndOfGameLcdsSpell.hpp"
+#include <optional>
 #include "EndOfGameLcdsPointsPenalty.hpp"
-#include "EndOfGameLcdsTeamInfo.hpp"
 #include "EndOfGameLcdsPlayerParticipantStatsSummary.hpp"
+#include "EndOfGameLcdsSpell.hpp"
+#include "EndOfGameLcdsTeamInfo.hpp"
 namespace leagueapi {
-  // 
-  struct EndOfGameLcdsEndOfGameStats {
-    // 
-    int32_t battleBoostIpEarned;
-    // 
-    std::string queueType;
-    // 
-    int32_t skinId;
-    // 
-    int32_t customMsecsUntilReset;
-    // 
-    std::string gameMode;
-    // 
+  struct EndOfGameLcdsEndOfGameStats_t {
     int32_t skinIndex;
-    // 
-    bool leveledUp;
-    // 
-    uint64_t previousXpTotal;
-    // 
-    int32_t loyaltyBoostXpEarned;
-    // 
-    int32_t ipEarned;
-    // 
-    uint32_t gameLength;
-    // 
-    std::string roomPassword;
-    // 
-    int32_t completionBonusPoints;
-    // 
-    uint64_t reportGameId;
-    // 
-    int32_t queueBonusEarned;
-    // 
-    bool earlySurrenderAccomplice;
-    // 
-    std::vector<EndOfGameLcdsPointsPenalty> pointsPenalties;
-    // 
-    int32_t elo;
-    // 
-    int32_t rpEarned;
-    // 
-    int32_t basePoints;
-    // 
-    bool causedEarlySurrender;
-    // 
-    int32_t coOpVsAiMsecsUntilReset;
-    // 
-    bool invalid;
-    // 
-    bool sendStatsToTournamentProvider;
-    // 
-    EndOfGameLcdsTeamInfo otherTeamInfo;
-    // 
-    int32_t boostIpEarned;
-    // 
-    bool imbalancedTeamsNoPoints;
-    // 
-    bool teamEarlySurrendered;
-    // 
     uint64_t gameId;
-    // 
-    std::string summonerName;
-    // 
-    uint64_t userId;
-    // 
-    std::vector<EndOfGameLcdsPlayerParticipantStatsSummary> teamPlayerParticipantStats;
-    // 
+    std::string roomPassword;
     int32_t coOpVsAiMinutesLeftToday;
-    // 
-    int32_t ipTotal;
-    // 
-    std::string difficulty;
-    // 
-    bool ranked;
-    // 
-    int32_t loyaltyBoostIpEarned;
-    // 
-    EndOfGameLcdsTeamInfo myTeamInfo;
-    // 
-    int32_t timeUntilNextFirstWinBonus;
-    // 
-    int32_t eloChange;
-    // 
-    int32_t experienceTotal;
-    // 
-    uint64_t previousLevel;
-    // 
-    int32_t odinBonusIp;
-    // 
-    std::vector<EndOfGameLcdsPlayerParticipantStatsSummary> otherTeamPlayerParticipantStats;
-    // 
-    int32_t firstWinBonus;
-    // 
-    bool gameEndedInEarlySurrender;
-    // 
-    std::string gameType;
-    // 
-    std::string roomName;
-    // 
-    int32_t customMinutesLeftToday;
-    // 
-    std::vector<EndOfGameLcdsSpell> newSpells;
-    // 
+    int32_t customMsecsUntilReset;
+    std::vector<EndOfGameLcdsPointsPenalty_t> pointsPenalties;
+    std::string gameMode;
     std::string myTeamStatus;
-    // 
-    int32_t experienceEarned;
-    // 
+    bool causedEarlySurrender;
+    int32_t ipTotal;
+    int32_t ipEarned;
+    std::string roomName;
+    uint64_t reportGameId;
+    std::vector<EndOfGameLcdsPlayerParticipantStatsSummary_t> teamPlayerParticipantStats;
+    std::vector<EndOfGameLcdsPlayerParticipantStatsSummary_t> otherTeamPlayerParticipantStats;
+    bool imbalancedTeamsNoPoints;
     std::vector<std::string> gameMutators;
-    // 
+    bool gameEndedInEarlySurrender;
+    bool teamEarlySurrendered;
+    std::string gameType;
+    bool invalid;
+    int32_t loyaltyBoostXpEarned;
+    int32_t customMinutesLeftToday;
+    std::string difficulty;
+    int32_t rpEarned;
     int32_t boostXpEarned;
-    // 
+    int32_t experienceEarned;
+    uint64_t previousXpTotal;
+    uint64_t previousLevel;
+    bool earlySurrenderAccomplice;
+    int32_t boostIpEarned;
+    int32_t queueBonusEarned;
+    int32_t skinId;
+    int32_t loyaltyBoostIpEarned;
+    std::string queueType;
+    int32_t timeUntilNextFirstWinBonus;
+    uint64_t userId;
+    EndOfGameLcdsTeamInfo_t otherTeamInfo;
+    uint32_t gameLength;
+    int32_t firstWinBonus;
     int32_t talentPointsGained;
-    // 
+    int32_t coOpVsAiMsecsUntilReset;
+    int32_t completionBonusPoints;
+    bool sendStatsToTournamentProvider;
+    int32_t elo;
+    bool leveledUp;
+    int32_t experienceTotal;
+    bool ranked;
+    int32_t battleBoostIpEarned;
+    int32_t basePoints;
+    int32_t odinBonusIp;
+    int32_t eloChange;
     int32_t partyRewardsBonusIpEarned;
+    EndOfGameLcdsTeamInfo_t myTeamInfo;
+    std::string summonerName;
+    std::vector<EndOfGameLcdsSpell_t> newSpells;
   };
 
-  inline void to_json(nlohmann::json& j, const EndOfGameLcdsEndOfGameStats& v) {
-    j["battleBoostIpEarned"] = v.battleBoostIpEarned;
-    j["queueType"] = v.queueType;
-    j["skinId"] = v.skinId;
-    j["customMsecsUntilReset"] = v.customMsecsUntilReset;
-    j["gameMode"] = v.gameMode;
+  inline void to_json(nlohmann::json& j, const EndOfGameLcdsEndOfGameStats_t& v) {
     j["skinIndex"] = v.skinIndex;
-    j["leveledUp"] = v.leveledUp;
-    j["previousXpTotal"] = v.previousXpTotal;
-    j["loyaltyBoostXpEarned"] = v.loyaltyBoostXpEarned;
-    j["ipEarned"] = v.ipEarned;
-    j["gameLength"] = v.gameLength;
-    j["roomPassword"] = v.roomPassword;
-    j["completionBonusPoints"] = v.completionBonusPoints;
-    j["reportGameId"] = v.reportGameId;
-    j["queueBonusEarned"] = v.queueBonusEarned;
-    j["earlySurrenderAccomplice"] = v.earlySurrenderAccomplice;
-    j["pointsPenalties"] = v.pointsPenalties;
-    j["elo"] = v.elo;
-    j["rpEarned"] = v.rpEarned;
-    j["basePoints"] = v.basePoints;
-    j["causedEarlySurrender"] = v.causedEarlySurrender;
-    j["coOpVsAiMsecsUntilReset"] = v.coOpVsAiMsecsUntilReset;
-    j["invalid"] = v.invalid;
-    j["sendStatsToTournamentProvider"] = v.sendStatsToTournamentProvider;
-    j["otherTeamInfo"] = v.otherTeamInfo;
-    j["boostIpEarned"] = v.boostIpEarned;
-    j["imbalancedTeamsNoPoints"] = v.imbalancedTeamsNoPoints;
-    j["teamEarlySurrendered"] = v.teamEarlySurrendered;
     j["gameId"] = v.gameId;
-    j["summonerName"] = v.summonerName;
-    j["userId"] = v.userId;
-    j["teamPlayerParticipantStats"] = v.teamPlayerParticipantStats;
+    j["roomPassword"] = v.roomPassword;
     j["coOpVsAiMinutesLeftToday"] = v.coOpVsAiMinutesLeftToday;
-    j["ipTotal"] = v.ipTotal;
-    j["difficulty"] = v.difficulty;
-    j["ranked"] = v.ranked;
-    j["loyaltyBoostIpEarned"] = v.loyaltyBoostIpEarned;
-    j["myTeamInfo"] = v.myTeamInfo;
-    j["timeUntilNextFirstWinBonus"] = v.timeUntilNextFirstWinBonus;
-    j["eloChange"] = v.eloChange;
-    j["experienceTotal"] = v.experienceTotal;
-    j["previousLevel"] = v.previousLevel;
-    j["odinBonusIp"] = v.odinBonusIp;
-    j["otherTeamPlayerParticipantStats"] = v.otherTeamPlayerParticipantStats;
-    j["firstWinBonus"] = v.firstWinBonus;
-    j["gameEndedInEarlySurrender"] = v.gameEndedInEarlySurrender;
-    j["gameType"] = v.gameType;
-    j["roomName"] = v.roomName;
-    j["customMinutesLeftToday"] = v.customMinutesLeftToday;
-    j["newSpells"] = v.newSpells;
+    j["customMsecsUntilReset"] = v.customMsecsUntilReset;
+    j["pointsPenalties"] = v.pointsPenalties;
+    j["gameMode"] = v.gameMode;
     j["myTeamStatus"] = v.myTeamStatus;
-    j["experienceEarned"] = v.experienceEarned;
+    j["causedEarlySurrender"] = v.causedEarlySurrender;
+    j["ipTotal"] = v.ipTotal;
+    j["ipEarned"] = v.ipEarned;
+    j["roomName"] = v.roomName;
+    j["reportGameId"] = v.reportGameId;
+    j["teamPlayerParticipantStats"] = v.teamPlayerParticipantStats;
+    j["otherTeamPlayerParticipantStats"] = v.otherTeamPlayerParticipantStats;
+    j["imbalancedTeamsNoPoints"] = v.imbalancedTeamsNoPoints;
     j["gameMutators"] = v.gameMutators;
+    j["gameEndedInEarlySurrender"] = v.gameEndedInEarlySurrender;
+    j["teamEarlySurrendered"] = v.teamEarlySurrendered;
+    j["gameType"] = v.gameType;
+    j["invalid"] = v.invalid;
+    j["loyaltyBoostXpEarned"] = v.loyaltyBoostXpEarned;
+    j["customMinutesLeftToday"] = v.customMinutesLeftToday;
+    j["difficulty"] = v.difficulty;
+    j["rpEarned"] = v.rpEarned;
     j["boostXpEarned"] = v.boostXpEarned;
+    j["experienceEarned"] = v.experienceEarned;
+    j["previousXpTotal"] = v.previousXpTotal;
+    j["previousLevel"] = v.previousLevel;
+    j["earlySurrenderAccomplice"] = v.earlySurrenderAccomplice;
+    j["boostIpEarned"] = v.boostIpEarned;
+    j["queueBonusEarned"] = v.queueBonusEarned;
+    j["skinId"] = v.skinId;
+    j["loyaltyBoostIpEarned"] = v.loyaltyBoostIpEarned;
+    j["queueType"] = v.queueType;
+    j["timeUntilNextFirstWinBonus"] = v.timeUntilNextFirstWinBonus;
+    j["userId"] = v.userId;
+    j["otherTeamInfo"] = v.otherTeamInfo;
+    j["gameLength"] = v.gameLength;
+    j["firstWinBonus"] = v.firstWinBonus;
     j["talentPointsGained"] = v.talentPointsGained;
+    j["coOpVsAiMsecsUntilReset"] = v.coOpVsAiMsecsUntilReset;
+    j["completionBonusPoints"] = v.completionBonusPoints;
+    j["sendStatsToTournamentProvider"] = v.sendStatsToTournamentProvider;
+    j["elo"] = v.elo;
+    j["leveledUp"] = v.leveledUp;
+    j["experienceTotal"] = v.experienceTotal;
+    j["ranked"] = v.ranked;
+    j["battleBoostIpEarned"] = v.battleBoostIpEarned;
+    j["basePoints"] = v.basePoints;
+    j["odinBonusIp"] = v.odinBonusIp;
+    j["eloChange"] = v.eloChange;
     j["partyRewardsBonusIpEarned"] = v.partyRewardsBonusIpEarned;
+    j["myTeamInfo"] = v.myTeamInfo;
+    j["summonerName"] = v.summonerName;
+    j["newSpells"] = v.newSpells;
   }
 
-  inline void from_json(const nlohmann::json& j, EndOfGameLcdsEndOfGameStats& v) {
-    v.battleBoostIpEarned = j.at("battleBoostIpEarned").get<int32_t>;
-    v.queueType = j.at("queueType").get<std::string>;
-    v.skinId = j.at("skinId").get<int32_t>;
-    v.customMsecsUntilReset = j.at("customMsecsUntilReset").get<int32_t>;
-    v.gameMode = j.at("gameMode").get<std::string>;
-    v.skinIndex = j.at("skinIndex").get<int32_t>;
-    v.leveledUp = j.at("leveledUp").get<bool>;
-    v.previousXpTotal = j.at("previousXpTotal").get<uint64_t>;
-    v.loyaltyBoostXpEarned = j.at("loyaltyBoostXpEarned").get<int32_t>;
-    v.ipEarned = j.at("ipEarned").get<int32_t>;
-    v.gameLength = j.at("gameLength").get<uint32_t>;
-    v.roomPassword = j.at("roomPassword").get<std::string>;
-    v.completionBonusPoints = j.at("completionBonusPoints").get<int32_t>;
-    v.reportGameId = j.at("reportGameId").get<uint64_t>;
-    v.queueBonusEarned = j.at("queueBonusEarned").get<int32_t>;
-    v.earlySurrenderAccomplice = j.at("earlySurrenderAccomplice").get<bool>;
-    v.pointsPenalties = j.at("pointsPenalties").get<std::vector<EndOfGameLcdsPointsPenalty>>;
-    v.elo = j.at("elo").get<int32_t>;
-    v.rpEarned = j.at("rpEarned").get<int32_t>;
-    v.basePoints = j.at("basePoints").get<int32_t>;
-    v.causedEarlySurrender = j.at("causedEarlySurrender").get<bool>;
-    v.coOpVsAiMsecsUntilReset = j.at("coOpVsAiMsecsUntilReset").get<int32_t>;
-    v.invalid = j.at("invalid").get<bool>;
-    v.sendStatsToTournamentProvider = j.at("sendStatsToTournamentProvider").get<bool>;
-    v.otherTeamInfo = j.at("otherTeamInfo").get<EndOfGameLcdsTeamInfo>;
-    v.boostIpEarned = j.at("boostIpEarned").get<int32_t>;
-    v.imbalancedTeamsNoPoints = j.at("imbalancedTeamsNoPoints").get<bool>;
-    v.teamEarlySurrendered = j.at("teamEarlySurrendered").get<bool>;
-    v.gameId = j.at("gameId").get<uint64_t>;
-    v.summonerName = j.at("summonerName").get<std::string>;
-    v.userId = j.at("userId").get<uint64_t>;
-    v.teamPlayerParticipantStats = j.at("teamPlayerParticipantStats").get<std::vector<EndOfGameLcdsPlayerParticipantStatsSummary>>;
-    v.coOpVsAiMinutesLeftToday = j.at("coOpVsAiMinutesLeftToday").get<int32_t>;
-    v.ipTotal = j.at("ipTotal").get<int32_t>;
-    v.difficulty = j.at("difficulty").get<std::string>;
-    v.ranked = j.at("ranked").get<bool>;
-    v.loyaltyBoostIpEarned = j.at("loyaltyBoostIpEarned").get<int32_t>;
-    v.myTeamInfo = j.at("myTeamInfo").get<EndOfGameLcdsTeamInfo>;
-    v.timeUntilNextFirstWinBonus = j.at("timeUntilNextFirstWinBonus").get<int32_t>;
-    v.eloChange = j.at("eloChange").get<int32_t>;
-    v.experienceTotal = j.at("experienceTotal").get<int32_t>;
-    v.previousLevel = j.at("previousLevel").get<uint64_t>;
-    v.odinBonusIp = j.at("odinBonusIp").get<int32_t>;
-    v.otherTeamPlayerParticipantStats = j.at("otherTeamPlayerParticipantStats").get<std::vector<EndOfGameLcdsPlayerParticipantStatsSummary>>;
-    v.firstWinBonus = j.at("firstWinBonus").get<int32_t>;
-    v.gameEndedInEarlySurrender = j.at("gameEndedInEarlySurrender").get<bool>;
-    v.gameType = j.at("gameType").get<std::string>;
-    v.roomName = j.at("roomName").get<std::string>;
-    v.customMinutesLeftToday = j.at("customMinutesLeftToday").get<int32_t>;
-    v.newSpells = j.at("newSpells").get<std::vector<EndOfGameLcdsSpell>>;
-    v.myTeamStatus = j.at("myTeamStatus").get<std::string>;
-    v.experienceEarned = j.at("experienceEarned").get<int32_t>;
-    v.gameMutators = j.at("gameMutators").get<std::vector<std::string>>;
-    v.boostXpEarned = j.at("boostXpEarned").get<int32_t>;
-    v.talentPointsGained = j.at("talentPointsGained").get<int32_t>;
-    v.partyRewardsBonusIpEarned = j.at("partyRewardsBonusIpEarned").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, EndOfGameLcdsEndOfGameStats_t& v) {
+    v.skinIndex = j.at("skinIndex").get<int32_t>();
+    v.gameId = j.at("gameId").get<uint64_t>();
+    v.roomPassword = j.at("roomPassword").get<std::string>();
+    v.coOpVsAiMinutesLeftToday = j.at("coOpVsAiMinutesLeftToday").get<int32_t>();
+    v.customMsecsUntilReset = j.at("customMsecsUntilReset").get<int32_t>();
+    v.pointsPenalties = j.at("pointsPenalties").get<std::vector<EndOfGameLcdsPointsPenalty_t>>();
+    v.gameMode = j.at("gameMode").get<std::string>();
+    v.myTeamStatus = j.at("myTeamStatus").get<std::string>();
+    v.causedEarlySurrender = j.at("causedEarlySurrender").get<bool>();
+    v.ipTotal = j.at("ipTotal").get<int32_t>();
+    v.ipEarned = j.at("ipEarned").get<int32_t>();
+    v.roomName = j.at("roomName").get<std::string>();
+    v.reportGameId = j.at("reportGameId").get<uint64_t>();
+    v.teamPlayerParticipantStats = j.at("teamPlayerParticipantStats").get<std::vector<EndOfGameLcdsPlayerParticipantStatsSummary_t>>();
+    v.otherTeamPlayerParticipantStats = j.at("otherTeamPlayerParticipantStats").get<std::vector<EndOfGameLcdsPlayerParticipantStatsSummary_t>>();
+    v.imbalancedTeamsNoPoints = j.at("imbalancedTeamsNoPoints").get<bool>();
+    v.gameMutators = j.at("gameMutators").get<std::vector<std::string>>();
+    v.gameEndedInEarlySurrender = j.at("gameEndedInEarlySurrender").get<bool>();
+    v.teamEarlySurrendered = j.at("teamEarlySurrendered").get<bool>();
+    v.gameType = j.at("gameType").get<std::string>();
+    v.invalid = j.at("invalid").get<bool>();
+    v.loyaltyBoostXpEarned = j.at("loyaltyBoostXpEarned").get<int32_t>();
+    v.customMinutesLeftToday = j.at("customMinutesLeftToday").get<int32_t>();
+    v.difficulty = j.at("difficulty").get<std::string>();
+    v.rpEarned = j.at("rpEarned").get<int32_t>();
+    v.boostXpEarned = j.at("boostXpEarned").get<int32_t>();
+    v.experienceEarned = j.at("experienceEarned").get<int32_t>();
+    v.previousXpTotal = j.at("previousXpTotal").get<uint64_t>();
+    v.previousLevel = j.at("previousLevel").get<uint64_t>();
+    v.earlySurrenderAccomplice = j.at("earlySurrenderAccomplice").get<bool>();
+    v.boostIpEarned = j.at("boostIpEarned").get<int32_t>();
+    v.queueBonusEarned = j.at("queueBonusEarned").get<int32_t>();
+    v.skinId = j.at("skinId").get<int32_t>();
+    v.loyaltyBoostIpEarned = j.at("loyaltyBoostIpEarned").get<int32_t>();
+    v.queueType = j.at("queueType").get<std::string>();
+    v.timeUntilNextFirstWinBonus = j.at("timeUntilNextFirstWinBonus").get<int32_t>();
+    v.userId = j.at("userId").get<uint64_t>();
+    v.otherTeamInfo = j.at("otherTeamInfo").get<EndOfGameLcdsTeamInfo_t>();
+    v.gameLength = j.at("gameLength").get<uint32_t>();
+    v.firstWinBonus = j.at("firstWinBonus").get<int32_t>();
+    v.talentPointsGained = j.at("talentPointsGained").get<int32_t>();
+    v.coOpVsAiMsecsUntilReset = j.at("coOpVsAiMsecsUntilReset").get<int32_t>();
+    v.completionBonusPoints = j.at("completionBonusPoints").get<int32_t>();
+    v.sendStatsToTournamentProvider = j.at("sendStatsToTournamentProvider").get<bool>();
+    v.elo = j.at("elo").get<int32_t>();
+    v.leveledUp = j.at("leveledUp").get<bool>();
+    v.experienceTotal = j.at("experienceTotal").get<int32_t>();
+    v.ranked = j.at("ranked").get<bool>();
+    v.battleBoostIpEarned = j.at("battleBoostIpEarned").get<int32_t>();
+    v.basePoints = j.at("basePoints").get<int32_t>();
+    v.odinBonusIp = j.at("odinBonusIp").get<int32_t>();
+    v.eloChange = j.at("eloChange").get<int32_t>();
+    v.partyRewardsBonusIpEarned = j.at("partyRewardsBonusIpEarned").get<int32_t>();
+    v.myTeamInfo = j.at("myTeamInfo").get<EndOfGameLcdsTeamInfo_t>();
+    v.summonerName = j.at("summonerName").get<std::string>();
+    v.newSpells = j.at("newSpells").get<std::vector<EndOfGameLcdsSpell_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_EndOfGameLcdsEndOfGameStats_HPP

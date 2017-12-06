@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolPerksDisabledPerksResource_HPP
-#define SWAGGER_TYPES_LolPerksDisabledPerksResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolPerksDisabledPerksResource {
-    // 
+  struct LolPerksDisabledPerksResource_t {
     std::vector<int32_t> disabledPerks;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPerksDisabledPerksResource& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksDisabledPerksResource_t& v) {
     j["disabledPerks"] = v.disabledPerks;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPerksDisabledPerksResource& v) {
-    v.disabledPerks = j.at("disabledPerks").get<std::vector<int32_t>>;
+  inline void from_json(const nlohmann::json& j, LolPerksDisabledPerksResource_t& v) {
+    v.disabledPerks = j.at("disabledPerks").get<std::vector<int32_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPerksDisabledPerksResource_HPP

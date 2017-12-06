@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_BroadcastNotification_HPP
-#define SWAGGER_TYPES_BroadcastNotification_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct BroadcastNotification {
-    // 
+  struct BroadcastNotification_t {
     std::vector<nlohmann::json> broadcastMessages;
   };
 
-  inline void to_json(nlohmann::json& j, const BroadcastNotification& v) {
+  inline void to_json(nlohmann::json& j, const BroadcastNotification_t& v) {
     j["broadcastMessages"] = v.broadcastMessages;
   }
 
-  inline void from_json(const nlohmann::json& j, BroadcastNotification& v) {
-    v.broadcastMessages = j.at("broadcastMessages").get<std::vector<nlohmann::json>>;
+  inline void from_json(const nlohmann::json& j, BroadcastNotification_t& v) {
+    v.broadcastMessages = j.at("broadcastMessages").get<std::vector<nlohmann::json>>();
   }
-
 }
-#endif // SWAGGER_TYPES_BroadcastNotification_HPP

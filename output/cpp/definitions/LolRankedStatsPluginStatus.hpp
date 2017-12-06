@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolRankedStatsPluginStatus_HPP
-#define SWAGGER_TYPES_LolRankedStatsPluginStatus_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolRankedStatsPluginStatus {
-    // 
+  struct LolRankedStatsPluginStatus_t {
     bool ready;
   };
 
-  inline void to_json(nlohmann::json& j, const LolRankedStatsPluginStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolRankedStatsPluginStatus_t& v) {
     j["ready"] = v.ready;
   }
 
-  inline void from_json(const nlohmann::json& j, LolRankedStatsPluginStatus& v) {
-    v.ready = j.at("ready").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolRankedStatsPluginStatus_t& v) {
+    v.ready = j.at("ready").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolRankedStatsPluginStatus_HPP

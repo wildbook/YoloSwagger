@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_PatcherInjectedPatcherError_HPP
-#define SWAGGER_TYPES_PatcherInjectedPatcherError_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class PatcherInjectedPatcherError {
-    // 
-    FailedFailedToWriteFile = 3,
-    // 
-    FailedToFindFile = 1,
-    // 
-    FailedToResolveHostName = 2,
-    // 
-    UnspecifiedError = 0,
+  enum class PatcherInjectedPatcherError_t {
+    FailedToResolveHostName_E = 2,
+    FailedToFindFile_E = 1,
+    FailedFailedToWriteFile_E = 3,
+    UnspecifiedError_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const PatcherInjectedPatcherError& v) {
+  inline void to_json(nlohmann::json& j, const PatcherInjectedPatcherError_t& v) {
     switch(v) {
-      case PatcherInjectedPatcherError::FailedFailedToWriteFile:
-        j = "FailedFailedToWriteFile";
-      break;
-      case PatcherInjectedPatcherError::FailedToFindFile:
-        j = "FailedToFindFile";
-      break;
-      case PatcherInjectedPatcherError::FailedToResolveHostName:
+      case PatcherInjectedPatcherError_t::FailedToResolveHostName_E:
         j = "FailedToResolveHostName";
       break;
-      case PatcherInjectedPatcherError::UnspecifiedError:
+      case PatcherInjectedPatcherError_t::FailedToFindFile_E:
+        j = "FailedToFindFile";
+      break;
+      case PatcherInjectedPatcherError_t::FailedFailedToWriteFile_E:
+        j = "FailedFailedToWriteFile";
+      break;
+      case PatcherInjectedPatcherError_t::UnspecifiedError_E:
         j = "UnspecifiedError";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, PatcherInjectedPatcherError& v) {
+  inline void from_json(const nlohmann::json& j, PatcherInjectedPatcherError_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "FailedFailedToWriteFile"){
-      v = PatcherInjectedPatcherError::FailedFailedToWriteFile;
+    if(s == "FailedToResolveHostName"){
+      v = PatcherInjectedPatcherError_t::FailedToResolveHostName_E;
       return;
     }
     if(s == "FailedToFindFile"){
-      v = PatcherInjectedPatcherError::FailedToFindFile;
+      v = PatcherInjectedPatcherError_t::FailedToFindFile_E;
       return;
     }
-    if(s == "FailedToResolveHostName"){
-      v = PatcherInjectedPatcherError::FailedToResolveHostName;
+    if(s == "FailedFailedToWriteFile"){
+      v = PatcherInjectedPatcherError_t::FailedFailedToWriteFile_E;
       return;
     }
     if(s == "UnspecifiedError"){
-      v = PatcherInjectedPatcherError::UnspecifiedError;
+      v = PatcherInjectedPatcherError_t::UnspecifiedError_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_PatcherInjectedPatcherError_HPP

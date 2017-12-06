@@ -1,36 +1,28 @@
-#ifndef SWAGGER_TYPES_LolPerksChampSelectAction_HPP
-#define SWAGGER_TYPES_LolPerksChampSelectAction_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolPerksChampSelectAction {
-    // 
-    std::string type;
-    // 
-    bool completed;
-    // 
+  struct LolPerksChampSelectAction_t {
     int32_t championId;
-    // 
+    bool completed;
     int64_t id;
-    // 
+    std::string type;
     int64_t actorCellId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPerksChampSelectAction& v) {
-    j["type"] = v.type;
-    j["completed"] = v.completed;
+  inline void to_json(nlohmann::json& j, const LolPerksChampSelectAction_t& v) {
     j["championId"] = v.championId;
+    j["completed"] = v.completed;
     j["id"] = v.id;
+    j["type"] = v.type;
     j["actorCellId"] = v.actorCellId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPerksChampSelectAction& v) {
-    v.type = j.at("type").get<std::string>;
-    v.completed = j.at("completed").get<bool>;
-    v.championId = j.at("championId").get<int32_t>;
-    v.id = j.at("id").get<int64_t>;
-    v.actorCellId = j.at("actorCellId").get<int64_t>;
+  inline void from_json(const nlohmann::json& j, LolPerksChampSelectAction_t& v) {
+    v.championId = j.at("championId").get<int32_t>();
+    v.completed = j.at("completed").get<bool>();
+    v.id = j.at("id").get<int64_t>();
+    v.type = j.at("type").get<std::string>();
+    v.actorCellId = j.at("actorCellId").get<int64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPerksChampSelectAction_HPP

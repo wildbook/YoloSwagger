@@ -1,73 +1,63 @@
-#ifndef SWAGGER_TYPES_LoyaltyStatus_HPP
-#define SWAGGER_TYPES_LoyaltyStatus_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LoyaltyStatus {
-    // 
-    REVOKE = 4,
-    // 
-    EXPIRY = 2,
-    // 
-    DISABLED = 5,
-    // 
-    LEGACY = 0,
-    // 
-    REWARDS_GRANT = 1,
-    // 
-    CHANGE = 3,
+  enum class LoyaltyStatus_t {
+    EXPIRY_E = 2,
+    CHANGE_E = 3,
+    REWARDS_GRANT_E = 1,
+    REVOKE_E = 4,
+    LEGACY_E = 0,
+    DISABLED_E = 5,
   };
 
-  inline void to_json(nlohmann::json& j, const LoyaltyStatus& v) {
+  inline void to_json(nlohmann::json& j, const LoyaltyStatus_t& v) {
     switch(v) {
-      case LoyaltyStatus::REVOKE:
-        j = "REVOKE";
-      break;
-      case LoyaltyStatus::EXPIRY:
+      case LoyaltyStatus_t::EXPIRY_E:
         j = "EXPIRY";
       break;
-      case LoyaltyStatus::DISABLED:
-        j = "DISABLED";
+      case LoyaltyStatus_t::CHANGE_E:
+        j = "CHANGE";
       break;
-      case LoyaltyStatus::LEGACY:
-        j = "LEGACY";
-      break;
-      case LoyaltyStatus::REWARDS_GRANT:
+      case LoyaltyStatus_t::REWARDS_GRANT_E:
         j = "REWARDS_GRANT";
       break;
-      case LoyaltyStatus::CHANGE:
-        j = "CHANGE";
+      case LoyaltyStatus_t::REVOKE_E:
+        j = "REVOKE";
+      break;
+      case LoyaltyStatus_t::LEGACY_E:
+        j = "LEGACY";
+      break;
+      case LoyaltyStatus_t::DISABLED_E:
+        j = "DISABLED";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LoyaltyStatus& v) {
+  inline void from_json(const nlohmann::json& j, LoyaltyStatus_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "REVOKE"){
-      v = LoyaltyStatus::REVOKE;
-      return;
-    }
     if(s == "EXPIRY"){
-      v = LoyaltyStatus::EXPIRY;
-      return;
-    }
-    if(s == "DISABLED"){
-      v = LoyaltyStatus::DISABLED;
-      return;
-    }
-    if(s == "LEGACY"){
-      v = LoyaltyStatus::LEGACY;
-      return;
-    }
-    if(s == "REWARDS_GRANT"){
-      v = LoyaltyStatus::REWARDS_GRANT;
+      v = LoyaltyStatus_t::EXPIRY_E;
       return;
     }
     if(s == "CHANGE"){
-      v = LoyaltyStatus::CHANGE;
+      v = LoyaltyStatus_t::CHANGE_E;
+      return;
+    }
+    if(s == "REWARDS_GRANT"){
+      v = LoyaltyStatus_t::REWARDS_GRANT_E;
+      return;
+    }
+    if(s == "REVOKE"){
+      v = LoyaltyStatus_t::REVOKE_E;
+      return;
+    }
+    if(s == "LEGACY"){
+      v = LoyaltyStatus_t::LEGACY_E;
+      return;
+    }
+    if(s == "DISABLED"){
+      v = LoyaltyStatus_t::DISABLED_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LoyaltyStatus_HPP

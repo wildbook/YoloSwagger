@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolFeaturedModesFeaturedModesConfig_HPP
-#define SWAGGER_TYPES_LolFeaturedModesFeaturedModesConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolFeaturedModesFeaturedModesConfig {
-    // 
-    uint32_t MaxNotificationSaveDelayMinutes;
-    // 
+  struct LolFeaturedModesFeaturedModesConfig_t {
     bool NotificationsEnabled;
-    // 
+    uint32_t MaxNotificationSaveDelayMinutes;
     uint32_t QueueToggleNotificationMinutesThreshold;
   };
 
-  inline void to_json(nlohmann::json& j, const LolFeaturedModesFeaturedModesConfig& v) {
-    j["MaxNotificationSaveDelayMinutes"] = v.MaxNotificationSaveDelayMinutes;
+  inline void to_json(nlohmann::json& j, const LolFeaturedModesFeaturedModesConfig_t& v) {
     j["NotificationsEnabled"] = v.NotificationsEnabled;
+    j["MaxNotificationSaveDelayMinutes"] = v.MaxNotificationSaveDelayMinutes;
     j["QueueToggleNotificationMinutesThreshold"] = v.QueueToggleNotificationMinutesThreshold;
   }
 
-  inline void from_json(const nlohmann::json& j, LolFeaturedModesFeaturedModesConfig& v) {
-    v.MaxNotificationSaveDelayMinutes = j.at("MaxNotificationSaveDelayMinutes").get<uint32_t>;
-    v.NotificationsEnabled = j.at("NotificationsEnabled").get<bool>;
-    v.QueueToggleNotificationMinutesThreshold = j.at("QueueToggleNotificationMinutesThreshold").get<uint32_t>;
+  inline void from_json(const nlohmann::json& j, LolFeaturedModesFeaturedModesConfig_t& v) {
+    v.NotificationsEnabled = j.at("NotificationsEnabled").get<bool>();
+    v.MaxNotificationSaveDelayMinutes = j.at("MaxNotificationSaveDelayMinutes").get<uint32_t>();
+    v.QueueToggleNotificationMinutesThreshold = j.at("QueueToggleNotificationMinutesThreshold").get<uint32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolFeaturedModesFeaturedModesConfig_HPP

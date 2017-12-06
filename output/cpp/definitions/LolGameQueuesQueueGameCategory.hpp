@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolGameQueuesQueueGameCategory_HPP
-#define SWAGGER_TYPES_LolGameQueuesQueueGameCategory_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolGameQueuesQueueGameCategory {
-    // 
-    VersusAi = 3,
-    // 
-    PvP = 2,
-    // 
-    None = 0,
-    // 
-    Custom = 1,
+  enum class LolGameQueuesQueueGameCategory_t {
+    VersusAi_E = 3,
+    None_E = 0,
+    Custom_E = 1,
+    PvP_E = 2,
   };
 
-  inline void to_json(nlohmann::json& j, const LolGameQueuesQueueGameCategory& v) {
+  inline void to_json(nlohmann::json& j, const LolGameQueuesQueueGameCategory_t& v) {
     switch(v) {
-      case LolGameQueuesQueueGameCategory::VersusAi:
+      case LolGameQueuesQueueGameCategory_t::VersusAi_E:
         j = "VersusAi";
       break;
-      case LolGameQueuesQueueGameCategory::PvP:
-        j = "PvP";
-      break;
-      case LolGameQueuesQueueGameCategory::None:
+      case LolGameQueuesQueueGameCategory_t::None_E:
         j = "None";
       break;
-      case LolGameQueuesQueueGameCategory::Custom:
+      case LolGameQueuesQueueGameCategory_t::Custom_E:
         j = "Custom";
+      break;
+      case LolGameQueuesQueueGameCategory_t::PvP_E:
+        j = "PvP";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolGameQueuesQueueGameCategory& v) {
+  inline void from_json(const nlohmann::json& j, LolGameQueuesQueueGameCategory_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "VersusAi"){
-      v = LolGameQueuesQueueGameCategory::VersusAi;
-      return;
-    }
-    if(s == "PvP"){
-      v = LolGameQueuesQueueGameCategory::PvP;
+      v = LolGameQueuesQueueGameCategory_t::VersusAi_E;
       return;
     }
     if(s == "None"){
-      v = LolGameQueuesQueueGameCategory::None;
+      v = LolGameQueuesQueueGameCategory_t::None_E;
       return;
     }
     if(s == "Custom"){
-      v = LolGameQueuesQueueGameCategory::Custom;
+      v = LolGameQueuesQueueGameCategory_t::Custom_E;
+      return;
+    }
+    if(s == "PvP"){
+      v = LolGameQueuesQueueGameCategory_t::PvP_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolGameQueuesQueueGameCategory_HPP

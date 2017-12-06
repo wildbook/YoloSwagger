@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_SeriesMediaDTO_HPP
-#define SWAGGER_TYPES_SeriesMediaDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct SeriesMediaDTO {
-    // 
+  struct SeriesMediaDTO_t {
     std::string backgroundUrl;
   };
 
-  inline void to_json(nlohmann::json& j, const SeriesMediaDTO& v) {
+  inline void to_json(nlohmann::json& j, const SeriesMediaDTO_t& v) {
     j["backgroundUrl"] = v.backgroundUrl;
   }
 
-  inline void from_json(const nlohmann::json& j, SeriesMediaDTO& v) {
-    v.backgroundUrl = j.at("backgroundUrl").get<std::string>;
+  inline void from_json(const nlohmann::json& j, SeriesMediaDTO_t& v) {
+    v.backgroundUrl = j.at("backgroundUrl").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_SeriesMediaDTO_HPP

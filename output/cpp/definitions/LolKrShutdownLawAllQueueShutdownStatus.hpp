@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolKrShutdownLawAllQueueShutdownStatus_HPP
-#define SWAGGER_TYPES_LolKrShutdownLawAllQueueShutdownStatus_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolKrShutdownLawAllQueueShutdownStatus {
-    // 
+  struct LolKrShutdownLawAllQueueShutdownStatus_t {
     bool isAllQueuesDisabled;
   };
 
-  inline void to_json(nlohmann::json& j, const LolKrShutdownLawAllQueueShutdownStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolKrShutdownLawAllQueueShutdownStatus_t& v) {
     j["isAllQueuesDisabled"] = v.isAllQueuesDisabled;
   }
 
-  inline void from_json(const nlohmann::json& j, LolKrShutdownLawAllQueueShutdownStatus& v) {
-    v.isAllQueuesDisabled = j.at("isAllQueuesDisabled").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolKrShutdownLawAllQueueShutdownStatus_t& v) {
+    v.isAllQueuesDisabled = j.at("isAllQueuesDisabled").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolKrShutdownLawAllQueueShutdownStatus_HPP

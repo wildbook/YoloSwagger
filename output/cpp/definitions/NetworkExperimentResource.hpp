@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_NetworkExperimentResource_HPP
-#define SWAGGER_TYPES_NetworkExperimentResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "NetworkExperimentStatus.hpp"
 namespace leagueapi {
-  // 
-  struct NetworkExperimentResource {
-    // 
-    NetworkExperimentStatus status;
+  struct NetworkExperimentResource_t {
+    NetworkExperimentStatus_t status;
   };
 
-  inline void to_json(nlohmann::json& j, const NetworkExperimentResource& v) {
+  inline void to_json(nlohmann::json& j, const NetworkExperimentResource_t& v) {
     j["status"] = v.status;
   }
 
-  inline void from_json(const nlohmann::json& j, NetworkExperimentResource& v) {
-    v.status = j.at("status").get<NetworkExperimentStatus>;
+  inline void from_json(const nlohmann::json& j, NetworkExperimentResource_t& v) {
+    v.status = j.at("status").get<NetworkExperimentStatus_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_NetworkExperimentResource_HPP

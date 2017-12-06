@@ -1,262 +1,231 @@
-#ifndef SWAGGER_TYPES_LolClashNotifyReason_HPP
-#define SWAGGER_TYPES_LolClashNotifyReason_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolClashNotifyReason {
-    // 
-    DECLINE_TICKET = 25,
-    // 
-    INVITE = 14,
-    // 
-    DECLINE_INVITE = 16,
-    // 
-    ACCEPT_INVITE = 17,
-    // 
-    DECLINE_SUGGESTION = 1,
-    // 
-    LEAVE = 19,
-    // 
-    SET_TICKET = 22,
-    // 
-    CAPTAIN_LEAVE = 20,
-    // 
-    UNREADY = 5,
-    // 
-    RESENT_INVITE = 15,
-    // 
-    DISMISS = 7,
-    // 
-    CHANGE_SHORTNAME = 11,
-    // 
-    CHANGE_LOGO = 9,
-    // 
-    OWNER_TRANSFER = 8,
-    // 
-    OWNER_CLOSE = 6,
-    // 
-    CHANGE_NAMETAGLOGO = 13,
-    // 
-    CHANGE_NAME = 10,
-    // 
-    OFFER_TICKET = 23,
-    // 
-    REVOKE_SUGGESTION = 3,
-    // 
-    ACCEPT_TICKET = 26,
-    // 
-    ACCEPT_SUGGESTION = 2,
-    // 
-    REVOKED_TICKET = 24,
-    // 
-    CHANGE_POSITION = 12,
-    // 
-    SUGGESTION = 0,
-    // 
-    READY = 4,
-    // 
-    REVOKE_INVITE = 18,
-    // 
-    KICK = 21,
+  enum class LolClashNotifyReason_t {
+    INVITE_E = 14,
+    DECLINE_TICKET_E = 25,
+    SET_TICKET_E = 22,
+    REVOKE_SUGGESTION_E = 3,
+    CHANGE_SHORTNAME_E = 11,
+    ACCEPT_TICKET_E = 26,
+    UNREADY_E = 5,
+    ACCEPT_SUGGESTION_E = 2,
+    KICK_E = 21,
+    CHANGE_LOGO_E = 9,
+    CHANGE_NAMETAGLOGO_E = 13,
+    SUGGESTION_E = 0,
+    LEAVE_E = 19,
+    DECLINE_INVITE_E = 16,
+    REVOKE_INVITE_E = 18,
+    RESENT_INVITE_E = 15,
+    ACCEPT_INVITE_E = 17,
+    READY_E = 4,
+    DISMISS_E = 7,
+    DECLINE_SUGGESTION_E = 1,
+    CAPTAIN_LEAVE_E = 20,
+    CHANGE_NAME_E = 10,
+    REVOKED_TICKET_E = 24,
+    CHANGE_POSITION_E = 12,
+    OFFER_TICKET_E = 23,
+    OWNER_CLOSE_E = 6,
+    OWNER_TRANSFER_E = 8,
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashNotifyReason& v) {
+  inline void to_json(nlohmann::json& j, const LolClashNotifyReason_t& v) {
     switch(v) {
-      case LolClashNotifyReason::DECLINE_TICKET:
-        j = "DECLINE_TICKET";
-      break;
-      case LolClashNotifyReason::INVITE:
+      case LolClashNotifyReason_t::INVITE_E:
         j = "INVITE";
       break;
-      case LolClashNotifyReason::DECLINE_INVITE:
-        j = "DECLINE_INVITE";
+      case LolClashNotifyReason_t::DECLINE_TICKET_E:
+        j = "DECLINE_TICKET";
       break;
-      case LolClashNotifyReason::ACCEPT_INVITE:
-        j = "ACCEPT_INVITE";
-      break;
-      case LolClashNotifyReason::DECLINE_SUGGESTION:
-        j = "DECLINE_SUGGESTION";
-      break;
-      case LolClashNotifyReason::LEAVE:
-        j = "LEAVE";
-      break;
-      case LolClashNotifyReason::SET_TICKET:
+      case LolClashNotifyReason_t::SET_TICKET_E:
         j = "SET_TICKET";
       break;
-      case LolClashNotifyReason::CAPTAIN_LEAVE:
-        j = "CAPTAIN_LEAVE";
-      break;
-      case LolClashNotifyReason::UNREADY:
-        j = "UNREADY";
-      break;
-      case LolClashNotifyReason::RESENT_INVITE:
-        j = "RESENT_INVITE";
-      break;
-      case LolClashNotifyReason::DISMISS:
-        j = "DISMISS";
-      break;
-      case LolClashNotifyReason::CHANGE_SHORTNAME:
-        j = "CHANGE_SHORTNAME";
-      break;
-      case LolClashNotifyReason::CHANGE_LOGO:
-        j = "CHANGE_LOGO";
-      break;
-      case LolClashNotifyReason::OWNER_TRANSFER:
-        j = "OWNER_TRANSFER";
-      break;
-      case LolClashNotifyReason::OWNER_CLOSE:
-        j = "OWNER_CLOSE";
-      break;
-      case LolClashNotifyReason::CHANGE_NAMETAGLOGO:
-        j = "CHANGE_NAMETAGLOGO";
-      break;
-      case LolClashNotifyReason::CHANGE_NAME:
-        j = "CHANGE_NAME";
-      break;
-      case LolClashNotifyReason::OFFER_TICKET:
-        j = "OFFER_TICKET";
-      break;
-      case LolClashNotifyReason::REVOKE_SUGGESTION:
+      case LolClashNotifyReason_t::REVOKE_SUGGESTION_E:
         j = "REVOKE_SUGGESTION";
       break;
-      case LolClashNotifyReason::ACCEPT_TICKET:
+      case LolClashNotifyReason_t::CHANGE_SHORTNAME_E:
+        j = "CHANGE_SHORTNAME";
+      break;
+      case LolClashNotifyReason_t::ACCEPT_TICKET_E:
         j = "ACCEPT_TICKET";
       break;
-      case LolClashNotifyReason::ACCEPT_SUGGESTION:
+      case LolClashNotifyReason_t::UNREADY_E:
+        j = "UNREADY";
+      break;
+      case LolClashNotifyReason_t::ACCEPT_SUGGESTION_E:
         j = "ACCEPT_SUGGESTION";
       break;
-      case LolClashNotifyReason::REVOKED_TICKET:
-        j = "REVOKED_TICKET";
+      case LolClashNotifyReason_t::KICK_E:
+        j = "KICK";
       break;
-      case LolClashNotifyReason::CHANGE_POSITION:
-        j = "CHANGE_POSITION";
+      case LolClashNotifyReason_t::CHANGE_LOGO_E:
+        j = "CHANGE_LOGO";
       break;
-      case LolClashNotifyReason::SUGGESTION:
+      case LolClashNotifyReason_t::CHANGE_NAMETAGLOGO_E:
+        j = "CHANGE_NAMETAGLOGO";
+      break;
+      case LolClashNotifyReason_t::SUGGESTION_E:
         j = "SUGGESTION";
       break;
-      case LolClashNotifyReason::READY:
-        j = "READY";
+      case LolClashNotifyReason_t::LEAVE_E:
+        j = "LEAVE";
       break;
-      case LolClashNotifyReason::REVOKE_INVITE:
+      case LolClashNotifyReason_t::DECLINE_INVITE_E:
+        j = "DECLINE_INVITE";
+      break;
+      case LolClashNotifyReason_t::REVOKE_INVITE_E:
         j = "REVOKE_INVITE";
       break;
-      case LolClashNotifyReason::KICK:
-        j = "KICK";
+      case LolClashNotifyReason_t::RESENT_INVITE_E:
+        j = "RESENT_INVITE";
+      break;
+      case LolClashNotifyReason_t::ACCEPT_INVITE_E:
+        j = "ACCEPT_INVITE";
+      break;
+      case LolClashNotifyReason_t::READY_E:
+        j = "READY";
+      break;
+      case LolClashNotifyReason_t::DISMISS_E:
+        j = "DISMISS";
+      break;
+      case LolClashNotifyReason_t::DECLINE_SUGGESTION_E:
+        j = "DECLINE_SUGGESTION";
+      break;
+      case LolClashNotifyReason_t::CAPTAIN_LEAVE_E:
+        j = "CAPTAIN_LEAVE";
+      break;
+      case LolClashNotifyReason_t::CHANGE_NAME_E:
+        j = "CHANGE_NAME";
+      break;
+      case LolClashNotifyReason_t::REVOKED_TICKET_E:
+        j = "REVOKED_TICKET";
+      break;
+      case LolClashNotifyReason_t::CHANGE_POSITION_E:
+        j = "CHANGE_POSITION";
+      break;
+      case LolClashNotifyReason_t::OFFER_TICKET_E:
+        j = "OFFER_TICKET";
+      break;
+      case LolClashNotifyReason_t::OWNER_CLOSE_E:
+        j = "OWNER_CLOSE";
+      break;
+      case LolClashNotifyReason_t::OWNER_TRANSFER_E:
+        j = "OWNER_TRANSFER";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashNotifyReason& v) {
+  inline void from_json(const nlohmann::json& j, LolClashNotifyReason_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "DECLINE_TICKET"){
-      v = LolClashNotifyReason::DECLINE_TICKET;
-      return;
-    }
     if(s == "INVITE"){
-      v = LolClashNotifyReason::INVITE;
+      v = LolClashNotifyReason_t::INVITE_E;
       return;
     }
-    if(s == "DECLINE_INVITE"){
-      v = LolClashNotifyReason::DECLINE_INVITE;
-      return;
-    }
-    if(s == "ACCEPT_INVITE"){
-      v = LolClashNotifyReason::ACCEPT_INVITE;
-      return;
-    }
-    if(s == "DECLINE_SUGGESTION"){
-      v = LolClashNotifyReason::DECLINE_SUGGESTION;
-      return;
-    }
-    if(s == "LEAVE"){
-      v = LolClashNotifyReason::LEAVE;
+    if(s == "DECLINE_TICKET"){
+      v = LolClashNotifyReason_t::DECLINE_TICKET_E;
       return;
     }
     if(s == "SET_TICKET"){
-      v = LolClashNotifyReason::SET_TICKET;
-      return;
-    }
-    if(s == "CAPTAIN_LEAVE"){
-      v = LolClashNotifyReason::CAPTAIN_LEAVE;
-      return;
-    }
-    if(s == "UNREADY"){
-      v = LolClashNotifyReason::UNREADY;
-      return;
-    }
-    if(s == "RESENT_INVITE"){
-      v = LolClashNotifyReason::RESENT_INVITE;
-      return;
-    }
-    if(s == "DISMISS"){
-      v = LolClashNotifyReason::DISMISS;
-      return;
-    }
-    if(s == "CHANGE_SHORTNAME"){
-      v = LolClashNotifyReason::CHANGE_SHORTNAME;
-      return;
-    }
-    if(s == "CHANGE_LOGO"){
-      v = LolClashNotifyReason::CHANGE_LOGO;
-      return;
-    }
-    if(s == "OWNER_TRANSFER"){
-      v = LolClashNotifyReason::OWNER_TRANSFER;
-      return;
-    }
-    if(s == "OWNER_CLOSE"){
-      v = LolClashNotifyReason::OWNER_CLOSE;
-      return;
-    }
-    if(s == "CHANGE_NAMETAGLOGO"){
-      v = LolClashNotifyReason::CHANGE_NAMETAGLOGO;
-      return;
-    }
-    if(s == "CHANGE_NAME"){
-      v = LolClashNotifyReason::CHANGE_NAME;
-      return;
-    }
-    if(s == "OFFER_TICKET"){
-      v = LolClashNotifyReason::OFFER_TICKET;
+      v = LolClashNotifyReason_t::SET_TICKET_E;
       return;
     }
     if(s == "REVOKE_SUGGESTION"){
-      v = LolClashNotifyReason::REVOKE_SUGGESTION;
+      v = LolClashNotifyReason_t::REVOKE_SUGGESTION_E;
+      return;
+    }
+    if(s == "CHANGE_SHORTNAME"){
+      v = LolClashNotifyReason_t::CHANGE_SHORTNAME_E;
       return;
     }
     if(s == "ACCEPT_TICKET"){
-      v = LolClashNotifyReason::ACCEPT_TICKET;
+      v = LolClashNotifyReason_t::ACCEPT_TICKET_E;
+      return;
+    }
+    if(s == "UNREADY"){
+      v = LolClashNotifyReason_t::UNREADY_E;
       return;
     }
     if(s == "ACCEPT_SUGGESTION"){
-      v = LolClashNotifyReason::ACCEPT_SUGGESTION;
-      return;
-    }
-    if(s == "REVOKED_TICKET"){
-      v = LolClashNotifyReason::REVOKED_TICKET;
-      return;
-    }
-    if(s == "CHANGE_POSITION"){
-      v = LolClashNotifyReason::CHANGE_POSITION;
-      return;
-    }
-    if(s == "SUGGESTION"){
-      v = LolClashNotifyReason::SUGGESTION;
-      return;
-    }
-    if(s == "READY"){
-      v = LolClashNotifyReason::READY;
-      return;
-    }
-    if(s == "REVOKE_INVITE"){
-      v = LolClashNotifyReason::REVOKE_INVITE;
+      v = LolClashNotifyReason_t::ACCEPT_SUGGESTION_E;
       return;
     }
     if(s == "KICK"){
-      v = LolClashNotifyReason::KICK;
+      v = LolClashNotifyReason_t::KICK_E;
+      return;
+    }
+    if(s == "CHANGE_LOGO"){
+      v = LolClashNotifyReason_t::CHANGE_LOGO_E;
+      return;
+    }
+    if(s == "CHANGE_NAMETAGLOGO"){
+      v = LolClashNotifyReason_t::CHANGE_NAMETAGLOGO_E;
+      return;
+    }
+    if(s == "SUGGESTION"){
+      v = LolClashNotifyReason_t::SUGGESTION_E;
+      return;
+    }
+    if(s == "LEAVE"){
+      v = LolClashNotifyReason_t::LEAVE_E;
+      return;
+    }
+    if(s == "DECLINE_INVITE"){
+      v = LolClashNotifyReason_t::DECLINE_INVITE_E;
+      return;
+    }
+    if(s == "REVOKE_INVITE"){
+      v = LolClashNotifyReason_t::REVOKE_INVITE_E;
+      return;
+    }
+    if(s == "RESENT_INVITE"){
+      v = LolClashNotifyReason_t::RESENT_INVITE_E;
+      return;
+    }
+    if(s == "ACCEPT_INVITE"){
+      v = LolClashNotifyReason_t::ACCEPT_INVITE_E;
+      return;
+    }
+    if(s == "READY"){
+      v = LolClashNotifyReason_t::READY_E;
+      return;
+    }
+    if(s == "DISMISS"){
+      v = LolClashNotifyReason_t::DISMISS_E;
+      return;
+    }
+    if(s == "DECLINE_SUGGESTION"){
+      v = LolClashNotifyReason_t::DECLINE_SUGGESTION_E;
+      return;
+    }
+    if(s == "CAPTAIN_LEAVE"){
+      v = LolClashNotifyReason_t::CAPTAIN_LEAVE_E;
+      return;
+    }
+    if(s == "CHANGE_NAME"){
+      v = LolClashNotifyReason_t::CHANGE_NAME_E;
+      return;
+    }
+    if(s == "REVOKED_TICKET"){
+      v = LolClashNotifyReason_t::REVOKED_TICKET_E;
+      return;
+    }
+    if(s == "CHANGE_POSITION"){
+      v = LolClashNotifyReason_t::CHANGE_POSITION_E;
+      return;
+    }
+    if(s == "OFFER_TICKET"){
+      v = LolClashNotifyReason_t::OFFER_TICKET_E;
+      return;
+    }
+    if(s == "OWNER_CLOSE"){
+      v = LolClashNotifyReason_t::OWNER_CLOSE_E;
+      return;
+    }
+    if(s == "OWNER_TRANSFER"){
+      v = LolClashNotifyReason_t::OWNER_TRANSFER_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashNotifyReason_HPP

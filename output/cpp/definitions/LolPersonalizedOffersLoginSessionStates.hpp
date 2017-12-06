@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolPersonalizedOffersLoginSessionStates_HPP
-#define SWAGGER_TYPES_LolPersonalizedOffersLoginSessionStates_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolPersonalizedOffersLoginSessionStates {
-    // 
-    LOGGING_OUT = 2,
-    // 
-    IN_PROGRESS = 0,
-    // 
-    SUCCEEDED = 1,
-    // 
-    ERROR = 3,
+  enum class LolPersonalizedOffersLoginSessionStates_t {
+    LOGGING_OUT_E = 2,
+    SUCCEEDED_E = 1,
+    IN_PROGRESS_E = 0,
+    ERROR_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolPersonalizedOffersLoginSessionStates& v) {
+  inline void to_json(nlohmann::json& j, const LolPersonalizedOffersLoginSessionStates_t& v) {
     switch(v) {
-      case LolPersonalizedOffersLoginSessionStates::LOGGING_OUT:
+      case LolPersonalizedOffersLoginSessionStates_t::LOGGING_OUT_E:
         j = "LOGGING_OUT";
       break;
-      case LolPersonalizedOffersLoginSessionStates::IN_PROGRESS:
-        j = "IN_PROGRESS";
-      break;
-      case LolPersonalizedOffersLoginSessionStates::SUCCEEDED:
+      case LolPersonalizedOffersLoginSessionStates_t::SUCCEEDED_E:
         j = "SUCCEEDED";
       break;
-      case LolPersonalizedOffersLoginSessionStates::ERROR:
+      case LolPersonalizedOffersLoginSessionStates_t::IN_PROGRESS_E:
+        j = "IN_PROGRESS";
+      break;
+      case LolPersonalizedOffersLoginSessionStates_t::ERROR_E:
         j = "ERROR";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolPersonalizedOffersLoginSessionStates& v) {
+  inline void from_json(const nlohmann::json& j, LolPersonalizedOffersLoginSessionStates_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "LOGGING_OUT"){
-      v = LolPersonalizedOffersLoginSessionStates::LOGGING_OUT;
-      return;
-    }
-    if(s == "IN_PROGRESS"){
-      v = LolPersonalizedOffersLoginSessionStates::IN_PROGRESS;
+      v = LolPersonalizedOffersLoginSessionStates_t::LOGGING_OUT_E;
       return;
     }
     if(s == "SUCCEEDED"){
-      v = LolPersonalizedOffersLoginSessionStates::SUCCEEDED;
+      v = LolPersonalizedOffersLoginSessionStates_t::SUCCEEDED_E;
+      return;
+    }
+    if(s == "IN_PROGRESS"){
+      v = LolPersonalizedOffersLoginSessionStates_t::IN_PROGRESS_E;
       return;
     }
     if(s == "ERROR"){
-      v = LolPersonalizedOffersLoginSessionStates::ERROR;
+      v = LolPersonalizedOffersLoginSessionStates_t::ERROR_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolPersonalizedOffersLoginSessionStates_HPP

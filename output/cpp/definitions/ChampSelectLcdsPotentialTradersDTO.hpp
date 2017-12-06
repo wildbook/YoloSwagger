@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_ChampSelectLcdsPotentialTradersDTO_HPP
-#define SWAGGER_TYPES_ChampSelectLcdsPotentialTradersDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct ChampSelectLcdsPotentialTradersDTO {
-    // 
+  struct ChampSelectLcdsPotentialTradersDTO_t {
     std::vector<std::string> potentialTraders;
   };
 
-  inline void to_json(nlohmann::json& j, const ChampSelectLcdsPotentialTradersDTO& v) {
+  inline void to_json(nlohmann::json& j, const ChampSelectLcdsPotentialTradersDTO_t& v) {
     j["potentialTraders"] = v.potentialTraders;
   }
 
-  inline void from_json(const nlohmann::json& j, ChampSelectLcdsPotentialTradersDTO& v) {
-    v.potentialTraders = j.at("potentialTraders").get<std::vector<std::string>>;
+  inline void from_json(const nlohmann::json& j, ChampSelectLcdsPotentialTradersDTO_t& v) {
+    v.potentialTraders = j.at("potentialTraders").get<std::vector<std::string>>();
   }
-
 }
-#endif // SWAGGER_TYPES_ChampSelectLcdsPotentialTradersDTO_HPP

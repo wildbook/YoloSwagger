@@ -1,55 +1,52 @@
-#ifndef SWAGGER_TYPES_RemotingPrivilege_HPP
-#define SWAGGER_TYPES_RemotingPrivilege_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
   // Well-known privilege levels for bindable functions.
-  enum class RemotingPrivilege {
-    // Maximum privilege level for remote administrators.
-    Admin = 254,
-    // Minimum possible privilege level.
-    None = 0,
+  enum class RemotingPrivilege_t {
     // Maximum possible privilege level. Used for in-process function calls.
-    Local = 255,
+    Local_E = 255,
+    // Minimum possible privilege level.
+    None_E = 0,
     // Maximum privilege level for remote non-administrators.
-    User = 127,
+    User_E = 127,
+    // Maximum privilege level for remote administrators.
+    Admin_E = 254,
   };
 
-  inline void to_json(nlohmann::json& j, const RemotingPrivilege& v) {
+  inline void to_json(nlohmann::json& j, const RemotingPrivilege_t& v) {
     switch(v) {
-      case RemotingPrivilege::Admin:
-        j = "Admin";
-      break;
-      case RemotingPrivilege::None:
-        j = "None";
-      break;
-      case RemotingPrivilege::Local:
+      case RemotingPrivilege_t::Local_E:
         j = "Local";
       break;
-      case RemotingPrivilege::User:
+      case RemotingPrivilege_t::None_E:
+        j = "None";
+      break;
+      case RemotingPrivilege_t::User_E:
         j = "User";
+      break;
+      case RemotingPrivilege_t::Admin_E:
+        j = "Admin";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, RemotingPrivilege& v) {
+  inline void from_json(const nlohmann::json& j, RemotingPrivilege_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "Admin"){
-      v = RemotingPrivilege::Admin;
+    if(s == "Local"){
+      v = RemotingPrivilege_t::Local_E;
       return;
     }
     if(s == "None"){
-      v = RemotingPrivilege::None;
-      return;
-    }
-    if(s == "Local"){
-      v = RemotingPrivilege::Local;
+      v = RemotingPrivilege_t::None_E;
       return;
     }
     if(s == "User"){
-      v = RemotingPrivilege::User;
+      v = RemotingPrivilege_t::User_E;
+      return;
+    }
+    if(s == "Admin"){
+      v = RemotingPrivilege_t::Admin_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_RemotingPrivilege_HPP

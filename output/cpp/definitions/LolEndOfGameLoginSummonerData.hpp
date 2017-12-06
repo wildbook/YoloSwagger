@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolEndOfGameLoginSummonerData_HPP
-#define SWAGGER_TYPES_LolEndOfGameLoginSummonerData_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolEndOfGameLoginSummonerLevelAndPoints.hpp"
 namespace leagueapi {
-  // 
-  struct LolEndOfGameLoginSummonerData {
-    // 
-    LolEndOfGameLoginSummonerLevelAndPoints summonerLevelAndPoints;
+  struct LolEndOfGameLoginSummonerData_t {
+    LolEndOfGameLoginSummonerLevelAndPoints_t summonerLevelAndPoints;
   };
 
-  inline void to_json(nlohmann::json& j, const LolEndOfGameLoginSummonerData& v) {
+  inline void to_json(nlohmann::json& j, const LolEndOfGameLoginSummonerData_t& v) {
     j["summonerLevelAndPoints"] = v.summonerLevelAndPoints;
   }
 
-  inline void from_json(const nlohmann::json& j, LolEndOfGameLoginSummonerData& v) {
-    v.summonerLevelAndPoints = j.at("summonerLevelAndPoints").get<LolEndOfGameLoginSummonerLevelAndPoints>;
+  inline void from_json(const nlohmann::json& j, LolEndOfGameLoginSummonerData_t& v) {
+    v.summonerLevelAndPoints = j.at("summonerLevelAndPoints").get<LolEndOfGameLoginSummonerLevelAndPoints_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolEndOfGameLoginSummonerData_HPP

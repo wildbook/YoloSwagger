@@ -1,40 +1,33 @@
-#ifndef SWAGGER_TYPES_LolLoadoutsInventoryDTO_HPP
-#define SWAGGER_TYPES_LolLoadoutsInventoryDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLoadoutsInventoryDTO {
-    // 
-    std::string expires;
-    // 
-    std::map<std::string, nlohmann::json> items;
-    // 
-    std::string itemsJwt;
-    // 
+  struct LolLoadoutsInventoryDTO_t {
     std::string puuid;
-    // 
-    uint64_t summonerId;
-    // 
+    std::map<std::string, nlohmann::json> items;
     uint64_t accountId;
+    uint64_t summonerId;
+    std::string expires;
+    std::optional<std::string> itemsJwt;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLoadoutsInventoryDTO& v) {
-    j["expires"] = v.expires;
-    j["items"] = v.items;
-    j["itemsJwt"] = v.itemsJwt;
+  inline void to_json(nlohmann::json& j, const LolLoadoutsInventoryDTO_t& v) {
     j["puuid"] = v.puuid;
-    j["summonerId"] = v.summonerId;
+    j["items"] = v.items;
     j["accountId"] = v.accountId;
+    j["summonerId"] = v.summonerId;
+    j["expires"] = v.expires;
+    if(v.itemsJwt)
+      j["itemsJwt"] = *v.itemsJwt;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLoadoutsInventoryDTO& v) {
-    v.expires = j.at("expires").get<std::string>;
-    v.items = j.at("items").get<std::map<std::string, nlohmann::json>>;
-    v.itemsJwt = j.at("itemsJwt").get<std::string>;
-    v.puuid = j.at("puuid").get<std::string>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
-    v.accountId = j.at("accountId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolLoadoutsInventoryDTO_t& v) {
+    v.puuid = j.at("puuid").get<std::string>();
+    v.items = j.at("items").get<std::map<std::string, nlohmann::json>>();
+    v.accountId = j.at("accountId").get<uint64_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.expires = j.at("expires").get<std::string>();
+    if(auto it = j.find("itemsJwt"); it != j.end() !it->is_null())
+      v.itemsJwt = it->get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLoadoutsInventoryDTO_HPP

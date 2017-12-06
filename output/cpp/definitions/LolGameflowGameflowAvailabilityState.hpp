@@ -1,73 +1,63 @@
-#ifndef SWAGGER_TYPES_LolGameflowGameflowAvailabilityState_HPP
-#define SWAGGER_TYPES_LolGameflowGameflowAvailabilityState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolGameflowGameflowAvailabilityState {
-    // 
-    Available = 0,
-    // 
-    InGameFlow = 4,
-    // 
-    Patching = 2,
-    // 
-    PlayerBanned = 3,
-    // 
-    Initializing = 1,
-    // 
-    Configuration = 5,
+  enum class LolGameflowGameflowAvailabilityState_t {
+    InGameFlow_E = 4,
+    Configuration_E = 5,
+    Patching_E = 2,
+    PlayerBanned_E = 3,
+    Initializing_E = 1,
+    Available_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const LolGameflowGameflowAvailabilityState& v) {
+  inline void to_json(nlohmann::json& j, const LolGameflowGameflowAvailabilityState_t& v) {
     switch(v) {
-      case LolGameflowGameflowAvailabilityState::Available:
-        j = "Available";
-      break;
-      case LolGameflowGameflowAvailabilityState::InGameFlow:
+      case LolGameflowGameflowAvailabilityState_t::InGameFlow_E:
         j = "InGameFlow";
       break;
-      case LolGameflowGameflowAvailabilityState::Patching:
+      case LolGameflowGameflowAvailabilityState_t::Configuration_E:
+        j = "Configuration";
+      break;
+      case LolGameflowGameflowAvailabilityState_t::Patching_E:
         j = "Patching";
       break;
-      case LolGameflowGameflowAvailabilityState::PlayerBanned:
+      case LolGameflowGameflowAvailabilityState_t::PlayerBanned_E:
         j = "PlayerBanned";
       break;
-      case LolGameflowGameflowAvailabilityState::Initializing:
+      case LolGameflowGameflowAvailabilityState_t::Initializing_E:
         j = "Initializing";
       break;
-      case LolGameflowGameflowAvailabilityState::Configuration:
-        j = "Configuration";
+      case LolGameflowGameflowAvailabilityState_t::Available_E:
+        j = "Available";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolGameflowGameflowAvailabilityState& v) {
+  inline void from_json(const nlohmann::json& j, LolGameflowGameflowAvailabilityState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "Available"){
-      v = LolGameflowGameflowAvailabilityState::Available;
-      return;
-    }
     if(s == "InGameFlow"){
-      v = LolGameflowGameflowAvailabilityState::InGameFlow;
-      return;
-    }
-    if(s == "Patching"){
-      v = LolGameflowGameflowAvailabilityState::Patching;
-      return;
-    }
-    if(s == "PlayerBanned"){
-      v = LolGameflowGameflowAvailabilityState::PlayerBanned;
-      return;
-    }
-    if(s == "Initializing"){
-      v = LolGameflowGameflowAvailabilityState::Initializing;
+      v = LolGameflowGameflowAvailabilityState_t::InGameFlow_E;
       return;
     }
     if(s == "Configuration"){
-      v = LolGameflowGameflowAvailabilityState::Configuration;
+      v = LolGameflowGameflowAvailabilityState_t::Configuration_E;
+      return;
+    }
+    if(s == "Patching"){
+      v = LolGameflowGameflowAvailabilityState_t::Patching_E;
+      return;
+    }
+    if(s == "PlayerBanned"){
+      v = LolGameflowGameflowAvailabilityState_t::PlayerBanned_E;
+      return;
+    }
+    if(s == "Initializing"){
+      v = LolGameflowGameflowAvailabilityState_t::Initializing_E;
+      return;
+    }
+    if(s == "Available"){
+      v = LolGameflowGameflowAvailabilityState_t::Available_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolGameflowGameflowAvailabilityState_HPP

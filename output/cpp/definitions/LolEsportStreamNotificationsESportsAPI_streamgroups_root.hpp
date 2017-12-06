@@ -1,31 +1,25 @@
-#ifndef SWAGGER_TYPES_LolEsportStreamNotificationsESportsAPI_streamgroups_root_HPP
-#define SWAGGER_TYPES_LolEsportStreamNotificationsESportsAPI_streamgroups_root_HPP
+#pragma once
 #include <json.hpp>
-#include "LolEsportStreamNotificationsEsportsAPI_teams.hpp"
+#include <optional>
 #include "LolEsportStreamNotificationsESportsAPI_streamgroups.hpp"
+#include "LolEsportStreamNotificationsEsportsAPI_teams.hpp"
 #include "LolEsportStreamNotificationsEsportsAPI_highlanderTournaments.hpp"
 namespace leagueapi {
-  // 
-  struct LolEsportStreamNotificationsESportsAPI_streamgroups_root {
-    // 
-    std::vector<LolEsportStreamNotificationsEsportsAPI_highlanderTournaments> highlanderTournaments;
-    // 
-    std::vector<LolEsportStreamNotificationsESportsAPI_streamgroups> streamgroups;
-    // 
-    std::vector<LolEsportStreamNotificationsEsportsAPI_teams> teams;
+  struct LolEsportStreamNotificationsESportsAPI_streamgroups_root_t {
+    std::vector<LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_t> highlanderTournaments;
+    std::vector<LolEsportStreamNotificationsESportsAPI_streamgroups_t> streamgroups;
+    std::vector<LolEsportStreamNotificationsEsportsAPI_teams_t> teams;
   };
 
-  inline void to_json(nlohmann::json& j, const LolEsportStreamNotificationsESportsAPI_streamgroups_root& v) {
+  inline void to_json(nlohmann::json& j, const LolEsportStreamNotificationsESportsAPI_streamgroups_root_t& v) {
     j["highlanderTournaments"] = v.highlanderTournaments;
     j["streamgroups"] = v.streamgroups;
     j["teams"] = v.teams;
   }
 
-  inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsESportsAPI_streamgroups_root& v) {
-    v.highlanderTournaments = j.at("highlanderTournaments").get<std::vector<LolEsportStreamNotificationsEsportsAPI_highlanderTournaments>>;
-    v.streamgroups = j.at("streamgroups").get<std::vector<LolEsportStreamNotificationsESportsAPI_streamgroups>>;
-    v.teams = j.at("teams").get<std::vector<LolEsportStreamNotificationsEsportsAPI_teams>>;
+  inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsESportsAPI_streamgroups_root_t& v) {
+    v.highlanderTournaments = j.at("highlanderTournaments").get<std::vector<LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_t>>();
+    v.streamgroups = j.at("streamgroups").get<std::vector<LolEsportStreamNotificationsESportsAPI_streamgroups_t>>();
+    v.teams = j.at("teams").get<std::vector<LolEsportStreamNotificationsEsportsAPI_teams_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolEsportStreamNotificationsESportsAPI_streamgroups_root_HPP

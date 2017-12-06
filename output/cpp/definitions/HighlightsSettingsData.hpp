@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_HighlightsSettingsData_HPP
-#define SWAGGER_TYPES_HighlightsSettingsData_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct HighlightsSettingsData {
-    // 
+  struct HighlightsSettingsData_t {
     std::string highlights-folder-path;
   };
 
-  inline void to_json(nlohmann::json& j, const HighlightsSettingsData& v) {
+  inline void to_json(nlohmann::json& j, const HighlightsSettingsData_t& v) {
     j["highlights-folder-path"] = v.highlights-folder-path;
   }
 
-  inline void from_json(const nlohmann::json& j, HighlightsSettingsData& v) {
-    v.highlights-folder-path = j.at("highlights-folder-path").get<std::string>;
+  inline void from_json(const nlohmann::json& j, HighlightsSettingsData_t& v) {
+    v.highlights-folder-path = j.at("highlights-folder-path").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_HighlightsSettingsData_HPP

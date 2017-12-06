@@ -1,73 +1,63 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingReadyCheckState_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingReadyCheckState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLobbyTeamBuilderMatchmakingReadyCheckState {
-    // 
-    PartyNotReady = 4,
-    // 
-    StrangerNotReady = 3,
-    // 
-    EveryoneReady = 2,
-    // 
-    Invalid = 0,
-    // 
-    Error = 5,
-    // 
-    InProgress = 1,
+  enum class LolLobbyTeamBuilderMatchmakingReadyCheckState_t {
+    EveryoneReady_E = 2,
+    StrangerNotReady_E = 3,
+    Invalid_E = 0,
+    PartyNotReady_E = 4,
+    Error_E = 5,
+    InProgress_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingReadyCheckState& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingReadyCheckState_t& v) {
     switch(v) {
-      case LolLobbyTeamBuilderMatchmakingReadyCheckState::PartyNotReady:
-        j = "PartyNotReady";
-      break;
-      case LolLobbyTeamBuilderMatchmakingReadyCheckState::StrangerNotReady:
-        j = "StrangerNotReady";
-      break;
-      case LolLobbyTeamBuilderMatchmakingReadyCheckState::EveryoneReady:
+      case LolLobbyTeamBuilderMatchmakingReadyCheckState_t::EveryoneReady_E:
         j = "EveryoneReady";
       break;
-      case LolLobbyTeamBuilderMatchmakingReadyCheckState::Invalid:
+      case LolLobbyTeamBuilderMatchmakingReadyCheckState_t::StrangerNotReady_E:
+        j = "StrangerNotReady";
+      break;
+      case LolLobbyTeamBuilderMatchmakingReadyCheckState_t::Invalid_E:
         j = "Invalid";
       break;
-      case LolLobbyTeamBuilderMatchmakingReadyCheckState::Error:
+      case LolLobbyTeamBuilderMatchmakingReadyCheckState_t::PartyNotReady_E:
+        j = "PartyNotReady";
+      break;
+      case LolLobbyTeamBuilderMatchmakingReadyCheckState_t::Error_E:
         j = "Error";
       break;
-      case LolLobbyTeamBuilderMatchmakingReadyCheckState::InProgress:
+      case LolLobbyTeamBuilderMatchmakingReadyCheckState_t::InProgress_E:
         j = "InProgress";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingReadyCheckState& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingReadyCheckState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "PartyNotReady"){
-      v = LolLobbyTeamBuilderMatchmakingReadyCheckState::PartyNotReady;
+    if(s == "EveryoneReady"){
+      v = LolLobbyTeamBuilderMatchmakingReadyCheckState_t::EveryoneReady_E;
       return;
     }
     if(s == "StrangerNotReady"){
-      v = LolLobbyTeamBuilderMatchmakingReadyCheckState::StrangerNotReady;
-      return;
-    }
-    if(s == "EveryoneReady"){
-      v = LolLobbyTeamBuilderMatchmakingReadyCheckState::EveryoneReady;
+      v = LolLobbyTeamBuilderMatchmakingReadyCheckState_t::StrangerNotReady_E;
       return;
     }
     if(s == "Invalid"){
-      v = LolLobbyTeamBuilderMatchmakingReadyCheckState::Invalid;
+      v = LolLobbyTeamBuilderMatchmakingReadyCheckState_t::Invalid_E;
+      return;
+    }
+    if(s == "PartyNotReady"){
+      v = LolLobbyTeamBuilderMatchmakingReadyCheckState_t::PartyNotReady_E;
       return;
     }
     if(s == "Error"){
-      v = LolLobbyTeamBuilderMatchmakingReadyCheckState::Error;
+      v = LolLobbyTeamBuilderMatchmakingReadyCheckState_t::Error_E;
       return;
     }
     if(s == "InProgress"){
-      v = LolLobbyTeamBuilderMatchmakingReadyCheckState::InProgress;
+      v = LolLobbyTeamBuilderMatchmakingReadyCheckState_t::InProgress_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingReadyCheckState_HPP

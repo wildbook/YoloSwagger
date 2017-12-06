@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolLobbyQueueRestrictionDto_HPP
-#define SWAGGER_TYPES_LolLobbyQueueRestrictionDto_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLobbyGatekeeperRestrictionDto.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyQueueRestrictionDto {
-    // 
-    std::vector<LolLobbyGatekeeperRestrictionDto> gatekeeperRestrictions;
+  struct LolLobbyQueueRestrictionDto_t {
+    std::vector<LolLobbyGatekeeperRestrictionDto_t> gatekeeperRestrictions;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyQueueRestrictionDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyQueueRestrictionDto_t& v) {
     j["gatekeeperRestrictions"] = v.gatekeeperRestrictions;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyQueueRestrictionDto& v) {
-    v.gatekeeperRestrictions = j.at("gatekeeperRestrictions").get<std::vector<LolLobbyGatekeeperRestrictionDto>>;
+  inline void from_json(const nlohmann::json& j, LolLobbyQueueRestrictionDto_t& v) {
+    v.gatekeeperRestrictions = j.at("gatekeeperRestrictions").get<std::vector<LolLobbyGatekeeperRestrictionDto_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyQueueRestrictionDto_HPP

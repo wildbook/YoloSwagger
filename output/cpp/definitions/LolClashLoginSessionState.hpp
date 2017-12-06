@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolClashLoginSessionState_HPP
-#define SWAGGER_TYPES_LolClashLoginSessionState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolClashLoginSessionState {
-    // 
-    LOGGING_OUT = 2,
-    // 
-    IN_PROGRESS = 0,
-    // 
-    SUCCEEDED = 1,
-    // 
-    ERROR = 3,
+  enum class LolClashLoginSessionState_t {
+    LOGGING_OUT_E = 2,
+    SUCCEEDED_E = 1,
+    IN_PROGRESS_E = 0,
+    ERROR_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashLoginSessionState& v) {
+  inline void to_json(nlohmann::json& j, const LolClashLoginSessionState_t& v) {
     switch(v) {
-      case LolClashLoginSessionState::LOGGING_OUT:
+      case LolClashLoginSessionState_t::LOGGING_OUT_E:
         j = "LOGGING_OUT";
       break;
-      case LolClashLoginSessionState::IN_PROGRESS:
-        j = "IN_PROGRESS";
-      break;
-      case LolClashLoginSessionState::SUCCEEDED:
+      case LolClashLoginSessionState_t::SUCCEEDED_E:
         j = "SUCCEEDED";
       break;
-      case LolClashLoginSessionState::ERROR:
+      case LolClashLoginSessionState_t::IN_PROGRESS_E:
+        j = "IN_PROGRESS";
+      break;
+      case LolClashLoginSessionState_t::ERROR_E:
         j = "ERROR";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashLoginSessionState& v) {
+  inline void from_json(const nlohmann::json& j, LolClashLoginSessionState_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "LOGGING_OUT"){
-      v = LolClashLoginSessionState::LOGGING_OUT;
-      return;
-    }
-    if(s == "IN_PROGRESS"){
-      v = LolClashLoginSessionState::IN_PROGRESS;
+      v = LolClashLoginSessionState_t::LOGGING_OUT_E;
       return;
     }
     if(s == "SUCCEEDED"){
-      v = LolClashLoginSessionState::SUCCEEDED;
+      v = LolClashLoginSessionState_t::SUCCEEDED_E;
+      return;
+    }
+    if(s == "IN_PROGRESS"){
+      v = LolClashLoginSessionState_t::IN_PROGRESS_E;
       return;
     }
     if(s == "ERROR"){
-      v = LolClashLoginSessionState::ERROR;
+      v = LolClashLoginSessionState_t::ERROR_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashLoginSessionState_HPP

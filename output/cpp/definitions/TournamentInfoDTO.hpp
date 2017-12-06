@@ -1,39 +1,35 @@
-#ifndef SWAGGER_TYPES_TournamentInfoDTO_HPP
-#define SWAGGER_TYPES_TournamentInfoDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
+#include "PendingRosterDTO.hpp"
 #include "TournamentDTO.hpp"
 #include "RosterDTO.hpp"
-#include "PendingRosterDTO.hpp"
 namespace leagueapi {
-  // 
-  struct TournamentInfoDTO {
-    // 
-    std::vector<PendingRosterDTO> inviteePendingRosters;
-    // 
-    TournamentDTO tournament;
-    // 
-    PendingRosterDTO pendingRoster;
-    // 
+  struct TournamentInfoDTO_t {
+    std::vector<PendingRosterDTO_t> inviteePendingRosters;
+    std::optional<PendingRosterDTO_t> pendingRoster;
     int32_t themeVp;
-    // 
-    RosterDTO roster;
+    std::optional<RosterDTO_t> roster;
+    TournamentDTO_t tournament;
   };
 
-  inline void to_json(nlohmann::json& j, const TournamentInfoDTO& v) {
+  inline void to_json(nlohmann::json& j, const TournamentInfoDTO_t& v) {
     j["inviteePendingRosters"] = v.inviteePendingRosters;
-    j["tournament"] = v.tournament;
-    j["pendingRoster"] = v.pendingRoster;
+    if(v.pendingRoster)
+      j["pendingRoster"] = *v.pendingRoster;
     j["themeVp"] = v.themeVp;
-    j["roster"] = v.roster;
+    if(v.roster)
+      j["roster"] = *v.roster;
+    j["tournament"] = v.tournament;
   }
 
-  inline void from_json(const nlohmann::json& j, TournamentInfoDTO& v) {
-    v.inviteePendingRosters = j.at("inviteePendingRosters").get<std::vector<PendingRosterDTO>>;
-    v.tournament = j.at("tournament").get<TournamentDTO>;
-    v.pendingRoster = j.at("pendingRoster").get<PendingRosterDTO>;
-    v.themeVp = j.at("themeVp").get<int32_t>;
-    v.roster = j.at("roster").get<RosterDTO>;
+  inline void from_json(const nlohmann::json& j, TournamentInfoDTO_t& v) {
+    v.inviteePendingRosters = j.at("inviteePendingRosters").get<std::vector<PendingRosterDTO_t>>();
+    if(auto it = j.find("pendingRoster"); it != j.end() !it->is_null())
+      v.pendingRoster = it->get<PendingRosterDTO_t>();
+    v.themeVp = j.at("themeVp").get<int32_t>();
+    if(auto it = j.find("roster"); it != j.end() !it->is_null())
+      v.roster = it->get<RosterDTO_t>();
+    v.tournament = j.at("tournament").get<TournamentDTO_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_TournamentInfoDTO_HPP

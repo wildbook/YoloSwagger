@@ -1,26 +1,21 @@
-#ifndef SWAGGER_TYPES_ClashRewardDefinition_HPP
-#define SWAGGER_TYPES_ClashRewardDefinition_HPP
+#pragma once
 #include <json.hpp>
-#include "ClashRewardSpec.hpp"
+#include <optional>
 #include "ClashRewardType.hpp"
+#include "ClashRewardSpec.hpp"
 namespace leagueapi {
-  // 
-  struct ClashRewardDefinition {
-    // 
-    ClashRewardSpec rewardSpec;
-    // 
-    ClashRewardType rewardType;
+  struct ClashRewardDefinition_t {
+    ClashRewardSpec_t rewardSpec;
+    ClashRewardType_t rewardType;
   };
 
-  inline void to_json(nlohmann::json& j, const ClashRewardDefinition& v) {
+  inline void to_json(nlohmann::json& j, const ClashRewardDefinition_t& v) {
     j["rewardSpec"] = v.rewardSpec;
     j["rewardType"] = v.rewardType;
   }
 
-  inline void from_json(const nlohmann::json& j, ClashRewardDefinition& v) {
-    v.rewardSpec = j.at("rewardSpec").get<ClashRewardSpec>;
-    v.rewardType = j.at("rewardType").get<ClashRewardType>;
+  inline void from_json(const nlohmann::json& j, ClashRewardDefinition_t& v) {
+    v.rewardSpec = j.at("rewardSpec").get<ClashRewardSpec_t>();
+    v.rewardType = j.at("rewardType").get<ClashRewardType_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_ClashRewardDefinition_HPP

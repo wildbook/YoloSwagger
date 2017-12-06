@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_ClubPreferences_HPP
-#define SWAGGER_TYPES_ClubPreferences_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct ClubPreferences {
-    // 
-    std::string primaryClubKey;
-    // 
+  struct ClubPreferences_t {
     bool shareClubAffiliation;
+    std::string primaryClubKey;
   };
 
-  inline void to_json(nlohmann::json& j, const ClubPreferences& v) {
-    j["primaryClubKey"] = v.primaryClubKey;
+  inline void to_json(nlohmann::json& j, const ClubPreferences_t& v) {
     j["shareClubAffiliation"] = v.shareClubAffiliation;
+    j["primaryClubKey"] = v.primaryClubKey;
   }
 
-  inline void from_json(const nlohmann::json& j, ClubPreferences& v) {
-    v.primaryClubKey = j.at("primaryClubKey").get<std::string>;
-    v.shareClubAffiliation = j.at("shareClubAffiliation").get<bool>;
+  inline void from_json(const nlohmann::json& j, ClubPreferences_t& v) {
+    v.shareClubAffiliation = j.at("shareClubAffiliation").get<bool>();
+    v.primaryClubKey = j.at("primaryClubKey").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_ClubPreferences_HPP

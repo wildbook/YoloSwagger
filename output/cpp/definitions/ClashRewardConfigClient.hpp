@@ -1,34 +1,27 @@
-#ifndef SWAGGER_TYPES_ClashRewardConfigClient_HPP
-#define SWAGGER_TYPES_ClashRewardConfigClient_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "ClashRewardKeyType.hpp"
 #include "ClashRewardConfigEntry.hpp"
 namespace leagueapi {
-  // 
-  struct ClashRewardConfigClient {
-    // 
-    bool grantToSub;
-    // 
-    std::vector<ClashRewardKeyType> keyDef;
-    // 
+  struct ClashRewardConfigClient_t {
     std::string name;
-    // 
-    std::vector<ClashRewardConfigEntry> entries;
+    bool grantToSub;
+    std::vector<ClashRewardKeyType_t> keyDef;
+    std::vector<ClashRewardConfigEntry_t> entries;
   };
 
-  inline void to_json(nlohmann::json& j, const ClashRewardConfigClient& v) {
+  inline void to_json(nlohmann::json& j, const ClashRewardConfigClient_t& v) {
+    j["name"] = v.name;
     j["grantToSub"] = v.grantToSub;
     j["keyDef"] = v.keyDef;
-    j["name"] = v.name;
     j["entries"] = v.entries;
   }
 
-  inline void from_json(const nlohmann::json& j, ClashRewardConfigClient& v) {
-    v.grantToSub = j.at("grantToSub").get<bool>;
-    v.keyDef = j.at("keyDef").get<std::vector<ClashRewardKeyType>>;
-    v.name = j.at("name").get<std::string>;
-    v.entries = j.at("entries").get<std::vector<ClashRewardConfigEntry>>;
+  inline void from_json(const nlohmann::json& j, ClashRewardConfigClient_t& v) {
+    v.name = j.at("name").get<std::string>();
+    v.grantToSub = j.at("grantToSub").get<bool>();
+    v.keyDef = j.at("keyDef").get<std::vector<ClashRewardKeyType_t>>();
+    v.entries = j.at("entries").get<std::vector<ClashRewardConfigEntry_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_ClashRewardConfigClient_HPP

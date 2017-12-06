@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolCollectionsCollectionsRuneBook_HPP
-#define SWAGGER_TYPES_LolCollectionsCollectionsRuneBook_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolCollectionsCollectionsRunePage.hpp"
 namespace leagueapi {
-  // 
-  struct LolCollectionsCollectionsRuneBook {
-    // 
-    std::vector<LolCollectionsCollectionsRunePage> pages;
-    // 
+  struct LolCollectionsCollectionsRuneBook_t {
+    std::vector<LolCollectionsCollectionsRunePage_t> pages;
     uint64_t summonerId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsRuneBook& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsRuneBook_t& v) {
     j["pages"] = v.pages;
     j["summonerId"] = v.summonerId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsRuneBook& v) {
-    v.pages = j.at("pages").get<std::vector<LolCollectionsCollectionsRunePage>>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsRuneBook_t& v) {
+    v.pages = j.at("pages").get<std::vector<LolCollectionsCollectionsRunePage_t>>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolCollectionsCollectionsRuneBook_HPP

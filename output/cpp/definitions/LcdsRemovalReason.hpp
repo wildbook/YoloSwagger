@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_LcdsRemovalReason_HPP
-#define SWAGGER_TYPES_LcdsRemovalReason_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LcdsRemovalReason {
-    // 
-    DESTROYED = 1,
-    // 
-    KICKED = 0,
-    // 
-    PROGRESSED = 2,
+  enum class LcdsRemovalReason_t {
+    PROGRESSED_E = 2,
+    KICKED_E = 0,
+    DESTROYED_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LcdsRemovalReason& v) {
+  inline void to_json(nlohmann::json& j, const LcdsRemovalReason_t& v) {
     switch(v) {
-      case LcdsRemovalReason::DESTROYED:
-        j = "DESTROYED";
+      case LcdsRemovalReason_t::PROGRESSED_E:
+        j = "PROGRESSED";
       break;
-      case LcdsRemovalReason::KICKED:
+      case LcdsRemovalReason_t::KICKED_E:
         j = "KICKED";
       break;
-      case LcdsRemovalReason::PROGRESSED:
-        j = "PROGRESSED";
+      case LcdsRemovalReason_t::DESTROYED_E:
+        j = "DESTROYED";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LcdsRemovalReason& v) {
+  inline void from_json(const nlohmann::json& j, LcdsRemovalReason_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "DESTROYED"){
-      v = LcdsRemovalReason::DESTROYED;
+    if(s == "PROGRESSED"){
+      v = LcdsRemovalReason_t::PROGRESSED_E;
       return;
     }
     if(s == "KICKED"){
-      v = LcdsRemovalReason::KICKED;
+      v = LcdsRemovalReason_t::KICKED_E;
       return;
     }
-    if(s == "PROGRESSED"){
-      v = LcdsRemovalReason::PROGRESSED;
+    if(s == "DESTROYED"){
+      v = LcdsRemovalReason_t::DESTROYED_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LcdsRemovalReason_HPP

@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolMatchmakingGameflowGameDodge_HPP
-#define SWAGGER_TYPES_LolMatchmakingGameflowGameDodge_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolMatchmakingMatchmakingDodgeState.hpp"
 namespace leagueapi {
-  // 
-  struct LolMatchmakingGameflowGameDodge {
-    // 
+  struct LolMatchmakingGameflowGameDodge_t {
+    LolMatchmakingMatchmakingDodgeState_t state;
     std::vector<uint64_t> dodgeIds;
-    // 
-    LolMatchmakingMatchmakingDodgeState state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolMatchmakingGameflowGameDodge& v) {
-    j["dodgeIds"] = v.dodgeIds;
+  inline void to_json(nlohmann::json& j, const LolMatchmakingGameflowGameDodge_t& v) {
     j["state"] = v.state;
+    j["dodgeIds"] = v.dodgeIds;
   }
 
-  inline void from_json(const nlohmann::json& j, LolMatchmakingGameflowGameDodge& v) {
-    v.dodgeIds = j.at("dodgeIds").get<std::vector<uint64_t>>;
-    v.state = j.at("state").get<LolMatchmakingMatchmakingDodgeState>;
+  inline void from_json(const nlohmann::json& j, LolMatchmakingGameflowGameDodge_t& v) {
+    v.state = j.at("state").get<LolMatchmakingMatchmakingDodgeState_t>();
+    v.dodgeIds = j.at("dodgeIds").get<std::vector<uint64_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolMatchmakingGameflowGameDodge_HPP

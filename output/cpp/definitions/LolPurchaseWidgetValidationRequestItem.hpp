@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolPurchaseWidgetValidationRequestItem_HPP
-#define SWAGGER_TYPES_LolPurchaseWidgetValidationRequestItem_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolPurchaseWidgetItemKey.hpp"
 namespace leagueapi {
-  // 
-  struct LolPurchaseWidgetValidationRequestItem {
-    // 
-    LolPurchaseWidgetItemKey itemKey;
-    // 
+  struct LolPurchaseWidgetValidationRequestItem_t {
+    LolPurchaseWidgetItemKey_t itemKey;
     int32_t quantity;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPurchaseWidgetValidationRequestItem& v) {
+  inline void to_json(nlohmann::json& j, const LolPurchaseWidgetValidationRequestItem_t& v) {
     j["itemKey"] = v.itemKey;
     j["quantity"] = v.quantity;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPurchaseWidgetValidationRequestItem& v) {
-    v.itemKey = j.at("itemKey").get<LolPurchaseWidgetItemKey>;
-    v.quantity = j.at("quantity").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LolPurchaseWidgetValidationRequestItem_t& v) {
+    v.itemKey = j.at("itemKey").get<LolPurchaseWidgetItemKey_t>();
+    v.quantity = j.at("quantity").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPurchaseWidgetValidationRequestItem_HPP

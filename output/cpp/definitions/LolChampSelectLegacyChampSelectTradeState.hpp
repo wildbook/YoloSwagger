@@ -1,64 +1,55 @@
-#ifndef SWAGGER_TYPES_LolChampSelectLegacyChampSelectTradeState_HPP
-#define SWAGGER_TYPES_LolChampSelectLegacyChampSelectTradeState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolChampSelectLegacyChampSelectTradeState {
-    // 
-    AVAILABLE = 1,
-    // 
-    RECEIVED = 4,
-    // 
-    BUSY = 2,
-    // 
-    SENT = 5,
-    // 
-    INVALID = 3,
+  enum class LolChampSelectLegacyChampSelectTradeState_t {
+    SENT_E = 5,
+    RECEIVED_E = 4,
+    AVAILABLE_E = 1,
+    BUSY_E = 2,
+    INVALID_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyChampSelectTradeState& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyChampSelectTradeState_t& v) {
     switch(v) {
-      case LolChampSelectLegacyChampSelectTradeState::AVAILABLE:
-        j = "AVAILABLE";
-      break;
-      case LolChampSelectLegacyChampSelectTradeState::RECEIVED:
-        j = "RECEIVED";
-      break;
-      case LolChampSelectLegacyChampSelectTradeState::BUSY:
-        j = "BUSY";
-      break;
-      case LolChampSelectLegacyChampSelectTradeState::SENT:
+      case LolChampSelectLegacyChampSelectTradeState_t::SENT_E:
         j = "SENT";
       break;
-      case LolChampSelectLegacyChampSelectTradeState::INVALID:
+      case LolChampSelectLegacyChampSelectTradeState_t::RECEIVED_E:
+        j = "RECEIVED";
+      break;
+      case LolChampSelectLegacyChampSelectTradeState_t::AVAILABLE_E:
+        j = "AVAILABLE";
+      break;
+      case LolChampSelectLegacyChampSelectTradeState_t::BUSY_E:
+        j = "BUSY";
+      break;
+      case LolChampSelectLegacyChampSelectTradeState_t::INVALID_E:
         j = "INVALID";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyChampSelectTradeState& v) {
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyChampSelectTradeState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "AVAILABLE"){
-      v = LolChampSelectLegacyChampSelectTradeState::AVAILABLE;
+    if(s == "SENT"){
+      v = LolChampSelectLegacyChampSelectTradeState_t::SENT_E;
       return;
     }
     if(s == "RECEIVED"){
-      v = LolChampSelectLegacyChampSelectTradeState::RECEIVED;
+      v = LolChampSelectLegacyChampSelectTradeState_t::RECEIVED_E;
+      return;
+    }
+    if(s == "AVAILABLE"){
+      v = LolChampSelectLegacyChampSelectTradeState_t::AVAILABLE_E;
       return;
     }
     if(s == "BUSY"){
-      v = LolChampSelectLegacyChampSelectTradeState::BUSY;
-      return;
-    }
-    if(s == "SENT"){
-      v = LolChampSelectLegacyChampSelectTradeState::SENT;
+      v = LolChampSelectLegacyChampSelectTradeState_t::BUSY_E;
       return;
     }
     if(s == "INVALID"){
-      v = LolChampSelectLegacyChampSelectTradeState::INVALID;
+      v = LolChampSelectLegacyChampSelectTradeState_t::INVALID_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampSelectLegacyChampSelectTradeState_HPP

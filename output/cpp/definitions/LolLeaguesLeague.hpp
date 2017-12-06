@@ -1,48 +1,38 @@
-#ifndef SWAGGER_TYPES_LolLeaguesLeague_HPP
-#define SWAGGER_TYPES_LolLeaguesLeague_HPP
+#pragma once
 #include <json.hpp>
-#include "LolLeaguesLeagueQueueType.hpp"
-#include "LolLeaguesLeagueTier.hpp"
+#include <optional>
 #include "LolLeaguesLeagueDivision.hpp"
+#include "LolLeaguesLeagueTier.hpp"
+#include "LolLeaguesLeagueQueueType.hpp"
 #include "LolLeaguesLeagueRank.hpp"
 namespace leagueapi {
-  // 
-  struct LolLeaguesLeague {
-    // 
-    std::vector<LolLeaguesLeagueDivision> leagues;
-    // 
-    LolLeaguesLeagueQueueType queueType;
-    // 
+  struct LolLeaguesLeague_t {
+    LolLeaguesLeagueTier_t leagueTier;
+    LolLeaguesLeagueRank_t requesterLeagueRank;
+    std::vector<LolLeaguesLeagueDivision_t> leagues;
     std::string name;
-    // 
-    uint64_t challengerNextPromotionUpdateInMs;
-    // 
-    LolLeaguesLeagueTier leagueTier;
-    // 
-    LolLeaguesLeagueRank requesterLeagueRank;
-    // 
     std::string leagueName;
+    uint64_t challengerNextPromotionUpdateInMs;
+    LolLeaguesLeagueQueueType_t queueType;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLeaguesLeague& v) {
-    j["leagues"] = v.leagues;
-    j["queueType"] = v.queueType;
-    j["name"] = v.name;
-    j["challengerNextPromotionUpdateInMs"] = v.challengerNextPromotionUpdateInMs;
+  inline void to_json(nlohmann::json& j, const LolLeaguesLeague_t& v) {
     j["leagueTier"] = v.leagueTier;
     j["requesterLeagueRank"] = v.requesterLeagueRank;
+    j["leagues"] = v.leagues;
+    j["name"] = v.name;
     j["leagueName"] = v.leagueName;
+    j["challengerNextPromotionUpdateInMs"] = v.challengerNextPromotionUpdateInMs;
+    j["queueType"] = v.queueType;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLeaguesLeague& v) {
-    v.leagues = j.at("leagues").get<std::vector<LolLeaguesLeagueDivision>>;
-    v.queueType = j.at("queueType").get<LolLeaguesLeagueQueueType>;
-    v.name = j.at("name").get<std::string>;
-    v.challengerNextPromotionUpdateInMs = j.at("challengerNextPromotionUpdateInMs").get<uint64_t>;
-    v.leagueTier = j.at("leagueTier").get<LolLeaguesLeagueTier>;
-    v.requesterLeagueRank = j.at("requesterLeagueRank").get<LolLeaguesLeagueRank>;
-    v.leagueName = j.at("leagueName").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolLeaguesLeague_t& v) {
+    v.leagueTier = j.at("leagueTier").get<LolLeaguesLeagueTier_t>();
+    v.requesterLeagueRank = j.at("requesterLeagueRank").get<LolLeaguesLeagueRank_t>();
+    v.leagues = j.at("leagues").get<std::vector<LolLeaguesLeagueDivision_t>>();
+    v.name = j.at("name").get<std::string>();
+    v.leagueName = j.at("leagueName").get<std::string>();
+    v.challengerNextPromotionUpdateInMs = j.at("challengerNextPromotionUpdateInMs").get<uint64_t>();
+    v.queueType = j.at("queueType").get<LolLeaguesLeagueQueueType_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLeaguesLeague_HPP

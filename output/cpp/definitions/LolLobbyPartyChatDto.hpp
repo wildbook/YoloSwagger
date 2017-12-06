@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolLobbyPartyChatDto_HPP
-#define SWAGGER_TYPES_LolLobbyPartyChatDto_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyPartyChatDto {
-    // 
+  struct LolLobbyPartyChatDto_t {
     std::string jid;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyPartyChatDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyPartyChatDto_t& v) {
     j["jid"] = v.jid;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyPartyChatDto& v) {
-    v.jid = j.at("jid").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolLobbyPartyChatDto_t& v) {
+    v.jid = j.at("jid").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyPartyChatDto_HPP

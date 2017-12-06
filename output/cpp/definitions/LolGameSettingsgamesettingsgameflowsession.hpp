@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolGameSettingsgamesettingsgameflowsession_HPP
-#define SWAGGER_TYPES_LolGameSettingsgamesettingsgameflowsession_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolGameSettingsgamesettingsgameclient.hpp"
 namespace leagueapi {
-  // 
-  struct LolGameSettingsgamesettingsgameflowsession {
-    // 
-    LolGameSettingsgamesettingsgameclient gameClient;
+  struct LolGameSettingsgamesettingsgameflowsession_t {
+    LolGameSettingsgamesettingsgameclient_t gameClient;
   };
 
-  inline void to_json(nlohmann::json& j, const LolGameSettingsgamesettingsgameflowsession& v) {
+  inline void to_json(nlohmann::json& j, const LolGameSettingsgamesettingsgameflowsession_t& v) {
     j["gameClient"] = v.gameClient;
   }
 
-  inline void from_json(const nlohmann::json& j, LolGameSettingsgamesettingsgameflowsession& v) {
-    v.gameClient = j.at("gameClient").get<LolGameSettingsgamesettingsgameclient>;
+  inline void from_json(const nlohmann::json& j, LolGameSettingsgamesettingsgameflowsession_t& v) {
+    v.gameClient = j.at("gameClient").get<LolGameSettingsgamesettingsgameclient_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolGameSettingsgamesettingsgameflowsession_HPP

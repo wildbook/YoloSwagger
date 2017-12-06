@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolReplaysGameflowGameClient_HPP
-#define SWAGGER_TYPES_LolReplaysGameflowGameClient_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolReplaysGameflowGameClient {
-    // 
+  struct LolReplaysGameflowGameClient_t {
     bool running;
   };
 
-  inline void to_json(nlohmann::json& j, const LolReplaysGameflowGameClient& v) {
+  inline void to_json(nlohmann::json& j, const LolReplaysGameflowGameClient_t& v) {
     j["running"] = v.running;
   }
 
-  inline void from_json(const nlohmann::json& j, LolReplaysGameflowGameClient& v) {
-    v.running = j.at("running").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolReplaysGameflowGameClient_t& v) {
+    v.running = j.at("running").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolReplaysGameflowGameClient_HPP

@@ -1,32 +1,25 @@
-#ifndef SWAGGER_TYPES_LolChatLcuSocialConfig_HPP
-#define SWAGGER_TYPES_LolChatLcuSocialConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChatLcuSocialConfig {
-    // 
-    bool ForceChatFilter;
-    // 
-    bool AggressiveScanning;
-    // 
-    uint64_t QueueJobGraceSeconds;
-    // 
+  struct LolChatLcuSocialConfig_t {
     bool SilenceChatWhileInGame;
+    bool ForceChatFilter;
+    bool AggressiveScanning;
+    uint64_t QueueJobGraceSeconds;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatLcuSocialConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolChatLcuSocialConfig_t& v) {
+    j["SilenceChatWhileInGame"] = v.SilenceChatWhileInGame;
     j["ForceChatFilter"] = v.ForceChatFilter;
     j["AggressiveScanning"] = v.AggressiveScanning;
     j["QueueJobGraceSeconds"] = v.QueueJobGraceSeconds;
-    j["SilenceChatWhileInGame"] = v.SilenceChatWhileInGame;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatLcuSocialConfig& v) {
-    v.ForceChatFilter = j.at("ForceChatFilter").get<bool>;
-    v.AggressiveScanning = j.at("AggressiveScanning").get<bool>;
-    v.QueueJobGraceSeconds = j.at("QueueJobGraceSeconds").get<uint64_t>;
-    v.SilenceChatWhileInGame = j.at("SilenceChatWhileInGame").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolChatLcuSocialConfig_t& v) {
+    v.SilenceChatWhileInGame = j.at("SilenceChatWhileInGame").get<bool>();
+    v.ForceChatFilter = j.at("ForceChatFilter").get<bool>();
+    v.AggressiveScanning = j.at("AggressiveScanning").get<bool>();
+    v.QueueJobGraceSeconds = j.at("QueueJobGraceSeconds").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatLcuSocialConfig_HPP

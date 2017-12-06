@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolClashRMSMessage_HPP
-#define SWAGGER_TYPES_LolClashRMSMessage_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolClashRMSMessage {
-    // 
+  struct LolClashRMSMessage_t {
     int64_t timestamp;
-    // 
     std::string payload;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashRMSMessage& v) {
+  inline void to_json(nlohmann::json& j, const LolClashRMSMessage_t& v) {
     j["timestamp"] = v.timestamp;
     j["payload"] = v.payload;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashRMSMessage& v) {
-    v.timestamp = j.at("timestamp").get<int64_t>;
-    v.payload = j.at("payload").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolClashRMSMessage_t& v) {
+    v.timestamp = j.at("timestamp").get<int64_t>();
+    v.payload = j.at("payload").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashRMSMessage_HPP

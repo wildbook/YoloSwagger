@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolGameflowGameflowAvailability_HPP
-#define SWAGGER_TYPES_LolGameflowGameflowAvailability_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolGameflowGameflowAvailabilityState.hpp"
 namespace leagueapi {
-  // 
-  struct LolGameflowGameflowAvailability {
-    // 
+  struct LolGameflowGameflowAvailability_t {
     bool isAvailable;
-    // 
-    LolGameflowGameflowAvailabilityState state;
+    LolGameflowGameflowAvailabilityState_t state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolGameflowGameflowAvailability& v) {
+  inline void to_json(nlohmann::json& j, const LolGameflowGameflowAvailability_t& v) {
     j["isAvailable"] = v.isAvailable;
     j["state"] = v.state;
   }
 
-  inline void from_json(const nlohmann::json& j, LolGameflowGameflowAvailability& v) {
-    v.isAvailable = j.at("isAvailable").get<bool>;
-    v.state = j.at("state").get<LolGameflowGameflowAvailabilityState>;
+  inline void from_json(const nlohmann::json& j, LolGameflowGameflowAvailability_t& v) {
+    v.isAvailable = j.at("isAvailable").get<bool>();
+    v.state = j.at("state").get<LolGameflowGameflowAvailabilityState_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolGameflowGameflowAvailability_HPP

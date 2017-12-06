@@ -1,37 +1,31 @@
-#ifndef SWAGGER_TYPES_PatcherComponentResourceType_HPP
-#define SWAGGER_TYPES_PatcherComponentResourceType_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class PatcherComponentResourceType {
-    // 
-    project = 0,
-    // 
-    solution = 1,
+  enum class PatcherComponentResourceType_t {
+    solution_E = 1,
+    project_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const PatcherComponentResourceType& v) {
+  inline void to_json(nlohmann::json& j, const PatcherComponentResourceType_t& v) {
     switch(v) {
-      case PatcherComponentResourceType::project:
-        j = "project";
-      break;
-      case PatcherComponentResourceType::solution:
+      case PatcherComponentResourceType_t::solution_E:
         j = "solution";
       break;
+      case PatcherComponentResourceType_t::project_E:
+        j = "project";
+      break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, PatcherComponentResourceType& v) {
+  inline void from_json(const nlohmann::json& j, PatcherComponentResourceType_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "project"){
-      v = PatcherComponentResourceType::project;
+    if(s == "solution"){
+      v = PatcherComponentResourceType_t::solution_E;
       return;
     }
-    if(s == "solution"){
-      v = PatcherComponentResourceType::solution;
+    if(s == "project"){
+      v = PatcherComponentResourceType_t::project_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_PatcherComponentResourceType_HPP

@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolLobbyQueueGameCategory_HPP
-#define SWAGGER_TYPES_LolLobbyQueueGameCategory_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLobbyQueueGameCategory {
-    // 
-    VersusAi = 3,
-    // 
-    PvP = 2,
-    // 
-    None = 0,
-    // 
-    Custom = 1,
+  enum class LolLobbyQueueGameCategory_t {
+    VersusAi_E = 3,
+    None_E = 0,
+    Custom_E = 1,
+    PvP_E = 2,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyQueueGameCategory& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyQueueGameCategory_t& v) {
     switch(v) {
-      case LolLobbyQueueGameCategory::VersusAi:
+      case LolLobbyQueueGameCategory_t::VersusAi_E:
         j = "VersusAi";
       break;
-      case LolLobbyQueueGameCategory::PvP:
-        j = "PvP";
-      break;
-      case LolLobbyQueueGameCategory::None:
+      case LolLobbyQueueGameCategory_t::None_E:
         j = "None";
       break;
-      case LolLobbyQueueGameCategory::Custom:
+      case LolLobbyQueueGameCategory_t::Custom_E:
         j = "Custom";
+      break;
+      case LolLobbyQueueGameCategory_t::PvP_E:
+        j = "PvP";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyQueueGameCategory& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyQueueGameCategory_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "VersusAi"){
-      v = LolLobbyQueueGameCategory::VersusAi;
-      return;
-    }
-    if(s == "PvP"){
-      v = LolLobbyQueueGameCategory::PvP;
+      v = LolLobbyQueueGameCategory_t::VersusAi_E;
       return;
     }
     if(s == "None"){
-      v = LolLobbyQueueGameCategory::None;
+      v = LolLobbyQueueGameCategory_t::None_E;
       return;
     }
     if(s == "Custom"){
-      v = LolLobbyQueueGameCategory::Custom;
+      v = LolLobbyQueueGameCategory_t::Custom_E;
+      return;
+    }
+    if(s == "PvP"){
+      v = LolLobbyQueueGameCategory_t::PvP_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyQueueGameCategory_HPP

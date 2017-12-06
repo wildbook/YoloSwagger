@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolGameflowReplaysSettingsResource_HPP
-#define SWAGGER_TYPES_LolGameflowReplaysSettingsResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolGameflowReplaysSettingsData.hpp"
 namespace leagueapi {
-  // 
-  struct LolGameflowReplaysSettingsResource {
-    // 
-    LolGameflowReplaysSettingsData data;
+  struct LolGameflowReplaysSettingsResource_t {
+    LolGameflowReplaysSettingsData_t data;
   };
 
-  inline void to_json(nlohmann::json& j, const LolGameflowReplaysSettingsResource& v) {
+  inline void to_json(nlohmann::json& j, const LolGameflowReplaysSettingsResource_t& v) {
     j["data"] = v.data;
   }
 
-  inline void from_json(const nlohmann::json& j, LolGameflowReplaysSettingsResource& v) {
-    v.data = j.at("data").get<LolGameflowReplaysSettingsData>;
+  inline void from_json(const nlohmann::json& j, LolGameflowReplaysSettingsResource_t& v) {
+    v.data = j.at("data").get<LolGameflowReplaysSettingsData_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolGameflowReplaysSettingsResource_HPP

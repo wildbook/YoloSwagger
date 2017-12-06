@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_SeriesAlertDTO_HPP
-#define SWAGGER_TYPES_SeriesAlertDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct SeriesAlertDTO {
-    // 
-    int64_t alertTime;
-    // 
-    std::string description;
-    // 
+  struct SeriesAlertDTO_t {
     std::string title;
+    std::string description;
+    int64_t alertTime;
   };
 
-  inline void to_json(nlohmann::json& j, const SeriesAlertDTO& v) {
-    j["alertTime"] = v.alertTime;
-    j["description"] = v.description;
+  inline void to_json(nlohmann::json& j, const SeriesAlertDTO_t& v) {
     j["title"] = v.title;
+    j["description"] = v.description;
+    j["alertTime"] = v.alertTime;
   }
 
-  inline void from_json(const nlohmann::json& j, SeriesAlertDTO& v) {
-    v.alertTime = j.at("alertTime").get<int64_t>;
-    v.description = j.at("description").get<std::string>;
-    v.title = j.at("title").get<std::string>;
+  inline void from_json(const nlohmann::json& j, SeriesAlertDTO_t& v) {
+    v.title = j.at("title").get<std::string>();
+    v.description = j.at("description").get<std::string>();
+    v.alertTime = j.at("alertTime").get<int64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_SeriesAlertDTO_HPP

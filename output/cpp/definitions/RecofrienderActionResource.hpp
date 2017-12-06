@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_RecofrienderActionResource_HPP
-#define SWAGGER_TYPES_RecofrienderActionResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct RecofrienderActionResource {
-    // 
-    std::string action;
-    // 
-    std::string platformId;
-    // 
+  struct RecofrienderActionResource_t {
     uint64_t accountId;
+    std::string action;
+    std::string platformId;
   };
 
-  inline void to_json(nlohmann::json& j, const RecofrienderActionResource& v) {
+  inline void to_json(nlohmann::json& j, const RecofrienderActionResource_t& v) {
+    j["accountId"] = v.accountId;
     j["action"] = v.action;
     j["platformId"] = v.platformId;
-    j["accountId"] = v.accountId;
   }
 
-  inline void from_json(const nlohmann::json& j, RecofrienderActionResource& v) {
-    v.action = j.at("action").get<std::string>;
-    v.platformId = j.at("platformId").get<std::string>;
-    v.accountId = j.at("accountId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, RecofrienderActionResource_t& v) {
+    v.accountId = j.at("accountId").get<uint64_t>();
+    v.action = j.at("action").get<std::string>();
+    v.platformId = j.at("platformId").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_RecofrienderActionResource_HPP

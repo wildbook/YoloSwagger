@@ -1,58 +1,45 @@
-#ifndef SWAGGER_TYPES_SeriesDTO_HPP
-#define SWAGGER_TYPES_SeriesDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "SeriesAlertDTO.hpp"
 #include "SeriesMediaDTO.hpp"
 namespace leagueapi {
-  // 
-  struct SeriesDTO {
-    // 
-    int64_t startDate;
-    // 
-    std::string internalName;
-    // 
-    int64_t endDate;
-    // 
-    std::string description;
-    // 
-    std::vector<std::string> tags;
-    // 
-    SeriesMediaDTO media;
-    // 
-    std::string parentName;
-    // 
-    std::vector<SeriesAlertDTO> warnings;
-    // 
+  struct SeriesDTO_t {
     std::string title;
-    // 
+    int64_t startDate;
     std::string id;
+    SeriesMediaDTO_t media;
+    std::vector<SeriesAlertDTO_t> warnings;
+    int64_t endDate;
+    std::string description;
+    std::string internalName;
+    std::vector<std::string> tags;
+    std::string parentName;
   };
 
-  inline void to_json(nlohmann::json& j, const SeriesDTO& v) {
+  inline void to_json(nlohmann::json& j, const SeriesDTO_t& v) {
+    j["title"] = v.title;
     j["startDate"] = v.startDate;
-    j["internalName"] = v.internalName;
+    j["id"] = v.id;
+    j["media"] = v.media;
+    j["warnings"] = v.warnings;
     j["endDate"] = v.endDate;
     j["description"] = v.description;
+    j["internalName"] = v.internalName;
     j["tags"] = v.tags;
-    j["media"] = v.media;
     j["parentName"] = v.parentName;
-    j["warnings"] = v.warnings;
-    j["title"] = v.title;
-    j["id"] = v.id;
   }
 
-  inline void from_json(const nlohmann::json& j, SeriesDTO& v) {
-    v.startDate = j.at("startDate").get<int64_t>;
-    v.internalName = j.at("internalName").get<std::string>;
-    v.endDate = j.at("endDate").get<int64_t>;
-    v.description = j.at("description").get<std::string>;
-    v.tags = j.at("tags").get<std::vector<std::string>>;
-    v.media = j.at("media").get<SeriesMediaDTO>;
-    v.parentName = j.at("parentName").get<std::string>;
-    v.warnings = j.at("warnings").get<std::vector<SeriesAlertDTO>>;
-    v.title = j.at("title").get<std::string>;
-    v.id = j.at("id").get<std::string>;
+  inline void from_json(const nlohmann::json& j, SeriesDTO_t& v) {
+    v.title = j.at("title").get<std::string>();
+    v.startDate = j.at("startDate").get<int64_t>();
+    v.id = j.at("id").get<std::string>();
+    v.media = j.at("media").get<SeriesMediaDTO_t>();
+    v.warnings = j.at("warnings").get<std::vector<SeriesAlertDTO_t>>();
+    v.endDate = j.at("endDate").get<int64_t>();
+    v.description = j.at("description").get<std::string>();
+    v.internalName = j.at("internalName").get<std::string>();
+    v.tags = j.at("tags").get<std::vector<std::string>>();
+    v.parentName = j.at("parentName").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_SeriesDTO_HPP

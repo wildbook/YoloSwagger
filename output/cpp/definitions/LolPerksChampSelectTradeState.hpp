@@ -1,64 +1,55 @@
-#ifndef SWAGGER_TYPES_LolPerksChampSelectTradeState_HPP
-#define SWAGGER_TYPES_LolPerksChampSelectTradeState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolPerksChampSelectTradeState {
-    // 
-    AVAILABLE = 1,
-    // 
-    RECEIVED = 4,
-    // 
-    BUSY = 2,
-    // 
-    SENT = 5,
-    // 
-    INVALID = 3,
+  enum class LolPerksChampSelectTradeState_t {
+    SENT_E = 5,
+    RECEIVED_E = 4,
+    AVAILABLE_E = 1,
+    BUSY_E = 2,
+    INVALID_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolPerksChampSelectTradeState& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksChampSelectTradeState_t& v) {
     switch(v) {
-      case LolPerksChampSelectTradeState::AVAILABLE:
-        j = "AVAILABLE";
-      break;
-      case LolPerksChampSelectTradeState::RECEIVED:
-        j = "RECEIVED";
-      break;
-      case LolPerksChampSelectTradeState::BUSY:
-        j = "BUSY";
-      break;
-      case LolPerksChampSelectTradeState::SENT:
+      case LolPerksChampSelectTradeState_t::SENT_E:
         j = "SENT";
       break;
-      case LolPerksChampSelectTradeState::INVALID:
+      case LolPerksChampSelectTradeState_t::RECEIVED_E:
+        j = "RECEIVED";
+      break;
+      case LolPerksChampSelectTradeState_t::AVAILABLE_E:
+        j = "AVAILABLE";
+      break;
+      case LolPerksChampSelectTradeState_t::BUSY_E:
+        j = "BUSY";
+      break;
+      case LolPerksChampSelectTradeState_t::INVALID_E:
         j = "INVALID";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolPerksChampSelectTradeState& v) {
+  inline void from_json(const nlohmann::json& j, LolPerksChampSelectTradeState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "AVAILABLE"){
-      v = LolPerksChampSelectTradeState::AVAILABLE;
+    if(s == "SENT"){
+      v = LolPerksChampSelectTradeState_t::SENT_E;
       return;
     }
     if(s == "RECEIVED"){
-      v = LolPerksChampSelectTradeState::RECEIVED;
+      v = LolPerksChampSelectTradeState_t::RECEIVED_E;
+      return;
+    }
+    if(s == "AVAILABLE"){
+      v = LolPerksChampSelectTradeState_t::AVAILABLE_E;
       return;
     }
     if(s == "BUSY"){
-      v = LolPerksChampSelectTradeState::BUSY;
-      return;
-    }
-    if(s == "SENT"){
-      v = LolPerksChampSelectTradeState::SENT;
+      v = LolPerksChampSelectTradeState_t::BUSY_E;
       return;
     }
     if(s == "INVALID"){
-      v = LolPerksChampSelectTradeState::INVALID;
+      v = LolPerksChampSelectTradeState_t::INVALID_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolPerksChampSelectTradeState_HPP

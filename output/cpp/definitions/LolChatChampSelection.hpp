@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolChatChampSelection_HPP
-#define SWAGGER_TYPES_LolChatChampSelection_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChatChampSelection {
-    // 
-    int32_t selectedSkinIndex;
-    // 
-    std::string summonerInternalName;
-    // 
+  struct LolChatChampSelection_t {
     int32_t championId;
+    std::string summonerInternalName;
+    int32_t selectedSkinIndex;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatChampSelection& v) {
-    j["selectedSkinIndex"] = v.selectedSkinIndex;
-    j["summonerInternalName"] = v.summonerInternalName;
+  inline void to_json(nlohmann::json& j, const LolChatChampSelection_t& v) {
     j["championId"] = v.championId;
+    j["summonerInternalName"] = v.summonerInternalName;
+    j["selectedSkinIndex"] = v.selectedSkinIndex;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatChampSelection& v) {
-    v.selectedSkinIndex = j.at("selectedSkinIndex").get<int32_t>;
-    v.summonerInternalName = j.at("summonerInternalName").get<std::string>;
-    v.championId = j.at("championId").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LolChatChampSelection_t& v) {
+    v.championId = j.at("championId").get<int32_t>();
+    v.summonerInternalName = j.at("summonerInternalName").get<std::string>();
+    v.selectedSkinIndex = j.at("selectedSkinIndex").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatChampSelection_HPP

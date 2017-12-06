@@ -1,82 +1,71 @@
-#ifndef SWAGGER_TYPES_LolLobbyLobbyBotDifficulty_HPP
-#define SWAGGER_TYPES_LolLobbyLobbyBotDifficulty_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLobbyLobbyBotDifficulty {
-    // 
-    UBER = 3,
-    // 
-    NONE = -1,
-    // 
-    MEDIUM = 1,
-    // 
-    HARD = 2,
-    // 
-    INTRO = 5,
-    // 
-    EASY = 0,
-    // 
-    TUTORIAL = 4,
+  enum class LolLobbyLobbyBotDifficulty_t {
+    NONE_E = -1,
+    EASY_E = 0,
+    INTRO_E = 5,
+    HARD_E = 2,
+    MEDIUM_E = 1,
+    TUTORIAL_E = 4,
+    UBER_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyLobbyBotDifficulty& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyBotDifficulty_t& v) {
     switch(v) {
-      case LolLobbyLobbyBotDifficulty::UBER:
-        j = "UBER";
-      break;
-      case LolLobbyLobbyBotDifficulty::NONE:
+      case LolLobbyLobbyBotDifficulty_t::NONE_E:
         j = "NONE";
       break;
-      case LolLobbyLobbyBotDifficulty::MEDIUM:
-        j = "MEDIUM";
-      break;
-      case LolLobbyLobbyBotDifficulty::HARD:
-        j = "HARD";
-      break;
-      case LolLobbyLobbyBotDifficulty::INTRO:
-        j = "INTRO";
-      break;
-      case LolLobbyLobbyBotDifficulty::EASY:
+      case LolLobbyLobbyBotDifficulty_t::EASY_E:
         j = "EASY";
       break;
-      case LolLobbyLobbyBotDifficulty::TUTORIAL:
+      case LolLobbyLobbyBotDifficulty_t::INTRO_E:
+        j = "INTRO";
+      break;
+      case LolLobbyLobbyBotDifficulty_t::HARD_E:
+        j = "HARD";
+      break;
+      case LolLobbyLobbyBotDifficulty_t::MEDIUM_E:
+        j = "MEDIUM";
+      break;
+      case LolLobbyLobbyBotDifficulty_t::TUTORIAL_E:
         j = "TUTORIAL";
+      break;
+      case LolLobbyLobbyBotDifficulty_t::UBER_E:
+        j = "UBER";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyLobbyBotDifficulty& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyBotDifficulty_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "UBER"){
-      v = LolLobbyLobbyBotDifficulty::UBER;
-      return;
-    }
     if(s == "NONE"){
-      v = LolLobbyLobbyBotDifficulty::NONE;
-      return;
-    }
-    if(s == "MEDIUM"){
-      v = LolLobbyLobbyBotDifficulty::MEDIUM;
-      return;
-    }
-    if(s == "HARD"){
-      v = LolLobbyLobbyBotDifficulty::HARD;
-      return;
-    }
-    if(s == "INTRO"){
-      v = LolLobbyLobbyBotDifficulty::INTRO;
+      v = LolLobbyLobbyBotDifficulty_t::NONE_E;
       return;
     }
     if(s == "EASY"){
-      v = LolLobbyLobbyBotDifficulty::EASY;
+      v = LolLobbyLobbyBotDifficulty_t::EASY_E;
+      return;
+    }
+    if(s == "INTRO"){
+      v = LolLobbyLobbyBotDifficulty_t::INTRO_E;
+      return;
+    }
+    if(s == "HARD"){
+      v = LolLobbyLobbyBotDifficulty_t::HARD_E;
+      return;
+    }
+    if(s == "MEDIUM"){
+      v = LolLobbyLobbyBotDifficulty_t::MEDIUM_E;
       return;
     }
     if(s == "TUTORIAL"){
-      v = LolLobbyLobbyBotDifficulty::TUTORIAL;
+      v = LolLobbyLobbyBotDifficulty_t::TUTORIAL_E;
+      return;
+    }
+    if(s == "UBER"){
+      v = LolLobbyLobbyBotDifficulty_t::UBER_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyLobbyBotDifficulty_HPP

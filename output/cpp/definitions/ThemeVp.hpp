@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_ThemeVp_HPP
-#define SWAGGER_TYPES_ThemeVp_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct ThemeVp {
-    // 
-    int32_t themeVp;
-    // 
+  struct ThemeVp_t {
     int32_t themeId;
+    int32_t themeVp;
   };
 
-  inline void to_json(nlohmann::json& j, const ThemeVp& v) {
-    j["themeVp"] = v.themeVp;
+  inline void to_json(nlohmann::json& j, const ThemeVp_t& v) {
     j["themeId"] = v.themeId;
+    j["themeVp"] = v.themeVp;
   }
 
-  inline void from_json(const nlohmann::json& j, ThemeVp& v) {
-    v.themeVp = j.at("themeVp").get<int32_t>;
-    v.themeId = j.at("themeId").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, ThemeVp_t& v) {
+    v.themeId = j.at("themeId").get<int32_t>();
+    v.themeVp = j.at("themeVp").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_ThemeVp_HPP

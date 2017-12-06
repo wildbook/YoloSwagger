@@ -1,91 +1,79 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingSearchState_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingSearchState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLobbyTeamBuilderMatchmakingSearchState {
-    // 
-    ServiceShutdown = 7,
-    // 
-    Searching = 3,
-    // 
-    Invalid = 0,
-    // 
-    Canceled = 2,
-    // 
-    ServiceError = 6,
-    // 
-    AbandonedLowPriorityQueue = 1,
-    // 
-    Error = 5,
-    // 
-    Found = 4,
+  enum class LolLobbyTeamBuilderMatchmakingSearchState_t {
+    Invalid_E = 0,
+    Found_E = 4,
+    Canceled_E = 2,
+    Error_E = 5,
+    ServiceError_E = 6,
+    Searching_E = 3,
+    ServiceShutdown_E = 7,
+    AbandonedLowPriorityQueue_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingSearchState& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingSearchState_t& v) {
     switch(v) {
-      case LolLobbyTeamBuilderMatchmakingSearchState::ServiceShutdown:
-        j = "ServiceShutdown";
-      break;
-      case LolLobbyTeamBuilderMatchmakingSearchState::Searching:
-        j = "Searching";
-      break;
-      case LolLobbyTeamBuilderMatchmakingSearchState::Invalid:
+      case LolLobbyTeamBuilderMatchmakingSearchState_t::Invalid_E:
         j = "Invalid";
       break;
-      case LolLobbyTeamBuilderMatchmakingSearchState::Canceled:
+      case LolLobbyTeamBuilderMatchmakingSearchState_t::Found_E:
+        j = "Found";
+      break;
+      case LolLobbyTeamBuilderMatchmakingSearchState_t::Canceled_E:
         j = "Canceled";
       break;
-      case LolLobbyTeamBuilderMatchmakingSearchState::ServiceError:
-        j = "ServiceError";
-      break;
-      case LolLobbyTeamBuilderMatchmakingSearchState::AbandonedLowPriorityQueue:
-        j = "AbandonedLowPriorityQueue";
-      break;
-      case LolLobbyTeamBuilderMatchmakingSearchState::Error:
+      case LolLobbyTeamBuilderMatchmakingSearchState_t::Error_E:
         j = "Error";
       break;
-      case LolLobbyTeamBuilderMatchmakingSearchState::Found:
-        j = "Found";
+      case LolLobbyTeamBuilderMatchmakingSearchState_t::ServiceError_E:
+        j = "ServiceError";
+      break;
+      case LolLobbyTeamBuilderMatchmakingSearchState_t::Searching_E:
+        j = "Searching";
+      break;
+      case LolLobbyTeamBuilderMatchmakingSearchState_t::ServiceShutdown_E:
+        j = "ServiceShutdown";
+      break;
+      case LolLobbyTeamBuilderMatchmakingSearchState_t::AbandonedLowPriorityQueue_E:
+        j = "AbandonedLowPriorityQueue";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingSearchState& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingSearchState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "ServiceShutdown"){
-      v = LolLobbyTeamBuilderMatchmakingSearchState::ServiceShutdown;
-      return;
-    }
-    if(s == "Searching"){
-      v = LolLobbyTeamBuilderMatchmakingSearchState::Searching;
-      return;
-    }
     if(s == "Invalid"){
-      v = LolLobbyTeamBuilderMatchmakingSearchState::Invalid;
-      return;
-    }
-    if(s == "Canceled"){
-      v = LolLobbyTeamBuilderMatchmakingSearchState::Canceled;
-      return;
-    }
-    if(s == "ServiceError"){
-      v = LolLobbyTeamBuilderMatchmakingSearchState::ServiceError;
-      return;
-    }
-    if(s == "AbandonedLowPriorityQueue"){
-      v = LolLobbyTeamBuilderMatchmakingSearchState::AbandonedLowPriorityQueue;
-      return;
-    }
-    if(s == "Error"){
-      v = LolLobbyTeamBuilderMatchmakingSearchState::Error;
+      v = LolLobbyTeamBuilderMatchmakingSearchState_t::Invalid_E;
       return;
     }
     if(s == "Found"){
-      v = LolLobbyTeamBuilderMatchmakingSearchState::Found;
+      v = LolLobbyTeamBuilderMatchmakingSearchState_t::Found_E;
+      return;
+    }
+    if(s == "Canceled"){
+      v = LolLobbyTeamBuilderMatchmakingSearchState_t::Canceled_E;
+      return;
+    }
+    if(s == "Error"){
+      v = LolLobbyTeamBuilderMatchmakingSearchState_t::Error_E;
+      return;
+    }
+    if(s == "ServiceError"){
+      v = LolLobbyTeamBuilderMatchmakingSearchState_t::ServiceError_E;
+      return;
+    }
+    if(s == "Searching"){
+      v = LolLobbyTeamBuilderMatchmakingSearchState_t::Searching_E;
+      return;
+    }
+    if(s == "ServiceShutdown"){
+      v = LolLobbyTeamBuilderMatchmakingSearchState_t::ServiceShutdown_E;
+      return;
+    }
+    if(s == "AbandonedLowPriorityQueue"){
+      v = LolLobbyTeamBuilderMatchmakingSearchState_t::AbandonedLowPriorityQueue_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingSearchState_HPP

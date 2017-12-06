@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolCollectionsCollectionsMasteryBook_HPP
-#define SWAGGER_TYPES_LolCollectionsCollectionsMasteryBook_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolCollectionsCollectionsMasteryPage.hpp"
 namespace leagueapi {
-  // 
-  struct LolCollectionsCollectionsMasteryBook {
-    // 
-    std::vector<LolCollectionsCollectionsMasteryPage> pages;
-    // 
+  struct LolCollectionsCollectionsMasteryBook_t {
+    std::vector<LolCollectionsCollectionsMasteryPage_t> pages;
     uint64_t summonerId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsMasteryBook& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsMasteryBook_t& v) {
     j["pages"] = v.pages;
     j["summonerId"] = v.summonerId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsMasteryBook& v) {
-    v.pages = j.at("pages").get<std::vector<LolCollectionsCollectionsMasteryPage>>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsMasteryBook_t& v) {
+    v.pages = j.at("pages").get<std::vector<LolCollectionsCollectionsMasteryPage_t>>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolCollectionsCollectionsMasteryBook_HPP

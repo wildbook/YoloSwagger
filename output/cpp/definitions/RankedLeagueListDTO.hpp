@@ -1,49 +1,38 @@
-#ifndef SWAGGER_TYPES_RankedLeagueListDTO_HPP
-#define SWAGGER_TYPES_RankedLeagueListDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "RankedLeagueItemDTO.hpp"
 namespace leagueapi {
-  // 
-  struct RankedLeagueListDTO {
-    // 
-    std::string requestorsName;
-    // 
-    uint64_t nextApexUpdate;
-    // 
-    std::string name;
-    // 
+  struct RankedLeagueListDTO_t {
     uint32_t maxLeagueSize;
-    // 
-    std::string requestorsRank;
-    // 
-    std::string queue;
-    // 
-    std::vector<RankedLeagueItemDTO> entries;
-    // 
     std::string tier;
+    std::string name;
+    uint64_t nextApexUpdate;
+    std::string requestorsRank;
+    std::vector<RankedLeagueItemDTO_t> entries;
+    std::string queue;
+    std::string requestorsName;
   };
 
-  inline void to_json(nlohmann::json& j, const RankedLeagueListDTO& v) {
-    j["requestorsName"] = v.requestorsName;
-    j["nextApexUpdate"] = v.nextApexUpdate;
-    j["name"] = v.name;
+  inline void to_json(nlohmann::json& j, const RankedLeagueListDTO_t& v) {
     j["maxLeagueSize"] = v.maxLeagueSize;
-    j["requestorsRank"] = v.requestorsRank;
-    j["queue"] = v.queue;
-    j["entries"] = v.entries;
     j["tier"] = v.tier;
+    j["name"] = v.name;
+    j["nextApexUpdate"] = v.nextApexUpdate;
+    j["requestorsRank"] = v.requestorsRank;
+    j["entries"] = v.entries;
+    j["queue"] = v.queue;
+    j["requestorsName"] = v.requestorsName;
   }
 
-  inline void from_json(const nlohmann::json& j, RankedLeagueListDTO& v) {
-    v.requestorsName = j.at("requestorsName").get<std::string>;
-    v.nextApexUpdate = j.at("nextApexUpdate").get<uint64_t>;
-    v.name = j.at("name").get<std::string>;
-    v.maxLeagueSize = j.at("maxLeagueSize").get<uint32_t>;
-    v.requestorsRank = j.at("requestorsRank").get<std::string>;
-    v.queue = j.at("queue").get<std::string>;
-    v.entries = j.at("entries").get<std::vector<RankedLeagueItemDTO>>;
-    v.tier = j.at("tier").get<std::string>;
+  inline void from_json(const nlohmann::json& j, RankedLeagueListDTO_t& v) {
+    v.maxLeagueSize = j.at("maxLeagueSize").get<uint32_t>();
+    v.tier = j.at("tier").get<std::string>();
+    v.name = j.at("name").get<std::string>();
+    v.nextApexUpdate = j.at("nextApexUpdate").get<uint64_t>();
+    v.requestorsRank = j.at("requestorsRank").get<std::string>();
+    v.entries = j.at("entries").get<std::vector<RankedLeagueItemDTO_t>>();
+    v.queue = j.at("queue").get<std::string>();
+    v.requestorsName = j.at("requestorsName").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_RankedLeagueListDTO_HPP

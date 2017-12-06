@@ -1,29 +1,23 @@
-#ifndef SWAGGER_TYPES_LolHonorV2LoginSession_HPP
-#define SWAGGER_TYPES_LolHonorV2LoginSession_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolHonorV2LoginSessionStates.hpp"
 namespace leagueapi {
-  // 
-  struct LolHonorV2LoginSession {
-    // 
-    LolHonorV2LoginSessionStates state;
-    // 
-    uint64_t summonerId;
-    // 
+  struct LolHonorV2LoginSession_t {
     uint64_t accountId;
+    uint64_t summonerId;
+    LolHonorV2LoginSessionStates_t state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolHonorV2LoginSession& v) {
-    j["state"] = v.state;
-    j["summonerId"] = v.summonerId;
+  inline void to_json(nlohmann::json& j, const LolHonorV2LoginSession_t& v) {
     j["accountId"] = v.accountId;
+    j["summonerId"] = v.summonerId;
+    j["state"] = v.state;
   }
 
-  inline void from_json(const nlohmann::json& j, LolHonorV2LoginSession& v) {
-    v.state = j.at("state").get<LolHonorV2LoginSessionStates>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
-    v.accountId = j.at("accountId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolHonorV2LoginSession_t& v) {
+    v.accountId = j.at("accountId").get<uint64_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.state = j.at("state").get<LolHonorV2LoginSessionStates_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolHonorV2LoginSession_HPP

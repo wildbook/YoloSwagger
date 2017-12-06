@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_LolLobbyLobbyPartyRewardType_HPP
-#define SWAGGER_TYPES_LolLobbyLobbyPartyRewardType_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLobbyLobbyPartyRewardType {
-    // 
-    Ip = 1,
-    // 
-    None = 9999,
-    // 
-    Icon = 2,
+  enum class LolLobbyLobbyPartyRewardType_t {
+    Icon_E = 2,
+    None_E = 9999,
+    Ip_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyLobbyPartyRewardType& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyPartyRewardType_t& v) {
     switch(v) {
-      case LolLobbyLobbyPartyRewardType::Ip:
-        j = "Ip";
+      case LolLobbyLobbyPartyRewardType_t::Icon_E:
+        j = "Icon";
       break;
-      case LolLobbyLobbyPartyRewardType::None:
+      case LolLobbyLobbyPartyRewardType_t::None_E:
         j = "None";
       break;
-      case LolLobbyLobbyPartyRewardType::Icon:
-        j = "Icon";
+      case LolLobbyLobbyPartyRewardType_t::Ip_E:
+        j = "Ip";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyLobbyPartyRewardType& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyPartyRewardType_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "Ip"){
-      v = LolLobbyLobbyPartyRewardType::Ip;
+    if(s == "Icon"){
+      v = LolLobbyLobbyPartyRewardType_t::Icon_E;
       return;
     }
     if(s == "None"){
-      v = LolLobbyLobbyPartyRewardType::None;
+      v = LolLobbyLobbyPartyRewardType_t::None_E;
       return;
     }
-    if(s == "Icon"){
-      v = LolLobbyLobbyPartyRewardType::Icon;
+    if(s == "Ip"){
+      v = LolLobbyLobbyPartyRewardType_t::Ip_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyLobbyPartyRewardType_HPP

@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolHonorV2VoteCompletion_HPP
-#define SWAGGER_TYPES_LolHonorV2VoteCompletion_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolHonorV2VoteCompletion {
-    // 
+  struct LolHonorV2VoteCompletion_t {
     uint64_t gameId;
-    // 
     bool fullTeamVote;
   };
 
-  inline void to_json(nlohmann::json& j, const LolHonorV2VoteCompletion& v) {
+  inline void to_json(nlohmann::json& j, const LolHonorV2VoteCompletion_t& v) {
     j["gameId"] = v.gameId;
     j["fullTeamVote"] = v.fullTeamVote;
   }
 
-  inline void from_json(const nlohmann::json& j, LolHonorV2VoteCompletion& v) {
-    v.gameId = j.at("gameId").get<uint64_t>;
-    v.fullTeamVote = j.at("fullTeamVote").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolHonorV2VoteCompletion_t& v) {
+    v.gameId = j.at("gameId").get<uint64_t>();
+    v.fullTeamVote = j.at("fullTeamVote").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolHonorV2VoteCompletion_HPP

@@ -1,26 +1,25 @@
-#ifndef SWAGGER_TYPES_LolLobbyPartyNotificationEnvelopeDto_HPP
-#define SWAGGER_TYPES_LolLobbyPartyNotificationEnvelopeDto_HPP
+#pragma once
 #include <json.hpp>
-#include "LolLobbyQueueRestrictionDto.hpp"
+#include <optional>
 #include "LolLobbyPlayerDto.hpp"
+#include "LolLobbyQueueRestrictionDto.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyPartyNotificationEnvelopeDto {
-    // 
-    LolLobbyPlayerDto player;
-    // 
-    LolLobbyQueueRestrictionDto queueRestriction;
+  struct LolLobbyPartyNotificationEnvelopeDto_t {
+    std::optional<LolLobbyPlayerDto_t> player;
+    std::optional<LolLobbyQueueRestrictionDto_t> queueRestriction;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyPartyNotificationEnvelopeDto& v) {
-    j["player"] = v.player;
-    j["queueRestriction"] = v.queueRestriction;
+  inline void to_json(nlohmann::json& j, const LolLobbyPartyNotificationEnvelopeDto_t& v) {
+    if(v.player)
+      j["player"] = *v.player;
+    if(v.queueRestriction)
+      j["queueRestriction"] = *v.queueRestriction;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyPartyNotificationEnvelopeDto& v) {
-    v.player = j.at("player").get<LolLobbyPlayerDto>;
-    v.queueRestriction = j.at("queueRestriction").get<LolLobbyQueueRestrictionDto>;
+  inline void from_json(const nlohmann::json& j, LolLobbyPartyNotificationEnvelopeDto_t& v) {
+    if(auto it = j.find("player"); it != j.end() !it->is_null())
+      v.player = it->get<LolLobbyPlayerDto_t>();
+    if(auto it = j.find("queueRestriction"); it != j.end() !it->is_null())
+      v.queueRestriction = it->get<LolLobbyQueueRestrictionDto_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyPartyNotificationEnvelopeDto_HPP

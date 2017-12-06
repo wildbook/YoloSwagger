@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_Queue_HPP
-#define SWAGGER_TYPES_Queue_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "QueueGameTypeConfig.hpp"
 namespace leagueapi {
-  // 
-  struct Queue {
-    // 
-    QueueGameTypeConfig gameTypeConfig;
+  struct Queue_t {
+    QueueGameTypeConfig_t gameTypeConfig;
   };
 
-  inline void to_json(nlohmann::json& j, const Queue& v) {
+  inline void to_json(nlohmann::json& j, const Queue_t& v) {
     j["gameTypeConfig"] = v.gameTypeConfig;
   }
 
-  inline void from_json(const nlohmann::json& j, Queue& v) {
-    v.gameTypeConfig = j.at("gameTypeConfig").get<QueueGameTypeConfig>;
+  inline void from_json(const nlohmann::json& j, Queue_t& v) {
+    v.gameTypeConfig = j.at("gameTypeConfig").get<QueueGameTypeConfig_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_Queue_HPP

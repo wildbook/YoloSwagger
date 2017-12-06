@@ -1,47 +1,37 @@
-#ifndef SWAGGER_TYPES_LcdsInvitationRequest_HPP
-#define SWAGGER_TYPES_LcdsInvitationRequest_HPP
+#pragma once
 #include <json.hpp>
-#include "LcdsInviter.hpp"
+#include <optional>
 #include "LcdsInvitationState.hpp"
+#include "LcdsInviter.hpp"
 #include "LcdsPlayer.hpp"
 namespace leagueapi {
-  // 
-  struct LcdsInvitationRequest {
-    // 
-    std::string inviteType;
-    // 
-    LcdsInvitationState invitationState;
-    // 
+  struct LcdsInvitationRequest_t {
+    LcdsInviter_t inviter;
     std::string invitePayload;
-    // 
-    std::string gameMetaData;
-    // 
     std::string invitationId;
-    // 
-    LcdsPlayer owner;
-    // 
-    LcdsInviter inviter;
+    std::string gameMetaData;
+    std::string inviteType;
+    LcdsInvitationState_t invitationState;
+    LcdsPlayer_t owner;
   };
 
-  inline void to_json(nlohmann::json& j, const LcdsInvitationRequest& v) {
+  inline void to_json(nlohmann::json& j, const LcdsInvitationRequest_t& v) {
+    j["inviter"] = v.inviter;
+    j["invitePayload"] = v.invitePayload;
+    j["invitationId"] = v.invitationId;
+    j["gameMetaData"] = v.gameMetaData;
     j["inviteType"] = v.inviteType;
     j["invitationState"] = v.invitationState;
-    j["invitePayload"] = v.invitePayload;
-    j["gameMetaData"] = v.gameMetaData;
-    j["invitationId"] = v.invitationId;
     j["owner"] = v.owner;
-    j["inviter"] = v.inviter;
   }
 
-  inline void from_json(const nlohmann::json& j, LcdsInvitationRequest& v) {
-    v.inviteType = j.at("inviteType").get<std::string>;
-    v.invitationState = j.at("invitationState").get<LcdsInvitationState>;
-    v.invitePayload = j.at("invitePayload").get<std::string>;
-    v.gameMetaData = j.at("gameMetaData").get<std::string>;
-    v.invitationId = j.at("invitationId").get<std::string>;
-    v.owner = j.at("owner").get<LcdsPlayer>;
-    v.inviter = j.at("inviter").get<LcdsInviter>;
+  inline void from_json(const nlohmann::json& j, LcdsInvitationRequest_t& v) {
+    v.inviter = j.at("inviter").get<LcdsInviter_t>();
+    v.invitePayload = j.at("invitePayload").get<std::string>();
+    v.invitationId = j.at("invitationId").get<std::string>();
+    v.gameMetaData = j.at("gameMetaData").get<std::string>();
+    v.inviteType = j.at("inviteType").get<std::string>();
+    v.invitationState = j.at("invitationState").get<LcdsInvitationState_t>();
+    v.owner = j.at("owner").get<LcdsPlayer_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LcdsInvitationRequest_HPP

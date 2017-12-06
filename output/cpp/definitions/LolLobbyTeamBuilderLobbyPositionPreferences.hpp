@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderLobbyPositionPreferences_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderLobbyPositionPreferences_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyTeamBuilderLobbyPositionPreferences {
-    // 
-    std::string firstPreference;
-    // 
+  struct LolLobbyTeamBuilderLobbyPositionPreferences_t {
     std::string secondPreference;
+    std::string firstPreference;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLobbyPositionPreferences& v) {
-    j["firstPreference"] = v.firstPreference;
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLobbyPositionPreferences_t& v) {
     j["secondPreference"] = v.secondPreference;
+    j["firstPreference"] = v.firstPreference;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLobbyPositionPreferences& v) {
-    v.firstPreference = j.at("firstPreference").get<std::string>;
-    v.secondPreference = j.at("secondPreference").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLobbyPositionPreferences_t& v) {
+    v.secondPreference = j.at("secondPreference").get<std::string>();
+    v.firstPreference = j.at("firstPreference").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderLobbyPositionPreferences_HPP

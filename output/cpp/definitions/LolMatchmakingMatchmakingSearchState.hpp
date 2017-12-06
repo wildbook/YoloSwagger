@@ -1,91 +1,79 @@
-#ifndef SWAGGER_TYPES_LolMatchmakingMatchmakingSearchState_HPP
-#define SWAGGER_TYPES_LolMatchmakingMatchmakingSearchState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolMatchmakingMatchmakingSearchState {
-    // 
-    ServiceShutdown = 7,
-    // 
-    Searching = 3,
-    // 
-    Invalid = 0,
-    // 
-    Canceled = 2,
-    // 
-    ServiceError = 6,
-    // 
-    AbandonedLowPriorityQueue = 1,
-    // 
-    Error = 5,
-    // 
-    Found = 4,
+  enum class LolMatchmakingMatchmakingSearchState_t {
+    Invalid_E = 0,
+    Found_E = 4,
+    Canceled_E = 2,
+    Error_E = 5,
+    ServiceError_E = 6,
+    Searching_E = 3,
+    ServiceShutdown_E = 7,
+    AbandonedLowPriorityQueue_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingSearchState& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingSearchState_t& v) {
     switch(v) {
-      case LolMatchmakingMatchmakingSearchState::ServiceShutdown:
-        j = "ServiceShutdown";
-      break;
-      case LolMatchmakingMatchmakingSearchState::Searching:
-        j = "Searching";
-      break;
-      case LolMatchmakingMatchmakingSearchState::Invalid:
+      case LolMatchmakingMatchmakingSearchState_t::Invalid_E:
         j = "Invalid";
       break;
-      case LolMatchmakingMatchmakingSearchState::Canceled:
+      case LolMatchmakingMatchmakingSearchState_t::Found_E:
+        j = "Found";
+      break;
+      case LolMatchmakingMatchmakingSearchState_t::Canceled_E:
         j = "Canceled";
       break;
-      case LolMatchmakingMatchmakingSearchState::ServiceError:
-        j = "ServiceError";
-      break;
-      case LolMatchmakingMatchmakingSearchState::AbandonedLowPriorityQueue:
-        j = "AbandonedLowPriorityQueue";
-      break;
-      case LolMatchmakingMatchmakingSearchState::Error:
+      case LolMatchmakingMatchmakingSearchState_t::Error_E:
         j = "Error";
       break;
-      case LolMatchmakingMatchmakingSearchState::Found:
-        j = "Found";
+      case LolMatchmakingMatchmakingSearchState_t::ServiceError_E:
+        j = "ServiceError";
+      break;
+      case LolMatchmakingMatchmakingSearchState_t::Searching_E:
+        j = "Searching";
+      break;
+      case LolMatchmakingMatchmakingSearchState_t::ServiceShutdown_E:
+        j = "ServiceShutdown";
+      break;
+      case LolMatchmakingMatchmakingSearchState_t::AbandonedLowPriorityQueue_E:
+        j = "AbandonedLowPriorityQueue";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingSearchState& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingSearchState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "ServiceShutdown"){
-      v = LolMatchmakingMatchmakingSearchState::ServiceShutdown;
-      return;
-    }
-    if(s == "Searching"){
-      v = LolMatchmakingMatchmakingSearchState::Searching;
-      return;
-    }
     if(s == "Invalid"){
-      v = LolMatchmakingMatchmakingSearchState::Invalid;
-      return;
-    }
-    if(s == "Canceled"){
-      v = LolMatchmakingMatchmakingSearchState::Canceled;
-      return;
-    }
-    if(s == "ServiceError"){
-      v = LolMatchmakingMatchmakingSearchState::ServiceError;
-      return;
-    }
-    if(s == "AbandonedLowPriorityQueue"){
-      v = LolMatchmakingMatchmakingSearchState::AbandonedLowPriorityQueue;
-      return;
-    }
-    if(s == "Error"){
-      v = LolMatchmakingMatchmakingSearchState::Error;
+      v = LolMatchmakingMatchmakingSearchState_t::Invalid_E;
       return;
     }
     if(s == "Found"){
-      v = LolMatchmakingMatchmakingSearchState::Found;
+      v = LolMatchmakingMatchmakingSearchState_t::Found_E;
+      return;
+    }
+    if(s == "Canceled"){
+      v = LolMatchmakingMatchmakingSearchState_t::Canceled_E;
+      return;
+    }
+    if(s == "Error"){
+      v = LolMatchmakingMatchmakingSearchState_t::Error_E;
+      return;
+    }
+    if(s == "ServiceError"){
+      v = LolMatchmakingMatchmakingSearchState_t::ServiceError_E;
+      return;
+    }
+    if(s == "Searching"){
+      v = LolMatchmakingMatchmakingSearchState_t::Searching_E;
+      return;
+    }
+    if(s == "ServiceShutdown"){
+      v = LolMatchmakingMatchmakingSearchState_t::ServiceShutdown_E;
+      return;
+    }
+    if(s == "AbandonedLowPriorityQueue"){
+      v = LolMatchmakingMatchmakingSearchState_t::AbandonedLowPriorityQueue_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolMatchmakingMatchmakingSearchState_HPP

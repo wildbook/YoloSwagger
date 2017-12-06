@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_EndOfGameLcdsPointsPenalty_HPP
-#define SWAGGER_TYPES_EndOfGameLcdsPointsPenalty_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct EndOfGameLcdsPointsPenalty {
-    // 
+  struct EndOfGameLcdsPointsPenalty_t {
     double penalty;
-    // 
     std::string type;
   };
 
-  inline void to_json(nlohmann::json& j, const EndOfGameLcdsPointsPenalty& v) {
+  inline void to_json(nlohmann::json& j, const EndOfGameLcdsPointsPenalty_t& v) {
     j["penalty"] = v.penalty;
     j["type"] = v.type;
   }
 
-  inline void from_json(const nlohmann::json& j, EndOfGameLcdsPointsPenalty& v) {
-    v.penalty = j.at("penalty").get<double>;
-    v.type = j.at("type").get<std::string>;
+  inline void from_json(const nlohmann::json& j, EndOfGameLcdsPointsPenalty_t& v) {
+    v.penalty = j.at("penalty").get<double>();
+    v.type = j.at("type").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_EndOfGameLcdsPointsPenalty_HPP

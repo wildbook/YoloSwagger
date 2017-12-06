@@ -1,29 +1,23 @@
-#ifndef SWAGGER_TYPES_MemberSinceDto_HPP
-#define SWAGGER_TYPES_MemberSinceDto_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "PlayerInfoDto.hpp"
 namespace leagueapi {
-  // 
-  struct MemberSinceDto {
-    // 
+  struct MemberSinceDto_t {
     int64_t since;
-    // 
     std::string role;
-    // 
-    PlayerInfoDto playerInfo;
+    PlayerInfoDto_t playerInfo;
   };
 
-  inline void to_json(nlohmann::json& j, const MemberSinceDto& v) {
+  inline void to_json(nlohmann::json& j, const MemberSinceDto_t& v) {
     j["since"] = v.since;
     j["role"] = v.role;
     j["playerInfo"] = v.playerInfo;
   }
 
-  inline void from_json(const nlohmann::json& j, MemberSinceDto& v) {
-    v.since = j.at("since").get<int64_t>;
-    v.role = j.at("role").get<std::string>;
-    v.playerInfo = j.at("playerInfo").get<PlayerInfoDto>;
+  inline void from_json(const nlohmann::json& j, MemberSinceDto_t& v) {
+    v.since = j.at("since").get<int64_t>();
+    v.role = j.at("role").get<std::string>();
+    v.playerInfo = j.at("playerInfo").get<PlayerInfoDto_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_MemberSinceDto_HPP

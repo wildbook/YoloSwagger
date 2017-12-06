@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LeaguesLcdsSummonerLeaguesDTO_HPP
-#define SWAGGER_TYPES_LeaguesLcdsSummonerLeaguesDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LeaguesLcdsSummonerLeagueListDTO.hpp"
 namespace leagueapi {
-  // 
-  struct LeaguesLcdsSummonerLeaguesDTO {
-    // 
-    std::vector<LeaguesLcdsSummonerLeagueListDTO> summonerLeagues;
+  struct LeaguesLcdsSummonerLeaguesDTO_t {
+    std::vector<LeaguesLcdsSummonerLeagueListDTO_t> summonerLeagues;
   };
 
-  inline void to_json(nlohmann::json& j, const LeaguesLcdsSummonerLeaguesDTO& v) {
+  inline void to_json(nlohmann::json& j, const LeaguesLcdsSummonerLeaguesDTO_t& v) {
     j["summonerLeagues"] = v.summonerLeagues;
   }
 
-  inline void from_json(const nlohmann::json& j, LeaguesLcdsSummonerLeaguesDTO& v) {
-    v.summonerLeagues = j.at("summonerLeagues").get<std::vector<LeaguesLcdsSummonerLeagueListDTO>>;
+  inline void from_json(const nlohmann::json& j, LeaguesLcdsSummonerLeaguesDTO_t& v) {
+    v.summonerLeagues = j.at("summonerLeagues").get<std::vector<LeaguesLcdsSummonerLeagueListDTO_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LeaguesLcdsSummonerLeaguesDTO_HPP

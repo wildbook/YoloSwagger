@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolEsportStreamNotificationsGameflowSession_HPP
-#define SWAGGER_TYPES_LolEsportStreamNotificationsGameflowSession_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolEsportStreamNotificationsGameflowPhase.hpp"
 namespace leagueapi {
-  // 
-  struct LolEsportStreamNotificationsGameflowSession {
-    // 
-    LolEsportStreamNotificationsGameflowPhase phase;
+  struct LolEsportStreamNotificationsGameflowSession_t {
+    LolEsportStreamNotificationsGameflowPhase_t phase;
   };
 
-  inline void to_json(nlohmann::json& j, const LolEsportStreamNotificationsGameflowSession& v) {
+  inline void to_json(nlohmann::json& j, const LolEsportStreamNotificationsGameflowSession_t& v) {
     j["phase"] = v.phase;
   }
 
-  inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsGameflowSession& v) {
-    v.phase = j.at("phase").get<LolEsportStreamNotificationsGameflowPhase>;
+  inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsGameflowSession_t& v) {
+    v.phase = j.at("phase").get<LolEsportStreamNotificationsGameflowPhase_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolEsportStreamNotificationsGameflowSession_HPP

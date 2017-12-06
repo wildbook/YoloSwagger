@@ -1,38 +1,30 @@
-#ifndef SWAGGER_TYPES_EogLcdsGameDTO_HPP
-#define SWAGGER_TYPES_EogLcdsGameDTO_HPP
+#pragma once
 #include <json.hpp>
-#include "PlayerParticipant.hpp"
+#include <optional>
 #include "BannedChampion.hpp"
+#include "PlayerParticipant.hpp"
 namespace leagueapi {
-  // 
-  struct EogLcdsGameDTO {
-    // 
-    std::vector<PlayerParticipant> teamTwo;
-    // 
-    std::string gameState;
-    // 
+  struct EogLcdsGameDTO_t {
     uint64_t id;
-    // 
-    std::vector<PlayerParticipant> teamOne;
-    // 
-    std::vector<BannedChampion> bannedChampions;
+    std::vector<PlayerParticipant_t> teamOne;
+    std::vector<BannedChampion_t> bannedChampions;
+    std::string gameState;
+    std::vector<PlayerParticipant_t> teamTwo;
   };
 
-  inline void to_json(nlohmann::json& j, const EogLcdsGameDTO& v) {
-    j["teamTwo"] = v.teamTwo;
-    j["gameState"] = v.gameState;
+  inline void to_json(nlohmann::json& j, const EogLcdsGameDTO_t& v) {
     j["id"] = v.id;
     j["teamOne"] = v.teamOne;
     j["bannedChampions"] = v.bannedChampions;
+    j["gameState"] = v.gameState;
+    j["teamTwo"] = v.teamTwo;
   }
 
-  inline void from_json(const nlohmann::json& j, EogLcdsGameDTO& v) {
-    v.teamTwo = j.at("teamTwo").get<std::vector<PlayerParticipant>>;
-    v.gameState = j.at("gameState").get<std::string>;
-    v.id = j.at("id").get<uint64_t>;
-    v.teamOne = j.at("teamOne").get<std::vector<PlayerParticipant>>;
-    v.bannedChampions = j.at("bannedChampions").get<std::vector<BannedChampion>>;
+  inline void from_json(const nlohmann::json& j, EogLcdsGameDTO_t& v) {
+    v.id = j.at("id").get<uint64_t>();
+    v.teamOne = j.at("teamOne").get<std::vector<PlayerParticipant_t>>();
+    v.bannedChampions = j.at("bannedChampions").get<std::vector<BannedChampion_t>>();
+    v.gameState = j.at("gameState").get<std::string>();
+    v.teamTwo = j.at("teamTwo").get<std::vector<PlayerParticipant_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_EogLcdsGameDTO_HPP

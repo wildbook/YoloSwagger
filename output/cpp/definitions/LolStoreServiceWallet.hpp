@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolStoreServiceWallet_HPP
-#define SWAGGER_TYPES_LolStoreServiceWallet_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolStoreServiceBalance.hpp"
 namespace leagueapi {
-  // 
-  struct LolStoreServiceWallet {
-    // 
-    std::vector<LolStoreServiceBalance> balances;
-    // 
+  struct LolStoreServiceWallet_t {
     uint64_t accountId;
+    std::vector<LolStoreServiceBalance_t> balances;
   };
 
-  inline void to_json(nlohmann::json& j, const LolStoreServiceWallet& v) {
-    j["balances"] = v.balances;
+  inline void to_json(nlohmann::json& j, const LolStoreServiceWallet_t& v) {
     j["accountId"] = v.accountId;
+    j["balances"] = v.balances;
   }
 
-  inline void from_json(const nlohmann::json& j, LolStoreServiceWallet& v) {
-    v.balances = j.at("balances").get<std::vector<LolStoreServiceBalance>>;
-    v.accountId = j.at("accountId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolStoreServiceWallet_t& v) {
+    v.accountId = j.at("accountId").get<uint64_t>();
+    v.balances = j.at("balances").get<std::vector<LolStoreServiceBalance_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolStoreServiceWallet_HPP

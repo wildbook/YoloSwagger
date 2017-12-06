@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_LolInventoryItemOwnershipType_HPP
-#define SWAGGER_TYPES_LolInventoryItemOwnershipType_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolInventoryItemOwnershipType {
-    // 
-    RENTED = 1,
-    // 
-    F2P = 2,
-    // 
-    OWNED = 0,
+  enum class LolInventoryItemOwnershipType_t {
+    RENTED_E = 1,
+    F2P_E = 2,
+    OWNED_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const LolInventoryItemOwnershipType& v) {
+  inline void to_json(nlohmann::json& j, const LolInventoryItemOwnershipType_t& v) {
     switch(v) {
-      case LolInventoryItemOwnershipType::RENTED:
+      case LolInventoryItemOwnershipType_t::RENTED_E:
         j = "RENTED";
       break;
-      case LolInventoryItemOwnershipType::F2P:
+      case LolInventoryItemOwnershipType_t::F2P_E:
         j = "F2P";
       break;
-      case LolInventoryItemOwnershipType::OWNED:
+      case LolInventoryItemOwnershipType_t::OWNED_E:
         j = "OWNED";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolInventoryItemOwnershipType& v) {
+  inline void from_json(const nlohmann::json& j, LolInventoryItemOwnershipType_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "RENTED"){
-      v = LolInventoryItemOwnershipType::RENTED;
+      v = LolInventoryItemOwnershipType_t::RENTED_E;
       return;
     }
     if(s == "F2P"){
-      v = LolInventoryItemOwnershipType::F2P;
+      v = LolInventoryItemOwnershipType_t::F2P_E;
       return;
     }
     if(s == "OWNED"){
-      v = LolInventoryItemOwnershipType::OWNED;
+      v = LolInventoryItemOwnershipType_t::OWNED_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolInventoryItemOwnershipType_HPP

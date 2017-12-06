@@ -1,43 +1,34 @@
-#ifndef SWAGGER_TYPES_LolMatchmakingMatchmakingReadyCheckResource_HPP
-#define SWAGGER_TYPES_LolMatchmakingMatchmakingReadyCheckResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolMatchmakingMatchmakingReadyCheckState.hpp"
-#include "LolMatchmakingMatchmakingReadyCheckResponse.hpp"
 #include "LolMatchmakingMatchmakingDodgeWarning.hpp"
+#include "LolMatchmakingMatchmakingReadyCheckResponse.hpp"
 namespace leagueapi {
-  // 
-  struct LolMatchmakingMatchmakingReadyCheckResource {
-    // 
-    LolMatchmakingMatchmakingReadyCheckResponse playerResponse;
-    // 
-    std::vector<uint64_t> declinerIds;
-    // 
-    float timer;
-    // 
-    LolMatchmakingMatchmakingDodgeWarning dodgeWarning;
-    // 
+  struct LolMatchmakingMatchmakingReadyCheckResource_t {
+    LolMatchmakingMatchmakingReadyCheckResponse_t playerResponse;
     bool suppressUx;
-    // 
-    LolMatchmakingMatchmakingReadyCheckState state;
+    LolMatchmakingMatchmakingReadyCheckState_t state;
+    LolMatchmakingMatchmakingDodgeWarning_t dodgeWarning;
+    std::vector<uint64_t> declinerIds;
+    float timer;
   };
 
-  inline void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingReadyCheckResource& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingReadyCheckResource_t& v) {
     j["playerResponse"] = v.playerResponse;
-    j["declinerIds"] = v.declinerIds;
-    j["timer"] = v.timer;
-    j["dodgeWarning"] = v.dodgeWarning;
     j["suppressUx"] = v.suppressUx;
     j["state"] = v.state;
+    j["dodgeWarning"] = v.dodgeWarning;
+    j["declinerIds"] = v.declinerIds;
+    j["timer"] = v.timer;
   }
 
-  inline void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingReadyCheckResource& v) {
-    v.playerResponse = j.at("playerResponse").get<LolMatchmakingMatchmakingReadyCheckResponse>;
-    v.declinerIds = j.at("declinerIds").get<std::vector<uint64_t>>;
-    v.timer = j.at("timer").get<float>;
-    v.dodgeWarning = j.at("dodgeWarning").get<LolMatchmakingMatchmakingDodgeWarning>;
-    v.suppressUx = j.at("suppressUx").get<bool>;
-    v.state = j.at("state").get<LolMatchmakingMatchmakingReadyCheckState>;
+  inline void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingReadyCheckResource_t& v) {
+    v.playerResponse = j.at("playerResponse").get<LolMatchmakingMatchmakingReadyCheckResponse_t>();
+    v.suppressUx = j.at("suppressUx").get<bool>();
+    v.state = j.at("state").get<LolMatchmakingMatchmakingReadyCheckState_t>();
+    v.dodgeWarning = j.at("dodgeWarning").get<LolMatchmakingMatchmakingDodgeWarning_t>();
+    v.declinerIds = j.at("declinerIds").get<std::vector<uint64_t>>();
+    v.timer = j.at("timer").get<float>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolMatchmakingMatchmakingReadyCheckResource_HPP

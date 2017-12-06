@@ -1,31 +1,25 @@
-#ifndef SWAGGER_TYPES_LolEndOfGameGameflowSession_HPP
-#define SWAGGER_TYPES_LolEndOfGameGameflowSession_HPP
+#pragma once
 #include <json.hpp>
-#include "LolEndOfGameGameflowClient.hpp"
+#include <optional>
 #include "LolEndOfGameGameflowPhase.hpp"
 #include "LolEndOfGameGameflowGameData.hpp"
+#include "LolEndOfGameGameflowClient.hpp"
 namespace leagueapi {
-  // 
-  struct LolEndOfGameGameflowSession {
-    // 
-    LolEndOfGameGameflowPhase phase;
-    // 
-    LolEndOfGameGameflowClient gameClient;
-    // 
-    LolEndOfGameGameflowGameData gameData;
+  struct LolEndOfGameGameflowSession_t {
+    LolEndOfGameGameflowClient_t gameClient;
+    LolEndOfGameGameflowGameData_t gameData;
+    LolEndOfGameGameflowPhase_t phase;
   };
 
-  inline void to_json(nlohmann::json& j, const LolEndOfGameGameflowSession& v) {
-    j["phase"] = v.phase;
+  inline void to_json(nlohmann::json& j, const LolEndOfGameGameflowSession_t& v) {
     j["gameClient"] = v.gameClient;
     j["gameData"] = v.gameData;
+    j["phase"] = v.phase;
   }
 
-  inline void from_json(const nlohmann::json& j, LolEndOfGameGameflowSession& v) {
-    v.phase = j.at("phase").get<LolEndOfGameGameflowPhase>;
-    v.gameClient = j.at("gameClient").get<LolEndOfGameGameflowClient>;
-    v.gameData = j.at("gameData").get<LolEndOfGameGameflowGameData>;
+  inline void from_json(const nlohmann::json& j, LolEndOfGameGameflowSession_t& v) {
+    v.gameClient = j.at("gameClient").get<LolEndOfGameGameflowClient_t>();
+    v.gameData = j.at("gameData").get<LolEndOfGameGameflowGameData_t>();
+    v.phase = j.at("phase").get<LolEndOfGameGameflowPhase_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolEndOfGameGameflowSession_HPP

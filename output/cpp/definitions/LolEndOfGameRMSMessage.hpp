@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolEndOfGameRMSMessage_HPP
-#define SWAGGER_TYPES_LolEndOfGameRMSMessage_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolEndOfGameRMSMessage {
-    // 
+  struct LolEndOfGameRMSMessage_t {
     int64_t timestamp;
-    // 
     std::string payload;
   };
 
-  inline void to_json(nlohmann::json& j, const LolEndOfGameRMSMessage& v) {
+  inline void to_json(nlohmann::json& j, const LolEndOfGameRMSMessage_t& v) {
     j["timestamp"] = v.timestamp;
     j["payload"] = v.payload;
   }
 
-  inline void from_json(const nlohmann::json& j, LolEndOfGameRMSMessage& v) {
-    v.timestamp = j.at("timestamp").get<int64_t>;
-    v.payload = j.at("payload").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolEndOfGameRMSMessage_t& v) {
+    v.timestamp = j.at("timestamp").get<int64_t>();
+    v.payload = j.at("payload").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolEndOfGameRMSMessage_HPP

@@ -1,31 +1,25 @@
-#ifndef SWAGGER_TYPES_LolChampSelectLegacyGameflowSession_HPP
-#define SWAGGER_TYPES_LolChampSelectLegacyGameflowSession_HPP
+#pragma once
 #include <json.hpp>
-#include "LolChampSelectLegacyGameflowGameData.hpp"
+#include <optional>
 #include "LolChampSelectLegacyGameflowGameClient.hpp"
+#include "LolChampSelectLegacyGameflowGameData.hpp"
 #include "LolChampSelectLegacyGameflowPhase.hpp"
 namespace leagueapi {
-  // 
-  struct LolChampSelectLegacyGameflowSession {
-    // 
-    LolChampSelectLegacyGameflowPhase phase;
-    // 
-    LolChampSelectLegacyGameflowGameClient gameClient;
-    // 
-    LolChampSelectLegacyGameflowGameData gameData;
+  struct LolChampSelectLegacyGameflowSession_t {
+    LolChampSelectLegacyGameflowGameClient_t gameClient;
+    LolChampSelectLegacyGameflowGameData_t gameData;
+    LolChampSelectLegacyGameflowPhase_t phase;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyGameflowSession& v) {
-    j["phase"] = v.phase;
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyGameflowSession_t& v) {
     j["gameClient"] = v.gameClient;
     j["gameData"] = v.gameData;
+    j["phase"] = v.phase;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyGameflowSession& v) {
-    v.phase = j.at("phase").get<LolChampSelectLegacyGameflowPhase>;
-    v.gameClient = j.at("gameClient").get<LolChampSelectLegacyGameflowGameClient>;
-    v.gameData = j.at("gameData").get<LolChampSelectLegacyGameflowGameData>;
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyGameflowSession_t& v) {
+    v.gameClient = j.at("gameClient").get<LolChampSelectLegacyGameflowGameClient_t>();
+    v.gameData = j.at("gameData").get<LolChampSelectLegacyGameflowGameData_t>();
+    v.phase = j.at("phase").get<LolChampSelectLegacyGameflowPhase_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampSelectLegacyGameflowSession_HPP

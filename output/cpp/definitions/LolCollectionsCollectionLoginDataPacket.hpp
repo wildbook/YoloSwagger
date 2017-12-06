@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolCollectionsCollectionLoginDataPacket_HPP
-#define SWAGGER_TYPES_LolCollectionsCollectionLoginDataPacket_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolCollectionsSummonerData.hpp"
 namespace leagueapi {
-  // 
-  struct LolCollectionsCollectionLoginDataPacket {
-    // 
-    LolCollectionsSummonerData allSummonerData;
+  struct LolCollectionsCollectionLoginDataPacket_t {
+    LolCollectionsSummonerData_t allSummonerData;
   };
 
-  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionLoginDataPacket& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionLoginDataPacket_t& v) {
     j["allSummonerData"] = v.allSummonerData;
   }
 
-  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionLoginDataPacket& v) {
-    v.allSummonerData = j.at("allSummonerData").get<LolCollectionsSummonerData>;
+  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionLoginDataPacket_t& v) {
+    v.allSummonerData = j.at("allSummonerData").get<LolCollectionsSummonerData_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolCollectionsCollectionLoginDataPacket_HPP

@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_LolKrShutdownLawShutdownLawStatus_HPP
-#define SWAGGER_TYPES_LolKrShutdownLawShutdownLawStatus_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolKrShutdownLawShutdownLawStatus {
-    // 
-    CUT_OFF = 2,
-    // 
-    NONE = 0,
-    // 
-    WARNING = 1,
+  enum class LolKrShutdownLawShutdownLawStatus_t {
+    NONE_E = 0,
+    CUT_OFF_E = 2,
+    WARNING_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LolKrShutdownLawShutdownLawStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolKrShutdownLawShutdownLawStatus_t& v) {
     switch(v) {
-      case LolKrShutdownLawShutdownLawStatus::CUT_OFF:
-        j = "CUT_OFF";
-      break;
-      case LolKrShutdownLawShutdownLawStatus::NONE:
+      case LolKrShutdownLawShutdownLawStatus_t::NONE_E:
         j = "NONE";
       break;
-      case LolKrShutdownLawShutdownLawStatus::WARNING:
+      case LolKrShutdownLawShutdownLawStatus_t::CUT_OFF_E:
+        j = "CUT_OFF";
+      break;
+      case LolKrShutdownLawShutdownLawStatus_t::WARNING_E:
         j = "WARNING";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolKrShutdownLawShutdownLawStatus& v) {
+  inline void from_json(const nlohmann::json& j, LolKrShutdownLawShutdownLawStatus_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "CUT_OFF"){
-      v = LolKrShutdownLawShutdownLawStatus::CUT_OFF;
+    if(s == "NONE"){
+      v = LolKrShutdownLawShutdownLawStatus_t::NONE_E;
       return;
     }
-    if(s == "NONE"){
-      v = LolKrShutdownLawShutdownLawStatus::NONE;
+    if(s == "CUT_OFF"){
+      v = LolKrShutdownLawShutdownLawStatus_t::CUT_OFF_E;
       return;
     }
     if(s == "WARNING"){
-      v = LolKrShutdownLawShutdownLawStatus::WARNING;
+      v = LolKrShutdownLawShutdownLawStatus_t::WARNING_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolKrShutdownLawShutdownLawStatus_HPP

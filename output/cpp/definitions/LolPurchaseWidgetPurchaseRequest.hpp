@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolPurchaseWidgetPurchaseRequest_HPP
-#define SWAGGER_TYPES_LolPurchaseWidgetPurchaseRequest_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolPurchaseWidgetPurchaseItem.hpp"
 namespace leagueapi {
-  // 
-  struct LolPurchaseWidgetPurchaseRequest {
-    // 
-    std::vector<LolPurchaseWidgetPurchaseItem> items;
+  struct LolPurchaseWidgetPurchaseRequest_t {
+    std::vector<LolPurchaseWidgetPurchaseItem_t> items;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPurchaseWidgetPurchaseRequest& v) {
+  inline void to_json(nlohmann::json& j, const LolPurchaseWidgetPurchaseRequest_t& v) {
     j["items"] = v.items;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPurchaseWidgetPurchaseRequest& v) {
-    v.items = j.at("items").get<std::vector<LolPurchaseWidgetPurchaseItem>>;
+  inline void from_json(const nlohmann::json& j, LolPurchaseWidgetPurchaseRequest_t& v) {
+    v.items = j.at("items").get<std::vector<LolPurchaseWidgetPurchaseItem_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPurchaseWidgetPurchaseRequest_HPP

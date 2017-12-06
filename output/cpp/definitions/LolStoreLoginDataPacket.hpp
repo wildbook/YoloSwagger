@@ -1,26 +1,21 @@
-#ifndef SWAGGER_TYPES_LolStoreLoginDataPacket_HPP
-#define SWAGGER_TYPES_LolStoreLoginDataPacket_HPP
+#pragma once
 #include <json.hpp>
-#include "LolStoreSimpleDialogMessage.hpp"
+#include <optional>
 #include "LolStoreAllSummonerData.hpp"
+#include "LolStoreSimpleDialogMessage.hpp"
 namespace leagueapi {
-  // 
-  struct LolStoreLoginDataPacket {
-    // 
-    std::vector<LolStoreSimpleDialogMessage> simpleMessages;
-    // 
-    LolStoreAllSummonerData allSummonerData;
+  struct LolStoreLoginDataPacket_t {
+    LolStoreAllSummonerData_t allSummonerData;
+    std::vector<LolStoreSimpleDialogMessage_t> simpleMessages;
   };
 
-  inline void to_json(nlohmann::json& j, const LolStoreLoginDataPacket& v) {
-    j["simpleMessages"] = v.simpleMessages;
+  inline void to_json(nlohmann::json& j, const LolStoreLoginDataPacket_t& v) {
     j["allSummonerData"] = v.allSummonerData;
+    j["simpleMessages"] = v.simpleMessages;
   }
 
-  inline void from_json(const nlohmann::json& j, LolStoreLoginDataPacket& v) {
-    v.simpleMessages = j.at("simpleMessages").get<std::vector<LolStoreSimpleDialogMessage>>;
-    v.allSummonerData = j.at("allSummonerData").get<LolStoreAllSummonerData>;
+  inline void from_json(const nlohmann::json& j, LolStoreLoginDataPacket_t& v) {
+    v.allSummonerData = j.at("allSummonerData").get<LolStoreAllSummonerData_t>();
+    v.simpleMessages = j.at("simpleMessages").get<std::vector<LolStoreSimpleDialogMessage_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolStoreLoginDataPacket_HPP

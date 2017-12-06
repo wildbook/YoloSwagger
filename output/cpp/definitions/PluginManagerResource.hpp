@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_PluginManagerResource_HPP
-#define SWAGGER_TYPES_PluginManagerResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "PluginManagerState.hpp"
 namespace leagueapi {
-  // 
-  struct PluginManagerResource {
-    // 
-    PluginManagerState state;
+  struct PluginManagerResource_t {
+    PluginManagerState_t state;
   };
 
-  inline void to_json(nlohmann::json& j, const PluginManagerResource& v) {
+  inline void to_json(nlohmann::json& j, const PluginManagerResource_t& v) {
     j["state"] = v.state;
   }
 
-  inline void from_json(const nlohmann::json& j, PluginManagerResource& v) {
-    v.state = j.at("state").get<PluginManagerState>;
+  inline void from_json(const nlohmann::json& j, PluginManagerResource_t& v) {
+    v.state = j.at("state").get<PluginManagerState_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_PluginManagerResource_HPP

@@ -1,26 +1,21 @@
-#ifndef SWAGGER_TYPES_LoyaltyStatusNotification_HPP
-#define SWAGGER_TYPES_LoyaltyStatusNotification_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LoyaltyRewards.hpp"
 #include "LoyaltyStatus.hpp"
 namespace leagueapi {
-  // 
-  struct LoyaltyStatusNotification {
-    // 
-    LoyaltyStatus status;
-    // 
-    LoyaltyRewards rewards;
+  struct LoyaltyStatusNotification_t {
+    LoyaltyStatus_t status;
+    LoyaltyRewards_t rewards;
   };
 
-  inline void to_json(nlohmann::json& j, const LoyaltyStatusNotification& v) {
+  inline void to_json(nlohmann::json& j, const LoyaltyStatusNotification_t& v) {
     j["status"] = v.status;
     j["rewards"] = v.rewards;
   }
 
-  inline void from_json(const nlohmann::json& j, LoyaltyStatusNotification& v) {
-    v.status = j.at("status").get<LoyaltyStatus>;
-    v.rewards = j.at("rewards").get<LoyaltyRewards>;
+  inline void from_json(const nlohmann::json& j, LoyaltyStatusNotification_t& v) {
+    v.status = j.at("status").get<LoyaltyStatus_t>();
+    v.rewards = j.at("rewards").get<LoyaltyRewards_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LoyaltyStatusNotification_HPP

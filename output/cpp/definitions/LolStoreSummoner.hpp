@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolStoreSummoner_HPP
-#define SWAGGER_TYPES_LolStoreSummoner_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolStoreSummoner {
-    // 
-    uint64_t acctId;
-    // 
+  struct LolStoreSummoner_t {
     uint64_t sumId;
+    uint64_t acctId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolStoreSummoner& v) {
-    j["acctId"] = v.acctId;
+  inline void to_json(nlohmann::json& j, const LolStoreSummoner_t& v) {
     j["sumId"] = v.sumId;
+    j["acctId"] = v.acctId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolStoreSummoner& v) {
-    v.acctId = j.at("acctId").get<uint64_t>;
-    v.sumId = j.at("sumId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolStoreSummoner_t& v) {
+    v.sumId = j.at("sumId").get<uint64_t>();
+    v.acctId = j.at("acctId").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolStoreSummoner_HPP

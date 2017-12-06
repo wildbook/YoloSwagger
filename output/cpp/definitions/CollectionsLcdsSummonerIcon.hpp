@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_CollectionsLcdsSummonerIcon_HPP
-#define SWAGGER_TYPES_CollectionsLcdsSummonerIcon_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct CollectionsLcdsSummonerIcon {
-    // 
+  struct CollectionsLcdsSummonerIcon_t {
     uint64_t purchaseDate;
-    // 
-    int32_t iconId;
-    // 
     uint64_t summonerId;
+    int32_t iconId;
   };
 
-  inline void to_json(nlohmann::json& j, const CollectionsLcdsSummonerIcon& v) {
+  inline void to_json(nlohmann::json& j, const CollectionsLcdsSummonerIcon_t& v) {
     j["purchaseDate"] = v.purchaseDate;
-    j["iconId"] = v.iconId;
     j["summonerId"] = v.summonerId;
+    j["iconId"] = v.iconId;
   }
 
-  inline void from_json(const nlohmann::json& j, CollectionsLcdsSummonerIcon& v) {
-    v.purchaseDate = j.at("purchaseDate").get<uint64_t>;
-    v.iconId = j.at("iconId").get<int32_t>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, CollectionsLcdsSummonerIcon_t& v) {
+    v.purchaseDate = j.at("purchaseDate").get<uint64_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.iconId = j.at("iconId").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_CollectionsLcdsSummonerIcon_HPP

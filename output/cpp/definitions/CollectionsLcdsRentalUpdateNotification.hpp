@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_CollectionsLcdsRentalUpdateNotification_HPP
-#define SWAGGER_TYPES_CollectionsLcdsRentalUpdateNotification_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct CollectionsLcdsRentalUpdateNotification {
-    // 
+  struct CollectionsLcdsRentalUpdateNotification_t {
     std::string inventoryType;
-    // 
     nlohmann::json data;
   };
 
-  inline void to_json(nlohmann::json& j, const CollectionsLcdsRentalUpdateNotification& v) {
+  inline void to_json(nlohmann::json& j, const CollectionsLcdsRentalUpdateNotification_t& v) {
     j["inventoryType"] = v.inventoryType;
     j["data"] = v.data;
   }
 
-  inline void from_json(const nlohmann::json& j, CollectionsLcdsRentalUpdateNotification& v) {
-    v.inventoryType = j.at("inventoryType").get<std::string>;
-    v.data = j.at("data").get<nlohmann::json>;
+  inline void from_json(const nlohmann::json& j, CollectionsLcdsRentalUpdateNotification_t& v) {
+    v.inventoryType = j.at("inventoryType").get<std::string>();
+    v.data = j.at("data").get<nlohmann::json>();
   }
-
 }
-#endif // SWAGGER_TYPES_CollectionsLcdsRentalUpdateNotification_HPP

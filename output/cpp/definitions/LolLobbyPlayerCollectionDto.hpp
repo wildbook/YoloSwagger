@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolLobbyPlayerCollectionDto_HPP
-#define SWAGGER_TYPES_LolLobbyPlayerCollectionDto_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLobbyPlayerDto.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyPlayerCollectionDto {
-    // 
-    std::vector<LolLobbyPlayerDto> players;
+  struct LolLobbyPlayerCollectionDto_t {
+    std::vector<LolLobbyPlayerDto_t> players;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyPlayerCollectionDto& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyPlayerCollectionDto_t& v) {
     j["players"] = v.players;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyPlayerCollectionDto& v) {
-    v.players = j.at("players").get<std::vector<LolLobbyPlayerDto>>;
+  inline void from_json(const nlohmann::json& j, LolLobbyPlayerCollectionDto_t& v) {
+    v.players = j.at("players").get<std::vector<LolLobbyPlayerDto_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyPlayerCollectionDto_HPP

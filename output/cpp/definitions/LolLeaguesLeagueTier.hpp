@@ -1,91 +1,79 @@
-#ifndef SWAGGER_TYPES_LolLeaguesLeagueTier_HPP
-#define SWAGGER_TYPES_LolLeaguesLeagueTier_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLeaguesLeagueTier {
-    // 
-    PLATINUM = 4,
-    // 
-    NONE = 0,
-    // 
-    DIAMOND = 5,
-    // 
-    GOLD = 3,
-    // 
-    CHALLENGER = 7,
-    // 
-    MASTER = 6,
-    // 
-    SILVER = 2,
-    // 
-    BRONZE = 1,
+  enum class LolLeaguesLeagueTier_t {
+    PLATINUM_E = 4,
+    NONE_E = 0,
+    SILVER_E = 2,
+    MASTER_E = 6,
+    BRONZE_E = 1,
+    DIAMOND_E = 5,
+    CHALLENGER_E = 7,
+    GOLD_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLeaguesLeagueTier& v) {
+  inline void to_json(nlohmann::json& j, const LolLeaguesLeagueTier_t& v) {
     switch(v) {
-      case LolLeaguesLeagueTier::PLATINUM:
+      case LolLeaguesLeagueTier_t::PLATINUM_E:
         j = "PLATINUM";
       break;
-      case LolLeaguesLeagueTier::NONE:
+      case LolLeaguesLeagueTier_t::NONE_E:
         j = "NONE";
       break;
-      case LolLeaguesLeagueTier::DIAMOND:
-        j = "DIAMOND";
-      break;
-      case LolLeaguesLeagueTier::GOLD:
-        j = "GOLD";
-      break;
-      case LolLeaguesLeagueTier::CHALLENGER:
-        j = "CHALLENGER";
-      break;
-      case LolLeaguesLeagueTier::MASTER:
-        j = "MASTER";
-      break;
-      case LolLeaguesLeagueTier::SILVER:
+      case LolLeaguesLeagueTier_t::SILVER_E:
         j = "SILVER";
       break;
-      case LolLeaguesLeagueTier::BRONZE:
+      case LolLeaguesLeagueTier_t::MASTER_E:
+        j = "MASTER";
+      break;
+      case LolLeaguesLeagueTier_t::BRONZE_E:
         j = "BRONZE";
+      break;
+      case LolLeaguesLeagueTier_t::DIAMOND_E:
+        j = "DIAMOND";
+      break;
+      case LolLeaguesLeagueTier_t::CHALLENGER_E:
+        j = "CHALLENGER";
+      break;
+      case LolLeaguesLeagueTier_t::GOLD_E:
+        j = "GOLD";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLeaguesLeagueTier& v) {
+  inline void from_json(const nlohmann::json& j, LolLeaguesLeagueTier_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "PLATINUM"){
-      v = LolLeaguesLeagueTier::PLATINUM;
+      v = LolLeaguesLeagueTier_t::PLATINUM_E;
       return;
     }
     if(s == "NONE"){
-      v = LolLeaguesLeagueTier::NONE;
-      return;
-    }
-    if(s == "DIAMOND"){
-      v = LolLeaguesLeagueTier::DIAMOND;
-      return;
-    }
-    if(s == "GOLD"){
-      v = LolLeaguesLeagueTier::GOLD;
-      return;
-    }
-    if(s == "CHALLENGER"){
-      v = LolLeaguesLeagueTier::CHALLENGER;
-      return;
-    }
-    if(s == "MASTER"){
-      v = LolLeaguesLeagueTier::MASTER;
+      v = LolLeaguesLeagueTier_t::NONE_E;
       return;
     }
     if(s == "SILVER"){
-      v = LolLeaguesLeagueTier::SILVER;
+      v = LolLeaguesLeagueTier_t::SILVER_E;
+      return;
+    }
+    if(s == "MASTER"){
+      v = LolLeaguesLeagueTier_t::MASTER_E;
       return;
     }
     if(s == "BRONZE"){
-      v = LolLeaguesLeagueTier::BRONZE;
+      v = LolLeaguesLeagueTier_t::BRONZE_E;
+      return;
+    }
+    if(s == "DIAMOND"){
+      v = LolLeaguesLeagueTier_t::DIAMOND_E;
+      return;
+    }
+    if(s == "CHALLENGER"){
+      v = LolLeaguesLeagueTier_t::CHALLENGER_E;
+      return;
+    }
+    if(s == "GOLD"){
+      v = LolLeaguesLeagueTier_t::GOLD_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLeaguesLeagueTier_HPP

@@ -1,46 +1,40 @@
-#ifndef SWAGGER_TYPES_RemotingSerializedFormat_HPP
-#define SWAGGER_TYPES_RemotingSerializedFormat_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
   // Serialization format for remoting requests and results.
-  enum class RemotingSerializedFormat {
-    // 
-    YAML = 2,
-    // 
-    JSON = 1,
-    // 
-    MsgPack = 3,
+  enum class RemotingSerializedFormat_t {
+    MsgPack_E = 3,
+    YAML_E = 2,
+    JSON_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const RemotingSerializedFormat& v) {
+  inline void to_json(nlohmann::json& j, const RemotingSerializedFormat_t& v) {
     switch(v) {
-      case RemotingSerializedFormat::YAML:
+      case RemotingSerializedFormat_t::MsgPack_E:
+        j = "MsgPack";
+      break;
+      case RemotingSerializedFormat_t::YAML_E:
         j = "YAML";
       break;
-      case RemotingSerializedFormat::JSON:
+      case RemotingSerializedFormat_t::JSON_E:
         j = "JSON";
-      break;
-      case RemotingSerializedFormat::MsgPack:
-        j = "MsgPack";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, RemotingSerializedFormat& v) {
+  inline void from_json(const nlohmann::json& j, RemotingSerializedFormat_t& v) {
     const auto& s = j.get<std::string>();
+    if(s == "MsgPack"){
+      v = RemotingSerializedFormat_t::MsgPack_E;
+      return;
+    }
     if(s == "YAML"){
-      v = RemotingSerializedFormat::YAML;
+      v = RemotingSerializedFormat_t::YAML_E;
       return;
     }
     if(s == "JSON"){
-      v = RemotingSerializedFormat::JSON;
-      return;
-    }
-    if(s == "MsgPack"){
-      v = RemotingSerializedFormat::MsgPack;
+      v = RemotingSerializedFormat_t::JSON_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_RemotingSerializedFormat_HPP

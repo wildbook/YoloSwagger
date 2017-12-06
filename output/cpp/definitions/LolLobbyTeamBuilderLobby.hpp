@@ -1,99 +1,76 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderLobby_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderLobby_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLobbyTeamBuilderLobbyRemovedFromGameReason.hpp"
-#include "LolLobbyTeamBuilderLobbyMember.hpp"
 #include "LolLobbyTeamBuilderLobbyInvitation.hpp"
+#include "LolLobbyTeamBuilderLobbyMember.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyTeamBuilderLobby {
-    // 
-    bool wasKicked;
-    // 
-    int32_t queueId;
-    // 
-    bool premadeSizeAllowed;
-    // 
-    bool requiredPositionCoverageMet;
-    // 
-    bool autoFillProtectedForPromos;
-    // 
-    std::vector<int32_t> allowablePremadeSizes;
-    // 
-    bool autoFillEligible;
-    // 
-    std::string chatRoomKey;
-    // 
-    bool autoFillProtectedForStreaking;
-    // 
-    std::string invitationId;
-    // 
-    bool showPositionExcluder;
-    // 
-    std::vector<LolLobbyTeamBuilderLobbyInvitation> invitations;
-    // 
-    LolLobbyTeamBuilderLobbyRemovedFromGameReason removalReason;
-    // 
+  struct LolLobbyTeamBuilderLobby_t {
     std::string chatRoomId;
-    // 
-    std::vector<LolLobbyTeamBuilderLobbyMember> members;
-    // 
-    bool showPositionSelector;
-    // 
-    LolLobbyTeamBuilderLobbyMember localMember;
-    // 
-    bool isTeamBuilderManaged;
-    // 
-    std::vector<std::string> specifiablePositionPreferences;
-    // 
+    LolLobbyTeamBuilderLobbyMember_t localMember;
     bool canStartMatchmaking;
+    std::vector<int32_t> allowablePremadeSizes;
+    std::string invitationId;
+    int32_t queueId;
+    std::string chatRoomKey;
+    bool autoFillProtectedForPromos;
+    std::vector<LolLobbyTeamBuilderLobbyMember_t> members;
+    bool premadeSizeAllowed;
+    bool requiredPositionCoverageMet;
+    bool showPositionExcluder;
+    std::vector<LolLobbyTeamBuilderLobbyInvitation_t> invitations;
+    bool showPositionSelector;
+    std::vector<std::string> specifiablePositionPreferences;
+    bool autoFillProtectedForStreaking;
+    LolLobbyTeamBuilderLobbyRemovedFromGameReason_t removalReason;
+    bool wasKicked;
+    bool autoFillEligible;
+    bool isTeamBuilderManaged;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLobby& v) {
-    j["wasKicked"] = v.wasKicked;
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLobby_t& v) {
+    j["chatRoomId"] = v.chatRoomId;
+    j["localMember"] = v.localMember;
+    j["canStartMatchmaking"] = v.canStartMatchmaking;
+    j["allowablePremadeSizes"] = v.allowablePremadeSizes;
+    j["invitationId"] = v.invitationId;
     j["queueId"] = v.queueId;
+    j["chatRoomKey"] = v.chatRoomKey;
+    j["autoFillProtectedForPromos"] = v.autoFillProtectedForPromos;
+    j["members"] = v.members;
     j["premadeSizeAllowed"] = v.premadeSizeAllowed;
     j["requiredPositionCoverageMet"] = v.requiredPositionCoverageMet;
-    j["autoFillProtectedForPromos"] = v.autoFillProtectedForPromos;
-    j["allowablePremadeSizes"] = v.allowablePremadeSizes;
-    j["autoFillEligible"] = v.autoFillEligible;
-    j["chatRoomKey"] = v.chatRoomKey;
-    j["autoFillProtectedForStreaking"] = v.autoFillProtectedForStreaking;
-    j["invitationId"] = v.invitationId;
     j["showPositionExcluder"] = v.showPositionExcluder;
     j["invitations"] = v.invitations;
-    j["removalReason"] = v.removalReason;
-    j["chatRoomId"] = v.chatRoomId;
-    j["members"] = v.members;
     j["showPositionSelector"] = v.showPositionSelector;
-    j["localMember"] = v.localMember;
-    j["isTeamBuilderManaged"] = v.isTeamBuilderManaged;
     j["specifiablePositionPreferences"] = v.specifiablePositionPreferences;
-    j["canStartMatchmaking"] = v.canStartMatchmaking;
+    j["autoFillProtectedForStreaking"] = v.autoFillProtectedForStreaking;
+    j["removalReason"] = v.removalReason;
+    j["wasKicked"] = v.wasKicked;
+    j["autoFillEligible"] = v.autoFillEligible;
+    j["isTeamBuilderManaged"] = v.isTeamBuilderManaged;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLobby& v) {
-    v.wasKicked = j.at("wasKicked").get<bool>;
-    v.queueId = j.at("queueId").get<int32_t>;
-    v.premadeSizeAllowed = j.at("premadeSizeAllowed").get<bool>;
-    v.requiredPositionCoverageMet = j.at("requiredPositionCoverageMet").get<bool>;
-    v.autoFillProtectedForPromos = j.at("autoFillProtectedForPromos").get<bool>;
-    v.allowablePremadeSizes = j.at("allowablePremadeSizes").get<std::vector<int32_t>>;
-    v.autoFillEligible = j.at("autoFillEligible").get<bool>;
-    v.chatRoomKey = j.at("chatRoomKey").get<std::string>;
-    v.autoFillProtectedForStreaking = j.at("autoFillProtectedForStreaking").get<bool>;
-    v.invitationId = j.at("invitationId").get<std::string>;
-    v.showPositionExcluder = j.at("showPositionExcluder").get<bool>;
-    v.invitations = j.at("invitations").get<std::vector<LolLobbyTeamBuilderLobbyInvitation>>;
-    v.removalReason = j.at("removalReason").get<LolLobbyTeamBuilderLobbyRemovedFromGameReason>;
-    v.chatRoomId = j.at("chatRoomId").get<std::string>;
-    v.members = j.at("members").get<std::vector<LolLobbyTeamBuilderLobbyMember>>;
-    v.showPositionSelector = j.at("showPositionSelector").get<bool>;
-    v.localMember = j.at("localMember").get<LolLobbyTeamBuilderLobbyMember>;
-    v.isTeamBuilderManaged = j.at("isTeamBuilderManaged").get<bool>;
-    v.specifiablePositionPreferences = j.at("specifiablePositionPreferences").get<std::vector<std::string>>;
-    v.canStartMatchmaking = j.at("canStartMatchmaking").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLobby_t& v) {
+    v.chatRoomId = j.at("chatRoomId").get<std::string>();
+    v.localMember = j.at("localMember").get<LolLobbyTeamBuilderLobbyMember_t>();
+    v.canStartMatchmaking = j.at("canStartMatchmaking").get<bool>();
+    v.allowablePremadeSizes = j.at("allowablePremadeSizes").get<std::vector<int32_t>>();
+    v.invitationId = j.at("invitationId").get<std::string>();
+    v.queueId = j.at("queueId").get<int32_t>();
+    v.chatRoomKey = j.at("chatRoomKey").get<std::string>();
+    v.autoFillProtectedForPromos = j.at("autoFillProtectedForPromos").get<bool>();
+    v.members = j.at("members").get<std::vector<LolLobbyTeamBuilderLobbyMember_t>>();
+    v.premadeSizeAllowed = j.at("premadeSizeAllowed").get<bool>();
+    v.requiredPositionCoverageMet = j.at("requiredPositionCoverageMet").get<bool>();
+    v.showPositionExcluder = j.at("showPositionExcluder").get<bool>();
+    v.invitations = j.at("invitations").get<std::vector<LolLobbyTeamBuilderLobbyInvitation_t>>();
+    v.showPositionSelector = j.at("showPositionSelector").get<bool>();
+    v.specifiablePositionPreferences = j.at("specifiablePositionPreferences").get<std::vector<std::string>>();
+    v.autoFillProtectedForStreaking = j.at("autoFillProtectedForStreaking").get<bool>();
+    v.removalReason = j.at("removalReason").get<LolLobbyTeamBuilderLobbyRemovedFromGameReason_t>();
+    v.wasKicked = j.at("wasKicked").get<bool>();
+    v.autoFillEligible = j.at("autoFillEligible").get<bool>();
+    v.isTeamBuilderManaged = j.at("isTeamBuilderManaged").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderLobby_HPP

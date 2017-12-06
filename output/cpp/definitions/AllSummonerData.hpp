@@ -1,31 +1,25 @@
-#ifndef SWAGGER_TYPES_AllSummonerData_HPP
-#define SWAGGER_TYPES_AllSummonerData_HPP
+#pragma once
 #include <json.hpp>
-#include "SummonerLevelAndPoints.hpp"
-#include "PrivateSummonerDTO.hpp"
+#include <optional>
 #include "SummonerLevel.hpp"
+#include "PrivateSummonerDTO.hpp"
+#include "SummonerLevelAndPoints.hpp"
 namespace leagueapi {
-  // 
-  struct AllSummonerData {
-    // 
-    PrivateSummonerDTO summoner;
-    // 
-    SummonerLevelAndPoints summonerLevelAndPoints;
-    // 
-    SummonerLevel summonerLevel;
+  struct AllSummonerData_t {
+    SummonerLevelAndPoints_t summonerLevelAndPoints;
+    SummonerLevel_t summonerLevel;
+    PrivateSummonerDTO_t summoner;
   };
 
-  inline void to_json(nlohmann::json& j, const AllSummonerData& v) {
-    j["summoner"] = v.summoner;
+  inline void to_json(nlohmann::json& j, const AllSummonerData_t& v) {
     j["summonerLevelAndPoints"] = v.summonerLevelAndPoints;
     j["summonerLevel"] = v.summonerLevel;
+    j["summoner"] = v.summoner;
   }
 
-  inline void from_json(const nlohmann::json& j, AllSummonerData& v) {
-    v.summoner = j.at("summoner").get<PrivateSummonerDTO>;
-    v.summonerLevelAndPoints = j.at("summonerLevelAndPoints").get<SummonerLevelAndPoints>;
-    v.summonerLevel = j.at("summonerLevel").get<SummonerLevel>;
+  inline void from_json(const nlohmann::json& j, AllSummonerData_t& v) {
+    v.summonerLevelAndPoints = j.at("summonerLevelAndPoints").get<SummonerLevelAndPoints_t>();
+    v.summonerLevel = j.at("summonerLevel").get<SummonerLevel_t>();
+    v.summoner = j.at("summoner").get<PrivateSummonerDTO_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_AllSummonerData_HPP

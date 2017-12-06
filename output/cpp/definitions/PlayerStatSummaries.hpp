@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_PlayerStatSummaries_HPP
-#define SWAGGER_TYPES_PlayerStatSummaries_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "PlayerStatSummary.hpp"
 namespace leagueapi {
-  // 
-  struct PlayerStatSummaries {
-    // 
-    std::vector<PlayerStatSummary> playerStatSummarySet;
+  struct PlayerStatSummaries_t {
+    std::vector<PlayerStatSummary_t> playerStatSummarySet;
   };
 
-  inline void to_json(nlohmann::json& j, const PlayerStatSummaries& v) {
+  inline void to_json(nlohmann::json& j, const PlayerStatSummaries_t& v) {
     j["playerStatSummarySet"] = v.playerStatSummarySet;
   }
 
-  inline void from_json(const nlohmann::json& j, PlayerStatSummaries& v) {
-    v.playerStatSummarySet = j.at("playerStatSummarySet").get<std::vector<PlayerStatSummary>>;
+  inline void from_json(const nlohmann::json& j, PlayerStatSummaries_t& v) {
+    v.playerStatSummarySet = j.at("playerStatSummarySet").get<std::vector<PlayerStatSummary_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_PlayerStatSummaries_HPP

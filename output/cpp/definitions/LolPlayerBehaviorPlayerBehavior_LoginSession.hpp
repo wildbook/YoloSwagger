@@ -1,34 +1,29 @@
-#ifndef SWAGGER_TYPES_LolPlayerBehaviorPlayerBehavior_LoginSession_HPP
-#define SWAGGER_TYPES_LolPlayerBehaviorPlayerBehavior_LoginSession_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolPlayerBehaviorPlayerBehavior_LoginSessionState.hpp"
 #include "LolPlayerBehaviorPlayerBehavior_LoginError.hpp"
 namespace leagueapi {
-  // 
-  struct LolPlayerBehaviorPlayerBehavior_LoginSession {
-    // 
-    LolPlayerBehaviorPlayerBehavior_LoginSessionState state;
-    // 
-    LolPlayerBehaviorPlayerBehavior_LoginError error;
-    // 
-    uint64_t summonerId;
-    // 
+  struct LolPlayerBehaviorPlayerBehavior_LoginSession_t {
     uint64_t accountId;
+    std::optional<LolPlayerBehaviorPlayerBehavior_LoginError_t> error;
+    uint64_t summonerId;
+    LolPlayerBehaviorPlayerBehavior_LoginSessionState_t state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPlayerBehaviorPlayerBehavior_LoginSession& v) {
-    j["state"] = v.state;
-    j["error"] = v.error;
-    j["summonerId"] = v.summonerId;
+  inline void to_json(nlohmann::json& j, const LolPlayerBehaviorPlayerBehavior_LoginSession_t& v) {
     j["accountId"] = v.accountId;
+    if(v.error)
+      j["error"] = *v.error;
+    j["summonerId"] = v.summonerId;
+    j["state"] = v.state;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPlayerBehaviorPlayerBehavior_LoginSession& v) {
-    v.state = j.at("state").get<LolPlayerBehaviorPlayerBehavior_LoginSessionState>;
-    v.error = j.at("error").get<LolPlayerBehaviorPlayerBehavior_LoginError>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
-    v.accountId = j.at("accountId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolPlayerBehaviorPlayerBehavior_LoginSession_t& v) {
+    v.accountId = j.at("accountId").get<uint64_t>();
+    if(auto it = j.find("error"); it != j.end() !it->is_null())
+      v.error = it->get<LolPlayerBehaviorPlayerBehavior_LoginError_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.state = j.at("state").get<LolPlayerBehaviorPlayerBehavior_LoginSessionState_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPlayerBehaviorPlayerBehavior_LoginSession_HPP

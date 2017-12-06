@@ -1,100 +1,87 @@
-#ifndef SWAGGER_TYPES_LolLobbyLobbyRemovedFromGameReason_HPP
-#define SWAGGER_TYPES_LolLobbyLobbyRemovedFromGameReason_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLobbyLobbyRemovedFromGameReason {
-    // 
-    None = 0,
-    // 
-    Kicked = 1,
-    // 
-    GameStartError = 7,
-    // 
-    ServiceShutdown = 8,
-    // 
-    Disbanded = 2,
-    // 
-    Other = 5,
-    // 
-    ServiceError = 4,
-    // 
-    Timeout = 6,
-    // 
-    Left = 3,
+  enum class LolLobbyLobbyRemovedFromGameReason_t {
+    ServiceShutdown_E = 8,
+    Timeout_E = 6,
+    Kicked_E = 1,
+    GameStartError_E = 7,
+    Disbanded_E = 2,
+    ServiceError_E = 4,
+    Other_E = 5,
+    None_E = 0,
+    Left_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyLobbyRemovedFromGameReason& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyRemovedFromGameReason_t& v) {
     switch(v) {
-      case LolLobbyLobbyRemovedFromGameReason::None:
-        j = "None";
-      break;
-      case LolLobbyLobbyRemovedFromGameReason::Kicked:
-        j = "Kicked";
-      break;
-      case LolLobbyLobbyRemovedFromGameReason::GameStartError:
-        j = "GameStartError";
-      break;
-      case LolLobbyLobbyRemovedFromGameReason::ServiceShutdown:
+      case LolLobbyLobbyRemovedFromGameReason_t::ServiceShutdown_E:
         j = "ServiceShutdown";
       break;
-      case LolLobbyLobbyRemovedFromGameReason::Disbanded:
-        j = "Disbanded";
-      break;
-      case LolLobbyLobbyRemovedFromGameReason::Other:
-        j = "Other";
-      break;
-      case LolLobbyLobbyRemovedFromGameReason::ServiceError:
-        j = "ServiceError";
-      break;
-      case LolLobbyLobbyRemovedFromGameReason::Timeout:
+      case LolLobbyLobbyRemovedFromGameReason_t::Timeout_E:
         j = "Timeout";
       break;
-      case LolLobbyLobbyRemovedFromGameReason::Left:
+      case LolLobbyLobbyRemovedFromGameReason_t::Kicked_E:
+        j = "Kicked";
+      break;
+      case LolLobbyLobbyRemovedFromGameReason_t::GameStartError_E:
+        j = "GameStartError";
+      break;
+      case LolLobbyLobbyRemovedFromGameReason_t::Disbanded_E:
+        j = "Disbanded";
+      break;
+      case LolLobbyLobbyRemovedFromGameReason_t::ServiceError_E:
+        j = "ServiceError";
+      break;
+      case LolLobbyLobbyRemovedFromGameReason_t::Other_E:
+        j = "Other";
+      break;
+      case LolLobbyLobbyRemovedFromGameReason_t::None_E:
+        j = "None";
+      break;
+      case LolLobbyLobbyRemovedFromGameReason_t::Left_E:
         j = "Left";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyLobbyRemovedFromGameReason& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyRemovedFromGameReason_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "None"){
-      v = LolLobbyLobbyRemovedFromGameReason::None;
-      return;
-    }
-    if(s == "Kicked"){
-      v = LolLobbyLobbyRemovedFromGameReason::Kicked;
-      return;
-    }
-    if(s == "GameStartError"){
-      v = LolLobbyLobbyRemovedFromGameReason::GameStartError;
-      return;
-    }
     if(s == "ServiceShutdown"){
-      v = LolLobbyLobbyRemovedFromGameReason::ServiceShutdown;
-      return;
-    }
-    if(s == "Disbanded"){
-      v = LolLobbyLobbyRemovedFromGameReason::Disbanded;
-      return;
-    }
-    if(s == "Other"){
-      v = LolLobbyLobbyRemovedFromGameReason::Other;
-      return;
-    }
-    if(s == "ServiceError"){
-      v = LolLobbyLobbyRemovedFromGameReason::ServiceError;
+      v = LolLobbyLobbyRemovedFromGameReason_t::ServiceShutdown_E;
       return;
     }
     if(s == "Timeout"){
-      v = LolLobbyLobbyRemovedFromGameReason::Timeout;
+      v = LolLobbyLobbyRemovedFromGameReason_t::Timeout_E;
+      return;
+    }
+    if(s == "Kicked"){
+      v = LolLobbyLobbyRemovedFromGameReason_t::Kicked_E;
+      return;
+    }
+    if(s == "GameStartError"){
+      v = LolLobbyLobbyRemovedFromGameReason_t::GameStartError_E;
+      return;
+    }
+    if(s == "Disbanded"){
+      v = LolLobbyLobbyRemovedFromGameReason_t::Disbanded_E;
+      return;
+    }
+    if(s == "ServiceError"){
+      v = LolLobbyLobbyRemovedFromGameReason_t::ServiceError_E;
+      return;
+    }
+    if(s == "Other"){
+      v = LolLobbyLobbyRemovedFromGameReason_t::Other_E;
+      return;
+    }
+    if(s == "None"){
+      v = LolLobbyLobbyRemovedFromGameReason_t::None_E;
       return;
     }
     if(s == "Left"){
-      v = LolLobbyLobbyRemovedFromGameReason::Left;
+      v = LolLobbyLobbyRemovedFromGameReason_t::Left_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyLobbyRemovedFromGameReason_HPP

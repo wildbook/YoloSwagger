@@ -1,64 +1,55 @@
-#ifndef SWAGGER_TYPES_PendingRosterMemberState_HPP
-#define SWAGGER_TYPES_PendingRosterMemberState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class PendingRosterMemberState {
-    // 
-    READY = 2,
-    // 
-    FORCED_NOT_READY = 1,
-    // 
-    NOT_READY = 0,
-    // 
-    KICK = 4,
-    // 
-    LEFT = 3,
+  enum class PendingRosterMemberState_t {
+    FORCED_NOT_READY_E = 1,
+    READY_E = 2,
+    KICK_E = 4,
+    NOT_READY_E = 0,
+    LEFT_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const PendingRosterMemberState& v) {
+  inline void to_json(nlohmann::json& j, const PendingRosterMemberState_t& v) {
     switch(v) {
-      case PendingRosterMemberState::READY:
-        j = "READY";
-      break;
-      case PendingRosterMemberState::FORCED_NOT_READY:
+      case PendingRosterMemberState_t::FORCED_NOT_READY_E:
         j = "FORCED_NOT_READY";
       break;
-      case PendingRosterMemberState::NOT_READY:
-        j = "NOT_READY";
+      case PendingRosterMemberState_t::READY_E:
+        j = "READY";
       break;
-      case PendingRosterMemberState::KICK:
+      case PendingRosterMemberState_t::KICK_E:
         j = "KICK";
       break;
-      case PendingRosterMemberState::LEFT:
+      case PendingRosterMemberState_t::NOT_READY_E:
+        j = "NOT_READY";
+      break;
+      case PendingRosterMemberState_t::LEFT_E:
         j = "LEFT";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, PendingRosterMemberState& v) {
+  inline void from_json(const nlohmann::json& j, PendingRosterMemberState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "READY"){
-      v = PendingRosterMemberState::READY;
-      return;
-    }
     if(s == "FORCED_NOT_READY"){
-      v = PendingRosterMemberState::FORCED_NOT_READY;
+      v = PendingRosterMemberState_t::FORCED_NOT_READY_E;
       return;
     }
-    if(s == "NOT_READY"){
-      v = PendingRosterMemberState::NOT_READY;
+    if(s == "READY"){
+      v = PendingRosterMemberState_t::READY_E;
       return;
     }
     if(s == "KICK"){
-      v = PendingRosterMemberState::KICK;
+      v = PendingRosterMemberState_t::KICK_E;
+      return;
+    }
+    if(s == "NOT_READY"){
+      v = PendingRosterMemberState_t::NOT_READY_E;
       return;
     }
     if(s == "LEFT"){
-      v = PendingRosterMemberState::LEFT;
+      v = PendingRosterMemberState_t::LEFT_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_PendingRosterMemberState_HPP

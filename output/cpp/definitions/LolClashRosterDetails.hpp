@@ -1,32 +1,25 @@
-#ifndef SWAGGER_TYPES_LolClashRosterDetails_HPP
-#define SWAGGER_TYPES_LolClashRosterDetails_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolClashRosterDetails {
-    // 
-    int32_t iconColorId;
-    // 
-    int32_t iconId;
-    // 
+  struct LolClashRosterDetails_t {
     std::string shortName;
-    // 
+    int32_t iconColorId;
     std::string name;
+    int32_t iconId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashRosterDetails& v) {
-    j["iconColorId"] = v.iconColorId;
-    j["iconId"] = v.iconId;
+  inline void to_json(nlohmann::json& j, const LolClashRosterDetails_t& v) {
     j["shortName"] = v.shortName;
+    j["iconColorId"] = v.iconColorId;
     j["name"] = v.name;
+    j["iconId"] = v.iconId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashRosterDetails& v) {
-    v.iconColorId = j.at("iconColorId").get<int32_t>;
-    v.iconId = j.at("iconId").get<int32_t>;
-    v.shortName = j.at("shortName").get<std::string>;
-    v.name = j.at("name").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolClashRosterDetails_t& v) {
+    v.shortName = j.at("shortName").get<std::string>();
+    v.iconColorId = j.at("iconColorId").get<int32_t>();
+    v.name = j.at("name").get<std::string>();
+    v.iconId = j.at("iconId").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashRosterDetails_HPP

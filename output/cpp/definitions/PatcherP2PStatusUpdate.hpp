@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_PatcherP2PStatusUpdate_HPP
-#define SWAGGER_TYPES_PatcherP2PStatusUpdate_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct PatcherP2PStatusUpdate {
-    // 
+  struct PatcherP2PStatusUpdate_t {
     bool isAllowedByUser;
   };
 
-  inline void to_json(nlohmann::json& j, const PatcherP2PStatusUpdate& v) {
+  inline void to_json(nlohmann::json& j, const PatcherP2PStatusUpdate_t& v) {
     j["isAllowedByUser"] = v.isAllowedByUser;
   }
 
-  inline void from_json(const nlohmann::json& j, PatcherP2PStatusUpdate& v) {
-    v.isAllowedByUser = j.at("isAllowedByUser").get<bool>;
+  inline void from_json(const nlohmann::json& j, PatcherP2PStatusUpdate_t& v) {
+    v.isAllowedByUser = j.at("isAllowedByUser").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_PatcherP2PStatusUpdate_HPP

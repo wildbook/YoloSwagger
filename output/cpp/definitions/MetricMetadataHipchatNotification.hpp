@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_MetricMetadataHipchatNotification_HPP
-#define SWAGGER_TYPES_MetricMetadataHipchatNotification_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct MetricMetadataHipchatNotification {
-    // 
-    std::string roomid;
-    // 
+  struct MetricMetadataHipchatNotification_t {
     std::string tags;
+    std::string roomid;
   };
 
-  inline void to_json(nlohmann::json& j, const MetricMetadataHipchatNotification& v) {
-    j["roomid"] = v.roomid;
+  inline void to_json(nlohmann::json& j, const MetricMetadataHipchatNotification_t& v) {
     j["tags"] = v.tags;
+    j["roomid"] = v.roomid;
   }
 
-  inline void from_json(const nlohmann::json& j, MetricMetadataHipchatNotification& v) {
-    v.roomid = j.at("roomid").get<std::string>;
-    v.tags = j.at("tags").get<std::string>;
+  inline void from_json(const nlohmann::json& j, MetricMetadataHipchatNotification_t& v) {
+    v.tags = j.at("tags").get<std::string>();
+    v.roomid = j.at("roomid").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_MetricMetadataHipchatNotification_HPP

@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolEmailVerificationValidationStatus_HPP
-#define SWAGGER_TYPES_LolEmailVerificationValidationStatus_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolEmailVerificationValidationStatus {
-    // 
+  struct LolEmailVerificationValidationStatus_t {
     std::string emailStatus;
   };
 
-  inline void to_json(nlohmann::json& j, const LolEmailVerificationValidationStatus& v) {
+  inline void to_json(nlohmann::json& j, const LolEmailVerificationValidationStatus_t& v) {
     j["emailStatus"] = v.emailStatus;
   }
 
-  inline void from_json(const nlohmann::json& j, LolEmailVerificationValidationStatus& v) {
-    v.emailStatus = j.at("emailStatus").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolEmailVerificationValidationStatus_t& v) {
+    v.emailStatus = j.at("emailStatus").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolEmailVerificationValidationStatus_HPP

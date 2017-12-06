@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolMatchHistoryLoginSessionStates_HPP
-#define SWAGGER_TYPES_LolMatchHistoryLoginSessionStates_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolMatchHistoryLoginSessionStates {
-    // 
-    LOGGING_OUT = 2,
-    // 
-    IN_PROGRESS = 0,
-    // 
-    SUCCEEDED = 1,
-    // 
-    ERROR = 3,
+  enum class LolMatchHistoryLoginSessionStates_t {
+    LOGGING_OUT_E = 2,
+    SUCCEEDED_E = 1,
+    IN_PROGRESS_E = 0,
+    ERROR_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolMatchHistoryLoginSessionStates& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryLoginSessionStates_t& v) {
     switch(v) {
-      case LolMatchHistoryLoginSessionStates::LOGGING_OUT:
+      case LolMatchHistoryLoginSessionStates_t::LOGGING_OUT_E:
         j = "LOGGING_OUT";
       break;
-      case LolMatchHistoryLoginSessionStates::IN_PROGRESS:
-        j = "IN_PROGRESS";
-      break;
-      case LolMatchHistoryLoginSessionStates::SUCCEEDED:
+      case LolMatchHistoryLoginSessionStates_t::SUCCEEDED_E:
         j = "SUCCEEDED";
       break;
-      case LolMatchHistoryLoginSessionStates::ERROR:
+      case LolMatchHistoryLoginSessionStates_t::IN_PROGRESS_E:
+        j = "IN_PROGRESS";
+      break;
+      case LolMatchHistoryLoginSessionStates_t::ERROR_E:
         j = "ERROR";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolMatchHistoryLoginSessionStates& v) {
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryLoginSessionStates_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "LOGGING_OUT"){
-      v = LolMatchHistoryLoginSessionStates::LOGGING_OUT;
-      return;
-    }
-    if(s == "IN_PROGRESS"){
-      v = LolMatchHistoryLoginSessionStates::IN_PROGRESS;
+      v = LolMatchHistoryLoginSessionStates_t::LOGGING_OUT_E;
       return;
     }
     if(s == "SUCCEEDED"){
-      v = LolMatchHistoryLoginSessionStates::SUCCEEDED;
+      v = LolMatchHistoryLoginSessionStates_t::SUCCEEDED_E;
+      return;
+    }
+    if(s == "IN_PROGRESS"){
+      v = LolMatchHistoryLoginSessionStates_t::IN_PROGRESS_E;
       return;
     }
     if(s == "ERROR"){
-      v = LolMatchHistoryLoginSessionStates::ERROR;
+      v = LolMatchHistoryLoginSessionStates_t::ERROR_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolMatchHistoryLoginSessionStates_HPP

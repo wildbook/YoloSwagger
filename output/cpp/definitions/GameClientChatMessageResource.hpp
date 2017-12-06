@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_GameClientChatMessageResource_HPP
-#define SWAGGER_TYPES_GameClientChatMessageResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct GameClientChatMessageResource {
-    // 
+  struct GameClientChatMessageResource_t {
     std::string body;
-    // 
     std::string fromSummonerName;
   };
 
-  inline void to_json(nlohmann::json& j, const GameClientChatMessageResource& v) {
+  inline void to_json(nlohmann::json& j, const GameClientChatMessageResource_t& v) {
     j["body"] = v.body;
     j["fromSummonerName"] = v.fromSummonerName;
   }
 
-  inline void from_json(const nlohmann::json& j, GameClientChatMessageResource& v) {
-    v.body = j.at("body").get<std::string>;
-    v.fromSummonerName = j.at("fromSummonerName").get<std::string>;
+  inline void from_json(const nlohmann::json& j, GameClientChatMessageResource_t& v) {
+    v.body = j.at("body").get<std::string>();
+    v.fromSummonerName = j.at("fromSummonerName").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_GameClientChatMessageResource_HPP

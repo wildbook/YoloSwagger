@@ -1,91 +1,79 @@
-#ifndef SWAGGER_TYPES_LolLobbyLobbyInvitationState_HPP
-#define SWAGGER_TYPES_LolLobbyLobbyInvitationState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLobbyLobbyInvitationState {
-    // 
-    Requested = 0,
-    // 
-    Kicked = 5,
-    // 
-    Joined = 3,
-    // 
-    Pending = 1,
-    // 
-    Error = 7,
-    // 
-    OnHold = 6,
-    // 
-    Accepted = 2,
-    // 
-    Declined = 4,
+  enum class LolLobbyLobbyInvitationState_t {
+    Accepted_E = 2,
+    Declined_E = 4,
+    Error_E = 7,
+    Kicked_E = 5,
+    Pending_E = 1,
+    Requested_E = 0,
+    OnHold_E = 6,
+    Joined_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyLobbyInvitationState& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyInvitationState_t& v) {
     switch(v) {
-      case LolLobbyLobbyInvitationState::Requested:
-        j = "Requested";
-      break;
-      case LolLobbyLobbyInvitationState::Kicked:
-        j = "Kicked";
-      break;
-      case LolLobbyLobbyInvitationState::Joined:
-        j = "Joined";
-      break;
-      case LolLobbyLobbyInvitationState::Pending:
-        j = "Pending";
-      break;
-      case LolLobbyLobbyInvitationState::Error:
-        j = "Error";
-      break;
-      case LolLobbyLobbyInvitationState::OnHold:
-        j = "OnHold";
-      break;
-      case LolLobbyLobbyInvitationState::Accepted:
+      case LolLobbyLobbyInvitationState_t::Accepted_E:
         j = "Accepted";
       break;
-      case LolLobbyLobbyInvitationState::Declined:
+      case LolLobbyLobbyInvitationState_t::Declined_E:
         j = "Declined";
+      break;
+      case LolLobbyLobbyInvitationState_t::Error_E:
+        j = "Error";
+      break;
+      case LolLobbyLobbyInvitationState_t::Kicked_E:
+        j = "Kicked";
+      break;
+      case LolLobbyLobbyInvitationState_t::Pending_E:
+        j = "Pending";
+      break;
+      case LolLobbyLobbyInvitationState_t::Requested_E:
+        j = "Requested";
+      break;
+      case LolLobbyLobbyInvitationState_t::OnHold_E:
+        j = "OnHold";
+      break;
+      case LolLobbyLobbyInvitationState_t::Joined_E:
+        j = "Joined";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyLobbyInvitationState& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyInvitationState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "Requested"){
-      v = LolLobbyLobbyInvitationState::Requested;
-      return;
-    }
-    if(s == "Kicked"){
-      v = LolLobbyLobbyInvitationState::Kicked;
-      return;
-    }
-    if(s == "Joined"){
-      v = LolLobbyLobbyInvitationState::Joined;
-      return;
-    }
-    if(s == "Pending"){
-      v = LolLobbyLobbyInvitationState::Pending;
-      return;
-    }
-    if(s == "Error"){
-      v = LolLobbyLobbyInvitationState::Error;
-      return;
-    }
-    if(s == "OnHold"){
-      v = LolLobbyLobbyInvitationState::OnHold;
-      return;
-    }
     if(s == "Accepted"){
-      v = LolLobbyLobbyInvitationState::Accepted;
+      v = LolLobbyLobbyInvitationState_t::Accepted_E;
       return;
     }
     if(s == "Declined"){
-      v = LolLobbyLobbyInvitationState::Declined;
+      v = LolLobbyLobbyInvitationState_t::Declined_E;
+      return;
+    }
+    if(s == "Error"){
+      v = LolLobbyLobbyInvitationState_t::Error_E;
+      return;
+    }
+    if(s == "Kicked"){
+      v = LolLobbyLobbyInvitationState_t::Kicked_E;
+      return;
+    }
+    if(s == "Pending"){
+      v = LolLobbyLobbyInvitationState_t::Pending_E;
+      return;
+    }
+    if(s == "Requested"){
+      v = LolLobbyLobbyInvitationState_t::Requested_E;
+      return;
+    }
+    if(s == "OnHold"){
+      v = LolLobbyLobbyInvitationState_t::OnHold_E;
+      return;
+    }
+    if(s == "Joined"){
+      v = LolLobbyLobbyInvitationState_t::Joined_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyLobbyInvitationState_HPP

@@ -1,73 +1,63 @@
-#ifndef SWAGGER_TYPES_ClashRewardType_HPP
-#define SWAGGER_TYPES_ClashRewardType_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class ClashRewardType {
-    // 
-    TROPHY = 0,
-    // 
-    FRAME = 2,
-    // 
-    VP = 5,
-    // 
-    FLAG = 1,
-    // 
-    LOGO = 3,
-    // 
-    LOOT = 4,
+  enum class ClashRewardType_t {
+    LOGO_E = 3,
+    FRAME_E = 2,
+    VP_E = 5,
+    TROPHY_E = 0,
+    FLAG_E = 1,
+    LOOT_E = 4,
   };
 
-  inline void to_json(nlohmann::json& j, const ClashRewardType& v) {
+  inline void to_json(nlohmann::json& j, const ClashRewardType_t& v) {
     switch(v) {
-      case ClashRewardType::TROPHY:
-        j = "TROPHY";
-      break;
-      case ClashRewardType::FRAME:
-        j = "FRAME";
-      break;
-      case ClashRewardType::VP:
-        j = "VP";
-      break;
-      case ClashRewardType::FLAG:
-        j = "FLAG";
-      break;
-      case ClashRewardType::LOGO:
+      case ClashRewardType_t::LOGO_E:
         j = "LOGO";
       break;
-      case ClashRewardType::LOOT:
+      case ClashRewardType_t::FRAME_E:
+        j = "FRAME";
+      break;
+      case ClashRewardType_t::VP_E:
+        j = "VP";
+      break;
+      case ClashRewardType_t::TROPHY_E:
+        j = "TROPHY";
+      break;
+      case ClashRewardType_t::FLAG_E:
+        j = "FLAG";
+      break;
+      case ClashRewardType_t::LOOT_E:
         j = "LOOT";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, ClashRewardType& v) {
+  inline void from_json(const nlohmann::json& j, ClashRewardType_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "TROPHY"){
-      v = ClashRewardType::TROPHY;
+    if(s == "LOGO"){
+      v = ClashRewardType_t::LOGO_E;
       return;
     }
     if(s == "FRAME"){
-      v = ClashRewardType::FRAME;
+      v = ClashRewardType_t::FRAME_E;
       return;
     }
     if(s == "VP"){
-      v = ClashRewardType::VP;
+      v = ClashRewardType_t::VP_E;
+      return;
+    }
+    if(s == "TROPHY"){
+      v = ClashRewardType_t::TROPHY_E;
       return;
     }
     if(s == "FLAG"){
-      v = ClashRewardType::FLAG;
-      return;
-    }
-    if(s == "LOGO"){
-      v = ClashRewardType::LOGO;
+      v = ClashRewardType_t::FLAG_E;
       return;
     }
     if(s == "LOOT"){
-      v = ClashRewardType::LOOT;
+      v = ClashRewardType_t::LOOT_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_ClashRewardType_HPP

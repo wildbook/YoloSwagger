@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_RsoAuthUserInfo_HPP
-#define SWAGGER_TYPES_RsoAuthUserInfo_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct RsoAuthUserInfo {
-    // 
+  struct RsoAuthUserInfo_t {
     std::string userInfo;
   };
 
-  inline void to_json(nlohmann::json& j, const RsoAuthUserInfo& v) {
+  inline void to_json(nlohmann::json& j, const RsoAuthUserInfo_t& v) {
     j["userInfo"] = v.userInfo;
   }
 
-  inline void from_json(const nlohmann::json& j, RsoAuthUserInfo& v) {
-    v.userInfo = j.at("userInfo").get<std::string>;
+  inline void from_json(const nlohmann::json& j, RsoAuthUserInfo_t& v) {
+    v.userInfo = j.at("userInfo").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_RsoAuthUserInfo_HPP

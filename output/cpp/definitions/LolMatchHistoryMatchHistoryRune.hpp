@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryRune_HPP
-#define SWAGGER_TYPES_LolMatchHistoryMatchHistoryRune_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolMatchHistoryMatchHistoryRune {
-    // 
+  struct LolMatchHistoryMatchHistoryRune_t {
     uint16_t runeId;
-    // 
     uint16_t rank;
   };
 
-  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryRune& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryRune_t& v) {
     j["runeId"] = v.runeId;
     j["rank"] = v.rank;
   }
 
-  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryRune& v) {
-    v.runeId = j.at("runeId").get<uint16_t>;
-    v.rank = j.at("rank").get<uint16_t>;
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryRune_t& v) {
+    v.runeId = j.at("runeId").get<uint16_t>();
+    v.rank = j.at("rank").get<uint16_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolMatchHistoryMatchHistoryRune_HPP

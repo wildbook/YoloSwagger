@@ -1,56 +1,63 @@
-#ifndef SWAGGER_TYPES_LolChatChatDomainConfig_HPP
-#define SWAGGER_TYPES_LolChatChatDomainConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChatChatDomainConfig {
-    // 
-    std::string CustomGameDomainName;
-    // 
-    std::string PostGameDomainName;
-    // 
-    std::string ChampSelectDomainName;
-    // 
-    std::string PublicDomainName;
-    // 
-    std::string TeamBuilderDomainName;
-    // 
-    std::string CustomTeamDomainName;
-    // 
-    std::string PrivateDomainName;
-    // 
-    std::string RankedTeamDomainName;
-    // 
-    std::string P2PDomainName;
-    // 
-    std::string ClubDomainName;
+  struct LolChatChatDomainConfig_t {
+    std::optional<std::string> TeamBuilderDomainName;
+    std::optional<std::string> PrivateDomainName;
+    std::optional<std::string> P2PDomainName;
+    std::optional<std::string> ClubDomainName;
+    std::optional<std::string> CustomGameDomainName;
+    std::optional<std::string> PostGameDomainName;
+    std::optional<std::string> ChampSelectDomainName;
+    std::optional<std::string> CustomTeamDomainName;
+    std::optional<std::string> PublicDomainName;
+    std::optional<std::string> RankedTeamDomainName;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatChatDomainConfig& v) {
-    j["CustomGameDomainName"] = v.CustomGameDomainName;
-    j["PostGameDomainName"] = v.PostGameDomainName;
-    j["ChampSelectDomainName"] = v.ChampSelectDomainName;
-    j["PublicDomainName"] = v.PublicDomainName;
-    j["TeamBuilderDomainName"] = v.TeamBuilderDomainName;
-    j["CustomTeamDomainName"] = v.CustomTeamDomainName;
-    j["PrivateDomainName"] = v.PrivateDomainName;
-    j["RankedTeamDomainName"] = v.RankedTeamDomainName;
-    j["P2PDomainName"] = v.P2PDomainName;
-    j["ClubDomainName"] = v.ClubDomainName;
+  inline void to_json(nlohmann::json& j, const LolChatChatDomainConfig_t& v) {
+    if(v.TeamBuilderDomainName)
+      j["TeamBuilderDomainName"] = *v.TeamBuilderDomainName;
+    if(v.PrivateDomainName)
+      j["PrivateDomainName"] = *v.PrivateDomainName;
+    if(v.P2PDomainName)
+      j["P2PDomainName"] = *v.P2PDomainName;
+    if(v.ClubDomainName)
+      j["ClubDomainName"] = *v.ClubDomainName;
+    if(v.CustomGameDomainName)
+      j["CustomGameDomainName"] = *v.CustomGameDomainName;
+    if(v.PostGameDomainName)
+      j["PostGameDomainName"] = *v.PostGameDomainName;
+    if(v.ChampSelectDomainName)
+      j["ChampSelectDomainName"] = *v.ChampSelectDomainName;
+    if(v.CustomTeamDomainName)
+      j["CustomTeamDomainName"] = *v.CustomTeamDomainName;
+    if(v.PublicDomainName)
+      j["PublicDomainName"] = *v.PublicDomainName;
+    if(v.RankedTeamDomainName)
+      j["RankedTeamDomainName"] = *v.RankedTeamDomainName;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatChatDomainConfig& v) {
-    v.CustomGameDomainName = j.at("CustomGameDomainName").get<std::string>;
-    v.PostGameDomainName = j.at("PostGameDomainName").get<std::string>;
-    v.ChampSelectDomainName = j.at("ChampSelectDomainName").get<std::string>;
-    v.PublicDomainName = j.at("PublicDomainName").get<std::string>;
-    v.TeamBuilderDomainName = j.at("TeamBuilderDomainName").get<std::string>;
-    v.CustomTeamDomainName = j.at("CustomTeamDomainName").get<std::string>;
-    v.PrivateDomainName = j.at("PrivateDomainName").get<std::string>;
-    v.RankedTeamDomainName = j.at("RankedTeamDomainName").get<std::string>;
-    v.P2PDomainName = j.at("P2PDomainName").get<std::string>;
-    v.ClubDomainName = j.at("ClubDomainName").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolChatChatDomainConfig_t& v) {
+    if(auto it = j.find("TeamBuilderDomainName"); it != j.end() !it->is_null())
+      v.TeamBuilderDomainName = it->get<std::string>();
+    if(auto it = j.find("PrivateDomainName"); it != j.end() !it->is_null())
+      v.PrivateDomainName = it->get<std::string>();
+    if(auto it = j.find("P2PDomainName"); it != j.end() !it->is_null())
+      v.P2PDomainName = it->get<std::string>();
+    if(auto it = j.find("ClubDomainName"); it != j.end() !it->is_null())
+      v.ClubDomainName = it->get<std::string>();
+    if(auto it = j.find("CustomGameDomainName"); it != j.end() !it->is_null())
+      v.CustomGameDomainName = it->get<std::string>();
+    if(auto it = j.find("PostGameDomainName"); it != j.end() !it->is_null())
+      v.PostGameDomainName = it->get<std::string>();
+    if(auto it = j.find("ChampSelectDomainName"); it != j.end() !it->is_null())
+      v.ChampSelectDomainName = it->get<std::string>();
+    if(auto it = j.find("CustomTeamDomainName"); it != j.end() !it->is_null())
+      v.CustomTeamDomainName = it->get<std::string>();
+    if(auto it = j.find("PublicDomainName"); it != j.end() !it->is_null())
+      v.PublicDomainName = it->get<std::string>();
+    if(auto it = j.find("RankedTeamDomainName"); it != j.end() !it->is_null())
+      v.RankedTeamDomainName = it->get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatChatDomainConfig_HPP

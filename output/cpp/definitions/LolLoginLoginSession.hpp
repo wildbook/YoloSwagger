@@ -1,67 +1,58 @@
-#ifndef SWAGGER_TYPES_LolLoginLoginSession_HPP
-#define SWAGGER_TYPES_LolLoginLoginSession_HPP
+#pragma once
 #include <json.hpp>
-#include "LolLoginLoginError.hpp"
-#include "LolLoginLoginQueue.hpp"
+#include <optional>
 #include "LolLoginLoginSessionStates.hpp"
+#include "LolLoginLoginQueue.hpp"
+#include "LolLoginLoginError.hpp"
 namespace leagueapi {
-  // 
-  struct LolLoginLoginSession {
-    // 
-    std::string username;
-    // 
-    std::string userAuthToken;
-    // 
-    std::string idToken;
-    // 
-    LolLoginLoginSessionStates state;
-    // 
-    bool connected;
-    // 
+  struct LolLoginLoginSession_t {
     nlohmann::json gasToken;
-    // 
-    LolLoginLoginError error;
-    // 
-    LolLoginLoginQueue queueStatus;
-    // 
+    LolLoginLoginSessionStates_t state;
+    std::optional<LolLoginLoginQueue_t> queueStatus;
     std::string puuid;
-    // 
-    uint64_t summonerId;
-    // 
-    bool isNewPlayer;
-    // 
     uint64_t accountId;
+    bool connected;
+    bool isNewPlayer;
+    std::string idToken;
+    std::optional<LolLoginLoginError_t> error;
+    std::string username;
+    std::optional<uint64_t> summonerId;
+    std::string userAuthToken;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLoginLoginSession& v) {
-    j["username"] = v.username;
-    j["userAuthToken"] = v.userAuthToken;
-    j["idToken"] = v.idToken;
-    j["state"] = v.state;
-    j["connected"] = v.connected;
+  inline void to_json(nlohmann::json& j, const LolLoginLoginSession_t& v) {
     j["gasToken"] = v.gasToken;
-    j["error"] = v.error;
-    j["queueStatus"] = v.queueStatus;
+    j["state"] = v.state;
+    if(v.queueStatus)
+      j["queueStatus"] = *v.queueStatus;
     j["puuid"] = v.puuid;
-    j["summonerId"] = v.summonerId;
-    j["isNewPlayer"] = v.isNewPlayer;
     j["accountId"] = v.accountId;
+    j["connected"] = v.connected;
+    j["isNewPlayer"] = v.isNewPlayer;
+    j["idToken"] = v.idToken;
+    if(v.error)
+      j["error"] = *v.error;
+    j["username"] = v.username;
+    if(v.summonerId)
+      j["summonerId"] = *v.summonerId;
+    j["userAuthToken"] = v.userAuthToken;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLoginLoginSession& v) {
-    v.username = j.at("username").get<std::string>;
-    v.userAuthToken = j.at("userAuthToken").get<std::string>;
-    v.idToken = j.at("idToken").get<std::string>;
-    v.state = j.at("state").get<LolLoginLoginSessionStates>;
-    v.connected = j.at("connected").get<bool>;
-    v.gasToken = j.at("gasToken").get<nlohmann::json>;
-    v.error = j.at("error").get<LolLoginLoginError>;
-    v.queueStatus = j.at("queueStatus").get<LolLoginLoginQueue>;
-    v.puuid = j.at("puuid").get<std::string>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
-    v.isNewPlayer = j.at("isNewPlayer").get<bool>;
-    v.accountId = j.at("accountId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolLoginLoginSession_t& v) {
+    v.gasToken = j.at("gasToken").get<nlohmann::json>();
+    v.state = j.at("state").get<LolLoginLoginSessionStates_t>();
+    if(auto it = j.find("queueStatus"); it != j.end() !it->is_null())
+      v.queueStatus = it->get<LolLoginLoginQueue_t>();
+    v.puuid = j.at("puuid").get<std::string>();
+    v.accountId = j.at("accountId").get<uint64_t>();
+    v.connected = j.at("connected").get<bool>();
+    v.isNewPlayer = j.at("isNewPlayer").get<bool>();
+    v.idToken = j.at("idToken").get<std::string>();
+    if(auto it = j.find("error"); it != j.end() !it->is_null())
+      v.error = it->get<LolLoginLoginError_t>();
+    v.username = j.at("username").get<std::string>();
+    if(auto it = j.find("summonerId"); it != j.end() !it->is_null())
+      v.summonerId = it->get<uint64_t>();
+    v.userAuthToken = j.at("userAuthToken").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLoginLoginSession_HPP

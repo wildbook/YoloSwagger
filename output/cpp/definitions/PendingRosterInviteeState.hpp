@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_PendingRosterInviteeState_HPP
-#define SWAGGER_TYPES_PendingRosterInviteeState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class PendingRosterInviteeState {
-    // 
-    SUGGESTED = 0,
-    // 
-    PENDING = 1,
-    // 
-    DECLINED = 2,
-    // 
-    REVOKED = 3,
+  enum class PendingRosterInviteeState_t {
+    SUGGESTED_E = 0,
+    DECLINED_E = 2,
+    PENDING_E = 1,
+    REVOKED_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const PendingRosterInviteeState& v) {
+  inline void to_json(nlohmann::json& j, const PendingRosterInviteeState_t& v) {
     switch(v) {
-      case PendingRosterInviteeState::SUGGESTED:
+      case PendingRosterInviteeState_t::SUGGESTED_E:
         j = "SUGGESTED";
       break;
-      case PendingRosterInviteeState::PENDING:
-        j = "PENDING";
-      break;
-      case PendingRosterInviteeState::DECLINED:
+      case PendingRosterInviteeState_t::DECLINED_E:
         j = "DECLINED";
       break;
-      case PendingRosterInviteeState::REVOKED:
+      case PendingRosterInviteeState_t::PENDING_E:
+        j = "PENDING";
+      break;
+      case PendingRosterInviteeState_t::REVOKED_E:
         j = "REVOKED";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, PendingRosterInviteeState& v) {
+  inline void from_json(const nlohmann::json& j, PendingRosterInviteeState_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "SUGGESTED"){
-      v = PendingRosterInviteeState::SUGGESTED;
-      return;
-    }
-    if(s == "PENDING"){
-      v = PendingRosterInviteeState::PENDING;
+      v = PendingRosterInviteeState_t::SUGGESTED_E;
       return;
     }
     if(s == "DECLINED"){
-      v = PendingRosterInviteeState::DECLINED;
+      v = PendingRosterInviteeState_t::DECLINED_E;
+      return;
+    }
+    if(s == "PENDING"){
+      v = PendingRosterInviteeState_t::PENDING_E;
       return;
     }
     if(s == "REVOKED"){
-      v = PendingRosterInviteeState::REVOKED;
+      v = PendingRosterInviteeState_t::REVOKED_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_PendingRosterInviteeState_HPP

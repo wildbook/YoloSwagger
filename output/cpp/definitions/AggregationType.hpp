@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_AggregationType_HPP
-#define SWAGGER_TYPES_AggregationType_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class AggregationType {
-    // 
-    average = 2,
-    // 
-    none = 0,
-    // 
-    sum = 1,
+  enum class AggregationType_t {
+    none_E = 0,
+    average_E = 2,
+    sum_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const AggregationType& v) {
+  inline void to_json(nlohmann::json& j, const AggregationType_t& v) {
     switch(v) {
-      case AggregationType::average:
-        j = "average";
-      break;
-      case AggregationType::none:
+      case AggregationType_t::none_E:
         j = "none";
       break;
-      case AggregationType::sum:
+      case AggregationType_t::average_E:
+        j = "average";
+      break;
+      case AggregationType_t::sum_E:
         j = "sum";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, AggregationType& v) {
+  inline void from_json(const nlohmann::json& j, AggregationType_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "average"){
-      v = AggregationType::average;
+    if(s == "none"){
+      v = AggregationType_t::none_E;
       return;
     }
-    if(s == "none"){
-      v = AggregationType::none;
+    if(s == "average"){
+      v = AggregationType_t::average_E;
       return;
     }
     if(s == "sum"){
-      v = AggregationType::sum;
+      v = AggregationType_t::sum_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_AggregationType_HPP

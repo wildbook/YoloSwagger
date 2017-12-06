@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolPurchaseWidgetLoginSessionStates_HPP
-#define SWAGGER_TYPES_LolPurchaseWidgetLoginSessionStates_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolPurchaseWidgetLoginSessionStates {
-    // 
-    LOGGING_OUT = 2,
-    // 
-    IN_PROGRESS = 0,
-    // 
-    SUCCEEDED = 1,
-    // 
-    ERROR = 3,
+  enum class LolPurchaseWidgetLoginSessionStates_t {
+    LOGGING_OUT_E = 2,
+    SUCCEEDED_E = 1,
+    IN_PROGRESS_E = 0,
+    ERROR_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolPurchaseWidgetLoginSessionStates& v) {
+  inline void to_json(nlohmann::json& j, const LolPurchaseWidgetLoginSessionStates_t& v) {
     switch(v) {
-      case LolPurchaseWidgetLoginSessionStates::LOGGING_OUT:
+      case LolPurchaseWidgetLoginSessionStates_t::LOGGING_OUT_E:
         j = "LOGGING_OUT";
       break;
-      case LolPurchaseWidgetLoginSessionStates::IN_PROGRESS:
-        j = "IN_PROGRESS";
-      break;
-      case LolPurchaseWidgetLoginSessionStates::SUCCEEDED:
+      case LolPurchaseWidgetLoginSessionStates_t::SUCCEEDED_E:
         j = "SUCCEEDED";
       break;
-      case LolPurchaseWidgetLoginSessionStates::ERROR:
+      case LolPurchaseWidgetLoginSessionStates_t::IN_PROGRESS_E:
+        j = "IN_PROGRESS";
+      break;
+      case LolPurchaseWidgetLoginSessionStates_t::ERROR_E:
         j = "ERROR";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolPurchaseWidgetLoginSessionStates& v) {
+  inline void from_json(const nlohmann::json& j, LolPurchaseWidgetLoginSessionStates_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "LOGGING_OUT"){
-      v = LolPurchaseWidgetLoginSessionStates::LOGGING_OUT;
-      return;
-    }
-    if(s == "IN_PROGRESS"){
-      v = LolPurchaseWidgetLoginSessionStates::IN_PROGRESS;
+      v = LolPurchaseWidgetLoginSessionStates_t::LOGGING_OUT_E;
       return;
     }
     if(s == "SUCCEEDED"){
-      v = LolPurchaseWidgetLoginSessionStates::SUCCEEDED;
+      v = LolPurchaseWidgetLoginSessionStates_t::SUCCEEDED_E;
+      return;
+    }
+    if(s == "IN_PROGRESS"){
+      v = LolPurchaseWidgetLoginSessionStates_t::IN_PROGRESS_E;
       return;
     }
     if(s == "ERROR"){
-      v = LolPurchaseWidgetLoginSessionStates::ERROR;
+      v = LolPurchaseWidgetLoginSessionStates_t::ERROR_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolPurchaseWidgetLoginSessionStates_HPP

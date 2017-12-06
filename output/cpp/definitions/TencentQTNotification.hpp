@@ -1,32 +1,25 @@
-#ifndef SWAGGER_TYPES_TencentQTNotification_HPP
-#define SWAGGER_TYPES_TencentQTNotification_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct TencentQTNotification {
-    // 
+  struct TencentQTNotification_t {
     int64_t timestamp;
-    // 
-    std::string state;
-    // 
     nlohmann::json data;
-    // 
     std::string updatedBy;
+    std::string state;
   };
 
-  inline void to_json(nlohmann::json& j, const TencentQTNotification& v) {
+  inline void to_json(nlohmann::json& j, const TencentQTNotification_t& v) {
     j["timestamp"] = v.timestamp;
-    j["state"] = v.state;
     j["data"] = v.data;
     j["updatedBy"] = v.updatedBy;
+    j["state"] = v.state;
   }
 
-  inline void from_json(const nlohmann::json& j, TencentQTNotification& v) {
-    v.timestamp = j.at("timestamp").get<int64_t>;
-    v.state = j.at("state").get<std::string>;
-    v.data = j.at("data").get<nlohmann::json>;
-    v.updatedBy = j.at("updatedBy").get<std::string>;
+  inline void from_json(const nlohmann::json& j, TencentQTNotification_t& v) {
+    v.timestamp = j.at("timestamp").get<int64_t>();
+    v.data = j.at("data").get<nlohmann::json>();
+    v.updatedBy = j.at("updatedBy").get<std::string>();
+    v.state = j.at("state").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_TencentQTNotification_HPP

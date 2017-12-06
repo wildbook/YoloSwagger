@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolClubsPublicSessionResource_HPP
-#define SWAGGER_TYPES_LolClubsPublicSessionResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolClubsPublicSessionResource {
-    // 
-    uint32_t sessionExpire;
-    // 
+  struct LolClubsPublicSessionResource_t {
     std::string sessionState;
+    uint32_t sessionExpire;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClubsPublicSessionResource& v) {
-    j["sessionExpire"] = v.sessionExpire;
+  inline void to_json(nlohmann::json& j, const LolClubsPublicSessionResource_t& v) {
     j["sessionState"] = v.sessionState;
+    j["sessionExpire"] = v.sessionExpire;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClubsPublicSessionResource& v) {
-    v.sessionExpire = j.at("sessionExpire").get<uint32_t>;
-    v.sessionState = j.at("sessionState").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolClubsPublicSessionResource_t& v) {
+    v.sessionState = j.at("sessionState").get<std::string>();
+    v.sessionExpire = j.at("sessionExpire").get<uint32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClubsPublicSessionResource_HPP

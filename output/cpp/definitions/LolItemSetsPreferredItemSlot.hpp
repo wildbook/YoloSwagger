@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolItemSetsPreferredItemSlot_HPP
-#define SWAGGER_TYPES_LolItemSetsPreferredItemSlot_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolItemSetsPreferredItemSlot {
-    // 
+  struct LolItemSetsPreferredItemSlot_t {
     std::string id;
-    // 
     int16_t preferredItemSlot;
   };
 
-  inline void to_json(nlohmann::json& j, const LolItemSetsPreferredItemSlot& v) {
+  inline void to_json(nlohmann::json& j, const LolItemSetsPreferredItemSlot_t& v) {
     j["id"] = v.id;
     j["preferredItemSlot"] = v.preferredItemSlot;
   }
 
-  inline void from_json(const nlohmann::json& j, LolItemSetsPreferredItemSlot& v) {
-    v.id = j.at("id").get<std::string>;
-    v.preferredItemSlot = j.at("preferredItemSlot").get<int16_t>;
+  inline void from_json(const nlohmann::json& j, LolItemSetsPreferredItemSlot_t& v) {
+    v.id = j.at("id").get<std::string>();
+    v.preferredItemSlot = j.at("preferredItemSlot").get<int16_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolItemSetsPreferredItemSlot_HPP

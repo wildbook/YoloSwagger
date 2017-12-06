@@ -1,48 +1,38 @@
-#ifndef SWAGGER_TYPES_RosterDynamicStateDTO_HPP
-#define SWAGGER_TYPES_RosterDynamicStateDTO_HPP
+#pragma once
 #include <json.hpp>
-#include "PhaseRosterSubDTO.hpp"
+#include <optional>
+#include "BuybackMember.hpp"
 #include "TicketOfferDTO.hpp"
 #include "RosterWithdraw.hpp"
-#include "BuybackMember.hpp"
+#include "PhaseRosterSubDTO.hpp"
 namespace leagueapi {
-  // 
-  struct RosterDynamicStateDTO {
-    // 
-    std::vector<PhaseRosterSubDTO> phaseRosterSubs;
-    // 
-    std::vector<BuybackMember> members;
-    // 
-    RosterWithdraw withdraw;
-    // 
-    int64_t rosterId;
-    // 
+  struct RosterDynamicStateDTO_t {
+    std::vector<PhaseRosterSubDTO_t> phaseRosterSubs;
     int64_t tournamentId;
-    // 
-    std::vector<TicketOfferDTO> ticketOffers;
-    // 
+    int64_t rosterId;
+    RosterWithdraw_t withdraw;
     std::vector<uint64_t> phaseCheckinStates;
+    std::vector<TicketOfferDTO_t> ticketOffers;
+    std::vector<BuybackMember_t> members;
   };
 
-  inline void to_json(nlohmann::json& j, const RosterDynamicStateDTO& v) {
+  inline void to_json(nlohmann::json& j, const RosterDynamicStateDTO_t& v) {
     j["phaseRosterSubs"] = v.phaseRosterSubs;
-    j["members"] = v.members;
-    j["withdraw"] = v.withdraw;
-    j["rosterId"] = v.rosterId;
     j["tournamentId"] = v.tournamentId;
-    j["ticketOffers"] = v.ticketOffers;
+    j["rosterId"] = v.rosterId;
+    j["withdraw"] = v.withdraw;
     j["phaseCheckinStates"] = v.phaseCheckinStates;
+    j["ticketOffers"] = v.ticketOffers;
+    j["members"] = v.members;
   }
 
-  inline void from_json(const nlohmann::json& j, RosterDynamicStateDTO& v) {
-    v.phaseRosterSubs = j.at("phaseRosterSubs").get<std::vector<PhaseRosterSubDTO>>;
-    v.members = j.at("members").get<std::vector<BuybackMember>>;
-    v.withdraw = j.at("withdraw").get<RosterWithdraw>;
-    v.rosterId = j.at("rosterId").get<int64_t>;
-    v.tournamentId = j.at("tournamentId").get<int64_t>;
-    v.ticketOffers = j.at("ticketOffers").get<std::vector<TicketOfferDTO>>;
-    v.phaseCheckinStates = j.at("phaseCheckinStates").get<std::vector<uint64_t>>;
+  inline void from_json(const nlohmann::json& j, RosterDynamicStateDTO_t& v) {
+    v.phaseRosterSubs = j.at("phaseRosterSubs").get<std::vector<PhaseRosterSubDTO_t>>();
+    v.tournamentId = j.at("tournamentId").get<int64_t>();
+    v.rosterId = j.at("rosterId").get<int64_t>();
+    v.withdraw = j.at("withdraw").get<RosterWithdraw_t>();
+    v.phaseCheckinStates = j.at("phaseCheckinStates").get<std::vector<uint64_t>>();
+    v.ticketOffers = j.at("ticketOffers").get<std::vector<TicketOfferDTO_t>>();
+    v.members = j.at("members").get<std::vector<BuybackMember_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_RosterDynamicStateDTO_HPP

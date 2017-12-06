@@ -1,42 +1,33 @@
-#ifndef SWAGGER_TYPES_LolClashClashConfig_HPP
-#define SWAGGER_TYPES_LolClashClashConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolClashClashVisibility.hpp"
 #include "LolClashClashState.hpp"
 namespace leagueapi {
-  // 
-  struct LolClashClashConfig {
-    // 
+  struct LolClashClashConfig_t {
     std::string DarkModeEntitlement;
-    // 
-    LolClashClashState EnabledState;
-    // 
-    LolClashClashVisibility Visibility;
-    // 
-    bool UseIndividualEntitlement;
-    // 
-    bool IsPlaymodeRestrictionEnabled;
-    // 
+    LolClashClashVisibility_t Visibility;
     std::string IconConfig;
+    bool IsPlaymodeRestrictionEnabled;
+    LolClashClashState_t EnabledState;
+    bool UseIndividualEntitlement;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashClashConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolClashClashConfig_t& v) {
     j["DarkModeEntitlement"] = v.DarkModeEntitlement;
-    j["EnabledState"] = v.EnabledState;
     j["Visibility"] = v.Visibility;
-    j["UseIndividualEntitlement"] = v.UseIndividualEntitlement;
-    j["IsPlaymodeRestrictionEnabled"] = v.IsPlaymodeRestrictionEnabled;
     j["IconConfig"] = v.IconConfig;
+    j["IsPlaymodeRestrictionEnabled"] = v.IsPlaymodeRestrictionEnabled;
+    j["EnabledState"] = v.EnabledState;
+    j["UseIndividualEntitlement"] = v.UseIndividualEntitlement;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashClashConfig& v) {
-    v.DarkModeEntitlement = j.at("DarkModeEntitlement").get<std::string>;
-    v.EnabledState = j.at("EnabledState").get<LolClashClashState>;
-    v.Visibility = j.at("Visibility").get<LolClashClashVisibility>;
-    v.UseIndividualEntitlement = j.at("UseIndividualEntitlement").get<bool>;
-    v.IsPlaymodeRestrictionEnabled = j.at("IsPlaymodeRestrictionEnabled").get<bool>;
-    v.IconConfig = j.at("IconConfig").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolClashClashConfig_t& v) {
+    v.DarkModeEntitlement = j.at("DarkModeEntitlement").get<std::string>();
+    v.Visibility = j.at("Visibility").get<LolClashClashVisibility_t>();
+    v.IconConfig = j.at("IconConfig").get<std::string>();
+    v.IsPlaymodeRestrictionEnabled = j.at("IsPlaymodeRestrictionEnabled").get<bool>();
+    v.EnabledState = j.at("EnabledState").get<LolClashClashState_t>();
+    v.UseIndividualEntitlement = j.at("UseIndividualEntitlement").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashClashConfig_HPP

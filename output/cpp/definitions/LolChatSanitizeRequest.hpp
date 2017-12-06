@@ -1,32 +1,31 @@
-#ifndef SWAGGER_TYPES_LolChatSanitizeRequest_HPP
-#define SWAGGER_TYPES_LolChatSanitizeRequest_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChatSanitizeRequest {
-    // 
+  struct LolChatSanitizeRequest_t {
+    std::optional<bool> aggressiveScan;
+    std::optional<uint32_t> level;
     std::vector<std::string> texts;
-    // 
-    bool aggressiveScan;
-    // 
-    bool removeDisallowedChars;
-    // 
-    uint32_t level;
+    std::optional<bool> removeDisallowedChars;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatSanitizeRequest& v) {
+  inline void to_json(nlohmann::json& j, const LolChatSanitizeRequest_t& v) {
+    if(v.aggressiveScan)
+      j["aggressiveScan"] = *v.aggressiveScan;
+    if(v.level)
+      j["level"] = *v.level;
     j["texts"] = v.texts;
-    j["aggressiveScan"] = v.aggressiveScan;
-    j["removeDisallowedChars"] = v.removeDisallowedChars;
-    j["level"] = v.level;
+    if(v.removeDisallowedChars)
+      j["removeDisallowedChars"] = *v.removeDisallowedChars;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatSanitizeRequest& v) {
-    v.texts = j.at("texts").get<std::vector<std::string>>;
-    v.aggressiveScan = j.at("aggressiveScan").get<bool>;
-    v.removeDisallowedChars = j.at("removeDisallowedChars").get<bool>;
-    v.level = j.at("level").get<uint32_t>;
+  inline void from_json(const nlohmann::json& j, LolChatSanitizeRequest_t& v) {
+    if(auto it = j.find("aggressiveScan"); it != j.end() !it->is_null())
+      v.aggressiveScan = it->get<bool>();
+    if(auto it = j.find("level"); it != j.end() !it->is_null())
+      v.level = it->get<uint32_t>();
+    v.texts = j.at("texts").get<std::vector<std::string>>();
+    if(auto it = j.find("removeDisallowedChars"); it != j.end() !it->is_null())
+      v.removeDisallowedChars = it->get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatSanitizeRequest_HPP

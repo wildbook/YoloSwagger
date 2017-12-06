@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_PluginThreadingModel_HPP
-#define SWAGGER_TYPES_PluginThreadingModel_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class PluginThreadingModel {
-    // 
-    concurrent = 3,
-    // 
-    dedicated = 1,
-    // 
-    sequential = 2,
-    // 
-    parallel = 4,
+  enum class PluginThreadingModel_t {
+    dedicated_E = 1,
+    parallel_E = 4,
+    concurrent_E = 3,
+    sequential_E = 2,
   };
 
-  inline void to_json(nlohmann::json& j, const PluginThreadingModel& v) {
+  inline void to_json(nlohmann::json& j, const PluginThreadingModel_t& v) {
     switch(v) {
-      case PluginThreadingModel::concurrent:
-        j = "concurrent";
-      break;
-      case PluginThreadingModel::dedicated:
+      case PluginThreadingModel_t::dedicated_E:
         j = "dedicated";
       break;
-      case PluginThreadingModel::sequential:
-        j = "sequential";
-      break;
-      case PluginThreadingModel::parallel:
+      case PluginThreadingModel_t::parallel_E:
         j = "parallel";
+      break;
+      case PluginThreadingModel_t::concurrent_E:
+        j = "concurrent";
+      break;
+      case PluginThreadingModel_t::sequential_E:
+        j = "sequential";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, PluginThreadingModel& v) {
+  inline void from_json(const nlohmann::json& j, PluginThreadingModel_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "concurrent"){
-      v = PluginThreadingModel::concurrent;
-      return;
-    }
     if(s == "dedicated"){
-      v = PluginThreadingModel::dedicated;
-      return;
-    }
-    if(s == "sequential"){
-      v = PluginThreadingModel::sequential;
+      v = PluginThreadingModel_t::dedicated_E;
       return;
     }
     if(s == "parallel"){
-      v = PluginThreadingModel::parallel;
+      v = PluginThreadingModel_t::parallel_E;
+      return;
+    }
+    if(s == "concurrent"){
+      v = PluginThreadingModel_t::concurrent_E;
+      return;
+    }
+    if(s == "sequential"){
+      v = PluginThreadingModel_t::sequential_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_PluginThreadingModel_HPP

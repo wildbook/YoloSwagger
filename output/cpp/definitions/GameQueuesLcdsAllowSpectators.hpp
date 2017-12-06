@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_GameQueuesLcdsAllowSpectators_HPP
-#define SWAGGER_TYPES_GameQueuesLcdsAllowSpectators_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class GameQueuesLcdsAllowSpectators {
-    // 
-    ALL = 3,
-    // 
-    NONE = 0,
-    // 
-    DROPINONLY = 2,
-    // 
-    LOBBYONLY = 1,
+  enum class GameQueuesLcdsAllowSpectators_t {
+    NONE_E = 0,
+    ALL_E = 3,
+    DROPINONLY_E = 2,
+    LOBBYONLY_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const GameQueuesLcdsAllowSpectators& v) {
+  inline void to_json(nlohmann::json& j, const GameQueuesLcdsAllowSpectators_t& v) {
     switch(v) {
-      case GameQueuesLcdsAllowSpectators::ALL:
-        j = "ALL";
-      break;
-      case GameQueuesLcdsAllowSpectators::NONE:
+      case GameQueuesLcdsAllowSpectators_t::NONE_E:
         j = "NONE";
       break;
-      case GameQueuesLcdsAllowSpectators::DROPINONLY:
+      case GameQueuesLcdsAllowSpectators_t::ALL_E:
+        j = "ALL";
+      break;
+      case GameQueuesLcdsAllowSpectators_t::DROPINONLY_E:
         j = "DROPINONLY";
       break;
-      case GameQueuesLcdsAllowSpectators::LOBBYONLY:
+      case GameQueuesLcdsAllowSpectators_t::LOBBYONLY_E:
         j = "LOBBYONLY";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, GameQueuesLcdsAllowSpectators& v) {
+  inline void from_json(const nlohmann::json& j, GameQueuesLcdsAllowSpectators_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "ALL"){
-      v = GameQueuesLcdsAllowSpectators::ALL;
+    if(s == "NONE"){
+      v = GameQueuesLcdsAllowSpectators_t::NONE_E;
       return;
     }
-    if(s == "NONE"){
-      v = GameQueuesLcdsAllowSpectators::NONE;
+    if(s == "ALL"){
+      v = GameQueuesLcdsAllowSpectators_t::ALL_E;
       return;
     }
     if(s == "DROPINONLY"){
-      v = GameQueuesLcdsAllowSpectators::DROPINONLY;
+      v = GameQueuesLcdsAllowSpectators_t::DROPINONLY_E;
       return;
     }
     if(s == "LOBBYONLY"){
-      v = GameQueuesLcdsAllowSpectators::LOBBYONLY;
+      v = GameQueuesLcdsAllowSpectators_t::LOBBYONLY_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_GameQueuesLcdsAllowSpectators_HPP

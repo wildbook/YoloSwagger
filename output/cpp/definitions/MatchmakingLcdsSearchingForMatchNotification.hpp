@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_MatchmakingLcdsSearchingForMatchNotification_HPP
-#define SWAGGER_TYPES_MatchmakingLcdsSearchingForMatchNotification_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "MatchmakingLcdsQueueInfo.hpp"
 namespace leagueapi {
-  // 
-  struct MatchmakingLcdsSearchingForMatchNotification {
-    // 
-    std::vector<MatchmakingLcdsQueueInfo> joinedQueues;
-    // 
+  struct MatchmakingLcdsSearchingForMatchNotification_t {
+    std::vector<MatchmakingLcdsQueueInfo_t> joinedQueues;
     std::vector<nlohmann::json> playerJoinFailures;
   };
 
-  inline void to_json(nlohmann::json& j, const MatchmakingLcdsSearchingForMatchNotification& v) {
+  inline void to_json(nlohmann::json& j, const MatchmakingLcdsSearchingForMatchNotification_t& v) {
     j["joinedQueues"] = v.joinedQueues;
     j["playerJoinFailures"] = v.playerJoinFailures;
   }
 
-  inline void from_json(const nlohmann::json& j, MatchmakingLcdsSearchingForMatchNotification& v) {
-    v.joinedQueues = j.at("joinedQueues").get<std::vector<MatchmakingLcdsQueueInfo>>;
-    v.playerJoinFailures = j.at("playerJoinFailures").get<std::vector<nlohmann::json>>;
+  inline void from_json(const nlohmann::json& j, MatchmakingLcdsSearchingForMatchNotification_t& v) {
+    v.joinedQueues = j.at("joinedQueues").get<std::vector<MatchmakingLcdsQueueInfo_t>>();
+    v.playerJoinFailures = j.at("playerJoinFailures").get<std::vector<nlohmann::json>>();
   }
-
 }
-#endif // SWAGGER_TYPES_MatchmakingLcdsSearchingForMatchNotification_HPP

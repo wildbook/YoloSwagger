@@ -1,64 +1,55 @@
-#ifndef SWAGGER_TYPES_LeaguesLcdsLeagueRank_HPP
-#define SWAGGER_TYPES_LeaguesLcdsLeagueRank_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LeaguesLcdsLeagueRank {
-    // 
-    I = 0,
-    // 
-    II = 1,
-    // 
-    V = 4,
-    // 
-    III = 2,
-    // 
-    IV = 3,
+  enum class LeaguesLcdsLeagueRank_t {
+    III_E = 2,
+    IV_E = 3,
+    II_E = 1,
+    V_E = 4,
+    I_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const LeaguesLcdsLeagueRank& v) {
+  inline void to_json(nlohmann::json& j, const LeaguesLcdsLeagueRank_t& v) {
     switch(v) {
-      case LeaguesLcdsLeagueRank::I:
-        j = "I";
-      break;
-      case LeaguesLcdsLeagueRank::II:
-        j = "II";
-      break;
-      case LeaguesLcdsLeagueRank::V:
-        j = "V";
-      break;
-      case LeaguesLcdsLeagueRank::III:
+      case LeaguesLcdsLeagueRank_t::III_E:
         j = "III";
       break;
-      case LeaguesLcdsLeagueRank::IV:
+      case LeaguesLcdsLeagueRank_t::IV_E:
         j = "IV";
+      break;
+      case LeaguesLcdsLeagueRank_t::II_E:
+        j = "II";
+      break;
+      case LeaguesLcdsLeagueRank_t::V_E:
+        j = "V";
+      break;
+      case LeaguesLcdsLeagueRank_t::I_E:
+        j = "I";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LeaguesLcdsLeagueRank& v) {
+  inline void from_json(const nlohmann::json& j, LeaguesLcdsLeagueRank_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "I"){
-      v = LeaguesLcdsLeagueRank::I;
-      return;
-    }
-    if(s == "II"){
-      v = LeaguesLcdsLeagueRank::II;
-      return;
-    }
-    if(s == "V"){
-      v = LeaguesLcdsLeagueRank::V;
-      return;
-    }
     if(s == "III"){
-      v = LeaguesLcdsLeagueRank::III;
+      v = LeaguesLcdsLeagueRank_t::III_E;
       return;
     }
     if(s == "IV"){
-      v = LeaguesLcdsLeagueRank::IV;
+      v = LeaguesLcdsLeagueRank_t::IV_E;
+      return;
+    }
+    if(s == "II"){
+      v = LeaguesLcdsLeagueRank_t::II_E;
+      return;
+    }
+    if(s == "V"){
+      v = LeaguesLcdsLeagueRank_t::V_E;
+      return;
+    }
+    if(s == "I"){
+      v = LeaguesLcdsLeagueRank_t::I_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LeaguesLcdsLeagueRank_HPP

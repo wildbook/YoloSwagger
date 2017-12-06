@@ -1,48 +1,37 @@
-#ifndef SWAGGER_TYPES_LolChampSelectChampSelectTimer_HPP
-#define SWAGGER_TYPES_LolChampSelectChampSelectTimer_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChampSelectChampSelectTimer {
-    // 
-    bool isInfinite;
-    // 
-    int64_t totalTimeInPhase;
-    // 
-    int32_t timeLeftInPhaseInSec;
-    // 
-    int64_t adjustedTimeLeftInPhase;
-    // 
-    uint64_t internalNowInEpochMs;
-    // 
-    std::string phase;
-    // 
+  struct LolChampSelectChampSelectTimer_t {
     int32_t adjustedTimeLeftInPhaseInSec;
-    // 
+    int32_t timeLeftInPhaseInSec;
     int64_t timeLeftInPhase;
+    bool isInfinite;
+    int64_t totalTimeInPhase;
+    int64_t adjustedTimeLeftInPhase;
+    std::string phase;
+    uint64_t internalNowInEpochMs;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampSelectChampSelectTimer& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectChampSelectTimer_t& v) {
+    j["adjustedTimeLeftInPhaseInSec"] = v.adjustedTimeLeftInPhaseInSec;
+    j["timeLeftInPhaseInSec"] = v.timeLeftInPhaseInSec;
+    j["timeLeftInPhase"] = v.timeLeftInPhase;
     j["isInfinite"] = v.isInfinite;
     j["totalTimeInPhase"] = v.totalTimeInPhase;
-    j["timeLeftInPhaseInSec"] = v.timeLeftInPhaseInSec;
     j["adjustedTimeLeftInPhase"] = v.adjustedTimeLeftInPhase;
-    j["internalNowInEpochMs"] = v.internalNowInEpochMs;
     j["phase"] = v.phase;
-    j["adjustedTimeLeftInPhaseInSec"] = v.adjustedTimeLeftInPhaseInSec;
-    j["timeLeftInPhase"] = v.timeLeftInPhase;
+    j["internalNowInEpochMs"] = v.internalNowInEpochMs;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampSelectChampSelectTimer& v) {
-    v.isInfinite = j.at("isInfinite").get<bool>;
-    v.totalTimeInPhase = j.at("totalTimeInPhase").get<int64_t>;
-    v.timeLeftInPhaseInSec = j.at("timeLeftInPhaseInSec").get<int32_t>;
-    v.adjustedTimeLeftInPhase = j.at("adjustedTimeLeftInPhase").get<int64_t>;
-    v.internalNowInEpochMs = j.at("internalNowInEpochMs").get<uint64_t>;
-    v.phase = j.at("phase").get<std::string>;
-    v.adjustedTimeLeftInPhaseInSec = j.at("adjustedTimeLeftInPhaseInSec").get<int32_t>;
-    v.timeLeftInPhase = j.at("timeLeftInPhase").get<int64_t>;
+  inline void from_json(const nlohmann::json& j, LolChampSelectChampSelectTimer_t& v) {
+    v.adjustedTimeLeftInPhaseInSec = j.at("adjustedTimeLeftInPhaseInSec").get<int32_t>();
+    v.timeLeftInPhaseInSec = j.at("timeLeftInPhaseInSec").get<int32_t>();
+    v.timeLeftInPhase = j.at("timeLeftInPhase").get<int64_t>();
+    v.isInfinite = j.at("isInfinite").get<bool>();
+    v.totalTimeInPhase = j.at("totalTimeInPhase").get<int64_t>();
+    v.adjustedTimeLeftInPhase = j.at("adjustedTimeLeftInPhase").get<int64_t>();
+    v.phase = j.at("phase").get<std::string>();
+    v.internalNowInEpochMs = j.at("internalNowInEpochMs").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampSelectChampSelectTimer_HPP

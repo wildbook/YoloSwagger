@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolClubsPublicClubMemberLists_HPP
-#define SWAGGER_TYPES_LolClubsPublicClubMemberLists_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolClubsPublicClubPlayer.hpp"
 namespace leagueapi {
-  // 
-  struct LolClubsPublicClubMemberLists {
-    // 
-    std::vector<LolClubsPublicClubPlayer> activeMembers;
+  struct LolClubsPublicClubMemberLists_t {
+    std::vector<LolClubsPublicClubPlayer_t> activeMembers;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClubsPublicClubMemberLists& v) {
+  inline void to_json(nlohmann::json& j, const LolClubsPublicClubMemberLists_t& v) {
     j["activeMembers"] = v.activeMembers;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClubsPublicClubMemberLists& v) {
-    v.activeMembers = j.at("activeMembers").get<std::vector<LolClubsPublicClubPlayer>>;
+  inline void from_json(const nlohmann::json& j, LolClubsPublicClubMemberLists_t& v) {
+    v.activeMembers = j.at("activeMembers").get<std::vector<LolClubsPublicClubPlayer_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClubsPublicClubMemberLists_HPP

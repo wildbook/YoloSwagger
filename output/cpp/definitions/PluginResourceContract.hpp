@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_PluginResourceContract_HPP
-#define SWAGGER_TYPES_PluginResourceContract_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct PluginResourceContract {
-    // 
+  struct PluginResourceContract_t {
     std::string fullName;
-    // 
     std::string version;
   };
 
-  inline void to_json(nlohmann::json& j, const PluginResourceContract& v) {
+  inline void to_json(nlohmann::json& j, const PluginResourceContract_t& v) {
     j["fullName"] = v.fullName;
     j["version"] = v.version;
   }
 
-  inline void from_json(const nlohmann::json& j, PluginResourceContract& v) {
-    v.fullName = j.at("fullName").get<std::string>;
-    v.version = j.at("version").get<std::string>;
+  inline void from_json(const nlohmann::json& j, PluginResourceContract_t& v) {
+    v.fullName = j.at("fullName").get<std::string>();
+    v.version = j.at("version").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_PluginResourceContract_HPP

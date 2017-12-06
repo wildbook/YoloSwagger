@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolPerksQueue_HPP
-#define SWAGGER_TYPES_LolPerksQueue_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolPerksQueue {
-    // 
+  struct LolPerksQueue_t {
     int32_t id;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPerksQueue& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksQueue_t& v) {
     j["id"] = v.id;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPerksQueue& v) {
-    v.id = j.at("id").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LolPerksQueue_t& v) {
+    v.id = j.at("id").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPerksQueue_HPP

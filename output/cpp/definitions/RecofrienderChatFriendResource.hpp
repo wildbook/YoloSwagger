@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_RecofrienderChatFriendResource_HPP
-#define SWAGGER_TYPES_RecofrienderChatFriendResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct RecofrienderChatFriendResource {
-    // 
-    uint64_t id;
-    // 
+  struct RecofrienderChatFriendResource_t {
     std::string name;
+    uint64_t id;
   };
 
-  inline void to_json(nlohmann::json& j, const RecofrienderChatFriendResource& v) {
-    j["id"] = v.id;
+  inline void to_json(nlohmann::json& j, const RecofrienderChatFriendResource_t& v) {
     j["name"] = v.name;
+    j["id"] = v.id;
   }
 
-  inline void from_json(const nlohmann::json& j, RecofrienderChatFriendResource& v) {
-    v.id = j.at("id").get<uint64_t>;
-    v.name = j.at("name").get<std::string>;
+  inline void from_json(const nlohmann::json& j, RecofrienderChatFriendResource_t& v) {
+    v.name = j.at("name").get<std::string>();
+    v.id = j.at("id").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_RecofrienderChatFriendResource_HPP

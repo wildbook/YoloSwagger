@@ -1,49 +1,40 @@
-#ifndef SWAGGER_TYPES_LolChatConversationResource_HPP
-#define SWAGGER_TYPES_LolChatConversationResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolChatConversationMessageResource.hpp"
 namespace leagueapi {
-  // 
-  struct LolChatConversationResource {
-    // 
-    std::string name;
-    // 
-    bool isMuted;
-    // 
+  struct LolChatConversationResource_t {
     uint64_t unreadMessageCount;
-    // 
-    LolChatConversationMessageResource lastMessage;
-    // 
-    std::string password;
-    // 
+    std::string name;
     std::string type;
-    // 
-    std::string id;
-    // 
+    std::optional<LolChatConversationMessageResource_t> lastMessage;
     std::string inviterId;
+    bool isMuted;
+    std::string id;
+    std::string password;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatConversationResource& v) {
-    j["name"] = v.name;
-    j["isMuted"] = v.isMuted;
+  inline void to_json(nlohmann::json& j, const LolChatConversationResource_t& v) {
     j["unreadMessageCount"] = v.unreadMessageCount;
-    j["lastMessage"] = v.lastMessage;
-    j["password"] = v.password;
+    j["name"] = v.name;
     j["type"] = v.type;
-    j["id"] = v.id;
+    if(v.lastMessage)
+      j["lastMessage"] = *v.lastMessage;
     j["inviterId"] = v.inviterId;
+    j["isMuted"] = v.isMuted;
+    j["id"] = v.id;
+    j["password"] = v.password;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatConversationResource& v) {
-    v.name = j.at("name").get<std::string>;
-    v.isMuted = j.at("isMuted").get<bool>;
-    v.unreadMessageCount = j.at("unreadMessageCount").get<uint64_t>;
-    v.lastMessage = j.at("lastMessage").get<LolChatConversationMessageResource>;
-    v.password = j.at("password").get<std::string>;
-    v.type = j.at("type").get<std::string>;
-    v.id = j.at("id").get<std::string>;
-    v.inviterId = j.at("inviterId").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolChatConversationResource_t& v) {
+    v.unreadMessageCount = j.at("unreadMessageCount").get<uint64_t>();
+    v.name = j.at("name").get<std::string>();
+    v.type = j.at("type").get<std::string>();
+    if(auto it = j.find("lastMessage"); it != j.end() !it->is_null())
+      v.lastMessage = it->get<LolChatConversationMessageResource_t>();
+    v.inviterId = j.at("inviterId").get<std::string>();
+    v.isMuted = j.at("isMuted").get<bool>();
+    v.id = j.at("id").get<std::string>();
+    v.password = j.at("password").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatConversationResource_HPP

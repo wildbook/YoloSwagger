@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_ChampSelectLcdsObfuscatedParticipant_HPP
-#define SWAGGER_TYPES_ChampSelectLcdsObfuscatedParticipant_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct ChampSelectLcdsObfuscatedParticipant {
-    // 
+  struct ChampSelectLcdsObfuscatedParticipant_t {
     uint64_t gameUniqueId;
   };
 
-  inline void to_json(nlohmann::json& j, const ChampSelectLcdsObfuscatedParticipant& v) {
+  inline void to_json(nlohmann::json& j, const ChampSelectLcdsObfuscatedParticipant_t& v) {
     j["gameUniqueId"] = v.gameUniqueId;
   }
 
-  inline void from_json(const nlohmann::json& j, ChampSelectLcdsObfuscatedParticipant& v) {
-    v.gameUniqueId = j.at("gameUniqueId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, ChampSelectLcdsObfuscatedParticipant_t& v) {
+    v.gameUniqueId = j.at("gameUniqueId").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_ChampSelectLcdsObfuscatedParticipant_HPP

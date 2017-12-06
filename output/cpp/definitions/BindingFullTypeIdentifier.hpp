@@ -1,24 +1,20 @@
-#ifndef SWAGGER_TYPES_BindingFullTypeIdentifier_HPP
-#define SWAGGER_TYPES_BindingFullTypeIdentifier_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
   // Describes the type of a value.
-  struct BindingFullTypeIdentifier {
-    // 
-    std::string elementType;
-    // 
+  struct BindingFullTypeIdentifier_t {
     std::string type;
+    std::string elementType;
   };
 
-  inline void to_json(nlohmann::json& j, const BindingFullTypeIdentifier& v) {
-    j["elementType"] = v.elementType;
+  inline void to_json(nlohmann::json& j, const BindingFullTypeIdentifier_t& v) {
     j["type"] = v.type;
+    j["elementType"] = v.elementType;
   }
 
-  inline void from_json(const nlohmann::json& j, BindingFullTypeIdentifier& v) {
-    v.elementType = j.at("elementType").get<std::string>;
-    v.type = j.at("type").get<std::string>;
+  inline void from_json(const nlohmann::json& j, BindingFullTypeIdentifier_t& v) {
+    v.type = j.at("type").get<std::string>();
+    v.elementType = j.at("elementType").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_BindingFullTypeIdentifier_HPP

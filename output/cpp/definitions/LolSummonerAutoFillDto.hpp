@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolSummonerAutoFillDto_HPP
-#define SWAGGER_TYPES_LolSummonerAutoFillDto_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolSummonerAutoFillQueueDto.hpp"
 namespace leagueapi {
-  // 
-  struct LolSummonerAutoFillDto {
-    // 
-    std::vector<LolSummonerAutoFillQueueDto> autoFillQueues;
+  struct LolSummonerAutoFillDto_t {
+    std::vector<LolSummonerAutoFillQueueDto_t> autoFillQueues;
   };
 
-  inline void to_json(nlohmann::json& j, const LolSummonerAutoFillDto& v) {
+  inline void to_json(nlohmann::json& j, const LolSummonerAutoFillDto_t& v) {
     j["autoFillQueues"] = v.autoFillQueues;
   }
 
-  inline void from_json(const nlohmann::json& j, LolSummonerAutoFillDto& v) {
-    v.autoFillQueues = j.at("autoFillQueues").get<std::vector<LolSummonerAutoFillQueueDto>>;
+  inline void from_json(const nlohmann::json& j, LolSummonerAutoFillDto_t& v) {
+    v.autoFillQueues = j.at("autoFillQueues").get<std::vector<LolSummonerAutoFillQueueDto_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolSummonerAutoFillDto_HPP

@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_BuybackState_HPP
-#define SWAGGER_TYPES_BuybackState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class BuybackState {
-    // 
-    READY = 2,
-    // 
-    FORCED_NOT_READY = 1,
-    // 
-    NOT_READY = 0,
+  enum class BuybackState_t {
+    FORCED_NOT_READY_E = 1,
+    READY_E = 2,
+    NOT_READY_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const BuybackState& v) {
+  inline void to_json(nlohmann::json& j, const BuybackState_t& v) {
     switch(v) {
-      case BuybackState::READY:
-        j = "READY";
-      break;
-      case BuybackState::FORCED_NOT_READY:
+      case BuybackState_t::FORCED_NOT_READY_E:
         j = "FORCED_NOT_READY";
       break;
-      case BuybackState::NOT_READY:
+      case BuybackState_t::READY_E:
+        j = "READY";
+      break;
+      case BuybackState_t::NOT_READY_E:
         j = "NOT_READY";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, BuybackState& v) {
+  inline void from_json(const nlohmann::json& j, BuybackState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "READY"){
-      v = BuybackState::READY;
+    if(s == "FORCED_NOT_READY"){
+      v = BuybackState_t::FORCED_NOT_READY_E;
       return;
     }
-    if(s == "FORCED_NOT_READY"){
-      v = BuybackState::FORCED_NOT_READY;
+    if(s == "READY"){
+      v = BuybackState_t::READY_E;
       return;
     }
     if(s == "NOT_READY"){
-      v = BuybackState::NOT_READY;
+      v = BuybackState_t::NOT_READY_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_BuybackState_HPP

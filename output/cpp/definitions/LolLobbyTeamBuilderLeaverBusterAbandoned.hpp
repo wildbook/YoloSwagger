@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderLeaverBusterAbandoned_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderLeaverBusterAbandoned_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyTeamBuilderLeaverBusterAbandoned {
-    // 
+  struct LolLobbyTeamBuilderLeaverBusterAbandoned_t {
     std::string abandonerName;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLeaverBusterAbandoned& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLeaverBusterAbandoned_t& v) {
     j["abandonerName"] = v.abandonerName;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLeaverBusterAbandoned& v) {
-    v.abandonerName = j.at("abandonerName").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLeaverBusterAbandoned_t& v) {
+    v.abandonerName = j.at("abandonerName").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderLeaverBusterAbandoned_HPP

@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolInventoryLoginSessionStates_HPP
-#define SWAGGER_TYPES_LolInventoryLoginSessionStates_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolInventoryLoginSessionStates {
-    // 
-    LOGGING_OUT = 2,
-    // 
-    IN_PROGRESS = 0,
-    // 
-    SUCCEEDED = 1,
-    // 
-    ERROR = 3,
+  enum class LolInventoryLoginSessionStates_t {
+    LOGGING_OUT_E = 2,
+    SUCCEEDED_E = 1,
+    IN_PROGRESS_E = 0,
+    ERROR_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolInventoryLoginSessionStates& v) {
+  inline void to_json(nlohmann::json& j, const LolInventoryLoginSessionStates_t& v) {
     switch(v) {
-      case LolInventoryLoginSessionStates::LOGGING_OUT:
+      case LolInventoryLoginSessionStates_t::LOGGING_OUT_E:
         j = "LOGGING_OUT";
       break;
-      case LolInventoryLoginSessionStates::IN_PROGRESS:
-        j = "IN_PROGRESS";
-      break;
-      case LolInventoryLoginSessionStates::SUCCEEDED:
+      case LolInventoryLoginSessionStates_t::SUCCEEDED_E:
         j = "SUCCEEDED";
       break;
-      case LolInventoryLoginSessionStates::ERROR:
+      case LolInventoryLoginSessionStates_t::IN_PROGRESS_E:
+        j = "IN_PROGRESS";
+      break;
+      case LolInventoryLoginSessionStates_t::ERROR_E:
         j = "ERROR";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolInventoryLoginSessionStates& v) {
+  inline void from_json(const nlohmann::json& j, LolInventoryLoginSessionStates_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "LOGGING_OUT"){
-      v = LolInventoryLoginSessionStates::LOGGING_OUT;
-      return;
-    }
-    if(s == "IN_PROGRESS"){
-      v = LolInventoryLoginSessionStates::IN_PROGRESS;
+      v = LolInventoryLoginSessionStates_t::LOGGING_OUT_E;
       return;
     }
     if(s == "SUCCEEDED"){
-      v = LolInventoryLoginSessionStates::SUCCEEDED;
+      v = LolInventoryLoginSessionStates_t::SUCCEEDED_E;
+      return;
+    }
+    if(s == "IN_PROGRESS"){
+      v = LolInventoryLoginSessionStates_t::IN_PROGRESS_E;
       return;
     }
     if(s == "ERROR"){
-      v = LolInventoryLoginSessionStates::ERROR;
+      v = LolInventoryLoginSessionStates_t::ERROR_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolInventoryLoginSessionStates_HPP

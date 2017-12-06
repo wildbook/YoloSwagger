@@ -1,29 +1,23 @@
-#ifndef SWAGGER_TYPES_LolLootRecipeMetadata_HPP
-#define SWAGGER_TYPES_LolLootRecipeMetadata_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLootLootDescription.hpp"
 namespace leagueapi {
-  // 
-  struct LolLootRecipeMetadata {
-    // 
+  struct LolLootRecipeMetadata_t {
+    std::vector<LolLootLootDescription_t> bonusDescriptions;
+    std::vector<LolLootLootDescription_t> guaranteedDescriptions;
     bool tooltipsDisabled;
-    // 
-    std::vector<LolLootLootDescription> bonusDescriptions;
-    // 
-    std::vector<LolLootLootDescription> guaranteedDescriptions;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLootRecipeMetadata& v) {
-    j["tooltipsDisabled"] = v.tooltipsDisabled;
+  inline void to_json(nlohmann::json& j, const LolLootRecipeMetadata_t& v) {
     j["bonusDescriptions"] = v.bonusDescriptions;
     j["guaranteedDescriptions"] = v.guaranteedDescriptions;
+    j["tooltipsDisabled"] = v.tooltipsDisabled;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLootRecipeMetadata& v) {
-    v.tooltipsDisabled = j.at("tooltipsDisabled").get<bool>;
-    v.bonusDescriptions = j.at("bonusDescriptions").get<std::vector<LolLootLootDescription>>;
-    v.guaranteedDescriptions = j.at("guaranteedDescriptions").get<std::vector<LolLootLootDescription>>;
+  inline void from_json(const nlohmann::json& j, LolLootRecipeMetadata_t& v) {
+    v.bonusDescriptions = j.at("bonusDescriptions").get<std::vector<LolLootLootDescription_t>>();
+    v.guaranteedDescriptions = j.at("guaranteedDescriptions").get<std::vector<LolLootLootDescription_t>>();
+    v.tooltipsDisabled = j.at("tooltipsDisabled").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLootRecipeMetadata_HPP

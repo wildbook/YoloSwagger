@@ -1,32 +1,25 @@
-#ifndef SWAGGER_TYPES_LolLeaguesLeagueTeamMember_HPP
-#define SWAGGER_TYPES_LolLeaguesLeagueTeamMember_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLeaguesLeagueTeamMember {
-    // 
-    float winRate;
-    // 
-    uint64_t id;
-    // 
-    uint64_t totalGamePlayed;
-    // 
+  struct LolLeaguesLeagueTeamMember_t {
     std::string name;
+    float winRate;
+    uint64_t id;
+    uint64_t totalGamePlayed;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLeaguesLeagueTeamMember& v) {
+  inline void to_json(nlohmann::json& j, const LolLeaguesLeagueTeamMember_t& v) {
+    j["name"] = v.name;
     j["winRate"] = v.winRate;
     j["id"] = v.id;
     j["totalGamePlayed"] = v.totalGamePlayed;
-    j["name"] = v.name;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLeaguesLeagueTeamMember& v) {
-    v.winRate = j.at("winRate").get<float>;
-    v.id = j.at("id").get<uint64_t>;
-    v.totalGamePlayed = j.at("totalGamePlayed").get<uint64_t>;
-    v.name = j.at("name").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolLeaguesLeagueTeamMember_t& v) {
+    v.name = j.at("name").get<std::string>();
+    v.winRate = j.at("winRate").get<float>();
+    v.id = j.at("id").get<uint64_t>();
+    v.totalGamePlayed = j.at("totalGamePlayed").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLeaguesLeagueTeamMember_HPP

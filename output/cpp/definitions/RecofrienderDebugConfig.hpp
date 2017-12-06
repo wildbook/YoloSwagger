@@ -1,20 +1,18 @@
-#ifndef SWAGGER_TYPES_RecofrienderDebugConfig_HPP
-#define SWAGGER_TYPES_RecofrienderDebugConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct RecofrienderDebugConfig {
-    // 
-    bool isHttpLoggingEnabled;
+  struct RecofrienderDebugConfig_t {
+    std::optional<bool> isHttpLoggingEnabled;
   };
 
-  inline void to_json(nlohmann::json& j, const RecofrienderDebugConfig& v) {
-    j["isHttpLoggingEnabled"] = v.isHttpLoggingEnabled;
+  inline void to_json(nlohmann::json& j, const RecofrienderDebugConfig_t& v) {
+    if(v.isHttpLoggingEnabled)
+      j["isHttpLoggingEnabled"] = *v.isHttpLoggingEnabled;
   }
 
-  inline void from_json(const nlohmann::json& j, RecofrienderDebugConfig& v) {
-    v.isHttpLoggingEnabled = j.at("isHttpLoggingEnabled").get<bool>;
+  inline void from_json(const nlohmann::json& j, RecofrienderDebugConfig_t& v) {
+    if(auto it = j.find("isHttpLoggingEnabled"); it != j.end() !it->is_null())
+      v.isHttpLoggingEnabled = it->get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_RecofrienderDebugConfig_HPP

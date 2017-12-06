@@ -1,24 +1,21 @@
-#ifndef SWAGGER_TYPES_LolChatSanitizeResponse_HPP
-#define SWAGGER_TYPES_LolChatSanitizeResponse_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChatSanitizeResponse {
-    // 
-    std::vector<std::string> texts;
-    // 
+  struct LolChatSanitizeResponse_t {
     bool modified;
+    std::optional<std::vector<std::string>> texts;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatSanitizeResponse& v) {
-    j["texts"] = v.texts;
+  inline void to_json(nlohmann::json& j, const LolChatSanitizeResponse_t& v) {
     j["modified"] = v.modified;
+    if(v.texts)
+      j["texts"] = *v.texts;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatSanitizeResponse& v) {
-    v.texts = j.at("texts").get<std::vector<std::string>>;
-    v.modified = j.at("modified").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolChatSanitizeResponse_t& v) {
+    v.modified = j.at("modified").get<bool>();
+    if(auto it = j.find("texts"); it != j.end() !it->is_null())
+      v.texts = it->get<std::vector<std::string>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatSanitizeResponse_HPP

@@ -1,44 +1,34 @@
-#ifndef SWAGGER_TYPES_PaymentsPMCStartUrlResult_HPP
-#define SWAGGER_TYPES_PaymentsPMCStartUrlResult_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct PaymentsPMCStartUrlResult {
-    // 
-    std::string localeId;
-    // 
-    std::string playerFacingId;
-    // 
-    std::string userId;
-    // 
-    std::string pmcStartUrl;
-    // 
+  struct PaymentsPMCStartUrlResult_t {
     int16_t summonerLevel;
-    // 
     std::string id;
-    // 
+    std::string localeId;
+    std::string playerFacingId;
+    std::string pmcStartUrl;
+    std::string userId;
     std::string createdAt;
   };
 
-  inline void to_json(nlohmann::json& j, const PaymentsPMCStartUrlResult& v) {
-    j["localeId"] = v.localeId;
-    j["playerFacingId"] = v.playerFacingId;
-    j["userId"] = v.userId;
-    j["pmcStartUrl"] = v.pmcStartUrl;
+  inline void to_json(nlohmann::json& j, const PaymentsPMCStartUrlResult_t& v) {
     j["summonerLevel"] = v.summonerLevel;
     j["id"] = v.id;
+    j["localeId"] = v.localeId;
+    j["playerFacingId"] = v.playerFacingId;
+    j["pmcStartUrl"] = v.pmcStartUrl;
+    j["userId"] = v.userId;
     j["createdAt"] = v.createdAt;
   }
 
-  inline void from_json(const nlohmann::json& j, PaymentsPMCStartUrlResult& v) {
-    v.localeId = j.at("localeId").get<std::string>;
-    v.playerFacingId = j.at("playerFacingId").get<std::string>;
-    v.userId = j.at("userId").get<std::string>;
-    v.pmcStartUrl = j.at("pmcStartUrl").get<std::string>;
-    v.summonerLevel = j.at("summonerLevel").get<int16_t>;
-    v.id = j.at("id").get<std::string>;
-    v.createdAt = j.at("createdAt").get<std::string>;
+  inline void from_json(const nlohmann::json& j, PaymentsPMCStartUrlResult_t& v) {
+    v.summonerLevel = j.at("summonerLevel").get<int16_t>();
+    v.id = j.at("id").get<std::string>();
+    v.localeId = j.at("localeId").get<std::string>();
+    v.playerFacingId = j.at("playerFacingId").get<std::string>();
+    v.pmcStartUrl = j.at("pmcStartUrl").get<std::string>();
+    v.userId = j.at("userId").get<std::string>();
+    v.createdAt = j.at("createdAt").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_PaymentsPMCStartUrlResult_HPP

@@ -1,73 +1,63 @@
-#ifndef SWAGGER_TYPES_LolClashMatchmakingReadyCheckState_HPP
-#define SWAGGER_TYPES_LolClashMatchmakingReadyCheckState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolClashMatchmakingReadyCheckState {
-    // 
-    PartyNotReady = 4,
-    // 
-    StrangerNotReady = 3,
-    // 
-    EveryoneReady = 2,
-    // 
-    Invalid = 0,
-    // 
-    Error = 5,
-    // 
-    InProgress = 1,
+  enum class LolClashMatchmakingReadyCheckState_t {
+    EveryoneReady_E = 2,
+    StrangerNotReady_E = 3,
+    Invalid_E = 0,
+    PartyNotReady_E = 4,
+    Error_E = 5,
+    InProgress_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashMatchmakingReadyCheckState& v) {
+  inline void to_json(nlohmann::json& j, const LolClashMatchmakingReadyCheckState_t& v) {
     switch(v) {
-      case LolClashMatchmakingReadyCheckState::PartyNotReady:
-        j = "PartyNotReady";
-      break;
-      case LolClashMatchmakingReadyCheckState::StrangerNotReady:
-        j = "StrangerNotReady";
-      break;
-      case LolClashMatchmakingReadyCheckState::EveryoneReady:
+      case LolClashMatchmakingReadyCheckState_t::EveryoneReady_E:
         j = "EveryoneReady";
       break;
-      case LolClashMatchmakingReadyCheckState::Invalid:
+      case LolClashMatchmakingReadyCheckState_t::StrangerNotReady_E:
+        j = "StrangerNotReady";
+      break;
+      case LolClashMatchmakingReadyCheckState_t::Invalid_E:
         j = "Invalid";
       break;
-      case LolClashMatchmakingReadyCheckState::Error:
+      case LolClashMatchmakingReadyCheckState_t::PartyNotReady_E:
+        j = "PartyNotReady";
+      break;
+      case LolClashMatchmakingReadyCheckState_t::Error_E:
         j = "Error";
       break;
-      case LolClashMatchmakingReadyCheckState::InProgress:
+      case LolClashMatchmakingReadyCheckState_t::InProgress_E:
         j = "InProgress";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashMatchmakingReadyCheckState& v) {
+  inline void from_json(const nlohmann::json& j, LolClashMatchmakingReadyCheckState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "PartyNotReady"){
-      v = LolClashMatchmakingReadyCheckState::PartyNotReady;
+    if(s == "EveryoneReady"){
+      v = LolClashMatchmakingReadyCheckState_t::EveryoneReady_E;
       return;
     }
     if(s == "StrangerNotReady"){
-      v = LolClashMatchmakingReadyCheckState::StrangerNotReady;
-      return;
-    }
-    if(s == "EveryoneReady"){
-      v = LolClashMatchmakingReadyCheckState::EveryoneReady;
+      v = LolClashMatchmakingReadyCheckState_t::StrangerNotReady_E;
       return;
     }
     if(s == "Invalid"){
-      v = LolClashMatchmakingReadyCheckState::Invalid;
+      v = LolClashMatchmakingReadyCheckState_t::Invalid_E;
+      return;
+    }
+    if(s == "PartyNotReady"){
+      v = LolClashMatchmakingReadyCheckState_t::PartyNotReady_E;
       return;
     }
     if(s == "Error"){
-      v = LolClashMatchmakingReadyCheckState::Error;
+      v = LolClashMatchmakingReadyCheckState_t::Error_E;
       return;
     }
     if(s == "InProgress"){
-      v = LolClashMatchmakingReadyCheckState::InProgress;
+      v = LolClashMatchmakingReadyCheckState_t::InProgress_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashMatchmakingReadyCheckState_HPP

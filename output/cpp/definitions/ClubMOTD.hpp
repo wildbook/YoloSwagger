@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_ClubMOTD_HPP
-#define SWAGGER_TYPES_ClubMOTD_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct ClubMOTD {
-    // 
+  struct ClubMOTD_t {
     std::string motd;
   };
 
-  inline void to_json(nlohmann::json& j, const ClubMOTD& v) {
+  inline void to_json(nlohmann::json& j, const ClubMOTD_t& v) {
     j["motd"] = v.motd;
   }
 
-  inline void from_json(const nlohmann::json& j, ClubMOTD& v) {
-    v.motd = j.at("motd").get<std::string>;
+  inline void from_json(const nlohmann::json& j, ClubMOTD_t& v) {
+    v.motd = j.at("motd").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_ClubMOTD_HPP

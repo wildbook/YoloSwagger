@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolClashRankedScoutingMember_HPP
-#define SWAGGER_TYPES_LolClashRankedScoutingMember_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolClashRankedScoutingTopChampion.hpp"
 namespace leagueapi {
-  // 
-  struct LolClashRankedScoutingMember {
-    // 
+  struct LolClashRankedScoutingMember_t {
     uint64_t playerId;
-    // 
-    std::vector<LolClashRankedScoutingTopChampion> championScoutingData;
+    std::vector<LolClashRankedScoutingTopChampion_t> championScoutingData;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashRankedScoutingMember& v) {
+  inline void to_json(nlohmann::json& j, const LolClashRankedScoutingMember_t& v) {
     j["playerId"] = v.playerId;
     j["championScoutingData"] = v.championScoutingData;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashRankedScoutingMember& v) {
-    v.playerId = j.at("playerId").get<uint64_t>;
-    v.championScoutingData = j.at("championScoutingData").get<std::vector<LolClashRankedScoutingTopChampion>>;
+  inline void from_json(const nlohmann::json& j, LolClashRankedScoutingMember_t& v) {
+    v.playerId = j.at("playerId").get<uint64_t>();
+    v.championScoutingData = j.at("championScoutingData").get<std::vector<LolClashRankedScoutingTopChampion_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashRankedScoutingMember_HPP

@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolLeaguesApexLeagues_HPP
-#define SWAGGER_TYPES_LolLeaguesApexLeagues_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLeaguesLeague.hpp"
 namespace leagueapi {
-  // 
-  struct LolLeaguesApexLeagues {
-    // 
-    std::vector<LolLeaguesLeague> challengers;
-    // 
-    std::vector<LolLeaguesLeague> masters;
+  struct LolLeaguesApexLeagues_t {
+    std::vector<LolLeaguesLeague_t> masters;
+    std::vector<LolLeaguesLeague_t> challengers;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLeaguesApexLeagues& v) {
-    j["challengers"] = v.challengers;
+  inline void to_json(nlohmann::json& j, const LolLeaguesApexLeagues_t& v) {
     j["masters"] = v.masters;
+    j["challengers"] = v.challengers;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLeaguesApexLeagues& v) {
-    v.challengers = j.at("challengers").get<std::vector<LolLeaguesLeague>>;
-    v.masters = j.at("masters").get<std::vector<LolLeaguesLeague>>;
+  inline void from_json(const nlohmann::json& j, LolLeaguesApexLeagues_t& v) {
+    v.masters = j.at("masters").get<std::vector<LolLeaguesLeague_t>>();
+    v.challengers = j.at("challengers").get<std::vector<LolLeaguesLeague_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLeaguesApexLeagues_HPP

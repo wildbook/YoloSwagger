@@ -1,34 +1,27 @@
-#ifndef SWAGGER_TYPES_PatcherComponentActionProgress_HPP
-#define SWAGGER_TYPES_PatcherComponentActionProgress_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "PatcherComponentStateWorkType.hpp"
 #include "PatcherComponentStateProgress.hpp"
 namespace leagueapi {
-  // 
-  struct PatcherComponentActionProgress {
-    // 
+  struct PatcherComponentActionProgress_t {
+    PatcherComponentStateWorkType_t primaryWork;
+    PatcherComponentStateProgress_t total;
+    PatcherComponentStateProgress_t network;
     std::string currentItem;
-    // 
-    PatcherComponentStateWorkType primaryWork;
-    // 
-    PatcherComponentStateProgress total;
-    // 
-    PatcherComponentStateProgress network;
   };
 
-  inline void to_json(nlohmann::json& j, const PatcherComponentActionProgress& v) {
-    j["currentItem"] = v.currentItem;
+  inline void to_json(nlohmann::json& j, const PatcherComponentActionProgress_t& v) {
     j["primaryWork"] = v.primaryWork;
     j["total"] = v.total;
     j["network"] = v.network;
+    j["currentItem"] = v.currentItem;
   }
 
-  inline void from_json(const nlohmann::json& j, PatcherComponentActionProgress& v) {
-    v.currentItem = j.at("currentItem").get<std::string>;
-    v.primaryWork = j.at("primaryWork").get<PatcherComponentStateWorkType>;
-    v.total = j.at("total").get<PatcherComponentStateProgress>;
-    v.network = j.at("network").get<PatcherComponentStateProgress>;
+  inline void from_json(const nlohmann::json& j, PatcherComponentActionProgress_t& v) {
+    v.primaryWork = j.at("primaryWork").get<PatcherComponentStateWorkType_t>();
+    v.total = j.at("total").get<PatcherComponentStateProgress_t>();
+    v.network = j.at("network").get<PatcherComponentStateProgress_t>();
+    v.currentItem = j.at("currentItem").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_PatcherComponentActionProgress_HPP

@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolGameflowQueueCustomGameSpectatorPolicy_HPP
-#define SWAGGER_TYPES_LolGameflowQueueCustomGameSpectatorPolicy_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolGameflowQueueCustomGameSpectatorPolicy {
-    // 
-    FriendsAllowed = 2,
-    // 
-    LobbyAllowed = 1,
-    // 
-    AllAllowed = 3,
-    // 
-    NotAllowed = 0,
+  enum class LolGameflowQueueCustomGameSpectatorPolicy_t {
+    AllAllowed_E = 3,
+    NotAllowed_E = 0,
+    LobbyAllowed_E = 1,
+    FriendsAllowed_E = 2,
   };
 
-  inline void to_json(nlohmann::json& j, const LolGameflowQueueCustomGameSpectatorPolicy& v) {
+  inline void to_json(nlohmann::json& j, const LolGameflowQueueCustomGameSpectatorPolicy_t& v) {
     switch(v) {
-      case LolGameflowQueueCustomGameSpectatorPolicy::FriendsAllowed:
-        j = "FriendsAllowed";
-      break;
-      case LolGameflowQueueCustomGameSpectatorPolicy::LobbyAllowed:
-        j = "LobbyAllowed";
-      break;
-      case LolGameflowQueueCustomGameSpectatorPolicy::AllAllowed:
+      case LolGameflowQueueCustomGameSpectatorPolicy_t::AllAllowed_E:
         j = "AllAllowed";
       break;
-      case LolGameflowQueueCustomGameSpectatorPolicy::NotAllowed:
+      case LolGameflowQueueCustomGameSpectatorPolicy_t::NotAllowed_E:
         j = "NotAllowed";
+      break;
+      case LolGameflowQueueCustomGameSpectatorPolicy_t::LobbyAllowed_E:
+        j = "LobbyAllowed";
+      break;
+      case LolGameflowQueueCustomGameSpectatorPolicy_t::FriendsAllowed_E:
+        j = "FriendsAllowed";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolGameflowQueueCustomGameSpectatorPolicy& v) {
+  inline void from_json(const nlohmann::json& j, LolGameflowQueueCustomGameSpectatorPolicy_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "FriendsAllowed"){
-      v = LolGameflowQueueCustomGameSpectatorPolicy::FriendsAllowed;
-      return;
-    }
-    if(s == "LobbyAllowed"){
-      v = LolGameflowQueueCustomGameSpectatorPolicy::LobbyAllowed;
-      return;
-    }
     if(s == "AllAllowed"){
-      v = LolGameflowQueueCustomGameSpectatorPolicy::AllAllowed;
+      v = LolGameflowQueueCustomGameSpectatorPolicy_t::AllAllowed_E;
       return;
     }
     if(s == "NotAllowed"){
-      v = LolGameflowQueueCustomGameSpectatorPolicy::NotAllowed;
+      v = LolGameflowQueueCustomGameSpectatorPolicy_t::NotAllowed_E;
+      return;
+    }
+    if(s == "LobbyAllowed"){
+      v = LolGameflowQueueCustomGameSpectatorPolicy_t::LobbyAllowed_E;
+      return;
+    }
+    if(s == "FriendsAllowed"){
+      v = LolGameflowQueueCustomGameSpectatorPolicy_t::FriendsAllowed_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolGameflowQueueCustomGameSpectatorPolicy_HPP

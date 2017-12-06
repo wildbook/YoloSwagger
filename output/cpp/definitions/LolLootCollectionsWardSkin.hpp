@@ -1,37 +1,29 @@
-#ifndef SWAGGER_TYPES_LolLootCollectionsWardSkin_HPP
-#define SWAGGER_TYPES_LolLootCollectionsWardSkin_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLootCollectionsOwnership.hpp"
 namespace leagueapi {
-  // 
-  struct LolLootCollectionsWardSkin {
-    // 
-    std::string wardImagePath;
-    // 
-    std::string wardShadowImagePath;
-    // 
-    int64_t id;
-    // 
-    LolLootCollectionsOwnership ownership;
-    // 
+  struct LolLootCollectionsWardSkin_t {
+    LolLootCollectionsOwnership_t ownership;
     std::string name;
+    std::string wardImagePath;
+    int64_t id;
+    std::string wardShadowImagePath;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLootCollectionsWardSkin& v) {
-    j["wardImagePath"] = v.wardImagePath;
-    j["wardShadowImagePath"] = v.wardShadowImagePath;
-    j["id"] = v.id;
+  inline void to_json(nlohmann::json& j, const LolLootCollectionsWardSkin_t& v) {
     j["ownership"] = v.ownership;
     j["name"] = v.name;
+    j["wardImagePath"] = v.wardImagePath;
+    j["id"] = v.id;
+    j["wardShadowImagePath"] = v.wardShadowImagePath;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLootCollectionsWardSkin& v) {
-    v.wardImagePath = j.at("wardImagePath").get<std::string>;
-    v.wardShadowImagePath = j.at("wardShadowImagePath").get<std::string>;
-    v.id = j.at("id").get<int64_t>;
-    v.ownership = j.at("ownership").get<LolLootCollectionsOwnership>;
-    v.name = j.at("name").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolLootCollectionsWardSkin_t& v) {
+    v.ownership = j.at("ownership").get<LolLootCollectionsOwnership_t>();
+    v.name = j.at("name").get<std::string>();
+    v.wardImagePath = j.at("wardImagePath").get<std::string>();
+    v.id = j.at("id").get<int64_t>();
+    v.wardShadowImagePath = j.at("wardShadowImagePath").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLootCollectionsWardSkin_HPP

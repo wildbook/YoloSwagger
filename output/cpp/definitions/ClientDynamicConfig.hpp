@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_ClientDynamicConfig_HPP
-#define SWAGGER_TYPES_ClientDynamicConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct ClientDynamicConfig {
-    // 
-    std::string configs;
-    // 
-    bool compressed;
-    // 
+  struct ClientDynamicConfig_t {
     bool delta;
+    bool compressed;
+    std::string configs;
   };
 
-  inline void to_json(nlohmann::json& j, const ClientDynamicConfig& v) {
-    j["configs"] = v.configs;
-    j["compressed"] = v.compressed;
+  inline void to_json(nlohmann::json& j, const ClientDynamicConfig_t& v) {
     j["delta"] = v.delta;
+    j["compressed"] = v.compressed;
+    j["configs"] = v.configs;
   }
 
-  inline void from_json(const nlohmann::json& j, ClientDynamicConfig& v) {
-    v.configs = j.at("configs").get<std::string>;
-    v.compressed = j.at("compressed").get<bool>;
-    v.delta = j.at("delta").get<bool>;
+  inline void from_json(const nlohmann::json& j, ClientDynamicConfig_t& v) {
+    v.delta = j.at("delta").get<bool>();
+    v.compressed = j.at("compressed").get<bool>();
+    v.configs = j.at("configs").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_ClientDynamicConfig_HPP

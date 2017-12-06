@@ -1,29 +1,23 @@
-#ifndef SWAGGER_TYPES_LolChampSelectLegacyCollectionsOwnership_HPP
-#define SWAGGER_TYPES_LolChampSelectLegacyCollectionsOwnership_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolChampSelectLegacyCollectionsRental.hpp"
 namespace leagueapi {
-  // 
-  struct LolChampSelectLegacyCollectionsOwnership {
-    // 
+  struct LolChampSelectLegacyCollectionsOwnership_t {
     bool freeToPlayReward;
-    // 
-    LolChampSelectLegacyCollectionsRental rental;
-    // 
+    LolChampSelectLegacyCollectionsRental_t rental;
     bool owned;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyCollectionsOwnership& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyCollectionsOwnership_t& v) {
     j["freeToPlayReward"] = v.freeToPlayReward;
     j["rental"] = v.rental;
     j["owned"] = v.owned;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyCollectionsOwnership& v) {
-    v.freeToPlayReward = j.at("freeToPlayReward").get<bool>;
-    v.rental = j.at("rental").get<LolChampSelectLegacyCollectionsRental>;
-    v.owned = j.at("owned").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyCollectionsOwnership_t& v) {
+    v.freeToPlayReward = j.at("freeToPlayReward").get<bool>();
+    v.rental = j.at("rental").get<LolChampSelectLegacyCollectionsRental_t>();
+    v.owned = j.at("owned").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampSelectLegacyCollectionsOwnership_HPP

@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolCollectionsGameDataChampionMasteryTree_HPP
-#define SWAGGER_TYPES_LolCollectionsGameDataChampionMasteryTree_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolCollectionsGameDataChampionMasteryGroup.hpp"
 namespace leagueapi {
-  // 
-  struct LolCollectionsGameDataChampionMasteryTree {
-    // 
-    std::vector<LolCollectionsGameDataChampionMasteryGroup> groups;
+  struct LolCollectionsGameDataChampionMasteryTree_t {
+    std::vector<LolCollectionsGameDataChampionMasteryGroup_t> groups;
   };
 
-  inline void to_json(nlohmann::json& j, const LolCollectionsGameDataChampionMasteryTree& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsGameDataChampionMasteryTree_t& v) {
     j["groups"] = v.groups;
   }
 
-  inline void from_json(const nlohmann::json& j, LolCollectionsGameDataChampionMasteryTree& v) {
-    v.groups = j.at("groups").get<std::vector<LolCollectionsGameDataChampionMasteryGroup>>;
+  inline void from_json(const nlohmann::json& j, LolCollectionsGameDataChampionMasteryTree_t& v) {
+    v.groups = j.at("groups").get<std::vector<LolCollectionsGameDataChampionMasteryGroup_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolCollectionsGameDataChampionMasteryTree_HPP

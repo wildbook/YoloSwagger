@@ -1,26 +1,21 @@
-#ifndef SWAGGER_TYPES_LolPerksPlayerPreferencesSettings_HPP
-#define SWAGGER_TYPES_LolPerksPlayerPreferencesSettings_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolPerksPerkPageResource.hpp"
 #include "LolPerksUISettings.hpp"
 namespace leagueapi {
-  // 
-  struct LolPerksPlayerPreferencesSettings {
-    // 
-    std::vector<LolPerksPerkPageResource> pages;
-    // 
-    LolPerksUISettings settings;
+  struct LolPerksPlayerPreferencesSettings_t {
+    std::vector<LolPerksPerkPageResource_t> pages;
+    LolPerksUISettings_t settings;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPerksPlayerPreferencesSettings& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksPlayerPreferencesSettings_t& v) {
     j["pages"] = v.pages;
     j["settings"] = v.settings;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPerksPlayerPreferencesSettings& v) {
-    v.pages = j.at("pages").get<std::vector<LolPerksPerkPageResource>>;
-    v.settings = j.at("settings").get<LolPerksUISettings>;
+  inline void from_json(const nlohmann::json& j, LolPerksPlayerPreferencesSettings_t& v) {
+    v.pages = j.at("pages").get<std::vector<LolPerksPerkPageResource_t>>();
+    v.settings = j.at("settings").get<LolPerksUISettings_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPerksPlayerPreferencesSettings_HPP

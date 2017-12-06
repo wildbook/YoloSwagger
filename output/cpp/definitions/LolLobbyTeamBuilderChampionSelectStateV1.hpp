@@ -1,84 +1,65 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderChampionSelectStateV1_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderChampionSelectStateV1_HPP
+#pragma once
 #include <json.hpp>
-#include "LolLobbyTeamBuilderTradeV1.hpp"
-#include "LolLobbyTeamBuilderRerollStateV1.hpp"
+#include <optional>
 #include "LolLobbyTeamBuilderTeamBuilderBoostInfo.hpp"
+#include "LolLobbyTeamBuilderRerollStateV1.hpp"
 #include "LolLobbyTeamBuilderCellsV1.hpp"
+#include "LolLobbyTeamBuilderTradeV1.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyTeamBuilderChampionSelectStateV1 {
-    // 
-    std::string pickIntentClearedReason;
-    // 
+  struct LolLobbyTeamBuilderChampionSelectStateV1_t {
     bool allowOptingOutOfBanning;
-    // 
     std::string subphase;
-    // 
-    std::string teamChatRoomId;
-    // 
-    int32_t currentActionSetIndex;
-    // 
-    LolLobbyTeamBuilderCellsV1 cells;
-    // 
-    std::vector<LolLobbyTeamBuilderTradeV1> trades;
-    // 
-    bool allowSkinSelection;
-    // 
-    int64_t currentTotalTimeMillis;
-    // 
-    int64_t currentTimeRemainingMillis;
-    // 
-    std::string teamId;
-    // 
-    LolLobbyTeamBuilderRerollStateV1 rerollState;
-    // 
+    LolLobbyTeamBuilderCellsV1_t cells;
     std::vector<nlohmann::json> actionSetList;
-    // 
+    bool allowSkinSelection;
+    LolLobbyTeamBuilderRerollStateV1_t rerollState;
+    std::vector<LolLobbyTeamBuilderTradeV1_t> trades;
+    std::string pickIntentClearedReason;
     int32_t localPlayerCellId;
-    // 
-    LolLobbyTeamBuilderTeamBuilderBoostInfo battleBoostState;
-    // 
     std::map<std::string, nlohmann::json> ceremoniesByActionSetIndex;
+    int64_t currentTotalTimeMillis;
+    std::string teamChatRoomId;
+    int32_t currentActionSetIndex;
+    int64_t currentTimeRemainingMillis;
+    std::string teamId;
+    LolLobbyTeamBuilderTeamBuilderBoostInfo_t battleBoostState;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderChampionSelectStateV1& v) {
-    j["pickIntentClearedReason"] = v.pickIntentClearedReason;
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderChampionSelectStateV1_t& v) {
     j["allowOptingOutOfBanning"] = v.allowOptingOutOfBanning;
     j["subphase"] = v.subphase;
+    j["cells"] = v.cells;
+    j["actionSetList"] = v.actionSetList;
+    j["allowSkinSelection"] = v.allowSkinSelection;
+    j["rerollState"] = v.rerollState;
+    j["trades"] = v.trades;
+    j["pickIntentClearedReason"] = v.pickIntentClearedReason;
+    j["localPlayerCellId"] = v.localPlayerCellId;
+    j["ceremoniesByActionSetIndex"] = v.ceremoniesByActionSetIndex;
+    j["currentTotalTimeMillis"] = v.currentTotalTimeMillis;
     j["teamChatRoomId"] = v.teamChatRoomId;
     j["currentActionSetIndex"] = v.currentActionSetIndex;
-    j["cells"] = v.cells;
-    j["trades"] = v.trades;
-    j["allowSkinSelection"] = v.allowSkinSelection;
-    j["currentTotalTimeMillis"] = v.currentTotalTimeMillis;
     j["currentTimeRemainingMillis"] = v.currentTimeRemainingMillis;
     j["teamId"] = v.teamId;
-    j["rerollState"] = v.rerollState;
-    j["actionSetList"] = v.actionSetList;
-    j["localPlayerCellId"] = v.localPlayerCellId;
     j["battleBoostState"] = v.battleBoostState;
-    j["ceremoniesByActionSetIndex"] = v.ceremoniesByActionSetIndex;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderChampionSelectStateV1& v) {
-    v.pickIntentClearedReason = j.at("pickIntentClearedReason").get<std::string>;
-    v.allowOptingOutOfBanning = j.at("allowOptingOutOfBanning").get<bool>;
-    v.subphase = j.at("subphase").get<std::string>;
-    v.teamChatRoomId = j.at("teamChatRoomId").get<std::string>;
-    v.currentActionSetIndex = j.at("currentActionSetIndex").get<int32_t>;
-    v.cells = j.at("cells").get<LolLobbyTeamBuilderCellsV1>;
-    v.trades = j.at("trades").get<std::vector<LolLobbyTeamBuilderTradeV1>>;
-    v.allowSkinSelection = j.at("allowSkinSelection").get<bool>;
-    v.currentTotalTimeMillis = j.at("currentTotalTimeMillis").get<int64_t>;
-    v.currentTimeRemainingMillis = j.at("currentTimeRemainingMillis").get<int64_t>;
-    v.teamId = j.at("teamId").get<std::string>;
-    v.rerollState = j.at("rerollState").get<LolLobbyTeamBuilderRerollStateV1>;
-    v.actionSetList = j.at("actionSetList").get<std::vector<nlohmann::json>>;
-    v.localPlayerCellId = j.at("localPlayerCellId").get<int32_t>;
-    v.battleBoostState = j.at("battleBoostState").get<LolLobbyTeamBuilderTeamBuilderBoostInfo>;
-    v.ceremoniesByActionSetIndex = j.at("ceremoniesByActionSetIndex").get<std::map<std::string, nlohmann::json>>;
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderChampionSelectStateV1_t& v) {
+    v.allowOptingOutOfBanning = j.at("allowOptingOutOfBanning").get<bool>();
+    v.subphase = j.at("subphase").get<std::string>();
+    v.cells = j.at("cells").get<LolLobbyTeamBuilderCellsV1_t>();
+    v.actionSetList = j.at("actionSetList").get<std::vector<nlohmann::json>>();
+    v.allowSkinSelection = j.at("allowSkinSelection").get<bool>();
+    v.rerollState = j.at("rerollState").get<LolLobbyTeamBuilderRerollStateV1_t>();
+    v.trades = j.at("trades").get<std::vector<LolLobbyTeamBuilderTradeV1_t>>();
+    v.pickIntentClearedReason = j.at("pickIntentClearedReason").get<std::string>();
+    v.localPlayerCellId = j.at("localPlayerCellId").get<int32_t>();
+    v.ceremoniesByActionSetIndex = j.at("ceremoniesByActionSetIndex").get<std::map<std::string, nlohmann::json>>();
+    v.currentTotalTimeMillis = j.at("currentTotalTimeMillis").get<int64_t>();
+    v.teamChatRoomId = j.at("teamChatRoomId").get<std::string>();
+    v.currentActionSetIndex = j.at("currentActionSetIndex").get<int32_t>();
+    v.currentTimeRemainingMillis = j.at("currentTimeRemainingMillis").get<int64_t>();
+    v.teamId = j.at("teamId").get<std::string>();
+    v.battleBoostState = j.at("battleBoostState").get<LolLobbyTeamBuilderTeamBuilderBoostInfo_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderChampionSelectStateV1_HPP

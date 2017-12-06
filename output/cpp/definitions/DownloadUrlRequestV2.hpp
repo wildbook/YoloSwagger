@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_DownloadUrlRequestV2_HPP
-#define SWAGGER_TYPES_DownloadUrlRequestV2_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct DownloadUrlRequestV2 {
-    // 
-    std::string platformId;
-    // 
+  struct DownloadUrlRequestV2_t {
     uint64_t gameId;
+    std::string platformId;
   };
 
-  inline void to_json(nlohmann::json& j, const DownloadUrlRequestV2& v) {
-    j["platformId"] = v.platformId;
+  inline void to_json(nlohmann::json& j, const DownloadUrlRequestV2_t& v) {
     j["gameId"] = v.gameId;
+    j["platformId"] = v.platformId;
   }
 
-  inline void from_json(const nlohmann::json& j, DownloadUrlRequestV2& v) {
-    v.platformId = j.at("platformId").get<std::string>;
-    v.gameId = j.at("gameId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, DownloadUrlRequestV2_t& v) {
+    v.gameId = j.at("gameId").get<uint64_t>();
+    v.platformId = j.at("platformId").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_DownloadUrlRequestV2_HPP

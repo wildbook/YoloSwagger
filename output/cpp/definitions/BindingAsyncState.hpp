@@ -1,73 +1,70 @@
-#ifndef SWAGGER_TYPES_BindingAsyncState_HPP
-#define SWAGGER_TYPES_BindingAsyncState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
   // Possible states of an asynchronous operation.
-  enum class BindingAsyncState {
-    // A request to cancel the operation has been made
-    Cancelling = 2,
-    // Invalid state
-    None = 0,
+  enum class BindingAsyncState_t {
     // The operation completed successfully
-    Succeeded = 4,
-    // The operation encountered an error
-    Failed = 5,
+    Succeeded_E = 4,
     // The operation is in flight
-    Running = 1,
+    Running_E = 1,
+    // Invalid state
+    None_E = 0,
     // The operation was cancelled
-    Cancelled = 3,
+    Cancelled_E = 3,
+    // A request to cancel the operation has been made
+    Cancelling_E = 2,
+    // The operation encountered an error
+    Failed_E = 5,
   };
 
-  inline void to_json(nlohmann::json& j, const BindingAsyncState& v) {
+  inline void to_json(nlohmann::json& j, const BindingAsyncState_t& v) {
     switch(v) {
-      case BindingAsyncState::Cancelling:
-        j = "Cancelling";
-      break;
-      case BindingAsyncState::None:
-        j = "None";
-      break;
-      case BindingAsyncState::Succeeded:
+      case BindingAsyncState_t::Succeeded_E:
         j = "Succeeded";
       break;
-      case BindingAsyncState::Failed:
-        j = "Failed";
-      break;
-      case BindingAsyncState::Running:
+      case BindingAsyncState_t::Running_E:
         j = "Running";
       break;
-      case BindingAsyncState::Cancelled:
+      case BindingAsyncState_t::None_E:
+        j = "None";
+      break;
+      case BindingAsyncState_t::Cancelled_E:
         j = "Cancelled";
+      break;
+      case BindingAsyncState_t::Cancelling_E:
+        j = "Cancelling";
+      break;
+      case BindingAsyncState_t::Failed_E:
+        j = "Failed";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, BindingAsyncState& v) {
+  inline void from_json(const nlohmann::json& j, BindingAsyncState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "Cancelling"){
-      v = BindingAsyncState::Cancelling;
-      return;
-    }
-    if(s == "None"){
-      v = BindingAsyncState::None;
-      return;
-    }
     if(s == "Succeeded"){
-      v = BindingAsyncState::Succeeded;
-      return;
-    }
-    if(s == "Failed"){
-      v = BindingAsyncState::Failed;
+      v = BindingAsyncState_t::Succeeded_E;
       return;
     }
     if(s == "Running"){
-      v = BindingAsyncState::Running;
+      v = BindingAsyncState_t::Running_E;
+      return;
+    }
+    if(s == "None"){
+      v = BindingAsyncState_t::None_E;
       return;
     }
     if(s == "Cancelled"){
-      v = BindingAsyncState::Cancelled;
+      v = BindingAsyncState_t::Cancelled_E;
+      return;
+    }
+    if(s == "Cancelling"){
+      v = BindingAsyncState_t::Cancelling_E;
+      return;
+    }
+    if(s == "Failed"){
+      v = BindingAsyncState_t::Failed_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_BindingAsyncState_HPP

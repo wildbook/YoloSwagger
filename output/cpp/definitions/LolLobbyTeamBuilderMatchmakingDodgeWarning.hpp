@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingDodgeWarning_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingDodgeWarning_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLobbyTeamBuilderMatchmakingDodgeWarning {
-    // 
-    Penalty = 2,
-    // 
-    None = 0,
-    // 
-    Warning = 1,
+  enum class LolLobbyTeamBuilderMatchmakingDodgeWarning_t {
+    Penalty_E = 2,
+    None_E = 0,
+    Warning_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingDodgeWarning& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingDodgeWarning_t& v) {
     switch(v) {
-      case LolLobbyTeamBuilderMatchmakingDodgeWarning::Penalty:
+      case LolLobbyTeamBuilderMatchmakingDodgeWarning_t::Penalty_E:
         j = "Penalty";
       break;
-      case LolLobbyTeamBuilderMatchmakingDodgeWarning::None:
+      case LolLobbyTeamBuilderMatchmakingDodgeWarning_t::None_E:
         j = "None";
       break;
-      case LolLobbyTeamBuilderMatchmakingDodgeWarning::Warning:
+      case LolLobbyTeamBuilderMatchmakingDodgeWarning_t::Warning_E:
         j = "Warning";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingDodgeWarning& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingDodgeWarning_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "Penalty"){
-      v = LolLobbyTeamBuilderMatchmakingDodgeWarning::Penalty;
+      v = LolLobbyTeamBuilderMatchmakingDodgeWarning_t::Penalty_E;
       return;
     }
     if(s == "None"){
-      v = LolLobbyTeamBuilderMatchmakingDodgeWarning::None;
+      v = LolLobbyTeamBuilderMatchmakingDodgeWarning_t::None_E;
       return;
     }
     if(s == "Warning"){
-      v = LolLobbyTeamBuilderMatchmakingDodgeWarning::Warning;
+      v = LolLobbyTeamBuilderMatchmakingDodgeWarning_t::Warning_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingDodgeWarning_HPP

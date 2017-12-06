@@ -1,56 +1,44 @@
-#ifndef SWAGGER_TYPES_LolLobbyLobbyDto_HPP
-#define SWAGGER_TYPES_LolLobbyLobbyDto_HPP
+#pragma once
 #include <json.hpp>
-#include "LolLobbyLobbyGameConfigDto.hpp"
+#include <optional>
 #include "LolLobbyLobbyParticipantDto.hpp"
 #include "LolLobbyLobbyInvitationDto.hpp"
 #include "LolLobbyEligibilityRestriction.hpp"
+#include "LolLobbyLobbyGameConfigDto.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyLobbyDto {
-    // 
-    std::vector<LolLobbyEligibilityRestriction> restrictions;
-    // 
-    std::string chatRoomKey;
-    // 
-    LolLobbyLobbyGameConfigDto gameConfig;
-    // 
-    std::vector<LolLobbyLobbyInvitationDto> invitations;
-    // 
+  struct LolLobbyLobbyDto_t {
+    LolLobbyLobbyGameConfigDto_t gameConfig;
     std::string chatRoomId;
-    // 
-    std::string partyId;
-    // 
-    std::vector<LolLobbyLobbyParticipantDto> members;
-    // 
-    LolLobbyLobbyParticipantDto localMember;
-    // 
+    std::vector<LolLobbyLobbyParticipantDto_t> members;
     bool canStartActivity;
+    std::vector<LolLobbyLobbyInvitationDto_t> invitations;
+    std::vector<LolLobbyEligibilityRestriction_t> restrictions;
+    std::string partyId;
+    std::string chatRoomKey;
+    LolLobbyLobbyParticipantDto_t localMember;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyLobbyDto& v) {
-    j["restrictions"] = v.restrictions;
-    j["chatRoomKey"] = v.chatRoomKey;
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyDto_t& v) {
     j["gameConfig"] = v.gameConfig;
-    j["invitations"] = v.invitations;
     j["chatRoomId"] = v.chatRoomId;
-    j["partyId"] = v.partyId;
     j["members"] = v.members;
-    j["localMember"] = v.localMember;
     j["canStartActivity"] = v.canStartActivity;
+    j["invitations"] = v.invitations;
+    j["restrictions"] = v.restrictions;
+    j["partyId"] = v.partyId;
+    j["chatRoomKey"] = v.chatRoomKey;
+    j["localMember"] = v.localMember;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyLobbyDto& v) {
-    v.restrictions = j.at("restrictions").get<std::vector<LolLobbyEligibilityRestriction>>;
-    v.chatRoomKey = j.at("chatRoomKey").get<std::string>;
-    v.gameConfig = j.at("gameConfig").get<LolLobbyLobbyGameConfigDto>;
-    v.invitations = j.at("invitations").get<std::vector<LolLobbyLobbyInvitationDto>>;
-    v.chatRoomId = j.at("chatRoomId").get<std::string>;
-    v.partyId = j.at("partyId").get<std::string>;
-    v.members = j.at("members").get<std::vector<LolLobbyLobbyParticipantDto>>;
-    v.localMember = j.at("localMember").get<LolLobbyLobbyParticipantDto>;
-    v.canStartActivity = j.at("canStartActivity").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyDto_t& v) {
+    v.gameConfig = j.at("gameConfig").get<LolLobbyLobbyGameConfigDto_t>();
+    v.chatRoomId = j.at("chatRoomId").get<std::string>();
+    v.members = j.at("members").get<std::vector<LolLobbyLobbyParticipantDto_t>>();
+    v.canStartActivity = j.at("canStartActivity").get<bool>();
+    v.invitations = j.at("invitations").get<std::vector<LolLobbyLobbyInvitationDto_t>>();
+    v.restrictions = j.at("restrictions").get<std::vector<LolLobbyEligibilityRestriction_t>>();
+    v.partyId = j.at("partyId").get<std::string>();
+    v.chatRoomKey = j.at("chatRoomKey").get<std::string>();
+    v.localMember = j.at("localMember").get<LolLobbyLobbyParticipantDto_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyLobbyDto_HPP

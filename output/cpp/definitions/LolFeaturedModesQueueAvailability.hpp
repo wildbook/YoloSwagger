@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_LolFeaturedModesQueueAvailability_HPP
-#define SWAGGER_TYPES_LolFeaturedModesQueueAvailability_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolFeaturedModesQueueAvailability {
-    // 
-    Available = 0,
-    // 
-    PlatformDisabled = 1,
-    // 
-    DoesntMeetRequirements = 2,
+  enum class LolFeaturedModesQueueAvailability_t {
+    DoesntMeetRequirements_E = 2,
+    PlatformDisabled_E = 1,
+    Available_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const LolFeaturedModesQueueAvailability& v) {
+  inline void to_json(nlohmann::json& j, const LolFeaturedModesQueueAvailability_t& v) {
     switch(v) {
-      case LolFeaturedModesQueueAvailability::Available:
-        j = "Available";
+      case LolFeaturedModesQueueAvailability_t::DoesntMeetRequirements_E:
+        j = "DoesntMeetRequirements";
       break;
-      case LolFeaturedModesQueueAvailability::PlatformDisabled:
+      case LolFeaturedModesQueueAvailability_t::PlatformDisabled_E:
         j = "PlatformDisabled";
       break;
-      case LolFeaturedModesQueueAvailability::DoesntMeetRequirements:
-        j = "DoesntMeetRequirements";
+      case LolFeaturedModesQueueAvailability_t::Available_E:
+        j = "Available";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolFeaturedModesQueueAvailability& v) {
+  inline void from_json(const nlohmann::json& j, LolFeaturedModesQueueAvailability_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "Available"){
-      v = LolFeaturedModesQueueAvailability::Available;
+    if(s == "DoesntMeetRequirements"){
+      v = LolFeaturedModesQueueAvailability_t::DoesntMeetRequirements_E;
       return;
     }
     if(s == "PlatformDisabled"){
-      v = LolFeaturedModesQueueAvailability::PlatformDisabled;
+      v = LolFeaturedModesQueueAvailability_t::PlatformDisabled_E;
       return;
     }
-    if(s == "DoesntMeetRequirements"){
-      v = LolFeaturedModesQueueAvailability::DoesntMeetRequirements;
+    if(s == "Available"){
+      v = LolFeaturedModesQueueAvailability_t::Available_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolFeaturedModesQueueAvailability_HPP

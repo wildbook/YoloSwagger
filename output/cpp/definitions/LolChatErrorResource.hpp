@@ -1,36 +1,28 @@
-#ifndef SWAGGER_TYPES_LolChatErrorResource_HPP
-#define SWAGGER_TYPES_LolChatErrorResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChatErrorResource {
-    // 
-    std::string text;
-    // 
+  struct LolChatErrorResource_t {
     std::string message;
-    // 
-    uint64_t code;
-    // 
     std::string from;
-    // 
     uint64_t id;
+    std::string text;
+    uint64_t code;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatErrorResource& v) {
-    j["text"] = v.text;
+  inline void to_json(nlohmann::json& j, const LolChatErrorResource_t& v) {
     j["message"] = v.message;
-    j["code"] = v.code;
     j["from"] = v.from;
     j["id"] = v.id;
+    j["text"] = v.text;
+    j["code"] = v.code;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatErrorResource& v) {
-    v.text = j.at("text").get<std::string>;
-    v.message = j.at("message").get<std::string>;
-    v.code = j.at("code").get<uint64_t>;
-    v.from = j.at("from").get<std::string>;
-    v.id = j.at("id").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolChatErrorResource_t& v) {
+    v.message = j.at("message").get<std::string>();
+    v.from = j.at("from").get<std::string>();
+    v.id = j.at("id").get<uint64_t>();
+    v.text = j.at("text").get<std::string>();
+    v.code = j.at("code").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatErrorResource_HPP

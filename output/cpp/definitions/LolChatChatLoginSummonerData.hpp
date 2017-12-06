@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolChatChatLoginSummonerData_HPP
-#define SWAGGER_TYPES_LolChatChatLoginSummonerData_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolChatChatLoginSummonerLevelAndPoints.hpp"
 namespace leagueapi {
-  // 
-  struct LolChatChatLoginSummonerData {
-    // 
-    LolChatChatLoginSummonerLevelAndPoints summonerLevelAndPoints;
+  struct LolChatChatLoginSummonerData_t {
+    LolChatChatLoginSummonerLevelAndPoints_t summonerLevelAndPoints;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatChatLoginSummonerData& v) {
+  inline void to_json(nlohmann::json& j, const LolChatChatLoginSummonerData_t& v) {
     j["summonerLevelAndPoints"] = v.summonerLevelAndPoints;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatChatLoginSummonerData& v) {
-    v.summonerLevelAndPoints = j.at("summonerLevelAndPoints").get<LolChatChatLoginSummonerLevelAndPoints>;
+  inline void from_json(const nlohmann::json& j, LolChatChatLoginSummonerData_t& v) {
+    v.summonerLevelAndPoints = j.at("summonerLevelAndPoints").get<LolChatChatLoginSummonerLevelAndPoints_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatChatLoginSummonerData_HPP

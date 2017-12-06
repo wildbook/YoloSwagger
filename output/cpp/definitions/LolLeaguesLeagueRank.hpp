@@ -1,73 +1,63 @@
-#ifndef SWAGGER_TYPES_LolLeaguesLeagueRank_HPP
-#define SWAGGER_TYPES_LolLeaguesLeagueRank_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLeaguesLeagueRank {
-    // 
-    I = 0,
-    // 
-    NA = 5,
-    // 
-    IV = 3,
-    // 
-    II = 1,
-    // 
-    V = 4,
-    // 
-    III = 2,
+  enum class LolLeaguesLeagueRank_t {
+    II_E = 1,
+    NA_E = 5,
+    I_E = 0,
+    III_E = 2,
+    IV_E = 3,
+    V_E = 4,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLeaguesLeagueRank& v) {
+  inline void to_json(nlohmann::json& j, const LolLeaguesLeagueRank_t& v) {
     switch(v) {
-      case LolLeaguesLeagueRank::I:
-        j = "I";
-      break;
-      case LolLeaguesLeagueRank::NA:
-        j = "NA";
-      break;
-      case LolLeaguesLeagueRank::IV:
-        j = "IV";
-      break;
-      case LolLeaguesLeagueRank::II:
+      case LolLeaguesLeagueRank_t::II_E:
         j = "II";
       break;
-      case LolLeaguesLeagueRank::V:
-        j = "V";
+      case LolLeaguesLeagueRank_t::NA_E:
+        j = "NA";
       break;
-      case LolLeaguesLeagueRank::III:
+      case LolLeaguesLeagueRank_t::I_E:
+        j = "I";
+      break;
+      case LolLeaguesLeagueRank_t::III_E:
         j = "III";
+      break;
+      case LolLeaguesLeagueRank_t::IV_E:
+        j = "IV";
+      break;
+      case LolLeaguesLeagueRank_t::V_E:
+        j = "V";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLeaguesLeagueRank& v) {
+  inline void from_json(const nlohmann::json& j, LolLeaguesLeagueRank_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "I"){
-      v = LolLeaguesLeagueRank::I;
+    if(s == "II"){
+      v = LolLeaguesLeagueRank_t::II_E;
       return;
     }
     if(s == "NA"){
-      v = LolLeaguesLeagueRank::NA;
+      v = LolLeaguesLeagueRank_t::NA_E;
       return;
     }
-    if(s == "IV"){
-      v = LolLeaguesLeagueRank::IV;
-      return;
-    }
-    if(s == "II"){
-      v = LolLeaguesLeagueRank::II;
-      return;
-    }
-    if(s == "V"){
-      v = LolLeaguesLeagueRank::V;
+    if(s == "I"){
+      v = LolLeaguesLeagueRank_t::I_E;
       return;
     }
     if(s == "III"){
-      v = LolLeaguesLeagueRank::III;
+      v = LolLeaguesLeagueRank_t::III_E;
+      return;
+    }
+    if(s == "IV"){
+      v = LolLeaguesLeagueRank_t::IV_E;
+      return;
+    }
+    if(s == "V"){
+      v = LolLeaguesLeagueRank_t::V_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLeaguesLeagueRank_HPP

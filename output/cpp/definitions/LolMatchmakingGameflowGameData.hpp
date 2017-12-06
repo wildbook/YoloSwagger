@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolMatchmakingGameflowGameData_HPP
-#define SWAGGER_TYPES_LolMatchmakingGameflowGameData_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolMatchmakingGameflowQueue.hpp"
 namespace leagueapi {
-  // 
-  struct LolMatchmakingGameflowGameData {
-    // 
-    LolMatchmakingGameflowQueue queue;
+  struct LolMatchmakingGameflowGameData_t {
+    LolMatchmakingGameflowQueue_t queue;
   };
 
-  inline void to_json(nlohmann::json& j, const LolMatchmakingGameflowGameData& v) {
+  inline void to_json(nlohmann::json& j, const LolMatchmakingGameflowGameData_t& v) {
     j["queue"] = v.queue;
   }
 
-  inline void from_json(const nlohmann::json& j, LolMatchmakingGameflowGameData& v) {
-    v.queue = j.at("queue").get<LolMatchmakingGameflowQueue>;
+  inline void from_json(const nlohmann::json& j, LolMatchmakingGameflowGameData_t& v) {
+    v.queue = j.at("queue").get<LolMatchmakingGameflowQueue_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolMatchmakingGameflowGameData_HPP

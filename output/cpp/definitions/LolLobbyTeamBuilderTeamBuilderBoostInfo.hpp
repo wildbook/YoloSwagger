@@ -1,36 +1,28 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderTeamBuilderBoostInfo_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderTeamBuilderBoostInfo_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyTeamBuilderTeamBuilderBoostInfo {
-    // 
-    int64_t activatorCellId;
-    // 
+  struct LolLobbyTeamBuilderTeamBuilderBoostInfo_t {
     bool allowBattleBoost;
-    // 
-    int64_t cost;
-    // 
-    bool battleBoostActivated;
-    // 
+    int64_t activatorCellId;
     std::vector<int64_t> unlockedSkinIds;
+    bool battleBoostActivated;
+    int64_t cost;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTeamBuilderBoostInfo& v) {
-    j["activatorCellId"] = v.activatorCellId;
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTeamBuilderBoostInfo_t& v) {
     j["allowBattleBoost"] = v.allowBattleBoost;
-    j["cost"] = v.cost;
-    j["battleBoostActivated"] = v.battleBoostActivated;
+    j["activatorCellId"] = v.activatorCellId;
     j["unlockedSkinIds"] = v.unlockedSkinIds;
+    j["battleBoostActivated"] = v.battleBoostActivated;
+    j["cost"] = v.cost;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTeamBuilderBoostInfo& v) {
-    v.activatorCellId = j.at("activatorCellId").get<int64_t>;
-    v.allowBattleBoost = j.at("allowBattleBoost").get<bool>;
-    v.cost = j.at("cost").get<int64_t>;
-    v.battleBoostActivated = j.at("battleBoostActivated").get<bool>;
-    v.unlockedSkinIds = j.at("unlockedSkinIds").get<std::vector<int64_t>>;
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTeamBuilderBoostInfo_t& v) {
+    v.allowBattleBoost = j.at("allowBattleBoost").get<bool>();
+    v.activatorCellId = j.at("activatorCellId").get<int64_t>();
+    v.unlockedSkinIds = j.at("unlockedSkinIds").get<std::vector<int64_t>>();
+    v.battleBoostActivated = j.at("battleBoostActivated").get<bool>();
+    v.cost = j.at("cost").get<int64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderTeamBuilderBoostInfo_HPP

@@ -1,29 +1,23 @@
-#ifndef SWAGGER_TYPES_LolMatchHistoryMatchHistoryList_HPP
-#define SWAGGER_TYPES_LolMatchHistoryMatchHistoryList_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolMatchHistoryMatchHistoryGameList.hpp"
 namespace leagueapi {
-  // 
-  struct LolMatchHistoryMatchHistoryList {
-    // 
-    std::string platformId;
-    // 
-    LolMatchHistoryMatchHistoryGameList games;
-    // 
+  struct LolMatchHistoryMatchHistoryList_t {
     uint64_t accountId;
+    LolMatchHistoryMatchHistoryGameList_t games;
+    std::string platformId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryList& v) {
-    j["platformId"] = v.platformId;
-    j["games"] = v.games;
+  inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryList_t& v) {
     j["accountId"] = v.accountId;
+    j["games"] = v.games;
+    j["platformId"] = v.platformId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryList& v) {
-    v.platformId = j.at("platformId").get<std::string>;
-    v.games = j.at("games").get<LolMatchHistoryMatchHistoryGameList>;
-    v.accountId = j.at("accountId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryList_t& v) {
+    v.accountId = j.at("accountId").get<uint64_t>();
+    v.games = j.at("games").get<LolMatchHistoryMatchHistoryGameList_t>();
+    v.platformId = j.at("platformId").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolMatchHistoryMatchHistoryList_HPP

@@ -1,29 +1,23 @@
-#ifndef SWAGGER_TYPES_CollectionsLcdsSummonerIconInventoryDTO_HPP
-#define SWAGGER_TYPES_CollectionsLcdsSummonerIconInventoryDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "CollectionsLcdsSummonerIcon.hpp"
 namespace leagueapi {
-  // 
-  struct CollectionsLcdsSummonerIconInventoryDTO {
-    // 
+  struct CollectionsLcdsSummonerIconInventoryDTO_t {
+    std::vector<CollectionsLcdsSummonerIcon_t> summonerIcons;
     uint64_t summonerId;
-    // 
     std::string dateString;
-    // 
-    std::vector<CollectionsLcdsSummonerIcon> summonerIcons;
   };
 
-  inline void to_json(nlohmann::json& j, const CollectionsLcdsSummonerIconInventoryDTO& v) {
+  inline void to_json(nlohmann::json& j, const CollectionsLcdsSummonerIconInventoryDTO_t& v) {
+    j["summonerIcons"] = v.summonerIcons;
     j["summonerId"] = v.summonerId;
     j["dateString"] = v.dateString;
-    j["summonerIcons"] = v.summonerIcons;
   }
 
-  inline void from_json(const nlohmann::json& j, CollectionsLcdsSummonerIconInventoryDTO& v) {
-    v.summonerId = j.at("summonerId").get<uint64_t>;
-    v.dateString = j.at("dateString").get<std::string>;
-    v.summonerIcons = j.at("summonerIcons").get<std::vector<CollectionsLcdsSummonerIcon>>;
+  inline void from_json(const nlohmann::json& j, CollectionsLcdsSummonerIconInventoryDTO_t& v) {
+    v.summonerIcons = j.at("summonerIcons").get<std::vector<CollectionsLcdsSummonerIcon_t>>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.dateString = j.at("dateString").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_CollectionsLcdsSummonerIconInventoryDTO_HPP

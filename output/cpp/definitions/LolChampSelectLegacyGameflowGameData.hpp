@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolChampSelectLegacyGameflowGameData_HPP
-#define SWAGGER_TYPES_LolChampSelectLegacyGameflowGameData_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolChampSelectLegacyQueue.hpp"
 namespace leagueapi {
-  // 
-  struct LolChampSelectLegacyGameflowGameData {
-    // 
-    LolChampSelectLegacyQueue queue;
+  struct LolChampSelectLegacyGameflowGameData_t {
+    LolChampSelectLegacyQueue_t queue;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyGameflowGameData& v) {
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyGameflowGameData_t& v) {
     j["queue"] = v.queue;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyGameflowGameData& v) {
-    v.queue = j.at("queue").get<LolChampSelectLegacyQueue>;
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyGameflowGameData_t& v) {
+    v.queue = j.at("queue").get<LolChampSelectLegacyQueue_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampSelectLegacyGameflowGameData_HPP

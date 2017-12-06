@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolClashFoundationError_HPP
-#define SWAGGER_TYPES_LolClashFoundationError_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolClashFoundationError {
-    // 
-    CLASH_DISABLED = 1,
-    // 
-    GAMEFLOW_UNAVAILABLE = 3,
-    // 
-    DESERIALIZATION_FAILED = 2,
-    // 
-    CLASH_NOT_INITIALIZED = 0,
+  enum class LolClashFoundationError_t {
+    DESERIALIZATION_FAILED_E = 2,
+    CLASH_DISABLED_E = 1,
+    CLASH_NOT_INITIALIZED_E = 0,
+    GAMEFLOW_UNAVAILABLE_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashFoundationError& v) {
+  inline void to_json(nlohmann::json& j, const LolClashFoundationError_t& v) {
     switch(v) {
-      case LolClashFoundationError::CLASH_DISABLED:
-        j = "CLASH_DISABLED";
-      break;
-      case LolClashFoundationError::GAMEFLOW_UNAVAILABLE:
-        j = "GAMEFLOW_UNAVAILABLE";
-      break;
-      case LolClashFoundationError::DESERIALIZATION_FAILED:
+      case LolClashFoundationError_t::DESERIALIZATION_FAILED_E:
         j = "DESERIALIZATION_FAILED";
       break;
-      case LolClashFoundationError::CLASH_NOT_INITIALIZED:
+      case LolClashFoundationError_t::CLASH_DISABLED_E:
+        j = "CLASH_DISABLED";
+      break;
+      case LolClashFoundationError_t::CLASH_NOT_INITIALIZED_E:
         j = "CLASH_NOT_INITIALIZED";
+      break;
+      case LolClashFoundationError_t::GAMEFLOW_UNAVAILABLE_E:
+        j = "GAMEFLOW_UNAVAILABLE";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashFoundationError& v) {
+  inline void from_json(const nlohmann::json& j, LolClashFoundationError_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "CLASH_DISABLED"){
-      v = LolClashFoundationError::CLASH_DISABLED;
-      return;
-    }
-    if(s == "GAMEFLOW_UNAVAILABLE"){
-      v = LolClashFoundationError::GAMEFLOW_UNAVAILABLE;
-      return;
-    }
     if(s == "DESERIALIZATION_FAILED"){
-      v = LolClashFoundationError::DESERIALIZATION_FAILED;
+      v = LolClashFoundationError_t::DESERIALIZATION_FAILED_E;
+      return;
+    }
+    if(s == "CLASH_DISABLED"){
+      v = LolClashFoundationError_t::CLASH_DISABLED_E;
       return;
     }
     if(s == "CLASH_NOT_INITIALIZED"){
-      v = LolClashFoundationError::CLASH_NOT_INITIALIZED;
+      v = LolClashFoundationError_t::CLASH_NOT_INITIALIZED_E;
+      return;
+    }
+    if(s == "GAMEFLOW_UNAVAILABLE"){
+      v = LolClashFoundationError_t::GAMEFLOW_UNAVAILABLE_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashFoundationError_HPP

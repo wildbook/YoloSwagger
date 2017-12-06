@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LeaguesLcdsPlayerAggregatedStats_HPP
-#define SWAGGER_TYPES_LeaguesLcdsPlayerAggregatedStats_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LeaguesLcdsAggregatedStats.hpp"
 namespace leagueapi {
-  // 
-  struct LeaguesLcdsPlayerAggregatedStats {
-    // 
+  struct LeaguesLcdsPlayerAggregatedStats_t {
     uint64_t playerId;
-    // 
-    LeaguesLcdsAggregatedStats aggregatedStats;
+    LeaguesLcdsAggregatedStats_t aggregatedStats;
   };
 
-  inline void to_json(nlohmann::json& j, const LeaguesLcdsPlayerAggregatedStats& v) {
+  inline void to_json(nlohmann::json& j, const LeaguesLcdsPlayerAggregatedStats_t& v) {
     j["playerId"] = v.playerId;
     j["aggregatedStats"] = v.aggregatedStats;
   }
 
-  inline void from_json(const nlohmann::json& j, LeaguesLcdsPlayerAggregatedStats& v) {
-    v.playerId = j.at("playerId").get<uint64_t>;
-    v.aggregatedStats = j.at("aggregatedStats").get<LeaguesLcdsAggregatedStats>;
+  inline void from_json(const nlohmann::json& j, LeaguesLcdsPlayerAggregatedStats_t& v) {
+    v.playerId = j.at("playerId").get<uint64_t>();
+    v.aggregatedStats = j.at("aggregatedStats").get<LeaguesLcdsAggregatedStats_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LeaguesLcdsPlayerAggregatedStats_HPP

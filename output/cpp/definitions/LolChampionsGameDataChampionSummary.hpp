@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolChampionsGameDataChampionSummary_HPP
-#define SWAGGER_TYPES_LolChampionsGameDataChampionSummary_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChampionsGameDataChampionSummary {
-    // 
+  struct LolChampionsGameDataChampionSummary_t {
     int32_t id;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampionsGameDataChampionSummary& v) {
+  inline void to_json(nlohmann::json& j, const LolChampionsGameDataChampionSummary_t& v) {
     j["id"] = v.id;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampionsGameDataChampionSummary& v) {
-    v.id = j.at("id").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LolChampionsGameDataChampionSummary_t& v) {
+    v.id = j.at("id").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampionsGameDataChampionSummary_HPP

@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolClashClashState_HPP
-#define SWAGGER_TYPES_LolClashClashState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolClashClashState {
-    // 
-    DarkDisabled = 0,
-    // 
-    Disabled = 2,
-    // 
-    Enabled = 3,
-    // 
-    DarkEnabled = 1,
+  enum class LolClashClashState_t {
+    Enabled_E = 3,
+    DarkEnabled_E = 1,
+    DarkDisabled_E = 0,
+    Disabled_E = 2,
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashClashState& v) {
+  inline void to_json(nlohmann::json& j, const LolClashClashState_t& v) {
     switch(v) {
-      case LolClashClashState::DarkDisabled:
-        j = "DarkDisabled";
-      break;
-      case LolClashClashState::Disabled:
-        j = "Disabled";
-      break;
-      case LolClashClashState::Enabled:
+      case LolClashClashState_t::Enabled_E:
         j = "Enabled";
       break;
-      case LolClashClashState::DarkEnabled:
+      case LolClashClashState_t::DarkEnabled_E:
         j = "DarkEnabled";
+      break;
+      case LolClashClashState_t::DarkDisabled_E:
+        j = "DarkDisabled";
+      break;
+      case LolClashClashState_t::Disabled_E:
+        j = "Disabled";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashClashState& v) {
+  inline void from_json(const nlohmann::json& j, LolClashClashState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "DarkDisabled"){
-      v = LolClashClashState::DarkDisabled;
-      return;
-    }
-    if(s == "Disabled"){
-      v = LolClashClashState::Disabled;
-      return;
-    }
     if(s == "Enabled"){
-      v = LolClashClashState::Enabled;
+      v = LolClashClashState_t::Enabled_E;
       return;
     }
     if(s == "DarkEnabled"){
-      v = LolClashClashState::DarkEnabled;
+      v = LolClashClashState_t::DarkEnabled_E;
+      return;
+    }
+    if(s == "DarkDisabled"){
+      v = LolClashClashState_t::DarkDisabled_E;
+      return;
+    }
+    if(s == "Disabled"){
+      v = LolClashClashState_t::Disabled_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashClashState_HPP

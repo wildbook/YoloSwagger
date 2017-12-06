@@ -1,58 +1,46 @@
-#ifndef SWAGGER_TYPES_PlayerMembershipDto_HPP
-#define SWAGGER_TYPES_PlayerMembershipDto_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "ClubDto.hpp"
-#include "ClubReferenceDto.hpp"
-#include "PlayerInfoDto.hpp"
-#include "PlayerMembershipPreferencesDto.hpp"
 #include "MembershipInviteDto.hpp"
+#include "PlayerInfoDto.hpp"
 #include "ClubsServerConfigDto.hpp"
+#include "PlayerMembershipPreferencesDto.hpp"
+#include "ClubReferenceDto.hpp"
 namespace leagueapi {
-  // 
-  struct PlayerMembershipDto {
-    // 
+  struct PlayerMembershipDto_t {
     std::string resourceUri;
-    // 
-    PlayerMembershipPreferencesDto playerClubPreferences;
-    // 
-    std::vector<ClubReferenceDto> revokedInviteClubs;
-    // 
-    std::vector<ClubReferenceDto> removedClubs;
-    // 
-    std::vector<MembershipInviteDto> pendingInvites;
-    // 
-    PlayerInfoDto player;
-    // 
+    std::vector<ClubReferenceDto_t> revokedInviteClubs;
+    std::vector<ClubDto_t> activeClubs;
+    PlayerMembershipPreferencesDto_t playerClubPreferences;
+    std::vector<MembershipInviteDto_t> pendingInvites;
+    std::vector<ClubReferenceDto_t> removedClubs;
+    PlayerInfoDto_t player;
     std::string secureClubPresenceInfoString;
-    // 
-    ClubsServerConfigDto clubsServerConfig;
-    // 
-    std::vector<ClubDto> activeClubs;
+    ClubsServerConfigDto_t clubsServerConfig;
   };
 
-  inline void to_json(nlohmann::json& j, const PlayerMembershipDto& v) {
+  inline void to_json(nlohmann::json& j, const PlayerMembershipDto_t& v) {
     j["resourceUri"] = v.resourceUri;
-    j["playerClubPreferences"] = v.playerClubPreferences;
     j["revokedInviteClubs"] = v.revokedInviteClubs;
-    j["removedClubs"] = v.removedClubs;
+    j["activeClubs"] = v.activeClubs;
+    j["playerClubPreferences"] = v.playerClubPreferences;
     j["pendingInvites"] = v.pendingInvites;
+    j["removedClubs"] = v.removedClubs;
     j["player"] = v.player;
     j["secureClubPresenceInfoString"] = v.secureClubPresenceInfoString;
     j["clubsServerConfig"] = v.clubsServerConfig;
-    j["activeClubs"] = v.activeClubs;
   }
 
-  inline void from_json(const nlohmann::json& j, PlayerMembershipDto& v) {
-    v.resourceUri = j.at("resourceUri").get<std::string>;
-    v.playerClubPreferences = j.at("playerClubPreferences").get<PlayerMembershipPreferencesDto>;
-    v.revokedInviteClubs = j.at("revokedInviteClubs").get<std::vector<ClubReferenceDto>>;
-    v.removedClubs = j.at("removedClubs").get<std::vector<ClubReferenceDto>>;
-    v.pendingInvites = j.at("pendingInvites").get<std::vector<MembershipInviteDto>>;
-    v.player = j.at("player").get<PlayerInfoDto>;
-    v.secureClubPresenceInfoString = j.at("secureClubPresenceInfoString").get<std::string>;
-    v.clubsServerConfig = j.at("clubsServerConfig").get<ClubsServerConfigDto>;
-    v.activeClubs = j.at("activeClubs").get<std::vector<ClubDto>>;
+  inline void from_json(const nlohmann::json& j, PlayerMembershipDto_t& v) {
+    v.resourceUri = j.at("resourceUri").get<std::string>();
+    v.revokedInviteClubs = j.at("revokedInviteClubs").get<std::vector<ClubReferenceDto_t>>();
+    v.activeClubs = j.at("activeClubs").get<std::vector<ClubDto_t>>();
+    v.playerClubPreferences = j.at("playerClubPreferences").get<PlayerMembershipPreferencesDto_t>();
+    v.pendingInvites = j.at("pendingInvites").get<std::vector<MembershipInviteDto_t>>();
+    v.removedClubs = j.at("removedClubs").get<std::vector<ClubReferenceDto_t>>();
+    v.player = j.at("player").get<PlayerInfoDto_t>();
+    v.secureClubPresenceInfoString = j.at("secureClubPresenceInfoString").get<std::string>();
+    v.clubsServerConfig = j.at("clubsServerConfig").get<ClubsServerConfigDto_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_PlayerMembershipDto_HPP

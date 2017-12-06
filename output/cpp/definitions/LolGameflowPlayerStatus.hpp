@@ -1,25 +1,24 @@
-#ifndef SWAGGER_TYPES_LolGameflowPlayerStatus_HPP
-#define SWAGGER_TYPES_LolGameflowPlayerStatus_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolGameflowLobbyStatus.hpp"
 namespace leagueapi {
-  // 
-  struct LolGameflowPlayerStatus {
-    // 
-    LolGameflowLobbyStatus currentLobbyStatus;
-    // 
-    LolGameflowLobbyStatus lastQueuedLobbyStatus;
+  struct LolGameflowPlayerStatus_t {
+    std::optional<LolGameflowLobbyStatus_t> currentLobbyStatus;
+    std::optional<LolGameflowLobbyStatus_t> lastQueuedLobbyStatus;
   };
 
-  inline void to_json(nlohmann::json& j, const LolGameflowPlayerStatus& v) {
-    j["currentLobbyStatus"] = v.currentLobbyStatus;
-    j["lastQueuedLobbyStatus"] = v.lastQueuedLobbyStatus;
+  inline void to_json(nlohmann::json& j, const LolGameflowPlayerStatus_t& v) {
+    if(v.currentLobbyStatus)
+      j["currentLobbyStatus"] = *v.currentLobbyStatus;
+    if(v.lastQueuedLobbyStatus)
+      j["lastQueuedLobbyStatus"] = *v.lastQueuedLobbyStatus;
   }
 
-  inline void from_json(const nlohmann::json& j, LolGameflowPlayerStatus& v) {
-    v.currentLobbyStatus = j.at("currentLobbyStatus").get<LolGameflowLobbyStatus>;
-    v.lastQueuedLobbyStatus = j.at("lastQueuedLobbyStatus").get<LolGameflowLobbyStatus>;
+  inline void from_json(const nlohmann::json& j, LolGameflowPlayerStatus_t& v) {
+    if(auto it = j.find("currentLobbyStatus"); it != j.end() !it->is_null())
+      v.currentLobbyStatus = it->get<LolGameflowLobbyStatus_t>();
+    if(auto it = j.find("lastQueuedLobbyStatus"); it != j.end() !it->is_null())
+      v.lastQueuedLobbyStatus = it->get<LolGameflowLobbyStatus_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolGameflowPlayerStatus_HPP

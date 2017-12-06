@@ -1,55 +1,52 @@
-#ifndef SWAGGER_TYPES_RemotingHelpFormat_HPP
-#define SWAGGER_TYPES_RemotingHelpFormat_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
   // Help format for remoting functions and types.
-  enum class RemotingHelpFormat {
+  enum class RemotingHelpFormat_t {
     // Native help format
-    Full = 1,
+    Full_E = 1,
     // Console-friendly description format
-    Console = 5,
+    Console_E = 5,
     // Short description format
-    Brief = 4,
+    Brief_E = 4,
     // Python epytext format
-    Epytext = 2,
+    Epytext_E = 2,
   };
 
-  inline void to_json(nlohmann::json& j, const RemotingHelpFormat& v) {
+  inline void to_json(nlohmann::json& j, const RemotingHelpFormat_t& v) {
     switch(v) {
-      case RemotingHelpFormat::Full:
+      case RemotingHelpFormat_t::Full_E:
         j = "Full";
       break;
-      case RemotingHelpFormat::Console:
+      case RemotingHelpFormat_t::Console_E:
         j = "Console";
       break;
-      case RemotingHelpFormat::Brief:
+      case RemotingHelpFormat_t::Brief_E:
         j = "Brief";
       break;
-      case RemotingHelpFormat::Epytext:
+      case RemotingHelpFormat_t::Epytext_E:
         j = "Epytext";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, RemotingHelpFormat& v) {
+  inline void from_json(const nlohmann::json& j, RemotingHelpFormat_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "Full"){
-      v = RemotingHelpFormat::Full;
+      v = RemotingHelpFormat_t::Full_E;
       return;
     }
     if(s == "Console"){
-      v = RemotingHelpFormat::Console;
+      v = RemotingHelpFormat_t::Console_E;
       return;
     }
     if(s == "Brief"){
-      v = RemotingHelpFormat::Brief;
+      v = RemotingHelpFormat_t::Brief_E;
       return;
     }
     if(s == "Epytext"){
-      v = RemotingHelpFormat::Epytext;
+      v = RemotingHelpFormat_t::Epytext_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_RemotingHelpFormat_HPP

@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_NetworkExperimentStatus_HPP
-#define SWAGGER_TYPES_NetworkExperimentStatus_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class NetworkExperimentStatus {
-    // 
-    Disabled = 0,
-    // 
-    Completed = 3,
-    // 
-    Skipped = 1,
-    // 
-    InProgress = 2,
+  enum class NetworkExperimentStatus_t {
+    InProgress_E = 2,
+    Skipped_E = 1,
+    Completed_E = 3,
+    Disabled_E = 0,
   };
 
-  inline void to_json(nlohmann::json& j, const NetworkExperimentStatus& v) {
+  inline void to_json(nlohmann::json& j, const NetworkExperimentStatus_t& v) {
     switch(v) {
-      case NetworkExperimentStatus::Disabled:
-        j = "Disabled";
+      case NetworkExperimentStatus_t::InProgress_E:
+        j = "InProgress";
       break;
-      case NetworkExperimentStatus::Completed:
-        j = "Completed";
-      break;
-      case NetworkExperimentStatus::Skipped:
+      case NetworkExperimentStatus_t::Skipped_E:
         j = "Skipped";
       break;
-      case NetworkExperimentStatus::InProgress:
-        j = "InProgress";
+      case NetworkExperimentStatus_t::Completed_E:
+        j = "Completed";
+      break;
+      case NetworkExperimentStatus_t::Disabled_E:
+        j = "Disabled";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, NetworkExperimentStatus& v) {
+  inline void from_json(const nlohmann::json& j, NetworkExperimentStatus_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "Disabled"){
-      v = NetworkExperimentStatus::Disabled;
-      return;
-    }
-    if(s == "Completed"){
-      v = NetworkExperimentStatus::Completed;
+    if(s == "InProgress"){
+      v = NetworkExperimentStatus_t::InProgress_E;
       return;
     }
     if(s == "Skipped"){
-      v = NetworkExperimentStatus::Skipped;
+      v = NetworkExperimentStatus_t::Skipped_E;
       return;
     }
-    if(s == "InProgress"){
-      v = NetworkExperimentStatus::InProgress;
+    if(s == "Completed"){
+      v = NetworkExperimentStatus_t::Completed_E;
+      return;
+    }
+    if(s == "Disabled"){
+      v = NetworkExperimentStatus_t::Disabled_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_NetworkExperimentStatus_HPP

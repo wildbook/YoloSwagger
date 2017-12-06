@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolGeoinfoGeoInfo_HPP
-#define SWAGGER_TYPES_LolGeoinfoGeoInfo_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolGeoinfoGeoInfo {
-    // 
+  struct LolGeoinfoGeoInfo_t {
     std::string city;
-    // 
-    std::string region;
-    // 
     std::string country;
+    std::string region;
   };
 
-  inline void to_json(nlohmann::json& j, const LolGeoinfoGeoInfo& v) {
+  inline void to_json(nlohmann::json& j, const LolGeoinfoGeoInfo_t& v) {
     j["city"] = v.city;
-    j["region"] = v.region;
     j["country"] = v.country;
+    j["region"] = v.region;
   }
 
-  inline void from_json(const nlohmann::json& j, LolGeoinfoGeoInfo& v) {
-    v.city = j.at("city").get<std::string>;
-    v.region = j.at("region").get<std::string>;
-    v.country = j.at("country").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolGeoinfoGeoInfo_t& v) {
+    v.city = j.at("city").get<std::string>();
+    v.country = j.at("country").get<std::string>();
+    v.region = j.at("region").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolGeoinfoGeoInfo_HPP

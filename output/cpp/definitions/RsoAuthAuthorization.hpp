@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_RsoAuthAuthorization_HPP
-#define SWAGGER_TYPES_RsoAuthAuthorization_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct RsoAuthAuthorization {
-    // 
-    uint64_t currentAccountId;
-    // 
-    std::string currentPlatformId;
-    // 
+  struct RsoAuthAuthorization_t {
     std::string subject;
+    uint64_t currentAccountId;
+    std::string currentPlatformId;
   };
 
-  inline void to_json(nlohmann::json& j, const RsoAuthAuthorization& v) {
+  inline void to_json(nlohmann::json& j, const RsoAuthAuthorization_t& v) {
+    j["subject"] = v.subject;
     j["currentAccountId"] = v.currentAccountId;
     j["currentPlatformId"] = v.currentPlatformId;
-    j["subject"] = v.subject;
   }
 
-  inline void from_json(const nlohmann::json& j, RsoAuthAuthorization& v) {
-    v.currentAccountId = j.at("currentAccountId").get<uint64_t>;
-    v.currentPlatformId = j.at("currentPlatformId").get<std::string>;
-    v.subject = j.at("subject").get<std::string>;
+  inline void from_json(const nlohmann::json& j, RsoAuthAuthorization_t& v) {
+    v.subject = j.at("subject").get<std::string>();
+    v.currentAccountId = j.at("currentAccountId").get<uint64_t>();
+    v.currentPlatformId = j.at("currentPlatformId").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_RsoAuthAuthorization_HPP

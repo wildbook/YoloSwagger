@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolReplaysReplaysSettingsData_HPP
-#define SWAGGER_TYPES_LolReplaysReplaysSettingsData_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolReplaysReplaysSettingsData {
-    // 
-    std::string replays-folder-path;
-    // 
+  struct LolReplaysReplaysSettingsData_t {
     std::string highlights-folder-path;
+    std::string replays-folder-path;
   };
 
-  inline void to_json(nlohmann::json& j, const LolReplaysReplaysSettingsData& v) {
-    j["replays-folder-path"] = v.replays-folder-path;
+  inline void to_json(nlohmann::json& j, const LolReplaysReplaysSettingsData_t& v) {
     j["highlights-folder-path"] = v.highlights-folder-path;
+    j["replays-folder-path"] = v.replays-folder-path;
   }
 
-  inline void from_json(const nlohmann::json& j, LolReplaysReplaysSettingsData& v) {
-    v.replays-folder-path = j.at("replays-folder-path").get<std::string>;
-    v.highlights-folder-path = j.at("highlights-folder-path").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolReplaysReplaysSettingsData_t& v) {
+    v.highlights-folder-path = j.at("highlights-folder-path").get<std::string>();
+    v.replays-folder-path = j.at("replays-folder-path").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolReplaysReplaysSettingsData_HPP

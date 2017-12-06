@@ -1,26 +1,21 @@
-#ifndef SWAGGER_TYPES_LolClashRegisteredRosterNotification_HPP
-#define SWAGGER_TYPES_LolClashRegisteredRosterNotification_HPP
+#pragma once
 #include <json.hpp>
-#include "LolClashRosterNotifyReason.hpp"
+#include <optional>
 #include "RosterDTO.hpp"
+#include "LolClashRosterNotifyReason.hpp"
 namespace leagueapi {
-  // 
-  struct LolClashRegisteredRosterNotification {
-    // 
-    LolClashRosterNotifyReason notifyReason;
-    // 
-    RosterDTO roster;
+  struct LolClashRegisteredRosterNotification_t {
+    LolClashRosterNotifyReason_t notifyReason;
+    RosterDTO_t roster;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashRegisteredRosterNotification& v) {
+  inline void to_json(nlohmann::json& j, const LolClashRegisteredRosterNotification_t& v) {
     j["notifyReason"] = v.notifyReason;
     j["roster"] = v.roster;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashRegisteredRosterNotification& v) {
-    v.notifyReason = j.at("notifyReason").get<LolClashRosterNotifyReason>;
-    v.roster = j.at("roster").get<RosterDTO>;
+  inline void from_json(const nlohmann::json& j, LolClashRegisteredRosterNotification_t& v) {
+    v.notifyReason = j.at("notifyReason").get<LolClashRosterNotifyReason_t>();
+    v.roster = j.at("roster").get<RosterDTO_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashRegisteredRosterNotification_HPP

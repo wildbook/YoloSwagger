@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolPurchaseWidgetPurchaseWidgetConfig_HPP
-#define SWAGGER_TYPES_LolPurchaseWidgetPurchaseWidgetConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolPurchaseWidgetPurchaseWidgetConfig {
-    // 
+  struct LolPurchaseWidgetPurchaseWidgetConfig_t {
     bool enabled;
-    // 
     bool purchaseDisclaimerEnabled;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPurchaseWidgetPurchaseWidgetConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolPurchaseWidgetPurchaseWidgetConfig_t& v) {
     j["enabled"] = v.enabled;
     j["purchaseDisclaimerEnabled"] = v.purchaseDisclaimerEnabled;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPurchaseWidgetPurchaseWidgetConfig& v) {
-    v.enabled = j.at("enabled").get<bool>;
-    v.purchaseDisclaimerEnabled = j.at("purchaseDisclaimerEnabled").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolPurchaseWidgetPurchaseWidgetConfig_t& v) {
+    v.enabled = j.at("enabled").get<bool>();
+    v.purchaseDisclaimerEnabled = j.at("purchaseDisclaimerEnabled").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPurchaseWidgetPurchaseWidgetConfig_HPP

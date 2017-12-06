@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolChatSettingsResource_HPP
-#define SWAGGER_TYPES_LolChatSettingsResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChatSettingsResource {
-    // 
+  struct LolChatSettingsResource_t {
     nlohmann::json data;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChatSettingsResource& v) {
+  inline void to_json(nlohmann::json& j, const LolChatSettingsResource_t& v) {
     j["data"] = v.data;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChatSettingsResource& v) {
-    v.data = j.at("data").get<nlohmann::json>;
+  inline void from_json(const nlohmann::json& j, LolChatSettingsResource_t& v) {
+    v.data = j.at("data").get<nlohmann::json>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChatSettingsResource_HPP

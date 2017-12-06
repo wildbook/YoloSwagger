@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_HighlightsDynamicConfig_HPP
-#define SWAGGER_TYPES_HighlightsDynamicConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct HighlightsDynamicConfig {
-    // 
+  struct HighlightsDynamicConfig_t {
     bool Enabled;
   };
 
-  inline void to_json(nlohmann::json& j, const HighlightsDynamicConfig& v) {
+  inline void to_json(nlohmann::json& j, const HighlightsDynamicConfig_t& v) {
     j["Enabled"] = v.Enabled;
   }
 
-  inline void from_json(const nlohmann::json& j, HighlightsDynamicConfig& v) {
-    v.Enabled = j.at("Enabled").get<bool>;
+  inline void from_json(const nlohmann::json& j, HighlightsDynamicConfig_t& v) {
+    v.Enabled = j.at("Enabled").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_HighlightsDynamicConfig_HPP

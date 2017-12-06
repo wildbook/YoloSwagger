@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolCollectionsCollectionsRune_HPP
-#define SWAGGER_TYPES_LolCollectionsCollectionsRune_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolCollectionsCollectionsRune {
-    // 
+  struct LolCollectionsCollectionsRune_t {
     uint32_t runeId;
-    // 
     uint32_t runeSlotId;
   };
 
-  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsRune& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsRune_t& v) {
     j["runeId"] = v.runeId;
     j["runeSlotId"] = v.runeSlotId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsRune& v) {
-    v.runeId = j.at("runeId").get<uint32_t>;
-    v.runeSlotId = j.at("runeSlotId").get<uint32_t>;
+  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsRune_t& v) {
+    v.runeId = j.at("runeId").get<uint32_t>();
+    v.runeSlotId = j.at("runeSlotId").get<uint32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolCollectionsCollectionsRune_HPP

@@ -1,145 +1,127 @@
-#ifndef SWAGGER_TYPES_LolEndOfGameGameflowPhase_HPP
-#define SWAGGER_TYPES_LolEndOfGameGameflowPhase_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolEndOfGameGameflowPhase {
-    // 
-    CheckedIntoTournament = 3,
-    // 
-    None = 0,
-    // 
-    EndOfGame = 12,
-    // 
-    ChampSelect = 5,
-    // 
-    FailedToLaunch = 7,
-    // 
-    WaitingForStats = 10,
-    // 
-    TerminatedInError = 13,
-    // 
-    Reconnect = 9,
-    // 
-    GameStart = 6,
-    // 
-    ReadyCheck = 4,
-    // 
-    InProgress = 8,
-    // 
-    PreEndOfGame = 11,
-    // 
-    Lobby = 1,
-    // 
-    Matchmaking = 2,
+  enum class LolEndOfGameGameflowPhase_t {
+    WaitingForStats_E = 10,
+    Lobby_E = 1,
+    ChampSelect_E = 5,
+    ReadyCheck_E = 4,
+    None_E = 0,
+    CheckedIntoTournament_E = 3,
+    TerminatedInError_E = 13,
+    FailedToLaunch_E = 7,
+    PreEndOfGame_E = 11,
+    Matchmaking_E = 2,
+    InProgress_E = 8,
+    Reconnect_E = 9,
+    EndOfGame_E = 12,
+    GameStart_E = 6,
   };
 
-  inline void to_json(nlohmann::json& j, const LolEndOfGameGameflowPhase& v) {
+  inline void to_json(nlohmann::json& j, const LolEndOfGameGameflowPhase_t& v) {
     switch(v) {
-      case LolEndOfGameGameflowPhase::CheckedIntoTournament:
-        j = "CheckedIntoTournament";
-      break;
-      case LolEndOfGameGameflowPhase::None:
-        j = "None";
-      break;
-      case LolEndOfGameGameflowPhase::EndOfGame:
-        j = "EndOfGame";
-      break;
-      case LolEndOfGameGameflowPhase::ChampSelect:
-        j = "ChampSelect";
-      break;
-      case LolEndOfGameGameflowPhase::FailedToLaunch:
-        j = "FailedToLaunch";
-      break;
-      case LolEndOfGameGameflowPhase::WaitingForStats:
+      case LolEndOfGameGameflowPhase_t::WaitingForStats_E:
         j = "WaitingForStats";
       break;
-      case LolEndOfGameGameflowPhase::TerminatedInError:
-        j = "TerminatedInError";
-      break;
-      case LolEndOfGameGameflowPhase::Reconnect:
-        j = "Reconnect";
-      break;
-      case LolEndOfGameGameflowPhase::GameStart:
-        j = "GameStart";
-      break;
-      case LolEndOfGameGameflowPhase::ReadyCheck:
-        j = "ReadyCheck";
-      break;
-      case LolEndOfGameGameflowPhase::InProgress:
-        j = "InProgress";
-      break;
-      case LolEndOfGameGameflowPhase::PreEndOfGame:
-        j = "PreEndOfGame";
-      break;
-      case LolEndOfGameGameflowPhase::Lobby:
+      case LolEndOfGameGameflowPhase_t::Lobby_E:
         j = "Lobby";
       break;
-      case LolEndOfGameGameflowPhase::Matchmaking:
+      case LolEndOfGameGameflowPhase_t::ChampSelect_E:
+        j = "ChampSelect";
+      break;
+      case LolEndOfGameGameflowPhase_t::ReadyCheck_E:
+        j = "ReadyCheck";
+      break;
+      case LolEndOfGameGameflowPhase_t::None_E:
+        j = "None";
+      break;
+      case LolEndOfGameGameflowPhase_t::CheckedIntoTournament_E:
+        j = "CheckedIntoTournament";
+      break;
+      case LolEndOfGameGameflowPhase_t::TerminatedInError_E:
+        j = "TerminatedInError";
+      break;
+      case LolEndOfGameGameflowPhase_t::FailedToLaunch_E:
+        j = "FailedToLaunch";
+      break;
+      case LolEndOfGameGameflowPhase_t::PreEndOfGame_E:
+        j = "PreEndOfGame";
+      break;
+      case LolEndOfGameGameflowPhase_t::Matchmaking_E:
         j = "Matchmaking";
+      break;
+      case LolEndOfGameGameflowPhase_t::InProgress_E:
+        j = "InProgress";
+      break;
+      case LolEndOfGameGameflowPhase_t::Reconnect_E:
+        j = "Reconnect";
+      break;
+      case LolEndOfGameGameflowPhase_t::EndOfGame_E:
+        j = "EndOfGame";
+      break;
+      case LolEndOfGameGameflowPhase_t::GameStart_E:
+        j = "GameStart";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolEndOfGameGameflowPhase& v) {
+  inline void from_json(const nlohmann::json& j, LolEndOfGameGameflowPhase_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "CheckedIntoTournament"){
-      v = LolEndOfGameGameflowPhase::CheckedIntoTournament;
-      return;
-    }
-    if(s == "None"){
-      v = LolEndOfGameGameflowPhase::None;
-      return;
-    }
-    if(s == "EndOfGame"){
-      v = LolEndOfGameGameflowPhase::EndOfGame;
-      return;
-    }
-    if(s == "ChampSelect"){
-      v = LolEndOfGameGameflowPhase::ChampSelect;
-      return;
-    }
-    if(s == "FailedToLaunch"){
-      v = LolEndOfGameGameflowPhase::FailedToLaunch;
-      return;
-    }
     if(s == "WaitingForStats"){
-      v = LolEndOfGameGameflowPhase::WaitingForStats;
-      return;
-    }
-    if(s == "TerminatedInError"){
-      v = LolEndOfGameGameflowPhase::TerminatedInError;
-      return;
-    }
-    if(s == "Reconnect"){
-      v = LolEndOfGameGameflowPhase::Reconnect;
-      return;
-    }
-    if(s == "GameStart"){
-      v = LolEndOfGameGameflowPhase::GameStart;
-      return;
-    }
-    if(s == "ReadyCheck"){
-      v = LolEndOfGameGameflowPhase::ReadyCheck;
-      return;
-    }
-    if(s == "InProgress"){
-      v = LolEndOfGameGameflowPhase::InProgress;
-      return;
-    }
-    if(s == "PreEndOfGame"){
-      v = LolEndOfGameGameflowPhase::PreEndOfGame;
+      v = LolEndOfGameGameflowPhase_t::WaitingForStats_E;
       return;
     }
     if(s == "Lobby"){
-      v = LolEndOfGameGameflowPhase::Lobby;
+      v = LolEndOfGameGameflowPhase_t::Lobby_E;
+      return;
+    }
+    if(s == "ChampSelect"){
+      v = LolEndOfGameGameflowPhase_t::ChampSelect_E;
+      return;
+    }
+    if(s == "ReadyCheck"){
+      v = LolEndOfGameGameflowPhase_t::ReadyCheck_E;
+      return;
+    }
+    if(s == "None"){
+      v = LolEndOfGameGameflowPhase_t::None_E;
+      return;
+    }
+    if(s == "CheckedIntoTournament"){
+      v = LolEndOfGameGameflowPhase_t::CheckedIntoTournament_E;
+      return;
+    }
+    if(s == "TerminatedInError"){
+      v = LolEndOfGameGameflowPhase_t::TerminatedInError_E;
+      return;
+    }
+    if(s == "FailedToLaunch"){
+      v = LolEndOfGameGameflowPhase_t::FailedToLaunch_E;
+      return;
+    }
+    if(s == "PreEndOfGame"){
+      v = LolEndOfGameGameflowPhase_t::PreEndOfGame_E;
       return;
     }
     if(s == "Matchmaking"){
-      v = LolEndOfGameGameflowPhase::Matchmaking;
+      v = LolEndOfGameGameflowPhase_t::Matchmaking_E;
+      return;
+    }
+    if(s == "InProgress"){
+      v = LolEndOfGameGameflowPhase_t::InProgress_E;
+      return;
+    }
+    if(s == "Reconnect"){
+      v = LolEndOfGameGameflowPhase_t::Reconnect_E;
+      return;
+    }
+    if(s == "EndOfGame"){
+      v = LolEndOfGameGameflowPhase_t::EndOfGame_E;
+      return;
+    }
+    if(s == "GameStart"){
+      v = LolEndOfGameGameflowPhase_t::GameStart_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolEndOfGameGameflowPhase_HPP

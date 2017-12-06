@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_MultipleReplayMetadataRequestV2_HPP
-#define SWAGGER_TYPES_MultipleReplayMetadataRequestV2_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct MultipleReplayMetadataRequestV2 {
-    // 
-    std::string platformId;
-    // 
+  struct MultipleReplayMetadataRequestV2_t {
     std::vector<uint64_t> gameIds;
+    std::string platformId;
   };
 
-  inline void to_json(nlohmann::json& j, const MultipleReplayMetadataRequestV2& v) {
-    j["platformId"] = v.platformId;
+  inline void to_json(nlohmann::json& j, const MultipleReplayMetadataRequestV2_t& v) {
     j["gameIds"] = v.gameIds;
+    j["platformId"] = v.platformId;
   }
 
-  inline void from_json(const nlohmann::json& j, MultipleReplayMetadataRequestV2& v) {
-    v.platformId = j.at("platformId").get<std::string>;
-    v.gameIds = j.at("gameIds").get<std::vector<uint64_t>>;
+  inline void from_json(const nlohmann::json& j, MultipleReplayMetadataRequestV2_t& v) {
+    v.gameIds = j.at("gameIds").get<std::vector<uint64_t>>();
+    v.platformId = j.at("platformId").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_MultipleReplayMetadataRequestV2_HPP

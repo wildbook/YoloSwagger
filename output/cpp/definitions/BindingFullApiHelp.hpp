@@ -1,31 +1,26 @@
-#ifndef SWAGGER_TYPES_BindingFullApiHelp_HPP
-#define SWAGGER_TYPES_BindingFullApiHelp_HPP
+#pragma once
 #include <json.hpp>
-#include "BindingFullTypeHelp.hpp"
+#include <optional>
 #include "BindingFullEventHelp.hpp"
+#include "BindingFullTypeHelp.hpp"
 #include "BindingFullFunctionHelp.hpp"
 namespace leagueapi {
   // Describes the exposed native API.
-  struct BindingFullApiHelp {
-    // 
-    std::vector<BindingFullFunctionHelp> functions;
-    // 
-    std::vector<BindingFullEventHelp> events;
-    // 
-    std::vector<BindingFullTypeHelp> types;
+  struct BindingFullApiHelp_t {
+    std::vector<BindingFullTypeHelp_t> types;
+    std::vector<BindingFullFunctionHelp_t> functions;
+    std::vector<BindingFullEventHelp_t> events;
   };
 
-  inline void to_json(nlohmann::json& j, const BindingFullApiHelp& v) {
+  inline void to_json(nlohmann::json& j, const BindingFullApiHelp_t& v) {
+    j["types"] = v.types;
     j["functions"] = v.functions;
     j["events"] = v.events;
-    j["types"] = v.types;
   }
 
-  inline void from_json(const nlohmann::json& j, BindingFullApiHelp& v) {
-    v.functions = j.at("functions").get<std::vector<BindingFullFunctionHelp>>;
-    v.events = j.at("events").get<std::vector<BindingFullEventHelp>>;
-    v.types = j.at("types").get<std::vector<BindingFullTypeHelp>>;
+  inline void from_json(const nlohmann::json& j, BindingFullApiHelp_t& v) {
+    v.types = j.at("types").get<std::vector<BindingFullTypeHelp_t>>();
+    v.functions = j.at("functions").get<std::vector<BindingFullFunctionHelp_t>>();
+    v.events = j.at("events").get<std::vector<BindingFullEventHelp_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_BindingFullApiHelp_HPP

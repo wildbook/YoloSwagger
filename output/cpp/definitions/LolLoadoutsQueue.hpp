@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolLoadoutsQueue_HPP
-#define SWAGGER_TYPES_LolLoadoutsQueue_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLoadoutsQueue {
-    // 
+  struct LolLoadoutsQueue_t {
     bool isTeamBuilderManaged;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLoadoutsQueue& v) {
+  inline void to_json(nlohmann::json& j, const LolLoadoutsQueue_t& v) {
     j["isTeamBuilderManaged"] = v.isTeamBuilderManaged;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLoadoutsQueue& v) {
-    v.isTeamBuilderManaged = j.at("isTeamBuilderManaged").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolLoadoutsQueue_t& v) {
+    v.isTeamBuilderManaged = j.at("isTeamBuilderManaged").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLoadoutsQueue_HPP

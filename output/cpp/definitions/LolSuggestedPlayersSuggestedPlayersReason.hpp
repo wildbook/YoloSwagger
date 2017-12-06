@@ -1,64 +1,55 @@
-#ifndef SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersReason_HPP
-#define SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersReason_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolSuggestedPlayersSuggestedPlayersReason {
-    // 
-    OnlineFriend = 2,
-    // 
-    LegacyPlayAgain = 9999,
-    // 
-    FriendOfFriend = 3,
-    // 
-    PreviousPremade = 1,
-    // 
-    VictoriousComrade = 5,
+  enum class LolSuggestedPlayersSuggestedPlayersReason_t {
+    LegacyPlayAgain_E = 9999,
+    FriendOfFriend_E = 3,
+    OnlineFriend_E = 2,
+    PreviousPremade_E = 1,
+    VictoriousComrade_E = 5,
   };
 
-  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersReason& v) {
+  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersReason_t& v) {
     switch(v) {
-      case LolSuggestedPlayersSuggestedPlayersReason::OnlineFriend:
-        j = "OnlineFriend";
-      break;
-      case LolSuggestedPlayersSuggestedPlayersReason::LegacyPlayAgain:
+      case LolSuggestedPlayersSuggestedPlayersReason_t::LegacyPlayAgain_E:
         j = "LegacyPlayAgain";
       break;
-      case LolSuggestedPlayersSuggestedPlayersReason::FriendOfFriend:
+      case LolSuggestedPlayersSuggestedPlayersReason_t::FriendOfFriend_E:
         j = "FriendOfFriend";
       break;
-      case LolSuggestedPlayersSuggestedPlayersReason::PreviousPremade:
+      case LolSuggestedPlayersSuggestedPlayersReason_t::OnlineFriend_E:
+        j = "OnlineFriend";
+      break;
+      case LolSuggestedPlayersSuggestedPlayersReason_t::PreviousPremade_E:
         j = "PreviousPremade";
       break;
-      case LolSuggestedPlayersSuggestedPlayersReason::VictoriousComrade:
+      case LolSuggestedPlayersSuggestedPlayersReason_t::VictoriousComrade_E:
         j = "VictoriousComrade";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersReason& v) {
+  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersReason_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "OnlineFriend"){
-      v = LolSuggestedPlayersSuggestedPlayersReason::OnlineFriend;
-      return;
-    }
     if(s == "LegacyPlayAgain"){
-      v = LolSuggestedPlayersSuggestedPlayersReason::LegacyPlayAgain;
+      v = LolSuggestedPlayersSuggestedPlayersReason_t::LegacyPlayAgain_E;
       return;
     }
     if(s == "FriendOfFriend"){
-      v = LolSuggestedPlayersSuggestedPlayersReason::FriendOfFriend;
+      v = LolSuggestedPlayersSuggestedPlayersReason_t::FriendOfFriend_E;
+      return;
+    }
+    if(s == "OnlineFriend"){
+      v = LolSuggestedPlayersSuggestedPlayersReason_t::OnlineFriend_E;
       return;
     }
     if(s == "PreviousPremade"){
-      v = LolSuggestedPlayersSuggestedPlayersReason::PreviousPremade;
+      v = LolSuggestedPlayersSuggestedPlayersReason_t::PreviousPremade_E;
       return;
     }
     if(s == "VictoriousComrade"){
-      v = LolSuggestedPlayersSuggestedPlayersReason::VictoriousComrade;
+      v = LolSuggestedPlayersSuggestedPlayersReason_t::VictoriousComrade_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersReason_HPP

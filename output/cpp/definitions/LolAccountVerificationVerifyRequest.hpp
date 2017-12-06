@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolAccountVerificationVerifyRequest_HPP
-#define SWAGGER_TYPES_LolAccountVerificationVerifyRequest_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolAccountVerificationVerifyRequest {
-    // 
-    std::string token;
-    // 
+  struct LolAccountVerificationVerifyRequest_t {
     std::string mediator;
+    std::string token;
   };
 
-  inline void to_json(nlohmann::json& j, const LolAccountVerificationVerifyRequest& v) {
-    j["token"] = v.token;
+  inline void to_json(nlohmann::json& j, const LolAccountVerificationVerifyRequest_t& v) {
     j["mediator"] = v.mediator;
+    j["token"] = v.token;
   }
 
-  inline void from_json(const nlohmann::json& j, LolAccountVerificationVerifyRequest& v) {
-    v.token = j.at("token").get<std::string>;
-    v.mediator = j.at("mediator").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolAccountVerificationVerifyRequest_t& v) {
+    v.mediator = j.at("mediator").get<std::string>();
+    v.token = j.at("token").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolAccountVerificationVerifyRequest_HPP

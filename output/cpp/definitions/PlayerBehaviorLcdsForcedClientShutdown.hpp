@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_PlayerBehaviorLcdsForcedClientShutdown_HPP
-#define SWAGGER_TYPES_PlayerBehaviorLcdsForcedClientShutdown_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct PlayerBehaviorLcdsForcedClientShutdown {
-    // 
+  struct PlayerBehaviorLcdsForcedClientShutdown_t {
     std::string additionalInfo;
-    // 
     std::string reason;
   };
 
-  inline void to_json(nlohmann::json& j, const PlayerBehaviorLcdsForcedClientShutdown& v) {
+  inline void to_json(nlohmann::json& j, const PlayerBehaviorLcdsForcedClientShutdown_t& v) {
     j["additionalInfo"] = v.additionalInfo;
     j["reason"] = v.reason;
   }
 
-  inline void from_json(const nlohmann::json& j, PlayerBehaviorLcdsForcedClientShutdown& v) {
-    v.additionalInfo = j.at("additionalInfo").get<std::string>;
-    v.reason = j.at("reason").get<std::string>;
+  inline void from_json(const nlohmann::json& j, PlayerBehaviorLcdsForcedClientShutdown_t& v) {
+    v.additionalInfo = j.at("additionalInfo").get<std::string>();
+    v.reason = j.at("reason").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_PlayerBehaviorLcdsForcedClientShutdown_HPP

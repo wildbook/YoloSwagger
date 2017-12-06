@@ -1,29 +1,23 @@
-#ifndef SWAGGER_TYPES_LolClashPlayerTournamentData_HPP
-#define SWAGGER_TYPES_LolClashPlayerTournamentData_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolClashPlayerState.hpp"
 namespace leagueapi {
-  // 
-  struct LolClashPlayerTournamentData {
-    // 
+  struct LolClashPlayerTournamentData_t {
     int64_t bracketId;
-    // 
+    LolClashPlayerState_t state;
     std::string rosterId;
-    // 
-    LolClashPlayerState state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashPlayerTournamentData& v) {
+  inline void to_json(nlohmann::json& j, const LolClashPlayerTournamentData_t& v) {
     j["bracketId"] = v.bracketId;
-    j["rosterId"] = v.rosterId;
     j["state"] = v.state;
+    j["rosterId"] = v.rosterId;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashPlayerTournamentData& v) {
-    v.bracketId = j.at("bracketId").get<int64_t>;
-    v.rosterId = j.at("rosterId").get<std::string>;
-    v.state = j.at("state").get<LolClashPlayerState>;
+  inline void from_json(const nlohmann::json& j, LolClashPlayerTournamentData_t& v) {
+    v.bracketId = j.at("bracketId").get<int64_t>();
+    v.state = j.at("state").get<LolClashPlayerState_t>();
+    v.rosterId = j.at("rosterId").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashPlayerTournamentData_HPP

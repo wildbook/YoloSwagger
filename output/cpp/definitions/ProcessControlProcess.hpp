@@ -1,24 +1,21 @@
-#ifndef SWAGGER_TYPES_ProcessControlProcess_HPP
-#define SWAGGER_TYPES_ProcessControlProcess_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct ProcessControlProcess {
-    // 
+  struct ProcessControlProcess_t {
     std::string status;
-    // 
-    float restart-countdown-seconds;
+    std::optional<float> restart-countdown-seconds;
   };
 
-  inline void to_json(nlohmann::json& j, const ProcessControlProcess& v) {
+  inline void to_json(nlohmann::json& j, const ProcessControlProcess_t& v) {
     j["status"] = v.status;
-    j["restart-countdown-seconds"] = v.restart-countdown-seconds;
+    if(v.restart-countdown-seconds)
+      j["restart-countdown-seconds"] = *v.restart-countdown-seconds;
   }
 
-  inline void from_json(const nlohmann::json& j, ProcessControlProcess& v) {
-    v.status = j.at("status").get<std::string>;
-    v.restart-countdown-seconds = j.at("restart-countdown-seconds").get<float>;
+  inline void from_json(const nlohmann::json& j, ProcessControlProcess_t& v) {
+    v.status = j.at("status").get<std::string>();
+    if(auto it = j.find("restart-countdown-seconds"); it != j.end() !it->is_null())
+      v.restart-countdown-seconds = it->get<float>();
   }
-
 }
-#endif // SWAGGER_TYPES_ProcessControlProcess_HPP

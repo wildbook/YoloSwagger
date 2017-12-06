@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_PaymentsFrontEndResult_HPP
-#define SWAGGER_TYPES_PaymentsFrontEndResult_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct PaymentsFrontEndResult {
-    // 
+  struct PaymentsFrontEndResult_t {
     std::string url;
   };
 
-  inline void to_json(nlohmann::json& j, const PaymentsFrontEndResult& v) {
+  inline void to_json(nlohmann::json& j, const PaymentsFrontEndResult_t& v) {
     j["url"] = v.url;
   }
 
-  inline void from_json(const nlohmann::json& j, PaymentsFrontEndResult& v) {
-    v.url = j.at("url").get<std::string>;
+  inline void from_json(const nlohmann::json& j, PaymentsFrontEndResult_t& v) {
+    v.url = j.at("url").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_PaymentsFrontEndResult_HPP

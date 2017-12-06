@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_ServiceStatusResource_HPP
-#define SWAGGER_TYPES_ServiceStatusResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "ServiceStatusResource_Status.hpp"
 namespace leagueapi {
-  // 
-  struct ServiceStatusResource {
-    // 
-    ServiceStatusResource_Status status;
-    // 
+  struct ServiceStatusResource_t {
     std::string humanReadableUrl;
+    ServiceStatusResource_Status_t status;
   };
 
-  inline void to_json(nlohmann::json& j, const ServiceStatusResource& v) {
-    j["status"] = v.status;
+  inline void to_json(nlohmann::json& j, const ServiceStatusResource_t& v) {
     j["humanReadableUrl"] = v.humanReadableUrl;
+    j["status"] = v.status;
   }
 
-  inline void from_json(const nlohmann::json& j, ServiceStatusResource& v) {
-    v.status = j.at("status").get<ServiceStatusResource_Status>;
-    v.humanReadableUrl = j.at("humanReadableUrl").get<std::string>;
+  inline void from_json(const nlohmann::json& j, ServiceStatusResource_t& v) {
+    v.humanReadableUrl = j.at("humanReadableUrl").get<std::string>();
+    v.status = j.at("status").get<ServiceStatusResource_Status_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_ServiceStatusResource_HPP

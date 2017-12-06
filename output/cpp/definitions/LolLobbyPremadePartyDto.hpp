@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolLobbyPremadePartyDto_HPP
-#define SWAGGER_TYPES_LolLobbyPremadePartyDto_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLobbyPremadeMemberDto.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyPremadePartyDto {
-    // 
-    std::vector<LolLobbyPremadeMemberDto> players;
-    // 
+  struct LolLobbyPremadePartyDto_t {
     std::string partyId;
+    std::vector<LolLobbyPremadeMemberDto_t> players;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyPremadePartyDto& v) {
-    j["players"] = v.players;
+  inline void to_json(nlohmann::json& j, const LolLobbyPremadePartyDto_t& v) {
     j["partyId"] = v.partyId;
+    j["players"] = v.players;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyPremadePartyDto& v) {
-    v.players = j.at("players").get<std::vector<LolLobbyPremadeMemberDto>>;
-    v.partyId = j.at("partyId").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolLobbyPremadePartyDto_t& v) {
+    v.partyId = j.at("partyId").get<std::string>();
+    v.players = j.at("players").get<std::vector<LolLobbyPremadeMemberDto_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyPremadePartyDto_HPP

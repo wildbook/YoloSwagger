@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolPlayerBehaviorPlayerBehavior_GameflowSessionResource_HPP
-#define SWAGGER_TYPES_LolPlayerBehaviorPlayerBehavior_GameflowSessionResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolPlayerBehaviorGameflowPhase.hpp"
 namespace leagueapi {
-  // 
-  struct LolPlayerBehaviorPlayerBehavior_GameflowSessionResource {
-    // 
-    LolPlayerBehaviorGameflowPhase phase;
+  struct LolPlayerBehaviorPlayerBehavior_GameflowSessionResource_t {
+    LolPlayerBehaviorGameflowPhase_t phase;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPlayerBehaviorPlayerBehavior_GameflowSessionResource& v) {
+  inline void to_json(nlohmann::json& j, const LolPlayerBehaviorPlayerBehavior_GameflowSessionResource_t& v) {
     j["phase"] = v.phase;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPlayerBehaviorPlayerBehavior_GameflowSessionResource& v) {
-    v.phase = j.at("phase").get<LolPlayerBehaviorGameflowPhase>;
+  inline void from_json(const nlohmann::json& j, LolPlayerBehaviorPlayerBehavior_GameflowSessionResource_t& v) {
+    v.phase = j.at("phase").get<LolPlayerBehaviorGameflowPhase_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPlayerBehaviorPlayerBehavior_GameflowSessionResource_HPP

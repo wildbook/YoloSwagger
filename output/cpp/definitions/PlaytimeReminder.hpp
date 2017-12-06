@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_PlaytimeReminder_HPP
-#define SWAGGER_TYPES_PlaytimeReminder_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct PlaytimeReminder {
-    // 
+  struct PlaytimeReminder_t {
     uint32_t hours;
   };
 
-  inline void to_json(nlohmann::json& j, const PlaytimeReminder& v) {
+  inline void to_json(nlohmann::json& j, const PlaytimeReminder_t& v) {
     j["hours"] = v.hours;
   }
 
-  inline void from_json(const nlohmann::json& j, PlaytimeReminder& v) {
-    v.hours = j.at("hours").get<uint32_t>;
+  inline void from_json(const nlohmann::json& j, PlaytimeReminder_t& v) {
+    v.hours = j.at("hours").get<uint32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_PlaytimeReminder_HPP

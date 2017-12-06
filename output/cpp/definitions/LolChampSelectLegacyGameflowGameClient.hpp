@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolChampSelectLegacyGameflowGameClient_HPP
-#define SWAGGER_TYPES_LolChampSelectLegacyGameflowGameClient_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChampSelectLegacyGameflowGameClient {
-    // 
-    bool visible;
-    // 
+  struct LolChampSelectLegacyGameflowGameClient_t {
     bool running;
+    bool visible;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyGameflowGameClient& v) {
-    j["visible"] = v.visible;
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyGameflowGameClient_t& v) {
     j["running"] = v.running;
+    j["visible"] = v.visible;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyGameflowGameClient& v) {
-    v.visible = j.at("visible").get<bool>;
-    v.running = j.at("running").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyGameflowGameClient_t& v) {
+    v.running = j.at("running").get<bool>();
+    v.visible = j.at("visible").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampSelectLegacyGameflowGameClient_HPP

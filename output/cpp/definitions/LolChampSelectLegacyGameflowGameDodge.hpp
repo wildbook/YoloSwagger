@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolChampSelectLegacyGameflowGameDodge_HPP
-#define SWAGGER_TYPES_LolChampSelectLegacyGameflowGameDodge_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolChampSelectLegacyGameflowGameDodgeState.hpp"
 namespace leagueapi {
-  // 
-  struct LolChampSelectLegacyGameflowGameDodge {
-    // 
+  struct LolChampSelectLegacyGameflowGameDodge_t {
+    LolChampSelectLegacyGameflowGameDodgeState_t state;
     std::vector<uint64_t> dodgeIds;
-    // 
-    LolChampSelectLegacyGameflowGameDodgeState state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyGameflowGameDodge& v) {
-    j["dodgeIds"] = v.dodgeIds;
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyGameflowGameDodge_t& v) {
     j["state"] = v.state;
+    j["dodgeIds"] = v.dodgeIds;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyGameflowGameDodge& v) {
-    v.dodgeIds = j.at("dodgeIds").get<std::vector<uint64_t>>;
-    v.state = j.at("state").get<LolChampSelectLegacyGameflowGameDodgeState>;
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyGameflowGameDodge_t& v) {
+    v.state = j.at("state").get<LolChampSelectLegacyGameflowGameDodgeState_t>();
+    v.dodgeIds = j.at("dodgeIds").get<std::vector<uint64_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampSelectLegacyGameflowGameDodge_HPP

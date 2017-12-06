@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolLobbyLobbyCustomChampSelectStartResponse_HPP
-#define SWAGGER_TYPES_LolLobbyLobbyCustomChampSelectStartResponse_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLobbyLobbyCustomFailedPlayer.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyLobbyCustomChampSelectStartResponse {
-    // 
+  struct LolLobbyLobbyCustomChampSelectStartResponse_t {
+    std::vector<LolLobbyLobbyCustomFailedPlayer_t> failedPlayers;
     bool success;
-    // 
-    std::vector<LolLobbyLobbyCustomFailedPlayer> failedPlayers;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyLobbyCustomChampSelectStartResponse& v) {
-    j["success"] = v.success;
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyCustomChampSelectStartResponse_t& v) {
     j["failedPlayers"] = v.failedPlayers;
+    j["success"] = v.success;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyLobbyCustomChampSelectStartResponse& v) {
-    v.success = j.at("success").get<bool>;
-    v.failedPlayers = j.at("failedPlayers").get<std::vector<LolLobbyLobbyCustomFailedPlayer>>;
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyCustomChampSelectStartResponse_t& v) {
+    v.failedPlayers = j.at("failedPlayers").get<std::vector<LolLobbyLobbyCustomFailedPlayer_t>>();
+    v.success = j.at("success").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyLobbyCustomChampSelectStartResponse_HPP

@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_RecofrienderLoginSessionStates_HPP
-#define SWAGGER_TYPES_RecofrienderLoginSessionStates_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class RecofrienderLoginSessionStates {
-    // 
-    LOGGING_OUT = 2,
-    // 
-    IN_PROGRESS = 0,
-    // 
-    SUCCEEDED = 1,
-    // 
-    ERROR = 3,
+  enum class RecofrienderLoginSessionStates_t {
+    LOGGING_OUT_E = 2,
+    SUCCEEDED_E = 1,
+    IN_PROGRESS_E = 0,
+    ERROR_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const RecofrienderLoginSessionStates& v) {
+  inline void to_json(nlohmann::json& j, const RecofrienderLoginSessionStates_t& v) {
     switch(v) {
-      case RecofrienderLoginSessionStates::LOGGING_OUT:
+      case RecofrienderLoginSessionStates_t::LOGGING_OUT_E:
         j = "LOGGING_OUT";
       break;
-      case RecofrienderLoginSessionStates::IN_PROGRESS:
-        j = "IN_PROGRESS";
-      break;
-      case RecofrienderLoginSessionStates::SUCCEEDED:
+      case RecofrienderLoginSessionStates_t::SUCCEEDED_E:
         j = "SUCCEEDED";
       break;
-      case RecofrienderLoginSessionStates::ERROR:
+      case RecofrienderLoginSessionStates_t::IN_PROGRESS_E:
+        j = "IN_PROGRESS";
+      break;
+      case RecofrienderLoginSessionStates_t::ERROR_E:
         j = "ERROR";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, RecofrienderLoginSessionStates& v) {
+  inline void from_json(const nlohmann::json& j, RecofrienderLoginSessionStates_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "LOGGING_OUT"){
-      v = RecofrienderLoginSessionStates::LOGGING_OUT;
-      return;
-    }
-    if(s == "IN_PROGRESS"){
-      v = RecofrienderLoginSessionStates::IN_PROGRESS;
+      v = RecofrienderLoginSessionStates_t::LOGGING_OUT_E;
       return;
     }
     if(s == "SUCCEEDED"){
-      v = RecofrienderLoginSessionStates::SUCCEEDED;
+      v = RecofrienderLoginSessionStates_t::SUCCEEDED_E;
+      return;
+    }
+    if(s == "IN_PROGRESS"){
+      v = RecofrienderLoginSessionStates_t::IN_PROGRESS_E;
       return;
     }
     if(s == "ERROR"){
-      v = RecofrienderLoginSessionStates::ERROR;
+      v = RecofrienderLoginSessionStates_t::ERROR_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_RecofrienderLoginSessionStates_HPP

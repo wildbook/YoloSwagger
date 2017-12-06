@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolLootPlayerLootNotification_HPP
-#define SWAGGER_TYPES_LolLootPlayerLootNotification_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLootPlayerLootNotification {
-    // 
-    int32_t count;
-    // 
+  struct LolLootPlayerLootNotification_t {
     bool acknowledged;
-    // 
     std::string id;
+    int32_t count;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLootPlayerLootNotification& v) {
-    j["count"] = v.count;
+  inline void to_json(nlohmann::json& j, const LolLootPlayerLootNotification_t& v) {
     j["acknowledged"] = v.acknowledged;
     j["id"] = v.id;
+    j["count"] = v.count;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLootPlayerLootNotification& v) {
-    v.count = j.at("count").get<int32_t>;
-    v.acknowledged = j.at("acknowledged").get<bool>;
-    v.id = j.at("id").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolLootPlayerLootNotification_t& v) {
+    v.acknowledged = j.at("acknowledged").get<bool>();
+    v.id = j.at("id").get<std::string>();
+    v.count = j.at("count").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLootPlayerLootNotification_HPP

@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolPerksUISettings_HPP
-#define SWAGGER_TYPES_LolPerksUISettings_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolPerksUISettings {
-    // 
+  struct LolPerksUISettings_t {
     bool showLongDescriptions;
-    // 
     bool showPresetPages;
-    // 
     bool gridModeEnabled;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPerksUISettings& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksUISettings_t& v) {
     j["showLongDescriptions"] = v.showLongDescriptions;
     j["showPresetPages"] = v.showPresetPages;
     j["gridModeEnabled"] = v.gridModeEnabled;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPerksUISettings& v) {
-    v.showLongDescriptions = j.at("showLongDescriptions").get<bool>;
-    v.showPresetPages = j.at("showPresetPages").get<bool>;
-    v.gridModeEnabled = j.at("gridModeEnabled").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolPerksUISettings_t& v) {
+    v.showLongDescriptions = j.at("showLongDescriptions").get<bool>();
+    v.showPresetPages = j.at("showPresetPages").get<bool>();
+    v.gridModeEnabled = j.at("gridModeEnabled").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPerksUISettings_HPP

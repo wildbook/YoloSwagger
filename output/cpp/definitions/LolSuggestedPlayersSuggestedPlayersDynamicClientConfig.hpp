@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersDynamicClientConfig_HPP
-#define SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersDynamicClientConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolSuggestedPlayersSuggestedPlayersConfig.hpp"
 namespace leagueapi {
-  // 
-  struct LolSuggestedPlayersSuggestedPlayersDynamicClientConfig {
-    // 
-    LolSuggestedPlayersSuggestedPlayersConfig SuggestedPlayers;
+  struct LolSuggestedPlayersSuggestedPlayersDynamicClientConfig_t {
+    LolSuggestedPlayersSuggestedPlayersConfig_t SuggestedPlayers;
   };
 
-  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersDynamicClientConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolSuggestedPlayersSuggestedPlayersDynamicClientConfig_t& v) {
     j["SuggestedPlayers"] = v.SuggestedPlayers;
   }
 
-  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersDynamicClientConfig& v) {
-    v.SuggestedPlayers = j.at("SuggestedPlayers").get<LolSuggestedPlayersSuggestedPlayersConfig>;
+  inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersDynamicClientConfig_t& v) {
+    v.SuggestedPlayers = j.at("SuggestedPlayers").get<LolSuggestedPlayersSuggestedPlayersConfig_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolSuggestedPlayersSuggestedPlayersDynamicClientConfig_HPP

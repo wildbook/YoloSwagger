@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolPerksPlayerInventory_HPP
-#define SWAGGER_TYPES_LolPerksPlayerInventory_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolPerksPlayerInventory {
-    // 
+  struct LolPerksPlayerInventory_t {
     uint32_t ownedPageCount;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPerksPlayerInventory& v) {
+  inline void to_json(nlohmann::json& j, const LolPerksPlayerInventory_t& v) {
     j["ownedPageCount"] = v.ownedPageCount;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPerksPlayerInventory& v) {
-    v.ownedPageCount = j.at("ownedPageCount").get<uint32_t>;
+  inline void from_json(const nlohmann::json& j, LolPerksPlayerInventory_t& v) {
+    v.ownedPageCount = j.at("ownedPageCount").get<uint32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPerksPlayerInventory_HPP

@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LcdsStartChampSelectDto_HPP
-#define SWAGGER_TYPES_LcdsStartChampSelectDto_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LcdsFailedJoinPlayer.hpp"
 namespace leagueapi {
-  // 
-  struct LcdsStartChampSelectDto {
-    // 
-    std::vector<LcdsFailedJoinPlayer> invalidPlayers;
+  struct LcdsStartChampSelectDto_t {
+    std::vector<LcdsFailedJoinPlayer_t> invalidPlayers;
   };
 
-  inline void to_json(nlohmann::json& j, const LcdsStartChampSelectDto& v) {
+  inline void to_json(nlohmann::json& j, const LcdsStartChampSelectDto_t& v) {
     j["invalidPlayers"] = v.invalidPlayers;
   }
 
-  inline void from_json(const nlohmann::json& j, LcdsStartChampSelectDto& v) {
-    v.invalidPlayers = j.at("invalidPlayers").get<std::vector<LcdsFailedJoinPlayer>>;
+  inline void from_json(const nlohmann::json& j, LcdsStartChampSelectDto_t& v) {
+    v.invalidPlayers = j.at("invalidPlayers").get<std::vector<LcdsFailedJoinPlayer_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LcdsStartChampSelectDto_HPP

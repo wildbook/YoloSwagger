@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolKrShutdownLawShutdownLawNotification_HPP
-#define SWAGGER_TYPES_LolKrShutdownLawShutdownLawNotification_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolKrShutdownLawShutdownLawStatus.hpp"
 namespace leagueapi {
-  // 
-  struct LolKrShutdownLawShutdownLawNotification {
-    // 
-    LolKrShutdownLawShutdownLawStatus type;
+  struct LolKrShutdownLawShutdownLawNotification_t {
+    LolKrShutdownLawShutdownLawStatus_t type;
   };
 
-  inline void to_json(nlohmann::json& j, const LolKrShutdownLawShutdownLawNotification& v) {
+  inline void to_json(nlohmann::json& j, const LolKrShutdownLawShutdownLawNotification_t& v) {
     j["type"] = v.type;
   }
 
-  inline void from_json(const nlohmann::json& j, LolKrShutdownLawShutdownLawNotification& v) {
-    v.type = j.at("type").get<LolKrShutdownLawShutdownLawStatus>;
+  inline void from_json(const nlohmann::json& j, LolKrShutdownLawShutdownLawNotification_t& v) {
+    v.type = j.at("type").get<LolKrShutdownLawShutdownLawStatus_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolKrShutdownLawShutdownLawNotification_HPP

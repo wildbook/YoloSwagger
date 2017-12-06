@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolClashMatchmakingDodgeData_HPP
-#define SWAGGER_TYPES_LolClashMatchmakingDodgeData_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolClashMatchmakingDodgeState.hpp"
 namespace leagueapi {
-  // 
-  struct LolClashMatchmakingDodgeData {
-    // 
-    LolClashMatchmakingDodgeState state;
-    // 
+  struct LolClashMatchmakingDodgeData_t {
     uint64_t dodgerId;
+    LolClashMatchmakingDodgeState_t state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashMatchmakingDodgeData& v) {
-    j["state"] = v.state;
+  inline void to_json(nlohmann::json& j, const LolClashMatchmakingDodgeData_t& v) {
     j["dodgerId"] = v.dodgerId;
+    j["state"] = v.state;
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashMatchmakingDodgeData& v) {
-    v.state = j.at("state").get<LolClashMatchmakingDodgeState>;
-    v.dodgerId = j.at("dodgerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolClashMatchmakingDodgeData_t& v) {
+    v.dodgerId = j.at("dodgerId").get<uint64_t>();
+    v.state = j.at("state").get<LolClashMatchmakingDodgeState_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashMatchmakingDodgeData_HPP

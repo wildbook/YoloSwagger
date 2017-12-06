@@ -1,100 +1,87 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderLobbyRemovedFromGameReason_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderLobbyRemovedFromGameReason_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLobbyTeamBuilderLobbyRemovedFromGameReason {
-    // 
-    None = 0,
-    // 
-    Kicked = 1,
-    // 
-    GameStartError = 7,
-    // 
-    ServiceShutdown = 8,
-    // 
-    Disbanded = 2,
-    // 
-    Other = 5,
-    // 
-    ServiceError = 4,
-    // 
-    Timeout = 6,
-    // 
-    Left = 3,
+  enum class LolLobbyTeamBuilderLobbyRemovedFromGameReason_t {
+    ServiceShutdown_E = 8,
+    Timeout_E = 6,
+    Kicked_E = 1,
+    GameStartError_E = 7,
+    Disbanded_E = 2,
+    ServiceError_E = 4,
+    Other_E = 5,
+    None_E = 0,
+    Left_E = 3,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLobbyRemovedFromGameReason& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLobbyRemovedFromGameReason_t& v) {
     switch(v) {
-      case LolLobbyTeamBuilderLobbyRemovedFromGameReason::None:
-        j = "None";
-      break;
-      case LolLobbyTeamBuilderLobbyRemovedFromGameReason::Kicked:
-        j = "Kicked";
-      break;
-      case LolLobbyTeamBuilderLobbyRemovedFromGameReason::GameStartError:
-        j = "GameStartError";
-      break;
-      case LolLobbyTeamBuilderLobbyRemovedFromGameReason::ServiceShutdown:
+      case LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::ServiceShutdown_E:
         j = "ServiceShutdown";
       break;
-      case LolLobbyTeamBuilderLobbyRemovedFromGameReason::Disbanded:
-        j = "Disbanded";
-      break;
-      case LolLobbyTeamBuilderLobbyRemovedFromGameReason::Other:
-        j = "Other";
-      break;
-      case LolLobbyTeamBuilderLobbyRemovedFromGameReason::ServiceError:
-        j = "ServiceError";
-      break;
-      case LolLobbyTeamBuilderLobbyRemovedFromGameReason::Timeout:
+      case LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::Timeout_E:
         j = "Timeout";
       break;
-      case LolLobbyTeamBuilderLobbyRemovedFromGameReason::Left:
+      case LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::Kicked_E:
+        j = "Kicked";
+      break;
+      case LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::GameStartError_E:
+        j = "GameStartError";
+      break;
+      case LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::Disbanded_E:
+        j = "Disbanded";
+      break;
+      case LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::ServiceError_E:
+        j = "ServiceError";
+      break;
+      case LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::Other_E:
+        j = "Other";
+      break;
+      case LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::None_E:
+        j = "None";
+      break;
+      case LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::Left_E:
         j = "Left";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLobbyRemovedFromGameReason& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLobbyRemovedFromGameReason_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "None"){
-      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason::None;
-      return;
-    }
-    if(s == "Kicked"){
-      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason::Kicked;
-      return;
-    }
-    if(s == "GameStartError"){
-      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason::GameStartError;
-      return;
-    }
     if(s == "ServiceShutdown"){
-      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason::ServiceShutdown;
-      return;
-    }
-    if(s == "Disbanded"){
-      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason::Disbanded;
-      return;
-    }
-    if(s == "Other"){
-      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason::Other;
-      return;
-    }
-    if(s == "ServiceError"){
-      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason::ServiceError;
+      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::ServiceShutdown_E;
       return;
     }
     if(s == "Timeout"){
-      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason::Timeout;
+      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::Timeout_E;
+      return;
+    }
+    if(s == "Kicked"){
+      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::Kicked_E;
+      return;
+    }
+    if(s == "GameStartError"){
+      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::GameStartError_E;
+      return;
+    }
+    if(s == "Disbanded"){
+      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::Disbanded_E;
+      return;
+    }
+    if(s == "ServiceError"){
+      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::ServiceError_E;
+      return;
+    }
+    if(s == "Other"){
+      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::Other_E;
+      return;
+    }
+    if(s == "None"){
+      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::None_E;
       return;
     }
     if(s == "Left"){
-      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason::Left;
+      v = LolLobbyTeamBuilderLobbyRemovedFromGameReason_t::Left_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderLobbyRemovedFromGameReason_HPP

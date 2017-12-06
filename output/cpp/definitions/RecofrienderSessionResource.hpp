@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_RecofrienderSessionResource_HPP
-#define SWAGGER_TYPES_RecofrienderSessionResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct RecofrienderSessionResource {
-    // 
-    uint32_t sessionExpire;
-    // 
+  struct RecofrienderSessionResource_t {
     std::string sessionState;
+    uint32_t sessionExpire;
   };
 
-  inline void to_json(nlohmann::json& j, const RecofrienderSessionResource& v) {
-    j["sessionExpire"] = v.sessionExpire;
+  inline void to_json(nlohmann::json& j, const RecofrienderSessionResource_t& v) {
     j["sessionState"] = v.sessionState;
+    j["sessionExpire"] = v.sessionExpire;
   }
 
-  inline void from_json(const nlohmann::json& j, RecofrienderSessionResource& v) {
-    v.sessionExpire = j.at("sessionExpire").get<uint32_t>;
-    v.sessionState = j.at("sessionState").get<std::string>;
+  inline void from_json(const nlohmann::json& j, RecofrienderSessionResource_t& v) {
+    v.sessionState = j.at("sessionState").get<std::string>();
+    v.sessionExpire = j.at("sessionExpire").get<uint32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_RecofrienderSessionResource_HPP

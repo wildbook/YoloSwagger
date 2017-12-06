@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolLoginAccountStateResource_HPP
-#define SWAGGER_TYPES_LolLoginAccountStateResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLoginAccountStateType.hpp"
 namespace leagueapi {
-  // 
-  struct LolLoginAccountStateResource {
-    // 
-    LolLoginAccountStateType state;
+  struct LolLoginAccountStateResource_t {
+    LolLoginAccountStateType_t state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLoginAccountStateResource& v) {
+  inline void to_json(nlohmann::json& j, const LolLoginAccountStateResource_t& v) {
     j["state"] = v.state;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLoginAccountStateResource& v) {
-    v.state = j.at("state").get<LolLoginAccountStateType>;
+  inline void from_json(const nlohmann::json& j, LolLoginAccountStateResource_t& v) {
+    v.state = j.at("state").get<LolLoginAccountStateType_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLoginAccountStateResource_HPP

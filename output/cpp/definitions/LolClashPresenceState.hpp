@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_LolClashPresenceState_HPP
-#define SWAGGER_TYPES_LolClashPresenceState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolClashPresenceState {
-    // 
-    LOCKED_IN = 1,
-    // 
-    NONE = 0,
-    // 
-    SCOUTING = 2,
+  enum class LolClashPresenceState_t {
+    NONE_E = 0,
+    SCOUTING_E = 2,
+    LOCKED_IN_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LolClashPresenceState& v) {
+  inline void to_json(nlohmann::json& j, const LolClashPresenceState_t& v) {
     switch(v) {
-      case LolClashPresenceState::LOCKED_IN:
-        j = "LOCKED_IN";
-      break;
-      case LolClashPresenceState::NONE:
+      case LolClashPresenceState_t::NONE_E:
         j = "NONE";
       break;
-      case LolClashPresenceState::SCOUTING:
+      case LolClashPresenceState_t::SCOUTING_E:
         j = "SCOUTING";
+      break;
+      case LolClashPresenceState_t::LOCKED_IN_E:
+        j = "LOCKED_IN";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolClashPresenceState& v) {
+  inline void from_json(const nlohmann::json& j, LolClashPresenceState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "LOCKED_IN"){
-      v = LolClashPresenceState::LOCKED_IN;
-      return;
-    }
     if(s == "NONE"){
-      v = LolClashPresenceState::NONE;
+      v = LolClashPresenceState_t::NONE_E;
       return;
     }
     if(s == "SCOUTING"){
-      v = LolClashPresenceState::SCOUTING;
+      v = LolClashPresenceState_t::SCOUTING_E;
+      return;
+    }
+    if(s == "LOCKED_IN"){
+      v = LolClashPresenceState_t::LOCKED_IN_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolClashPresenceState_HPP

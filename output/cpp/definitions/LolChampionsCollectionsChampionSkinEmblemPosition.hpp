@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolChampionsCollectionsChampionSkinEmblemPosition_HPP
-#define SWAGGER_TYPES_LolChampionsCollectionsChampionSkinEmblemPosition_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolChampionsCollectionsChampionSkinEmblemPosition {
-    // 
-    std::string horizontal;
-    // 
+  struct LolChampionsCollectionsChampionSkinEmblemPosition_t {
     std::string vertical;
+    std::string horizontal;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionSkinEmblemPosition& v) {
-    j["horizontal"] = v.horizontal;
+  inline void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionSkinEmblemPosition_t& v) {
     j["vertical"] = v.vertical;
+    j["horizontal"] = v.horizontal;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionSkinEmblemPosition& v) {
-    v.horizontal = j.at("horizontal").get<std::string>;
-    v.vertical = j.at("vertical").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionSkinEmblemPosition_t& v) {
+    v.vertical = j.at("vertical").get<std::string>();
+    v.horizontal = j.at("horizontal").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampionsCollectionsChampionSkinEmblemPosition_HPP

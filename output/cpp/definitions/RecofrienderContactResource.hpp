@@ -1,53 +1,41 @@
-#ifndef SWAGGER_TYPES_RecofrienderContactResource_HPP
-#define SWAGGER_TYPES_RecofrienderContactResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "RecofrienderFriendState.hpp"
 namespace leagueapi {
-  // 
-  struct RecofrienderContactResource {
-    // 
-    std::string name;
-    // 
-    std::string imageUrl;
-    // 
-    std::string displayState;
-    // 
+  struct RecofrienderContactResource_t {
     std::string source;
-    // 
-    RecofrienderFriendState friendState;
-    // 
-    std::string action;
-    // 
-    uint64_t summonerId;
-    // 
-    int64_t recommendScore;
-    // 
+    std::string name;
+    std::string displayState;
+    std::string imageUrl;
     uint64_t accountId;
+    RecofrienderFriendState_t friendState;
+    uint64_t summonerId;
+    int64_t recommendScore;
+    std::string action;
   };
 
-  inline void to_json(nlohmann::json& j, const RecofrienderContactResource& v) {
-    j["name"] = v.name;
-    j["imageUrl"] = v.imageUrl;
-    j["displayState"] = v.displayState;
+  inline void to_json(nlohmann::json& j, const RecofrienderContactResource_t& v) {
     j["source"] = v.source;
+    j["name"] = v.name;
+    j["displayState"] = v.displayState;
+    j["imageUrl"] = v.imageUrl;
+    j["accountId"] = v.accountId;
     j["friendState"] = v.friendState;
-    j["action"] = v.action;
     j["summonerId"] = v.summonerId;
     j["recommendScore"] = v.recommendScore;
-    j["accountId"] = v.accountId;
+    j["action"] = v.action;
   }
 
-  inline void from_json(const nlohmann::json& j, RecofrienderContactResource& v) {
-    v.name = j.at("name").get<std::string>;
-    v.imageUrl = j.at("imageUrl").get<std::string>;
-    v.displayState = j.at("displayState").get<std::string>;
-    v.source = j.at("source").get<std::string>;
-    v.friendState = j.at("friendState").get<RecofrienderFriendState>;
-    v.action = j.at("action").get<std::string>;
-    v.summonerId = j.at("summonerId").get<uint64_t>;
-    v.recommendScore = j.at("recommendScore").get<int64_t>;
-    v.accountId = j.at("accountId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, RecofrienderContactResource_t& v) {
+    v.source = j.at("source").get<std::string>();
+    v.name = j.at("name").get<std::string>();
+    v.displayState = j.at("displayState").get<std::string>();
+    v.imageUrl = j.at("imageUrl").get<std::string>();
+    v.accountId = j.at("accountId").get<uint64_t>();
+    v.friendState = j.at("friendState").get<RecofrienderFriendState_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.recommendScore = j.at("recommendScore").get<int64_t>();
+    v.action = j.at("action").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_RecofrienderContactResource_HPP

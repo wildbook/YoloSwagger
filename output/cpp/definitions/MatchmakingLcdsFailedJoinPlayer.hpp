@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_MatchmakingLcdsFailedJoinPlayer_HPP
-#define SWAGGER_TYPES_MatchmakingLcdsFailedJoinPlayer_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "MatchmakingLcdsSummoner.hpp"
 namespace leagueapi {
-  // 
-  struct MatchmakingLcdsFailedJoinPlayer {
-    // 
-    MatchmakingLcdsSummoner summoner;
-    // 
+  struct MatchmakingLcdsFailedJoinPlayer_t {
     std::string reasonFailed;
+    MatchmakingLcdsSummoner_t summoner;
   };
 
-  inline void to_json(nlohmann::json& j, const MatchmakingLcdsFailedJoinPlayer& v) {
-    j["summoner"] = v.summoner;
+  inline void to_json(nlohmann::json& j, const MatchmakingLcdsFailedJoinPlayer_t& v) {
     j["reasonFailed"] = v.reasonFailed;
+    j["summoner"] = v.summoner;
   }
 
-  inline void from_json(const nlohmann::json& j, MatchmakingLcdsFailedJoinPlayer& v) {
-    v.summoner = j.at("summoner").get<MatchmakingLcdsSummoner>;
-    v.reasonFailed = j.at("reasonFailed").get<std::string>;
+  inline void from_json(const nlohmann::json& j, MatchmakingLcdsFailedJoinPlayer_t& v) {
+    v.reasonFailed = j.at("reasonFailed").get<std::string>();
+    v.summoner = j.at("summoner").get<MatchmakingLcdsSummoner_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_MatchmakingLcdsFailedJoinPlayer_HPP

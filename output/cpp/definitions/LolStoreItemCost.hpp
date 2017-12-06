@@ -1,28 +1,24 @@
-#ifndef SWAGGER_TYPES_LolStoreItemCost_HPP
-#define SWAGGER_TYPES_LolStoreItemCost_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolStoreItemCost {
-    // 
+  struct LolStoreItemCost_t {
     std::string currency;
-    // 
+    std::optional<float> discount;
     int64_t cost;
-    // 
-    float discount;
   };
 
-  inline void to_json(nlohmann::json& j, const LolStoreItemCost& v) {
+  inline void to_json(nlohmann::json& j, const LolStoreItemCost_t& v) {
     j["currency"] = v.currency;
+    if(v.discount)
+      j["discount"] = *v.discount;
     j["cost"] = v.cost;
-    j["discount"] = v.discount;
   }
 
-  inline void from_json(const nlohmann::json& j, LolStoreItemCost& v) {
-    v.currency = j.at("currency").get<std::string>;
-    v.cost = j.at("cost").get<int64_t>;
-    v.discount = j.at("discount").get<float>;
+  inline void from_json(const nlohmann::json& j, LolStoreItemCost_t& v) {
+    v.currency = j.at("currency").get<std::string>();
+    if(auto it = j.find("discount"); it != j.end() !it->is_null())
+      v.discount = it->get<float>();
+    v.cost = j.at("cost").get<int64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolStoreItemCost_HPP

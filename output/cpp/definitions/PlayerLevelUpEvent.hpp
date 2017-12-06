@@ -1,60 +1,46 @@
-#ifndef SWAGGER_TYPES_PlayerLevelUpEvent_HPP
-#define SWAGGER_TYPES_PlayerLevelUpEvent_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct PlayerLevelUpEvent {
-    // 
-    bool newMasterySlotUnlocked;
-    // 
+  struct PlayerLevelUpEvent_t {
     uint32_t newSummonerLevel;
-    // 
-    int32_t rpEarned;
-    // 
-    bool leveledUp;
-    // 
-    bool nowHasAccessToMastery;
-    // 
-    std::vector<uint64_t> newSpells;
-    // 
-    std::vector<int32_t> newQueues;
-    // 
-    bool newRuneSlotUnlocked;
-    // 
     bool nowHasAccessToPublicChatRooms;
-    // 
-    bool nowHasAccessToLoot;
-    // 
+    bool newMasterySlotUnlocked;
+    bool leveledUp;
     bool switchedToStandardFreeToPlayChampRotation;
+    bool nowHasAccessToMastery;
+    bool nowHasAccessToLoot;
+    std::vector<uint64_t> newSpells;
+    bool newRuneSlotUnlocked;
+    int32_t rpEarned;
+    std::vector<int32_t> newQueues;
   };
 
-  inline void to_json(nlohmann::json& j, const PlayerLevelUpEvent& v) {
-    j["newMasterySlotUnlocked"] = v.newMasterySlotUnlocked;
+  inline void to_json(nlohmann::json& j, const PlayerLevelUpEvent_t& v) {
     j["newSummonerLevel"] = v.newSummonerLevel;
-    j["rpEarned"] = v.rpEarned;
-    j["leveledUp"] = v.leveledUp;
-    j["nowHasAccessToMastery"] = v.nowHasAccessToMastery;
-    j["newSpells"] = v.newSpells;
-    j["newQueues"] = v.newQueues;
-    j["newRuneSlotUnlocked"] = v.newRuneSlotUnlocked;
     j["nowHasAccessToPublicChatRooms"] = v.nowHasAccessToPublicChatRooms;
-    j["nowHasAccessToLoot"] = v.nowHasAccessToLoot;
+    j["newMasterySlotUnlocked"] = v.newMasterySlotUnlocked;
+    j["leveledUp"] = v.leveledUp;
     j["switchedToStandardFreeToPlayChampRotation"] = v.switchedToStandardFreeToPlayChampRotation;
+    j["nowHasAccessToMastery"] = v.nowHasAccessToMastery;
+    j["nowHasAccessToLoot"] = v.nowHasAccessToLoot;
+    j["newSpells"] = v.newSpells;
+    j["newRuneSlotUnlocked"] = v.newRuneSlotUnlocked;
+    j["rpEarned"] = v.rpEarned;
+    j["newQueues"] = v.newQueues;
   }
 
-  inline void from_json(const nlohmann::json& j, PlayerLevelUpEvent& v) {
-    v.newMasterySlotUnlocked = j.at("newMasterySlotUnlocked").get<bool>;
-    v.newSummonerLevel = j.at("newSummonerLevel").get<uint32_t>;
-    v.rpEarned = j.at("rpEarned").get<int32_t>;
-    v.leveledUp = j.at("leveledUp").get<bool>;
-    v.nowHasAccessToMastery = j.at("nowHasAccessToMastery").get<bool>;
-    v.newSpells = j.at("newSpells").get<std::vector<uint64_t>>;
-    v.newQueues = j.at("newQueues").get<std::vector<int32_t>>;
-    v.newRuneSlotUnlocked = j.at("newRuneSlotUnlocked").get<bool>;
-    v.nowHasAccessToPublicChatRooms = j.at("nowHasAccessToPublicChatRooms").get<bool>;
-    v.nowHasAccessToLoot = j.at("nowHasAccessToLoot").get<bool>;
-    v.switchedToStandardFreeToPlayChampRotation = j.at("switchedToStandardFreeToPlayChampRotation").get<bool>;
+  inline void from_json(const nlohmann::json& j, PlayerLevelUpEvent_t& v) {
+    v.newSummonerLevel = j.at("newSummonerLevel").get<uint32_t>();
+    v.nowHasAccessToPublicChatRooms = j.at("nowHasAccessToPublicChatRooms").get<bool>();
+    v.newMasterySlotUnlocked = j.at("newMasterySlotUnlocked").get<bool>();
+    v.leveledUp = j.at("leveledUp").get<bool>();
+    v.switchedToStandardFreeToPlayChampRotation = j.at("switchedToStandardFreeToPlayChampRotation").get<bool>();
+    v.nowHasAccessToMastery = j.at("nowHasAccessToMastery").get<bool>();
+    v.nowHasAccessToLoot = j.at("nowHasAccessToLoot").get<bool>();
+    v.newSpells = j.at("newSpells").get<std::vector<uint64_t>>();
+    v.newRuneSlotUnlocked = j.at("newRuneSlotUnlocked").get<bool>();
+    v.rpEarned = j.at("rpEarned").get<int32_t>();
+    v.newQueues = j.at("newQueues").get<std::vector<int32_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_PlayerLevelUpEvent_HPP

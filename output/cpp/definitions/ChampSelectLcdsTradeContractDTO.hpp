@@ -1,36 +1,28 @@
-#ifndef SWAGGER_TYPES_ChampSelectLcdsTradeContractDTO_HPP
-#define SWAGGER_TYPES_ChampSelectLcdsTradeContractDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct ChampSelectLcdsTradeContractDTO {
-    // 
-    std::string requesterInternalSummonerName;
-    // 
+  struct ChampSelectLcdsTradeContractDTO_t {
     std::string state;
-    // 
-    int32_t requesterChampionId;
-    // 
     std::string responderInternalSummonerName;
-    // 
+    std::string requesterInternalSummonerName;
     int32_t responderChampionId;
+    int32_t requesterChampionId;
   };
 
-  inline void to_json(nlohmann::json& j, const ChampSelectLcdsTradeContractDTO& v) {
-    j["requesterInternalSummonerName"] = v.requesterInternalSummonerName;
+  inline void to_json(nlohmann::json& j, const ChampSelectLcdsTradeContractDTO_t& v) {
     j["state"] = v.state;
-    j["requesterChampionId"] = v.requesterChampionId;
     j["responderInternalSummonerName"] = v.responderInternalSummonerName;
+    j["requesterInternalSummonerName"] = v.requesterInternalSummonerName;
     j["responderChampionId"] = v.responderChampionId;
+    j["requesterChampionId"] = v.requesterChampionId;
   }
 
-  inline void from_json(const nlohmann::json& j, ChampSelectLcdsTradeContractDTO& v) {
-    v.requesterInternalSummonerName = j.at("requesterInternalSummonerName").get<std::string>;
-    v.state = j.at("state").get<std::string>;
-    v.requesterChampionId = j.at("requesterChampionId").get<int32_t>;
-    v.responderInternalSummonerName = j.at("responderInternalSummonerName").get<std::string>;
-    v.responderChampionId = j.at("responderChampionId").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, ChampSelectLcdsTradeContractDTO_t& v) {
+    v.state = j.at("state").get<std::string>();
+    v.responderInternalSummonerName = j.at("responderInternalSummonerName").get<std::string>();
+    v.requesterInternalSummonerName = j.at("requesterInternalSummonerName").get<std::string>();
+    v.responderChampionId = j.at("responderChampionId").get<int32_t>();
+    v.requesterChampionId = j.at("requesterChampionId").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_ChampSelectLcdsTradeContractDTO_HPP

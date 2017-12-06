@@ -1,51 +1,40 @@
-#ifndef SWAGGER_TYPES_LolLobbyReceivedInvitationDto_HPP
-#define SWAGGER_TYPES_LolLobbyReceivedInvitationDto_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLobbyReceivedInvitationGameConfigDto.hpp"
-#include "LolLobbyEligibilityRestriction.hpp"
 #include "LolLobbyLobbyInvitationState.hpp"
+#include "LolLobbyEligibilityRestriction.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyReceivedInvitationDto {
-    // 
-    std::vector<LolLobbyEligibilityRestriction> restrictions;
-    // 
-    bool canAcceptInvitation;
-    // 
-    std::string timestamp;
-    // 
-    LolLobbyLobbyInvitationState state;
-    // 
-    LolLobbyReceivedInvitationGameConfigDto gameConfig;
-    // 
-    std::string invitationId;
-    // 
-    std::string fromSummonerName;
-    // 
+  struct LolLobbyReceivedInvitationDto_t {
+    LolLobbyReceivedInvitationGameConfigDto_t gameConfig;
     uint64_t fromSummonerId;
+    LolLobbyLobbyInvitationState_t state;
+    std::vector<LolLobbyEligibilityRestriction_t> restrictions;
+    std::string invitationId;
+    std::string fromSummonerName;
+    std::string timestamp;
+    bool canAcceptInvitation;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyReceivedInvitationDto& v) {
-    j["restrictions"] = v.restrictions;
-    j["canAcceptInvitation"] = v.canAcceptInvitation;
-    j["timestamp"] = v.timestamp;
-    j["state"] = v.state;
+  inline void to_json(nlohmann::json& j, const LolLobbyReceivedInvitationDto_t& v) {
     j["gameConfig"] = v.gameConfig;
+    j["fromSummonerId"] = v.fromSummonerId;
+    j["state"] = v.state;
+    j["restrictions"] = v.restrictions;
     j["invitationId"] = v.invitationId;
     j["fromSummonerName"] = v.fromSummonerName;
-    j["fromSummonerId"] = v.fromSummonerId;
+    j["timestamp"] = v.timestamp;
+    j["canAcceptInvitation"] = v.canAcceptInvitation;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyReceivedInvitationDto& v) {
-    v.restrictions = j.at("restrictions").get<std::vector<LolLobbyEligibilityRestriction>>;
-    v.canAcceptInvitation = j.at("canAcceptInvitation").get<bool>;
-    v.timestamp = j.at("timestamp").get<std::string>;
-    v.state = j.at("state").get<LolLobbyLobbyInvitationState>;
-    v.gameConfig = j.at("gameConfig").get<LolLobbyReceivedInvitationGameConfigDto>;
-    v.invitationId = j.at("invitationId").get<std::string>;
-    v.fromSummonerName = j.at("fromSummonerName").get<std::string>;
-    v.fromSummonerId = j.at("fromSummonerId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolLobbyReceivedInvitationDto_t& v) {
+    v.gameConfig = j.at("gameConfig").get<LolLobbyReceivedInvitationGameConfigDto_t>();
+    v.fromSummonerId = j.at("fromSummonerId").get<uint64_t>();
+    v.state = j.at("state").get<LolLobbyLobbyInvitationState_t>();
+    v.restrictions = j.at("restrictions").get<std::vector<LolLobbyEligibilityRestriction_t>>();
+    v.invitationId = j.at("invitationId").get<std::string>();
+    v.fromSummonerName = j.at("fromSummonerName").get<std::string>();
+    v.timestamp = j.at("timestamp").get<std::string>();
+    v.canAcceptInvitation = j.at("canAcceptInvitation").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyReceivedInvitationDto_HPP

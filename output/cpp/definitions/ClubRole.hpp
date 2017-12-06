@@ -1,73 +1,63 @@
-#ifndef SWAGGER_TYPES_ClubRole_HPP
-#define SWAGGER_TYPES_ClubRole_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class ClubRole {
-    // 
-    NOMINEE = 5,
-    // 
-    UNKNOWN = 0,
-    // 
-    INVITEE = 4,
-    // 
-    MEMBER = 3,
-    // 
-    OFFICER = 2,
-    // 
-    OWNER = 1,
+  enum class ClubRole_t {
+    MEMBER_E = 3,
+    NOMINEE_E = 5,
+    OWNER_E = 1,
+    INVITEE_E = 4,
+    UNKNOWN_E = 0,
+    OFFICER_E = 2,
   };
 
-  inline void to_json(nlohmann::json& j, const ClubRole& v) {
+  inline void to_json(nlohmann::json& j, const ClubRole_t& v) {
     switch(v) {
-      case ClubRole::NOMINEE:
-        j = "NOMINEE";
-      break;
-      case ClubRole::UNKNOWN:
-        j = "UNKNOWN";
-      break;
-      case ClubRole::INVITEE:
-        j = "INVITEE";
-      break;
-      case ClubRole::MEMBER:
+      case ClubRole_t::MEMBER_E:
         j = "MEMBER";
       break;
-      case ClubRole::OFFICER:
-        j = "OFFICER";
+      case ClubRole_t::NOMINEE_E:
+        j = "NOMINEE";
       break;
-      case ClubRole::OWNER:
+      case ClubRole_t::OWNER_E:
         j = "OWNER";
+      break;
+      case ClubRole_t::INVITEE_E:
+        j = "INVITEE";
+      break;
+      case ClubRole_t::UNKNOWN_E:
+        j = "UNKNOWN";
+      break;
+      case ClubRole_t::OFFICER_E:
+        j = "OFFICER";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, ClubRole& v) {
+  inline void from_json(const nlohmann::json& j, ClubRole_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "NOMINEE"){
-      v = ClubRole::NOMINEE;
-      return;
-    }
-    if(s == "UNKNOWN"){
-      v = ClubRole::UNKNOWN;
-      return;
-    }
-    if(s == "INVITEE"){
-      v = ClubRole::INVITEE;
-      return;
-    }
     if(s == "MEMBER"){
-      v = ClubRole::MEMBER;
+      v = ClubRole_t::MEMBER_E;
       return;
     }
-    if(s == "OFFICER"){
-      v = ClubRole::OFFICER;
+    if(s == "NOMINEE"){
+      v = ClubRole_t::NOMINEE_E;
       return;
     }
     if(s == "OWNER"){
-      v = ClubRole::OWNER;
+      v = ClubRole_t::OWNER_E;
+      return;
+    }
+    if(s == "INVITEE"){
+      v = ClubRole_t::INVITEE_E;
+      return;
+    }
+    if(s == "UNKNOWN"){
+      v = ClubRole_t::UNKNOWN_E;
+      return;
+    }
+    if(s == "OFFICER"){
+      v = ClubRole_t::OFFICER_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_ClubRole_HPP

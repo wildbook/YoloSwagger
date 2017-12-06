@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_HighlightsSettingsResource_HPP
-#define SWAGGER_TYPES_HighlightsSettingsResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "HighlightsSettingsData.hpp"
 namespace leagueapi {
-  // 
-  struct HighlightsSettingsResource {
-    // 
-    HighlightsSettingsData data;
+  struct HighlightsSettingsResource_t {
+    HighlightsSettingsData_t data;
   };
 
-  inline void to_json(nlohmann::json& j, const HighlightsSettingsResource& v) {
+  inline void to_json(nlohmann::json& j, const HighlightsSettingsResource_t& v) {
     j["data"] = v.data;
   }
 
-  inline void from_json(const nlohmann::json& j, HighlightsSettingsResource& v) {
-    v.data = j.at("data").get<HighlightsSettingsData>;
+  inline void from_json(const nlohmann::json& j, HighlightsSettingsResource_t& v) {
+    v.data = j.at("data").get<HighlightsSettingsData_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_HighlightsSettingsResource_HPP

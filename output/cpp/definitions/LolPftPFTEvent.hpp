@@ -1,28 +1,22 @@
-#ifndef SWAGGER_TYPES_LolPftPFTEvent_HPP
-#define SWAGGER_TYPES_LolPftPFTEvent_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolPftPFTEvent {
-    // 
-    std::string action;
-    // 
-    uint64_t playerSurveyId;
-    // 
+  struct LolPftPFTEvent_t {
     std::vector<nlohmann::json> data;
+    uint64_t playerSurveyId;
+    std::string action;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPftPFTEvent& v) {
-    j["action"] = v.action;
-    j["playerSurveyId"] = v.playerSurveyId;
+  inline void to_json(nlohmann::json& j, const LolPftPFTEvent_t& v) {
     j["data"] = v.data;
+    j["playerSurveyId"] = v.playerSurveyId;
+    j["action"] = v.action;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPftPFTEvent& v) {
-    v.action = j.at("action").get<std::string>;
-    v.playerSurveyId = j.at("playerSurveyId").get<uint64_t>;
-    v.data = j.at("data").get<std::vector<nlohmann::json>>;
+  inline void from_json(const nlohmann::json& j, LolPftPFTEvent_t& v) {
+    v.data = j.at("data").get<std::vector<nlohmann::json>>();
+    v.playerSurveyId = j.at("playerSurveyId").get<uint64_t>();
+    v.action = j.at("action").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPftPFTEvent_HPP

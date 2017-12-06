@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolLootGameDataSummonerIcon_HPP
-#define SWAGGER_TYPES_LolLootGameDataSummonerIcon_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLootGameDataSummonerIcon {
-    // 
-    int32_t id;
-    // 
+  struct LolLootGameDataSummonerIcon_t {
     std::string iconPath;
+    int32_t id;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLootGameDataSummonerIcon& v) {
-    j["id"] = v.id;
+  inline void to_json(nlohmann::json& j, const LolLootGameDataSummonerIcon_t& v) {
     j["iconPath"] = v.iconPath;
+    j["id"] = v.id;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLootGameDataSummonerIcon& v) {
-    v.id = j.at("id").get<int32_t>;
-    v.iconPath = j.at("iconPath").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolLootGameDataSummonerIcon_t& v) {
+    v.iconPath = j.at("iconPath").get<std::string>();
+    v.id = j.at("id").get<int32_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLootGameDataSummonerIcon_HPP

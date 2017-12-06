@@ -1,25 +1,24 @@
-#ifndef SWAGGER_TYPES_LolChampSelectLegacyPlayerStatus_HPP
-#define SWAGGER_TYPES_LolChampSelectLegacyPlayerStatus_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolChampSelectLegacyLobbyStatus.hpp"
 namespace leagueapi {
-  // 
-  struct LolChampSelectLegacyPlayerStatus {
-    // 
-    LolChampSelectLegacyLobbyStatus currentLobbyStatus;
-    // 
-    LolChampSelectLegacyLobbyStatus lastQueuedLobbyStatus;
+  struct LolChampSelectLegacyPlayerStatus_t {
+    std::optional<LolChampSelectLegacyLobbyStatus_t> currentLobbyStatus;
+    std::optional<LolChampSelectLegacyLobbyStatus_t> lastQueuedLobbyStatus;
   };
 
-  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyPlayerStatus& v) {
-    j["currentLobbyStatus"] = v.currentLobbyStatus;
-    j["lastQueuedLobbyStatus"] = v.lastQueuedLobbyStatus;
+  inline void to_json(nlohmann::json& j, const LolChampSelectLegacyPlayerStatus_t& v) {
+    if(v.currentLobbyStatus)
+      j["currentLobbyStatus"] = *v.currentLobbyStatus;
+    if(v.lastQueuedLobbyStatus)
+      j["lastQueuedLobbyStatus"] = *v.lastQueuedLobbyStatus;
   }
 
-  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyPlayerStatus& v) {
-    v.currentLobbyStatus = j.at("currentLobbyStatus").get<LolChampSelectLegacyLobbyStatus>;
-    v.lastQueuedLobbyStatus = j.at("lastQueuedLobbyStatus").get<LolChampSelectLegacyLobbyStatus>;
+  inline void from_json(const nlohmann::json& j, LolChampSelectLegacyPlayerStatus_t& v) {
+    if(auto it = j.find("currentLobbyStatus"); it != j.end() !it->is_null())
+      v.currentLobbyStatus = it->get<LolChampSelectLegacyLobbyStatus_t>();
+    if(auto it = j.find("lastQueuedLobbyStatus"); it != j.end() !it->is_null())
+      v.lastQueuedLobbyStatus = it->get<LolChampSelectLegacyLobbyStatus_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolChampSelectLegacyPlayerStatus_HPP

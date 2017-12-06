@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_EndOfGameLcdsTeamId_HPP
-#define SWAGGER_TYPES_EndOfGameLcdsTeamId_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct EndOfGameLcdsTeamId {
-    // 
+  struct EndOfGameLcdsTeamId_t {
     std::string fullId;
   };
 
-  inline void to_json(nlohmann::json& j, const EndOfGameLcdsTeamId& v) {
+  inline void to_json(nlohmann::json& j, const EndOfGameLcdsTeamId_t& v) {
     j["fullId"] = v.fullId;
   }
 
-  inline void from_json(const nlohmann::json& j, EndOfGameLcdsTeamId& v) {
-    v.fullId = j.at("fullId").get<std::string>;
+  inline void from_json(const nlohmann::json& j, EndOfGameLcdsTeamId_t& v) {
+    v.fullId = j.at("fullId").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_EndOfGameLcdsTeamId_HPP

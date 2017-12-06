@@ -1,73 +1,63 @@
-#ifndef SWAGGER_TYPES_LolLobbyPartyMemberRoleEnum_HPP
-#define SWAGGER_TYPES_LolLobbyPartyMemberRoleEnum_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLobbyPartyMemberRoleEnum {
-    // 
-    KICKED = 4,
-    // 
-    INVITED = 2,
-    // 
-    MEMBER = 1,
-    // 
-    HOLD = 3,
-    // 
-    LEADER = 0,
-    // 
-    DECLINED = 5,
+  enum class LolLobbyPartyMemberRoleEnum_t {
+    MEMBER_E = 1,
+    DECLINED_E = 5,
+    LEADER_E = 0,
+    HOLD_E = 3,
+    INVITED_E = 2,
+    KICKED_E = 4,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyPartyMemberRoleEnum& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyPartyMemberRoleEnum_t& v) {
     switch(v) {
-      case LolLobbyPartyMemberRoleEnum::KICKED:
-        j = "KICKED";
-      break;
-      case LolLobbyPartyMemberRoleEnum::INVITED:
-        j = "INVITED";
-      break;
-      case LolLobbyPartyMemberRoleEnum::MEMBER:
+      case LolLobbyPartyMemberRoleEnum_t::MEMBER_E:
         j = "MEMBER";
       break;
-      case LolLobbyPartyMemberRoleEnum::HOLD:
-        j = "HOLD";
+      case LolLobbyPartyMemberRoleEnum_t::DECLINED_E:
+        j = "DECLINED";
       break;
-      case LolLobbyPartyMemberRoleEnum::LEADER:
+      case LolLobbyPartyMemberRoleEnum_t::LEADER_E:
         j = "LEADER";
       break;
-      case LolLobbyPartyMemberRoleEnum::DECLINED:
-        j = "DECLINED";
+      case LolLobbyPartyMemberRoleEnum_t::HOLD_E:
+        j = "HOLD";
+      break;
+      case LolLobbyPartyMemberRoleEnum_t::INVITED_E:
+        j = "INVITED";
+      break;
+      case LolLobbyPartyMemberRoleEnum_t::KICKED_E:
+        j = "KICKED";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyPartyMemberRoleEnum& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyPartyMemberRoleEnum_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "KICKED"){
-      v = LolLobbyPartyMemberRoleEnum::KICKED;
-      return;
-    }
-    if(s == "INVITED"){
-      v = LolLobbyPartyMemberRoleEnum::INVITED;
-      return;
-    }
     if(s == "MEMBER"){
-      v = LolLobbyPartyMemberRoleEnum::MEMBER;
-      return;
-    }
-    if(s == "HOLD"){
-      v = LolLobbyPartyMemberRoleEnum::HOLD;
-      return;
-    }
-    if(s == "LEADER"){
-      v = LolLobbyPartyMemberRoleEnum::LEADER;
+      v = LolLobbyPartyMemberRoleEnum_t::MEMBER_E;
       return;
     }
     if(s == "DECLINED"){
-      v = LolLobbyPartyMemberRoleEnum::DECLINED;
+      v = LolLobbyPartyMemberRoleEnum_t::DECLINED_E;
+      return;
+    }
+    if(s == "LEADER"){
+      v = LolLobbyPartyMemberRoleEnum_t::LEADER_E;
+      return;
+    }
+    if(s == "HOLD"){
+      v = LolLobbyPartyMemberRoleEnum_t::HOLD_E;
+      return;
+    }
+    if(s == "INVITED"){
+      v = LolLobbyPartyMemberRoleEnum_t::INVITED_E;
+      return;
+    }
+    if(s == "KICKED"){
+      v = LolLobbyPartyMemberRoleEnum_t::KICKED_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyPartyMemberRoleEnum_HPP

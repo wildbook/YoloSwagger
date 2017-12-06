@@ -1,25 +1,21 @@
-#ifndef SWAGGER_TYPES_LogEvent_HPP
-#define SWAGGER_TYPES_LogEvent_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LogSeverityLevels.hpp"
 namespace leagueapi {
   // Describes a log entry.
-  struct LogEvent {
-    // 
+  struct LogEvent_t {
+    LogSeverityLevels_t severity;
     std::string message;
-    // 
-    LogSeverityLevels severity;
   };
 
-  inline void to_json(nlohmann::json& j, const LogEvent& v) {
-    j["message"] = v.message;
+  inline void to_json(nlohmann::json& j, const LogEvent_t& v) {
     j["severity"] = v.severity;
+    j["message"] = v.message;
   }
 
-  inline void from_json(const nlohmann::json& j, LogEvent& v) {
-    v.message = j.at("message").get<std::string>;
-    v.severity = j.at("severity").get<LogSeverityLevels>;
+  inline void from_json(const nlohmann::json& j, LogEvent_t& v) {
+    v.severity = j.at("severity").get<LogSeverityLevels_t>();
+    v.message = j.at("message").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LogEvent_HPP

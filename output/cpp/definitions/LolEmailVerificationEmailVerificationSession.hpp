@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolEmailVerificationEmailVerificationSession_HPP
-#define SWAGGER_TYPES_LolEmailVerificationEmailVerificationSession_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolEmailVerificationEmailVerificationSession {
-    // 
+  struct LolEmailVerificationEmailVerificationSession_t {
     bool emailVerified;
-    // 
     std::string email;
   };
 
-  inline void to_json(nlohmann::json& j, const LolEmailVerificationEmailVerificationSession& v) {
+  inline void to_json(nlohmann::json& j, const LolEmailVerificationEmailVerificationSession_t& v) {
     j["emailVerified"] = v.emailVerified;
     j["email"] = v.email;
   }
 
-  inline void from_json(const nlohmann::json& j, LolEmailVerificationEmailVerificationSession& v) {
-    v.emailVerified = j.at("emailVerified").get<bool>;
-    v.email = j.at("email").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolEmailVerificationEmailVerificationSession_t& v) {
+    v.emailVerified = j.at("emailVerified").get<bool>();
+    v.email = j.at("email").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolEmailVerificationEmailVerificationSession_HPP

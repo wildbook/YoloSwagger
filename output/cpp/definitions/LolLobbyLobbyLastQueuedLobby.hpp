@@ -1,33 +1,26 @@
-#ifndef SWAGGER_TYPES_LolLobbyLobbyLastQueuedLobby_HPP
-#define SWAGGER_TYPES_LolLobbyLobbyLastQueuedLobby_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLobbyLobbyLastQueuedMember.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyLobbyLastQueuedLobby {
-    // 
+  struct LolLobbyLobbyLastQueuedLobby_t {
     int32_t queueId;
-    // 
-    bool canPlayAgain;
-    // 
     bool wasOwner;
-    // 
-    std::vector<LolLobbyLobbyLastQueuedMember> members;
+    bool canPlayAgain;
+    std::vector<LolLobbyLobbyLastQueuedMember_t> members;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyLobbyLastQueuedLobby& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyLastQueuedLobby_t& v) {
     j["queueId"] = v.queueId;
-    j["canPlayAgain"] = v.canPlayAgain;
     j["wasOwner"] = v.wasOwner;
+    j["canPlayAgain"] = v.canPlayAgain;
     j["members"] = v.members;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyLobbyLastQueuedLobby& v) {
-    v.queueId = j.at("queueId").get<int32_t>;
-    v.canPlayAgain = j.at("canPlayAgain").get<bool>;
-    v.wasOwner = j.at("wasOwner").get<bool>;
-    v.members = j.at("members").get<std::vector<LolLobbyLobbyLastQueuedMember>>;
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyLastQueuedLobby_t& v) {
+    v.queueId = j.at("queueId").get<int32_t>();
+    v.wasOwner = j.at("wasOwner").get<bool>();
+    v.canPlayAgain = j.at("canPlayAgain").get<bool>();
+    v.members = j.at("members").get<std::vector<LolLobbyLobbyLastQueuedMember_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyLobbyLastQueuedLobby_HPP

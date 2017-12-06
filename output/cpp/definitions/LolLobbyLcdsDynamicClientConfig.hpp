@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_LolLobbyLcdsDynamicClientConfig_HPP
-#define SWAGGER_TYPES_LolLobbyLcdsDynamicClientConfig_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLobbyLcdsPartyRewardsConfig.hpp"
 namespace leagueapi {
-  // 
-  struct LolLobbyLcdsDynamicClientConfig {
-    // 
-    LolLobbyLcdsPartyRewardsConfig PartyRewards;
+  struct LolLobbyLcdsDynamicClientConfig_t {
+    LolLobbyLcdsPartyRewardsConfig_t PartyRewards;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyLcdsDynamicClientConfig& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLcdsDynamicClientConfig_t& v) {
     j["PartyRewards"] = v.PartyRewards;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyLcdsDynamicClientConfig& v) {
-    v.PartyRewards = j.at("PartyRewards").get<LolLobbyLcdsPartyRewardsConfig>;
+  inline void from_json(const nlohmann::json& j, LolLobbyLcdsDynamicClientConfig_t& v) {
+    v.PartyRewards = j.at("PartyRewards").get<LolLobbyLcdsPartyRewardsConfig_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyLcdsDynamicClientConfig_HPP

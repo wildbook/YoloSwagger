@@ -1,36 +1,28 @@
-#ifndef SWAGGER_TYPES_LolLobbyGatekeeperRestrictionDto_HPP
-#define SWAGGER_TYPES_LolLobbyGatekeeperRestrictionDto_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyGatekeeperRestrictionDto {
-    // 
-    int64_t remainingMillis;
-    // 
-    int32_t queueId;
-    // 
-    std::string reason;
-    // 
-    std::string payload;
-    // 
+  struct LolLobbyGatekeeperRestrictionDto_t {
     uint64_t accountId;
+    int32_t queueId;
+    int64_t remainingMillis;
+    std::string payload;
+    std::string reason;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyGatekeeperRestrictionDto& v) {
-    j["remainingMillis"] = v.remainingMillis;
-    j["queueId"] = v.queueId;
-    j["reason"] = v.reason;
-    j["payload"] = v.payload;
+  inline void to_json(nlohmann::json& j, const LolLobbyGatekeeperRestrictionDto_t& v) {
     j["accountId"] = v.accountId;
+    j["queueId"] = v.queueId;
+    j["remainingMillis"] = v.remainingMillis;
+    j["payload"] = v.payload;
+    j["reason"] = v.reason;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyGatekeeperRestrictionDto& v) {
-    v.remainingMillis = j.at("remainingMillis").get<int64_t>;
-    v.queueId = j.at("queueId").get<int32_t>;
-    v.reason = j.at("reason").get<std::string>;
-    v.payload = j.at("payload").get<std::string>;
-    v.accountId = j.at("accountId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolLobbyGatekeeperRestrictionDto_t& v) {
+    v.accountId = j.at("accountId").get<uint64_t>();
+    v.queueId = j.at("queueId").get<int32_t>();
+    v.remainingMillis = j.at("remainingMillis").get<int64_t>();
+    v.payload = j.at("payload").get<std::string>();
+    v.reason = j.at("reason").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyGatekeeperRestrictionDto_HPP

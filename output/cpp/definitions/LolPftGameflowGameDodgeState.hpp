@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolPftGameflowGameDodgeState_HPP
-#define SWAGGER_TYPES_LolPftGameflowGameDodgeState_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolPftGameflowGameDodgeState {
-    // 
-    PartyDodged = 49,
-    // 
-    TournamentDodged = 51,
-    // 
-    Invalid = 48,
-    // 
-    StrangerDodged = 50,
+  enum class LolPftGameflowGameDodgeState_t {
+    TournamentDodged_E = 51,
+    Invalid_E = 48,
+    PartyDodged_E = 49,
+    StrangerDodged_E = 50,
   };
 
-  inline void to_json(nlohmann::json& j, const LolPftGameflowGameDodgeState& v) {
+  inline void to_json(nlohmann::json& j, const LolPftGameflowGameDodgeState_t& v) {
     switch(v) {
-      case LolPftGameflowGameDodgeState::PartyDodged:
-        j = "PartyDodged";
-      break;
-      case LolPftGameflowGameDodgeState::TournamentDodged:
+      case LolPftGameflowGameDodgeState_t::TournamentDodged_E:
         j = "TournamentDodged";
       break;
-      case LolPftGameflowGameDodgeState::Invalid:
+      case LolPftGameflowGameDodgeState_t::Invalid_E:
         j = "Invalid";
       break;
-      case LolPftGameflowGameDodgeState::StrangerDodged:
+      case LolPftGameflowGameDodgeState_t::PartyDodged_E:
+        j = "PartyDodged";
+      break;
+      case LolPftGameflowGameDodgeState_t::StrangerDodged_E:
         j = "StrangerDodged";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolPftGameflowGameDodgeState& v) {
+  inline void from_json(const nlohmann::json& j, LolPftGameflowGameDodgeState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "PartyDodged"){
-      v = LolPftGameflowGameDodgeState::PartyDodged;
-      return;
-    }
     if(s == "TournamentDodged"){
-      v = LolPftGameflowGameDodgeState::TournamentDodged;
+      v = LolPftGameflowGameDodgeState_t::TournamentDodged_E;
       return;
     }
     if(s == "Invalid"){
-      v = LolPftGameflowGameDodgeState::Invalid;
+      v = LolPftGameflowGameDodgeState_t::Invalid_E;
+      return;
+    }
+    if(s == "PartyDodged"){
+      v = LolPftGameflowGameDodgeState_t::PartyDodged_E;
       return;
     }
     if(s == "StrangerDodged"){
-      v = LolPftGameflowGameDodgeState::StrangerDodged;
+      v = LolPftGameflowGameDodgeState_t::StrangerDodged_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolPftGameflowGameDodgeState_HPP

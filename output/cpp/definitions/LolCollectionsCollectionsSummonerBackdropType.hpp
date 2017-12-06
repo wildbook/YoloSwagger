@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_LolCollectionsCollectionsSummonerBackdropType_HPP
-#define SWAGGER_TYPES_LolCollectionsCollectionsSummonerBackdropType_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolCollectionsCollectionsSummonerBackdropType {
-    // 
-    default = 0,
-    // 
-    summoner-icon = 1,
-    // 
-    recently-played = 2,
-    // 
-    highest-mastery = 3,
+  enum class LolCollectionsCollectionsSummonerBackdropType_t {
+    default_E = 0,
+    highest-mastery_E = 3,
+    recently-played_E = 2,
+    summoner-icon_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsSummonerBackdropType& v) {
+  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsSummonerBackdropType_t& v) {
     switch(v) {
-      case LolCollectionsCollectionsSummonerBackdropType::default:
+      case LolCollectionsCollectionsSummonerBackdropType_t::default_E:
         j = "default";
       break;
-      case LolCollectionsCollectionsSummonerBackdropType::summoner-icon:
-        j = "summoner-icon";
+      case LolCollectionsCollectionsSummonerBackdropType_t::highest-mastery_E:
+        j = "highest-mastery";
       break;
-      case LolCollectionsCollectionsSummonerBackdropType::recently-played:
+      case LolCollectionsCollectionsSummonerBackdropType_t::recently-played_E:
         j = "recently-played";
       break;
-      case LolCollectionsCollectionsSummonerBackdropType::highest-mastery:
-        j = "highest-mastery";
+      case LolCollectionsCollectionsSummonerBackdropType_t::summoner-icon_E:
+        j = "summoner-icon";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsSummonerBackdropType& v) {
+  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsSummonerBackdropType_t& v) {
     const auto& s = j.get<std::string>();
     if(s == "default"){
-      v = LolCollectionsCollectionsSummonerBackdropType::default;
-      return;
-    }
-    if(s == "summoner-icon"){
-      v = LolCollectionsCollectionsSummonerBackdropType::summoner-icon;
-      return;
-    }
-    if(s == "recently-played"){
-      v = LolCollectionsCollectionsSummonerBackdropType::recently-played;
+      v = LolCollectionsCollectionsSummonerBackdropType_t::default_E;
       return;
     }
     if(s == "highest-mastery"){
-      v = LolCollectionsCollectionsSummonerBackdropType::highest-mastery;
+      v = LolCollectionsCollectionsSummonerBackdropType_t::highest-mastery_E;
+      return;
+    }
+    if(s == "recently-played"){
+      v = LolCollectionsCollectionsSummonerBackdropType_t::recently-played_E;
+      return;
+    }
+    if(s == "summoner-icon"){
+      v = LolCollectionsCollectionsSummonerBackdropType_t::summoner-icon_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolCollectionsCollectionsSummonerBackdropType_HPP

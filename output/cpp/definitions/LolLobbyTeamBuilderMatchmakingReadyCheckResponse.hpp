@@ -1,46 +1,39 @@
-#ifndef SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingReadyCheckResponse_HPP
-#define SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingReadyCheckResponse_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LolLobbyTeamBuilderMatchmakingReadyCheckResponse {
-    // 
-    None = 48,
-    // 
-    Accepted = 49,
-    // 
-    Declined = 50,
+  enum class LolLobbyTeamBuilderMatchmakingReadyCheckResponse_t {
+    Accepted_E = 49,
+    Declined_E = 50,
+    None_E = 48,
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingReadyCheckResponse& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingReadyCheckResponse_t& v) {
     switch(v) {
-      case LolLobbyTeamBuilderMatchmakingReadyCheckResponse::None:
-        j = "None";
-      break;
-      case LolLobbyTeamBuilderMatchmakingReadyCheckResponse::Accepted:
+      case LolLobbyTeamBuilderMatchmakingReadyCheckResponse_t::Accepted_E:
         j = "Accepted";
       break;
-      case LolLobbyTeamBuilderMatchmakingReadyCheckResponse::Declined:
+      case LolLobbyTeamBuilderMatchmakingReadyCheckResponse_t::Declined_E:
         j = "Declined";
+      break;
+      case LolLobbyTeamBuilderMatchmakingReadyCheckResponse_t::None_E:
+        j = "None";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingReadyCheckResponse& v) {
+  inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingReadyCheckResponse_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "None"){
-      v = LolLobbyTeamBuilderMatchmakingReadyCheckResponse::None;
-      return;
-    }
     if(s == "Accepted"){
-      v = LolLobbyTeamBuilderMatchmakingReadyCheckResponse::Accepted;
+      v = LolLobbyTeamBuilderMatchmakingReadyCheckResponse_t::Accepted_E;
       return;
     }
     if(s == "Declined"){
-      v = LolLobbyTeamBuilderMatchmakingReadyCheckResponse::Declined;
+      v = LolLobbyTeamBuilderMatchmakingReadyCheckResponse_t::Declined_E;
+      return;
+    }
+    if(s == "None"){
+      v = LolLobbyTeamBuilderMatchmakingReadyCheckResponse_t::None_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyTeamBuilderMatchmakingReadyCheckResponse_HPP

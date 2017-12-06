@@ -1,20 +1,16 @@
-#ifndef SWAGGER_TYPES_LolLobbyLobbyLastQueuedMember_HPP
-#define SWAGGER_TYPES_LolLobbyLobbyLastQueuedMember_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyLobbyLastQueuedMember {
-    // 
+  struct LolLobbyLobbyLastQueuedMember_t {
     uint64_t id;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyLobbyLastQueuedMember& v) {
+  inline void to_json(nlohmann::json& j, const LolLobbyLobbyLastQueuedMember_t& v) {
     j["id"] = v.id;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyLobbyLastQueuedMember& v) {
-    v.id = j.at("id").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolLobbyLobbyLastQueuedMember_t& v) {
+    v.id = j.at("id").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyLobbyLastQueuedMember_HPP

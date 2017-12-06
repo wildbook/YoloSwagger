@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_LolLobbyChatBlockedPlayerResource_HPP
-#define SWAGGER_TYPES_LolLobbyChatBlockedPlayerResource_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolLobbyChatBlockedPlayerResource {
-    // 
-    uint64_t id;
-    // 
+  struct LolLobbyChatBlockedPlayerResource_t {
     std::string name;
+    uint64_t id;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLobbyChatBlockedPlayerResource& v) {
-    j["id"] = v.id;
+  inline void to_json(nlohmann::json& j, const LolLobbyChatBlockedPlayerResource_t& v) {
     j["name"] = v.name;
+    j["id"] = v.id;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLobbyChatBlockedPlayerResource& v) {
-    v.id = j.at("id").get<uint64_t>;
-    v.name = j.at("name").get<std::string>;
+  inline void from_json(const nlohmann::json& j, LolLobbyChatBlockedPlayerResource_t& v) {
+    v.name = j.at("name").get<std::string>();
+    v.id = j.at("id").get<uint64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLobbyChatBlockedPlayerResource_HPP

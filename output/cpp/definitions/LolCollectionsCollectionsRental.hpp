@@ -1,32 +1,25 @@
-#ifndef SWAGGER_TYPES_LolCollectionsCollectionsRental_HPP
-#define SWAGGER_TYPES_LolCollectionsCollectionsRental_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct LolCollectionsCollectionsRental {
-    // 
-    bool rented;
-    // 
-    uint64_t purchaseDate;
-    // 
-    uint64_t endDate;
-    // 
+  struct LolCollectionsCollectionsRental_t {
     int32_t winCountRemaining;
+    uint64_t purchaseDate;
+    uint64_t endDate;
+    bool rented;
   };
 
-  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsRental& v) {
-    j["rented"] = v.rented;
+  inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsRental_t& v) {
+    j["winCountRemaining"] = v.winCountRemaining;
     j["purchaseDate"] = v.purchaseDate;
     j["endDate"] = v.endDate;
-    j["winCountRemaining"] = v.winCountRemaining;
+    j["rented"] = v.rented;
   }
 
-  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsRental& v) {
-    v.rented = j.at("rented").get<bool>;
-    v.purchaseDate = j.at("purchaseDate").get<uint64_t>;
-    v.endDate = j.at("endDate").get<uint64_t>;
-    v.winCountRemaining = j.at("winCountRemaining").get<int32_t>;
+  inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsRental_t& v) {
+    v.winCountRemaining = j.at("winCountRemaining").get<int32_t>();
+    v.purchaseDate = j.at("purchaseDate").get<uint64_t>();
+    v.endDate = j.at("endDate").get<uint64_t>();
+    v.rented = j.at("rented").get<bool>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolCollectionsCollectionsRental_HPP

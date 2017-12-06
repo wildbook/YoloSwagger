@@ -1,55 +1,47 @@
-#ifndef SWAGGER_TYPES_ShutdownReason_HPP
-#define SWAGGER_TYPES_ShutdownReason_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class ShutdownReason {
-    // 
-    LcuAlphaDisabled = 2,
-    // 
-    PlatformMaintenance = 1,
-    // 
-    Invalid = 0,
-    // 
-    PlayerBanned = 3,
+  enum class ShutdownReason_t {
+    PlayerBanned_E = 3,
+    Invalid_E = 0,
+    LcuAlphaDisabled_E = 2,
+    PlatformMaintenance_E = 1,
   };
 
-  inline void to_json(nlohmann::json& j, const ShutdownReason& v) {
+  inline void to_json(nlohmann::json& j, const ShutdownReason_t& v) {
     switch(v) {
-      case ShutdownReason::LcuAlphaDisabled:
-        j = "LcuAlphaDisabled";
+      case ShutdownReason_t::PlayerBanned_E:
+        j = "PlayerBanned";
       break;
-      case ShutdownReason::PlatformMaintenance:
-        j = "PlatformMaintenance";
-      break;
-      case ShutdownReason::Invalid:
+      case ShutdownReason_t::Invalid_E:
         j = "Invalid";
       break;
-      case ShutdownReason::PlayerBanned:
-        j = "PlayerBanned";
+      case ShutdownReason_t::LcuAlphaDisabled_E:
+        j = "LcuAlphaDisabled";
+      break;
+      case ShutdownReason_t::PlatformMaintenance_E:
+        j = "PlatformMaintenance";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, ShutdownReason& v) {
+  inline void from_json(const nlohmann::json& j, ShutdownReason_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "LcuAlphaDisabled"){
-      v = ShutdownReason::LcuAlphaDisabled;
-      return;
-    }
-    if(s == "PlatformMaintenance"){
-      v = ShutdownReason::PlatformMaintenance;
+    if(s == "PlayerBanned"){
+      v = ShutdownReason_t::PlayerBanned_E;
       return;
     }
     if(s == "Invalid"){
-      v = ShutdownReason::Invalid;
+      v = ShutdownReason_t::Invalid_E;
       return;
     }
-    if(s == "PlayerBanned"){
-      v = ShutdownReason::PlayerBanned;
+    if(s == "LcuAlphaDisabled"){
+      v = ShutdownReason_t::LcuAlphaDisabled_E;
+      return;
+    }
+    if(s == "PlatformMaintenance"){
+      v = ShutdownReason_t::PlatformMaintenance_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_ShutdownReason_HPP

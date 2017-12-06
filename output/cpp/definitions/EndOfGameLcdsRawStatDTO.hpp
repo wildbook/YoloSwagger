@@ -1,24 +1,19 @@
-#ifndef SWAGGER_TYPES_EndOfGameLcdsRawStatDTO_HPP
-#define SWAGGER_TYPES_EndOfGameLcdsRawStatDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 namespace leagueapi {
-  // 
-  struct EndOfGameLcdsRawStatDTO {
-    // 
+  struct EndOfGameLcdsRawStatDTO_t {
     int64_t value;
-    // 
     std::string statTypeName;
   };
 
-  inline void to_json(nlohmann::json& j, const EndOfGameLcdsRawStatDTO& v) {
+  inline void to_json(nlohmann::json& j, const EndOfGameLcdsRawStatDTO_t& v) {
     j["value"] = v.value;
     j["statTypeName"] = v.statTypeName;
   }
 
-  inline void from_json(const nlohmann::json& j, EndOfGameLcdsRawStatDTO& v) {
-    v.value = j.at("value").get<int64_t>;
-    v.statTypeName = j.at("statTypeName").get<std::string>;
+  inline void from_json(const nlohmann::json& j, EndOfGameLcdsRawStatDTO_t& v) {
+    v.value = j.at("value").get<int64_t>();
+    v.statTypeName = j.at("statTypeName").get<std::string>();
   }
-
 }
-#endif // SWAGGER_TYPES_EndOfGameLcdsRawStatDTO_HPP

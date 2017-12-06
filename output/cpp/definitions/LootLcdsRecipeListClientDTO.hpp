@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LootLcdsRecipeListClientDTO_HPP
-#define SWAGGER_TYPES_LootLcdsRecipeListClientDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LootLcdsRecipeClientDTO.hpp"
 namespace leagueapi {
-  // 
-  struct LootLcdsRecipeListClientDTO {
-    // 
+  struct LootLcdsRecipeListClientDTO_t {
+    std::vector<LootLcdsRecipeClientDTO_t> recipes;
     int64_t lastUpdate;
-    // 
-    std::vector<LootLcdsRecipeClientDTO> recipes;
   };
 
-  inline void to_json(nlohmann::json& j, const LootLcdsRecipeListClientDTO& v) {
-    j["lastUpdate"] = v.lastUpdate;
+  inline void to_json(nlohmann::json& j, const LootLcdsRecipeListClientDTO_t& v) {
     j["recipes"] = v.recipes;
+    j["lastUpdate"] = v.lastUpdate;
   }
 
-  inline void from_json(const nlohmann::json& j, LootLcdsRecipeListClientDTO& v) {
-    v.lastUpdate = j.at("lastUpdate").get<int64_t>;
-    v.recipes = j.at("recipes").get<std::vector<LootLcdsRecipeClientDTO>>;
+  inline void from_json(const nlohmann::json& j, LootLcdsRecipeListClientDTO_t& v) {
+    v.recipes = j.at("recipes").get<std::vector<LootLcdsRecipeClientDTO_t>>();
+    v.lastUpdate = j.at("lastUpdate").get<int64_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LootLcdsRecipeListClientDTO_HPP

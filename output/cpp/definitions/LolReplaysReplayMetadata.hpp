@@ -1,29 +1,23 @@
-#ifndef SWAGGER_TYPES_LolReplaysReplayMetadata_HPP
-#define SWAGGER_TYPES_LolReplaysReplayMetadata_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolReplaysMetadataState.hpp"
 namespace leagueapi {
-  // 
-  struct LolReplaysReplayMetadata {
-    // 
+  struct LolReplaysReplayMetadata_t {
     uint32_t downloadProgress;
-    // 
-    LolReplaysMetadataState state;
-    // 
     uint64_t gameId;
+    LolReplaysMetadataState_t state;
   };
 
-  inline void to_json(nlohmann::json& j, const LolReplaysReplayMetadata& v) {
+  inline void to_json(nlohmann::json& j, const LolReplaysReplayMetadata_t& v) {
     j["downloadProgress"] = v.downloadProgress;
-    j["state"] = v.state;
     j["gameId"] = v.gameId;
+    j["state"] = v.state;
   }
 
-  inline void from_json(const nlohmann::json& j, LolReplaysReplayMetadata& v) {
-    v.downloadProgress = j.at("downloadProgress").get<uint32_t>;
-    v.state = j.at("state").get<LolReplaysMetadataState>;
-    v.gameId = j.at("gameId").get<uint64_t>;
+  inline void from_json(const nlohmann::json& j, LolReplaysReplayMetadata_t& v) {
+    v.downloadProgress = j.at("downloadProgress").get<uint32_t>();
+    v.gameId = j.at("gameId").get<uint64_t>();
+    v.state = j.at("state").get<LolReplaysMetadataState_t>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolReplaysReplayMetadata_HPP

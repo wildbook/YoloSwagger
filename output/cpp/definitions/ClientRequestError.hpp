@@ -1,613 +1,543 @@
-#ifndef SWAGGER_TYPES_ClientRequestError_HPP
-#define SWAGGER_TYPES_ClientRequestError_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class ClientRequestError {
-    // 
-    OVER_INVITE = 51,
-    // 
-    PENDING_ROSTER_CLOSE = 54,
-    // 
-    INVALID_ROSTER = 17,
-    // 
-    NOT_CAPTAIN = 43,
-    // 
-    PENDING_ROSTER_NOT_READY = 52,
-    // 
-    ALREADY_IN_PHASE = 5,
-    // 
-    TICKET_NOT_SET = 62,
-    // 
-    ROSTER_DISBAND_NOT_ALLOWED = 57,
-    // 
-    INVALID_SUB = 19,
-    // 
-    OVER_SUGGESTION_INVITE = 50,
-    // 
-    INACTIVE_PHASE = 15,
-    // 
-    INVALID_LOGOCOLOR = 26,
-    // 
-    IN_OTHER_PHASE = 13,
-    // 
-    WITHDRAW_LOCKOUT = 65,
-    // 
-    SUGGEST_INVITEE_NOT_EXIST = 58,
-    // 
-    LOGO_NOT_ALLOWED = 9,
-    // 
-    INVALID_BRACKET = 30,
-    // 
-    NOT_SEED_INTO_LEAGUE = 46,
-    // 
-    NO_AVAILABLE_PHASE = 42,
-    // 
-    NOT_INVITEE = 45,
-    // 
-    INVALID_ROSTER_MEMBER_SIZE = 23,
-    // 
-    CAPTAIN_NOT_ALLOWED = 6,
-    // 
-    NOT_UNANIMOUS = 47,
-    // 
-    INVALID_MATCHID = 31,
-    // 
-    INVALID_CHECKELIGIBILITY_SIZE = 29,
-    // 
-    ALREADY_SUGGESTED = 2,
-    // 
-    TICKET_OFFER_NOT_EXIST = 60,
-    // 
-    FAIL_SUGGESTINVITE = 8,
-    // 
-    INVALID_TOURNAMENT = 20,
-    // 
-    MAX_SUB_SIZE = 38,
-    // 
-    ALREADY_INVITED = 1,
-    // 
-    ALREADY_DECLINE_WITHDRAW = 3,
-    // 
-    ROSTER_ELIMINATED = 55,
-    // 
-    NO_PERMISSION_CREATE_ROSTER = 40,
-    // 
-    INVALID_NAME = 27,
-    // 
-    INVALID_BUY_BACK = 18,
-    // 
-    WITHDRAW_CANCEL_NOT_ALLOWED = 64,
-    // 
-    INACTIVE_REGISTRATION = 14,
-    // 
-    NO_SAME_PLAYER = 39,
-    // 
-    NO_PERMISSION_REGISTER_ROSTER = 41,
-    // 
-    TICKET_OFFER_OVER_LIMIT = 61,
-    // 
-    INVALID_PHASE = 21,
-    // 
-    ALREADY_VOTE_WITHDRAW = 4,
-    // 
-    FAIL_INVITE = 7,
-    // 
-    INVALID_MATCHSTATUS_FORGAMEEND = 34,
-    // 
-    INVALID_PLAYER = 32,
-    // 
-    NOT_MEMBER = 44,
-    // 
-    ROSTER_NOT_ELIMINATED = 56,
-    // 
-    INTERNAL_ERROR = 16,
-    // 
-    NOT_ALLOWED_DELETE_TOURNAMENT = 49,
-    // 
-    LOGOCOLOR_NOT_ALLOWED = 10,
-    // 
-    ALREADY_MEMBER = 0,
-    // 
-    INVALID_POSITION = 24,
-    // 
-    TICKET_ALREADY_SET = 59,
-    // 
-    MAX_INVITED = 35,
-    // 
-    MAX_SUBED = 36,
-    // 
-    NOT_ENOUGH_TICKETS = 48,
-    // 
-    WITHDRAW_NOT_ALLOWED = 63,
-    // 
-    INVALID_WITHDRAW = 33,
-    // 
-    IN_OTHER_PENDINGROSTER = 12,
-    // 
-    INVALID_SHORTNAME = 28,
-    // 
-    MAX_ROSTER_FETCHSIZE = 37,
-    // 
-    IN_OTHER_ROSTER = 11,
-    // 
-    PENDING_ROSTER_FULL = 53,
-    // 
-    INVALID_LOGO = 25,
-    // 
-    INVALID_INVITEE = 22,
+  enum class ClientRequestError_t {
+    ALREADY_SUGGESTED_E = 2,
+    TICKET_ALREADY_SET_E = 59,
+    ROSTER_DISBAND_NOT_ALLOWED_E = 57,
+    OVER_INVITE_E = 51,
+    INVALID_POSITION_E = 24,
+    LOGO_NOT_ALLOWED_E = 9,
+    INVALID_CHECKELIGIBILITY_SIZE_E = 29,
+    ALREADY_INVITED_E = 1,
+    ALREADY_MEMBER_E = 0,
+    IN_OTHER_PHASE_E = 13,
+    MAX_INVITED_E = 35,
+    NO_AVAILABLE_PHASE_E = 42,
+    INVALID_NAME_E = 27,
+    INVALID_LOGOCOLOR_E = 26,
+    INVALID_MATCHID_E = 31,
+    NOT_ALLOWED_DELETE_TOURNAMENT_E = 49,
+    NO_PERMISSION_REGISTER_ROSTER_E = 41,
+    NOT_ENOUGH_TICKETS_E = 48,
+    INVALID_ROSTER_MEMBER_SIZE_E = 23,
+    NO_PERMISSION_CREATE_ROSTER_E = 40,
+    WITHDRAW_CANCEL_NOT_ALLOWED_E = 64,
+    INACTIVE_PHASE_E = 15,
+    INVALID_BUY_BACK_E = 18,
+    PENDING_ROSTER_CLOSE_E = 54,
+    INVALID_TOURNAMENT_E = 20,
+    INVALID_ROSTER_E = 17,
+    ALREADY_DECLINE_WITHDRAW_E = 3,
+    INTERNAL_ERROR_E = 16,
+    TICKET_OFFER_NOT_EXIST_E = 60,
+    NOT_MEMBER_E = 44,
+    NOT_INVITEE_E = 45,
+    FAIL_INVITE_E = 7,
+    PENDING_ROSTER_FULL_E = 53,
+    LOGOCOLOR_NOT_ALLOWED_E = 10,
+    MAX_SUB_SIZE_E = 38,
+    INVALID_SUB_E = 19,
+    INVALID_BRACKET_E = 30,
+    SUGGEST_INVITEE_NOT_EXIST_E = 58,
+    INVALID_PLAYER_E = 32,
+    NO_SAME_PLAYER_E = 39,
+    TICKET_OFFER_OVER_LIMIT_E = 61,
+    INVALID_LOGO_E = 25,
+    INACTIVE_REGISTRATION_E = 14,
+    OVER_SUGGESTION_INVITE_E = 50,
+    WITHDRAW_NOT_ALLOWED_E = 63,
+    TICKET_NOT_SET_E = 62,
+    CAPTAIN_NOT_ALLOWED_E = 6,
+    IN_OTHER_ROSTER_E = 11,
+    NOT_UNANIMOUS_E = 47,
+    INVALID_WITHDRAW_E = 33,
+    ALREADY_IN_PHASE_E = 5,
+    ROSTER_ELIMINATED_E = 55,
+    INVALID_PHASE_E = 21,
+    ROSTER_NOT_ELIMINATED_E = 56,
+    FAIL_SUGGESTINVITE_E = 8,
+    NOT_CAPTAIN_E = 43,
+    IN_OTHER_PENDINGROSTER_E = 12,
+    ALREADY_VOTE_WITHDRAW_E = 4,
+    MAX_SUBED_E = 36,
+    INVALID_MATCHSTATUS_FORGAMEEND_E = 34,
+    PENDING_ROSTER_NOT_READY_E = 52,
+    NOT_SEED_INTO_LEAGUE_E = 46,
+    WITHDRAW_LOCKOUT_E = 65,
+    INVALID_INVITEE_E = 22,
+    INVALID_SHORTNAME_E = 28,
+    MAX_ROSTER_FETCHSIZE_E = 37,
   };
 
-  inline void to_json(nlohmann::json& j, const ClientRequestError& v) {
+  inline void to_json(nlohmann::json& j, const ClientRequestError_t& v) {
     switch(v) {
-      case ClientRequestError::OVER_INVITE:
-        j = "OVER_INVITE";
-      break;
-      case ClientRequestError::PENDING_ROSTER_CLOSE:
-        j = "PENDING_ROSTER_CLOSE";
-      break;
-      case ClientRequestError::INVALID_ROSTER:
-        j = "INVALID_ROSTER";
-      break;
-      case ClientRequestError::NOT_CAPTAIN:
-        j = "NOT_CAPTAIN";
-      break;
-      case ClientRequestError::PENDING_ROSTER_NOT_READY:
-        j = "PENDING_ROSTER_NOT_READY";
-      break;
-      case ClientRequestError::ALREADY_IN_PHASE:
-        j = "ALREADY_IN_PHASE";
-      break;
-      case ClientRequestError::TICKET_NOT_SET:
-        j = "TICKET_NOT_SET";
-      break;
-      case ClientRequestError::ROSTER_DISBAND_NOT_ALLOWED:
-        j = "ROSTER_DISBAND_NOT_ALLOWED";
-      break;
-      case ClientRequestError::INVALID_SUB:
-        j = "INVALID_SUB";
-      break;
-      case ClientRequestError::OVER_SUGGESTION_INVITE:
-        j = "OVER_SUGGESTION_INVITE";
-      break;
-      case ClientRequestError::INACTIVE_PHASE:
-        j = "INACTIVE_PHASE";
-      break;
-      case ClientRequestError::INVALID_LOGOCOLOR:
-        j = "INVALID_LOGOCOLOR";
-      break;
-      case ClientRequestError::IN_OTHER_PHASE:
-        j = "IN_OTHER_PHASE";
-      break;
-      case ClientRequestError::WITHDRAW_LOCKOUT:
-        j = "WITHDRAW_LOCKOUT";
-      break;
-      case ClientRequestError::SUGGEST_INVITEE_NOT_EXIST:
-        j = "SUGGEST_INVITEE_NOT_EXIST";
-      break;
-      case ClientRequestError::LOGO_NOT_ALLOWED:
-        j = "LOGO_NOT_ALLOWED";
-      break;
-      case ClientRequestError::INVALID_BRACKET:
-        j = "INVALID_BRACKET";
-      break;
-      case ClientRequestError::NOT_SEED_INTO_LEAGUE:
-        j = "NOT_SEED_INTO_LEAGUE";
-      break;
-      case ClientRequestError::NO_AVAILABLE_PHASE:
-        j = "NO_AVAILABLE_PHASE";
-      break;
-      case ClientRequestError::NOT_INVITEE:
-        j = "NOT_INVITEE";
-      break;
-      case ClientRequestError::INVALID_ROSTER_MEMBER_SIZE:
-        j = "INVALID_ROSTER_MEMBER_SIZE";
-      break;
-      case ClientRequestError::CAPTAIN_NOT_ALLOWED:
-        j = "CAPTAIN_NOT_ALLOWED";
-      break;
-      case ClientRequestError::NOT_UNANIMOUS:
-        j = "NOT_UNANIMOUS";
-      break;
-      case ClientRequestError::INVALID_MATCHID:
-        j = "INVALID_MATCHID";
-      break;
-      case ClientRequestError::INVALID_CHECKELIGIBILITY_SIZE:
-        j = "INVALID_CHECKELIGIBILITY_SIZE";
-      break;
-      case ClientRequestError::ALREADY_SUGGESTED:
+      case ClientRequestError_t::ALREADY_SUGGESTED_E:
         j = "ALREADY_SUGGESTED";
       break;
-      case ClientRequestError::TICKET_OFFER_NOT_EXIST:
-        j = "TICKET_OFFER_NOT_EXIST";
-      break;
-      case ClientRequestError::FAIL_SUGGESTINVITE:
-        j = "FAIL_SUGGESTINVITE";
-      break;
-      case ClientRequestError::INVALID_TOURNAMENT:
-        j = "INVALID_TOURNAMENT";
-      break;
-      case ClientRequestError::MAX_SUB_SIZE:
-        j = "MAX_SUB_SIZE";
-      break;
-      case ClientRequestError::ALREADY_INVITED:
-        j = "ALREADY_INVITED";
-      break;
-      case ClientRequestError::ALREADY_DECLINE_WITHDRAW:
-        j = "ALREADY_DECLINE_WITHDRAW";
-      break;
-      case ClientRequestError::ROSTER_ELIMINATED:
-        j = "ROSTER_ELIMINATED";
-      break;
-      case ClientRequestError::NO_PERMISSION_CREATE_ROSTER:
-        j = "NO_PERMISSION_CREATE_ROSTER";
-      break;
-      case ClientRequestError::INVALID_NAME:
-        j = "INVALID_NAME";
-      break;
-      case ClientRequestError::INVALID_BUY_BACK:
-        j = "INVALID_BUY_BACK";
-      break;
-      case ClientRequestError::WITHDRAW_CANCEL_NOT_ALLOWED:
-        j = "WITHDRAW_CANCEL_NOT_ALLOWED";
-      break;
-      case ClientRequestError::INACTIVE_REGISTRATION:
-        j = "INACTIVE_REGISTRATION";
-      break;
-      case ClientRequestError::NO_SAME_PLAYER:
-        j = "NO_SAME_PLAYER";
-      break;
-      case ClientRequestError::NO_PERMISSION_REGISTER_ROSTER:
-        j = "NO_PERMISSION_REGISTER_ROSTER";
-      break;
-      case ClientRequestError::TICKET_OFFER_OVER_LIMIT:
-        j = "TICKET_OFFER_OVER_LIMIT";
-      break;
-      case ClientRequestError::INVALID_PHASE:
-        j = "INVALID_PHASE";
-      break;
-      case ClientRequestError::ALREADY_VOTE_WITHDRAW:
-        j = "ALREADY_VOTE_WITHDRAW";
-      break;
-      case ClientRequestError::FAIL_INVITE:
-        j = "FAIL_INVITE";
-      break;
-      case ClientRequestError::INVALID_MATCHSTATUS_FORGAMEEND:
-        j = "INVALID_MATCHSTATUS_FORGAMEEND";
-      break;
-      case ClientRequestError::INVALID_PLAYER:
-        j = "INVALID_PLAYER";
-      break;
-      case ClientRequestError::NOT_MEMBER:
-        j = "NOT_MEMBER";
-      break;
-      case ClientRequestError::ROSTER_NOT_ELIMINATED:
-        j = "ROSTER_NOT_ELIMINATED";
-      break;
-      case ClientRequestError::INTERNAL_ERROR:
-        j = "INTERNAL_ERROR";
-      break;
-      case ClientRequestError::NOT_ALLOWED_DELETE_TOURNAMENT:
-        j = "NOT_ALLOWED_DELETE_TOURNAMENT";
-      break;
-      case ClientRequestError::LOGOCOLOR_NOT_ALLOWED:
-        j = "LOGOCOLOR_NOT_ALLOWED";
-      break;
-      case ClientRequestError::ALREADY_MEMBER:
-        j = "ALREADY_MEMBER";
-      break;
-      case ClientRequestError::INVALID_POSITION:
-        j = "INVALID_POSITION";
-      break;
-      case ClientRequestError::TICKET_ALREADY_SET:
+      case ClientRequestError_t::TICKET_ALREADY_SET_E:
         j = "TICKET_ALREADY_SET";
       break;
-      case ClientRequestError::MAX_INVITED:
+      case ClientRequestError_t::ROSTER_DISBAND_NOT_ALLOWED_E:
+        j = "ROSTER_DISBAND_NOT_ALLOWED";
+      break;
+      case ClientRequestError_t::OVER_INVITE_E:
+        j = "OVER_INVITE";
+      break;
+      case ClientRequestError_t::INVALID_POSITION_E:
+        j = "INVALID_POSITION";
+      break;
+      case ClientRequestError_t::LOGO_NOT_ALLOWED_E:
+        j = "LOGO_NOT_ALLOWED";
+      break;
+      case ClientRequestError_t::INVALID_CHECKELIGIBILITY_SIZE_E:
+        j = "INVALID_CHECKELIGIBILITY_SIZE";
+      break;
+      case ClientRequestError_t::ALREADY_INVITED_E:
+        j = "ALREADY_INVITED";
+      break;
+      case ClientRequestError_t::ALREADY_MEMBER_E:
+        j = "ALREADY_MEMBER";
+      break;
+      case ClientRequestError_t::IN_OTHER_PHASE_E:
+        j = "IN_OTHER_PHASE";
+      break;
+      case ClientRequestError_t::MAX_INVITED_E:
         j = "MAX_INVITED";
       break;
-      case ClientRequestError::MAX_SUBED:
-        j = "MAX_SUBED";
+      case ClientRequestError_t::NO_AVAILABLE_PHASE_E:
+        j = "NO_AVAILABLE_PHASE";
       break;
-      case ClientRequestError::NOT_ENOUGH_TICKETS:
+      case ClientRequestError_t::INVALID_NAME_E:
+        j = "INVALID_NAME";
+      break;
+      case ClientRequestError_t::INVALID_LOGOCOLOR_E:
+        j = "INVALID_LOGOCOLOR";
+      break;
+      case ClientRequestError_t::INVALID_MATCHID_E:
+        j = "INVALID_MATCHID";
+      break;
+      case ClientRequestError_t::NOT_ALLOWED_DELETE_TOURNAMENT_E:
+        j = "NOT_ALLOWED_DELETE_TOURNAMENT";
+      break;
+      case ClientRequestError_t::NO_PERMISSION_REGISTER_ROSTER_E:
+        j = "NO_PERMISSION_REGISTER_ROSTER";
+      break;
+      case ClientRequestError_t::NOT_ENOUGH_TICKETS_E:
         j = "NOT_ENOUGH_TICKETS";
       break;
-      case ClientRequestError::WITHDRAW_NOT_ALLOWED:
-        j = "WITHDRAW_NOT_ALLOWED";
+      case ClientRequestError_t::INVALID_ROSTER_MEMBER_SIZE_E:
+        j = "INVALID_ROSTER_MEMBER_SIZE";
       break;
-      case ClientRequestError::INVALID_WITHDRAW:
-        j = "INVALID_WITHDRAW";
+      case ClientRequestError_t::NO_PERMISSION_CREATE_ROSTER_E:
+        j = "NO_PERMISSION_CREATE_ROSTER";
       break;
-      case ClientRequestError::IN_OTHER_PENDINGROSTER:
-        j = "IN_OTHER_PENDINGROSTER";
+      case ClientRequestError_t::WITHDRAW_CANCEL_NOT_ALLOWED_E:
+        j = "WITHDRAW_CANCEL_NOT_ALLOWED";
       break;
-      case ClientRequestError::INVALID_SHORTNAME:
-        j = "INVALID_SHORTNAME";
+      case ClientRequestError_t::INACTIVE_PHASE_E:
+        j = "INACTIVE_PHASE";
       break;
-      case ClientRequestError::MAX_ROSTER_FETCHSIZE:
-        j = "MAX_ROSTER_FETCHSIZE";
+      case ClientRequestError_t::INVALID_BUY_BACK_E:
+        j = "INVALID_BUY_BACK";
       break;
-      case ClientRequestError::IN_OTHER_ROSTER:
-        j = "IN_OTHER_ROSTER";
+      case ClientRequestError_t::PENDING_ROSTER_CLOSE_E:
+        j = "PENDING_ROSTER_CLOSE";
       break;
-      case ClientRequestError::PENDING_ROSTER_FULL:
+      case ClientRequestError_t::INVALID_TOURNAMENT_E:
+        j = "INVALID_TOURNAMENT";
+      break;
+      case ClientRequestError_t::INVALID_ROSTER_E:
+        j = "INVALID_ROSTER";
+      break;
+      case ClientRequestError_t::ALREADY_DECLINE_WITHDRAW_E:
+        j = "ALREADY_DECLINE_WITHDRAW";
+      break;
+      case ClientRequestError_t::INTERNAL_ERROR_E:
+        j = "INTERNAL_ERROR";
+      break;
+      case ClientRequestError_t::TICKET_OFFER_NOT_EXIST_E:
+        j = "TICKET_OFFER_NOT_EXIST";
+      break;
+      case ClientRequestError_t::NOT_MEMBER_E:
+        j = "NOT_MEMBER";
+      break;
+      case ClientRequestError_t::NOT_INVITEE_E:
+        j = "NOT_INVITEE";
+      break;
+      case ClientRequestError_t::FAIL_INVITE_E:
+        j = "FAIL_INVITE";
+      break;
+      case ClientRequestError_t::PENDING_ROSTER_FULL_E:
         j = "PENDING_ROSTER_FULL";
       break;
-      case ClientRequestError::INVALID_LOGO:
+      case ClientRequestError_t::LOGOCOLOR_NOT_ALLOWED_E:
+        j = "LOGOCOLOR_NOT_ALLOWED";
+      break;
+      case ClientRequestError_t::MAX_SUB_SIZE_E:
+        j = "MAX_SUB_SIZE";
+      break;
+      case ClientRequestError_t::INVALID_SUB_E:
+        j = "INVALID_SUB";
+      break;
+      case ClientRequestError_t::INVALID_BRACKET_E:
+        j = "INVALID_BRACKET";
+      break;
+      case ClientRequestError_t::SUGGEST_INVITEE_NOT_EXIST_E:
+        j = "SUGGEST_INVITEE_NOT_EXIST";
+      break;
+      case ClientRequestError_t::INVALID_PLAYER_E:
+        j = "INVALID_PLAYER";
+      break;
+      case ClientRequestError_t::NO_SAME_PLAYER_E:
+        j = "NO_SAME_PLAYER";
+      break;
+      case ClientRequestError_t::TICKET_OFFER_OVER_LIMIT_E:
+        j = "TICKET_OFFER_OVER_LIMIT";
+      break;
+      case ClientRequestError_t::INVALID_LOGO_E:
         j = "INVALID_LOGO";
       break;
-      case ClientRequestError::INVALID_INVITEE:
+      case ClientRequestError_t::INACTIVE_REGISTRATION_E:
+        j = "INACTIVE_REGISTRATION";
+      break;
+      case ClientRequestError_t::OVER_SUGGESTION_INVITE_E:
+        j = "OVER_SUGGESTION_INVITE";
+      break;
+      case ClientRequestError_t::WITHDRAW_NOT_ALLOWED_E:
+        j = "WITHDRAW_NOT_ALLOWED";
+      break;
+      case ClientRequestError_t::TICKET_NOT_SET_E:
+        j = "TICKET_NOT_SET";
+      break;
+      case ClientRequestError_t::CAPTAIN_NOT_ALLOWED_E:
+        j = "CAPTAIN_NOT_ALLOWED";
+      break;
+      case ClientRequestError_t::IN_OTHER_ROSTER_E:
+        j = "IN_OTHER_ROSTER";
+      break;
+      case ClientRequestError_t::NOT_UNANIMOUS_E:
+        j = "NOT_UNANIMOUS";
+      break;
+      case ClientRequestError_t::INVALID_WITHDRAW_E:
+        j = "INVALID_WITHDRAW";
+      break;
+      case ClientRequestError_t::ALREADY_IN_PHASE_E:
+        j = "ALREADY_IN_PHASE";
+      break;
+      case ClientRequestError_t::ROSTER_ELIMINATED_E:
+        j = "ROSTER_ELIMINATED";
+      break;
+      case ClientRequestError_t::INVALID_PHASE_E:
+        j = "INVALID_PHASE";
+      break;
+      case ClientRequestError_t::ROSTER_NOT_ELIMINATED_E:
+        j = "ROSTER_NOT_ELIMINATED";
+      break;
+      case ClientRequestError_t::FAIL_SUGGESTINVITE_E:
+        j = "FAIL_SUGGESTINVITE";
+      break;
+      case ClientRequestError_t::NOT_CAPTAIN_E:
+        j = "NOT_CAPTAIN";
+      break;
+      case ClientRequestError_t::IN_OTHER_PENDINGROSTER_E:
+        j = "IN_OTHER_PENDINGROSTER";
+      break;
+      case ClientRequestError_t::ALREADY_VOTE_WITHDRAW_E:
+        j = "ALREADY_VOTE_WITHDRAW";
+      break;
+      case ClientRequestError_t::MAX_SUBED_E:
+        j = "MAX_SUBED";
+      break;
+      case ClientRequestError_t::INVALID_MATCHSTATUS_FORGAMEEND_E:
+        j = "INVALID_MATCHSTATUS_FORGAMEEND";
+      break;
+      case ClientRequestError_t::PENDING_ROSTER_NOT_READY_E:
+        j = "PENDING_ROSTER_NOT_READY";
+      break;
+      case ClientRequestError_t::NOT_SEED_INTO_LEAGUE_E:
+        j = "NOT_SEED_INTO_LEAGUE";
+      break;
+      case ClientRequestError_t::WITHDRAW_LOCKOUT_E:
+        j = "WITHDRAW_LOCKOUT";
+      break;
+      case ClientRequestError_t::INVALID_INVITEE_E:
         j = "INVALID_INVITEE";
+      break;
+      case ClientRequestError_t::INVALID_SHORTNAME_E:
+        j = "INVALID_SHORTNAME";
+      break;
+      case ClientRequestError_t::MAX_ROSTER_FETCHSIZE_E:
+        j = "MAX_ROSTER_FETCHSIZE";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, ClientRequestError& v) {
+  inline void from_json(const nlohmann::json& j, ClientRequestError_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "OVER_INVITE"){
-      v = ClientRequestError::OVER_INVITE;
-      return;
-    }
-    if(s == "PENDING_ROSTER_CLOSE"){
-      v = ClientRequestError::PENDING_ROSTER_CLOSE;
-      return;
-    }
-    if(s == "INVALID_ROSTER"){
-      v = ClientRequestError::INVALID_ROSTER;
-      return;
-    }
-    if(s == "NOT_CAPTAIN"){
-      v = ClientRequestError::NOT_CAPTAIN;
-      return;
-    }
-    if(s == "PENDING_ROSTER_NOT_READY"){
-      v = ClientRequestError::PENDING_ROSTER_NOT_READY;
-      return;
-    }
-    if(s == "ALREADY_IN_PHASE"){
-      v = ClientRequestError::ALREADY_IN_PHASE;
-      return;
-    }
-    if(s == "TICKET_NOT_SET"){
-      v = ClientRequestError::TICKET_NOT_SET;
-      return;
-    }
-    if(s == "ROSTER_DISBAND_NOT_ALLOWED"){
-      v = ClientRequestError::ROSTER_DISBAND_NOT_ALLOWED;
-      return;
-    }
-    if(s == "INVALID_SUB"){
-      v = ClientRequestError::INVALID_SUB;
-      return;
-    }
-    if(s == "OVER_SUGGESTION_INVITE"){
-      v = ClientRequestError::OVER_SUGGESTION_INVITE;
-      return;
-    }
-    if(s == "INACTIVE_PHASE"){
-      v = ClientRequestError::INACTIVE_PHASE;
-      return;
-    }
-    if(s == "INVALID_LOGOCOLOR"){
-      v = ClientRequestError::INVALID_LOGOCOLOR;
-      return;
-    }
-    if(s == "IN_OTHER_PHASE"){
-      v = ClientRequestError::IN_OTHER_PHASE;
-      return;
-    }
-    if(s == "WITHDRAW_LOCKOUT"){
-      v = ClientRequestError::WITHDRAW_LOCKOUT;
-      return;
-    }
-    if(s == "SUGGEST_INVITEE_NOT_EXIST"){
-      v = ClientRequestError::SUGGEST_INVITEE_NOT_EXIST;
-      return;
-    }
-    if(s == "LOGO_NOT_ALLOWED"){
-      v = ClientRequestError::LOGO_NOT_ALLOWED;
-      return;
-    }
-    if(s == "INVALID_BRACKET"){
-      v = ClientRequestError::INVALID_BRACKET;
-      return;
-    }
-    if(s == "NOT_SEED_INTO_LEAGUE"){
-      v = ClientRequestError::NOT_SEED_INTO_LEAGUE;
-      return;
-    }
-    if(s == "NO_AVAILABLE_PHASE"){
-      v = ClientRequestError::NO_AVAILABLE_PHASE;
-      return;
-    }
-    if(s == "NOT_INVITEE"){
-      v = ClientRequestError::NOT_INVITEE;
-      return;
-    }
-    if(s == "INVALID_ROSTER_MEMBER_SIZE"){
-      v = ClientRequestError::INVALID_ROSTER_MEMBER_SIZE;
-      return;
-    }
-    if(s == "CAPTAIN_NOT_ALLOWED"){
-      v = ClientRequestError::CAPTAIN_NOT_ALLOWED;
-      return;
-    }
-    if(s == "NOT_UNANIMOUS"){
-      v = ClientRequestError::NOT_UNANIMOUS;
-      return;
-    }
-    if(s == "INVALID_MATCHID"){
-      v = ClientRequestError::INVALID_MATCHID;
-      return;
-    }
-    if(s == "INVALID_CHECKELIGIBILITY_SIZE"){
-      v = ClientRequestError::INVALID_CHECKELIGIBILITY_SIZE;
-      return;
-    }
     if(s == "ALREADY_SUGGESTED"){
-      v = ClientRequestError::ALREADY_SUGGESTED;
-      return;
-    }
-    if(s == "TICKET_OFFER_NOT_EXIST"){
-      v = ClientRequestError::TICKET_OFFER_NOT_EXIST;
-      return;
-    }
-    if(s == "FAIL_SUGGESTINVITE"){
-      v = ClientRequestError::FAIL_SUGGESTINVITE;
-      return;
-    }
-    if(s == "INVALID_TOURNAMENT"){
-      v = ClientRequestError::INVALID_TOURNAMENT;
-      return;
-    }
-    if(s == "MAX_SUB_SIZE"){
-      v = ClientRequestError::MAX_SUB_SIZE;
-      return;
-    }
-    if(s == "ALREADY_INVITED"){
-      v = ClientRequestError::ALREADY_INVITED;
-      return;
-    }
-    if(s == "ALREADY_DECLINE_WITHDRAW"){
-      v = ClientRequestError::ALREADY_DECLINE_WITHDRAW;
-      return;
-    }
-    if(s == "ROSTER_ELIMINATED"){
-      v = ClientRequestError::ROSTER_ELIMINATED;
-      return;
-    }
-    if(s == "NO_PERMISSION_CREATE_ROSTER"){
-      v = ClientRequestError::NO_PERMISSION_CREATE_ROSTER;
-      return;
-    }
-    if(s == "INVALID_NAME"){
-      v = ClientRequestError::INVALID_NAME;
-      return;
-    }
-    if(s == "INVALID_BUY_BACK"){
-      v = ClientRequestError::INVALID_BUY_BACK;
-      return;
-    }
-    if(s == "WITHDRAW_CANCEL_NOT_ALLOWED"){
-      v = ClientRequestError::WITHDRAW_CANCEL_NOT_ALLOWED;
-      return;
-    }
-    if(s == "INACTIVE_REGISTRATION"){
-      v = ClientRequestError::INACTIVE_REGISTRATION;
-      return;
-    }
-    if(s == "NO_SAME_PLAYER"){
-      v = ClientRequestError::NO_SAME_PLAYER;
-      return;
-    }
-    if(s == "NO_PERMISSION_REGISTER_ROSTER"){
-      v = ClientRequestError::NO_PERMISSION_REGISTER_ROSTER;
-      return;
-    }
-    if(s == "TICKET_OFFER_OVER_LIMIT"){
-      v = ClientRequestError::TICKET_OFFER_OVER_LIMIT;
-      return;
-    }
-    if(s == "INVALID_PHASE"){
-      v = ClientRequestError::INVALID_PHASE;
-      return;
-    }
-    if(s == "ALREADY_VOTE_WITHDRAW"){
-      v = ClientRequestError::ALREADY_VOTE_WITHDRAW;
-      return;
-    }
-    if(s == "FAIL_INVITE"){
-      v = ClientRequestError::FAIL_INVITE;
-      return;
-    }
-    if(s == "INVALID_MATCHSTATUS_FORGAMEEND"){
-      v = ClientRequestError::INVALID_MATCHSTATUS_FORGAMEEND;
-      return;
-    }
-    if(s == "INVALID_PLAYER"){
-      v = ClientRequestError::INVALID_PLAYER;
-      return;
-    }
-    if(s == "NOT_MEMBER"){
-      v = ClientRequestError::NOT_MEMBER;
-      return;
-    }
-    if(s == "ROSTER_NOT_ELIMINATED"){
-      v = ClientRequestError::ROSTER_NOT_ELIMINATED;
-      return;
-    }
-    if(s == "INTERNAL_ERROR"){
-      v = ClientRequestError::INTERNAL_ERROR;
-      return;
-    }
-    if(s == "NOT_ALLOWED_DELETE_TOURNAMENT"){
-      v = ClientRequestError::NOT_ALLOWED_DELETE_TOURNAMENT;
-      return;
-    }
-    if(s == "LOGOCOLOR_NOT_ALLOWED"){
-      v = ClientRequestError::LOGOCOLOR_NOT_ALLOWED;
-      return;
-    }
-    if(s == "ALREADY_MEMBER"){
-      v = ClientRequestError::ALREADY_MEMBER;
-      return;
-    }
-    if(s == "INVALID_POSITION"){
-      v = ClientRequestError::INVALID_POSITION;
+      v = ClientRequestError_t::ALREADY_SUGGESTED_E;
       return;
     }
     if(s == "TICKET_ALREADY_SET"){
-      v = ClientRequestError::TICKET_ALREADY_SET;
+      v = ClientRequestError_t::TICKET_ALREADY_SET_E;
+      return;
+    }
+    if(s == "ROSTER_DISBAND_NOT_ALLOWED"){
+      v = ClientRequestError_t::ROSTER_DISBAND_NOT_ALLOWED_E;
+      return;
+    }
+    if(s == "OVER_INVITE"){
+      v = ClientRequestError_t::OVER_INVITE_E;
+      return;
+    }
+    if(s == "INVALID_POSITION"){
+      v = ClientRequestError_t::INVALID_POSITION_E;
+      return;
+    }
+    if(s == "LOGO_NOT_ALLOWED"){
+      v = ClientRequestError_t::LOGO_NOT_ALLOWED_E;
+      return;
+    }
+    if(s == "INVALID_CHECKELIGIBILITY_SIZE"){
+      v = ClientRequestError_t::INVALID_CHECKELIGIBILITY_SIZE_E;
+      return;
+    }
+    if(s == "ALREADY_INVITED"){
+      v = ClientRequestError_t::ALREADY_INVITED_E;
+      return;
+    }
+    if(s == "ALREADY_MEMBER"){
+      v = ClientRequestError_t::ALREADY_MEMBER_E;
+      return;
+    }
+    if(s == "IN_OTHER_PHASE"){
+      v = ClientRequestError_t::IN_OTHER_PHASE_E;
       return;
     }
     if(s == "MAX_INVITED"){
-      v = ClientRequestError::MAX_INVITED;
+      v = ClientRequestError_t::MAX_INVITED_E;
       return;
     }
-    if(s == "MAX_SUBED"){
-      v = ClientRequestError::MAX_SUBED;
+    if(s == "NO_AVAILABLE_PHASE"){
+      v = ClientRequestError_t::NO_AVAILABLE_PHASE_E;
+      return;
+    }
+    if(s == "INVALID_NAME"){
+      v = ClientRequestError_t::INVALID_NAME_E;
+      return;
+    }
+    if(s == "INVALID_LOGOCOLOR"){
+      v = ClientRequestError_t::INVALID_LOGOCOLOR_E;
+      return;
+    }
+    if(s == "INVALID_MATCHID"){
+      v = ClientRequestError_t::INVALID_MATCHID_E;
+      return;
+    }
+    if(s == "NOT_ALLOWED_DELETE_TOURNAMENT"){
+      v = ClientRequestError_t::NOT_ALLOWED_DELETE_TOURNAMENT_E;
+      return;
+    }
+    if(s == "NO_PERMISSION_REGISTER_ROSTER"){
+      v = ClientRequestError_t::NO_PERMISSION_REGISTER_ROSTER_E;
       return;
     }
     if(s == "NOT_ENOUGH_TICKETS"){
-      v = ClientRequestError::NOT_ENOUGH_TICKETS;
+      v = ClientRequestError_t::NOT_ENOUGH_TICKETS_E;
       return;
     }
-    if(s == "WITHDRAW_NOT_ALLOWED"){
-      v = ClientRequestError::WITHDRAW_NOT_ALLOWED;
+    if(s == "INVALID_ROSTER_MEMBER_SIZE"){
+      v = ClientRequestError_t::INVALID_ROSTER_MEMBER_SIZE_E;
       return;
     }
-    if(s == "INVALID_WITHDRAW"){
-      v = ClientRequestError::INVALID_WITHDRAW;
+    if(s == "NO_PERMISSION_CREATE_ROSTER"){
+      v = ClientRequestError_t::NO_PERMISSION_CREATE_ROSTER_E;
       return;
     }
-    if(s == "IN_OTHER_PENDINGROSTER"){
-      v = ClientRequestError::IN_OTHER_PENDINGROSTER;
+    if(s == "WITHDRAW_CANCEL_NOT_ALLOWED"){
+      v = ClientRequestError_t::WITHDRAW_CANCEL_NOT_ALLOWED_E;
       return;
     }
-    if(s == "INVALID_SHORTNAME"){
-      v = ClientRequestError::INVALID_SHORTNAME;
+    if(s == "INACTIVE_PHASE"){
+      v = ClientRequestError_t::INACTIVE_PHASE_E;
       return;
     }
-    if(s == "MAX_ROSTER_FETCHSIZE"){
-      v = ClientRequestError::MAX_ROSTER_FETCHSIZE;
+    if(s == "INVALID_BUY_BACK"){
+      v = ClientRequestError_t::INVALID_BUY_BACK_E;
       return;
     }
-    if(s == "IN_OTHER_ROSTER"){
-      v = ClientRequestError::IN_OTHER_ROSTER;
+    if(s == "PENDING_ROSTER_CLOSE"){
+      v = ClientRequestError_t::PENDING_ROSTER_CLOSE_E;
+      return;
+    }
+    if(s == "INVALID_TOURNAMENT"){
+      v = ClientRequestError_t::INVALID_TOURNAMENT_E;
+      return;
+    }
+    if(s == "INVALID_ROSTER"){
+      v = ClientRequestError_t::INVALID_ROSTER_E;
+      return;
+    }
+    if(s == "ALREADY_DECLINE_WITHDRAW"){
+      v = ClientRequestError_t::ALREADY_DECLINE_WITHDRAW_E;
+      return;
+    }
+    if(s == "INTERNAL_ERROR"){
+      v = ClientRequestError_t::INTERNAL_ERROR_E;
+      return;
+    }
+    if(s == "TICKET_OFFER_NOT_EXIST"){
+      v = ClientRequestError_t::TICKET_OFFER_NOT_EXIST_E;
+      return;
+    }
+    if(s == "NOT_MEMBER"){
+      v = ClientRequestError_t::NOT_MEMBER_E;
+      return;
+    }
+    if(s == "NOT_INVITEE"){
+      v = ClientRequestError_t::NOT_INVITEE_E;
+      return;
+    }
+    if(s == "FAIL_INVITE"){
+      v = ClientRequestError_t::FAIL_INVITE_E;
       return;
     }
     if(s == "PENDING_ROSTER_FULL"){
-      v = ClientRequestError::PENDING_ROSTER_FULL;
+      v = ClientRequestError_t::PENDING_ROSTER_FULL_E;
+      return;
+    }
+    if(s == "LOGOCOLOR_NOT_ALLOWED"){
+      v = ClientRequestError_t::LOGOCOLOR_NOT_ALLOWED_E;
+      return;
+    }
+    if(s == "MAX_SUB_SIZE"){
+      v = ClientRequestError_t::MAX_SUB_SIZE_E;
+      return;
+    }
+    if(s == "INVALID_SUB"){
+      v = ClientRequestError_t::INVALID_SUB_E;
+      return;
+    }
+    if(s == "INVALID_BRACKET"){
+      v = ClientRequestError_t::INVALID_BRACKET_E;
+      return;
+    }
+    if(s == "SUGGEST_INVITEE_NOT_EXIST"){
+      v = ClientRequestError_t::SUGGEST_INVITEE_NOT_EXIST_E;
+      return;
+    }
+    if(s == "INVALID_PLAYER"){
+      v = ClientRequestError_t::INVALID_PLAYER_E;
+      return;
+    }
+    if(s == "NO_SAME_PLAYER"){
+      v = ClientRequestError_t::NO_SAME_PLAYER_E;
+      return;
+    }
+    if(s == "TICKET_OFFER_OVER_LIMIT"){
+      v = ClientRequestError_t::TICKET_OFFER_OVER_LIMIT_E;
       return;
     }
     if(s == "INVALID_LOGO"){
-      v = ClientRequestError::INVALID_LOGO;
+      v = ClientRequestError_t::INVALID_LOGO_E;
+      return;
+    }
+    if(s == "INACTIVE_REGISTRATION"){
+      v = ClientRequestError_t::INACTIVE_REGISTRATION_E;
+      return;
+    }
+    if(s == "OVER_SUGGESTION_INVITE"){
+      v = ClientRequestError_t::OVER_SUGGESTION_INVITE_E;
+      return;
+    }
+    if(s == "WITHDRAW_NOT_ALLOWED"){
+      v = ClientRequestError_t::WITHDRAW_NOT_ALLOWED_E;
+      return;
+    }
+    if(s == "TICKET_NOT_SET"){
+      v = ClientRequestError_t::TICKET_NOT_SET_E;
+      return;
+    }
+    if(s == "CAPTAIN_NOT_ALLOWED"){
+      v = ClientRequestError_t::CAPTAIN_NOT_ALLOWED_E;
+      return;
+    }
+    if(s == "IN_OTHER_ROSTER"){
+      v = ClientRequestError_t::IN_OTHER_ROSTER_E;
+      return;
+    }
+    if(s == "NOT_UNANIMOUS"){
+      v = ClientRequestError_t::NOT_UNANIMOUS_E;
+      return;
+    }
+    if(s == "INVALID_WITHDRAW"){
+      v = ClientRequestError_t::INVALID_WITHDRAW_E;
+      return;
+    }
+    if(s == "ALREADY_IN_PHASE"){
+      v = ClientRequestError_t::ALREADY_IN_PHASE_E;
+      return;
+    }
+    if(s == "ROSTER_ELIMINATED"){
+      v = ClientRequestError_t::ROSTER_ELIMINATED_E;
+      return;
+    }
+    if(s == "INVALID_PHASE"){
+      v = ClientRequestError_t::INVALID_PHASE_E;
+      return;
+    }
+    if(s == "ROSTER_NOT_ELIMINATED"){
+      v = ClientRequestError_t::ROSTER_NOT_ELIMINATED_E;
+      return;
+    }
+    if(s == "FAIL_SUGGESTINVITE"){
+      v = ClientRequestError_t::FAIL_SUGGESTINVITE_E;
+      return;
+    }
+    if(s == "NOT_CAPTAIN"){
+      v = ClientRequestError_t::NOT_CAPTAIN_E;
+      return;
+    }
+    if(s == "IN_OTHER_PENDINGROSTER"){
+      v = ClientRequestError_t::IN_OTHER_PENDINGROSTER_E;
+      return;
+    }
+    if(s == "ALREADY_VOTE_WITHDRAW"){
+      v = ClientRequestError_t::ALREADY_VOTE_WITHDRAW_E;
+      return;
+    }
+    if(s == "MAX_SUBED"){
+      v = ClientRequestError_t::MAX_SUBED_E;
+      return;
+    }
+    if(s == "INVALID_MATCHSTATUS_FORGAMEEND"){
+      v = ClientRequestError_t::INVALID_MATCHSTATUS_FORGAMEEND_E;
+      return;
+    }
+    if(s == "PENDING_ROSTER_NOT_READY"){
+      v = ClientRequestError_t::PENDING_ROSTER_NOT_READY_E;
+      return;
+    }
+    if(s == "NOT_SEED_INTO_LEAGUE"){
+      v = ClientRequestError_t::NOT_SEED_INTO_LEAGUE_E;
+      return;
+    }
+    if(s == "WITHDRAW_LOCKOUT"){
+      v = ClientRequestError_t::WITHDRAW_LOCKOUT_E;
       return;
     }
     if(s == "INVALID_INVITEE"){
-      v = ClientRequestError::INVALID_INVITEE;
+      v = ClientRequestError_t::INVALID_INVITEE_E;
+      return;
+    }
+    if(s == "INVALID_SHORTNAME"){
+      v = ClientRequestError_t::INVALID_SHORTNAME_E;
+      return;
+    }
+    if(s == "MAX_ROSTER_FETCHSIZE"){
+      v = ClientRequestError_t::MAX_ROSTER_FETCHSIZE_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_ClientRequestError_HPP

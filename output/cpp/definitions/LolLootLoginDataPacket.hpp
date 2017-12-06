@@ -1,26 +1,21 @@
-#ifndef SWAGGER_TYPES_LolLootLoginDataPacket_HPP
-#define SWAGGER_TYPES_LolLootLoginDataPacket_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolLootLoginSimpleMessage.hpp"
 #include "LolLootLoginAllSummonerData.hpp"
 namespace leagueapi {
-  // 
-  struct LolLootLoginDataPacket {
-    // 
-    std::vector<LolLootLoginSimpleMessage> simpleMessages;
-    // 
-    LolLootLoginAllSummonerData allSummonerData;
+  struct LolLootLoginDataPacket_t {
+    LolLootLoginAllSummonerData_t allSummonerData;
+    std::vector<LolLootLoginSimpleMessage_t> simpleMessages;
   };
 
-  inline void to_json(nlohmann::json& j, const LolLootLoginDataPacket& v) {
-    j["simpleMessages"] = v.simpleMessages;
+  inline void to_json(nlohmann::json& j, const LolLootLoginDataPacket_t& v) {
     j["allSummonerData"] = v.allSummonerData;
+    j["simpleMessages"] = v.simpleMessages;
   }
 
-  inline void from_json(const nlohmann::json& j, LolLootLoginDataPacket& v) {
-    v.simpleMessages = j.at("simpleMessages").get<std::vector<LolLootLoginSimpleMessage>>;
-    v.allSummonerData = j.at("allSummonerData").get<LolLootLoginAllSummonerData>;
+  inline void from_json(const nlohmann::json& j, LolLootLoginDataPacket_t& v) {
+    v.allSummonerData = j.at("allSummonerData").get<LolLootLoginAllSummonerData_t>();
+    v.simpleMessages = j.at("simpleMessages").get<std::vector<LolLootLoginSimpleMessage_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolLootLoginDataPacket_HPP

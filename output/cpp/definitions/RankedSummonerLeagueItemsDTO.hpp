@@ -1,21 +1,17 @@
-#ifndef SWAGGER_TYPES_RankedSummonerLeagueItemsDTO_HPP
-#define SWAGGER_TYPES_RankedSummonerLeagueItemsDTO_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "RankedLeagueItemDTO.hpp"
 namespace leagueapi {
-  // 
-  struct RankedSummonerLeagueItemsDTO {
-    // 
-    std::vector<RankedLeagueItemDTO> summonerLeagues;
+  struct RankedSummonerLeagueItemsDTO_t {
+    std::vector<RankedLeagueItemDTO_t> summonerLeagues;
   };
 
-  inline void to_json(nlohmann::json& j, const RankedSummonerLeagueItemsDTO& v) {
+  inline void to_json(nlohmann::json& j, const RankedSummonerLeagueItemsDTO_t& v) {
     j["summonerLeagues"] = v.summonerLeagues;
   }
 
-  inline void from_json(const nlohmann::json& j, RankedSummonerLeagueItemsDTO& v) {
-    v.summonerLeagues = j.at("summonerLeagues").get<std::vector<RankedLeagueItemDTO>>;
+  inline void from_json(const nlohmann::json& j, RankedSummonerLeagueItemsDTO_t& v) {
+    v.summonerLeagues = j.at("summonerLeagues").get<std::vector<RankedLeagueItemDTO_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_RankedSummonerLeagueItemsDTO_HPP

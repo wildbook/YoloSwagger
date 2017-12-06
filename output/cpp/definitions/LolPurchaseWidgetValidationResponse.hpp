@@ -1,25 +1,20 @@
-#ifndef SWAGGER_TYPES_LolPurchaseWidgetValidationResponse_HPP
-#define SWAGGER_TYPES_LolPurchaseWidgetValidationResponse_HPP
+#pragma once
 #include <json.hpp>
+#include <optional>
 #include "LolPurchaseWidgetValidationResponseItem.hpp"
 namespace leagueapi {
-  // 
-  struct LolPurchaseWidgetValidationResponse {
-    // 
-    std::vector<LolPurchaseWidgetValidationResponseItem> items;
-    // 
+  struct LolPurchaseWidgetValidationResponse_t {
     bool valid;
+    std::vector<LolPurchaseWidgetValidationResponseItem_t> items;
   };
 
-  inline void to_json(nlohmann::json& j, const LolPurchaseWidgetValidationResponse& v) {
-    j["items"] = v.items;
+  inline void to_json(nlohmann::json& j, const LolPurchaseWidgetValidationResponse_t& v) {
     j["valid"] = v.valid;
+    j["items"] = v.items;
   }
 
-  inline void from_json(const nlohmann::json& j, LolPurchaseWidgetValidationResponse& v) {
-    v.items = j.at("items").get<std::vector<LolPurchaseWidgetValidationResponseItem>>;
-    v.valid = j.at("valid").get<bool>;
+  inline void from_json(const nlohmann::json& j, LolPurchaseWidgetValidationResponse_t& v) {
+    v.valid = j.at("valid").get<bool>();
+    v.items = j.at("items").get<std::vector<LolPurchaseWidgetValidationResponseItem_t>>();
   }
-
 }
-#endif // SWAGGER_TYPES_LolPurchaseWidgetValidationResponse_HPP

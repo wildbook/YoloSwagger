@@ -1,64 +1,55 @@
-#ifndef SWAGGER_TYPES_LeaverBusterNotificationType_HPP
-#define SWAGGER_TYPES_LeaverBusterNotificationType_HPP
+#pragma once
 #include <json.hpp>
 namespace leagueapi {
-  // 
-  enum class LeaverBusterNotificationType {
-    // 
-    Reforming = 4,
-    // 
-    PunishmentIncurred = 2,
-    // 
-    PunishedGamesRemaining = 3,
-    // 
-    Invalid = 0,
-    // 
-    TaintedWarning = 1,
+  enum class LeaverBusterNotificationType_t {
+    TaintedWarning_E = 1,
+    Invalid_E = 0,
+    PunishedGamesRemaining_E = 3,
+    PunishmentIncurred_E = 2,
+    Reforming_E = 4,
   };
 
-  inline void to_json(nlohmann::json& j, const LeaverBusterNotificationType& v) {
+  inline void to_json(nlohmann::json& j, const LeaverBusterNotificationType_t& v) {
     switch(v) {
-      case LeaverBusterNotificationType::Reforming:
-        j = "Reforming";
+      case LeaverBusterNotificationType_t::TaintedWarning_E:
+        j = "TaintedWarning";
       break;
-      case LeaverBusterNotificationType::PunishmentIncurred:
-        j = "PunishmentIncurred";
-      break;
-      case LeaverBusterNotificationType::PunishedGamesRemaining:
-        j = "PunishedGamesRemaining";
-      break;
-      case LeaverBusterNotificationType::Invalid:
+      case LeaverBusterNotificationType_t::Invalid_E:
         j = "Invalid";
       break;
-      case LeaverBusterNotificationType::TaintedWarning:
-        j = "TaintedWarning";
+      case LeaverBusterNotificationType_t::PunishedGamesRemaining_E:
+        j = "PunishedGamesRemaining";
+      break;
+      case LeaverBusterNotificationType_t::PunishmentIncurred_E:
+        j = "PunishmentIncurred";
+      break;
+      case LeaverBusterNotificationType_t::Reforming_E:
+        j = "Reforming";
       break;
     }
   }
 
-  inline void from_json(const nlohmann::json& j, LeaverBusterNotificationType& v) {
+  inline void from_json(const nlohmann::json& j, LeaverBusterNotificationType_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "Reforming"){
-      v = LeaverBusterNotificationType::Reforming;
-      return;
-    }
-    if(s == "PunishmentIncurred"){
-      v = LeaverBusterNotificationType::PunishmentIncurred;
-      return;
-    }
-    if(s == "PunishedGamesRemaining"){
-      v = LeaverBusterNotificationType::PunishedGamesRemaining;
+    if(s == "TaintedWarning"){
+      v = LeaverBusterNotificationType_t::TaintedWarning_E;
       return;
     }
     if(s == "Invalid"){
-      v = LeaverBusterNotificationType::Invalid;
+      v = LeaverBusterNotificationType_t::Invalid_E;
       return;
     }
-    if(s == "TaintedWarning"){
-      v = LeaverBusterNotificationType::TaintedWarning;
+    if(s == "PunishedGamesRemaining"){
+      v = LeaverBusterNotificationType_t::PunishedGamesRemaining_E;
+      return;
+    }
+    if(s == "PunishmentIncurred"){
+      v = LeaverBusterNotificationType_t::PunishmentIncurred_E;
+      return;
+    }
+    if(s == "Reforming"){
+      v = LeaverBusterNotificationType_t::Reforming_E;
       return;
     }
   }
-
 }
-#endif // SWAGGER_TYPES_LeaverBusterNotificationType_HPP
