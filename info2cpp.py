@@ -116,17 +116,62 @@ def generate_defintions(info,  folder,  namespace):
     file.close()
 
 def generat_client(info,  folder,  namespace):
-    file = open(folder + "client.hpp",  "w+")
+    file = open(folder + "/client.hpp",  "w+")
     file.write("#pragma once\n")
     file.write("#include <json.hpp>\n")
     file.write("#include <SimpleWeb/crypto.hpp>\n")
     file.write("#include <SimpleWeb/client_https.hpp>\n")
-    file.write("#include \"definitions.hpp\"\n")
     file.write("namespace {0} {{\n".format(namespace))
-    file.write("  struct client {\n")
-    file.write("")
+    file.write("  using HttpsClient = SimpleWeb::Client<SimpleWeb::HTTPS>;")
+    file.write("  using HttpsResponse = shared_ptr<HttpsClient::Response>;")
+    file.write("  using error_code = SimpleWeb::error_code;")
+    file.write("}")
+    
+def generate_ops(info,  folder,  namespace):
+    mkpath(folder + "/ops/")
+    filenames = []
+    for name,  op in info["functions"].items():
+        filename =  "ops/" + name + ".hpp"
+        filenames.append(filename)
+        request = info["requests"][name]
+        file = open(folder + "/"+ filename,  "w+")
+        file.write("#pragma once\n")
+        file.write("#include <json.hpp>\n")
+        file.write("#incldue \"../client.hpp\"\n")
+        for i in info_struct_imports(struct):
+            if not i in builtins:
+                file.write("#include \"{0}.hpp\"\n".format(i))
+        file.write("namespace {0} {{\n".format(namespace))
+        returns = ""
+        if op["returns"]["type"] == "":
+            returns = "void"
+        elif op["returns"]["type"] == "object":
+            returns = "object"
+        else:
+           returns =  type2cpp(op["returns"])
+        file.write("  {0} {1} (HttpsClient client".format(returns,  name))
+        for required in op["required"]:
+            file.write(", const {0}& {1}".format(optional,  type2cpp(op["arguments"][required]["type"])))
+        for optional in op["optional"]:
+            type = op["arguments"][optional]["type"]
+            if type["type"] == "object":
+                file.write(", const {0}& {1} = {{}}".format(optional,  type2cpp(type)))
+            else:
+                file.write(", const std::optional<{0}>& {1} = {{}}".format(optional,  type2cpp(type)))
+        file.write(") {{\n")
+        file.write("  }\n")
+        #end namespace
+        file.write("}\n")
+        
+    
 
 #json_save( info_init(json_load("help.json"),  json_load("lol.json")),  "info.json")       
-#i = json_load("info.json")  
-generate_defintions(json_load("info.json"),  "output/cpp",  "leagueapi")
-
+i = json_load("info.json")
+for name,  req in i["requests"].items():
+    if len(req["formData"]) == 1:
+        argname = req["formData"][0]
+        f = i["functions"][name]
+        returns = f["returns"]
+        if not returns["type"] in builtins:
+            print(name,  returns)
+#generate_defintions(json_load("info.json"),  "output/cpp",  "leagueapi")
