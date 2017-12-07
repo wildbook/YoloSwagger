@@ -52,6 +52,14 @@ def generate_enum(file, namespace, name,  enum):
         file.write("      return;\n")
         file.write("    }\n")
     file.write("  }\n")
+    file.write("  inline std::string to_string(const {0}_t& v) {{\n".format(name))
+    file.write("    switch(v) {\n")
+    for value in enum["values"]:
+        file.write("      case {0}_t::{1}_E:\n".format(name,  value))
+        file.write("        return \"{0}\";\n".format(value))
+    file.write("    }\n")
+    file.write("  }\n\n")
+
     file.write("}\n")
         
 def generate_struct(file, namespace,  name, struct):
@@ -94,6 +102,10 @@ def generate_struct(file, namespace,  name, struct):
         else:
             file.write("    v.{0} = j.at(\"{0}\").get<{1}>();\n".format(value,  type))
     file.write("  }\n")
+    file.write("  inline std::string to_string(const {0}_t& v) {{\n".format(name))
+    file.write("    nlohmann::json j = v;\n")
+    file.write("    return j.dump();")
+    file.write("  }\n\n")
     file.write("}\n")
 
 def generate_defintions(info,  folder,  namespace):
@@ -123,23 +135,18 @@ def generat_client(info,  folder,  namespace):
     file.write("#include <SimpleWeb/client_https.hpp>\n")
     file.write("namespace {0} {{\n".format(namespace))
     file.write("  using HttpsClient = SimpleWeb::Client<SimpleWeb::HTTPS>;")
-    file.write("  using HttpsResponse = shared_ptr<HttpsClient::Response>;")
-    file.write("  using error_code = SimpleWeb::error_code;")
-    file.write("  template<typename T>\n")
-    file.write("  struct Result {\n")
-    file.write("    HttpsResponse response;\n")
-    file.write("    inline operator T() const {\n")
-    file.write("      return nlohmann::json::parse(response->string());\n")
-    file.write("    }\n")
-    file.write("    inline T result() const {\n")
-    file.write("      return nlohmann::json::parse(response->string());\n")
-    file.write("    }\n")
-    file.write("  }\n")
-    file.write("  template<>\n")
-    file.write("  struct Result<void> {\n")
-    file.write("     HttpsResponse response;\n")
-    file.write("  }\n")
+    file.write("  using HttpsResponse = HttpsClient::Response;")
+    file.write("  using HttpsResponsePtr = std::shared_ptr<HttpsClient::Response>;")
+    file.write("  using Headers = SimpleWeb::CaseInsensitiveMultimap;")
+    file.write("  using ErrorCode = SimpleWeb::error_code;")
+    file.write("  struct Client {\n")
+    file.write("    ")
+    file.write("  };\n")
+    file.write("  inline std::string to_string(const nlohmann::json& v) {\n")
+    file.write("    return v.dump();\n")
+    file.write("  }\n\n")
     file.write("}")
+    
     
 def generate_ops(info,  folder,  namespace):
     mkpath(folder + "/ops/")
@@ -170,21 +177,22 @@ def generate_ops(info,  folder,  namespace):
                 file.write(", const {0}& {1} = {{}}".format(optional,  type2cpp(type)))
             else:
                 file.write(", const std::optional<{0}>& {1} = {{}}".format(optional,  type2cpp(type)))
-        file.write(") {{\n")
-        
+        file.write(") {\n")
+        file.write("    using std::to_string;")
+        file.write("    Headers headers;")
+        for aname in request["header"]:
+            if anme in op["optional"]:
+                file.write("")
         file.write("  }\n")
         #end namespace
-        file.write("}\n")
-        
+        file.write("}\n")     
     
 
 #json_save( info_init(json_load("help.json"),  json_load("lol.json")),  "info.json")       
 i = json_load("info.json")
 for name,  req in i["requests"].items():
-    if len(req["formData"]) == 1:
-        argname = req["formData"][0]
-        f = i["functions"][name]
-        returns = f["returns"]
-        if not returns["type"] in builtins:
-            print(name,  returns)
+    f = i["functions"][name]
+    r = f["returns"]
+    if r["type"] == "vector":
+        print(name)
 #generate_defintions(json_load("info.json"),  "output/cpp",  "leagueapi")
