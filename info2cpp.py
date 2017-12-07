@@ -89,7 +89,7 @@ def generate_struct(file, namespace,  name, struct):
     for value, details in struct["fields"].items():
         type = type2cpp(details["type"])
         if(details["optional"]):
-            file.write("    if(auto it = j.find(\"{0}\"); it != j.end() !it->is_null())\n".format(value))
+            file.write("    if(auto it = j.find(\"{0}\"); it != j.end() && !it->is_null())\n".format(value))
             file.write("      v.{0} = it->get<{1}>();\n".format(value, type))
         else:
             file.write("    v.{0} = j.at(\"{0}\").get<{1}>();\n".format(value,  type))
@@ -125,6 +125,20 @@ def generat_client(info,  folder,  namespace):
     file.write("  using HttpsClient = SimpleWeb::Client<SimpleWeb::HTTPS>;")
     file.write("  using HttpsResponse = shared_ptr<HttpsClient::Response>;")
     file.write("  using error_code = SimpleWeb::error_code;")
+    file.write("  template<typename T>\n")
+    file.write("  struct Result {\n")
+    file.write("    HttpsResponse response;\n")
+    file.write("    inline operator T() const {\n")
+    file.write("      return nlohmann::json::parse(response->string());\n")
+    file.write("    }\n")
+    file.write("    inline T result() const {\n")
+    file.write("      return nlohmann::json::parse(response->string());\n")
+    file.write("    }\n")
+    file.write("  }\n")
+    file.write("  template<>\n")
+    file.write("  struct Result<void> {\n")
+    file.write("     HttpsResponse response;\n")
+    file.write("  }\n")
     file.write("}")
     
 def generate_ops(info,  folder,  namespace):
@@ -145,11 +159,9 @@ def generate_ops(info,  folder,  namespace):
         returns = ""
         if op["returns"]["type"] == "":
             returns = "void"
-        elif op["returns"]["type"] == "object":
-            returns = "object"
         else:
            returns =  type2cpp(op["returns"])
-        file.write("  {0} {1} (HttpsClient client".format(returns,  name))
+        file.write("  Result<{0}> {1} (HttpsClient client".format(returns,  name))
         for required in op["required"]:
             file.write(", const {0}& {1}".format(optional,  type2cpp(op["arguments"][required]["type"])))
         for optional in op["optional"]:
@@ -159,6 +171,7 @@ def generate_ops(info,  folder,  namespace):
             else:
                 file.write(", const std::optional<{0}>& {1} = {{}}".format(optional,  type2cpp(type)))
         file.write(") {{\n")
+        
         file.write("  }\n")
         #end namespace
         file.write("}\n")
