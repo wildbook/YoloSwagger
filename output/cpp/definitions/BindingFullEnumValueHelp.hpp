@@ -20,4 +20,8 @@ namespace leagueapi {
     v.name = j.at("name").get<std::string>();
     v.value = j.at("value").get<int32_t>();
   }
+  inline std::string to_string(const BindingFullEnumValueHelp_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

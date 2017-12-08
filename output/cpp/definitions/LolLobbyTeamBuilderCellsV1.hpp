@@ -17,4 +17,8 @@ namespace leagueapi {
     v.alliedTeam = j.at("alliedTeam").get<std::vector<LolLobbyTeamBuilderCellV1_t>>();
     v.enemyTeam = j.at("enemyTeam").get<std::vector<LolLobbyTeamBuilderCellV1_t>>();
   }
+  inline std::string to_string(const LolLobbyTeamBuilderCellsV1_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

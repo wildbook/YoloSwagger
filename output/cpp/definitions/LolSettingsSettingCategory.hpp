@@ -16,4 +16,8 @@ namespace leagueapi {
     v.schemaVersion = j.at("schemaVersion").get<int32_t>();
     v.data = j.at("data").get<nlohmann::json>();
   }
+  inline std::string to_string(const LolSettingsSettingCategory_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

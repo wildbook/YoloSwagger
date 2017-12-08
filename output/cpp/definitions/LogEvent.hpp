@@ -18,4 +18,8 @@ namespace leagueapi {
     v.severity = j.at("severity").get<LogSeverityLevels_t>();
     v.message = j.at("message").get<std::string>();
   }
+  inline std::string to_string(const LogEvent_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -17,4 +17,8 @@ namespace leagueapi {
     v.itemKey = j.at("itemKey").get<LolPurchaseWidgetItemKey_t>();
     v.quantity = j.at("quantity").get<int32_t>();
   }
+  inline std::string to_string(const LolPurchaseWidgetValidationRequestItem_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

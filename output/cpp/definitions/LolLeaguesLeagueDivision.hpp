@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolLeaguesLeagueStanding.hpp"
 #include "LolLeaguesLeagueRank.hpp"
+#include "LolLeaguesLeagueStanding.hpp"
 namespace leagueapi {
   struct LolLeaguesLeagueDivision_t {
     LolLeaguesLeagueRank_t leagueRank;
@@ -18,4 +18,8 @@ namespace leagueapi {
     v.leagueRank = j.at("leagueRank").get<LolLeaguesLeagueRank_t>();
     v.standings = j.at("standings").get<std::vector<LolLeaguesLeagueStanding_t>>();
   }
+  inline std::string to_string(const LolLeaguesLeagueDivision_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -16,4 +16,8 @@ namespace leagueapi {
     v.secondPreference = j.at("secondPreference").get<std::string>();
     v.firstPreference = j.at("firstPreference").get<std::string>();
   }
+  inline std::string to_string(const LolLobbyLobbyPositionPreferences_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

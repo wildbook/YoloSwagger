@@ -3,11 +3,11 @@
 namespace leagueapi {
   enum class ClashRewardType_t {
     LOGO_E = 3,
-    FRAME_E = 2,
+    LOOT_E = 4,
+    FLAG_E = 1,
     VP_E = 5,
     TROPHY_E = 0,
-    FLAG_E = 1,
-    LOOT_E = 4,
+    FRAME_E = 2,
   };
 
   inline void to_json(nlohmann::json& j, const ClashRewardType_t& v) {
@@ -15,8 +15,11 @@ namespace leagueapi {
       case ClashRewardType_t::LOGO_E:
         j = "LOGO";
       break;
-      case ClashRewardType_t::FRAME_E:
-        j = "FRAME";
+      case ClashRewardType_t::LOOT_E:
+        j = "LOOT";
+      break;
+      case ClashRewardType_t::FLAG_E:
+        j = "FLAG";
       break;
       case ClashRewardType_t::VP_E:
         j = "VP";
@@ -24,11 +27,8 @@ namespace leagueapi {
       case ClashRewardType_t::TROPHY_E:
         j = "TROPHY";
       break;
-      case ClashRewardType_t::FLAG_E:
-        j = "FLAG";
-      break;
-      case ClashRewardType_t::LOOT_E:
-        j = "LOOT";
+      case ClashRewardType_t::FRAME_E:
+        j = "FRAME";
       break;
     }
   }
@@ -39,8 +39,12 @@ namespace leagueapi {
       v = ClashRewardType_t::LOGO_E;
       return;
     }
-    if(s == "FRAME"){
-      v = ClashRewardType_t::FRAME_E;
+    if(s == "LOOT"){
+      v = ClashRewardType_t::LOOT_E;
+      return;
+    }
+    if(s == "FLAG"){
+      v = ClashRewardType_t::FLAG_E;
       return;
     }
     if(s == "VP"){
@@ -51,13 +55,26 @@ namespace leagueapi {
       v = ClashRewardType_t::TROPHY_E;
       return;
     }
-    if(s == "FLAG"){
-      v = ClashRewardType_t::FLAG_E;
-      return;
-    }
-    if(s == "LOOT"){
-      v = ClashRewardType_t::LOOT_E;
+    if(s == "FRAME"){
+      v = ClashRewardType_t::FRAME_E;
       return;
     }
   }
+  inline std::string to_string(const ClashRewardType_t& v) {
+    switch(v) {
+      case ClashRewardType_t::LOGO_E:
+        return "LOGO";
+      case ClashRewardType_t::LOOT_E:
+        return "LOOT";
+      case ClashRewardType_t::FLAG_E:
+        return "FLAG";
+      case ClashRewardType_t::VP_E:
+        return "VP";
+      case ClashRewardType_t::TROPHY_E:
+        return "TROPHY";
+      case ClashRewardType_t::FRAME_E:
+        return "FRAME";
+    }
+  }
+
 }

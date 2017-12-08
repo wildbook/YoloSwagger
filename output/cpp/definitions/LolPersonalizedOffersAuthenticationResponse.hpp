@@ -16,4 +16,8 @@ namespace leagueapi {
     v.expiration = j.at("expiration").get<std::string>();
     v.token = j.at("token").get<std::string>();
   }
+  inline std::string to_string(const LolPersonalizedOffersAuthenticationResponse_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

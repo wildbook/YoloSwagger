@@ -16,4 +16,8 @@ namespace leagueapi {
     v.errorDescription = j.at("errorDescription").get<std::string>();
     v.error = j.at("error").get<std::string>();
   }
+  inline std::string to_string(const RsoAuthAuthError_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

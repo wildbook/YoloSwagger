@@ -17,4 +17,8 @@ namespace leagueapi {
     v.exception = j.at("exception").get<ClientRequestError_t>();
     v.playerId = j.at("playerId").get<uint64_t>();
   }
+  inline std::string to_string(const FailedInvite_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

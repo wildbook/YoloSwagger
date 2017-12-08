@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolLoadoutsFrontendInventoryResponse_t& v) {
     v.entitlements = j.at("entitlements").get<std::vector<LolLoadoutsItemKey_t>>();
   }
+  inline std::string to_string(const LolLoadoutsFrontendInventoryResponse_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

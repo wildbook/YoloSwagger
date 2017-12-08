@@ -28,4 +28,13 @@ namespace leagueapi {
       return;
     }
   }
+  inline std::string to_string(const LolLicenseAgreementLicenseAgreementType_t& v) {
+    switch(v) {
+      case LolLicenseAgreementLicenseAgreementType_t::Eula_E:
+        return "Eula";
+      case LolLicenseAgreementLicenseAgreementType_t::TermsOfUse_E:
+        return "TermsOfUse";
+    }
+  }
+
 }

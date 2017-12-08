@@ -16,4 +16,8 @@ namespace leagueapi {
     v.playerName = j.at("playerName").get<std::string>();
     v.playerId = j.at("playerId").get<uint64_t>();
   }
+  inline std::string to_string(const LeaguesLcdsTeamMemberInfoDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

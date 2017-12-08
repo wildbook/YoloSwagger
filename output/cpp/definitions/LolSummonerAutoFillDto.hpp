@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolSummonerAutoFillDto_t& v) {
     v.autoFillQueues = j.at("autoFillQueues").get<std::vector<LolSummonerAutoFillQueueDto_t>>();
   }
+  inline std::string to_string(const LolSummonerAutoFillDto_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

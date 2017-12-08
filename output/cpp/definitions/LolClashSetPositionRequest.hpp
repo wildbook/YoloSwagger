@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolClashSetPositionRequest_t& v) {
     v.position = j.at("position").get<Position_t>();
   }
+  inline std::string to_string(const LolClashSetPositionRequest_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

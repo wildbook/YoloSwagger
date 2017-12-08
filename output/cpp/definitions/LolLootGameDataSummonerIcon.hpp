@@ -16,4 +16,8 @@ namespace leagueapi {
     v.iconPath = j.at("iconPath").get<std::string>();
     v.id = j.at("id").get<int32_t>();
   }
+  inline std::string to_string(const LolLootGameDataSummonerIcon_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -18,4 +18,8 @@ namespace leagueapi {
     v.periodStats = j.at("periodStats").get<std::vector<RosterPeriodAggregatedStatsDTO_t>>();
     v.playerStats = j.at("playerStats").get<std::map<std::string, RosterPlayerAggregatedStatsDTO_t>>();
   }
+  inline std::string to_string(const RosterAggregatedStatsDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

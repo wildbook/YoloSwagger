@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolPersonalizedOffersOfferRequests_t& v) {
     v.offers = j.at("offers").get<std::vector<LolPersonalizedOffersOfferRequest_t>>();
   }
+  inline std::string to_string(const LolPersonalizedOffersOfferRequests_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

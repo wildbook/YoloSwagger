@@ -19,4 +19,8 @@ namespace leagueapi {
     v.inventoryJWTs = j.at("inventoryJWTs").get<std::vector<std::string>>();
     v.items = j.at("items").get<std::map<std::string, nlohmann::json>>();
   }
+  inline std::string to_string(const LolLoadoutsCreateOrUpdateItemsRequest_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

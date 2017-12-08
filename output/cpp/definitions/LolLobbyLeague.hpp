@@ -16,4 +16,8 @@ namespace leagueapi {
     v.leagueTier = j.at("leagueTier").get<std::string>();
     v.queueType = j.at("queueType").get<std::string>();
   }
+  inline std::string to_string(const LolLobbyLeague_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

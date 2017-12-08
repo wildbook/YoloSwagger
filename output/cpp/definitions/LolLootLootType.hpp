@@ -28,4 +28,13 @@ namespace leagueapi {
       return;
     }
   }
+  inline std::string to_string(const LolLootLootType_t& v) {
+    switch(v) {
+      case LolLootLootType_t::Currency_E:
+        return "Currency";
+      case LolLootLootType_t::Chest_E:
+        return "Chest";
+    }
+  }
+
 }

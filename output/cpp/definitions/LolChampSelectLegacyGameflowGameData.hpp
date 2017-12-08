@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolChampSelectLegacyGameflowGameData_t& v) {
     v.queue = j.at("queue").get<LolChampSelectLegacyQueue_t>();
   }
+  inline std::string to_string(const LolChampSelectLegacyGameflowGameData_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

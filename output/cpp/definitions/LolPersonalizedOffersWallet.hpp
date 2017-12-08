@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolPersonalizedOffersWallet_t& v) {
     v.rp = j.at("rp").get<int64_t>();
   }
+  inline std::string to_string(const LolPersonalizedOffersWallet_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

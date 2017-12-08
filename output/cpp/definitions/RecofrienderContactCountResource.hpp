@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, RecofrienderContactCountResource_t& v) {
     v.count = j.at("count").get<uint64_t>();
   }
+  inline std::string to_string(const RecofrienderContactCountResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -16,4 +16,8 @@ namespace leagueapi {
     v.inventoryType = j.at("inventoryType").get<std::string>();
     v.data = j.at("data").get<nlohmann::json>();
   }
+  inline std::string to_string(const CollectionsLcdsRentalUpdateNotification_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

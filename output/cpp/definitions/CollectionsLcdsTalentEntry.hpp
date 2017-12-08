@@ -16,4 +16,8 @@ namespace leagueapi {
     v.talentId = j.at("talentId").get<int32_t>();
     v.rank = j.at("rank").get<int32_t>();
   }
+  inline std::string to_string(const CollectionsLcdsTalentEntry_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

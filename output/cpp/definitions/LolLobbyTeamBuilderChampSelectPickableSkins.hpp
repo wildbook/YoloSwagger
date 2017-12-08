@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderChampSelectPickableSkins_t& v) {
     v.skinIds = j.at("skinIds").get<std::vector<int32_t>>();
   }
+  inline std::string to_string(const LolLobbyTeamBuilderChampSelectPickableSkins_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -3,20 +3,24 @@
 #include <optional>
 namespace leagueapi {
   struct ClientDynamicConfig_t {
-    bool delta;
-    bool compressed;
     std::string configs;
+    bool compressed;
+    bool delta;
   };
 
   inline void to_json(nlohmann::json& j, const ClientDynamicConfig_t& v) {
-    j["delta"] = v.delta;
-    j["compressed"] = v.compressed;
     j["configs"] = v.configs;
+    j["compressed"] = v.compressed;
+    j["delta"] = v.delta;
   }
 
   inline void from_json(const nlohmann::json& j, ClientDynamicConfig_t& v) {
-    v.delta = j.at("delta").get<bool>();
-    v.compressed = j.at("compressed").get<bool>();
     v.configs = j.at("configs").get<std::string>();
+    v.compressed = j.at("compressed").get<bool>();
+    v.delta = j.at("delta").get<bool>();
   }
+  inline std::string to_string(const ClientDynamicConfig_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

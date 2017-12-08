@@ -17,4 +17,8 @@ namespace leagueapi {
     v.failedPlayers = j.at("failedPlayers").get<std::vector<LolLobbyLobbyCustomFailedPlayer_t>>();
     v.success = j.at("success").get<bool>();
   }
+  inline std::string to_string(const LolLobbyLobbyCustomChampSelectStartResponse_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

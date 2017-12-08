@@ -19,4 +19,8 @@ namespace leagueapi {
     v.currenciesUsingCapWallets = j.at("currenciesUsingCapWallets").get<std::vector<std::string>>();
     v.lootItemsUsingBreakoutRecipeMenu = j.at("lootItemsUsingBreakoutRecipeMenu").get<std::vector<std::string>>();
   }
+  inline std::string to_string(const LootLcdsClientConfigurationDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

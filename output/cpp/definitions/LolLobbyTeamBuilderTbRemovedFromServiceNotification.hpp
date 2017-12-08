@@ -17,4 +17,8 @@ namespace leagueapi {
     v.backwardsTransitionInfo = j.at("backwardsTransitionInfo").get<LolLobbyTeamBuilderBackwardsTransitionInfoV1_t>();
     v.reason = j.at("reason").get<std::string>();
   }
+  inline std::string to_string(const LolLobbyTeamBuilderTbRemovedFromServiceNotification_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

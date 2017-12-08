@@ -16,4 +16,8 @@ namespace leagueapi {
     v.gameId = j.at("gameId").get<uint64_t>();
     v.platformId = j.at("platformId").get<std::string>();
   }
+  inline std::string to_string(const DownloadUrlRequestV2_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

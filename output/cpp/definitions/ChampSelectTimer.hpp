@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, ChampSelectTimer_t& v) {
     v.phase = j.at("phase").get<std::string>();
   }
+  inline std::string to_string(const ChampSelectTimer_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

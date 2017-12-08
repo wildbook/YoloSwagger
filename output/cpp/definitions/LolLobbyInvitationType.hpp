@@ -36,4 +36,15 @@ namespace leagueapi {
       return;
     }
   }
+  inline std::string to_string(const LolLobbyInvitationType_t& v) {
+    switch(v) {
+      case LolLobbyInvitationType_t::lobby_E:
+        return "lobby";
+      case LolLobbyInvitationType_t::invalid_E:
+        return "invalid";
+      case LolLobbyInvitationType_t::party_E:
+        return "party";
+    }
+  }
+
 }

@@ -16,4 +16,8 @@ namespace leagueapi {
     v.gameId = j.at("gameId").get<uint64_t>();
     v.fullTeamVote = j.at("fullTeamVote").get<bool>();
   }
+  inline std::string to_string(const LolHonorV2VoteCompletion_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

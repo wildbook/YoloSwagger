@@ -18,4 +18,8 @@ namespace leagueapi {
     v.gameClient = j.at("gameClient").get<LolReplaysGameflowGameClient_t>();
     v.phase = j.at("phase").get<LolReplaysGameflowPhase_t>();
   }
+  inline std::string to_string(const LolReplaysGameflowSession_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

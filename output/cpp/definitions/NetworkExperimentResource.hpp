@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, NetworkExperimentResource_t& v) {
     v.status = j.at("status").get<NetworkExperimentStatus_t>();
   }
+  inline std::string to_string(const NetworkExperimentResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

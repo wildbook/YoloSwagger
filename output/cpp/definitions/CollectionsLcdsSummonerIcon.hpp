@@ -19,4 +19,8 @@ namespace leagueapi {
     v.summonerId = j.at("summonerId").get<uint64_t>();
     v.iconId = j.at("iconId").get<int32_t>();
   }
+  inline std::string to_string(const CollectionsLcdsSummonerIcon_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

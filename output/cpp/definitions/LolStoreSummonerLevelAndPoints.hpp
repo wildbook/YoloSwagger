@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolStoreSummonerLevelAndPoints_t& v) {
     v.summonerLevel = j.at("summonerLevel").get<uint32_t>();
   }
+  inline std::string to_string(const LolStoreSummonerLevelAndPoints_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

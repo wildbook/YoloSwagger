@@ -16,4 +16,8 @@ namespace leagueapi {
     v.refId = j.at("refId").get<std::string>();
     v.lootName = j.at("lootName").get<std::string>();
   }
+  inline std::string to_string(const LootNameRefId_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

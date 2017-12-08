@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolMissionsPluginRegionLocaleChangedEvent_t& v) {
     v.locale = j.at("locale").get<std::string>();
   }
+  inline std::string to_string(const LolMissionsPluginRegionLocaleChangedEvent_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

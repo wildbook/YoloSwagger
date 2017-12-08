@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, ChampSelectLcdsPotentialTradersDTO_t& v) {
     v.potentialTraders = j.at("potentialTraders").get<std::vector<std::string>>();
   }
+  inline std::string to_string(const ChampSelectLcdsPotentialTradersDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

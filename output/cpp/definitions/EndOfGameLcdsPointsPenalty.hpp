@@ -16,4 +16,8 @@ namespace leagueapi {
     v.penalty = j.at("penalty").get<double>();
     v.type = j.at("type").get<std::string>();
   }
+  inline std::string to_string(const EndOfGameLcdsPointsPenalty_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

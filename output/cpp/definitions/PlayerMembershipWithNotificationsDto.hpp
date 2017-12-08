@@ -18,4 +18,8 @@ namespace leagueapi {
     v.playerMembership = j.at("playerMembership").get<PlayerMembershipDto_t>();
     v.membershipNotifications = j.at("membershipNotifications").get<std::vector<MembershipNoficationsDto_t>>();
   }
+  inline std::string to_string(const PlayerMembershipWithNotificationsDto_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

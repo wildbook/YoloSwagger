@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, HighlightsSettingsResource_t& v) {
     v.data = j.at("data").get<HighlightsSettingsData_t>();
   }
+  inline std::string to_string(const HighlightsSettingsResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

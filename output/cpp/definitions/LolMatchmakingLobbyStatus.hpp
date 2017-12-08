@@ -4,37 +4,41 @@
 #include "LolMatchmakingQueueCustomGameSpectatorPolicy.hpp"
 namespace leagueapi {
   struct LolMatchmakingLobbyStatus_t {
-    bool isSpectator;
-    bool isLeader;
-    bool isCustom;
-    LolMatchmakingQueueCustomGameSpectatorPolicy_t customSpectatorPolicy;
-    int32_t queueId;
-    std::optional<std::string> lobbyId;
     bool allowedPlayAgain;
+    int32_t queueId;
     std::vector<uint64_t> memberSummonerIds;
+    bool isLeader;
+    bool isSpectator;
+    std::optional<std::string> lobbyId;
+    LolMatchmakingQueueCustomGameSpectatorPolicy_t customSpectatorPolicy;
+    bool isCustom;
   };
 
   inline void to_json(nlohmann::json& j, const LolMatchmakingLobbyStatus_t& v) {
-    j["isSpectator"] = v.isSpectator;
-    j["isLeader"] = v.isLeader;
-    j["isCustom"] = v.isCustom;
-    j["customSpectatorPolicy"] = v.customSpectatorPolicy;
+    j["allowedPlayAgain"] = v.allowedPlayAgain;
     j["queueId"] = v.queueId;
+    j["memberSummonerIds"] = v.memberSummonerIds;
+    j["isLeader"] = v.isLeader;
+    j["isSpectator"] = v.isSpectator;
     if(v.lobbyId)
       j["lobbyId"] = *v.lobbyId;
-    j["allowedPlayAgain"] = v.allowedPlayAgain;
-    j["memberSummonerIds"] = v.memberSummonerIds;
+    j["customSpectatorPolicy"] = v.customSpectatorPolicy;
+    j["isCustom"] = v.isCustom;
   }
 
   inline void from_json(const nlohmann::json& j, LolMatchmakingLobbyStatus_t& v) {
-    v.isSpectator = j.at("isSpectator").get<bool>();
-    v.isLeader = j.at("isLeader").get<bool>();
-    v.isCustom = j.at("isCustom").get<bool>();
-    v.customSpectatorPolicy = j.at("customSpectatorPolicy").get<LolMatchmakingQueueCustomGameSpectatorPolicy_t>();
-    v.queueId = j.at("queueId").get<int32_t>();
-    if(auto it = j.find("lobbyId"); it != j.end() !it->is_null())
-      v.lobbyId = it->get<std::string>();
     v.allowedPlayAgain = j.at("allowedPlayAgain").get<bool>();
+    v.queueId = j.at("queueId").get<int32_t>();
     v.memberSummonerIds = j.at("memberSummonerIds").get<std::vector<uint64_t>>();
+    v.isLeader = j.at("isLeader").get<bool>();
+    v.isSpectator = j.at("isSpectator").get<bool>();
+    if(auto it = j.find("lobbyId"); it != j.end() && !it->is_null())
+      v.lobbyId = it->get<std::string>();
+    v.customSpectatorPolicy = j.at("customSpectatorPolicy").get<LolMatchmakingQueueCustomGameSpectatorPolicy_t>();
+    v.isCustom = j.at("isCustom").get<bool>();
   }
+  inline std::string to_string(const LolMatchmakingLobbyStatus_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

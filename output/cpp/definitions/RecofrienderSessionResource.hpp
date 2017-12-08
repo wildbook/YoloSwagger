@@ -16,4 +16,8 @@ namespace leagueapi {
     v.sessionState = j.at("sessionState").get<std::string>();
     v.sessionExpire = j.at("sessionExpire").get<uint32_t>();
   }
+  inline std::string to_string(const RecofrienderSessionResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

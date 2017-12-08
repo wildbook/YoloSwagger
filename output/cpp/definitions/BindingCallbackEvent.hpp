@@ -19,4 +19,8 @@ namespace leagueapi {
     v.id = j.at("id").get<uint32_t>();
     v.parameters = j.at("parameters").get<std::vector<nlohmann::json>>();
   }
+  inline std::string to_string(const BindingCallbackEvent_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

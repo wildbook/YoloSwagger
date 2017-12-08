@@ -17,4 +17,8 @@ namespace leagueapi {
     v.accountId = j.at("accountId").get<uint64_t>();
     v.balances = j.at("balances").get<std::vector<LolStoreServiceBalance_t>>();
   }
+  inline std::string to_string(const LolStoreServiceWallet_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

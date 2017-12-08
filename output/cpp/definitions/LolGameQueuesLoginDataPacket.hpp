@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolGameQueuesLoginDataPacket_t& v) {
     v.gameTypeConfigs = j.at("gameTypeConfigs").get<std::vector<LolGameQueuesQueueGameTypeConfig_t>>();
   }
+  inline std::string to_string(const LolGameQueuesLoginDataPacket_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

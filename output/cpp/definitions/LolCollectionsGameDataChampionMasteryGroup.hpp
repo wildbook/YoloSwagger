@@ -17,4 +17,8 @@ namespace leagueapi {
     v.id = j.at("id").get<uint32_t>();
     v.rows = j.at("rows").get<std::vector<LolCollectionsGameDataChampionMasteryRow_t>>();
   }
+  inline std::string to_string(const LolCollectionsGameDataChampionMasteryGroup_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

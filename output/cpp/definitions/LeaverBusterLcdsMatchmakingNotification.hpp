@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LeaverBusterLcdsMatchmakingNotification_t& v) {
     v.playerJoinFailures = j.at("playerJoinFailures").get<std::vector<nlohmann::json>>();
   }
+  inline std::string to_string(const LeaverBusterLcdsMatchmakingNotification_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

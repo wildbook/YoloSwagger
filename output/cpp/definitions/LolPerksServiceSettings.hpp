@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolPerksServiceSettings_t& v) {
     v.serverSideStorageAvailable = j.at("serverSideStorageAvailable").get<bool>();
   }
+  inline std::string to_string(const LolPerksServiceSettings_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

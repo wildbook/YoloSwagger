@@ -3,19 +3,23 @@
 #include <optional>
 namespace leagueapi {
   struct LolChampSelectLegacyChampSelectChatRoomDetails_t {
-    std::optional<std::string> chatRoomPassword;
     std::string chatRoomName;
+    std::optional<std::string> chatRoomPassword;
   };
 
   inline void to_json(nlohmann::json& j, const LolChampSelectLegacyChampSelectChatRoomDetails_t& v) {
+    j["chatRoomName"] = v.chatRoomName;
     if(v.chatRoomPassword)
       j["chatRoomPassword"] = *v.chatRoomPassword;
-    j["chatRoomName"] = v.chatRoomName;
   }
 
   inline void from_json(const nlohmann::json& j, LolChampSelectLegacyChampSelectChatRoomDetails_t& v) {
-    if(auto it = j.find("chatRoomPassword"); it != j.end() !it->is_null())
-      v.chatRoomPassword = it->get<std::string>();
     v.chatRoomName = j.at("chatRoomName").get<std::string>();
+    if(auto it = j.find("chatRoomPassword"); it != j.end() && !it->is_null())
+      v.chatRoomPassword = it->get<std::string>();
   }
+  inline std::string to_string(const LolChampSelectLegacyChampSelectChatRoomDetails_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

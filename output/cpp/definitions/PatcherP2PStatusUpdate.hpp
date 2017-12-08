@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, PatcherP2PStatusUpdate_t& v) {
     v.isAllowedByUser = j.at("isAllowedByUser").get<bool>();
   }
+  inline std::string to_string(const PatcherP2PStatusUpdate_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

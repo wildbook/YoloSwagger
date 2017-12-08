@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolClubsPublicClubMemberLists_t& v) {
     v.activeMembers = j.at("activeMembers").get<std::vector<LolClubsPublicClubPlayer_t>>();
   }
+  inline std::string to_string(const LolClubsPublicClubMemberLists_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

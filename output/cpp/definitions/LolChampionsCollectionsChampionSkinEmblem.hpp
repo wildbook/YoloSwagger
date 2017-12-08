@@ -21,4 +21,8 @@ namespace leagueapi {
     v.name = j.at("name").get<std::string>();
     v.emblemPath = j.at("emblemPath").get<LolChampionsCollectionsChampionSkinEmblemPath_t>();
   }
+  inline std::string to_string(const LolChampionsCollectionsChampionSkinEmblem_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

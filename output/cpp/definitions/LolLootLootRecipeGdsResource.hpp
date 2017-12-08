@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolLootLootRecipeGdsResource_t& v) {
     v.placeholder = j.at("placeholder").get<std::string>();
   }
+  inline std::string to_string(const LolLootLootRecipeGdsResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

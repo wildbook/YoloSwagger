@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolClashGameflowAvailability_t& v) {
     v.isAvailable = j.at("isAvailable").get<bool>();
   }
+  inline std::string to_string(const LolClashGameflowAvailability_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

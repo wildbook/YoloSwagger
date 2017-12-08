@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolKrShutdownLawShutdownLawNotification_t& v) {
     v.type = j.at("type").get<LolKrShutdownLawShutdownLawStatus_t>();
   }
+  inline std::string to_string(const LolKrShutdownLawShutdownLawNotification_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

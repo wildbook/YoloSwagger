@@ -16,4 +16,8 @@ namespace leagueapi {
     v.mediator = j.at("mediator").get<std::string>();
     v.token = j.at("token").get<std::string>();
   }
+  inline std::string to_string(const LolAccountVerificationVerifyRequest_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -21,4 +21,8 @@ namespace leagueapi {
     v.participantFrames = j.at("participantFrames").get<std::map<std::string, LolMatchHistoryMatchHistoryParticipantFrame_t>>();
     v.events = j.at("events").get<std::vector<LolMatchHistoryMatchHistoryEvent_t>>();
   }
+  inline std::string to_string(const LolMatchHistoryMatchHistoryTimelineFrame_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

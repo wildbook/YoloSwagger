@@ -16,4 +16,8 @@ namespace leagueapi {
     v.limit = j.at("limit").get<int64_t>();
     v.cacheName = j.at("cacheName").get<std::string>();
   }
+  inline std::string to_string(const GameQueuesLcdsMatchingThrottleConfig_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -17,4 +17,8 @@ namespace leagueapi {
     v.lastUpdate = j.at("lastUpdate").get<int64_t>();
     v.lootItems = j.at("lootItems").get<std::vector<LootItemClientDTO_t>>();
   }
+  inline std::string to_string(const LootItemListClientDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

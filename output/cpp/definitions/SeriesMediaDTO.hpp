@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, SeriesMediaDTO_t& v) {
     v.backgroundUrl = j.at("backgroundUrl").get<std::string>();
   }
+  inline std::string to_string(const SeriesMediaDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

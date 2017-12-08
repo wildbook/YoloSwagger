@@ -16,4 +16,8 @@ namespace leagueapi {
     v.lastUpdate = j.at("lastUpdate").get<int64_t>();
     v.queryToLootNames = j.at("queryToLootNames").get<nlohmann::json>();
   }
+  inline std::string to_string(const QueryResultDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

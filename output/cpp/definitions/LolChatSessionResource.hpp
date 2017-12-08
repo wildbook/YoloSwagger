@@ -17,4 +17,8 @@ namespace leagueapi {
     v.sessionState = j.at("sessionState").get<LolChatSessionState_t>();
     v.sessionExpire = j.at("sessionExpire").get<uint32_t>();
   }
+  inline std::string to_string(const LolChatSessionResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

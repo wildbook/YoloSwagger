@@ -16,4 +16,8 @@ namespace leagueapi {
     v.amount = j.at("amount").get<int32_t>();
     v.currencyType = j.at("currencyType").get<std::string>();
   }
+  inline std::string to_string(const LolPurchaseWidgetBalance_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

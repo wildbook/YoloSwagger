@@ -22,4 +22,8 @@ namespace leagueapi {
     v.acronym = j.at("acronym").get<std::string>();
     v.guid = j.at("guid").get<std::string>();
   }
+  inline std::string to_string(const LolEsportStreamNotificationsLiveMatchTeam_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

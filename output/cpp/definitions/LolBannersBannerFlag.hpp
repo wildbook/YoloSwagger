@@ -16,4 +16,8 @@ namespace leagueapi {
     v.theme = j.at("theme").get<std::string>();
     v.level = j.at("level").get<std::string>();
   }
+  inline std::string to_string(const LolBannersBannerFlag_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

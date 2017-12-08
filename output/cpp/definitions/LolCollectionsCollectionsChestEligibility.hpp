@@ -19,4 +19,8 @@ namespace leagueapi {
     v.nextChestRechargeTime = j.at("nextChestRechargeTime").get<uint64_t>();
     v.earnableChests = j.at("earnableChests").get<uint32_t>();
   }
+  inline std::string to_string(const LolCollectionsCollectionsChestEligibility_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

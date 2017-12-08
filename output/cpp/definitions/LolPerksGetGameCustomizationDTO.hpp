@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolPerksGetGameCustomizationDTO_t& v) {
     v.queueType = j.at("queueType").get<std::string>();
   }
+  inline std::string to_string(const LolPerksGetGameCustomizationDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

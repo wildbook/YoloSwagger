@@ -44,4 +44,17 @@ namespace leagueapi {
       return;
     }
   }
+  inline std::string to_string(const LolLootItemOwnershipStatus_t& v) {
+    switch(v) {
+      case LolLootItemOwnershipStatus_t::NONE_E:
+        return "NONE";
+      case LolLootItemOwnershipStatus_t::FREE_E:
+        return "FREE";
+      case LolLootItemOwnershipStatus_t::RENTAL_E:
+        return "RENTAL";
+      case LolLootItemOwnershipStatus_t::OWNED_E:
+        return "OWNED";
+    }
+  }
+
 }

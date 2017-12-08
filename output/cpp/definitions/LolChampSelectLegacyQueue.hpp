@@ -4,17 +4,21 @@
 #include "LolChampSelectLegacyQueueGameTypeConfig.hpp"
 namespace leagueapi {
   struct LolChampSelectLegacyQueue_t {
-    LolChampSelectLegacyQueueGameTypeConfig_t gameTypeConfig;
     bool areFreeChampionsAllowed;
+    LolChampSelectLegacyQueueGameTypeConfig_t gameTypeConfig;
   };
 
   inline void to_json(nlohmann::json& j, const LolChampSelectLegacyQueue_t& v) {
-    j["gameTypeConfig"] = v.gameTypeConfig;
     j["areFreeChampionsAllowed"] = v.areFreeChampionsAllowed;
+    j["gameTypeConfig"] = v.gameTypeConfig;
   }
 
   inline void from_json(const nlohmann::json& j, LolChampSelectLegacyQueue_t& v) {
-    v.gameTypeConfig = j.at("gameTypeConfig").get<LolChampSelectLegacyQueueGameTypeConfig_t>();
     v.areFreeChampionsAllowed = j.at("areFreeChampionsAllowed").get<bool>();
+    v.gameTypeConfig = j.at("gameTypeConfig").get<LolChampSelectLegacyQueueGameTypeConfig_t>();
   }
+  inline std::string to_string(const LolChampSelectLegacyQueue_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

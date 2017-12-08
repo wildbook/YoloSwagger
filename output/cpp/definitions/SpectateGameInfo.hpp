@@ -19,4 +19,8 @@ namespace leagueapi {
     v.gameQueueType = j.at("gameQueueType").get<std::string>();
     v.dropInSpectateGameId = j.at("dropInSpectateGameId").get<std::string>();
   }
+  inline std::string to_string(const SpectateGameInfo_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

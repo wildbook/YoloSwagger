@@ -16,4 +16,8 @@ namespace leagueapi {
     v.iconColorId = j.at("iconColorId").get<int32_t>();
     v.iconId = j.at("iconId").get<int32_t>();
   }
+  inline std::string to_string(const LolClashChangeIconRequest_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

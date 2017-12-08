@@ -16,4 +16,8 @@ namespace leagueapi {
     v.clientId = j.at("clientId").get<std::string>();
     v.url = j.at("url").get<std::string>();
   }
+  inline std::string to_string(const RsoAuthPublicClientConfig_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

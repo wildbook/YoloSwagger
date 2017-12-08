@@ -20,4 +20,8 @@ namespace leagueapi {
     v.inviteeState = j.at("inviteeState").get<LcdsInviteeState_t>();
     v.summonerId = j.at("summonerId").get<uint64_t>();
   }
+  inline std::string to_string(const LcdsInvitee_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

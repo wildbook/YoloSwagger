@@ -36,4 +36,15 @@ namespace leagueapi {
       return;
     }
   }
+  inline std::string to_string(const LolLobbyMatchmakingDodgeState_t& v) {
+    switch(v) {
+      case LolLobbyMatchmakingDodgeState_t::Invalid_E:
+        return "Invalid";
+      case LolLobbyMatchmakingDodgeState_t::PartyDodged_E:
+        return "PartyDodged";
+      case LolLobbyMatchmakingDodgeState_t::StrangerDodged_E:
+        return "StrangerDodged";
+    }
+  }
+
 }

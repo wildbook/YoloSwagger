@@ -36,4 +36,15 @@ namespace leagueapi {
       return;
     }
   }
+  inline std::string to_string(const LolKrShutdownLawShutdownLawStatus_t& v) {
+    switch(v) {
+      case LolKrShutdownLawShutdownLawStatus_t::NONE_E:
+        return "NONE";
+      case LolKrShutdownLawShutdownLawStatus_t::CUT_OFF_E:
+        return "CUT_OFF";
+      case LolKrShutdownLawShutdownLawStatus_t::WARNING_E:
+        return "WARNING";
+    }
+  }
+
 }

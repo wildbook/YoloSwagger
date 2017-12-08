@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, MissionIdsDTO_t& v) {
     v.missionIds = j.at("missionIds").get<std::vector<std::string>>();
   }
+  inline std::string to_string(const MissionIdsDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

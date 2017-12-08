@@ -16,4 +16,8 @@ namespace leagueapi {
     v.MinutesUntilReplayConsideredLost = j.at("MinutesUntilReplayConsideredLost").get<double>();
     v.MinSupportedGameServerVersion = j.at("MinSupportedGameServerVersion").get<std::string>();
   }
+  inline std::string to_string(const LolReplaysReplaysDynamicConfig_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

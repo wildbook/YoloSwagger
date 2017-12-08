@@ -16,4 +16,8 @@ namespace leagueapi {
     v.key = j.at("key").get<std::string>();
     v.value = j.at("value").get<std::string>();
   }
+  inline std::string to_string(const PatcherHeaderEntry_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

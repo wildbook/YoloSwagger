@@ -19,4 +19,8 @@ namespace leagueapi {
     v.method = j.at("method").get<std::string>();
     v.url = j.at("url").get<std::string>();
   }
+  inline std::string to_string(const LolLobbyServiceProxyPayload_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

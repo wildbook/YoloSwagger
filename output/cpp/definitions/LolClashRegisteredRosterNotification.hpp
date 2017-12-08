@@ -18,4 +18,8 @@ namespace leagueapi {
     v.notifyReason = j.at("notifyReason").get<LolClashRosterNotifyReason_t>();
     v.roster = j.at("roster").get<RosterDTO_t>();
   }
+  inline std::string to_string(const LolClashRegisteredRosterNotification_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

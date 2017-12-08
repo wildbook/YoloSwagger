@@ -16,4 +16,8 @@ namespace leagueapi {
     v.shareClubAffiliation = j.at("shareClubAffiliation").get<bool>();
     v.primaryActiveClubKey = j.at("primaryActiveClubKey").get<std::string>();
   }
+  inline std::string to_string(const PlayerMembershipPreferencesDto_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

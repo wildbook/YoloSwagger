@@ -3,8 +3,8 @@
 namespace leagueapi {
   enum class LolMatchmakingMatchmakingDodgeWarning_t {
     Penalty_E = 2,
-    None_E = 0,
     Warning_E = 1,
+    None_E = 0,
   };
 
   inline void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingDodgeWarning_t& v) {
@@ -12,11 +12,11 @@ namespace leagueapi {
       case LolMatchmakingMatchmakingDodgeWarning_t::Penalty_E:
         j = "Penalty";
       break;
-      case LolMatchmakingMatchmakingDodgeWarning_t::None_E:
-        j = "None";
-      break;
       case LolMatchmakingMatchmakingDodgeWarning_t::Warning_E:
         j = "Warning";
+      break;
+      case LolMatchmakingMatchmakingDodgeWarning_t::None_E:
+        j = "None";
       break;
     }
   }
@@ -27,13 +27,24 @@ namespace leagueapi {
       v = LolMatchmakingMatchmakingDodgeWarning_t::Penalty_E;
       return;
     }
-    if(s == "None"){
-      v = LolMatchmakingMatchmakingDodgeWarning_t::None_E;
-      return;
-    }
     if(s == "Warning"){
       v = LolMatchmakingMatchmakingDodgeWarning_t::Warning_E;
       return;
     }
+    if(s == "None"){
+      v = LolMatchmakingMatchmakingDodgeWarning_t::None_E;
+      return;
+    }
   }
+  inline std::string to_string(const LolMatchmakingMatchmakingDodgeWarning_t& v) {
+    switch(v) {
+      case LolMatchmakingMatchmakingDodgeWarning_t::Penalty_E:
+        return "Penalty";
+      case LolMatchmakingMatchmakingDodgeWarning_t::Warning_E:
+        return "Warning";
+      case LolMatchmakingMatchmakingDodgeWarning_t::None_E:
+        return "None";
+    }
+  }
+
 }

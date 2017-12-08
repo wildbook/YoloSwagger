@@ -22,4 +22,8 @@ namespace leagueapi {
     v.platformId = j.at("platformId").get<std::string>();
     v.isUserInfoEnabled = j.at("isUserInfoEnabled").get<bool>();
   }
+  inline std::string to_string(const LolLoginRegionStatus_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

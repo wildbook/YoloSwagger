@@ -3,41 +3,45 @@
 #include <optional>
 namespace leagueapi {
   struct BuildInfo_t {
-    std::string gameBranchFull;
     std::string version;
+    int32_t gameDataBuildId;
+    int32_t contentBuildId;
+    int32_t codeBuildId;
+    std::string patchlineVisibleName;
+    std::string branchFull;
     std::string patchline;
     std::string branch;
-    int32_t contentBuildId;
     std::string gameBranch;
-    int32_t gameDataBuildId;
-    std::string branchFull;
-    std::string patchlineVisibleName;
-    int32_t codeBuildId;
+    std::string gameBranchFull;
   };
 
   inline void to_json(nlohmann::json& j, const BuildInfo_t& v) {
-    j["gameBranchFull"] = v.gameBranchFull;
     j["version"] = v.version;
+    j["gameDataBuildId"] = v.gameDataBuildId;
+    j["contentBuildId"] = v.contentBuildId;
+    j["codeBuildId"] = v.codeBuildId;
+    j["patchlineVisibleName"] = v.patchlineVisibleName;
+    j["branchFull"] = v.branchFull;
     j["patchline"] = v.patchline;
     j["branch"] = v.branch;
-    j["contentBuildId"] = v.contentBuildId;
     j["gameBranch"] = v.gameBranch;
-    j["gameDataBuildId"] = v.gameDataBuildId;
-    j["branchFull"] = v.branchFull;
-    j["patchlineVisibleName"] = v.patchlineVisibleName;
-    j["codeBuildId"] = v.codeBuildId;
+    j["gameBranchFull"] = v.gameBranchFull;
   }
 
   inline void from_json(const nlohmann::json& j, BuildInfo_t& v) {
-    v.gameBranchFull = j.at("gameBranchFull").get<std::string>();
     v.version = j.at("version").get<std::string>();
+    v.gameDataBuildId = j.at("gameDataBuildId").get<int32_t>();
+    v.contentBuildId = j.at("contentBuildId").get<int32_t>();
+    v.codeBuildId = j.at("codeBuildId").get<int32_t>();
+    v.patchlineVisibleName = j.at("patchlineVisibleName").get<std::string>();
+    v.branchFull = j.at("branchFull").get<std::string>();
     v.patchline = j.at("patchline").get<std::string>();
     v.branch = j.at("branch").get<std::string>();
-    v.contentBuildId = j.at("contentBuildId").get<int32_t>();
     v.gameBranch = j.at("gameBranch").get<std::string>();
-    v.gameDataBuildId = j.at("gameDataBuildId").get<int32_t>();
-    v.branchFull = j.at("branchFull").get<std::string>();
-    v.patchlineVisibleName = j.at("patchlineVisibleName").get<std::string>();
-    v.codeBuildId = j.at("codeBuildId").get<int32_t>();
+    v.gameBranchFull = j.at("gameBranchFull").get<std::string>();
   }
+  inline std::string to_string(const BuildInfo_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

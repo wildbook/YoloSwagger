@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, PlayerLifetimeStats_t& v) {
     v.playerStatSummaries = j.at("playerStatSummaries").get<PlayerStatSummaries_t>();
   }
+  inline std::string to_string(const PlayerLifetimeStats_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

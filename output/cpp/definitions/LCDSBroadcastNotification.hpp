@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LCDSBroadcastNotification_t& v) {
     v.broadcastMessages = j.at("broadcastMessages").get<std::vector<nlohmann::json>>();
   }
+  inline std::string to_string(const LCDSBroadcastNotification_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

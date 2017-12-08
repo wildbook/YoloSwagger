@@ -18,4 +18,8 @@ namespace leagueapi {
     v.status = j.at("status").get<LoyaltyStatus_t>();
     v.rewards = j.at("rewards").get<LoyaltyRewards_t>();
   }
+  inline std::string to_string(const LoyaltyStatusNotification_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

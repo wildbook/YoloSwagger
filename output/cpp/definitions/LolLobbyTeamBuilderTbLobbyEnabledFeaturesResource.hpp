@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource_t& v) {
     v.enabledFeatures = j.at("enabledFeatures").get<std::vector<std::string>>();
   }
+  inline std::string to_string(const LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

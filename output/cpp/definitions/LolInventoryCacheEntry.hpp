@@ -19,4 +19,8 @@ namespace leagueapi {
     v.valid = j.at("valid").get<bool>();
     v.expirationMS = j.at("expirationMS").get<uint64_t>();
   }
+  inline std::string to_string(const LolInventoryCacheEntry_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

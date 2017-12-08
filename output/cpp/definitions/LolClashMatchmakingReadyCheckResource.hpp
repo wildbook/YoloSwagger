@@ -18,4 +18,8 @@ namespace leagueapi {
     v.playerResponse = j.at("playerResponse").get<LolClashMatchmakingReadyCheckResponse_t>();
     v.state = j.at("state").get<LolClashMatchmakingReadyCheckState_t>();
   }
+  inline std::string to_string(const LolClashMatchmakingReadyCheckResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

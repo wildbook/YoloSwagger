@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolLoadoutsQueue_t& v) {
     v.isTeamBuilderManaged = j.at("isTeamBuilderManaged").get<bool>();
   }
+  inline std::string to_string(const LolLoadoutsQueue_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

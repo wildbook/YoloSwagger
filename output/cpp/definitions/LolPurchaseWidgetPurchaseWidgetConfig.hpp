@@ -16,4 +16,8 @@ namespace leagueapi {
     v.enabled = j.at("enabled").get<bool>();
     v.purchaseDisclaimerEnabled = j.at("purchaseDisclaimerEnabled").get<bool>();
   }
+  inline std::string to_string(const LolPurchaseWidgetPurchaseWidgetConfig_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

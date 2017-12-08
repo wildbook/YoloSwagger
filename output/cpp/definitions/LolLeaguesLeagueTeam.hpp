@@ -20,4 +20,8 @@ namespace leagueapi {
     v.id = j.at("id").get<std::string>();
     v.members = j.at("members").get<std::vector<LolLeaguesLeagueTeamMember_t>>();
   }
+  inline std::string to_string(const LolLeaguesLeagueTeam_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

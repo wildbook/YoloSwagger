@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, RedeemLootTransactionDTO_t& v) {
     v.lootName = j.at("lootName").get<std::string>();
   }
+  inline std::string to_string(const RedeemLootTransactionDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

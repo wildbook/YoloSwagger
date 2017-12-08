@@ -16,4 +16,8 @@ namespace leagueapi {
     v.name = j.at("name").get<std::string>();
     v.duration = j.at("duration").get<int64_t>();
   }
+  inline std::string to_string(const LolLobbyTeamBuilderCeremonyV1_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

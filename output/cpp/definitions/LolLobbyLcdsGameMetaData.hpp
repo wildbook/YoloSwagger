@@ -16,4 +16,8 @@ namespace leagueapi {
     v.mapId = j.at("mapId").get<int32_t>();
     v.gameId = j.at("gameId").get<uint64_t>();
   }
+  inline std::string to_string(const LolLobbyLcdsGameMetaData_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

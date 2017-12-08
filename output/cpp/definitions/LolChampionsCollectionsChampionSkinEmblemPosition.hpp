@@ -16,4 +16,8 @@ namespace leagueapi {
     v.vertical = j.at("vertical").get<std::string>();
     v.horizontal = j.at("horizontal").get<std::string>();
   }
+  inline std::string to_string(const LolChampionsCollectionsChampionSkinEmblemPosition_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

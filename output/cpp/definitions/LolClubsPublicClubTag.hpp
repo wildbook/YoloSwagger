@@ -19,4 +19,8 @@ namespace leagueapi {
     v.clubTag = j.at("clubTag").get<std::string>();
     v.clubName = j.at("clubName").get<std::string>();
   }
+  inline std::string to_string(const LolClubsPublicClubTag_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

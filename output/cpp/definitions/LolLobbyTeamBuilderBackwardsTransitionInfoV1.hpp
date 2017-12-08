@@ -16,4 +16,8 @@ namespace leagueapi {
     v.initiatorSummonerIds = j.at("initiatorSummonerIds").get<std::vector<uint64_t>>();
     v.backwardsTransitionReason = j.at("backwardsTransitionReason").get<std::string>();
   }
+  inline std::string to_string(const LolLobbyTeamBuilderBackwardsTransitionInfoV1_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

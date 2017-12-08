@@ -17,4 +17,8 @@ namespace leagueapi {
     v.gameStatistics = j.at("gameStatistics").get<std::vector<PlayerGameStats_t>>();
     v.userId = j.at("userId").get<uint64_t>();
   }
+  inline std::string to_string(const RecentGames_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

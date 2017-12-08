@@ -16,4 +16,8 @@ namespace leagueapi {
     v.gameMapId = j.at("gameMapId").get<int32_t>();
     v.minPlayers = j.at("minPlayers").get<int32_t>();
   }
+  inline std::string to_string(const LolGameQueuesPlatformConfigEnabledMap_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

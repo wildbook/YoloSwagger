@@ -16,4 +16,8 @@ namespace leagueapi {
     v.email = j.at("email").get<std::string>();
     v.password = j.at("password").get<std::string>();
   }
+  inline std::string to_string(const LolEmailVerificationEmailUpdate_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

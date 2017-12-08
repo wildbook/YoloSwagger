@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolChatChatLoginSummonerData_t& v) {
     v.summonerLevelAndPoints = j.at("summonerLevelAndPoints").get<LolChatChatLoginSummonerLevelAndPoints_t>();
   }
+  inline std::string to_string(const LolChatChatLoginSummonerData_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryTimelineFrames_t& v) {
     v.frames = j.at("frames").get<std::vector<LolMatchHistoryMatchHistoryTimelineFrame_t>>();
   }
+  inline std::string to_string(const LolMatchHistoryMatchHistoryTimelineFrames_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolQueueEligibilityCollectionsPlayableChampionCounts_t& v) {
     v.championsOwned = j.at("championsOwned").get<uint32_t>();
   }
+  inline std::string to_string(const LolQueueEligibilityCollectionsPlayableChampionCounts_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolChatChatPlayerStatSummaries_t& v) {
     v.playerStatSummarySet = j.at("playerStatSummarySet").get<std::vector<LolChatChatPlayerStatSummary_t>>();
   }
+  inline std::string to_string(const LolChatChatPlayerStatSummaries_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

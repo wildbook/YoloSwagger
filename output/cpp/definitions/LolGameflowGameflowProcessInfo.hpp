@@ -16,4 +16,8 @@ namespace leagueapi {
     v.rawArgs = j.at("rawArgs").get<std::vector<std::string>>();
     v.pid = j.at("pid").get<uint32_t>();
   }
+  inline std::string to_string(const LolGameflowGameflowProcessInfo_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

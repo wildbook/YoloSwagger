@@ -20,4 +20,11 @@ namespace leagueapi {
       return;
     }
   }
+  inline std::string to_string(const LolLootLootRarity_t& v) {
+    switch(v) {
+      case LolLootLootRarity_t::Default_E:
+        return "Default";
+    }
+  }
+
 }

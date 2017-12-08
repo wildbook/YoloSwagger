@@ -16,4 +16,8 @@ namespace leagueapi {
     v.enabled = j.at("enabled").get<bool>();
     v.countdown = j.at("countdown").get<int64_t>();
   }
+  inline std::string to_string(const LolLobbyLobbyTimer_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -19,4 +19,8 @@ namespace leagueapi {
     v.name = j.at("name").get<std::string>();
     v.language = j.at("language").get<std::string>();
   }
+  inline std::string to_string(const LolStoreItemLocalization_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolLobbyLcdsDynamicClientConfig_t& v) {
     v.PartyRewards = j.at("PartyRewards").get<LolLobbyLcdsPartyRewardsConfig_t>();
   }
+  inline std::string to_string(const LolLobbyLcdsDynamicClientConfig_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

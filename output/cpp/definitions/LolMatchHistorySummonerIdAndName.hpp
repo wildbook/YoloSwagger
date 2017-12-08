@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolMatchHistorySummonerIdAndName_t& v) {
     v.displayName = j.at("displayName").get<std::string>();
   }
+  inline std::string to_string(const LolMatchHistorySummonerIdAndName_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

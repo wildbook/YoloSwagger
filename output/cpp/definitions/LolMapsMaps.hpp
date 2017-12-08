@@ -3,53 +3,57 @@
 #include <optional>
 namespace leagueapi {
   struct LolMapsMaps_t {
-    std::map<std::string, std::string> assets;
-    bool isRGM;
-    bool isDefault;
-    std::string description;
-    std::string gameModeDescription;
-    std::string platformName;
+    std::string gameMode;
+    nlohmann::json properties;
     std::string platformId;
+    std::string gameModeShortName;
+    bool isDefault;
+    std::string name;
+    bool isRGM;
     std::string gameMutator;
     int64_t id;
-    nlohmann::json properties;
+    std::string platformName;
+    std::string description;
     std::string gameModeName;
-    std::string gameModeShortName;
-    std::string name;
-    std::string gameMode;
+    std::string gameModeDescription;
+    std::map<std::string, std::string> assets;
   };
 
   inline void to_json(nlohmann::json& j, const LolMapsMaps_t& v) {
-    j["assets"] = v.assets;
-    j["isRGM"] = v.isRGM;
-    j["isDefault"] = v.isDefault;
-    j["description"] = v.description;
-    j["gameModeDescription"] = v.gameModeDescription;
-    j["platformName"] = v.platformName;
+    j["gameMode"] = v.gameMode;
+    j["properties"] = v.properties;
     j["platformId"] = v.platformId;
+    j["gameModeShortName"] = v.gameModeShortName;
+    j["isDefault"] = v.isDefault;
+    j["name"] = v.name;
+    j["isRGM"] = v.isRGM;
     j["gameMutator"] = v.gameMutator;
     j["id"] = v.id;
-    j["properties"] = v.properties;
+    j["platformName"] = v.platformName;
+    j["description"] = v.description;
     j["gameModeName"] = v.gameModeName;
-    j["gameModeShortName"] = v.gameModeShortName;
-    j["name"] = v.name;
-    j["gameMode"] = v.gameMode;
+    j["gameModeDescription"] = v.gameModeDescription;
+    j["assets"] = v.assets;
   }
 
   inline void from_json(const nlohmann::json& j, LolMapsMaps_t& v) {
-    v.assets = j.at("assets").get<std::map<std::string, std::string>>();
-    v.isRGM = j.at("isRGM").get<bool>();
-    v.isDefault = j.at("isDefault").get<bool>();
-    v.description = j.at("description").get<std::string>();
-    v.gameModeDescription = j.at("gameModeDescription").get<std::string>();
-    v.platformName = j.at("platformName").get<std::string>();
+    v.gameMode = j.at("gameMode").get<std::string>();
+    v.properties = j.at("properties").get<nlohmann::json>();
     v.platformId = j.at("platformId").get<std::string>();
+    v.gameModeShortName = j.at("gameModeShortName").get<std::string>();
+    v.isDefault = j.at("isDefault").get<bool>();
+    v.name = j.at("name").get<std::string>();
+    v.isRGM = j.at("isRGM").get<bool>();
     v.gameMutator = j.at("gameMutator").get<std::string>();
     v.id = j.at("id").get<int64_t>();
-    v.properties = j.at("properties").get<nlohmann::json>();
+    v.platformName = j.at("platformName").get<std::string>();
+    v.description = j.at("description").get<std::string>();
     v.gameModeName = j.at("gameModeName").get<std::string>();
-    v.gameModeShortName = j.at("gameModeShortName").get<std::string>();
-    v.name = j.at("name").get<std::string>();
-    v.gameMode = j.at("gameMode").get<std::string>();
+    v.gameModeDescription = j.at("gameModeDescription").get<std::string>();
+    v.assets = j.at("assets").get<std::map<std::string, std::string>>();
   }
+  inline std::string to_string(const LolMapsMaps_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

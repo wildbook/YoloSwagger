@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolPurchaseWidgetValidationRequest_t& v) {
     v.items = j.at("items").get<std::vector<LolPurchaseWidgetValidationRequestItem_t>>();
   }
+  inline std::string to_string(const LolPurchaseWidgetValidationRequest_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

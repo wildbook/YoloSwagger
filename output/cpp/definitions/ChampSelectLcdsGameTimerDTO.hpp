@@ -16,4 +16,8 @@ namespace leagueapi {
     v.currentGameState = j.at("currentGameState").get<std::string>();
     v.remainingTimeInMillis = j.at("remainingTimeInMillis").get<double>();
   }
+  inline std::string to_string(const ChampSelectLcdsGameTimerDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

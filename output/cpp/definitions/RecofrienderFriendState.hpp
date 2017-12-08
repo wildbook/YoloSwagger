@@ -36,4 +36,15 @@ namespace leagueapi {
       return;
     }
   }
+  inline std::string to_string(const RecofrienderFriendState_t& v) {
+    switch(v) {
+      case RecofrienderFriendState_t::NONE_E:
+        return "NONE";
+      case RecofrienderFriendState_t::FRIEND_E:
+        return "FRIEND";
+      case RecofrienderFriendState_t::BLOCKED_E:
+        return "BLOCKED";
+    }
+  }
+
 }

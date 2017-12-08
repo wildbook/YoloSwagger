@@ -16,4 +16,8 @@ namespace leagueapi {
     v.accountId = j.at("accountId").get<uint64_t>();
     v.summonerId = j.at("summonerId").get<uint64_t>();
   }
+  inline std::string to_string(const RecofrienderSummonerResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

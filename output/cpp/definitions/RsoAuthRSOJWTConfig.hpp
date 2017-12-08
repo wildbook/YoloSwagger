@@ -12,7 +12,11 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, RsoAuthRSOJWTConfig_t& v) {
-    if(auto it = j.find("token"); it != j.end() !it->is_null())
+    if(auto it = j.find("token"); it != j.end() && !it->is_null())
       v.token = it->get<std::string>();
   }
+  inline std::string to_string(const RsoAuthRSOJWTConfig_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

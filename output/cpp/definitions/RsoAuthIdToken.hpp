@@ -16,4 +16,8 @@ namespace leagueapi {
     v.expiry = j.at("expiry").get<uint64_t>();
     v.token = j.at("token").get<std::string>();
   }
+  inline std::string to_string(const RsoAuthIdToken_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

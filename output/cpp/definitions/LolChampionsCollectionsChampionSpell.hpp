@@ -16,4 +16,8 @@ namespace leagueapi {
     v.description = j.at("description").get<std::string>();
     v.name = j.at("name").get<std::string>();
   }
+  inline std::string to_string(const LolChampionsCollectionsChampionSpell_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

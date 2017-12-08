@@ -15,9 +15,13 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyLobbyCustomJoinParameters_t& v) {
-    if(auto it = j.find("asSpectator"); it != j.end() !it->is_null())
+    if(auto it = j.find("asSpectator"); it != j.end() && !it->is_null())
       v.asSpectator = it->get<bool>();
-    if(auto it = j.find("password"); it != j.end() !it->is_null())
+    if(auto it = j.find("password"); it != j.end() && !it->is_null())
       v.password = it->get<std::string>();
   }
+  inline std::string to_string(const LolLobbyLobbyCustomJoinParameters_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

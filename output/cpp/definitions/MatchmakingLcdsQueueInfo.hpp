@@ -16,4 +16,8 @@ namespace leagueapi {
     v.queueId = j.at("queueId").get<int32_t>();
     v.waitTime = j.at("waitTime").get<uint64_t>();
   }
+  inline std::string to_string(const MatchmakingLcdsQueueInfo_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

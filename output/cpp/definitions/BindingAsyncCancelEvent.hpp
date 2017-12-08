@@ -15,4 +15,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, BindingAsyncCancelEvent_t& v) {
     v.asyncToken = j.at("asyncToken").get<uint32_t>();
   }
+  inline std::string to_string(const BindingAsyncCancelEvent_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

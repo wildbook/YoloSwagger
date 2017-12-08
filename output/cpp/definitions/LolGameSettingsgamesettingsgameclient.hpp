@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolGameSettingsgamesettingsgameclient_t& v) {
     v.running = j.at("running").get<bool>();
   }
+  inline std::string to_string(const LolGameSettingsgamesettingsgameclient_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

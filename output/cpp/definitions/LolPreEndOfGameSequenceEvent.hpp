@@ -16,4 +16,8 @@ namespace leagueapi {
     v.priority = j.at("priority").get<int32_t>();
     v.name = j.at("name").get<std::string>();
   }
+  inline std::string to_string(const LolPreEndOfGameSequenceEvent_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

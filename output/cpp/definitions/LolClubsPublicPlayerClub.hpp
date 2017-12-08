@@ -17,4 +17,8 @@ namespace leagueapi {
     v.key = j.at("key").get<std::string>();
     v.members = j.at("members").get<LolClubsPublicClubMemberLists_t>();
   }
+  inline std::string to_string(const LolClubsPublicPlayerClub_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

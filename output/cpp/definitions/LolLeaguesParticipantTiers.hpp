@@ -17,4 +17,8 @@ namespace leagueapi {
     v.achievedTiers = j.at("achievedTiers").get<std::vector<LolLeaguesAchievedTier_t>>();
     v.summonerId = j.at("summonerId").get<uint64_t>();
   }
+  inline std::string to_string(const LolLeaguesParticipantTiers_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

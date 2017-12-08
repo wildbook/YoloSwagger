@@ -17,4 +17,8 @@ namespace leagueapi {
     v.themeVp = j.at("themeVp").get<std::vector<LolClashThemeVp_t>>();
     v.seasonVp = j.at("seasonVp").get<int32_t>();
   }
+  inline std::string to_string(const LolClashPlayerRewards_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

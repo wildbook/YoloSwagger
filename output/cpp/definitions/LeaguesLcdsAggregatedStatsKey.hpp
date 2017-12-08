@@ -16,4 +16,8 @@ namespace leagueapi {
     v.gameMode = j.at("gameMode").get<std::string>();
     v.userId = j.at("userId").get<uint64_t>();
   }
+  inline std::string to_string(const LeaguesLcdsAggregatedStatsKey_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

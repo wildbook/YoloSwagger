@@ -17,4 +17,8 @@ namespace leagueapi {
     v.ownership = j.at("ownership").get<LolCollectionsCollectionsOwnership_t>();
     v.iconId = j.at("iconId").get<int32_t>();
   }
+  inline std::string to_string(const LolCollectionsCollectionsSummonerIcon_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

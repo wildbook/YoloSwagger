@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolPerksPlatformConfig_t& v) {
     v.PerksEnabled = j.at("PerksEnabled").get<bool>();
   }
+  inline std::string to_string(const LolPerksPlatformConfig_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

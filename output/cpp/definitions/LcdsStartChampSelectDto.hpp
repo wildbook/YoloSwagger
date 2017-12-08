@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LcdsStartChampSelectDto_t& v) {
     v.invalidPlayers = j.at("invalidPlayers").get<std::vector<LcdsFailedJoinPlayer_t>>();
   }
+  inline std::string to_string(const LcdsStartChampSelectDto_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolLeaguesLeaguesSeasonRewardConfig_t& v) {
     v.QualificationWarningEnabled = j.at("QualificationWarningEnabled").get<bool>();
   }
+  inline std::string to_string(const LolLeaguesLeaguesSeasonRewardConfig_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

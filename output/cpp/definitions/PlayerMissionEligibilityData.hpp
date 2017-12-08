@@ -17,4 +17,8 @@ namespace leagueapi {
     v.level = j.at("level").get<int32_t>();
     v.playerInventory = j.at("playerInventory").get<PlayerInventory_t>();
   }
+  inline std::string to_string(const PlayerMissionEligibilityData_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -1,9 +1,9 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolEndOfGameGameflowPhase.hpp"
-#include "LolEndOfGameGameflowGameData.hpp"
 #include "LolEndOfGameGameflowClient.hpp"
+#include "LolEndOfGameGameflowGameData.hpp"
+#include "LolEndOfGameGameflowPhase.hpp"
 namespace leagueapi {
   struct LolEndOfGameGameflowSession_t {
     LolEndOfGameGameflowClient_t gameClient;
@@ -22,4 +22,8 @@ namespace leagueapi {
     v.gameData = j.at("gameData").get<LolEndOfGameGameflowGameData_t>();
     v.phase = j.at("phase").get<LolEndOfGameGameflowPhase_t>();
   }
+  inline std::string to_string(const LolEndOfGameGameflowSession_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

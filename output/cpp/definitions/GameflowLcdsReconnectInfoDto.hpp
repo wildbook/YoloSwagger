@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "GameflowLcdsPlayerCredentialsDto.hpp"
 #include "GameflowLcdsGameDTO.hpp"
+#include "GameflowLcdsPlayerCredentialsDto.hpp"
 namespace leagueapi {
   struct GameflowLcdsReconnectInfoDto_t {
     GameflowLcdsGameDTO_t game;
@@ -21,4 +21,8 @@ namespace leagueapi {
     v.playerCredentials = j.at("playerCredentials").get<GameflowLcdsPlayerCredentialsDto_t>();
     v.reconnectDelay = j.at("reconnectDelay").get<uint32_t>();
   }
+  inline std::string to_string(const GameflowLcdsReconnectInfoDto_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

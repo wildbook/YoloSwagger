@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolQueueEligibilityQueueShutdownStatus_t& v) {
     v.isDisabled = j.at("isDisabled").get<bool>();
   }
+  inline std::string to_string(const LolQueueEligibilityQueueShutdownStatus_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

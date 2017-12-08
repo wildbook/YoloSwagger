@@ -23,4 +23,8 @@ namespace leagueapi {
     v.functions = j.at("functions").get<std::vector<BindingFullFunctionHelp_t>>();
     v.events = j.at("events").get<std::vector<BindingFullEventHelp_t>>();
   }
+  inline std::string to_string(const BindingFullApiHelp_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

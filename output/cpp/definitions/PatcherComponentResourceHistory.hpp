@@ -28,4 +28,13 @@ namespace leagueapi {
       return;
     }
   }
+  inline std::string to_string(const PatcherComponentResourceHistory_t& v) {
+    switch(v) {
+      case PatcherComponentResourceHistory_t::keep_E:
+        return "keep";
+      case PatcherComponentResourceHistory_t::none_E:
+        return "none";
+    }
+  }
+
 }

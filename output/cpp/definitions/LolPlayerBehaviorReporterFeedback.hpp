@@ -16,4 +16,8 @@ namespace leagueapi {
     v.id = j.at("id").get<uint64_t>();
     v.type = j.at("type").get<std::string>();
   }
+  inline std::string to_string(const LolPlayerBehaviorReporterFeedback_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

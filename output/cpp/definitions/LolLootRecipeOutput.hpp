@@ -16,4 +16,8 @@ namespace leagueapi {
     v.quantity = j.at("quantity").get<int32_t>();
     v.lootName = j.at("lootName").get<std::string>();
   }
+  inline std::string to_string(const LolLootRecipeOutput_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

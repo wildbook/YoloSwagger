@@ -19,4 +19,8 @@ namespace leagueapi {
     v.displayName = j.at("displayName").get<std::string>();
     v.summonerId = j.at("summonerId").get<uint64_t>();
   }
+  inline std::string to_string(const LolSuggestedPlayersSuggestedPlayersSummoner_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

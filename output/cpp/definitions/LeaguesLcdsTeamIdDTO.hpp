@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LeaguesLcdsTeamIdDTO_t& v) {
     v.fullId = j.at("fullId").get<std::string>();
   }
+  inline std::string to_string(const LeaguesLcdsTeamIdDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

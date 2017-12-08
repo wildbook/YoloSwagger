@@ -16,4 +16,8 @@ namespace leagueapi {
     v.icon = j.at("icon").get<int32_t>();
     v.memberOwnedCount = j.at("memberOwnedCount").get<int32_t>();
   }
+  inline std::string to_string(const RewardIcon_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

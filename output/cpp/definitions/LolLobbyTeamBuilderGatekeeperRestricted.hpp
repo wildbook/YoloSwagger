@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderGatekeeperRestricted_t& v) {
     v.gatekeeperRestrictions = j.at("gatekeeperRestrictions").get<std::vector<LolLobbyTeamBuilderGatekeeperRestriction_t>>();
   }
+  inline std::string to_string(const LolLobbyTeamBuilderGatekeeperRestricted_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -12,7 +12,11 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, RecofrienderDebugConfig_t& v) {
-    if(auto it = j.find("isHttpLoggingEnabled"); it != j.end() !it->is_null())
+    if(auto it = j.find("isHttpLoggingEnabled"); it != j.end() && !it->is_null())
       v.isHttpLoggingEnabled = it->get<bool>();
   }
+  inline std::string to_string(const RecofrienderDebugConfig_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

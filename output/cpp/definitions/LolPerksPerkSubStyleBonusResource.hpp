@@ -16,4 +16,8 @@ namespace leagueapi {
     v.styleId = j.at("styleId").get<int32_t>();
     v.perkId = j.at("perkId").get<int32_t>();
   }
+  inline std::string to_string(const LolPerksPerkSubStyleBonusResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

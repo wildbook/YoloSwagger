@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolBannersInventoryItemsByType_t& v) {
     v.TOURNAMENT_FLAG = j.at("TOURNAMENT_FLAG").get<std::vector<LolBannersTournamentFlagInventoryItem_t>>();
   }
+  inline std::string to_string(const LolBannersInventoryItemsByType_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -3,9 +3,9 @@
 namespace leagueapi {
   enum class LolGameflowQueueGameCategory_t {
     VersusAi_E = 3,
-    None_E = 0,
     Custom_E = 1,
     PvP_E = 2,
+    None_E = 0,
   };
 
   inline void to_json(nlohmann::json& j, const LolGameflowQueueGameCategory_t& v) {
@@ -13,14 +13,14 @@ namespace leagueapi {
       case LolGameflowQueueGameCategory_t::VersusAi_E:
         j = "VersusAi";
       break;
-      case LolGameflowQueueGameCategory_t::None_E:
-        j = "None";
-      break;
       case LolGameflowQueueGameCategory_t::Custom_E:
         j = "Custom";
       break;
       case LolGameflowQueueGameCategory_t::PvP_E:
         j = "PvP";
+      break;
+      case LolGameflowQueueGameCategory_t::None_E:
+        j = "None";
       break;
     }
   }
@@ -31,10 +31,6 @@ namespace leagueapi {
       v = LolGameflowQueueGameCategory_t::VersusAi_E;
       return;
     }
-    if(s == "None"){
-      v = LolGameflowQueueGameCategory_t::None_E;
-      return;
-    }
     if(s == "Custom"){
       v = LolGameflowQueueGameCategory_t::Custom_E;
       return;
@@ -43,5 +39,22 @@ namespace leagueapi {
       v = LolGameflowQueueGameCategory_t::PvP_E;
       return;
     }
+    if(s == "None"){
+      v = LolGameflowQueueGameCategory_t::None_E;
+      return;
+    }
   }
+  inline std::string to_string(const LolGameflowQueueGameCategory_t& v) {
+    switch(v) {
+      case LolGameflowQueueGameCategory_t::VersusAi_E:
+        return "VersusAi";
+      case LolGameflowQueueGameCategory_t::Custom_E:
+        return "Custom";
+      case LolGameflowQueueGameCategory_t::PvP_E:
+        return "PvP";
+      case LolGameflowQueueGameCategory_t::None_E:
+        return "None";
+    }
+  }
+
 }

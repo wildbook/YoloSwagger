@@ -16,4 +16,8 @@ namespace leagueapi {
     v.name = j.at("name").get<std::string>();
     v.sumId = j.at("sumId").get<uint64_t>();
   }
+  inline std::string to_string(const LcdsSummoner_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolCollectionsLcdsDynamicClientConfig_t& v) {
     v.DisabledChampions = j.at("DisabledChampions").get<nlohmann::json>();
   }
+  inline std::string to_string(const LolCollectionsLcdsDynamicClientConfig_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

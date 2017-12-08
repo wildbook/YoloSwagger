@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, PlaytimeReminder_t& v) {
     v.hours = j.at("hours").get<uint32_t>();
   }
+  inline std::string to_string(const PlaytimeReminder_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

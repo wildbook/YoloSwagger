@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolChampSelectChampSelectBannableChampions_t& v) {
     v.championIds = j.at("championIds").get<std::vector<int32_t>>();
   }
+  inline std::string to_string(const LolChampSelectChampSelectBannableChampions_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

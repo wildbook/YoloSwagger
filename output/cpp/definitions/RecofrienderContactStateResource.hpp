@@ -19,4 +19,8 @@ namespace leagueapi {
     v.displayState = j.at("displayState").get<std::string>();
     v.action = j.at("action").get<std::string>();
   }
+  inline std::string to_string(const RecofrienderContactStateResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

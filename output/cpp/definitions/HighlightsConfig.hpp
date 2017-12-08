@@ -16,4 +16,8 @@ namespace leagueapi {
     v.isHighlightsEnabled = j.at("isHighlightsEnabled").get<bool>();
     v.invalidHighlightNameCharacters = j.at("invalidHighlightNameCharacters").get<std::string>();
   }
+  inline std::string to_string(const HighlightsConfig_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

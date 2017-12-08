@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolChatGameflowGameMap_t& v) {
     v.id = j.at("id").get<int64_t>();
   }
+  inline std::string to_string(const LolChatGameflowGameMap_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

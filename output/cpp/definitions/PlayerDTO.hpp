@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, PlayerDTO_t& v) {
     v.tickets = j.at("tickets").get<int32_t>();
   }
+  inline std::string to_string(const PlayerDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

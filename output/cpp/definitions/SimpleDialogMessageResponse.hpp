@@ -19,4 +19,8 @@ namespace leagueapi {
     v.msgId = j.at("msgId").get<std::string>();
     v.command = j.at("command").get<std::string>();
   }
+  inline std::string to_string(const SimpleDialogMessageResponse_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

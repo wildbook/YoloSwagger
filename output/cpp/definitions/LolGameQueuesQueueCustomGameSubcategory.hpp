@@ -5,44 +5,48 @@
 #include "LolGameQueuesQueueAvailability.hpp"
 namespace leagueapi {
   struct LolGameQueuesQueueCustomGameSubcategory_t {
-    std::string gameMutator;
-    uint32_t maxLevel;
-    int32_t mapId;
-    int32_t maxPlayerCount;
-    int32_t maximumParticipantListSize;
-    std::vector<LolGameQueuesQueueGameTypeConfig_t> mutators;
-    int32_t minimumParticipantListSize;
     std::string gameMode;
-    uint32_t minLevel;
-    LolGameQueuesQueueAvailability_t queueAvailability;
     int32_t numPlayersPerTeam;
+    int32_t maximumParticipantListSize;
+    LolGameQueuesQueueAvailability_t queueAvailability;
+    int32_t minimumParticipantListSize;
+    int32_t mapId;
+    std::string gameMutator;
+    int32_t maxPlayerCount;
+    uint32_t minLevel;
+    std::vector<LolGameQueuesQueueGameTypeConfig_t> mutators;
+    uint32_t maxLevel;
   };
 
   inline void to_json(nlohmann::json& j, const LolGameQueuesQueueCustomGameSubcategory_t& v) {
-    j["gameMutator"] = v.gameMutator;
-    j["maxLevel"] = v.maxLevel;
-    j["mapId"] = v.mapId;
-    j["maxPlayerCount"] = v.maxPlayerCount;
-    j["maximumParticipantListSize"] = v.maximumParticipantListSize;
-    j["mutators"] = v.mutators;
-    j["minimumParticipantListSize"] = v.minimumParticipantListSize;
     j["gameMode"] = v.gameMode;
-    j["minLevel"] = v.minLevel;
-    j["queueAvailability"] = v.queueAvailability;
     j["numPlayersPerTeam"] = v.numPlayersPerTeam;
+    j["maximumParticipantListSize"] = v.maximumParticipantListSize;
+    j["queueAvailability"] = v.queueAvailability;
+    j["minimumParticipantListSize"] = v.minimumParticipantListSize;
+    j["mapId"] = v.mapId;
+    j["gameMutator"] = v.gameMutator;
+    j["maxPlayerCount"] = v.maxPlayerCount;
+    j["minLevel"] = v.minLevel;
+    j["mutators"] = v.mutators;
+    j["maxLevel"] = v.maxLevel;
   }
 
   inline void from_json(const nlohmann::json& j, LolGameQueuesQueueCustomGameSubcategory_t& v) {
-    v.gameMutator = j.at("gameMutator").get<std::string>();
-    v.maxLevel = j.at("maxLevel").get<uint32_t>();
-    v.mapId = j.at("mapId").get<int32_t>();
-    v.maxPlayerCount = j.at("maxPlayerCount").get<int32_t>();
-    v.maximumParticipantListSize = j.at("maximumParticipantListSize").get<int32_t>();
-    v.mutators = j.at("mutators").get<std::vector<LolGameQueuesQueueGameTypeConfig_t>>();
-    v.minimumParticipantListSize = j.at("minimumParticipantListSize").get<int32_t>();
     v.gameMode = j.at("gameMode").get<std::string>();
-    v.minLevel = j.at("minLevel").get<uint32_t>();
-    v.queueAvailability = j.at("queueAvailability").get<LolGameQueuesQueueAvailability_t>();
     v.numPlayersPerTeam = j.at("numPlayersPerTeam").get<int32_t>();
+    v.maximumParticipantListSize = j.at("maximumParticipantListSize").get<int32_t>();
+    v.queueAvailability = j.at("queueAvailability").get<LolGameQueuesQueueAvailability_t>();
+    v.minimumParticipantListSize = j.at("minimumParticipantListSize").get<int32_t>();
+    v.mapId = j.at("mapId").get<int32_t>();
+    v.gameMutator = j.at("gameMutator").get<std::string>();
+    v.maxPlayerCount = j.at("maxPlayerCount").get<int32_t>();
+    v.minLevel = j.at("minLevel").get<uint32_t>();
+    v.mutators = j.at("mutators").get<std::vector<LolGameQueuesQueueGameTypeConfig_t>>();
+    v.maxLevel = j.at("maxLevel").get<uint32_t>();
   }
+  inline std::string to_string(const LolGameQueuesQueueCustomGameSubcategory_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

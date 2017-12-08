@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolGameSettingsgamesettingsgameflowsession_t& v) {
     v.gameClient = j.at("gameClient").get<LolGameSettingsgamesettingsgameclient_t>();
   }
+  inline std::string to_string(const LolGameSettingsgamesettingsgameflowsession_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

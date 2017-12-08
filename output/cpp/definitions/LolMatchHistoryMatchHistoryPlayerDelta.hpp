@@ -20,4 +20,8 @@ namespace leagueapi {
     v.originalAccountId = j.at("originalAccountId").get<uint64_t>();
     v.originalPlatformId = j.at("originalPlatformId").get<std::string>();
   }
+  inline std::string to_string(const LolMatchHistoryMatchHistoryPlayerDelta_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

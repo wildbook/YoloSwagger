@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolCollectionsGameDataChampionMasteryTree_t& v) {
     v.groups = j.at("groups").get<std::vector<LolCollectionsGameDataChampionMasteryGroup_t>>();
   }
+  inline std::string to_string(const LolCollectionsGameDataChampionMasteryTree_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -3,8 +3,8 @@
 namespace leagueapi {
   enum class LolChatFriendRequestDirection_t {
     both_E = 2,
-    in_E = 0,
     out_E = 1,
+    in_E = 0,
   };
 
   inline void to_json(nlohmann::json& j, const LolChatFriendRequestDirection_t& v) {
@@ -12,11 +12,11 @@ namespace leagueapi {
       case LolChatFriendRequestDirection_t::both_E:
         j = "both";
       break;
-      case LolChatFriendRequestDirection_t::in_E:
-        j = "in";
-      break;
       case LolChatFriendRequestDirection_t::out_E:
         j = "out";
+      break;
+      case LolChatFriendRequestDirection_t::in_E:
+        j = "in";
       break;
     }
   }
@@ -27,13 +27,24 @@ namespace leagueapi {
       v = LolChatFriendRequestDirection_t::both_E;
       return;
     }
-    if(s == "in"){
-      v = LolChatFriendRequestDirection_t::in_E;
-      return;
-    }
     if(s == "out"){
       v = LolChatFriendRequestDirection_t::out_E;
       return;
     }
+    if(s == "in"){
+      v = LolChatFriendRequestDirection_t::in_E;
+      return;
+    }
   }
+  inline std::string to_string(const LolChatFriendRequestDirection_t& v) {
+    switch(v) {
+      case LolChatFriendRequestDirection_t::both_E:
+        return "both";
+      case LolChatFriendRequestDirection_t::out_E:
+        return "out";
+      case LolChatFriendRequestDirection_t::in_E:
+        return "in";
+    }
+  }
+
 }

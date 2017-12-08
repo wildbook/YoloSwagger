@@ -16,4 +16,8 @@ namespace leagueapi {
     v.body = j.at("body").get<nlohmann::json>();
     v.typeName = j.at("typeName").get<std::string>();
   }
+  inline std::string to_string(const PluginLcdsResponse_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

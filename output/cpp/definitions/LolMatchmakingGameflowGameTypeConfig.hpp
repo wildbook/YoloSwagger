@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolMatchmakingGameflowGameTypeConfig_t& v) {
     v.reroll = j.at("reroll").get<bool>();
   }
+  inline std::string to_string(const LolMatchmakingGameflowGameTypeConfig_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

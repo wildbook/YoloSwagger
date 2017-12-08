@@ -17,4 +17,8 @@ namespace leagueapi {
     v.reasonFailed = j.at("reasonFailed").get<std::string>();
     v.summoner = j.at("summoner").get<LcdsSummoner_t>();
   }
+  inline std::string to_string(const LcdsFailedJoinPlayer_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

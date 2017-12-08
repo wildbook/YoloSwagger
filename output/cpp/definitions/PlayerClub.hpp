@@ -1,59 +1,63 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "ClubMember.hpp"
-#include "ClubMemberLists.hpp"
 #include "ClubRole.hpp"
+#include "ClubMember.hpp"
 #include "ClubPermissions.hpp"
+#include "ClubMemberLists.hpp"
 namespace leagueapi {
   struct PlayerClub_t {
-    bool primary;
-    std::string key;
-    std::string tag;
-    int64_t created;
-    std::string description;
-    ClubMemberLists_t members;
-    bool isClubTagEligible;
-    ClubRole_t role;
-    std::string name;
+    ClubMember_t owner;
     int64_t lastModified;
     std::string motd;
+    std::string name;
+    int64_t created;
+    std::string key;
+    ClubRole_t role;
+    bool primary;
+    std::string description;
     std::string jid;
-    ClubMember_t owner;
+    bool isClubTagEligible;
+    ClubMemberLists_t members;
     ClubPermissions_t permissions;
+    std::string tag;
   };
 
   inline void to_json(nlohmann::json& j, const PlayerClub_t& v) {
-    j["primary"] = v.primary;
-    j["key"] = v.key;
-    j["tag"] = v.tag;
-    j["created"] = v.created;
-    j["description"] = v.description;
-    j["members"] = v.members;
-    j["isClubTagEligible"] = v.isClubTagEligible;
-    j["role"] = v.role;
-    j["name"] = v.name;
+    j["owner"] = v.owner;
     j["lastModified"] = v.lastModified;
     j["motd"] = v.motd;
+    j["name"] = v.name;
+    j["created"] = v.created;
+    j["key"] = v.key;
+    j["role"] = v.role;
+    j["primary"] = v.primary;
+    j["description"] = v.description;
     j["jid"] = v.jid;
-    j["owner"] = v.owner;
+    j["isClubTagEligible"] = v.isClubTagEligible;
+    j["members"] = v.members;
     j["permissions"] = v.permissions;
+    j["tag"] = v.tag;
   }
 
   inline void from_json(const nlohmann::json& j, PlayerClub_t& v) {
-    v.primary = j.at("primary").get<bool>();
-    v.key = j.at("key").get<std::string>();
-    v.tag = j.at("tag").get<std::string>();
-    v.created = j.at("created").get<int64_t>();
-    v.description = j.at("description").get<std::string>();
-    v.members = j.at("members").get<ClubMemberLists_t>();
-    v.isClubTagEligible = j.at("isClubTagEligible").get<bool>();
-    v.role = j.at("role").get<ClubRole_t>();
-    v.name = j.at("name").get<std::string>();
+    v.owner = j.at("owner").get<ClubMember_t>();
     v.lastModified = j.at("lastModified").get<int64_t>();
     v.motd = j.at("motd").get<std::string>();
+    v.name = j.at("name").get<std::string>();
+    v.created = j.at("created").get<int64_t>();
+    v.key = j.at("key").get<std::string>();
+    v.role = j.at("role").get<ClubRole_t>();
+    v.primary = j.at("primary").get<bool>();
+    v.description = j.at("description").get<std::string>();
     v.jid = j.at("jid").get<std::string>();
-    v.owner = j.at("owner").get<ClubMember_t>();
+    v.isClubTagEligible = j.at("isClubTagEligible").get<bool>();
+    v.members = j.at("members").get<ClubMemberLists_t>();
     v.permissions = j.at("permissions").get<ClubPermissions_t>();
+    v.tag = j.at("tag").get<std::string>();
   }
+  inline std::string to_string(const PlayerClub_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -16,4 +16,8 @@ namespace leagueapi {
     v.y = j.at("y").get<int16_t>();
     v.x = j.at("x").get<int16_t>();
   }
+  inline std::string to_string(const LolMatchHistoryMatchHistoryPosition_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

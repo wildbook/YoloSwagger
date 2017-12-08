@@ -19,4 +19,8 @@ namespace leagueapi {
     v.description = j.at("description").get<std::string>();
     v.id = j.at("id").get<std::string>();
   }
+  inline std::string to_string(const LolPlayerBehaviorPlayerBehavior_LoginError_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -17,4 +17,8 @@ namespace leagueapi {
     v.partyId = j.at("partyId").get<std::string>();
     v.players = j.at("players").get<std::vector<LolLobbyPremadeMemberDto_t>>();
   }
+  inline std::string to_string(const LolLobbyPremadePartyDto_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

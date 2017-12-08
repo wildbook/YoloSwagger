@@ -25,4 +25,8 @@ namespace leagueapi {
     v.clubKey = j.at("clubKey").get<std::string>();
     v.action = j.at("action").get<std::string>();
   }
+  inline std::string to_string(const MembershipNoficationsDto_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

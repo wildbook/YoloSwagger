@@ -17,4 +17,8 @@ namespace leagueapi {
     v.player = j.at("player").get<LolMatchHistoryMatchHistoryParticipantIdentityPlayer_t>();
     v.participantId = j.at("participantId").get<uint16_t>();
   }
+  inline std::string to_string(const LolMatchHistoryMatchHistoryParticipantIdentities_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

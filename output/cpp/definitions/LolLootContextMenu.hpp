@@ -3,38 +3,42 @@
 #include <optional>
 namespace leagueapi {
   struct LolLootContextMenu_t {
-    int32_t essenceQuantity;
+    std::string requiredOthersName;
+    std::string actionType;
+    int32_t requiredOthersCount;
+    std::string requiredTokens;
+    bool enabled;
     std::string name;
     std::string requiredOthers;
-    std::string requiredTokens;
-    std::string requiredOthersName;
-    int32_t requiredOthersCount;
-    bool enabled;
-    std::string actionType;
+    int32_t essenceQuantity;
     std::string essenceType;
   };
 
   inline void to_json(nlohmann::json& j, const LolLootContextMenu_t& v) {
-    j["essenceQuantity"] = v.essenceQuantity;
+    j["requiredOthersName"] = v.requiredOthersName;
+    j["actionType"] = v.actionType;
+    j["requiredOthersCount"] = v.requiredOthersCount;
+    j["requiredTokens"] = v.requiredTokens;
+    j["enabled"] = v.enabled;
     j["name"] = v.name;
     j["requiredOthers"] = v.requiredOthers;
-    j["requiredTokens"] = v.requiredTokens;
-    j["requiredOthersName"] = v.requiredOthersName;
-    j["requiredOthersCount"] = v.requiredOthersCount;
-    j["enabled"] = v.enabled;
-    j["actionType"] = v.actionType;
+    j["essenceQuantity"] = v.essenceQuantity;
     j["essenceType"] = v.essenceType;
   }
 
   inline void from_json(const nlohmann::json& j, LolLootContextMenu_t& v) {
-    v.essenceQuantity = j.at("essenceQuantity").get<int32_t>();
+    v.requiredOthersName = j.at("requiredOthersName").get<std::string>();
+    v.actionType = j.at("actionType").get<std::string>();
+    v.requiredOthersCount = j.at("requiredOthersCount").get<int32_t>();
+    v.requiredTokens = j.at("requiredTokens").get<std::string>();
+    v.enabled = j.at("enabled").get<bool>();
     v.name = j.at("name").get<std::string>();
     v.requiredOthers = j.at("requiredOthers").get<std::string>();
-    v.requiredTokens = j.at("requiredTokens").get<std::string>();
-    v.requiredOthersName = j.at("requiredOthersName").get<std::string>();
-    v.requiredOthersCount = j.at("requiredOthersCount").get<int32_t>();
-    v.enabled = j.at("enabled").get<bool>();
-    v.actionType = j.at("actionType").get<std::string>();
+    v.essenceQuantity = j.at("essenceQuantity").get<int32_t>();
     v.essenceType = j.at("essenceType").get<std::string>();
   }
+  inline std::string to_string(const LolLootContextMenu_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

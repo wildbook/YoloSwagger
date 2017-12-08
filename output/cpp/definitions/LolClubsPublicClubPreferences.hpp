@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolClubsPublicClubPreferences_t& v) {
     v.shareClubAffiliation = j.at("shareClubAffiliation").get<bool>();
   }
+  inline std::string to_string(const LolClubsPublicClubPreferences_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

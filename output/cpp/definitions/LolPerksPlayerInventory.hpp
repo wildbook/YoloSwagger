@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolPerksPlayerInventory_t& v) {
     v.ownedPageCount = j.at("ownedPageCount").get<uint32_t>();
   }
+  inline std::string to_string(const LolPerksPlayerInventory_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

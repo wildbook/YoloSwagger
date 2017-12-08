@@ -20,4 +20,8 @@ namespace leagueapi {
     v.currentBid = j.at("currentBid").get<int32_t>();
     v.incomingOffers = j.at("incomingOffers").get<std::vector<LolClashTicketOffer_t>>();
   }
+  inline std::string to_string(const LolClashBiddingData_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

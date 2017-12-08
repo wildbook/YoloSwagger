@@ -1,0 +1,21 @@
+#pragma once
+#incldue "../client.hpp"
+namespace leagueapi {
+  //Retrieves details on the current state of an asynchronous operation.
+  nlohmann::json AsyncStatus (const ClientInfo& info,
+    //ID of the asynchronous operation to check
+    const uint32_t& asyncToken)
+  {
+    using std::to_string;
+    Headers headers = {{"Authorization", auth}};
+    const std::string body ="";
+    std::string path = "/AsyncStatus?asyncToken=" + UrlCode::encode(to_string(asyncToken));
+    HttpsClient client(info.host, false);
+    auto res = client.request("post", path, body, headers);
+    if(res->status_code != 406)
+      throw OpError(res->content.string());
+    if(auto it = res->header.find("content-type"); it !=res->header.end() && it->second == "application/json")
+      return nlohmann::json(res->content.string());
+    return res->content.string();
+  }
+}

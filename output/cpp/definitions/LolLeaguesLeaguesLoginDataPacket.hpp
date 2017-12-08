@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolLeaguesLeaguesLoginDataPacket_t& v) {
     v.simpleMessages = j.at("simpleMessages").get<std::vector<LolLeaguesSimpleMessage_t>>();
   }
+  inline std::string to_string(const LolLeaguesLeaguesLoginDataPacket_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -17,4 +17,8 @@ namespace leagueapi {
     v.champions = j.at("champions").get<std::vector<LolAcsAcsChampionGames_t>>();
     v.gameCount = j.at("gameCount").get<uint32_t>();
   }
+  inline std::string to_string(const LolAcsAcsChampionGamesCollection_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

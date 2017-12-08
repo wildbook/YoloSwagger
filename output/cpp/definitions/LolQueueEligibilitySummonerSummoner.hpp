@@ -16,4 +16,8 @@ namespace leagueapi {
     v.summonerLevel = j.at("summonerLevel").get<uint32_t>();
     v.summonerId = j.at("summonerId").get<uint64_t>();
   }
+  inline std::string to_string(const LolQueueEligibilitySummonerSummoner_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

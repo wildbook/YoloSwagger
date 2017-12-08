@@ -16,4 +16,8 @@ namespace leagueapi {
     v.voterRelationship = j.at("voterRelationship").get<std::string>();
     v.honorCategory = j.at("honorCategory").get<std::string>();
   }
+  inline std::string to_string(const LolHonorV2Honor_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

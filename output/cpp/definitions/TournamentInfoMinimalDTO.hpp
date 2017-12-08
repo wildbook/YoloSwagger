@@ -17,4 +17,8 @@ namespace leagueapi {
     v.tournamentInfo = j.at("tournamentInfo").get<std::vector<TournamentInfoDTO_t>>();
     v.time = j.at("time").get<int64_t>();
   }
+  inline std::string to_string(const TournamentInfoMinimalDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

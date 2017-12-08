@@ -16,4 +16,8 @@ namespace leagueapi {
     v.username = j.at("username").get<std::string>();
     v.password = j.at("password").get<std::string>();
   }
+  inline std::string to_string(const LolLoginUsernameAndPassword_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

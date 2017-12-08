@@ -17,4 +17,8 @@ namespace leagueapi {
     v.type = j.at("type").get<std::string>();
     v.elementType = j.at("elementType").get<std::string>();
   }
+  inline std::string to_string(const BindingFullTypeIdentifier_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

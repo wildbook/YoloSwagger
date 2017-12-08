@@ -3,9 +3,9 @@
 namespace leagueapi {
   enum class ClubInviteStatus_t {
     REJECTED_E = 2,
-    BLOCKED_E = 3,
     PENDING_E = 0,
     ACCEPTED_E = 1,
+    BLOCKED_E = 3,
   };
 
   inline void to_json(nlohmann::json& j, const ClubInviteStatus_t& v) {
@@ -13,14 +13,14 @@ namespace leagueapi {
       case ClubInviteStatus_t::REJECTED_E:
         j = "REJECTED";
       break;
-      case ClubInviteStatus_t::BLOCKED_E:
-        j = "BLOCKED";
-      break;
       case ClubInviteStatus_t::PENDING_E:
         j = "PENDING";
       break;
       case ClubInviteStatus_t::ACCEPTED_E:
         j = "ACCEPTED";
+      break;
+      case ClubInviteStatus_t::BLOCKED_E:
+        j = "BLOCKED";
       break;
     }
   }
@@ -31,10 +31,6 @@ namespace leagueapi {
       v = ClubInviteStatus_t::REJECTED_E;
       return;
     }
-    if(s == "BLOCKED"){
-      v = ClubInviteStatus_t::BLOCKED_E;
-      return;
-    }
     if(s == "PENDING"){
       v = ClubInviteStatus_t::PENDING_E;
       return;
@@ -43,5 +39,22 @@ namespace leagueapi {
       v = ClubInviteStatus_t::ACCEPTED_E;
       return;
     }
+    if(s == "BLOCKED"){
+      v = ClubInviteStatus_t::BLOCKED_E;
+      return;
+    }
   }
+  inline std::string to_string(const ClubInviteStatus_t& v) {
+    switch(v) {
+      case ClubInviteStatus_t::REJECTED_E:
+        return "REJECTED";
+      case ClubInviteStatus_t::PENDING_E:
+        return "PENDING";
+      case ClubInviteStatus_t::ACCEPTED_E:
+        return "ACCEPTED";
+      case ClubInviteStatus_t::BLOCKED_E:
+        return "BLOCKED";
+    }
+  }
+
 }

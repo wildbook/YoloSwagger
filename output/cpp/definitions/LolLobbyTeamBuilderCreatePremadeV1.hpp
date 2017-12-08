@@ -13,4 +13,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderCreatePremadeV1_t& v) {
     v.queueId = j.at("queueId").get<int32_t>();
   }
+  inline std::string to_string(const LolLobbyTeamBuilderCreatePremadeV1_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

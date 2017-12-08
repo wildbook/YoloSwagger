@@ -16,4 +16,8 @@ namespace leagueapi {
     v.description = j.at("description").get<std::string>();
     v.type = j.at("type").get<std::string>();
   }
+  inline std::string to_string(const MissionRequirementDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

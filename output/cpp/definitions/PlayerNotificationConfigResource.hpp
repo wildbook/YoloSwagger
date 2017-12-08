@@ -12,7 +12,11 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PlayerNotificationConfigResource_t& v) {
-    if(auto it = j.find("ExpirationCheckFrequency"); it != j.end() !it->is_null())
+    if(auto it = j.find("ExpirationCheckFrequency"); it != j.end() && !it->is_null())
       v.ExpirationCheckFrequency = it->get<uint64_t>();
   }
+  inline std::string to_string(const PlayerNotificationConfigResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolSuggestedPlayersSuggestedPlayersDynamicClientConfig_t& v) {
     v.SuggestedPlayers = j.at("SuggestedPlayers").get<LolSuggestedPlayersSuggestedPlayersConfig_t>();
   }
+  inline std::string to_string(const LolSuggestedPlayersSuggestedPlayersDynamicClientConfig_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

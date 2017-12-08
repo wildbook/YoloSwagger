@@ -16,4 +16,8 @@ namespace leagueapi {
     v.body = j.at("body").get<std::string>();
     v.fromSummonerName = j.at("fromSummonerName").get<std::string>();
   }
+  inline std::string to_string(const GameClientChatMessageResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

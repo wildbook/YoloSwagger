@@ -17,4 +17,8 @@ namespace leagueapi {
     v.tournamentWinnersCompressed = j.at("tournamentWinnersCompressed").get<std::string>();
     v.tournamentHistory = j.at("tournamentHistory").get<std::vector<TournamentDTO_t>>();
   }
+  inline std::string to_string(const TournamentHistoryAndWinnersDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

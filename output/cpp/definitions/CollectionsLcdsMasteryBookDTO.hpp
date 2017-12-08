@@ -20,4 +20,8 @@ namespace leagueapi {
     v.dateString = j.at("dateString").get<std::string>();
     v.bookPages = j.at("bookPages").get<std::vector<CollectionsLcdsMasteryBookPageDTO_t>>();
   }
+  inline std::string to_string(const CollectionsLcdsMasteryBookDTO_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

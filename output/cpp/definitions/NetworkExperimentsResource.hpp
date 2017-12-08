@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, NetworkExperimentsResource_t& v) {
     v.experiments = j.at("experiments").get<std::map<std::string, NetworkExperimentResource_t>>();
   }
+  inline std::string to_string(const NetworkExperimentsResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

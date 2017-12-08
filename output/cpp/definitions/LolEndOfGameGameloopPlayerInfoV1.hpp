@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolEndOfGameGameloopPlayerInfoV1_t& v) {
     v.rerollDataBag = j.at("rerollDataBag").get<LolEndOfGameRerollDataBagForClientV1_t>();
   }
+  inline std::string to_string(const LolEndOfGameGameloopPlayerInfoV1_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

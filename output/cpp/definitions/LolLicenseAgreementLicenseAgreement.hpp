@@ -20,4 +20,8 @@ namespace leagueapi {
     v.id = j.at("id").get<std::string>();
     v.text = j.at("text").get<std::string>();
   }
+  inline std::string to_string(const LolLicenseAgreementLicenseAgreement_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

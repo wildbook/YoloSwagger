@@ -14,4 +14,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, PluginManagerResource_t& v) {
     v.state = j.at("state").get<PluginManagerState_t>();
   }
+  inline std::string to_string(const PluginManagerResource_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

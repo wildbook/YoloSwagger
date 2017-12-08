@@ -16,4 +16,8 @@ namespace leagueapi {
     v.masteryId = j.at("masteryId").get<uint16_t>();
     v.rank = j.at("rank").get<uint16_t>();
   }
+  inline std::string to_string(const LolMatchHistoryMatchHistoryMastery_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

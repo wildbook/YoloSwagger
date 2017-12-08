@@ -16,4 +16,8 @@ namespace leagueapi {
     v.kudoedSummonerId = j.at("kudoedSummonerId").get<uint64_t>();
     v.kudoedSummonerName = j.at("kudoedSummonerName").get<std::string>();
   }
+  inline std::string to_string(const LolSuggestedPlayersSuggestedPlayersKudoedPlayer_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }

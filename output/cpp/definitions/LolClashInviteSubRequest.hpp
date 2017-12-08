@@ -16,4 +16,8 @@ namespace leagueapi {
     v.replacedSummonerId = j.at("replacedSummonerId").get<uint64_t>();
     v.substituteSummonerId = j.at("substituteSummonerId").get<uint64_t>();
   }
+  inline std::string to_string(const LolClashInviteSubRequest_t& v) {
+    nlohmann::json j = v;
+    return j.dump();  }
+
 }
