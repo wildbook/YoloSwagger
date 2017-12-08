@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t PutLolPerksV1Currentpage (const ClientInfo& info,
-    const int32_t_t& id)
+  nlohmann::json PutLolPerksV1Currentpage (const ClientInfo& info,
+    const int32_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

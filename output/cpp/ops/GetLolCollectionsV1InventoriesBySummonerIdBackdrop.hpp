@@ -3,7 +3,7 @@
 #include "LolCollectionsCollectionsSummonerBackdrop.hpp"
 namespace leagueapi {
   LolCollectionsCollectionsSummonerBackdrop_t GetLolCollectionsV1InventoriesBySummonerIdBackdrop (const ClientInfo& info,
-    const uint64_t_t& summonerId)
+    const uint64_t& summonerId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

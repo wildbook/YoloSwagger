@@ -4,8 +4,8 @@
 namespace leagueapi {
   struct LolChampionsGameDataChampionChroma_t {
     std::vector<std::string> colors;
-    std::string_t chromaPath;
-    int32_t_t id;
+    std::string chromaPath;
+    int32_t id;
   };
 
   inline void to_json(nlohmann::json& j, const LolChampionsGameDataChampionChroma_t& v) {
@@ -16,8 +16,8 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolChampionsGameDataChampionChroma_t& v) {
     v.colors = j.at("colors").get<std::vector<std::string>>();
-    v.chromaPath = j.at("chromaPath").get<std::string_t>();
-    v.id = j.at("id").get<int32_t_t>();
+    v.chromaPath = j.at("chromaPath").get<std::string>();
+    v.id = j.at("id").get<int32_t>();
   }
   inline std::string to_string(const LolChampionsGameDataChampionChroma_t& v) {
     nlohmann::json j = v;

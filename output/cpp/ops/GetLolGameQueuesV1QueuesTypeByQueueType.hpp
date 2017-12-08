@@ -3,7 +3,7 @@
 #include "LolGameQueuesQueue.hpp"
 namespace leagueapi {
   LolGameQueuesQueue_t GetLolGameQueuesV1QueuesTypeByQueueType (const ClientInfo& info,
-    const std::string_t& queueType)
+    const std::string& queueType)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

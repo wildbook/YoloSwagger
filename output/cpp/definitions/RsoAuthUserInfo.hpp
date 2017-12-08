@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct RsoAuthUserInfo_t {
-    std::string_t userInfo;
+    std::string userInfo;
   };
 
   inline void to_json(nlohmann::json& j, const RsoAuthUserInfo_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, RsoAuthUserInfo_t& v) {
-    v.userInfo = j.at("userInfo").get<std::string_t>();
+    v.userInfo = j.at("userInfo").get<std::string>();
   }
   inline std::string to_string(const RsoAuthUserInfo_t& v) {
     nlohmann::json j = v;

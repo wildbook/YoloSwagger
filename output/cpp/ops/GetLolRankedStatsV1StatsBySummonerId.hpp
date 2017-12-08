@@ -3,7 +3,7 @@
 #include "LolRankedStatsRankedData.hpp"
 namespace leagueapi {
   LolRankedStatsRankedData_t GetLolRankedStatsV1StatsBySummonerId (const ClientInfo& info,
-    const uint64_t_t& summonerId)
+    const uint64_t& summonerId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

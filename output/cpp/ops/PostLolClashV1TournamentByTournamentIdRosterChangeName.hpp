@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "LolClashChangeNameRequest.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolClashV1TournamentByTournamentIdRosterChangeName (const ClientInfo& info,
-    const int64_t_t& tournamentId,
+  nlohmann::json PostLolClashV1TournamentByTournamentIdRosterChangeName (const ClientInfo& info,
+    const int64_t& tournamentId,
     const LolClashChangeNameRequest_t& changeNameRequest)
   {
     using std::to_string;

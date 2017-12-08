@@ -4,8 +4,8 @@
 #include "LolLobbyLobbyBotDifficulty.hpp"
 namespace leagueapi {
   struct LolLobbyLobbyBotParams_t {
-    std::string_t teamId;
-    int32_t_t championId;
+    std::string teamId;
+    int32_t championId;
     LolLobbyLobbyBotDifficulty_t botDifficulty;
   };
 
@@ -16,8 +16,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyLobbyBotParams_t& v) {
-    v.teamId = j.at("teamId").get<std::string_t>();
-    v.championId = j.at("championId").get<int32_t_t>();
+    v.teamId = j.at("teamId").get<std::string>();
+    v.championId = j.at("championId").get<int32_t>();
     v.botDifficulty = j.at("botDifficulty").get<LolLobbyLobbyBotDifficulty_t>();
   }
   inline std::string to_string(const LolLobbyLobbyBotParams_t& v) {

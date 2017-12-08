@@ -4,7 +4,7 @@
 #include "LolLobbyLobbyCustomFailedPlayer.hpp"
 namespace leagueapi {
   struct LolLobbyLobbyCustomChampSelectStartResponse_t {
-    bool_t success;
+    bool success;
     std::vector<LolLobbyLobbyCustomFailedPlayer_t> failedPlayers;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyLobbyCustomChampSelectStartResponse_t& v) {
-    v.success = j.at("success").get<bool_t>();
+    v.success = j.at("success").get<bool>();
     v.failedPlayers = j.at("failedPlayers").get<std::vector<LolLobbyLobbyCustomFailedPlayer_t>>();
   }
   inline std::string to_string(const LolLobbyLobbyCustomChampSelectStartResponse_t& v) {

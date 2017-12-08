@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Returns process memory status
-  nlohmann::json_t GetPerformanceV1Memory (const ClientInfo& info)
+  nlohmann::json GetPerformanceV1Memory (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

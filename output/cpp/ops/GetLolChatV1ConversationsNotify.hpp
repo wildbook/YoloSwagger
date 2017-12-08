@@ -1,7 +1,7 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  std::string_t GetLolChatV1ConversationsNotify (const ClientInfo& info)
+  std::string GetLolChatV1ConversationsNotify (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolLobbyTeamBuilderLobbyInvitation_t {
-    nlohmann::json_t invitationMetaData;
+    nlohmann::json invitationMetaData;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLobbyInvitation_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLobbyInvitation_t& v) {
-    v.invitationMetaData = j.at("invitationMetaData").get<nlohmann::json_t>();
+    v.invitationMetaData = j.at("invitationMetaData").get<nlohmann::json>();
   }
   inline std::string to_string(const LolLobbyTeamBuilderLobbyInvitation_t& v) {
     nlohmann::json j = v;

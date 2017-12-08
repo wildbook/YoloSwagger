@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolLobbyV1LobbyCustomSwitchTeams (const ClientInfo& info,
-    const std::optional<std::string_t>& team = std::nullopt)
+  nlohmann::json PostLolLobbyV1LobbyCustomSwitchTeams (const ClientInfo& info,
+    const std::optional<std::string>& team = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

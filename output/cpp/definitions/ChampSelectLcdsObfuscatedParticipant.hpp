@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct ChampSelectLcdsObfuscatedParticipant_t {
-    uint64_t_t gameUniqueId;
+    uint64_t gameUniqueId;
   };
 
   inline void to_json(nlohmann::json& j, const ChampSelectLcdsObfuscatedParticipant_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, ChampSelectLcdsObfuscatedParticipant_t& v) {
-    v.gameUniqueId = j.at("gameUniqueId").get<uint64_t_t>();
+    v.gameUniqueId = j.at("gameUniqueId").get<uint64_t>();
   }
   inline std::string to_string(const ChampSelectLcdsObfuscatedParticipant_t& v) {
     nlohmann::json j = v;

@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void PostLolMissionsV1MissionsByMissionId (const ClientInfo& info,
-    const std::string_t& missionId)
+    const std::string& missionId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void PostLolGameClientChatV1PartyMessages (const ClientInfo& info,
-    const std::string_t& message)
+    const std::string& message)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

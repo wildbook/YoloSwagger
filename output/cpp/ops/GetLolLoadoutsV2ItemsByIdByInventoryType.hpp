@@ -1,9 +1,9 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t GetLolLoadoutsV2ItemsByIdByInventoryType (const ClientInfo& info,
-    const uint32_t_t& id,
-    const std::string_t& inventoryType)
+  nlohmann::json GetLolLoadoutsV2ItemsByIdByInventoryType (const ClientInfo& info,
+    const uint32_t& id,
+    const std::string& inventoryType)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

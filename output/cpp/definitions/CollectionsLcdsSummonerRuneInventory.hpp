@@ -4,9 +4,9 @@
 #include "CollectionsLcdsSummonerRune.hpp"
 namespace leagueapi {
   struct CollectionsLcdsSummonerRuneInventory_t {
-    std::string_t dateString;
+    std::string dateString;
     std::vector<CollectionsLcdsSummonerRune_t> summonerRunes;
-    uint64_t_t summonerId;
+    uint64_t summonerId;
   };
 
   inline void to_json(nlohmann::json& j, const CollectionsLcdsSummonerRuneInventory_t& v) {
@@ -16,9 +16,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, CollectionsLcdsSummonerRuneInventory_t& v) {
-    v.dateString = j.at("dateString").get<std::string_t>();
+    v.dateString = j.at("dateString").get<std::string>();
     v.summonerRunes = j.at("summonerRunes").get<std::vector<CollectionsLcdsSummonerRune_t>>();
-    v.summonerId = j.at("summonerId").get<uint64_t_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
   }
   inline std::string to_string(const CollectionsLcdsSummonerRuneInventory_t& v) {
     nlohmann::json j = v;

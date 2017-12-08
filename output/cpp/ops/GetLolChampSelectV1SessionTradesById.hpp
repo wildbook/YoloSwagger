@@ -3,7 +3,7 @@
 #include "LolChampSelectChampSelectTradeContract.hpp"
 namespace leagueapi {
   LolChampSelectChampSelectTradeContract_t GetLolChampSelectV1SessionTradesById (const ClientInfo& info,
-    const int64_t_t& id)
+    const int64_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

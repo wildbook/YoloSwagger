@@ -3,12 +3,12 @@
 #include <optional>
 namespace leagueapi {
   struct LCDSPlayerMessagingSimpleMessage_t {
-    std::string_t titleCode;
-    std::string_t msgId;
-    std::string_t bodyCode;
+    std::string titleCode;
+    std::string msgId;
+    std::string bodyCode;
     std::vector<std::string> params;
-    std::string_t type;
-    uint64_t_t accountId;
+    std::string type;
+    uint64_t accountId;
   };
 
   inline void to_json(nlohmann::json& j, const LCDSPlayerMessagingSimpleMessage_t& v) {
@@ -21,12 +21,12 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LCDSPlayerMessagingSimpleMessage_t& v) {
-    v.titleCode = j.at("titleCode").get<std::string_t>();
-    v.msgId = j.at("msgId").get<std::string_t>();
-    v.bodyCode = j.at("bodyCode").get<std::string_t>();
+    v.titleCode = j.at("titleCode").get<std::string>();
+    v.msgId = j.at("msgId").get<std::string>();
+    v.bodyCode = j.at("bodyCode").get<std::string>();
     v.params = j.at("params").get<std::vector<std::string>>();
-    v.type = j.at("type").get<std::string_t>();
-    v.accountId = j.at("accountId").get<uint64_t_t>();
+    v.type = j.at("type").get<std::string>();
+    v.accountId = j.at("accountId").get<uint64_t>();
   }
   inline std::string to_string(const LCDSPlayerMessagingSimpleMessage_t& v) {
     nlohmann::json j = v;

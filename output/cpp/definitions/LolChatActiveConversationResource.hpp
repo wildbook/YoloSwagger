@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolChatActiveConversationResource_t {
-    std::string_t id;
+    std::string id;
   };
 
   inline void to_json(nlohmann::json& j, const LolChatActiveConversationResource_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChatActiveConversationResource_t& v) {
-    v.id = j.at("id").get<std::string_t>();
+    v.id = j.at("id").get<std::string>();
   }
   inline std::string to_string(const LolChatActiveConversationResource_t& v) {
     nlohmann::json j = v;

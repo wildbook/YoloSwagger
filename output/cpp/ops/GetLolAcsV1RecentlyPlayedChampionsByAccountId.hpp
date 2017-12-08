@@ -3,8 +3,8 @@
 #include "LolAcsAcsChampionGamesCollection.hpp"
 namespace leagueapi {
   LolAcsAcsChampionGamesCollection_t GetLolAcsV1RecentlyPlayedChampionsByAccountId (const ClientInfo& info,
-    const uint64_t_t& accountId,
-    const bool_t& force)
+    const uint64_t& accountId,
+    const bool& force)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

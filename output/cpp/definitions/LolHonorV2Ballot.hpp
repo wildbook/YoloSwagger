@@ -4,7 +4,7 @@
 #include "LolHonorV2EligiblePlayer.hpp"
 namespace leagueapi {
   struct LolHonorV2Ballot_t {
-    uint64_t_t gameId;
+    uint64_t gameId;
     std::vector<LolHonorV2EligiblePlayer_t> eligiblePlayers;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolHonorV2Ballot_t& v) {
-    v.gameId = j.at("gameId").get<uint64_t_t>();
+    v.gameId = j.at("gameId").get<uint64_t>();
     v.eligiblePlayers = j.at("eligiblePlayers").get<std::vector<LolHonorV2EligiblePlayer_t>>();
   }
   inline std::string to_string(const LolHonorV2Ballot_t& v) {

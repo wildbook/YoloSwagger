@@ -4,10 +4,10 @@
 #include "ServiceStatusIncident_Severity.hpp"
 namespace leagueapi {
   struct TickerMessage_t {
-    std::string_t message;
-    std::string_t updatedAt;
-    std::string_t heading;
-    std::string_t createdAt;
+    std::string message;
+    std::string updatedAt;
+    std::string heading;
+    std::string createdAt;
     ServiceStatusIncident_Severity_t severity;
   };
 
@@ -20,10 +20,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, TickerMessage_t& v) {
-    v.message = j.at("message").get<std::string_t>();
-    v.updatedAt = j.at("updatedAt").get<std::string_t>();
-    v.heading = j.at("heading").get<std::string_t>();
-    v.createdAt = j.at("createdAt").get<std::string_t>();
+    v.message = j.at("message").get<std::string>();
+    v.updatedAt = j.at("updatedAt").get<std::string>();
+    v.heading = j.at("heading").get<std::string>();
+    v.createdAt = j.at("createdAt").get<std::string>();
     v.severity = j.at("severity").get<ServiceStatusIncident_Severity_t>();
   }
   inline std::string to_string(const TickerMessage_t& v) {

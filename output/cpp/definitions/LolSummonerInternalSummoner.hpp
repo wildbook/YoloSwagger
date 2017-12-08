@@ -3,17 +3,17 @@
 #include <optional>
 namespace leagueapi {
   struct LolSummonerInternalSummoner_t {
-    bool_t displayEloQuestionaireFlag;
-    std::string_t internalName;
-    std::string_t displayName;
-    bool_t tutorialFlag;
-    std::string_t lastSeasonHighestRank;
-    uint64_t_t summonerId;
-    int32_t_t profileIconId;
-    bool_t helpFlag;
-    bool_t nameChangeFlag;
-    bool_t advancedTutorialFlag;
-    uint64_t_t accountId;
+    bool displayEloQuestionaireFlag;
+    std::string internalName;
+    std::string displayName;
+    bool tutorialFlag;
+    std::string lastSeasonHighestRank;
+    uint64_t summonerId;
+    int32_t profileIconId;
+    bool helpFlag;
+    bool nameChangeFlag;
+    bool advancedTutorialFlag;
+    uint64_t accountId;
   };
 
   inline void to_json(nlohmann::json& j, const LolSummonerInternalSummoner_t& v) {
@@ -31,17 +31,17 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolSummonerInternalSummoner_t& v) {
-    v.displayEloQuestionaireFlag = j.at("displayEloQuestionaireFlag").get<bool_t>();
-    v.internalName = j.at("internalName").get<std::string_t>();
-    v.displayName = j.at("displayName").get<std::string_t>();
-    v.tutorialFlag = j.at("tutorialFlag").get<bool_t>();
-    v.lastSeasonHighestRank = j.at("lastSeasonHighestRank").get<std::string_t>();
-    v.summonerId = j.at("summonerId").get<uint64_t_t>();
-    v.profileIconId = j.at("profileIconId").get<int32_t_t>();
-    v.helpFlag = j.at("helpFlag").get<bool_t>();
-    v.nameChangeFlag = j.at("nameChangeFlag").get<bool_t>();
-    v.advancedTutorialFlag = j.at("advancedTutorialFlag").get<bool_t>();
-    v.accountId = j.at("accountId").get<uint64_t_t>();
+    v.displayEloQuestionaireFlag = j.at("displayEloQuestionaireFlag").get<bool>();
+    v.internalName = j.at("internalName").get<std::string>();
+    v.displayName = j.at("displayName").get<std::string>();
+    v.tutorialFlag = j.at("tutorialFlag").get<bool>();
+    v.lastSeasonHighestRank = j.at("lastSeasonHighestRank").get<std::string>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.profileIconId = j.at("profileIconId").get<int32_t>();
+    v.helpFlag = j.at("helpFlag").get<bool>();
+    v.nameChangeFlag = j.at("nameChangeFlag").get<bool>();
+    v.advancedTutorialFlag = j.at("advancedTutorialFlag").get<bool>();
+    v.accountId = j.at("accountId").get<uint64_t>();
   }
   inline std::string to_string(const LolSummonerInternalSummoner_t& v) {
     nlohmann::json j = v;

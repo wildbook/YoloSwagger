@@ -5,7 +5,7 @@
 namespace leagueapi {
   struct LolLobbyTeamBuilderTbRemovedFromServiceNotification_t {
     LolLobbyTeamBuilderBackwardsTransitionInfoV1_t backwardsTransitionInfo;
-    std::string_t reason;
+    std::string reason;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderTbRemovedFromServiceNotification_t& v) {
@@ -15,7 +15,7 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderTbRemovedFromServiceNotification_t& v) {
     v.backwardsTransitionInfo = j.at("backwardsTransitionInfo").get<LolLobbyTeamBuilderBackwardsTransitionInfoV1_t>();
-    v.reason = j.at("reason").get<std::string_t>();
+    v.reason = j.at("reason").get<std::string>();
   }
   inline std::string to_string(const LolLobbyTeamBuilderTbRemovedFromServiceNotification_t& v) {
     nlohmann::json j = v;

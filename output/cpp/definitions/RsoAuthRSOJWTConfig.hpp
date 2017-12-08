@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct RsoAuthRSOJWTConfig_t {
-    std::optional<std::string_t> token;
+    std::optional<std::string> token;
   };
 
   inline void to_json(nlohmann::json& j, const RsoAuthRSOJWTConfig_t& v) {
@@ -13,7 +13,7 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, RsoAuthRSOJWTConfig_t& v) {
     if(auto it = j.find("token"); it != j.end() && !it->is_null())
-      v.token = it->get<std::string_t>();
+      v.token = it->get<std::string>();
   }
   inline std::string to_string(const RsoAuthRSOJWTConfig_t& v) {
     nlohmann::json j = v;

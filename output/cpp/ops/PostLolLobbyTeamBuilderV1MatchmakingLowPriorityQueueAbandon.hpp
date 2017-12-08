@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolLobbyTeamBuilderV1MatchmakingLowPriorityQueueAbandon (const ClientInfo& info,
-    const std::string_t& leaverBusterToken)
+  nlohmann::json PostLolLobbyTeamBuilderV1MatchmakingLowPriorityQueueAbandon (const ClientInfo& info,
+    const std::string& leaverBusterToken)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

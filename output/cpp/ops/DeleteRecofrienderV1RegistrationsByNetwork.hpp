@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t DeleteRecofrienderV1RegistrationsByNetwork (const ClientInfo& info,
-    const std::string_t& network)
+  nlohmann::json DeleteRecofrienderV1RegistrationsByNetwork (const ClientInfo& info,
+    const std::string& network)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

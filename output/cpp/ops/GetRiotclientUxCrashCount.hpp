@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Returns whether the ux has crashed or not
-  uint32_t_t GetRiotclientUxCrashCount (const ClientInfo& info)
+  uint32_t GetRiotclientUxCrashCount (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -3,8 +3,8 @@
 #include ".hpp"
 namespace leagueapi {
   void PostLolPreEndOfGameV1RegistrationBySequenceEventNameByPriority (const ClientInfo& info,
-    const std::string_t& sequenceEventName,
-    const int32_t_t& priority)
+    const std::string& sequenceEventName,
+    const int32_t& priority)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

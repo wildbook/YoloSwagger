@@ -4,15 +4,15 @@
 #include "LolChatChatPlatformLoginSessionState.hpp"
 namespace leagueapi {
   struct LolChatChatPlatformLoginSession_t {
-    std::string_t username;
-    std::string_t userAuthToken;
-    std::string_t idToken;
+    std::string username;
+    std::string userAuthToken;
+    std::string idToken;
     LolChatChatPlatformLoginSessionState_t state;
-    std::string_t puuid;
-    nlohmann::json_t gasToken;
-    std::optional<uint64_t_t> summonerId;
-    bool_t isNewPlayer;
-    uint64_t_t accountId;
+    std::string puuid;
+    nlohmann::json gasToken;
+    std::optional<uint64_t> summonerId;
+    bool isNewPlayer;
+    uint64_t accountId;
   };
 
   inline void to_json(nlohmann::json& j, const LolChatChatPlatformLoginSession_t& v) {
@@ -29,16 +29,16 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChatChatPlatformLoginSession_t& v) {
-    v.username = j.at("username").get<std::string_t>();
-    v.userAuthToken = j.at("userAuthToken").get<std::string_t>();
-    v.idToken = j.at("idToken").get<std::string_t>();
+    v.username = j.at("username").get<std::string>();
+    v.userAuthToken = j.at("userAuthToken").get<std::string>();
+    v.idToken = j.at("idToken").get<std::string>();
     v.state = j.at("state").get<LolChatChatPlatformLoginSessionState_t>();
-    v.puuid = j.at("puuid").get<std::string_t>();
-    v.gasToken = j.at("gasToken").get<nlohmann::json_t>();
+    v.puuid = j.at("puuid").get<std::string>();
+    v.gasToken = j.at("gasToken").get<nlohmann::json>();
     if(auto it = j.find("summonerId"); it != j.end() && !it->is_null())
-      v.summonerId = it->get<uint64_t_t>();
-    v.isNewPlayer = j.at("isNewPlayer").get<bool_t>();
-    v.accountId = j.at("accountId").get<uint64_t_t>();
+      v.summonerId = it->get<uint64_t>();
+    v.isNewPlayer = j.at("isNewPlayer").get<bool>();
+    v.accountId = j.at("accountId").get<uint64_t>();
   }
   inline std::string to_string(const LolChatChatPlatformLoginSession_t& v) {
     nlohmann::json j = v;

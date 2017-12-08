@@ -8,7 +8,7 @@ namespace leagueapi {
     std::vector<MemberSinceDto_t> nominatedMembers;
     std::vector<MemberSinceDto_t> activeMembers;
     std::vector<MemberSinceDto_t> removedMembers;
-    std::string_t clubKey;
+    std::string clubKey;
   };
 
   inline void to_json(nlohmann::json& j, const ClubMembershipDto_t& v) {
@@ -24,7 +24,7 @@ namespace leagueapi {
     v.nominatedMembers = j.at("nominatedMembers").get<std::vector<MemberSinceDto_t>>();
     v.activeMembers = j.at("activeMembers").get<std::vector<MemberSinceDto_t>>();
     v.removedMembers = j.at("removedMembers").get<std::vector<MemberSinceDto_t>>();
-    v.clubKey = j.at("clubKey").get<std::string_t>();
+    v.clubKey = j.at("clubKey").get<std::string>();
   }
   inline std::string to_string(const ClubMembershipDto_t& v) {
     nlohmann::json j = v;

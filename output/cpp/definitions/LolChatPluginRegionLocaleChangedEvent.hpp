@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LolChatPluginRegionLocaleChangedEvent_t {
-    std::string_t locale;
-    std::string_t region;
+    std::string locale;
+    std::string region;
   };
 
   inline void to_json(nlohmann::json& j, const LolChatPluginRegionLocaleChangedEvent_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChatPluginRegionLocaleChangedEvent_t& v) {
-    v.locale = j.at("locale").get<std::string_t>();
-    v.region = j.at("region").get<std::string_t>();
+    v.locale = j.at("locale").get<std::string>();
+    v.region = j.at("region").get<std::string>();
   }
   inline std::string to_string(const LolChatPluginRegionLocaleChangedEvent_t& v) {
     nlohmann::json j = v;

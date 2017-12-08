@@ -3,16 +3,16 @@
 #include <optional>
 namespace leagueapi {
   struct LolEsportStreamNotificationsESportStreamNotificationsConfig_t {
-    bool_t useServiceEndpointV2;
-    std::string_t notificationsStreamURL;
-    int64_t_t notificationsLongPollMinutes;
-    int64_t_t beappFailureLongPollMinutes;
-    int64_t_t notificationsShortPollMinutes;
-    std::string_t notificationsServiceEndpoint;
-    bool_t notificationsEnabled;
-    std::string_t notificationsAssetMagickURL;
-    std::string_t notificationsServiceEndpointV2;
-    std::string_t notificationsStreamGroupSlug;
+    bool useServiceEndpointV2;
+    std::string notificationsStreamURL;
+    int64_t notificationsLongPollMinutes;
+    int64_t beappFailureLongPollMinutes;
+    int64_t notificationsShortPollMinutes;
+    std::string notificationsServiceEndpoint;
+    bool notificationsEnabled;
+    std::string notificationsAssetMagickURL;
+    std::string notificationsServiceEndpointV2;
+    std::string notificationsStreamGroupSlug;
   };
 
   inline void to_json(nlohmann::json& j, const LolEsportStreamNotificationsESportStreamNotificationsConfig_t& v) {
@@ -29,16 +29,16 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsESportStreamNotificationsConfig_t& v) {
-    v.useServiceEndpointV2 = j.at("useServiceEndpointV2").get<bool_t>();
-    v.notificationsStreamURL = j.at("notificationsStreamURL").get<std::string_t>();
-    v.notificationsLongPollMinutes = j.at("notificationsLongPollMinutes").get<int64_t_t>();
-    v.beappFailureLongPollMinutes = j.at("beappFailureLongPollMinutes").get<int64_t_t>();
-    v.notificationsShortPollMinutes = j.at("notificationsShortPollMinutes").get<int64_t_t>();
-    v.notificationsServiceEndpoint = j.at("notificationsServiceEndpoint").get<std::string_t>();
-    v.notificationsEnabled = j.at("notificationsEnabled").get<bool_t>();
-    v.notificationsAssetMagickURL = j.at("notificationsAssetMagickURL").get<std::string_t>();
-    v.notificationsServiceEndpointV2 = j.at("notificationsServiceEndpointV2").get<std::string_t>();
-    v.notificationsStreamGroupSlug = j.at("notificationsStreamGroupSlug").get<std::string_t>();
+    v.useServiceEndpointV2 = j.at("useServiceEndpointV2").get<bool>();
+    v.notificationsStreamURL = j.at("notificationsStreamURL").get<std::string>();
+    v.notificationsLongPollMinutes = j.at("notificationsLongPollMinutes").get<int64_t>();
+    v.beappFailureLongPollMinutes = j.at("beappFailureLongPollMinutes").get<int64_t>();
+    v.notificationsShortPollMinutes = j.at("notificationsShortPollMinutes").get<int64_t>();
+    v.notificationsServiceEndpoint = j.at("notificationsServiceEndpoint").get<std::string>();
+    v.notificationsEnabled = j.at("notificationsEnabled").get<bool>();
+    v.notificationsAssetMagickURL = j.at("notificationsAssetMagickURL").get<std::string>();
+    v.notificationsServiceEndpointV2 = j.at("notificationsServiceEndpointV2").get<std::string>();
+    v.notificationsStreamGroupSlug = j.at("notificationsStreamGroupSlug").get<std::string>();
   }
   inline std::string to_string(const LolEsportStreamNotificationsESportStreamNotificationsConfig_t& v) {
     nlohmann::json j = v;

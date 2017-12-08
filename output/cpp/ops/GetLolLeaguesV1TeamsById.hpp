@@ -3,7 +3,7 @@
 #include "LolLeaguesLeagueTeam.hpp"
 namespace leagueapi {
   LolLeaguesLeagueTeam_t GetLolLeaguesV1TeamsById (const ClientInfo& info,
-    const std::string_t& id)
+    const std::string& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

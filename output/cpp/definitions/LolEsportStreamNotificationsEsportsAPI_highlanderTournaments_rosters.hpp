@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters_t {
-    int64_t_t team;
-    std::string_t id;
-    std::string_t name;
+    int64_t team;
+    std::string id;
+    std::string name;
   };
 
   inline void to_json(nlohmann::json& j, const LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters_t& v) {
-    v.team = j.at("team").get<int64_t_t>();
-    v.id = j.at("id").get<std::string_t>();
-    v.name = j.at("name").get<std::string_t>();
+    v.team = j.at("team").get<int64_t>();
+    v.id = j.at("id").get<std::string>();
+    v.name = j.at("name").get<std::string>();
   }
   inline std::string to_string(const LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters_t& v) {
     nlohmann::json j = v;

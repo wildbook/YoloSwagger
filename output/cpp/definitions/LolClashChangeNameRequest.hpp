@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolClashChangeNameRequest_t {
-    std::string_t name;
+    std::string name;
   };
 
   inline void to_json(nlohmann::json& j, const LolClashChangeNameRequest_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolClashChangeNameRequest_t& v) {
-    v.name = j.at("name").get<std::string_t>();
+    v.name = j.at("name").get<std::string>();
   }
   inline std::string to_string(const LolClashChangeNameRequest_t& v) {
     nlohmann::json j = v;

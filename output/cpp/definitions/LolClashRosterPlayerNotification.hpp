@@ -7,7 +7,7 @@
 namespace leagueapi {
   struct LolClashRosterPlayerNotification_t {
     PlayerDTO_t player;
-    uint64_t_t sourcePlayerId;
+    uint64_t sourcePlayerId;
     LolClashRosterNotifyReason_t notifyReason;
     RosterDTO_t roster;
   };
@@ -21,7 +21,7 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolClashRosterPlayerNotification_t& v) {
     v.player = j.at("player").get<PlayerDTO_t>();
-    v.sourcePlayerId = j.at("sourcePlayerId").get<uint64_t_t>();
+    v.sourcePlayerId = j.at("sourcePlayerId").get<uint64_t>();
     v.notifyReason = j.at("notifyReason").get<LolClashRosterNotifyReason_t>();
     v.roster = j.at("roster").get<RosterDTO_t>();
   }

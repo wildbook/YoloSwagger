@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Get the current Ux state.
-  std::string_t GetRiotclientUxState (const ClientInfo& info)
+  std::string GetRiotclientUxState (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

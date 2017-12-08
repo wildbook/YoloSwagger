@@ -5,7 +5,7 @@
 namespace leagueapi {
   // Describes a log entry.
   struct LogEvent_t {
-    std::string_t message;
+    std::string message;
     LogSeverityLevels_t severity;
   };
 
@@ -15,7 +15,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LogEvent_t& v) {
-    v.message = j.at("message").get<std::string_t>();
+    v.message = j.at("message").get<std::string>();
     v.severity = j.at("severity").get<LogSeverityLevels_t>();
   }
   inline std::string to_string(const LogEvent_t& v) {

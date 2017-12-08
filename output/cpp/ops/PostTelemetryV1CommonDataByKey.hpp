@@ -5,9 +5,9 @@ namespace leagueapi {
   //Adds/updates a common data key and value to be sent with every subsequent event.
   void PostTelemetryV1CommonDataByKey (const ClientInfo& info,
     //The name of the common data key
-    const std::string_t& key,
+    const std::string& key,
     //The value of the common data key
-    const std::string_t& value)
+    const std::string& value)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

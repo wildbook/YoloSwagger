@@ -8,15 +8,15 @@
 #include "LolMatchmakingMatchmakingLowPriorityData.hpp"
 namespace leagueapi {
   struct LolMatchmakingMatchmakingSearchResource_t {
-    std::string_t lobbyId;
-    int32_t_t queueId;
+    std::string lobbyId;
+    int32_t queueId;
     std::vector<LolMatchmakingMatchmakingSearchErrorResource_t> errors;
-    float_t timeInQueue;
+    float timeInQueue;
     LolMatchmakingMatchmakingLowPriorityData_t lowPriorityData;
     LolMatchmakingMatchmakingDodgeData_t dodgeData;
-    bool_t isCurrentlyInQueue;
+    bool isCurrentlyInQueue;
     LolMatchmakingMatchmakingReadyCheckResource_t readyCheck;
-    float_t estimatedQueueTime;
+    float estimatedQueueTime;
     LolMatchmakingMatchmakingSearchState_t searchState;
   };
 
@@ -34,15 +34,15 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingSearchResource_t& v) {
-    v.lobbyId = j.at("lobbyId").get<std::string_t>();
-    v.queueId = j.at("queueId").get<int32_t_t>();
+    v.lobbyId = j.at("lobbyId").get<std::string>();
+    v.queueId = j.at("queueId").get<int32_t>();
     v.errors = j.at("errors").get<std::vector<LolMatchmakingMatchmakingSearchErrorResource_t>>();
-    v.timeInQueue = j.at("timeInQueue").get<float_t>();
+    v.timeInQueue = j.at("timeInQueue").get<float>();
     v.lowPriorityData = j.at("lowPriorityData").get<LolMatchmakingMatchmakingLowPriorityData_t>();
     v.dodgeData = j.at("dodgeData").get<LolMatchmakingMatchmakingDodgeData_t>();
-    v.isCurrentlyInQueue = j.at("isCurrentlyInQueue").get<bool_t>();
+    v.isCurrentlyInQueue = j.at("isCurrentlyInQueue").get<bool>();
     v.readyCheck = j.at("readyCheck").get<LolMatchmakingMatchmakingReadyCheckResource_t>();
-    v.estimatedQueueTime = j.at("estimatedQueueTime").get<float_t>();
+    v.estimatedQueueTime = j.at("estimatedQueueTime").get<float>();
     v.searchState = j.at("searchState").get<LolMatchmakingMatchmakingSearchState_t>();
   }
   inline std::string to_string(const LolMatchmakingMatchmakingSearchResource_t& v) {

@@ -2,13 +2,13 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Download the header for a backend asset
-  nlohmann::json_t HeadByPluginAssetsByPath (const ClientInfo& info,
+  nlohmann::json HeadByPluginAssetsByPath (const ClientInfo& info,
     //Plugin name to serve from
-    const std::string_t& plugin,
+    const std::string& plugin,
     //Path to the asset to serve
-    const std::string_t& path,
+    const std::string& path,
     //optional ETag of the asset that the caller has cached
-    const std::optional<std::string_t>& if-none-match = std::nullopt)
+    const std::optional<std::string>& if-none-match = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

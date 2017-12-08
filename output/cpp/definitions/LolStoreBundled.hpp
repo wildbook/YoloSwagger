@@ -5,7 +5,7 @@
 #include "LolStoreBundledItem.hpp"
 namespace leagueapi {
   struct LolStoreBundled_t {
-    bool_t flexible;
+    bool flexible;
     std::vector<LolStoreBundledItemCost_t> minimumPrices;
     std::vector<LolStoreBundledItem_t> items;
   };
@@ -17,7 +17,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolStoreBundled_t& v) {
-    v.flexible = j.at("flexible").get<bool_t>();
+    v.flexible = j.at("flexible").get<bool>();
     v.minimumPrices = j.at("minimumPrices").get<std::vector<LolStoreBundledItemCost_t>>();
     v.items = j.at("items").get<std::vector<LolStoreBundledItem_t>>();
   }

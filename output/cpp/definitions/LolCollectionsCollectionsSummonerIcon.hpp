@@ -4,7 +4,7 @@
 #include "LolCollectionsCollectionsOwnership.hpp"
 namespace leagueapi {
   struct LolCollectionsCollectionsSummonerIcon_t {
-    int32_t_t iconId;
+    int32_t iconId;
     LolCollectionsCollectionsOwnership_t ownership;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsSummonerIcon_t& v) {
-    v.iconId = j.at("iconId").get<int32_t_t>();
+    v.iconId = j.at("iconId").get<int32_t>();
     v.ownership = j.at("ownership").get<LolCollectionsCollectionsOwnership_t>();
   }
   inline std::string to_string(const LolCollectionsCollectionsSummonerIcon_t& v) {

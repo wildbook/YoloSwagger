@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Closes the connection.
-  nlohmann::json_t Exit (const ClientInfo& info)
+  nlohmann::json Exit (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

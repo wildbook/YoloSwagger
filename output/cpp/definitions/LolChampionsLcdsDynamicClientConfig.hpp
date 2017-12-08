@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolChampionsLcdsDynamicClientConfig_t {
-    nlohmann::json_t DisabledChampions;
+    nlohmann::json DisabledChampions;
   };
 
   inline void to_json(nlohmann::json& j, const LolChampionsLcdsDynamicClientConfig_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChampionsLcdsDynamicClientConfig_t& v) {
-    v.DisabledChampions = j.at("DisabledChampions").get<nlohmann::json_t>();
+    v.DisabledChampions = j.at("DisabledChampions").get<nlohmann::json>();
   }
   inline std::string to_string(const LolChampionsLcdsDynamicClientConfig_t& v) {
     nlohmann::json j = v;

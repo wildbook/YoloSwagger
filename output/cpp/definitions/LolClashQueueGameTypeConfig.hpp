@@ -3,26 +3,26 @@
 #include <optional>
 namespace leagueapi {
   struct LolClashQueueGameTypeConfig_t {
-    bool_t advancedLearningQuests;
-    bool_t allowTrades;
-    bool_t battleBoost;
-    bool_t learningQuests;
-    bool_t deathMatch;
-    bool_t crossTeamChampionPool;
-    bool_t exclusivePick;
-    int64_t_t id;
-    bool_t teamChampionPool;
-    bool_t duplicatePick;
-    bool_t doNotRemove;
-    int32_t_t banTimerDuration;
-    int32_t_t maxAllowableBans;
-    bool_t reroll;
-    std::string_t pickMode;
-    bool_t onboardCoopBeginner;
-    int32_t_t mainPickTimerDuration;
-    std::string_t banMode;
-    int32_t_t postPickTimerDuration;
-    std::string_t name;
+    bool advancedLearningQuests;
+    bool allowTrades;
+    bool battleBoost;
+    bool learningQuests;
+    bool deathMatch;
+    bool crossTeamChampionPool;
+    bool exclusivePick;
+    int64_t id;
+    bool teamChampionPool;
+    bool duplicatePick;
+    bool doNotRemove;
+    int32_t banTimerDuration;
+    int32_t maxAllowableBans;
+    bool reroll;
+    std::string pickMode;
+    bool onboardCoopBeginner;
+    int32_t mainPickTimerDuration;
+    std::string banMode;
+    int32_t postPickTimerDuration;
+    std::string name;
   };
 
   inline void to_json(nlohmann::json& j, const LolClashQueueGameTypeConfig_t& v) {
@@ -49,26 +49,26 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolClashQueueGameTypeConfig_t& v) {
-    v.advancedLearningQuests = j.at("advancedLearningQuests").get<bool_t>();
-    v.allowTrades = j.at("allowTrades").get<bool_t>();
-    v.battleBoost = j.at("battleBoost").get<bool_t>();
-    v.learningQuests = j.at("learningQuests").get<bool_t>();
-    v.deathMatch = j.at("deathMatch").get<bool_t>();
-    v.crossTeamChampionPool = j.at("crossTeamChampionPool").get<bool_t>();
-    v.exclusivePick = j.at("exclusivePick").get<bool_t>();
-    v.id = j.at("id").get<int64_t_t>();
-    v.teamChampionPool = j.at("teamChampionPool").get<bool_t>();
-    v.duplicatePick = j.at("duplicatePick").get<bool_t>();
-    v.doNotRemove = j.at("doNotRemove").get<bool_t>();
-    v.banTimerDuration = j.at("banTimerDuration").get<int32_t_t>();
-    v.maxAllowableBans = j.at("maxAllowableBans").get<int32_t_t>();
-    v.reroll = j.at("reroll").get<bool_t>();
-    v.pickMode = j.at("pickMode").get<std::string_t>();
-    v.onboardCoopBeginner = j.at("onboardCoopBeginner").get<bool_t>();
-    v.mainPickTimerDuration = j.at("mainPickTimerDuration").get<int32_t_t>();
-    v.banMode = j.at("banMode").get<std::string_t>();
-    v.postPickTimerDuration = j.at("postPickTimerDuration").get<int32_t_t>();
-    v.name = j.at("name").get<std::string_t>();
+    v.advancedLearningQuests = j.at("advancedLearningQuests").get<bool>();
+    v.allowTrades = j.at("allowTrades").get<bool>();
+    v.battleBoost = j.at("battleBoost").get<bool>();
+    v.learningQuests = j.at("learningQuests").get<bool>();
+    v.deathMatch = j.at("deathMatch").get<bool>();
+    v.crossTeamChampionPool = j.at("crossTeamChampionPool").get<bool>();
+    v.exclusivePick = j.at("exclusivePick").get<bool>();
+    v.id = j.at("id").get<int64_t>();
+    v.teamChampionPool = j.at("teamChampionPool").get<bool>();
+    v.duplicatePick = j.at("duplicatePick").get<bool>();
+    v.doNotRemove = j.at("doNotRemove").get<bool>();
+    v.banTimerDuration = j.at("banTimerDuration").get<int32_t>();
+    v.maxAllowableBans = j.at("maxAllowableBans").get<int32_t>();
+    v.reroll = j.at("reroll").get<bool>();
+    v.pickMode = j.at("pickMode").get<std::string>();
+    v.onboardCoopBeginner = j.at("onboardCoopBeginner").get<bool>();
+    v.mainPickTimerDuration = j.at("mainPickTimerDuration").get<int32_t>();
+    v.banMode = j.at("banMode").get<std::string>();
+    v.postPickTimerDuration = j.at("postPickTimerDuration").get<int32_t>();
+    v.name = j.at("name").get<std::string>();
   }
   inline std::string to_string(const LolClashQueueGameTypeConfig_t& v) {
     nlohmann::json j = v;

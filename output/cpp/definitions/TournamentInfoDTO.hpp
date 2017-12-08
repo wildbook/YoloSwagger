@@ -9,7 +9,7 @@ namespace leagueapi {
     std::vector<PendingRosterDTO_t> inviteePendingRosters;
     TournamentDTO_t tournament;
     std::optional<PendingRosterDTO_t> pendingRoster;
-    int32_t_t themeVp;
+    int32_t themeVp;
     std::optional<RosterDTO_t> roster;
   };
 
@@ -28,7 +28,7 @@ namespace leagueapi {
     v.tournament = j.at("tournament").get<TournamentDTO_t>();
     if(auto it = j.find("pendingRoster"); it != j.end() && !it->is_null())
       v.pendingRoster = it->get<PendingRosterDTO_t>();
-    v.themeVp = j.at("themeVp").get<int32_t_t>();
+    v.themeVp = j.at("themeVp").get<int32_t>();
     if(auto it = j.find("roster"); it != j.end() && !it->is_null())
       v.roster = it->get<RosterDTO_t>();
   }

@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LolLobbyTeamBuilderRerollStateV1_t {
-    bool_t allowRerolling;
-    uint32_t_t rerollsRemaining;
+    bool allowRerolling;
+    uint32_t rerollsRemaining;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderRerollStateV1_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderRerollStateV1_t& v) {
-    v.allowRerolling = j.at("allowRerolling").get<bool_t>();
-    v.rerollsRemaining = j.at("rerollsRemaining").get<uint32_t_t>();
+    v.allowRerolling = j.at("allowRerolling").get<bool>();
+    v.rerollsRemaining = j.at("rerollsRemaining").get<uint32_t>();
   }
   inline std::string to_string(const LolLobbyTeamBuilderRerollStateV1_t& v) {
     nlohmann::json j = v;

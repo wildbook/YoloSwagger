@@ -3,8 +3,8 @@
 #include "LolCollectionsCollectionsRunePage.hpp"
 namespace leagueapi {
   LolCollectionsCollectionsRunePage_t PutLolCollectionsV1InventoriesBySummonerIdRuneBookPagesByPageId (const ClientInfo& info,
-    const uint64_t_t& summonerId,
-    const uint32_t_t& pageId,
+    const uint64_t& summonerId,
+    const uint32_t& pageId,
     const LolCollectionsCollectionsRunePage_t& resource)
   {
     using std::to_string;

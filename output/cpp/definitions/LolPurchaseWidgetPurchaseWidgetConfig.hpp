@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LolPurchaseWidgetPurchaseWidgetConfig_t {
-    bool_t enabled;
-    bool_t purchaseDisclaimerEnabled;
+    bool enabled;
+    bool purchaseDisclaimerEnabled;
   };
 
   inline void to_json(nlohmann::json& j, const LolPurchaseWidgetPurchaseWidgetConfig_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolPurchaseWidgetPurchaseWidgetConfig_t& v) {
-    v.enabled = j.at("enabled").get<bool_t>();
-    v.purchaseDisclaimerEnabled = j.at("purchaseDisclaimerEnabled").get<bool_t>();
+    v.enabled = j.at("enabled").get<bool>();
+    v.purchaseDisclaimerEnabled = j.at("purchaseDisclaimerEnabled").get<bool>();
   }
   inline std::string to_string(const LolPurchaseWidgetPurchaseWidgetConfig_t& v) {
     nlohmann::json j = v;

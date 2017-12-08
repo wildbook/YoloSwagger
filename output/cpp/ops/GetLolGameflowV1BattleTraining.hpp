@@ -1,7 +1,7 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  bool_t GetLolGameflowV1BattleTraining (const ClientInfo& info)
+  bool GetLolGameflowV1BattleTraining (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

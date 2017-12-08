@@ -8,15 +8,15 @@
 #include "LolLobbyTeamBuilderMatchmakingSearchState.hpp"
 namespace leagueapi {
   struct LolLobbyTeamBuilderMatchmakingSearchResource_t {
-    std::string_t lobbyId;
-    int32_t_t queueId;
+    std::string lobbyId;
+    int32_t queueId;
     std::vector<LolLobbyTeamBuilderMatchmakingSearchErrorResource_t> errors;
-    float_t timeInQueue;
+    float timeInQueue;
     LolLobbyTeamBuilderMatchmakingLowPriorityData_t lowPriorityData;
     LolLobbyTeamBuilderMatchmakingDodgeData_t dodgeData;
-    bool_t isCurrentlyInQueue;
+    bool isCurrentlyInQueue;
     LolLobbyTeamBuilderMatchmakingReadyCheckResource_t readyCheck;
-    float_t estimatedQueueTime;
+    float estimatedQueueTime;
     LolLobbyTeamBuilderMatchmakingSearchState_t searchState;
   };
 
@@ -34,15 +34,15 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderMatchmakingSearchResource_t& v) {
-    v.lobbyId = j.at("lobbyId").get<std::string_t>();
-    v.queueId = j.at("queueId").get<int32_t_t>();
+    v.lobbyId = j.at("lobbyId").get<std::string>();
+    v.queueId = j.at("queueId").get<int32_t>();
     v.errors = j.at("errors").get<std::vector<LolLobbyTeamBuilderMatchmakingSearchErrorResource_t>>();
-    v.timeInQueue = j.at("timeInQueue").get<float_t>();
+    v.timeInQueue = j.at("timeInQueue").get<float>();
     v.lowPriorityData = j.at("lowPriorityData").get<LolLobbyTeamBuilderMatchmakingLowPriorityData_t>();
     v.dodgeData = j.at("dodgeData").get<LolLobbyTeamBuilderMatchmakingDodgeData_t>();
-    v.isCurrentlyInQueue = j.at("isCurrentlyInQueue").get<bool_t>();
+    v.isCurrentlyInQueue = j.at("isCurrentlyInQueue").get<bool>();
     v.readyCheck = j.at("readyCheck").get<LolLobbyTeamBuilderMatchmakingReadyCheckResource_t>();
-    v.estimatedQueueTime = j.at("estimatedQueueTime").get<float_t>();
+    v.estimatedQueueTime = j.at("estimatedQueueTime").get<float>();
     v.searchState = j.at("searchState").get<LolLobbyTeamBuilderMatchmakingSearchState_t>();
   }
   inline std::string to_string(const LolLobbyTeamBuilderMatchmakingSearchResource_t& v) {

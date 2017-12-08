@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolMatchmakingMatchmakingSearchResource.hpp"
 namespace leagueapi {
-  nlohmann::json_t PutLolMatchmakingV1Search (const ClientInfo& info,
+  nlohmann::json PutLolMatchmakingV1Search (const ClientInfo& info,
     const LolMatchmakingMatchmakingSearchResource_t& search)
   {
     using std::to_string;

@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct SpectateGameInfo_t {
-    std::string_t dropInSpectateGameId;
-    std::string_t allowObserveMode;
-    std::string_t gameQueueType;
+    std::string dropInSpectateGameId;
+    std::string allowObserveMode;
+    std::string gameQueueType;
   };
 
   inline void to_json(nlohmann::json& j, const SpectateGameInfo_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, SpectateGameInfo_t& v) {
-    v.dropInSpectateGameId = j.at("dropInSpectateGameId").get<std::string_t>();
-    v.allowObserveMode = j.at("allowObserveMode").get<std::string_t>();
-    v.gameQueueType = j.at("gameQueueType").get<std::string_t>();
+    v.dropInSpectateGameId = j.at("dropInSpectateGameId").get<std::string>();
+    v.allowObserveMode = j.at("allowObserveMode").get<std::string>();
+    v.gameQueueType = j.at("gameQueueType").get<std::string>();
   }
   inline std::string to_string(const SpectateGameInfo_t& v) {
     nlohmann::json j = v;

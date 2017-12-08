@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "PlayerPreferences.hpp"
 namespace leagueapi {
-  nlohmann::json_t PutLolPlayerPreferencesV1Preference (const ClientInfo& info,
+  nlohmann::json PutLolPlayerPreferencesV1Preference (const ClientInfo& info,
     const PlayerPreferences_t& preferences)
   {
     using std::to_string;

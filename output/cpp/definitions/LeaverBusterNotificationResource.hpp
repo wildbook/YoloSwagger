@@ -4,10 +4,10 @@
 #include "LeaverBusterNotificationType.hpp"
 namespace leagueapi {
   struct LeaverBusterNotificationResource_t {
-    std::string_t msgId;
+    std::string msgId;
     LeaverBusterNotificationType_t type;
-    uint32_t_t id;
-    int32_t_t punishedGamesRemaining;
+    uint32_t id;
+    int32_t punishedGamesRemaining;
   };
 
   inline void to_json(nlohmann::json& j, const LeaverBusterNotificationResource_t& v) {
@@ -18,10 +18,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LeaverBusterNotificationResource_t& v) {
-    v.msgId = j.at("msgId").get<std::string_t>();
+    v.msgId = j.at("msgId").get<std::string>();
     v.type = j.at("type").get<LeaverBusterNotificationType_t>();
-    v.id = j.at("id").get<uint32_t_t>();
-    v.punishedGamesRemaining = j.at("punishedGamesRemaining").get<int32_t_t>();
+    v.id = j.at("id").get<uint32_t>();
+    v.punishedGamesRemaining = j.at("punishedGamesRemaining").get<int32_t>();
   }
   inline std::string to_string(const LeaverBusterNotificationResource_t& v) {
     nlohmann::json j = v;

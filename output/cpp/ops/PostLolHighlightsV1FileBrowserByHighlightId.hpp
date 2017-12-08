@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolHighlightsV1FileBrowserByHighlightId (const ClientInfo& info,
-    const uint64_t_t& highlightId)
+  nlohmann::json PostLolHighlightsV1FileBrowserByHighlightId (const ClientInfo& info,
+    const uint64_t& highlightId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct LolAccountVerificationIsVerifiedResponse_t {
-    int32_t_t status;
-    std::string_t message;
-    bool_t success;
+    int32_t status;
+    std::string message;
+    bool success;
   };
 
   inline void to_json(nlohmann::json& j, const LolAccountVerificationIsVerifiedResponse_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolAccountVerificationIsVerifiedResponse_t& v) {
-    v.status = j.at("status").get<int32_t_t>();
-    v.message = j.at("message").get<std::string_t>();
-    v.success = j.at("success").get<bool_t>();
+    v.status = j.at("status").get<int32_t>();
+    v.message = j.at("message").get<std::string>();
+    v.success = j.at("success").get<bool>();
   }
   inline std::string to_string(const LolAccountVerificationIsVerifiedResponse_t& v) {
     nlohmann::json j = v;

@@ -5,7 +5,7 @@
 #include "LolEndOfGameSimpleMessage.hpp"
 namespace leagueapi {
   struct LolEndOfGameLoginDataPacket_t {
-    std::string_t platformId;
+    std::string platformId;
     std::vector<LolEndOfGameSimpleMessage_t> simpleMessages;
     LolEndOfGameLoginSummonerData_t allSummonerData;
   };
@@ -17,7 +17,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolEndOfGameLoginDataPacket_t& v) {
-    v.platformId = j.at("platformId").get<std::string_t>();
+    v.platformId = j.at("platformId").get<std::string>();
     v.simpleMessages = j.at("simpleMessages").get<std::vector<LolEndOfGameSimpleMessage_t>>();
     v.allSummonerData = j.at("allSummonerData").get<LolEndOfGameLoginSummonerData_t>();
   }

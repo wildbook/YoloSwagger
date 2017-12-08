@@ -9,18 +9,18 @@
 #include "MetricType.hpp"
 namespace leagueapi {
   struct MetricMetadata_t {
-    std::string_t category;
-    std::string_t info;
+    std::string category;
+    std::string info;
     std::vector<MetricMetadataAlert_t> alerts;
-    std::string_t description;
+    std::string description;
     MetricDataType_t data_type;
-    std::string_t destination;
-    uint32_t_t sample_window_ms;
-    uint32_t_t period;
+    std::string destination;
+    uint32_t sample_window_ms;
+    uint32_t period;
     MetricPriority_t priority;
-    std::string_t pretty_name;
+    std::string pretty_name;
     MetricMetadataNotify_t notify;
-    std::string_t units;
+    std::string units;
     MetricType_t type;
     AggregationType_t transientAggregation;
   };
@@ -43,18 +43,18 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, MetricMetadata_t& v) {
-    v.category = j.at("category").get<std::string_t>();
-    v.info = j.at("info").get<std::string_t>();
+    v.category = j.at("category").get<std::string>();
+    v.info = j.at("info").get<std::string>();
     v.alerts = j.at("alerts").get<std::vector<MetricMetadataAlert_t>>();
-    v.description = j.at("description").get<std::string_t>();
+    v.description = j.at("description").get<std::string>();
     v.data_type = j.at("data_type").get<MetricDataType_t>();
-    v.destination = j.at("destination").get<std::string_t>();
-    v.sample_window_ms = j.at("sample_window_ms").get<uint32_t_t>();
-    v.period = j.at("period").get<uint32_t_t>();
+    v.destination = j.at("destination").get<std::string>();
+    v.sample_window_ms = j.at("sample_window_ms").get<uint32_t>();
+    v.period = j.at("period").get<uint32_t>();
     v.priority = j.at("priority").get<MetricPriority_t>();
-    v.pretty_name = j.at("pretty_name").get<std::string_t>();
+    v.pretty_name = j.at("pretty_name").get<std::string>();
     v.notify = j.at("notify").get<MetricMetadataNotify_t>();
-    v.units = j.at("units").get<std::string_t>();
+    v.units = j.at("units").get<std::string>();
     v.type = j.at("type").get<MetricType_t>();
     v.transientAggregation = j.at("transientAggregation").get<AggregationType_t>();
   }

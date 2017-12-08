@@ -3,10 +3,10 @@
 #include <optional>
 namespace leagueapi {
   struct LolGameflowQueueReward_t {
-    bool_t isChampionPointsEnabled;
-    bool_t isXpEnabled;
+    bool isChampionPointsEnabled;
+    bool isXpEnabled;
     std::vector<int32_t> partySizeIpRewards;
-    bool_t isIpEnabled;
+    bool isIpEnabled;
   };
 
   inline void to_json(nlohmann::json& j, const LolGameflowQueueReward_t& v) {
@@ -17,10 +17,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolGameflowQueueReward_t& v) {
-    v.isChampionPointsEnabled = j.at("isChampionPointsEnabled").get<bool_t>();
-    v.isXpEnabled = j.at("isXpEnabled").get<bool_t>();
+    v.isChampionPointsEnabled = j.at("isChampionPointsEnabled").get<bool>();
+    v.isXpEnabled = j.at("isXpEnabled").get<bool>();
     v.partySizeIpRewards = j.at("partySizeIpRewards").get<std::vector<int32_t>>();
-    v.isIpEnabled = j.at("isIpEnabled").get<bool_t>();
+    v.isIpEnabled = j.at("isIpEnabled").get<bool>();
   }
   inline std::string to_string(const LolGameflowQueueReward_t& v) {
     nlohmann::json j = v;

@@ -3,7 +3,7 @@
 #include "LolStoreOrderNotificationResource.hpp"
 namespace leagueapi {
   LolStoreOrderNotificationResource_t GetLolStoreV1OrderNotificationsById (const ClientInfo& info,
-    const uint64_t_t& id)
+    const uint64_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

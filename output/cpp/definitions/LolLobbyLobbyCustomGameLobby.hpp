@@ -5,12 +5,12 @@
 #include "LolLobbyLobbyMember.hpp"
 namespace leagueapi {
   struct LolLobbyLobbyCustomGameLobby_t {
-    uint64_t_t gameId;
+    uint64_t gameId;
     std::vector<LolLobbyLobbyMember_t> spectators;
     std::vector<LolLobbyLobbyMember_t> teamOne;
-    std::string_t lobbyName;
+    std::string lobbyName;
     std::vector<LolLobbyLobbyMember_t> teamTwo;
-    std::string_t lobbyPassword;
+    std::string lobbyPassword;
     std::vector<std::string> practiceGameRewardsDisabledReasons;
     LolLobbyLobbyCustomGameConfiguration_t configuration;
   };
@@ -27,12 +27,12 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyLobbyCustomGameLobby_t& v) {
-    v.gameId = j.at("gameId").get<uint64_t_t>();
+    v.gameId = j.at("gameId").get<uint64_t>();
     v.spectators = j.at("spectators").get<std::vector<LolLobbyLobbyMember_t>>();
     v.teamOne = j.at("teamOne").get<std::vector<LolLobbyLobbyMember_t>>();
-    v.lobbyName = j.at("lobbyName").get<std::string_t>();
+    v.lobbyName = j.at("lobbyName").get<std::string>();
     v.teamTwo = j.at("teamTwo").get<std::vector<LolLobbyLobbyMember_t>>();
-    v.lobbyPassword = j.at("lobbyPassword").get<std::string_t>();
+    v.lobbyPassword = j.at("lobbyPassword").get<std::string>();
     v.practiceGameRewardsDisabledReasons = j.at("practiceGameRewardsDisabledReasons").get<std::vector<std::string>>();
     v.configuration = j.at("configuration").get<LolLobbyLobbyCustomGameConfiguration_t>();
   }

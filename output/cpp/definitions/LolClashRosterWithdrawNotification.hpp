@@ -5,11 +5,11 @@
 #include "RosterWithdraw.hpp"
 namespace leagueapi {
   struct LolClashRosterWithdrawNotification_t {
-    uint64_t_t sourcePlayerId;
-    int64_t_t rosterId;
+    uint64_t sourcePlayerId;
+    int64_t rosterId;
     LolClashRosterNotifyReason_t notifyReason;
     RosterWithdraw_t withdraw;
-    int64_t_t tournamentId;
+    int64_t tournamentId;
   };
 
   inline void to_json(nlohmann::json& j, const LolClashRosterWithdrawNotification_t& v) {
@@ -21,11 +21,11 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolClashRosterWithdrawNotification_t& v) {
-    v.sourcePlayerId = j.at("sourcePlayerId").get<uint64_t_t>();
-    v.rosterId = j.at("rosterId").get<int64_t_t>();
+    v.sourcePlayerId = j.at("sourcePlayerId").get<uint64_t>();
+    v.rosterId = j.at("rosterId").get<int64_t>();
     v.notifyReason = j.at("notifyReason").get<LolClashRosterNotifyReason_t>();
     v.withdraw = j.at("withdraw").get<RosterWithdraw_t>();
-    v.tournamentId = j.at("tournamentId").get<int64_t_t>();
+    v.tournamentId = j.at("tournamentId").get<int64_t>();
   }
   inline std::string to_string(const LolClashRosterWithdrawNotification_t& v) {
     nlohmann::json j = v;

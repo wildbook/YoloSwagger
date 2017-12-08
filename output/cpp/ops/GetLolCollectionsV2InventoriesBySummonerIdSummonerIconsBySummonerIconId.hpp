@@ -3,8 +3,8 @@
 #include "LolCollectionsCollectionsSummonerIcon.hpp"
 namespace leagueapi {
   LolCollectionsCollectionsSummonerIcon_t GetLolCollectionsV2InventoriesBySummonerIdSummonerIconsBySummonerIconId (const ClientInfo& info,
-    const uint64_t_t& summonerId,
-    const int32_t_t& summonerIconId)
+    const uint64_t& summonerId,
+    const int32_t& summonerIconId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

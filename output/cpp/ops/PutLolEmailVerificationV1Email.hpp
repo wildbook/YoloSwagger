@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolEmailVerificationEmailUpdate.hpp"
 namespace leagueapi {
-  nlohmann::json_t PutLolEmailVerificationV1Email (const ClientInfo& info,
+  nlohmann::json PutLolEmailVerificationV1Email (const ClientInfo& info,
     const LolEmailVerificationEmailUpdate_t& EmailUpdate)
   {
     using std::to_string;

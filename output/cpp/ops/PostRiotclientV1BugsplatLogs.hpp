@@ -5,7 +5,7 @@ namespace leagueapi {
   //Adds the enclosed log to the app's bugsplat report.
   void PostRiotclientV1BugsplatLogs (const ClientInfo& info,
     //Full path to the log file.
-    const std::string_t& logFilePath)
+    const std::string& logFilePath)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

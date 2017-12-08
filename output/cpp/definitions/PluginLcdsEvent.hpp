@@ -3,10 +3,10 @@
 #include <optional>
 namespace leagueapi {
   struct PluginLcdsEvent_t {
-    nlohmann::json_t body;
-    std::string_t typeName;
-    std::string_t clientId;
-    std::string_t subtopic;
+    nlohmann::json body;
+    std::string typeName;
+    std::string clientId;
+    std::string subtopic;
   };
 
   inline void to_json(nlohmann::json& j, const PluginLcdsEvent_t& v) {
@@ -17,10 +17,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PluginLcdsEvent_t& v) {
-    v.body = j.at("body").get<nlohmann::json_t>();
-    v.typeName = j.at("typeName").get<std::string_t>();
-    v.clientId = j.at("clientId").get<std::string_t>();
-    v.subtopic = j.at("subtopic").get<std::string_t>();
+    v.body = j.at("body").get<nlohmann::json>();
+    v.typeName = j.at("typeName").get<std::string>();
+    v.clientId = j.at("clientId").get<std::string>();
+    v.subtopic = j.at("subtopic").get<std::string>();
   }
   inline std::string to_string(const PluginLcdsEvent_t& v) {
     nlohmann::json j = v;

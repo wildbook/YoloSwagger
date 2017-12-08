@@ -4,7 +4,7 @@
 #include "LolRankedStatsRankedEntry.hpp"
 namespace leagueapi {
   struct LolRankedStatsRankedData_t {
-    uint64_t_t summonerId;
+    uint64_t summonerId;
     std::vector<LolRankedStatsRankedEntry_t> rankedData;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolRankedStatsRankedData_t& v) {
-    v.summonerId = j.at("summonerId").get<uint64_t_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
     v.rankedData = j.at("rankedData").get<std::vector<LolRankedStatsRankedEntry_t>>();
   }
   inline std::string to_string(const LolRankedStatsRankedData_t& v) {

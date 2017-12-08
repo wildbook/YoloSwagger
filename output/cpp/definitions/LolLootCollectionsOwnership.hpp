@@ -4,9 +4,9 @@
 #include "LolLootCollectionsRental.hpp"
 namespace leagueapi {
   struct LolLootCollectionsOwnership_t {
-    bool_t freeToPlayReward;
+    bool freeToPlayReward;
     LolLootCollectionsRental_t rental;
-    bool_t owned;
+    bool owned;
   };
 
   inline void to_json(nlohmann::json& j, const LolLootCollectionsOwnership_t& v) {
@@ -16,9 +16,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLootCollectionsOwnership_t& v) {
-    v.freeToPlayReward = j.at("freeToPlayReward").get<bool_t>();
+    v.freeToPlayReward = j.at("freeToPlayReward").get<bool>();
     v.rental = j.at("rental").get<LolLootCollectionsRental_t>();
-    v.owned = j.at("owned").get<bool_t>();
+    v.owned = j.at("owned").get<bool>();
   }
   inline std::string to_string(const LolLootCollectionsOwnership_t& v) {
     nlohmann::json j = v;

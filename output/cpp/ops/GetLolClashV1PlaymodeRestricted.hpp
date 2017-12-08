@@ -1,7 +1,7 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  bool_t GetLolClashV1PlaymodeRestricted (const ClientInfo& info)
+  bool GetLolClashV1PlaymodeRestricted (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

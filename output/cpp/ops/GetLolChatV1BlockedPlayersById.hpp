@@ -3,7 +3,7 @@
 #include "LolChatBlockedPlayerResource.hpp"
 namespace leagueapi {
   LolChatBlockedPlayerResource_t GetLolChatV1BlockedPlayersById (const ClientInfo& info,
-    const uint64_t_t& id)
+    const uint64_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

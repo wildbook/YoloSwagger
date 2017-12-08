@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolLobbyTeamBuilderLobbyPositionPreferencesV2.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolLobbyTeamBuilderV2PositionPreferences (const ClientInfo& info,
+  nlohmann::json PostLolLobbyTeamBuilderV2PositionPreferences (const ClientInfo& info,
     const LolLobbyTeamBuilderLobbyPositionPreferencesV2_t& positionPreferences)
   {
     using std::to_string;

@@ -3,11 +3,11 @@
 #include <optional>
 namespace leagueapi {
   struct MatchmakingSearchErrorResource_t {
-    uint64_t_t penalizedSummonerId;
-    std::string_t message;
-    std::string_t errorType;
-    double_t penaltyTimeRemaining;
-    int32_t_t id;
+    uint64_t penalizedSummonerId;
+    std::string message;
+    std::string errorType;
+    double penaltyTimeRemaining;
+    int32_t id;
   };
 
   inline void to_json(nlohmann::json& j, const MatchmakingSearchErrorResource_t& v) {
@@ -19,11 +19,11 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, MatchmakingSearchErrorResource_t& v) {
-    v.penalizedSummonerId = j.at("penalizedSummonerId").get<uint64_t_t>();
-    v.message = j.at("message").get<std::string_t>();
-    v.errorType = j.at("errorType").get<std::string_t>();
-    v.penaltyTimeRemaining = j.at("penaltyTimeRemaining").get<double_t>();
-    v.id = j.at("id").get<int32_t_t>();
+    v.penalizedSummonerId = j.at("penalizedSummonerId").get<uint64_t>();
+    v.message = j.at("message").get<std::string>();
+    v.errorType = j.at("errorType").get<std::string>();
+    v.penaltyTimeRemaining = j.at("penaltyTimeRemaining").get<double>();
+    v.id = j.at("id").get<int32_t>();
   }
   inline std::string to_string(const MatchmakingSearchErrorResource_t& v) {
     nlohmann::json j = v;

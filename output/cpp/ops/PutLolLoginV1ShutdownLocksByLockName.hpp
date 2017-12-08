@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void PutLolLoginV1ShutdownLocksByLockName (const ClientInfo& info,
-    const std::string_t& lockName)
+    const std::string& lockName)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -1,9 +1,9 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t GetLolSettingsV2AccountByPpTypeByCategory (const ClientInfo& info,
-    const std::string_t& ppType,
-    const std::string_t& category)
+  nlohmann::json GetLolSettingsV2AccountByPpTypeByCategory (const ClientInfo& info,
+    const std::string& ppType,
+    const std::string& category)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

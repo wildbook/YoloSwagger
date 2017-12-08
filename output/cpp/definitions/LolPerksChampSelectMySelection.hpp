@@ -3,10 +3,10 @@
 #include <optional>
 namespace leagueapi {
   struct LolPerksChampSelectMySelection_t {
-    std::optional<int64_t_t> wardSkinId;
-    std::optional<uint64_t_t> spell1Id;
-    std::optional<int32_t_t> selectedSkinId;
-    std::optional<uint64_t_t> spell2Id;
+    std::optional<int64_t> wardSkinId;
+    std::optional<uint64_t> spell1Id;
+    std::optional<int32_t> selectedSkinId;
+    std::optional<uint64_t> spell2Id;
   };
 
   inline void to_json(nlohmann::json& j, const LolPerksChampSelectMySelection_t& v) {
@@ -22,13 +22,13 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolPerksChampSelectMySelection_t& v) {
     if(auto it = j.find("wardSkinId"); it != j.end() && !it->is_null())
-      v.wardSkinId = it->get<int64_t_t>();
+      v.wardSkinId = it->get<int64_t>();
     if(auto it = j.find("spell1Id"); it != j.end() && !it->is_null())
-      v.spell1Id = it->get<uint64_t_t>();
+      v.spell1Id = it->get<uint64_t>();
     if(auto it = j.find("selectedSkinId"); it != j.end() && !it->is_null())
-      v.selectedSkinId = it->get<int32_t_t>();
+      v.selectedSkinId = it->get<int32_t>();
     if(auto it = j.find("spell2Id"); it != j.end() && !it->is_null())
-      v.spell2Id = it->get<uint64_t_t>();
+      v.spell2Id = it->get<uint64_t>();
   }
   inline std::string to_string(const LolPerksChampSelectMySelection_t& v) {
     nlohmann::json j = v;

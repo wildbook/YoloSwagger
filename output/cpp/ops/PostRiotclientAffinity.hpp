@@ -5,7 +5,7 @@ namespace leagueapi {
   //Sets the current runtime affinity of the application.
   void PostRiotclientAffinity (const ClientInfo& info,
     //The new affinity to use.
-    const std::string_t& newAffinity)
+    const std::string& newAffinity)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

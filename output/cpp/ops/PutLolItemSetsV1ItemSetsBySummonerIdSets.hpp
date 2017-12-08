@@ -4,7 +4,7 @@
 #include "LolItemSetsItemSets.hpp"
 namespace leagueapi {
   void PutLolItemSetsV1ItemSetsBySummonerIdSets (const ClientInfo& info,
-    const uint64_t_t& summonerId,
+    const uint64_t& summonerId,
     const LolItemSetsItemSets_t& itemSets)
   {
     using std::to_string;

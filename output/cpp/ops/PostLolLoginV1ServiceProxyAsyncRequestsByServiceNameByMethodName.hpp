@@ -3,9 +3,9 @@
 #include ".hpp"
 namespace leagueapi {
   void PostLolLoginV1ServiceProxyAsyncRequestsByServiceNameByMethodName (const ClientInfo& info,
-    const std::string_t& serviceName,
-    const std::string_t& methodName,
-    const uint32_t_t& pluginId)
+    const std::string& serviceName,
+    const std::string& methodName,
+    const uint32_t& pluginId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

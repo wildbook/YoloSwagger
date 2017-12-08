@@ -4,7 +4,7 @@
 #include "LootLcdsRecipeClientDTO.hpp"
 namespace leagueapi {
   struct LootLcdsRecipeListClientDTO_t {
-    int64_t_t lastUpdate;
+    int64_t lastUpdate;
     std::vector<LootLcdsRecipeClientDTO_t> recipes;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LootLcdsRecipeListClientDTO_t& v) {
-    v.lastUpdate = j.at("lastUpdate").get<int64_t_t>();
+    v.lastUpdate = j.at("lastUpdate").get<int64_t>();
     v.recipes = j.at("recipes").get<std::vector<LootLcdsRecipeClientDTO_t>>();
   }
   inline std::string to_string(const LootLcdsRecipeListClientDTO_t& v) {

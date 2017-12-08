@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Returns the various performance information for the cef processes
-  nlohmann::json_t GetPerformanceV1Report (const ClientInfo& info)
+  nlohmann::json GetPerformanceV1Report (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

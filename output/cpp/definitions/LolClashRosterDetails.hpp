@@ -3,10 +3,10 @@
 #include <optional>
 namespace leagueapi {
   struct LolClashRosterDetails_t {
-    int32_t_t iconColorId;
-    int32_t_t iconId;
-    std::string_t shortName;
-    std::string_t name;
+    int32_t iconColorId;
+    int32_t iconId;
+    std::string shortName;
+    std::string name;
   };
 
   inline void to_json(nlohmann::json& j, const LolClashRosterDetails_t& v) {
@@ -17,10 +17,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolClashRosterDetails_t& v) {
-    v.iconColorId = j.at("iconColorId").get<int32_t_t>();
-    v.iconId = j.at("iconId").get<int32_t_t>();
-    v.shortName = j.at("shortName").get<std::string_t>();
-    v.name = j.at("name").get<std::string_t>();
+    v.iconColorId = j.at("iconColorId").get<int32_t>();
+    v.iconId = j.at("iconId").get<int32_t>();
+    v.shortName = j.at("shortName").get<std::string>();
+    v.name = j.at("name").get<std::string>();
   }
   inline std::string to_string(const LolClashRosterDetails_t& v) {
     nlohmann::json j = v;

@@ -5,8 +5,8 @@
 #include "LolMissionsCollectionsOwnership.hpp"
 namespace leagueapi {
   struct LolMissionsCollectionsChampion_t {
-    bool_t freeToPlay;
-    int32_t_t id;
+    bool freeToPlay;
+    int32_t id;
     LolMissionsCollectionsOwnership_t ownership;
     std::vector<LolMissionsCollectionsChampionSkin_t> skins;
   };
@@ -19,8 +19,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolMissionsCollectionsChampion_t& v) {
-    v.freeToPlay = j.at("freeToPlay").get<bool_t>();
-    v.id = j.at("id").get<int32_t_t>();
+    v.freeToPlay = j.at("freeToPlay").get<bool>();
+    v.id = j.at("id").get<int32_t>();
     v.ownership = j.at("ownership").get<LolMissionsCollectionsOwnership_t>();
     v.skins = j.at("skins").get<std::vector<LolMissionsCollectionsChampionSkin_t>>();
   }

@@ -5,21 +5,21 @@
 #include "LolLeaguesLeagueEmblem.hpp"
 namespace leagueapi {
   struct LolLeaguesLeagueStanding_t {
-    std::string_t inactivityStatus;
-    bool_t pendingDemotion;
-    std::string_t name;
-    int64_t_t apexDaysUntilDecay;
-    uint64_t_t losses;
+    std::string inactivityStatus;
+    bool pendingDemotion;
+    std::string name;
+    int64_t apexDaysUntilDecay;
+    uint64_t losses;
     std::vector<LolLeaguesMiniseries_t> miniseriesResults;
-    uint64_t_t previousPosition;
+    uint64_t previousPosition;
     std::vector<LolLeaguesLeagueEmblem_t> emblems;
-    bool_t inactive;
-    uint64_t_t wins;
-    bool_t pendingPromotion;
-    uint64_t_t position;
-    int64_t_t positionDelta;
-    std::string_t id;
-    int64_t_t points;
+    bool inactive;
+    uint64_t wins;
+    bool pendingPromotion;
+    uint64_t position;
+    int64_t positionDelta;
+    std::string id;
+    int64_t points;
   };
 
   inline void to_json(nlohmann::json& j, const LolLeaguesLeagueStanding_t& v) {
@@ -41,21 +41,21 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLeaguesLeagueStanding_t& v) {
-    v.inactivityStatus = j.at("inactivityStatus").get<std::string_t>();
-    v.pendingDemotion = j.at("pendingDemotion").get<bool_t>();
-    v.name = j.at("name").get<std::string_t>();
-    v.apexDaysUntilDecay = j.at("apexDaysUntilDecay").get<int64_t_t>();
-    v.losses = j.at("losses").get<uint64_t_t>();
+    v.inactivityStatus = j.at("inactivityStatus").get<std::string>();
+    v.pendingDemotion = j.at("pendingDemotion").get<bool>();
+    v.name = j.at("name").get<std::string>();
+    v.apexDaysUntilDecay = j.at("apexDaysUntilDecay").get<int64_t>();
+    v.losses = j.at("losses").get<uint64_t>();
     v.miniseriesResults = j.at("miniseriesResults").get<std::vector<LolLeaguesMiniseries_t>>();
-    v.previousPosition = j.at("previousPosition").get<uint64_t_t>();
+    v.previousPosition = j.at("previousPosition").get<uint64_t>();
     v.emblems = j.at("emblems").get<std::vector<LolLeaguesLeagueEmblem_t>>();
-    v.inactive = j.at("inactive").get<bool_t>();
-    v.wins = j.at("wins").get<uint64_t_t>();
-    v.pendingPromotion = j.at("pendingPromotion").get<bool_t>();
-    v.position = j.at("position").get<uint64_t_t>();
-    v.positionDelta = j.at("positionDelta").get<int64_t_t>();
-    v.id = j.at("id").get<std::string_t>();
-    v.points = j.at("points").get<int64_t_t>();
+    v.inactive = j.at("inactive").get<bool>();
+    v.wins = j.at("wins").get<uint64_t>();
+    v.pendingPromotion = j.at("pendingPromotion").get<bool>();
+    v.position = j.at("position").get<uint64_t>();
+    v.positionDelta = j.at("positionDelta").get<int64_t>();
+    v.id = j.at("id").get<std::string>();
+    v.points = j.at("points").get<int64_t>();
   }
   inline std::string to_string(const LolLeaguesLeagueStanding_t& v) {
     nlohmann::json j = v;

@@ -3,7 +3,7 @@
 #include "LolLobbyLobbyCustomGame.hpp"
 namespace leagueapi {
   LolLobbyLobbyCustomGame_t GetLolLobbyV1CustomGamesById (const ClientInfo& info,
-    const int32_t_t& id)
+    const int32_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

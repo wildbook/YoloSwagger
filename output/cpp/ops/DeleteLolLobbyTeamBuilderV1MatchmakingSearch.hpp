@@ -1,7 +1,7 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t DeleteLolLobbyTeamBuilderV1MatchmakingSearch (const ClientInfo& info)
+  nlohmann::json DeleteLolLobbyTeamBuilderV1MatchmakingSearch (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

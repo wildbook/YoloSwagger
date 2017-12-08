@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Application name without file extension
-  std::string_t GetRiotclientAppName (const ClientInfo& info)
+  std::string GetRiotclientAppName (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

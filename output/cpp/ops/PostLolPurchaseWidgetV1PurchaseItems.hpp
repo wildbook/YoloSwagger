@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolPurchaseWidgetPurchaseRequest.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolPurchaseWidgetV1PurchaseItems (const ClientInfo& info,
+  nlohmann::json PostLolPurchaseWidgetV1PurchaseItems (const ClientInfo& info,
     const LolPurchaseWidgetPurchaseRequest_t& purchaseRequest)
   {
     using std::to_string;

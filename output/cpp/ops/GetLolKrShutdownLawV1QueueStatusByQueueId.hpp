@@ -3,7 +3,7 @@
 #include "LolKrShutdownLawQueueShutdownStatus.hpp"
 namespace leagueapi {
   LolKrShutdownLawQueueShutdownStatus_t GetLolKrShutdownLawV1QueueStatusByQueueId (const ClientInfo& info,
-    const int32_t_t& queue_id)
+    const int32_t& queue_id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostPatcherV1ProductsByProductIdStopPatchingRequest (const ClientInfo& info,
-    const std::string_t& product-id)
+  nlohmann::json PostPatcherV1ProductsByProductIdStopPatchingRequest (const ClientInfo& info,
+    const std::string& product-id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

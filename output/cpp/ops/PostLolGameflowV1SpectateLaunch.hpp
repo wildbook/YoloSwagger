@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolGameflowV1SpectateLaunch (const ClientInfo& info,
-    const std::optional<std::string_t>& summonerName = std::nullopt)
+  nlohmann::json PostLolGameflowV1SpectateLaunch (const ClientInfo& info,
+    const std::optional<std::string>& summonerName = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

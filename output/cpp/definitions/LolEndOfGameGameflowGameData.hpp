@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolEndOfGameGameflowGameData_t {
-    uint64_t_t gameId;
+    uint64_t gameId;
   };
 
   inline void to_json(nlohmann::json& j, const LolEndOfGameGameflowGameData_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolEndOfGameGameflowGameData_t& v) {
-    v.gameId = j.at("gameId").get<uint64_t_t>();
+    v.gameId = j.at("gameId").get<uint64_t>();
   }
   inline std::string to_string(const LolEndOfGameGameflowGameData_t& v) {
     nlohmann::json j = v;

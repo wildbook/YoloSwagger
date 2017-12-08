@@ -4,10 +4,10 @@
 namespace leagueapi {
   // User Experience Settings Operating System Information
   struct basicOperatingSystemInfo_t {
-    std::string_t edition;
-    std::string_t versionMinor;
-    std::string_t versionMajor;
-    std::string_t platform;
+    std::string edition;
+    std::string versionMinor;
+    std::string versionMajor;
+    std::string platform;
   };
 
   inline void to_json(nlohmann::json& j, const basicOperatingSystemInfo_t& v) {
@@ -18,10 +18,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, basicOperatingSystemInfo_t& v) {
-    v.edition = j.at("edition").get<std::string_t>();
-    v.versionMinor = j.at("versionMinor").get<std::string_t>();
-    v.versionMajor = j.at("versionMajor").get<std::string_t>();
-    v.platform = j.at("platform").get<std::string_t>();
+    v.edition = j.at("edition").get<std::string>();
+    v.versionMinor = j.at("versionMinor").get<std::string>();
+    v.versionMajor = j.at("versionMajor").get<std::string>();
+    v.platform = j.at("platform").get<std::string>();
   }
   inline std::string to_string(const basicOperatingSystemInfo_t& v) {
     nlohmann::json j = v;

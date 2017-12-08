@@ -5,7 +5,7 @@ namespace leagueapi {
   //Adds a new event to be sent to Dradis and/or other analytics/monitoring data sinks. This will include current performance information along with the passed in data. Each call will record the performance counters then reset them for use in the next call. All events will have their eventType prefixed with ""
   void PostTelemetryV1EventsWithPerfInfoByEventType (const ClientInfo& info,
     //The name of the event type
-    const std::string_t& eventType,
+    const std::string& eventType,
     //A map of event data
     const std::map<std::string, nlohmann::json>& eventData)
   {

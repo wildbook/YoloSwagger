@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolCollectionsCollectionsSummonerSpells_t {
-    uint64_t_t summonerId;
+    uint64_t summonerId;
     std::vector<uint64_t> spells;
   };
 
@@ -13,7 +13,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsSummonerSpells_t& v) {
-    v.summonerId = j.at("summonerId").get<uint64_t_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
     v.spells = j.at("spells").get<std::vector<uint64_t>>();
   }
   inline std::string to_string(const LolCollectionsCollectionsSummonerSpells_t& v) {

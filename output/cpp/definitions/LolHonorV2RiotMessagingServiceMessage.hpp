@@ -3,11 +3,11 @@
 #include <optional>
 namespace leagueapi {
   struct LolHonorV2RiotMessagingServiceMessage_t {
-    int64_t_t timestamp;
-    std::string_t version;
-    std::string_t resource;
-    std::string_t payload;
-    std::string_t service;
+    int64_t timestamp;
+    std::string version;
+    std::string resource;
+    std::string payload;
+    std::string service;
   };
 
   inline void to_json(nlohmann::json& j, const LolHonorV2RiotMessagingServiceMessage_t& v) {
@@ -19,11 +19,11 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolHonorV2RiotMessagingServiceMessage_t& v) {
-    v.timestamp = j.at("timestamp").get<int64_t_t>();
-    v.version = j.at("version").get<std::string_t>();
-    v.resource = j.at("resource").get<std::string_t>();
-    v.payload = j.at("payload").get<std::string_t>();
-    v.service = j.at("service").get<std::string_t>();
+    v.timestamp = j.at("timestamp").get<int64_t>();
+    v.version = j.at("version").get<std::string>();
+    v.resource = j.at("resource").get<std::string>();
+    v.payload = j.at("payload").get<std::string>();
+    v.service = j.at("service").get<std::string>();
   }
   inline std::string to_string(const LolHonorV2RiotMessagingServiceMessage_t& v) {
     nlohmann::json j = v;

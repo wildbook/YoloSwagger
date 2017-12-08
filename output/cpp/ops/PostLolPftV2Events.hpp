@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolPftPFTEvent.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolPftV2Events (const ClientInfo& info,
+  nlohmann::json PostLolPftV2Events (const ClientInfo& info,
     const LolPftPFTEvent_t& pftEvent)
   {
     using std::to_string;

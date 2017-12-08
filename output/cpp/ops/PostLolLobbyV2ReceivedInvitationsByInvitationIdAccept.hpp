@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void PostLolLobbyV2ReceivedInvitationsByInvitationIdAccept (const ClientInfo& info,
-    const std::string_t& invitationId)
+    const std::string& invitationId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

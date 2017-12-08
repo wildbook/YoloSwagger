@@ -3,9 +3,9 @@
 #include "LolLootPlayerLootUpdate.hpp"
 namespace leagueapi {
   LolLootPlayerLootUpdate_t PostLolLootV1RecipesByRecipeNameCraft (const ClientInfo& info,
-    const std::string_t& recipeName,
+    const std::string& recipeName,
     const std::vector<std::string>& playerLootList,
-    const std::optional<int32_t_t>& repeat = std::nullopt)
+    const std::optional<int32_t>& repeat = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -3,8 +3,8 @@
 #include "LolCollectionsCollectionsRunePage.hpp"
 namespace leagueapi {
   LolCollectionsCollectionsRunePage_t PutLolCollectionsV1InventoriesBySummonerIdRuneBookSelectPageByPageId (const ClientInfo& info,
-    const uint64_t_t& summonerId,
-    const uint32_t_t& pageId)
+    const uint64_t& summonerId,
+    const uint32_t& pageId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

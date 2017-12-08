@@ -4,13 +4,13 @@
 #include "LolGameflowQueue.hpp"
 namespace leagueapi {
   struct LolGameflowGameflowGameData_t {
-    std::string_t password;
+    std::string password;
     std::vector<nlohmann::json> teamOne;
-    bool_t isCustomGame;
-    std::string_t gameName;
+    bool isCustomGame;
+    std::string gameName;
     LolGameflowQueue_t queue;
-    uint64_t_t gameId;
-    bool_t spectatorsAllowed;
+    uint64_t gameId;
+    bool spectatorsAllowed;
     std::vector<nlohmann::json> teamTwo;
     std::vector<nlohmann::json> playerChampionSelections;
   };
@@ -28,13 +28,13 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolGameflowGameflowGameData_t& v) {
-    v.password = j.at("password").get<std::string_t>();
+    v.password = j.at("password").get<std::string>();
     v.teamOne = j.at("teamOne").get<std::vector<nlohmann::json>>();
-    v.isCustomGame = j.at("isCustomGame").get<bool_t>();
-    v.gameName = j.at("gameName").get<std::string_t>();
+    v.isCustomGame = j.at("isCustomGame").get<bool>();
+    v.gameName = j.at("gameName").get<std::string>();
     v.queue = j.at("queue").get<LolGameflowQueue_t>();
-    v.gameId = j.at("gameId").get<uint64_t_t>();
-    v.spectatorsAllowed = j.at("spectatorsAllowed").get<bool_t>();
+    v.gameId = j.at("gameId").get<uint64_t>();
+    v.spectatorsAllowed = j.at("spectatorsAllowed").get<bool>();
     v.teamTwo = j.at("teamTwo").get<std::vector<nlohmann::json>>();
     v.playerChampionSelections = j.at("playerChampionSelections").get<std::vector<nlohmann::json>>();
   }

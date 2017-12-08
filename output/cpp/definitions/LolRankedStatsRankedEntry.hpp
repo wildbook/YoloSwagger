@@ -5,14 +5,14 @@
 #include "LolRankedStatsRankedTier.hpp"
 namespace leagueapi {
   struct LolRankedStatsRankedEntry_t {
-    uint64_t_t division;
-    int64_t_t apexDaysUntilDecay;
-    bool_t isApexTier;
+    uint64_t division;
+    int64_t apexDaysUntilDecay;
+    bool isApexTier;
     LolRankedStatsRankedTier_t rankedTier;
-    uint64_t_t games;
-    int64_t_t lp;
-    uint64_t_t wins;
-    std::string_t leagueName;
+    uint64_t games;
+    int64_t lp;
+    uint64_t wins;
+    std::string leagueName;
     LolRankedStatsRankedQueue_t rankedQueue;
   };
 
@@ -29,14 +29,14 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolRankedStatsRankedEntry_t& v) {
-    v.division = j.at("division").get<uint64_t_t>();
-    v.apexDaysUntilDecay = j.at("apexDaysUntilDecay").get<int64_t_t>();
-    v.isApexTier = j.at("isApexTier").get<bool_t>();
+    v.division = j.at("division").get<uint64_t>();
+    v.apexDaysUntilDecay = j.at("apexDaysUntilDecay").get<int64_t>();
+    v.isApexTier = j.at("isApexTier").get<bool>();
     v.rankedTier = j.at("rankedTier").get<LolRankedStatsRankedTier_t>();
-    v.games = j.at("games").get<uint64_t_t>();
-    v.lp = j.at("lp").get<int64_t_t>();
-    v.wins = j.at("wins").get<uint64_t_t>();
-    v.leagueName = j.at("leagueName").get<std::string_t>();
+    v.games = j.at("games").get<uint64_t>();
+    v.lp = j.at("lp").get<int64_t>();
+    v.wins = j.at("wins").get<uint64_t>();
+    v.leagueName = j.at("leagueName").get<std::string>();
     v.rankedQueue = j.at("rankedQueue").get<LolRankedStatsRankedQueue_t>();
   }
   inline std::string to_string(const LolRankedStatsRankedEntry_t& v) {

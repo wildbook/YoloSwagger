@@ -3,7 +3,7 @@
 #include "PlayerLevelUpEventAck.hpp"
 namespace leagueapi {
   PlayerLevelUpEventAck_t GetLolPlayerLevelUpV1LevelUpNotificationsByPluginName (const ClientInfo& info,
-    const std::string_t& pluginName)
+    const std::string& pluginName)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

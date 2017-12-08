@@ -1,9 +1,9 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t DeletePatcherV1ProductsByProductIdByComponentIdHttpHeaders (const ClientInfo& info,
-    const std::string_t& product-id,
-    const std::string_t& component-id)
+  nlohmann::json DeletePatcherV1ProductsByProductIdByComponentIdHttpHeaders (const ClientInfo& info,
+    const std::string& product-id,
+    const std::string& component-id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

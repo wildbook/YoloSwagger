@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "LolChatGroupResource.hpp"
 namespace leagueapi {
-  nlohmann::json_t PutLolChatV1FriendGroupsById (const ClientInfo& info,
-    const uint32_t_t& id,
+  nlohmann::json PutLolChatV1FriendGroupsById (const ClientInfo& info,
+    const uint32_t& id,
     const LolChatGroupResource_t& group)
   {
     using std::to_string;

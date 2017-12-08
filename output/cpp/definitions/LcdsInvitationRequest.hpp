@@ -6,11 +6,11 @@
 #include "LcdsPlayer.hpp"
 namespace leagueapi {
   struct LcdsInvitationRequest_t {
-    std::string_t inviteType;
+    std::string inviteType;
     LcdsInvitationState_t invitationState;
-    std::string_t invitePayload;
-    std::string_t gameMetaData;
-    std::string_t invitationId;
+    std::string invitePayload;
+    std::string gameMetaData;
+    std::string invitationId;
     LcdsPlayer_t owner;
     LcdsInviter_t inviter;
   };
@@ -26,11 +26,11 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LcdsInvitationRequest_t& v) {
-    v.inviteType = j.at("inviteType").get<std::string_t>();
+    v.inviteType = j.at("inviteType").get<std::string>();
     v.invitationState = j.at("invitationState").get<LcdsInvitationState_t>();
-    v.invitePayload = j.at("invitePayload").get<std::string_t>();
-    v.gameMetaData = j.at("gameMetaData").get<std::string_t>();
-    v.invitationId = j.at("invitationId").get<std::string_t>();
+    v.invitePayload = j.at("invitePayload").get<std::string>();
+    v.gameMetaData = j.at("gameMetaData").get<std::string>();
+    v.invitationId = j.at("invitationId").get<std::string>();
     v.owner = j.at("owner").get<LcdsPlayer_t>();
     v.inviter = j.at("inviter").get<LcdsInviter_t>();
   }

@@ -5,9 +5,9 @@ namespace leagueapi {
   //Update the region and locale.
   void PostRiotclientSetRegionLocale (const ClientInfo& info,
     //Name of the region.
-    const std::string_t& region,
+    const std::string& region,
     //Name of the locale.
-    const std::string_t& locale)
+    const std::string& locale)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

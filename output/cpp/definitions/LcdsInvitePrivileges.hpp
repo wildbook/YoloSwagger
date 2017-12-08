@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LcdsInvitePrivileges_t {
-    bool_t canInvite;
+    bool canInvite;
   };
 
   inline void to_json(nlohmann::json& j, const LcdsInvitePrivileges_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LcdsInvitePrivileges_t& v) {
-    v.canInvite = j.at("canInvite").get<bool_t>();
+    v.canInvite = j.at("canInvite").get<bool>();
   }
   inline std::string to_string(const LcdsInvitePrivileges_t& v) {
     nlohmann::json j = v;

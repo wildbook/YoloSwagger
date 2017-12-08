@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LolFeaturedModesMaps_t {
-    std::string_t gameModeName;
-    bool_t isRGM;
+    std::string gameModeName;
+    bool isRGM;
     std::map<std::string, std::string> assets;
   };
 
@@ -15,8 +15,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolFeaturedModesMaps_t& v) {
-    v.gameModeName = j.at("gameModeName").get<std::string_t>();
-    v.isRGM = j.at("isRGM").get<bool_t>();
+    v.gameModeName = j.at("gameModeName").get<std::string>();
+    v.isRGM = j.at("isRGM").get<bool>();
     v.assets = j.at("assets").get<std::map<std::string, std::string>>();
   }
   inline std::string to_string(const LolFeaturedModesMaps_t& v) {

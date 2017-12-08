@@ -4,14 +4,14 @@
 namespace leagueapi {
   struct Punishment_t {
     std::vector<std::string> punishedForChatLogs;
-    std::string_t punishmentReason;
-    std::string_t punishmentType;
-    std::string_t playerFacingMessage;
-    uint64_t_t punishedUntilDateMillis;
+    std::string punishmentReason;
+    std::string punishmentType;
+    std::string playerFacingMessage;
+    uint64_t punishedUntilDateMillis;
     std::vector<uint64_t> punishedForGameIds;
-    int64_t_t punishmentLengthGames;
-    bool_t permaBan;
-    uint64_t_t punishmentLengthMillis;
+    int64_t punishmentLengthGames;
+    bool permaBan;
+    uint64_t punishmentLengthMillis;
   };
 
   inline void to_json(nlohmann::json& j, const Punishment_t& v) {
@@ -28,14 +28,14 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, Punishment_t& v) {
     v.punishedForChatLogs = j.at("punishedForChatLogs").get<std::vector<std::string>>();
-    v.punishmentReason = j.at("punishmentReason").get<std::string_t>();
-    v.punishmentType = j.at("punishmentType").get<std::string_t>();
-    v.playerFacingMessage = j.at("playerFacingMessage").get<std::string_t>();
-    v.punishedUntilDateMillis = j.at("punishedUntilDateMillis").get<uint64_t_t>();
+    v.punishmentReason = j.at("punishmentReason").get<std::string>();
+    v.punishmentType = j.at("punishmentType").get<std::string>();
+    v.playerFacingMessage = j.at("playerFacingMessage").get<std::string>();
+    v.punishedUntilDateMillis = j.at("punishedUntilDateMillis").get<uint64_t>();
     v.punishedForGameIds = j.at("punishedForGameIds").get<std::vector<uint64_t>>();
-    v.punishmentLengthGames = j.at("punishmentLengthGames").get<int64_t_t>();
-    v.permaBan = j.at("permaBan").get<bool_t>();
-    v.punishmentLengthMillis = j.at("punishmentLengthMillis").get<uint64_t_t>();
+    v.punishmentLengthGames = j.at("punishmentLengthGames").get<int64_t>();
+    v.permaBan = j.at("permaBan").get<bool>();
+    v.punishmentLengthMillis = j.at("punishmentLengthMillis").get<uint64_t>();
   }
   inline std::string to_string(const Punishment_t& v) {
     nlohmann::json j = v;

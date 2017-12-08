@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LCDSChampionReward_t {
-    int32_t_t championId;
+    int32_t championId;
     std::vector<int32_t> skins;
   };
 
@@ -13,7 +13,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LCDSChampionReward_t& v) {
-    v.championId = j.at("championId").get<int32_t_t>();
+    v.championId = j.at("championId").get<int32_t>();
     v.skins = j.at("skins").get<std::vector<int32_t>>();
   }
   inline std::string to_string(const LCDSChampionReward_t& v) {

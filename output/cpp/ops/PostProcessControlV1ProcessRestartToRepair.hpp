@@ -4,7 +4,7 @@
 namespace leagueapi {
   //Restarts the application in order to perform a full repair (including self repair).
   void PostProcessControlV1ProcessRestartToRepair (const ClientInfo& info,
-    const std::string_t& productId)
+    const std::string& productId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -4,8 +4,8 @@
 #include "LcdsInviteeState.hpp"
 namespace leagueapi {
   struct LcdsInvitee_t {
-    uint64_t_t summonerId;
-    std::string_t summonerName;
+    uint64_t summonerId;
+    std::string summonerName;
     LcdsInviteeState_t inviteeState;
   };
 
@@ -16,8 +16,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LcdsInvitee_t& v) {
-    v.summonerId = j.at("summonerId").get<uint64_t_t>();
-    v.summonerName = j.at("summonerName").get<std::string_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.summonerName = j.at("summonerName").get<std::string>();
     v.inviteeState = j.at("inviteeState").get<LcdsInviteeState_t>();
   }
   inline std::string to_string(const LcdsInvitee_t& v) {

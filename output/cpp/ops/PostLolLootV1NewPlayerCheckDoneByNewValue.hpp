@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  std::string_t PostLolLootV1NewPlayerCheckDoneByNewValue (const ClientInfo& info,
-    const bool_t& newValue)
+  std::string PostLolLootV1NewPlayerCheckDoneByNewValue (const ClientInfo& info,
+    const bool& newValue)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

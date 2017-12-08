@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void PutLolBetaOptInV1MigrationError (const ClientInfo& info,
-    const std::string_t& errString)
+    const std::string& errString)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

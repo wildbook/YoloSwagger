@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct EndOfGameLcdsPointsPenalty_t {
-    double_t penalty;
-    std::string_t type;
+    double penalty;
+    std::string type;
   };
 
   inline void to_json(nlohmann::json& j, const EndOfGameLcdsPointsPenalty_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, EndOfGameLcdsPointsPenalty_t& v) {
-    v.penalty = j.at("penalty").get<double_t>();
-    v.type = j.at("type").get<std::string_t>();
+    v.penalty = j.at("penalty").get<double>();
+    v.type = j.at("type").get<std::string>();
   }
   inline std::string to_string(const EndOfGameLcdsPointsPenalty_t& v) {
     nlohmann::json j = v;

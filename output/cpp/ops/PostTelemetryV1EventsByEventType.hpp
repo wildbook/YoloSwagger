@@ -5,7 +5,7 @@ namespace leagueapi {
   //Adds a new event to be sent to Dradis and/or other analytics/monitoring data sinks. All events will have their eventType prefixed with ""
   void PostTelemetryV1EventsByEventType (const ClientInfo& info,
     //The name of the event type
-    const std::string_t& eventType,
+    const std::string& eventType,
     //A map of event data
     const std::map<std::string, nlohmann::json>& eventData)
   {

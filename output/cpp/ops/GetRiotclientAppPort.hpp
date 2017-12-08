@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Get the TCP port number that the remoting server is listening on.
-  uint16_t_t GetRiotclientAppPort (const ClientInfo& info)
+  uint16_t GetRiotclientAppPort (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

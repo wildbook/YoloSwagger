@@ -3,16 +3,16 @@
 #include <optional>
 namespace leagueapi {
   struct CollectionsLcdsChampionSkinDTO_t {
-    uint64_t_t endDate;
-    int32_t_t winCountRemaining;
-    uint64_t_t purchaseDate;
-    int32_t_t skinId;
-    bool_t owned;
-    bool_t lastSelected;
+    uint64_t endDate;
+    int32_t winCountRemaining;
+    uint64_t purchaseDate;
+    int32_t skinId;
+    bool owned;
+    bool lastSelected;
     std::vector<std::string> sources;
-    bool_t freeToPlayReward;
-    bool_t stillObtainable;
-    int32_t_t championId;
+    bool freeToPlayReward;
+    bool stillObtainable;
+    int32_t championId;
   };
 
   inline void to_json(nlohmann::json& j, const CollectionsLcdsChampionSkinDTO_t& v) {
@@ -29,16 +29,16 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, CollectionsLcdsChampionSkinDTO_t& v) {
-    v.endDate = j.at("endDate").get<uint64_t_t>();
-    v.winCountRemaining = j.at("winCountRemaining").get<int32_t_t>();
-    v.purchaseDate = j.at("purchaseDate").get<uint64_t_t>();
-    v.skinId = j.at("skinId").get<int32_t_t>();
-    v.owned = j.at("owned").get<bool_t>();
-    v.lastSelected = j.at("lastSelected").get<bool_t>();
+    v.endDate = j.at("endDate").get<uint64_t>();
+    v.winCountRemaining = j.at("winCountRemaining").get<int32_t>();
+    v.purchaseDate = j.at("purchaseDate").get<uint64_t>();
+    v.skinId = j.at("skinId").get<int32_t>();
+    v.owned = j.at("owned").get<bool>();
+    v.lastSelected = j.at("lastSelected").get<bool>();
     v.sources = j.at("sources").get<std::vector<std::string>>();
-    v.freeToPlayReward = j.at("freeToPlayReward").get<bool_t>();
-    v.stillObtainable = j.at("stillObtainable").get<bool_t>();
-    v.championId = j.at("championId").get<int32_t_t>();
+    v.freeToPlayReward = j.at("freeToPlayReward").get<bool>();
+    v.stillObtainable = j.at("stillObtainable").get<bool>();
+    v.championId = j.at("championId").get<int32_t>();
   }
   inline std::string to_string(const CollectionsLcdsChampionSkinDTO_t& v) {
     nlohmann::json j = v;

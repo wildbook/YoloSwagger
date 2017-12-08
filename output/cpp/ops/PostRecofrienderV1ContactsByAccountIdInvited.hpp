@@ -3,8 +3,8 @@
 #include "RecofrienderContactStateResource.hpp"
 namespace leagueapi {
   RecofrienderContactStateResource_t PostRecofrienderV1ContactsByAccountIdInvited (const ClientInfo& info,
-    const uint64_t_t& accountId,
-    const std::optional<bool_t>& retainInCache = std::nullopt)
+    const uint64_t& accountId,
+    const std::optional<bool>& retainInCache = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

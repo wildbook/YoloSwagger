@@ -8,9 +8,9 @@ namespace leagueapi {
   struct LolMatchmakingMatchmakingReadyCheckResource_t {
     LolMatchmakingMatchmakingReadyCheckResponse_t playerResponse;
     std::vector<uint64_t> declinerIds;
-    float_t timer;
+    float timer;
     LolMatchmakingMatchmakingDodgeWarning_t dodgeWarning;
-    bool_t suppressUx;
+    bool suppressUx;
     LolMatchmakingMatchmakingReadyCheckState_t state;
   };
 
@@ -26,9 +26,9 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingReadyCheckResource_t& v) {
     v.playerResponse = j.at("playerResponse").get<LolMatchmakingMatchmakingReadyCheckResponse_t>();
     v.declinerIds = j.at("declinerIds").get<std::vector<uint64_t>>();
-    v.timer = j.at("timer").get<float_t>();
+    v.timer = j.at("timer").get<float>();
     v.dodgeWarning = j.at("dodgeWarning").get<LolMatchmakingMatchmakingDodgeWarning_t>();
-    v.suppressUx = j.at("suppressUx").get<bool_t>();
+    v.suppressUx = j.at("suppressUx").get<bool>();
     v.state = j.at("state").get<LolMatchmakingMatchmakingReadyCheckState_t>();
   }
   inline std::string to_string(const LolMatchmakingMatchmakingReadyCheckResource_t& v) {

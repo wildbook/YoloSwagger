@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolChatBlockedPlayerResource.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolChatV1BlockedPlayers (const ClientInfo& info,
+  nlohmann::json PostLolChatV1BlockedPlayers (const ClientInfo& info,
     const LolChatBlockedPlayerResource_t& blocked)
   {
     using std::to_string;

@@ -7,7 +7,7 @@
 namespace leagueapi {
   struct LolClubsPublicPlayerClubMembership_t {
     LolClubsPublicClubPlayer_t info;
-    std::string_t secureClubPresenceInfoString;
+    std::string secureClubPresenceInfoString;
     LolClubsPublicClubPreferences_t preferences;
     std::vector<LolClubsPublicPlayerClub_t> activeClubs;
   };
@@ -21,7 +21,7 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolClubsPublicPlayerClubMembership_t& v) {
     v.info = j.at("info").get<LolClubsPublicClubPlayer_t>();
-    v.secureClubPresenceInfoString = j.at("secureClubPresenceInfoString").get<std::string_t>();
+    v.secureClubPresenceInfoString = j.at("secureClubPresenceInfoString").get<std::string>();
     v.preferences = j.at("preferences").get<LolClubsPublicClubPreferences_t>();
     v.activeClubs = j.at("activeClubs").get<std::vector<LolClubsPublicPlayerClub_t>>();
   }

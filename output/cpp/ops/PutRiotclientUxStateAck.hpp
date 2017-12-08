@@ -5,7 +5,7 @@ namespace leagueapi {
   //Ux acknowledges the update to the Ux state.
   void PutRiotclientUxStateAck (const ClientInfo& info,
     //The ux change requestId that is being acknowledged.
-    const uint32_t_t& requestId)
+    const uint32_t& requestId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

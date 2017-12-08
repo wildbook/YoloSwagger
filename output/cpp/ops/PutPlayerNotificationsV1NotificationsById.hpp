@@ -3,8 +3,8 @@
 #include "PlayerNotificationResource.hpp"
 namespace leagueapi {
   PlayerNotificationResource_t PutPlayerNotificationsV1NotificationsById (const ClientInfo& info,
-    const uint64_t_t& id,
-    const nlohmann::json_t& notification)
+    const uint64_t& id,
+    const nlohmann::json& notification)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

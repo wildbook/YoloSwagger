@@ -1,7 +1,7 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolGameflowV1WatchLaunch (const ClientInfo& info,
+  nlohmann::json PostLolGameflowV1WatchLaunch (const ClientInfo& info,
     const std::vector<std::string>& args)
   {
     using std::to_string;

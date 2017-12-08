@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolAccountVerificationAVSConfig_t {
-    bool_t Enabled;
+    bool Enabled;
   };
 
   inline void to_json(nlohmann::json& j, const LolAccountVerificationAVSConfig_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolAccountVerificationAVSConfig_t& v) {
-    v.Enabled = j.at("Enabled").get<bool_t>();
+    v.Enabled = j.at("Enabled").get<bool>();
   }
   inline std::string to_string(const LolAccountVerificationAVSConfig_t& v) {
     nlohmann::json j = v;

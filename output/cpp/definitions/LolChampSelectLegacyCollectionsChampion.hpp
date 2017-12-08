@@ -4,8 +4,8 @@
 #include "LolChampSelectLegacyCollectionsOwnership.hpp"
 namespace leagueapi {
   struct LolChampSelectLegacyCollectionsChampion_t {
-    bool_t freeToPlay;
-    int32_t_t id;
+    bool freeToPlay;
+    int32_t id;
     LolChampSelectLegacyCollectionsOwnership_t ownership;
   };
 
@@ -16,8 +16,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChampSelectLegacyCollectionsChampion_t& v) {
-    v.freeToPlay = j.at("freeToPlay").get<bool_t>();
-    v.id = j.at("id").get<int32_t_t>();
+    v.freeToPlay = j.at("freeToPlay").get<bool>();
+    v.id = j.at("id").get<int32_t>();
     v.ownership = j.at("ownership").get<LolChampSelectLegacyCollectionsOwnership_t>();
   }
   inline std::string to_string(const LolChampSelectLegacyCollectionsChampion_t& v) {

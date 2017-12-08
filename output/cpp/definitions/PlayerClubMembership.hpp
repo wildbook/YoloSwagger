@@ -14,7 +14,7 @@ namespace leagueapi {
     std::vector<Club_t> revokedInviteClubs;
     std::vector<Club_t> removedClubs;
     std::vector<ClubInvite_t> pendingInvites;
-    std::string_t secureClubPresenceInfoString;
+    std::string secureClubPresenceInfoString;
     ClubsConfig_t clubsServerConfig;
     std::vector<PlayerClub_t> activeClubs;
   };
@@ -36,7 +36,7 @@ namespace leagueapi {
     v.revokedInviteClubs = j.at("revokedInviteClubs").get<std::vector<Club_t>>();
     v.removedClubs = j.at("removedClubs").get<std::vector<Club_t>>();
     v.pendingInvites = j.at("pendingInvites").get<std::vector<ClubInvite_t>>();
-    v.secureClubPresenceInfoString = j.at("secureClubPresenceInfoString").get<std::string_t>();
+    v.secureClubPresenceInfoString = j.at("secureClubPresenceInfoString").get<std::string>();
     v.clubsServerConfig = j.at("clubsServerConfig").get<ClubsConfig_t>();
     v.activeClubs = j.at("activeClubs").get<std::vector<PlayerClub_t>>();
   }

@@ -3,17 +3,17 @@
 #include <optional>
 namespace leagueapi {
   struct LolPerksPerkPageResource_t {
-    int32_t_t subStyleId;
-    std::string_t name;
-    bool_t isEditable;
-    bool_t isValid;
-    int32_t_t order;
+    int32_t subStyleId;
+    std::string name;
+    bool isEditable;
+    bool isValid;
+    int32_t order;
     std::vector<int32_t> selectedPerkIds;
-    int32_t_t formatVersion;
-    int32_t_t primaryStyleId;
-    int32_t_t id;
-    bool_t isActive;
-    bool_t isDeletable;
+    int32_t formatVersion;
+    int32_t primaryStyleId;
+    int32_t id;
+    bool isActive;
+    bool isDeletable;
   };
 
   inline void to_json(nlohmann::json& j, const LolPerksPerkPageResource_t& v) {
@@ -31,17 +31,17 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolPerksPerkPageResource_t& v) {
-    v.subStyleId = j.at("subStyleId").get<int32_t_t>();
-    v.name = j.at("name").get<std::string_t>();
-    v.isEditable = j.at("isEditable").get<bool_t>();
-    v.isValid = j.at("isValid").get<bool_t>();
-    v.order = j.at("order").get<int32_t_t>();
+    v.subStyleId = j.at("subStyleId").get<int32_t>();
+    v.name = j.at("name").get<std::string>();
+    v.isEditable = j.at("isEditable").get<bool>();
+    v.isValid = j.at("isValid").get<bool>();
+    v.order = j.at("order").get<int32_t>();
     v.selectedPerkIds = j.at("selectedPerkIds").get<std::vector<int32_t>>();
-    v.formatVersion = j.at("formatVersion").get<int32_t_t>();
-    v.primaryStyleId = j.at("primaryStyleId").get<int32_t_t>();
-    v.id = j.at("id").get<int32_t_t>();
-    v.isActive = j.at("isActive").get<bool_t>();
-    v.isDeletable = j.at("isDeletable").get<bool_t>();
+    v.formatVersion = j.at("formatVersion").get<int32_t>();
+    v.primaryStyleId = j.at("primaryStyleId").get<int32_t>();
+    v.id = j.at("id").get<int32_t>();
+    v.isActive = j.at("isActive").get<bool>();
+    v.isDeletable = j.at("isDeletable").get<bool>();
   }
   inline std::string to_string(const LolPerksPerkPageResource_t& v) {
     nlohmann::json j = v;

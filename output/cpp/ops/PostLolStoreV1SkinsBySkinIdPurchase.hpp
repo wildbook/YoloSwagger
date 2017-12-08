@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "LolStoreItemCost.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolStoreV1SkinsBySkinIdPurchase (const ClientInfo& info,
-    const int32_t_t& skinId,
+  nlohmann::json PostLolStoreV1SkinsBySkinIdPurchase (const ClientInfo& info,
+    const int32_t& skinId,
     const LolStoreItemCost_t& cost)
   {
     using std::to_string;

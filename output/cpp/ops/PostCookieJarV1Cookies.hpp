@@ -3,7 +3,7 @@
 #include "cookie.hpp"
 namespace leagueapi {
   //Set a cookie.
-  nlohmann::json_t PostCookieJarV1Cookies (const ClientInfo& info,
+  nlohmann::json PostCookieJarV1Cookies (const ClientInfo& info,
     //Cookie to set
     const std::vector<cookie_t>& cookie)
   {

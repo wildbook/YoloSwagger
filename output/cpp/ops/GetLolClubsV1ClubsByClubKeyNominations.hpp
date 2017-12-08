@@ -3,7 +3,7 @@
 #include "ClubMember.hpp"
 namespace leagueapi {
   std::vector<ClubMember_t> GetLolClubsV1ClubsByClubKeyNominations (const ClientInfo& info,
-    const std::string_t& clubKey)
+    const std::string& clubKey)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "LolClashInviteSubRequest.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolClashV1TournamentByTournamentIdRosterSubstituteInvite (const ClientInfo& info,
-    const int64_t_t& tournamentId,
+  nlohmann::json PostLolClashV1TournamentByTournamentIdRosterSubstituteInvite (const ClientInfo& info,
+    const int64_t& tournamentId,
     const LolClashInviteSubRequest_t& inviteSubRequest)
   {
     using std::to_string;

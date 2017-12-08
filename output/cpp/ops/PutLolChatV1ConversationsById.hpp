@@ -3,7 +3,7 @@
 #include "LolChatConversationResource.hpp"
 namespace leagueapi {
   LolChatConversationResource_t PutLolChatV1ConversationsById (const ClientInfo& info,
-    const std::string_t& id,
+    const std::string& id,
     const LolChatConversationResource_t& updatedConversation)
   {
     using std::to_string;

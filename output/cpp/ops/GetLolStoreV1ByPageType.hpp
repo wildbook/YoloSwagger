@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t GetLolStoreV1ByPageType (const ClientInfo& info,
-    const std::string_t& pageType)
+  nlohmann::json GetLolStoreV1ByPageType (const ClientInfo& info,
+    const std::string& pageType)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

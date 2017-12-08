@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct MatchmakingLcdsMatchMakerPayload_t {
-    std::string_t LEAVER_BUSTER_ACCESS_TOKEN;
+    std::string LEAVER_BUSTER_ACCESS_TOKEN;
   };
 
   inline void to_json(nlohmann::json& j, const MatchmakingLcdsMatchMakerPayload_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, MatchmakingLcdsMatchMakerPayload_t& v) {
-    v.LEAVER_BUSTER_ACCESS_TOKEN = j.at("LEAVER_BUSTER_ACCESS_TOKEN").get<std::string_t>();
+    v.LEAVER_BUSTER_ACCESS_TOKEN = j.at("LEAVER_BUSTER_ACCESS_TOKEN").get<std::string>();
   }
   inline std::string to_string(const MatchmakingLcdsMatchMakerPayload_t& v) {
     nlohmann::json j = v;

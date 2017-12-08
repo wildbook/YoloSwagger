@@ -4,7 +4,7 @@
 #include "ClientRequestError.hpp"
 namespace leagueapi {
   struct FailedInvite_t {
-    uint64_t_t playerId;
+    uint64_t playerId;
     ClientRequestError_t exception;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, FailedInvite_t& v) {
-    v.playerId = j.at("playerId").get<uint64_t_t>();
+    v.playerId = j.at("playerId").get<uint64_t>();
     v.exception = j.at("exception").get<ClientRequestError_t>();
   }
   inline std::string to_string(const FailedInvite_t& v) {

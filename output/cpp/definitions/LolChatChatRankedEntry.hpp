@@ -5,11 +5,11 @@
 #include "LolChatChatRankedTier.hpp"
 namespace leagueapi {
   struct LolChatChatRankedEntry_t {
-    uint64_t_t division;
-    uint64_t_t wins;
+    uint64_t division;
+    uint64_t wins;
     LolChatChatRankedTier_t rankedTier;
-    uint64_t_t games;
-    std::string_t leagueName;
+    uint64_t games;
+    std::string leagueName;
     LolChatChatRankedQueue_t rankedQueue;
   };
 
@@ -23,11 +23,11 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChatChatRankedEntry_t& v) {
-    v.division = j.at("division").get<uint64_t_t>();
-    v.wins = j.at("wins").get<uint64_t_t>();
+    v.division = j.at("division").get<uint64_t>();
+    v.wins = j.at("wins").get<uint64_t>();
     v.rankedTier = j.at("rankedTier").get<LolChatChatRankedTier_t>();
-    v.games = j.at("games").get<uint64_t_t>();
-    v.leagueName = j.at("leagueName").get<std::string_t>();
+    v.games = j.at("games").get<uint64_t>();
+    v.leagueName = j.at("leagueName").get<std::string>();
     v.rankedQueue = j.at("rankedQueue").get<LolChatChatRankedQueue_t>();
   }
   inline std::string to_string(const LolChatChatRankedEntry_t& v) {

@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct PatcherP2PStatusUpdate_t {
-    bool_t isAllowedByUser;
+    bool isAllowedByUser;
   };
 
   inline void to_json(nlohmann::json& j, const PatcherP2PStatusUpdate_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PatcherP2PStatusUpdate_t& v) {
-    v.isAllowedByUser = j.at("isAllowedByUser").get<bool_t>();
+    v.isAllowedByUser = j.at("isAllowedByUser").get<bool>();
   }
   inline std::string to_string(const PatcherP2PStatusUpdate_t& v) {
     nlohmann::json j = v;

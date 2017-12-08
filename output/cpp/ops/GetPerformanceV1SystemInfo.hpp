@@ -2,9 +2,9 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Returns hardware and software specs for the machine the client is running on.
-  nlohmann::json_t GetPerformanceV1SystemInfo (const ClientInfo& info,
+  nlohmann::json GetPerformanceV1SystemInfo (const ClientInfo& info,
     //Returns all available system information
-    const std::optional<int32_t_t>& full = std::nullopt)
+    const std::optional<int32_t>& full = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

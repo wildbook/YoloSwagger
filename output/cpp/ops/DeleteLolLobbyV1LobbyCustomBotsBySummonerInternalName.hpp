@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t DeleteLolLobbyV1LobbyCustomBotsBySummonerInternalName (const ClientInfo& info,
-    const std::string_t& summonerInternalName)
+  nlohmann::json DeleteLolLobbyV1LobbyCustomBotsBySummonerInternalName (const ClientInfo& info,
+    const std::string& summonerInternalName)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  std::string_t GetLolClubsV1ClubsByClubKeyMotd (const ClientInfo& info,
-    const std::string_t& clubKey)
+  std::string GetLolClubsV1ClubsByClubKeyMotd (const ClientInfo& info,
+    const std::string& clubKey)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

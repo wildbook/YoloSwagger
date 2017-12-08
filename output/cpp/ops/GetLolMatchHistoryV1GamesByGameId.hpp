@@ -3,7 +3,7 @@
 #include "LolMatchHistoryMatchHistoryGame.hpp"
 namespace leagueapi {
   LolMatchHistoryMatchHistoryGame_t GetLolMatchHistoryV1GamesByGameId (const ClientInfo& info,
-    const uint64_t_t& gameId)
+    const uint64_t& gameId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

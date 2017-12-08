@@ -4,7 +4,7 @@
 #include "LolCollectionsAcsChampionGames.hpp"
 namespace leagueapi {
   struct LolCollectionsAcsChampionGamesCollection_t {
-    uint32_t_t gameCount;
+    uint32_t gameCount;
     std::vector<LolCollectionsAcsChampionGames_t> champions;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolCollectionsAcsChampionGamesCollection_t& v) {
-    v.gameCount = j.at("gameCount").get<uint32_t_t>();
+    v.gameCount = j.at("gameCount").get<uint32_t>();
     v.champions = j.at("champions").get<std::vector<LolCollectionsAcsChampionGames_t>>();
   }
   inline std::string to_string(const LolCollectionsAcsChampionGamesCollection_t& v) {

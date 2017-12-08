@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolPerksUISettings.hpp"
 namespace leagueapi {
-  nlohmann::json_t PutLolPerksV1Settings (const ClientInfo& info,
+  nlohmann::json PutLolPerksV1Settings (const ClientInfo& info,
     const LolPerksUISettings_t& showLongDescriptions)
   {
     using std::to_string;

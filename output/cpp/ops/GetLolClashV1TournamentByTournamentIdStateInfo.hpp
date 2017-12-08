@@ -3,7 +3,7 @@
 #include "LolClashTournamentStateInfo.hpp"
 namespace leagueapi {
   LolClashTournamentStateInfo_t GetLolClashV1TournamentByTournamentIdStateInfo (const ClientInfo& info,
-    const int64_t_t& tournamentId)
+    const int64_t& tournamentId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

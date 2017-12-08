@@ -3,7 +3,7 @@
 #include "LolChatConversationMessageResource.hpp"
 namespace leagueapi {
   std::vector<LolChatConversationMessageResource_t> GetLolChatV1ConversationsByIdMessages (const ClientInfo& info,
-    const std::string_t& id)
+    const std::string& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

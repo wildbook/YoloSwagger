@@ -2,9 +2,9 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Retrieves the result of a completed asynchronous operation.
-  nlohmann::json_t AsyncResult (const ClientInfo& info,
+  nlohmann::json AsyncResult (const ClientInfo& info,
     //ID of the asynchronous operation to check
-    const uint32_t_t& asyncToken)
+    const uint32_t& asyncToken)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

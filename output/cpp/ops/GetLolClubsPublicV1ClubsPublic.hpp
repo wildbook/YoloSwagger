@@ -3,7 +3,7 @@
 #include "LolClubsPublicClubsPublicData.hpp"
 namespace leagueapi {
   std::vector<LolClubsPublicClubsPublicData_t> GetLolClubsPublicV1ClubsPublic (const ClientInfo& info,
-    const std::string_t& summonerNames)
+    const std::string& summonerNames)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

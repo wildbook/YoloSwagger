@@ -9,7 +9,7 @@ namespace leagueapi {
     LolLobbyTeamBuilderMatchmakingReadyCheckState_t state;
     LolLobbyTeamBuilderMatchmakingReadyCheckResponse_t playerResponse;
     std::vector<uint64_t> declinerIds;
-    float_t timer;
+    float timer;
     LolLobbyTeamBuilderMatchmakingDodgeWarning_t dodgeWarning;
   };
 
@@ -25,7 +25,7 @@ namespace leagueapi {
     v.state = j.at("state").get<LolLobbyTeamBuilderMatchmakingReadyCheckState_t>();
     v.playerResponse = j.at("playerResponse").get<LolLobbyTeamBuilderMatchmakingReadyCheckResponse_t>();
     v.declinerIds = j.at("declinerIds").get<std::vector<uint64_t>>();
-    v.timer = j.at("timer").get<float_t>();
+    v.timer = j.at("timer").get<float>();
     v.dodgeWarning = j.at("dodgeWarning").get<LolLobbyTeamBuilderMatchmakingDodgeWarning_t>();
   }
   inline std::string to_string(const LolLobbyTeamBuilderMatchmakingReadyCheckResource_t& v) {

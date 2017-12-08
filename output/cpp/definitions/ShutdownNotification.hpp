@@ -4,8 +4,8 @@
 #include "ShutdownReason.hpp"
 namespace leagueapi {
   struct ShutdownNotification_t {
-    float_t countdown;
-    std::string_t additionalInfo;
+    float countdown;
+    std::string additionalInfo;
     ShutdownReason_t reason;
   };
 
@@ -16,8 +16,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, ShutdownNotification_t& v) {
-    v.countdown = j.at("countdown").get<float_t>();
-    v.additionalInfo = j.at("additionalInfo").get<std::string_t>();
+    v.countdown = j.at("countdown").get<float>();
+    v.additionalInfo = j.at("additionalInfo").get<std::string>();
     v.reason = j.at("reason").get<ShutdownReason_t>();
   }
   inline std::string to_string(const ShutdownNotification_t& v) {

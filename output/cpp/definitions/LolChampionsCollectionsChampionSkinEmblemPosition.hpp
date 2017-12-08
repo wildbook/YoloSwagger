@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LolChampionsCollectionsChampionSkinEmblemPosition_t {
-    std::string_t horizontal;
-    std::string_t vertical;
+    std::string horizontal;
+    std::string vertical;
   };
 
   inline void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionSkinEmblemPosition_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionSkinEmblemPosition_t& v) {
-    v.horizontal = j.at("horizontal").get<std::string_t>();
-    v.vertical = j.at("vertical").get<std::string_t>();
+    v.horizontal = j.at("horizontal").get<std::string>();
+    v.vertical = j.at("vertical").get<std::string>();
   }
   inline std::string to_string(const LolChampionsCollectionsChampionSkinEmblemPosition_t& v) {
     nlohmann::json j = v;

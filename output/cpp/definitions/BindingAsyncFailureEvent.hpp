@@ -5,9 +5,9 @@ namespace leagueapi {
   // Represents a failed asynchronous operation.
   struct BindingAsyncFailureEvent_t {
     // Asynchronous operation token
-    uint32_t_t asyncToken;
+    uint32_t asyncToken;
     // Error message
-    std::string_t error;
+    std::string error;
   };
 
   inline void to_json(nlohmann::json& j, const BindingAsyncFailureEvent_t& v) {
@@ -16,8 +16,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, BindingAsyncFailureEvent_t& v) {
-    v.asyncToken = j.at("asyncToken").get<uint32_t_t>();
-    v.error = j.at("error").get<std::string_t>();
+    v.asyncToken = j.at("asyncToken").get<uint32_t>();
+    v.error = j.at("error").get<std::string>();
   }
   inline std::string to_string(const BindingAsyncFailureEvent_t& v) {
     nlohmann::json j = v;

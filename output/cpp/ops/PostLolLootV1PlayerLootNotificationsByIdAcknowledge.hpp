@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  std::string_t PostLolLootV1PlayerLootNotificationsByIdAcknowledge (const ClientInfo& info,
-    const std::string_t& id)
+  std::string PostLolLootV1PlayerLootNotificationsByIdAcknowledge (const ClientInfo& info,
+    const std::string& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

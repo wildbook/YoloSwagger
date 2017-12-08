@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct LolLobbyServiceProxyPayload_t {
-    std::string_t body;
-    std::string_t url;
-    std::string_t method;
+    std::string body;
+    std::string url;
+    std::string method;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyServiceProxyPayload_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyServiceProxyPayload_t& v) {
-    v.body = j.at("body").get<std::string_t>();
-    v.url = j.at("url").get<std::string_t>();
-    v.method = j.at("method").get<std::string_t>();
+    v.body = j.at("body").get<std::string>();
+    v.url = j.at("url").get<std::string>();
+    v.method = j.at("method").get<std::string>();
   }
   inline std::string to_string(const LolLobbyServiceProxyPayload_t& v) {
     nlohmann::json j = v;

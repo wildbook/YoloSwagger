@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct RecofrienderActionResource_t {
-    std::string_t action;
-    std::string_t platformId;
-    uint64_t_t accountId;
+    std::string action;
+    std::string platformId;
+    uint64_t accountId;
   };
 
   inline void to_json(nlohmann::json& j, const RecofrienderActionResource_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, RecofrienderActionResource_t& v) {
-    v.action = j.at("action").get<std::string_t>();
-    v.platformId = j.at("platformId").get<std::string_t>();
-    v.accountId = j.at("accountId").get<uint64_t_t>();
+    v.action = j.at("action").get<std::string>();
+    v.platformId = j.at("platformId").get<std::string>();
+    v.accountId = j.at("accountId").get<uint64_t>();
   }
   inline std::string to_string(const RecofrienderActionResource_t& v) {
     nlohmann::json j = v;

@@ -41,9 +41,9 @@ def info_type_convert(type,  typemap,  otherformat = "{0}"):
     if not type["type"] in typemap:
         return otherformat.format(type["type"])
     if not type["elementType"] == "":
-        if not type["elementType"]in typemap:
+        if not type["elementType"] in typemap:
             return typemap[type["type"]].format(otherformat.format(type["elementType"]))
-        return typemap[type["type"]].format(typemap[type["elementType"]].format())
+        return typemap[type["type"]].format(typemap[type["elementType"]].format(type["elementType"]))
     return typemap[type["type"]]
 
 #generates info from /Help?format=Full and /v2/swagger.json

@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Get the plugin manifest.
-  nlohmann::json_t GetPluginManagerV2PluginsManifest (const ClientInfo& info)
+  nlohmann::json GetPluginManagerV2PluginsManifest (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

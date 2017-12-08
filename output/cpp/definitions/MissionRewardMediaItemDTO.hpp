@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct MissionRewardMediaItemDTO_t {
-    std::string_t sound;
-    std::string_t video;
+    std::string sound;
+    std::string video;
   };
 
   inline void to_json(nlohmann::json& j, const MissionRewardMediaItemDTO_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, MissionRewardMediaItemDTO_t& v) {
-    v.sound = j.at("sound").get<std::string_t>();
-    v.video = j.at("video").get<std::string_t>();
+    v.sound = j.at("sound").get<std::string>();
+    v.video = j.at("video").get<std::string>();
   }
   inline std::string to_string(const MissionRewardMediaItemDTO_t& v) {
     nlohmann::json j = v;

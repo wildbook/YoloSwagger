@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LolInventoryRmsEntitlementPayload_t {
-    std::string_t itemId;
-    std::string_t itemTypeId;
+    std::string itemId;
+    std::string itemTypeId;
   };
 
   inline void to_json(nlohmann::json& j, const LolInventoryRmsEntitlementPayload_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolInventoryRmsEntitlementPayload_t& v) {
-    v.itemId = j.at("itemId").get<std::string_t>();
-    v.itemTypeId = j.at("itemTypeId").get<std::string_t>();
+    v.itemId = j.at("itemId").get<std::string>();
+    v.itemTypeId = j.at("itemTypeId").get<std::string>();
   }
   inline std::string to_string(const LolInventoryRmsEntitlementPayload_t& v) {
     nlohmann::json j = v;

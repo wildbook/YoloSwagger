@@ -4,7 +4,7 @@
 #include "LolChatSessionState.hpp"
 namespace leagueapi {
   struct LolChatSessionResource_t {
-    uint32_t_t sessionExpire;
+    uint32_t sessionExpire;
     LolChatSessionState_t sessionState;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChatSessionResource_t& v) {
-    v.sessionExpire = j.at("sessionExpire").get<uint32_t_t>();
+    v.sessionExpire = j.at("sessionExpire").get<uint32_t>();
     v.sessionState = j.at("sessionState").get<LolChatSessionState_t>();
   }
   inline std::string to_string(const LolChatSessionResource_t& v) {

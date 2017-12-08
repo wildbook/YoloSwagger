@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Retrieves a completed scheduler trace.
-  nlohmann::json_t GetRiotclientTrace (const ClientInfo& info)
+  nlohmann::json GetRiotclientTrace (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

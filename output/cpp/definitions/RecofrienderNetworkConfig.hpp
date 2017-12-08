@@ -3,10 +3,10 @@
 #include <optional>
 namespace leagueapi {
   struct RecofrienderNetworkConfig_t {
-    std::string_t linkUrlTemplate;
-    bool_t enabled;
-    std::string_t name;
-    std::string_t unlinkUrlTemplate;
+    std::string linkUrlTemplate;
+    bool enabled;
+    std::string name;
+    std::string unlinkUrlTemplate;
   };
 
   inline void to_json(nlohmann::json& j, const RecofrienderNetworkConfig_t& v) {
@@ -17,10 +17,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, RecofrienderNetworkConfig_t& v) {
-    v.linkUrlTemplate = j.at("linkUrlTemplate").get<std::string_t>();
-    v.enabled = j.at("enabled").get<bool_t>();
-    v.name = j.at("name").get<std::string_t>();
-    v.unlinkUrlTemplate = j.at("unlinkUrlTemplate").get<std::string_t>();
+    v.linkUrlTemplate = j.at("linkUrlTemplate").get<std::string>();
+    v.enabled = j.at("enabled").get<bool>();
+    v.name = j.at("name").get<std::string>();
+    v.unlinkUrlTemplate = j.at("unlinkUrlTemplate").get<std::string>();
   }
   inline std::string to_string(const RecofrienderNetworkConfig_t& v) {
     nlohmann::json j = v;

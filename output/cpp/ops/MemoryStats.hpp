@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Returns aggregate information about memory usage
-  nlohmann::json_t MemoryStats (const ClientInfo& info)
+  nlohmann::json MemoryStats (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

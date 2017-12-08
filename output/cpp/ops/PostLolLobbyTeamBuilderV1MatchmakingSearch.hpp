@@ -3,7 +3,7 @@
 #include "LolLobbyTeamBuilderMatchmakingSearchResource.hpp"
 namespace leagueapi {
   LolLobbyTeamBuilderMatchmakingSearchResource_t PostLolLobbyTeamBuilderV1MatchmakingSearch (const ClientInfo& info,
-    const std::string_t& leaverBusterToken)
+    const std::string& leaverBusterToken)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

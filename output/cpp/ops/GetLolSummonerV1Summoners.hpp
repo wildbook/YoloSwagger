@@ -3,7 +3,7 @@
 #include "LolSummonerSummoner.hpp"
 namespace leagueapi {
   LolSummonerSummoner_t GetLolSummonerV1Summoners (const ClientInfo& info,
-    const std::string_t& name)
+    const std::string& name)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

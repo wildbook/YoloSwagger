@@ -4,9 +4,9 @@
 #include "LolSummonerRMSLevelProgression.hpp"
 namespace leagueapi {
   struct LolSummonerRMSLevelField_t {
-    uint32_t_t finalLevel;
+    uint32_t finalLevel;
     LolSummonerRMSLevelProgression_t progress;
-    uint32_t_t initialLevel;
+    uint32_t initialLevel;
   };
 
   inline void to_json(nlohmann::json& j, const LolSummonerRMSLevelField_t& v) {
@@ -16,9 +16,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolSummonerRMSLevelField_t& v) {
-    v.finalLevel = j.at("finalLevel").get<uint32_t_t>();
+    v.finalLevel = j.at("finalLevel").get<uint32_t>();
     v.progress = j.at("progress").get<LolSummonerRMSLevelProgression_t>();
-    v.initialLevel = j.at("initialLevel").get<uint32_t_t>();
+    v.initialLevel = j.at("initialLevel").get<uint32_t>();
   }
   inline std::string to_string(const LolSummonerRMSLevelField_t& v) {
     nlohmann::json j = v;

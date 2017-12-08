@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Retrieves the API documentation resource listing
-  nlohmann::json_t HttpApiDocsV1 (const ClientInfo& info)
+  nlohmann::json HttpApiDocsV1 (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

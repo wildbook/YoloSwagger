@@ -3,8 +3,8 @@
 #include "RecofrienderContactPaginationResource.hpp"
 namespace leagueapi {
   RecofrienderContactPaginationResource_t GetRecofrienderV2DismissedPage (const ClientInfo& info,
-    const uint64_t_t& start,
-    const uint64_t_t& limit)
+    const uint64_t& start,
+    const uint64_t& limit)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -7,8 +7,8 @@ namespace leagueapi {
   struct LolPlayerBehaviorPlayerBehavior_LoginSession_t {
     LolPlayerBehaviorPlayerBehavior_LoginSessionState_t state;
     std::optional<LolPlayerBehaviorPlayerBehavior_LoginError_t> error;
-    uint64_t_t summonerId;
-    uint64_t_t accountId;
+    uint64_t summonerId;
+    uint64_t accountId;
   };
 
   inline void to_json(nlohmann::json& j, const LolPlayerBehaviorPlayerBehavior_LoginSession_t& v) {
@@ -23,8 +23,8 @@ namespace leagueapi {
     v.state = j.at("state").get<LolPlayerBehaviorPlayerBehavior_LoginSessionState_t>();
     if(auto it = j.find("error"); it != j.end() && !it->is_null())
       v.error = it->get<LolPlayerBehaviorPlayerBehavior_LoginError_t>();
-    v.summonerId = j.at("summonerId").get<uint64_t_t>();
-    v.accountId = j.at("accountId").get<uint64_t_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.accountId = j.at("accountId").get<uint64_t>();
   }
   inline std::string to_string(const LolPlayerBehaviorPlayerBehavior_LoginSession_t& v) {
     nlohmann::json j = v;

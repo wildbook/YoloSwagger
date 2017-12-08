@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   std::map<std::string, std::string> GetPatcherV1ProductsByProductIdTags (const ClientInfo& info,
-    const std::string_t& product-id)
+    const std::string& product-id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

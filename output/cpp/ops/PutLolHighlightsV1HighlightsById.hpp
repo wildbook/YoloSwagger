@@ -3,7 +3,7 @@
 #include "Highlight.hpp"
 namespace leagueapi {
   Highlight_t PutLolHighlightsV1HighlightsById (const ClientInfo& info,
-    const uint64_t_t& id,
+    const uint64_t& id,
     const Highlight_t& highlight)
   {
     using std::to_string;

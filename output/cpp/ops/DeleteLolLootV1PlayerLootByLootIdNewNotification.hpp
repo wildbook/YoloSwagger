@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t DeleteLolLootV1PlayerLootByLootIdNewNotification (const ClientInfo& info,
-    const std::string_t& lootId)
+  nlohmann::json DeleteLolLootV1PlayerLootByLootIdNewNotification (const ClientInfo& info,
+    const std::string& lootId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

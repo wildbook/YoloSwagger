@@ -3,11 +3,11 @@
 #include <optional>
 namespace leagueapi {
   struct ChampSelectLcdsPlayerParticipant_t {
-    int32_t_t pickMode;
-    std::string_t summonerInternalName;
-    int32_t_t pickTurn;
-    std::string_t summonerName;
-    uint64_t_t summonerId;
+    int32_t pickMode;
+    std::string summonerInternalName;
+    int32_t pickTurn;
+    std::string summonerName;
+    uint64_t summonerId;
   };
 
   inline void to_json(nlohmann::json& j, const ChampSelectLcdsPlayerParticipant_t& v) {
@@ -19,11 +19,11 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, ChampSelectLcdsPlayerParticipant_t& v) {
-    v.pickMode = j.at("pickMode").get<int32_t_t>();
-    v.summonerInternalName = j.at("summonerInternalName").get<std::string_t>();
-    v.pickTurn = j.at("pickTurn").get<int32_t_t>();
-    v.summonerName = j.at("summonerName").get<std::string_t>();
-    v.summonerId = j.at("summonerId").get<uint64_t_t>();
+    v.pickMode = j.at("pickMode").get<int32_t>();
+    v.summonerInternalName = j.at("summonerInternalName").get<std::string>();
+    v.pickTurn = j.at("pickTurn").get<int32_t>();
+    v.summonerName = j.at("summonerName").get<std::string>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
   }
   inline std::string to_string(const ChampSelectLcdsPlayerParticipant_t& v) {
     nlohmann::json j = v;

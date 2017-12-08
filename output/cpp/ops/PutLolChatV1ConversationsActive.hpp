@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolChatActiveConversationResource.hpp"
 namespace leagueapi {
-  nlohmann::json_t PutLolChatV1ConversationsActive (const ClientInfo& info,
+  nlohmann::json PutLolChatV1ConversationsActive (const ClientInfo& info,
     const LolChatActiveConversationResource_t& activeConversation)
   {
     using std::to_string;

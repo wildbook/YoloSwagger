@@ -3,8 +3,8 @@
 #include "LolQueueEligibilityEligibility.hpp"
 namespace leagueapi {
   std::vector<LolQueueEligibilityEligibility_t> GetLolQueueEligibilityV3Custom (const ClientInfo& info,
-    const int32_t_t& teamSize,
-    const std::string_t& pickMode)
+    const int32_t& teamSize,
+    const std::string& pickMode)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

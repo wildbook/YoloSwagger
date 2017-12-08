@@ -8,8 +8,8 @@ namespace leagueapi {
   struct LolMatchHistoryMatchHistoryPlayerGameDelta_t {
     LolMatchHistoryMatchHistoryPlayerLeagueDelta_t leagueDelta;
     LolMatchHistoryMatchHistoryPlayerPlatformDelta_t platformDelta;
-    std::string_t gamePlatformId;
-    uint64_t_t gameId;
+    std::string gamePlatformId;
+    uint64_t gameId;
     LolMatchHistoryMatchHistoryPlayerChampMasteryDelta_t champMastery;
   };
 
@@ -24,8 +24,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryPlayerGameDelta_t& v) {
     v.leagueDelta = j.at("leagueDelta").get<LolMatchHistoryMatchHistoryPlayerLeagueDelta_t>();
     v.platformDelta = j.at("platformDelta").get<LolMatchHistoryMatchHistoryPlayerPlatformDelta_t>();
-    v.gamePlatformId = j.at("gamePlatformId").get<std::string_t>();
-    v.gameId = j.at("gameId").get<uint64_t_t>();
+    v.gamePlatformId = j.at("gamePlatformId").get<std::string>();
+    v.gameId = j.at("gameId").get<uint64_t>();
     v.champMastery = j.at("champMastery").get<LolMatchHistoryMatchHistoryPlayerChampMasteryDelta_t>();
   }
   inline std::string to_string(const LolMatchHistoryMatchHistoryPlayerGameDelta_t& v) {

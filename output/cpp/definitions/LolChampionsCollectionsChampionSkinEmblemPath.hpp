@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LolChampionsCollectionsChampionSkinEmblemPath_t {
-    std::string_t large;
-    std::string_t small;
+    std::string large;
+    std::string small;
   };
 
   inline void to_json(nlohmann::json& j, const LolChampionsCollectionsChampionSkinEmblemPath_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChampionsCollectionsChampionSkinEmblemPath_t& v) {
-    v.large = j.at("large").get<std::string_t>();
-    v.small = j.at("small").get<std::string_t>();
+    v.large = j.at("large").get<std::string>();
+    v.small = j.at("small").get<std::string>();
   }
   inline std::string to_string(const LolChampionsCollectionsChampionSkinEmblemPath_t& v) {
     nlohmann::json j = v;

@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LolPftPFTEvent_t {
-    std::string_t action;
-    uint64_t_t playerSurveyId;
+    std::string action;
+    uint64_t playerSurveyId;
     std::vector<nlohmann::json> data;
   };
 
@@ -15,8 +15,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolPftPFTEvent_t& v) {
-    v.action = j.at("action").get<std::string_t>();
-    v.playerSurveyId = j.at("playerSurveyId").get<uint64_t_t>();
+    v.action = j.at("action").get<std::string>();
+    v.playerSurveyId = j.at("playerSurveyId").get<uint64_t>();
     v.data = j.at("data").get<std::vector<nlohmann::json>>();
   }
   inline std::string to_string(const LolPftPFTEvent_t& v) {

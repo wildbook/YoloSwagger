@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "LolClashChangeIconRequest.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolClashV1TournamentByTournamentIdRosterChangeIcon (const ClientInfo& info,
-    const int64_t_t& tournamentId,
+  nlohmann::json PostLolClashV1TournamentByTournamentIdRosterChangeIcon (const ClientInfo& info,
+    const int64_t& tournamentId,
     const LolClashChangeIconRequest_t& changeIconRequest)
   {
     using std::to_string;

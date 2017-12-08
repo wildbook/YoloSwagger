@@ -4,7 +4,7 @@
 #include "LolLootCollectionsOwnership.hpp"
 namespace leagueapi {
   struct LolLootCollectionsChampionMinimal_t {
-    int32_t_t id;
+    int32_t id;
     LolLootCollectionsOwnership_t ownership;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLootCollectionsChampionMinimal_t& v) {
-    v.id = j.at("id").get<int32_t_t>();
+    v.id = j.at("id").get<int32_t>();
     v.ownership = j.at("ownership").get<LolLootCollectionsOwnership_t>();
   }
   inline std::string to_string(const LolLootCollectionsChampionMinimal_t& v) {

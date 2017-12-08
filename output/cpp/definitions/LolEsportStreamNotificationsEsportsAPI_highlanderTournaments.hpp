@@ -5,10 +5,10 @@
 #include "LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_brackets.hpp"
 namespace leagueapi {
   struct LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_t {
-    std::string_t id;
-    std::string_t title;
+    std::string id;
+    std::string title;
     std::map<std::string, LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters_t> rosters;
-    std::string_t description;
+    std::string description;
     std::map<std::string, LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_brackets_t> brackets;
   };
 
@@ -21,10 +21,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_t& v) {
-    v.id = j.at("id").get<std::string_t>();
-    v.title = j.at("title").get<std::string_t>();
+    v.id = j.at("id").get<std::string>();
+    v.title = j.at("title").get<std::string>();
     v.rosters = j.at("rosters").get<std::map<std::string, LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_rosters_t>>();
-    v.description = j.at("description").get<std::string_t>();
+    v.description = j.at("description").get<std::string>();
     v.brackets = j.at("brackets").get<std::map<std::string, LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_brackets_t>>();
   }
   inline std::string to_string(const LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_t& v) {

@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct LolStoreItemLocalization_t {
-    std::string_t description;
-    std::string_t language;
-    std::string_t name;
+    std::string description;
+    std::string language;
+    std::string name;
   };
 
   inline void to_json(nlohmann::json& j, const LolStoreItemLocalization_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolStoreItemLocalization_t& v) {
-    v.description = j.at("description").get<std::string_t>();
-    v.language = j.at("language").get<std::string_t>();
-    v.name = j.at("name").get<std::string_t>();
+    v.description = j.at("description").get<std::string>();
+    v.language = j.at("language").get<std::string>();
+    v.name = j.at("name").get<std::string>();
   }
   inline std::string to_string(const LolStoreItemLocalization_t& v) {
     nlohmann::json j = v;

@@ -2,9 +2,9 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Cancels the asynchronous operation or removes its completion status.
-  nlohmann::json_t AsyncDelete (const ClientInfo& info,
+  nlohmann::json AsyncDelete (const ClientInfo& info,
     //ID of the asynchronous operation to remove
-    const uint32_t_t& asyncToken)
+    const uint32_t& asyncToken)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

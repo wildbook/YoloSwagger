@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void PostLolPreEndOfGameV1CompleteBySequenceEventName (const ClientInfo& info,
-    const std::string_t& sequenceEventName)
+    const std::string& sequenceEventName)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

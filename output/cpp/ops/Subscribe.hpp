@@ -3,9 +3,9 @@
 #include "RemotingSerializedFormat.hpp"
 namespace leagueapi {
   //Subscribes to a given event
-  nlohmann::json_t Subscribe (const ClientInfo& info,
+  nlohmann::json Subscribe (const ClientInfo& info,
     //Name of the event to subscribe to
-    const std::string_t& eventName,
+    const std::string& eventName,
     //Desired format to receive events in. If unspecified, events will be sent in the active result format at the time.
     const std::optional<RemotingSerializedFormat_t>& format = std::nullopt)
   {

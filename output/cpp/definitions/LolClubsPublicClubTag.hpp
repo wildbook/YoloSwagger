@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct LolClubsPublicClubTag_t {
-    std::string_t clubTag;
-    std::string_t clubName;
-    uint64_t_t summonerId;
+    std::string clubTag;
+    std::string clubName;
+    uint64_t summonerId;
   };
 
   inline void to_json(nlohmann::json& j, const LolClubsPublicClubTag_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolClubsPublicClubTag_t& v) {
-    v.clubTag = j.at("clubTag").get<std::string_t>();
-    v.clubName = j.at("clubName").get<std::string_t>();
-    v.summonerId = j.at("summonerId").get<uint64_t_t>();
+    v.clubTag = j.at("clubTag").get<std::string>();
+    v.clubName = j.at("clubName").get<std::string>();
+    v.summonerId = j.at("summonerId").get<uint64_t>();
   }
   inline std::string to_string(const LolClubsPublicClubTag_t& v) {
     nlohmann::json j = v;

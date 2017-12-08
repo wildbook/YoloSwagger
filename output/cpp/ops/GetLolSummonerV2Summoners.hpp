@@ -3,7 +3,7 @@
 #include "LolSummonerSummoner.hpp"
 namespace leagueapi {
   std::vector<LolSummonerSummoner_t> GetLolSummonerV2Summoners (const ClientInfo& info,
-    const std::optional<std::string_t>& name = std::nullopt,
+    const std::optional<std::string>& name = std::nullopt,
     const std::optional<std::vector<uint64_t>>& ids = std::nullopt)
   {
     using std::to_string;

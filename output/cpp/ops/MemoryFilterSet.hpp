@@ -5,13 +5,13 @@ namespace leagueapi {
   //Sets the filter parameters for when to print to the log. Use MemoryFilterEnable to start/stop the print outs
   void MemoryFilterSet (const ClientInfo& info,
     //Optional filter for minimum size to output
-    const std::optional<uint32_t_t>& minSize = std::nullopt,
+    const std::optional<uint32_t>& minSize = std::nullopt,
     //Optional filter for maximum size to output
-    const std::optional<uint32_t_t>& maxSize = std::nullopt,
+    const std::optional<uint32_t>& maxSize = std::nullopt,
     //Optional filter for minimum address in hex to output
-    const std::optional<std::string_t>& minAddress = std::nullopt,
+    const std::optional<std::string>& minAddress = std::nullopt,
     //Optional filter for maximum address in hex to output
-    const std::optional<std::string_t>& maxAddress = std::nullopt)
+    const std::optional<std::string>& maxAddress = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

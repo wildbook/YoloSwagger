@@ -9,16 +9,16 @@ namespace leagueapi {
   struct RankedLeagueItemDTO_t {
     LolRankedStatsRankedQueue_t queueType;
     RankedLeagueMiniSeriesDTO_t miniSeries;
-    int32_t_t apexDaysUntilDecay;
-    std::string_t playerOrTeamId;
-    uint32_t_t loses;
+    int32_t apexDaysUntilDecay;
+    std::string playerOrTeamId;
+    uint32_t loses;
     LolRankedStatsRankedTier_t tier;
-    std::string_t playerOrTeamName;
-    bool_t inactive;
+    std::string playerOrTeamName;
+    bool inactive;
     RankedDivision_t rank;
-    uint32_t_t wins;
-    std::string_t leagueName;
-    int32_t_t leaguePoints;
+    uint32_t wins;
+    std::string leagueName;
+    int32_t leaguePoints;
   };
 
   inline void to_json(nlohmann::json& j, const RankedLeagueItemDTO_t& v) {
@@ -39,16 +39,16 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, RankedLeagueItemDTO_t& v) {
     v.queueType = j.at("queueType").get<LolRankedStatsRankedQueue_t>();
     v.miniSeries = j.at("miniSeries").get<RankedLeagueMiniSeriesDTO_t>();
-    v.apexDaysUntilDecay = j.at("apexDaysUntilDecay").get<int32_t_t>();
-    v.playerOrTeamId = j.at("playerOrTeamId").get<std::string_t>();
-    v.loses = j.at("loses").get<uint32_t_t>();
+    v.apexDaysUntilDecay = j.at("apexDaysUntilDecay").get<int32_t>();
+    v.playerOrTeamId = j.at("playerOrTeamId").get<std::string>();
+    v.loses = j.at("loses").get<uint32_t>();
     v.tier = j.at("tier").get<LolRankedStatsRankedTier_t>();
-    v.playerOrTeamName = j.at("playerOrTeamName").get<std::string_t>();
-    v.inactive = j.at("inactive").get<bool_t>();
+    v.playerOrTeamName = j.at("playerOrTeamName").get<std::string>();
+    v.inactive = j.at("inactive").get<bool>();
     v.rank = j.at("rank").get<RankedDivision_t>();
-    v.wins = j.at("wins").get<uint32_t_t>();
-    v.leagueName = j.at("leagueName").get<std::string_t>();
-    v.leaguePoints = j.at("leaguePoints").get<int32_t_t>();
+    v.wins = j.at("wins").get<uint32_t>();
+    v.leagueName = j.at("leagueName").get<std::string>();
+    v.leaguePoints = j.at("leaguePoints").get<int32_t>();
   }
   inline std::string to_string(const RankedLeagueItemDTO_t& v) {
     nlohmann::json j = v;

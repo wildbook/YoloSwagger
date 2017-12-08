@@ -2,9 +2,9 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Unsubscribes from a given event
-  nlohmann::json_t Unsubscribe (const ClientInfo& info,
+  nlohmann::json Unsubscribe (const ClientInfo& info,
     //Name of the event to unsubscribe from
-    const std::string_t& eventName)
+    const std::string& eventName)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

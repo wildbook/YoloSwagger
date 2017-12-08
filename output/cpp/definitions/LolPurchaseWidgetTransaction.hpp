@@ -4,9 +4,9 @@
 #include "LolPurchaseWidgetItemKey.hpp"
 namespace leagueapi {
   struct LolPurchaseWidgetTransaction_t {
-    std::string_t iconUrl;
-    std::string_t transactionId;
-    std::string_t itemName;
+    std::string iconUrl;
+    std::string transactionId;
+    std::string itemName;
     LolPurchaseWidgetItemKey_t itemKey;
   };
 
@@ -18,9 +18,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolPurchaseWidgetTransaction_t& v) {
-    v.iconUrl = j.at("iconUrl").get<std::string_t>();
-    v.transactionId = j.at("transactionId").get<std::string_t>();
-    v.itemName = j.at("itemName").get<std::string_t>();
+    v.iconUrl = j.at("iconUrl").get<std::string>();
+    v.transactionId = j.at("transactionId").get<std::string>();
+    v.itemName = j.at("itemName").get<std::string>();
     v.itemKey = j.at("itemKey").get<LolPurchaseWidgetItemKey_t>();
   }
   inline std::string to_string(const LolPurchaseWidgetTransaction_t& v) {

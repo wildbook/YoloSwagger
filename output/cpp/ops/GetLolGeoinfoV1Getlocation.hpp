@@ -3,7 +3,7 @@
 #include "LolGeoinfoGeoInfo.hpp"
 namespace leagueapi {
   LolGeoinfoGeoInfo_t GetLolGeoinfoV1Getlocation (const ClientInfo& info,
-    const std::string_t& ip_address)
+    const std::string& ip_address)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

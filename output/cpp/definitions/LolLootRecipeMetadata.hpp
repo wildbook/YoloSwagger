@@ -4,7 +4,7 @@
 #include "LolLootLootDescription.hpp"
 namespace leagueapi {
   struct LolLootRecipeMetadata_t {
-    bool_t tooltipsDisabled;
+    bool tooltipsDisabled;
     std::vector<LolLootLootDescription_t> bonusDescriptions;
     std::vector<LolLootLootDescription_t> guaranteedDescriptions;
   };
@@ -16,7 +16,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLootRecipeMetadata_t& v) {
-    v.tooltipsDisabled = j.at("tooltipsDisabled").get<bool_t>();
+    v.tooltipsDisabled = j.at("tooltipsDisabled").get<bool>();
     v.bonusDescriptions = j.at("bonusDescriptions").get<std::vector<LolLootLootDescription_t>>();
     v.guaranteedDescriptions = j.at("guaranteedDescriptions").get<std::vector<LolLootLootDescription_t>>();
   }

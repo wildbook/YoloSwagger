@@ -3,7 +3,7 @@
 #include "LolCollectionsCollectionsMasteryBook.hpp"
 namespace leagueapi {
   LolCollectionsCollectionsMasteryBook_t PutLolCollectionsV1InventoriesBySummonerIdMasteryBook (const ClientInfo& info,
-    const uint64_t_t& summonerId,
+    const uint64_t& summonerId,
     const LolCollectionsCollectionsMasteryBook_t& resource)
   {
     using std::to_string;

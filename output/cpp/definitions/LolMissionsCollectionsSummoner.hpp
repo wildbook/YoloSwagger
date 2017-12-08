@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolMissionsCollectionsSummoner_t {
-    int32_t_t summonerLevel;
+    int32_t summonerLevel;
   };
 
   inline void to_json(nlohmann::json& j, const LolMissionsCollectionsSummoner_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolMissionsCollectionsSummoner_t& v) {
-    v.summonerLevel = j.at("summonerLevel").get<int32_t_t>();
+    v.summonerLevel = j.at("summonerLevel").get<int32_t>();
   }
   inline std::string to_string(const LolMissionsCollectionsSummoner_t& v) {
     nlohmann::json j = v;

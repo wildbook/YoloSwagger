@@ -5,7 +5,7 @@ namespace leagueapi {
   //Memory filter prints to the log when memory is allocated or freed that matches the filter parameters set in MemoryFilterSet
   void MemoryFilterEnable (const ClientInfo& info,
     //Enable/disable the memory filter
-    const std::optional<int32_t_t>& enable = std::nullopt)
+    const std::optional<int32_t>& enable = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

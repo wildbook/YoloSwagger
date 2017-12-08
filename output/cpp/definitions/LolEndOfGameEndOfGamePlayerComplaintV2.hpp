@@ -3,10 +3,10 @@
 #include <optional>
 namespace leagueapi {
   struct LolEndOfGameEndOfGamePlayerComplaintV2_t {
-    std::string_t comment;
-    std::string_t offenses;
-    uint64_t_t gameId;
-    uint64_t_t reportedSummonerId;
+    std::string comment;
+    std::string offenses;
+    uint64_t gameId;
+    uint64_t reportedSummonerId;
   };
 
   inline void to_json(nlohmann::json& j, const LolEndOfGameEndOfGamePlayerComplaintV2_t& v) {
@@ -17,10 +17,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolEndOfGameEndOfGamePlayerComplaintV2_t& v) {
-    v.comment = j.at("comment").get<std::string_t>();
-    v.offenses = j.at("offenses").get<std::string_t>();
-    v.gameId = j.at("gameId").get<uint64_t_t>();
-    v.reportedSummonerId = j.at("reportedSummonerId").get<uint64_t_t>();
+    v.comment = j.at("comment").get<std::string>();
+    v.offenses = j.at("offenses").get<std::string>();
+    v.gameId = j.at("gameId").get<uint64_t>();
+    v.reportedSummonerId = j.at("reportedSummonerId").get<uint64_t>();
   }
   inline std::string to_string(const LolEndOfGameEndOfGamePlayerComplaintV2_t& v) {
     nlohmann::json j = v;

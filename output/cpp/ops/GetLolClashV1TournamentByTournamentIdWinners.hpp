@@ -3,7 +3,7 @@
 #include "LolClashTournamentWinnerHistory.hpp"
 namespace leagueapi {
   LolClashTournamentWinnerHistory_t GetLolClashV1TournamentByTournamentIdWinners (const ClientInfo& info,
-    const int64_t_t& tournamentId)
+    const int64_t& tournamentId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

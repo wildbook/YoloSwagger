@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  bool_t GetLolSummonerV1CheckNameAvailabilityByName (const ClientInfo& info,
-    const std::string_t& name)
+  bool GetLolSummonerV1CheckNameAvailabilityByName (const ClientInfo& info,
+    const std::string& name)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

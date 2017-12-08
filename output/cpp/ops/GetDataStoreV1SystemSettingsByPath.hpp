@@ -2,9 +2,9 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Get the setting for the specified key.
-  nlohmann::json_t GetDataStoreV1SystemSettingsByPath (const ClientInfo& info,
+  nlohmann::json GetDataStoreV1SystemSettingsByPath (const ClientInfo& info,
     //The path to the settings key
-    const std::string_t& path)
+    const std::string& path)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

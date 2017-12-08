@@ -5,8 +5,8 @@
 namespace leagueapi {
   struct LolStoreSale_t {
     std::vector<LolStoreItemCost_t> prices;
-    std::string_t startDate;
-    std::string_t endDate;
+    std::string startDate;
+    std::string endDate;
   };
 
   inline void to_json(nlohmann::json& j, const LolStoreSale_t& v) {
@@ -17,8 +17,8 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolStoreSale_t& v) {
     v.prices = j.at("prices").get<std::vector<LolStoreItemCost_t>>();
-    v.startDate = j.at("startDate").get<std::string_t>();
-    v.endDate = j.at("endDate").get<std::string_t>();
+    v.startDate = j.at("startDate").get<std::string>();
+    v.endDate = j.at("endDate").get<std::string>();
   }
   inline std::string to_string(const LolStoreSale_t& v) {
     nlohmann::json j = v;

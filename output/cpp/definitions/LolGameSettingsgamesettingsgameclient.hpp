@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolGameSettingsgamesettingsgameclient_t {
-    bool_t running;
+    bool running;
   };
 
   inline void to_json(nlohmann::json& j, const LolGameSettingsgamesettingsgameclient_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolGameSettingsgamesettingsgameclient_t& v) {
-    v.running = j.at("running").get<bool_t>();
+    v.running = j.at("running").get<bool>();
   }
   inline std::string to_string(const LolGameSettingsgamesettingsgameclient_t& v) {
     nlohmann::json j = v;

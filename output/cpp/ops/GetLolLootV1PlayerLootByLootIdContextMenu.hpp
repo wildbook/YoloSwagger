@@ -3,7 +3,7 @@
 #include "LolLootContextMenu.hpp"
 namespace leagueapi {
   std::vector<LolLootContextMenu_t> GetLolLootV1PlayerLootByLootIdContextMenu (const ClientInfo& info,
-    const std::string_t& lootId)
+    const std::string& lootId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

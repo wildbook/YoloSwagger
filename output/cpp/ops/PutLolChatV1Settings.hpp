@@ -1,9 +1,9 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t PutLolChatV1Settings (const ClientInfo& info,
-    const nlohmann::json_t& data,
-    const std::optional<bool_t>& doAsync = std::nullopt)
+  nlohmann::json PutLolChatV1Settings (const ClientInfo& info,
+    const nlohmann::json& data,
+    const std::optional<bool>& doAsync = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

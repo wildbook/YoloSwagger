@@ -3,11 +3,11 @@
 #include <optional>
 namespace leagueapi {
   struct LolLobbyAmbassadorMessage_t {
-    std::string_t errorCode;
-    std::string_t message;
-    int32_t_t httpStatus;
-    std::string_t implementationDetails;
-    nlohmann::json_t payload;
+    std::string errorCode;
+    std::string message;
+    int32_t httpStatus;
+    std::string implementationDetails;
+    nlohmann::json payload;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyAmbassadorMessage_t& v) {
@@ -19,11 +19,11 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyAmbassadorMessage_t& v) {
-    v.errorCode = j.at("errorCode").get<std::string_t>();
-    v.message = j.at("message").get<std::string_t>();
-    v.httpStatus = j.at("httpStatus").get<int32_t_t>();
-    v.implementationDetails = j.at("implementationDetails").get<std::string_t>();
-    v.payload = j.at("payload").get<nlohmann::json_t>();
+    v.errorCode = j.at("errorCode").get<std::string>();
+    v.message = j.at("message").get<std::string>();
+    v.httpStatus = j.at("httpStatus").get<int32_t>();
+    v.implementationDetails = j.at("implementationDetails").get<std::string>();
+    v.payload = j.at("payload").get<nlohmann::json>();
   }
   inline std::string to_string(const LolLobbyAmbassadorMessage_t& v) {
     nlohmann::json j = v;

@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct RecofrienderContactCountResource_t {
-    uint64_t_t count;
+    uint64_t count;
   };
 
   inline void to_json(nlohmann::json& j, const RecofrienderContactCountResource_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, RecofrienderContactCountResource_t& v) {
-    v.count = j.at("count").get<uint64_t_t>();
+    v.count = j.at("count").get<uint64_t>();
   }
   inline std::string to_string(const RecofrienderContactCountResource_t& v) {
     nlohmann::json j = v;

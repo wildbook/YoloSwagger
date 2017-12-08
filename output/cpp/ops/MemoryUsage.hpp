@@ -2,11 +2,11 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Returns current memory usage by callstack site
-  nlohmann::json_t MemoryUsage (const ClientInfo& info,
+  nlohmann::json MemoryUsage (const ClientInfo& info,
     //Minimum size of total allocations at call site in order to print (optional: MEMORYUSAGE_MINSIZE default)
-    const std::optional<uint32_t_t>& minSize = std::nullopt,
+    const std::optional<uint32_t>& minSize = std::nullopt,
     //Minimum count of total allocations at call site in order to print (optional: MEMORYUSAGE_MINCOUNT default)
-    const std::optional<uint32_t_t>& minCount = std::nullopt)
+    const std::optional<uint32_t>& minCount = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -3,14 +3,14 @@
 #include <optional>
 namespace leagueapi {
   struct NetworkTestingDynamicConfig_t {
-    uint16_t_t IPv4OptionsProbePort;
-    uint8_t_t IPv4OptionsProbeCount;
-    std::string_t IPv4OptionsProbeServers;
-    uint8_t_t IPv6SupportProbeCount;
-    uint16_t_t IPv6SupportProbePort;
-    std::string_t IPv6SupportProbeServers;
-    double_t IPv4OptionsProbability;
-    double_t IPv6SupportProbability;
+    uint16_t IPv4OptionsProbePort;
+    uint8_t IPv4OptionsProbeCount;
+    std::string IPv4OptionsProbeServers;
+    uint8_t IPv6SupportProbeCount;
+    uint16_t IPv6SupportProbePort;
+    std::string IPv6SupportProbeServers;
+    double IPv4OptionsProbability;
+    double IPv6SupportProbability;
   };
 
   inline void to_json(nlohmann::json& j, const NetworkTestingDynamicConfig_t& v) {
@@ -25,14 +25,14 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, NetworkTestingDynamicConfig_t& v) {
-    v.IPv4OptionsProbePort = j.at("IPv4OptionsProbePort").get<uint16_t_t>();
-    v.IPv4OptionsProbeCount = j.at("IPv4OptionsProbeCount").get<uint8_t_t>();
-    v.IPv4OptionsProbeServers = j.at("IPv4OptionsProbeServers").get<std::string_t>();
-    v.IPv6SupportProbeCount = j.at("IPv6SupportProbeCount").get<uint8_t_t>();
-    v.IPv6SupportProbePort = j.at("IPv6SupportProbePort").get<uint16_t_t>();
-    v.IPv6SupportProbeServers = j.at("IPv6SupportProbeServers").get<std::string_t>();
-    v.IPv4OptionsProbability = j.at("IPv4OptionsProbability").get<double_t>();
-    v.IPv6SupportProbability = j.at("IPv6SupportProbability").get<double_t>();
+    v.IPv4OptionsProbePort = j.at("IPv4OptionsProbePort").get<uint16_t>();
+    v.IPv4OptionsProbeCount = j.at("IPv4OptionsProbeCount").get<uint8_t>();
+    v.IPv4OptionsProbeServers = j.at("IPv4OptionsProbeServers").get<std::string>();
+    v.IPv6SupportProbeCount = j.at("IPv6SupportProbeCount").get<uint8_t>();
+    v.IPv6SupportProbePort = j.at("IPv6SupportProbePort").get<uint16_t>();
+    v.IPv6SupportProbeServers = j.at("IPv6SupportProbeServers").get<std::string>();
+    v.IPv4OptionsProbability = j.at("IPv4OptionsProbability").get<double>();
+    v.IPv6SupportProbability = j.at("IPv6SupportProbability").get<double>();
   }
   inline std::string to_string(const NetworkTestingDynamicConfig_t& v) {
     nlohmann::json j = v;

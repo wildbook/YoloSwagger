@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct LolChatSanitizerStatus_t {
-    std::string_t locale;
-    std::string_t platformID;
-    bool_t ready;
+    std::string locale;
+    std::string platformID;
+    bool ready;
   };
 
   inline void to_json(nlohmann::json& j, const LolChatSanitizerStatus_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChatSanitizerStatus_t& v) {
-    v.locale = j.at("locale").get<std::string_t>();
-    v.platformID = j.at("platformID").get<std::string_t>();
-    v.ready = j.at("ready").get<bool_t>();
+    v.locale = j.at("locale").get<std::string>();
+    v.platformID = j.at("platformID").get<std::string>();
+    v.ready = j.at("ready").get<bool>();
   }
   inline std::string to_string(const LolChatSanitizerStatus_t& v) {
     nlohmann::json j = v;

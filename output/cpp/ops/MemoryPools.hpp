@@ -2,9 +2,9 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Returns current pool usage
-  nlohmann::json_t MemoryPools (const ClientInfo& info,
+  nlohmann::json MemoryPools (const ClientInfo& info,
     //Name of the context to find (optional)
-    const std::optional<std::string_t>& contextName = std::nullopt)
+    const std::optional<std::string>& contextName = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

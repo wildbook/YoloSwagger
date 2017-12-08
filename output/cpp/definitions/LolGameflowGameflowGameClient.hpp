@@ -3,12 +3,12 @@
 #include <optional>
 namespace leagueapi {
   struct LolGameflowGameflowGameClient_t {
-    uint16_t_t observerServerPort;
-    std::string_t observerServerIp;
-    std::string_t serverIp;
-    bool_t visible;
-    bool_t running;
-    uint16_t_t serverPort;
+    uint16_t observerServerPort;
+    std::string observerServerIp;
+    std::string serverIp;
+    bool visible;
+    bool running;
+    uint16_t serverPort;
   };
 
   inline void to_json(nlohmann::json& j, const LolGameflowGameflowGameClient_t& v) {
@@ -21,12 +21,12 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolGameflowGameflowGameClient_t& v) {
-    v.observerServerPort = j.at("observerServerPort").get<uint16_t_t>();
-    v.observerServerIp = j.at("observerServerIp").get<std::string_t>();
-    v.serverIp = j.at("serverIp").get<std::string_t>();
-    v.visible = j.at("visible").get<bool_t>();
-    v.running = j.at("running").get<bool_t>();
-    v.serverPort = j.at("serverPort").get<uint16_t_t>();
+    v.observerServerPort = j.at("observerServerPort").get<uint16_t>();
+    v.observerServerIp = j.at("observerServerIp").get<std::string>();
+    v.serverIp = j.at("serverIp").get<std::string>();
+    v.visible = j.at("visible").get<bool>();
+    v.running = j.at("running").get<bool>();
+    v.serverPort = j.at("serverPort").get<uint16_t>();
   }
   inline std::string to_string(const LolGameflowGameflowGameClient_t& v) {
     nlohmann::json j = v;

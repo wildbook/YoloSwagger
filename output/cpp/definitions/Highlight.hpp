@@ -3,13 +3,13 @@
 #include <optional>
 namespace leagueapi {
   struct Highlight_t {
-    std::string_t name;
-    std::string_t mtimeIso8601;
-    std::string_t filepath;
-    std::string_t url;
-    uint64_t_t mtimeMsUtc;
-    uint64_t_t fileSizeBytes;
-    uint64_t_t id;
+    std::string name;
+    std::string mtimeIso8601;
+    std::string filepath;
+    std::string url;
+    uint64_t mtimeMsUtc;
+    uint64_t fileSizeBytes;
+    uint64_t id;
   };
 
   inline void to_json(nlohmann::json& j, const Highlight_t& v) {
@@ -23,13 +23,13 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, Highlight_t& v) {
-    v.name = j.at("name").get<std::string_t>();
-    v.mtimeIso8601 = j.at("mtimeIso8601").get<std::string_t>();
-    v.filepath = j.at("filepath").get<std::string_t>();
-    v.url = j.at("url").get<std::string_t>();
-    v.mtimeMsUtc = j.at("mtimeMsUtc").get<uint64_t_t>();
-    v.fileSizeBytes = j.at("fileSizeBytes").get<uint64_t_t>();
-    v.id = j.at("id").get<uint64_t_t>();
+    v.name = j.at("name").get<std::string>();
+    v.mtimeIso8601 = j.at("mtimeIso8601").get<std::string>();
+    v.filepath = j.at("filepath").get<std::string>();
+    v.url = j.at("url").get<std::string>();
+    v.mtimeMsUtc = j.at("mtimeMsUtc").get<uint64_t>();
+    v.fileSizeBytes = j.at("fileSizeBytes").get<uint64_t>();
+    v.id = j.at("id").get<uint64_t>();
   }
   inline std::string to_string(const Highlight_t& v) {
     nlohmann::json j = v;

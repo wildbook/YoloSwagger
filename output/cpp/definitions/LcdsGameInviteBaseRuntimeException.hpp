@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LcdsGameInviteBaseRuntimeException_t {
-    std::string_t rootCauseClassname;
+    std::string rootCauseClassname;
   };
 
   inline void to_json(nlohmann::json& j, const LcdsGameInviteBaseRuntimeException_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LcdsGameInviteBaseRuntimeException_t& v) {
-    v.rootCauseClassname = j.at("rootCauseClassname").get<std::string_t>();
+    v.rootCauseClassname = j.at("rootCauseClassname").get<std::string>();
   }
   inline std::string to_string(const LcdsGameInviteBaseRuntimeException_t& v) {
     nlohmann::json j = v;

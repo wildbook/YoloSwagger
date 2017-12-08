@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolChampSelectChampSelectMySelection.hpp"
 namespace leagueapi {
-  nlohmann::json_t PatchLolChampSelectV1SessionMySelection (const ClientInfo& info,
+  nlohmann::json PatchLolChampSelectV1SessionMySelection (const ClientInfo& info,
     const LolChampSelectChampSelectMySelection_t& selection)
   {
     using std::to_string;

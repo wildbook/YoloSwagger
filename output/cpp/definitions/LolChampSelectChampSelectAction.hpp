@@ -3,11 +3,11 @@
 #include <optional>
 namespace leagueapi {
   struct LolChampSelectChampSelectAction_t {
-    std::string_t type;
-    bool_t completed;
-    int32_t_t championId;
-    int64_t_t id;
-    int64_t_t actorCellId;
+    std::string type;
+    bool completed;
+    int32_t championId;
+    int64_t id;
+    int64_t actorCellId;
   };
 
   inline void to_json(nlohmann::json& j, const LolChampSelectChampSelectAction_t& v) {
@@ -19,11 +19,11 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChampSelectChampSelectAction_t& v) {
-    v.type = j.at("type").get<std::string_t>();
-    v.completed = j.at("completed").get<bool_t>();
-    v.championId = j.at("championId").get<int32_t_t>();
-    v.id = j.at("id").get<int64_t_t>();
-    v.actorCellId = j.at("actorCellId").get<int64_t_t>();
+    v.type = j.at("type").get<std::string>();
+    v.completed = j.at("completed").get<bool>();
+    v.championId = j.at("championId").get<int32_t>();
+    v.id = j.at("id").get<int64_t>();
+    v.actorCellId = j.at("actorCellId").get<int64_t>();
   }
   inline std::string to_string(const LolChampSelectChampSelectAction_t& v) {
     nlohmann::json j = v;

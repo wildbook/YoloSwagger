@@ -3,7 +3,7 @@
 #include "LolReplaysReplayMetadata.hpp"
 namespace leagueapi {
   LolReplaysReplayMetadata_t GetLolReplaysV1MetadataByGameId (const ClientInfo& info,
-    const uint64_t_t& gameId)
+    const uint64_t& gameId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

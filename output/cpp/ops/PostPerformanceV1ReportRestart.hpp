@@ -2,11 +2,11 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Restarts the CPU timing information and returns the results from PerfReportProcesses
-  nlohmann::json_t PostPerformanceV1ReportRestart (const ClientInfo& info,
+  nlohmann::json PostPerformanceV1ReportRestart (const ClientInfo& info,
     //Time in seconds for each CPU timing sample.
-    const std::optional<int32_t_t>& sampleLength = std::nullopt,
+    const std::optional<int32_t>& sampleLength = std::nullopt,
     //Number of samples to record.
-    const std::optional<int32_t_t>& sampleCount = std::nullopt)
+    const std::optional<int32_t>& sampleCount = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void PostLolLobbyV2PartiesOverridesEnabledForTeamBuilderQueues (const ClientInfo& info,
-    const bool_t& enabledForTeambuilderQueues)
+    const bool& enabledForTeambuilderQueues)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

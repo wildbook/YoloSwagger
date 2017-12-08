@@ -5,7 +5,7 @@ namespace leagueapi {
   // Represents the parameters of a call to a provided callback.
   struct BindingCallbackEvent_t {
     // ID of the callback being invoked
-    uint32_t_t id;
+    uint32_t id;
     // Callback parameters
     std::vector<nlohmann::json> parameters;
   };
@@ -16,7 +16,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, BindingCallbackEvent_t& v) {
-    v.id = j.at("id").get<uint32_t_t>();
+    v.id = j.at("id").get<uint32_t>();
     v.parameters = j.at("parameters").get<std::vector<nlohmann::json>>();
   }
   inline std::string to_string(const BindingCallbackEvent_t& v) {

@@ -3,8 +3,8 @@
 #include "PlayerClub.hpp"
 namespace leagueapi {
   PlayerClub_t PostLolClubsV1ClubsByClubKeyMembersBySummonerId (const ClientInfo& info,
-    const std::string_t& clubKey,
-    const uint64_t_t& summonerId)
+    const std::string& clubKey,
+    const uint64_t& summonerId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

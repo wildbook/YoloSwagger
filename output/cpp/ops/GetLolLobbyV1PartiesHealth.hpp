@@ -1,7 +1,7 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  std::string_t GetLolLobbyV1PartiesHealth (const ClientInfo& info)
+  std::string GetLolLobbyV1PartiesHealth (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

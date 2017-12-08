@@ -3,7 +3,7 @@
 #include "LolChatConversationMessageResource.hpp"
 namespace leagueapi {
   LolChatConversationMessageResource_t PostLolChatV1ConversationsByIdMessages (const ClientInfo& info,
-    const std::string_t& id,
+    const std::string& id,
     const LolChatConversationMessageResource_t& body)
   {
     using std::to_string;

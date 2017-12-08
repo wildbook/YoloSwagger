@@ -3,9 +3,9 @@
 #include "RecofrienderContactResource.hpp"
 namespace leagueapi {
   std::vector<RecofrienderContactResource_t> GetRecofrienderV1Contacts (const ClientInfo& info,
-    const std::optional<uint64_t_t>& accountId = std::nullopt,
-    const std::optional<std::string_t>& source = std::nullopt,
-    const std::optional<std::string_t>& friendState = std::nullopt)
+    const std::optional<uint64_t>& accountId = std::nullopt,
+    const std::optional<std::string>& source = std::nullopt,
+    const std::optional<std::string>& friendState = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

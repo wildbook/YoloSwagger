@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Returns metadata for all metrics
-  nlohmann::json_t LoggingMetricsMetadata (const ClientInfo& info)
+  nlohmann::json LoggingMetricsMetadata (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -1,9 +1,9 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t DeleteLolChatV1SettingsByKey (const ClientInfo& info,
-    const std::string_t& key,
-    const std::optional<bool_t>& doAsync = std::nullopt)
+  nlohmann::json DeleteLolChatV1SettingsByKey (const ClientInfo& info,
+    const std::string& key,
+    const std::optional<bool>& doAsync = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

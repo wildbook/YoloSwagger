@@ -3,9 +3,9 @@
 #include "LolMapsMaps.hpp"
 namespace leagueapi {
   LolMapsMaps_t GetLolMapsV2MapByIdByGameModeByGameMutator (const ClientInfo& info,
-    const int64_t_t& id,
-    const std::string_t& gameMode,
-    const std::string_t& gameMutator)
+    const int64_t& id,
+    const std::string& gameMode,
+    const std::string& gameMutator)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

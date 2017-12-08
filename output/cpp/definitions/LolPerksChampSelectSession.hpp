@@ -11,12 +11,12 @@ namespace leagueapi {
     std::vector<LolPerksChampSelectPlayerSelection_t> theirTeam;
     LolPerksChampSelectBannedChampions_t bans;
     std::vector<LolPerksChampSelectTradeContract_t> trades;
-    bool_t isSpectating;
+    bool isSpectating;
     std::vector<nlohmann::json> actions;
     std::vector<LolPerksChampSelectPlayerSelection_t> myTeam;
     LolPerksChampSelectTimer_t timer;
     LolPerksChampSelectChatRoomDetails_t chatDetails;
-    int64_t_t localPlayerCellId;
+    int64_t localPlayerCellId;
   };
 
   inline void to_json(nlohmann::json& j, const LolPerksChampSelectSession_t& v) {
@@ -35,12 +35,12 @@ namespace leagueapi {
     v.theirTeam = j.at("theirTeam").get<std::vector<LolPerksChampSelectPlayerSelection_t>>();
     v.bans = j.at("bans").get<LolPerksChampSelectBannedChampions_t>();
     v.trades = j.at("trades").get<std::vector<LolPerksChampSelectTradeContract_t>>();
-    v.isSpectating = j.at("isSpectating").get<bool_t>();
+    v.isSpectating = j.at("isSpectating").get<bool>();
     v.actions = j.at("actions").get<std::vector<nlohmann::json>>();
     v.myTeam = j.at("myTeam").get<std::vector<LolPerksChampSelectPlayerSelection_t>>();
     v.timer = j.at("timer").get<LolPerksChampSelectTimer_t>();
     v.chatDetails = j.at("chatDetails").get<LolPerksChampSelectChatRoomDetails_t>();
-    v.localPlayerCellId = j.at("localPlayerCellId").get<int64_t_t>();
+    v.localPlayerCellId = j.at("localPlayerCellId").get<int64_t>();
   }
   inline std::string to_string(const LolPerksChampSelectSession_t& v) {
     nlohmann::json j = v;

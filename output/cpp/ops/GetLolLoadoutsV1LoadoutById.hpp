@@ -3,7 +3,7 @@
 #include "LolLoadoutsLoadout.hpp"
 namespace leagueapi {
   LolLoadoutsLoadout_t GetLolLoadoutsV1LoadoutById (const ClientInfo& info,
-    const uint32_t_t& id)
+    const uint32_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

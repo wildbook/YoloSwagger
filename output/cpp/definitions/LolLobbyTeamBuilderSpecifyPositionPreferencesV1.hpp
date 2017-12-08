@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LolLobbyTeamBuilderSpecifyPositionPreferencesV1_t {
-    std::string_t firstPreference;
-    std::string_t secondPreference;
+    std::string firstPreference;
+    std::string secondPreference;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderSpecifyPositionPreferencesV1_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderSpecifyPositionPreferencesV1_t& v) {
-    v.firstPreference = j.at("firstPreference").get<std::string_t>();
-    v.secondPreference = j.at("secondPreference").get<std::string_t>();
+    v.firstPreference = j.at("firstPreference").get<std::string>();
+    v.secondPreference = j.at("secondPreference").get<std::string>();
   }
   inline std::string to_string(const LolLobbyTeamBuilderSpecifyPositionPreferencesV1_t& v) {
     nlohmann::json j = v;

@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct LolLoginAuthorization_t {
-    uint64_t_t currentAccountId;
-    std::string_t currentPlatformId;
-    std::string_t subject;
+    uint64_t currentAccountId;
+    std::string currentPlatformId;
+    std::string subject;
   };
 
   inline void to_json(nlohmann::json& j, const LolLoginAuthorization_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLoginAuthorization_t& v) {
-    v.currentAccountId = j.at("currentAccountId").get<uint64_t_t>();
-    v.currentPlatformId = j.at("currentPlatformId").get<std::string_t>();
-    v.subject = j.at("subject").get<std::string_t>();
+    v.currentAccountId = j.at("currentAccountId").get<uint64_t>();
+    v.currentPlatformId = j.at("currentPlatformId").get<std::string>();
+    v.subject = j.at("subject").get<std::string>();
   }
   inline std::string to_string(const LolLoginAuthorization_t& v) {
     nlohmann::json j = v;

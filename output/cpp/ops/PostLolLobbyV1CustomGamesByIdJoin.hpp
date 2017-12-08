@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "LolLobbyLobbyCustomJoinParameters.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolLobbyV1CustomGamesByIdJoin (const ClientInfo& info,
-    const uint64_t_t& id,
+  nlohmann::json PostLolLobbyV1CustomGamesByIdJoin (const ClientInfo& info,
+    const uint64_t& id,
     const LolLobbyLobbyCustomJoinParameters_t& parameters)
   {
     using std::to_string;

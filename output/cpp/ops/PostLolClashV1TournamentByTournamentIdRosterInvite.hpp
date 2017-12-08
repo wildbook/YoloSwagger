@@ -3,7 +3,7 @@
 #include "FailedInvite.hpp"
 namespace leagueapi {
   std::vector<FailedInvite_t> PostLolClashV1TournamentByTournamentIdRosterInvite (const ClientInfo& info,
-    const int64_t_t& tournamentId,
+    const int64_t& tournamentId,
     const std::vector<uint64_t>& summonerIds)
   {
     using std::to_string;

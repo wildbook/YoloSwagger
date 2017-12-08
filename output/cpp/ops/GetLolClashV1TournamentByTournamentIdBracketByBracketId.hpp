@@ -3,8 +3,8 @@
 #include "LolClashBracket.hpp"
 namespace leagueapi {
   LolClashBracket_t GetLolClashV1TournamentByTournamentIdBracketByBracketId (const ClientInfo& info,
-    const int64_t_t& tournamentId,
-    const int64_t_t& bracketId)
+    const int64_t& tournamentId,
+    const int64_t& bracketId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

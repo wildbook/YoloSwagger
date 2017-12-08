@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void DeleteLolPreEndOfGameV1RegistrationBySequenceEventName (const ClientInfo& info,
-    const std::string_t& sequenceEventName)
+    const std::string& sequenceEventName)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

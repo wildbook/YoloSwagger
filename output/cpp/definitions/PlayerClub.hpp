@@ -7,20 +7,20 @@
 #include "ClubMemberLists.hpp"
 namespace leagueapi {
   struct PlayerClub_t {
-    bool_t isClubTagEligible;
-    std::string_t motd;
-    std::string_t description;
-    int64_t_t created;
-    int64_t_t lastModified;
-    std::string_t jid;
-    bool_t primary;
+    bool isClubTagEligible;
+    std::string motd;
+    std::string description;
+    int64_t created;
+    int64_t lastModified;
+    std::string jid;
+    bool primary;
     ClubMemberLists_t members;
-    std::string_t tag;
+    std::string tag;
     ClubRole_t role;
-    std::string_t key;
+    std::string key;
     ClubMember_t owner;
     ClubPermissions_t permissions;
-    std::string_t name;
+    std::string name;
   };
 
   inline void to_json(nlohmann::json& j, const PlayerClub_t& v) {
@@ -41,20 +41,20 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PlayerClub_t& v) {
-    v.isClubTagEligible = j.at("isClubTagEligible").get<bool_t>();
-    v.motd = j.at("motd").get<std::string_t>();
-    v.description = j.at("description").get<std::string_t>();
-    v.created = j.at("created").get<int64_t_t>();
-    v.lastModified = j.at("lastModified").get<int64_t_t>();
-    v.jid = j.at("jid").get<std::string_t>();
-    v.primary = j.at("primary").get<bool_t>();
+    v.isClubTagEligible = j.at("isClubTagEligible").get<bool>();
+    v.motd = j.at("motd").get<std::string>();
+    v.description = j.at("description").get<std::string>();
+    v.created = j.at("created").get<int64_t>();
+    v.lastModified = j.at("lastModified").get<int64_t>();
+    v.jid = j.at("jid").get<std::string>();
+    v.primary = j.at("primary").get<bool>();
     v.members = j.at("members").get<ClubMemberLists_t>();
-    v.tag = j.at("tag").get<std::string_t>();
+    v.tag = j.at("tag").get<std::string>();
     v.role = j.at("role").get<ClubRole_t>();
-    v.key = j.at("key").get<std::string_t>();
+    v.key = j.at("key").get<std::string>();
     v.owner = j.at("owner").get<ClubMember_t>();
     v.permissions = j.at("permissions").get<ClubPermissions_t>();
-    v.name = j.at("name").get<std::string_t>();
+    v.name = j.at("name").get<std::string>();
   }
   inline std::string to_string(const PlayerClub_t& v) {
     nlohmann::json j = v;

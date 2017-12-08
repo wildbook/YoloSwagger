@@ -3,9 +3,9 @@
 #include "RemotingHelpFormat.hpp"
 namespace leagueapi {
   //Returns information on available functions and types
-  nlohmann::json_t Help (const ClientInfo& info,
+  nlohmann::json Help (const ClientInfo& info,
     //Name of the function or type to describe
-    const std::optional<std::string_t>& target = std::nullopt,
+    const std::optional<std::string>& target = std::nullopt,
     //Format for returned information
     const std::optional<RemotingHelpFormat_t>& format = std::nullopt)
   {

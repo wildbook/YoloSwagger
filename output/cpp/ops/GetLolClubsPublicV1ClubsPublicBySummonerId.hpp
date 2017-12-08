@@ -3,7 +3,7 @@
 #include "LolClubsPublicClubsPublicData.hpp"
 namespace leagueapi {
   LolClubsPublicClubsPublicData_t GetLolClubsPublicV1ClubsPublicBySummonerId (const ClientInfo& info,
-    const uint64_t_t& summonerId)
+    const uint64_t& summonerId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

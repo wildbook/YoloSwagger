@@ -1,7 +1,7 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json_t PostLolChampSelectLegacyV1TeamBoostPurchase (const ClientInfo& info)
+  nlohmann::json PostLolChampSelectLegacyV1TeamBoostPurchase (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

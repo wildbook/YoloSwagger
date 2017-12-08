@@ -3,16 +3,16 @@
 #include <optional>
 namespace leagueapi {
   struct LolStoreBundleItemDTO_t {
-    int32_t_t itemId;
-    int64_t_t rp;
-    std::string_t description;
-    int64_t_t ip;
-    bool_t owned;
-    std::string_t iconUrl;
-    int64_t_t discountedRp;
-    std::string_t inventoryType;
-    uint32_t_t quantity;
-    std::string_t name;
+    int32_t itemId;
+    int64_t rp;
+    std::string description;
+    int64_t ip;
+    bool owned;
+    std::string iconUrl;
+    int64_t discountedRp;
+    std::string inventoryType;
+    uint32_t quantity;
+    std::string name;
   };
 
   inline void to_json(nlohmann::json& j, const LolStoreBundleItemDTO_t& v) {
@@ -29,16 +29,16 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolStoreBundleItemDTO_t& v) {
-    v.itemId = j.at("itemId").get<int32_t_t>();
-    v.rp = j.at("rp").get<int64_t_t>();
-    v.description = j.at("description").get<std::string_t>();
-    v.ip = j.at("ip").get<int64_t_t>();
-    v.owned = j.at("owned").get<bool_t>();
-    v.iconUrl = j.at("iconUrl").get<std::string_t>();
-    v.discountedRp = j.at("discountedRp").get<int64_t_t>();
-    v.inventoryType = j.at("inventoryType").get<std::string_t>();
-    v.quantity = j.at("quantity").get<uint32_t_t>();
-    v.name = j.at("name").get<std::string_t>();
+    v.itemId = j.at("itemId").get<int32_t>();
+    v.rp = j.at("rp").get<int64_t>();
+    v.description = j.at("description").get<std::string>();
+    v.ip = j.at("ip").get<int64_t>();
+    v.owned = j.at("owned").get<bool>();
+    v.iconUrl = j.at("iconUrl").get<std::string>();
+    v.discountedRp = j.at("discountedRp").get<int64_t>();
+    v.inventoryType = j.at("inventoryType").get<std::string>();
+    v.quantity = j.at("quantity").get<uint32_t>();
+    v.name = j.at("name").get<std::string>();
   }
   inline std::string to_string(const LolStoreBundleItemDTO_t& v) {
     nlohmann::json j = v;

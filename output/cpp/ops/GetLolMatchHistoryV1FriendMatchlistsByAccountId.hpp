@@ -3,7 +3,7 @@
 #include "LolMatchHistoryMatchHistoryList.hpp"
 namespace leagueapi {
   LolMatchHistoryMatchHistoryList_t GetLolMatchHistoryV1FriendMatchlistsByAccountId (const ClientInfo& info,
-    const uint64_t_t& accountId)
+    const uint64_t& accountId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

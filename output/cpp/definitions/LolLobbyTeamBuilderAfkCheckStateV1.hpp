@@ -4,10 +4,10 @@
 #include "LolLobbyTeamBuilderTbdInventory.hpp"
 namespace leagueapi {
   struct LolLobbyTeamBuilderAfkCheckStateV1_t {
-    int32_t_t remainingAfkMillis;
-    bool_t afkReady;
+    int32_t remainingAfkMillis;
+    bool afkReady;
     LolLobbyTeamBuilderTbdInventory_t inventoryDraft;
-    uint32_t_t maxAfkMillis;
+    uint32_t maxAfkMillis;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderAfkCheckStateV1_t& v) {
@@ -18,10 +18,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderAfkCheckStateV1_t& v) {
-    v.remainingAfkMillis = j.at("remainingAfkMillis").get<int32_t_t>();
-    v.afkReady = j.at("afkReady").get<bool_t>();
+    v.remainingAfkMillis = j.at("remainingAfkMillis").get<int32_t>();
+    v.afkReady = j.at("afkReady").get<bool>();
     v.inventoryDraft = j.at("inventoryDraft").get<LolLobbyTeamBuilderTbdInventory_t>();
-    v.maxAfkMillis = j.at("maxAfkMillis").get<uint32_t_t>();
+    v.maxAfkMillis = j.at("maxAfkMillis").get<uint32_t>();
   }
   inline std::string to_string(const LolLobbyTeamBuilderAfkCheckStateV1_t& v) {
     nlohmann::json j = v;

@@ -5,7 +5,7 @@
 #include "PatcherComponentStateProgress.hpp"
 namespace leagueapi {
   struct PatcherComponentActionProgress_t {
-    std::string_t currentItem;
+    std::string currentItem;
     PatcherComponentStateWorkType_t primaryWork;
     PatcherComponentStateProgress_t total;
     PatcherComponentStateProgress_t network;
@@ -19,7 +19,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PatcherComponentActionProgress_t& v) {
-    v.currentItem = j.at("currentItem").get<std::string_t>();
+    v.currentItem = j.at("currentItem").get<std::string>();
     v.primaryWork = j.at("primaryWork").get<PatcherComponentStateWorkType_t>();
     v.total = j.at("total").get<PatcherComponentStateProgress_t>();
     v.network = j.at("network").get<PatcherComponentStateProgress_t>();

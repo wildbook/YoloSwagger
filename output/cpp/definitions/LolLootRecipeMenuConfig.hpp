@@ -4,7 +4,7 @@
 namespace leagueapi {
   struct LolLootRecipeMenuConfig_t {
     std::vector<std::string> alwaysShowLootIds;
-    bool_t enabled;
+    bool enabled;
     std::vector<std::string> lootItemsUsingBreakoutRecipeMenu;
   };
 
@@ -16,7 +16,7 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolLootRecipeMenuConfig_t& v) {
     v.alwaysShowLootIds = j.at("alwaysShowLootIds").get<std::vector<std::string>>();
-    v.enabled = j.at("enabled").get<bool_t>();
+    v.enabled = j.at("enabled").get<bool>();
     v.lootItemsUsingBreakoutRecipeMenu = j.at("lootItemsUsingBreakoutRecipeMenu").get<std::vector<std::string>>();
   }
   inline std::string to_string(const LolLootRecipeMenuConfig_t& v) {

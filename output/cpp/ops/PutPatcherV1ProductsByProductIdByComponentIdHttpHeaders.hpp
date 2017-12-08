@@ -2,9 +2,9 @@
 #incldue "../client.hpp"
 #include "PatcherHeaderEntry.hpp"
 namespace leagueapi {
-  nlohmann::json_t PutPatcherV1ProductsByProductIdByComponentIdHttpHeaders (const ClientInfo& info,
-    const std::string_t& product-id,
-    const std::string_t& component-id,
+  nlohmann::json PutPatcherV1ProductsByProductIdByComponentIdHttpHeaders (const ClientInfo& info,
+    const std::string& product-id,
+    const std::string& component-id,
     const std::vector<PatcherHeaderEntry_t>& headers)
   {
     using std::to_string;

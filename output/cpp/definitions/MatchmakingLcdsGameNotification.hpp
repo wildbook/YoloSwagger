@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct MatchmakingLcdsGameNotification_t {
-    std::string_t messageCode;
-    std::string_t messageArgument;
-    std::string_t type;
+    std::string messageCode;
+    std::string messageArgument;
+    std::string type;
   };
 
   inline void to_json(nlohmann::json& j, const MatchmakingLcdsGameNotification_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, MatchmakingLcdsGameNotification_t& v) {
-    v.messageCode = j.at("messageCode").get<std::string_t>();
-    v.messageArgument = j.at("messageArgument").get<std::string_t>();
-    v.type = j.at("type").get<std::string_t>();
+    v.messageCode = j.at("messageCode").get<std::string>();
+    v.messageArgument = j.at("messageArgument").get<std::string>();
+    v.type = j.at("type").get<std::string>();
   }
   inline std::string to_string(const MatchmakingLcdsGameNotification_t& v) {
     nlohmann::json j = v;
