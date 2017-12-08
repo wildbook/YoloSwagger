@@ -279,8 +279,8 @@ def generate_ops(info,  folder,  namespace):
 
 def generate_all(info,  folder,  namespace):
     generate_client(info,  folder,  namespace)
-    #generate_definitions(info,  folder,  namespace)
     generate_ops(info,  folder,  namespace)
+    generate_definitions(info,  folder,  namespace)
 
 #json_save( info_init(json_load("help.json"),  json_load("lol.json")),  "info.json")       
 i = json_load("info.json")
