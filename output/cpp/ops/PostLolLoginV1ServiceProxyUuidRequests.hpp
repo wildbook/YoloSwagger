@@ -1,11 +1,11 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  std::string PostLolLoginV1ServiceProxyUuidRequests (const ClientInfo& info,
-    const std::string& serviceName,
-    const std::string& methodName,
-    const uint32_t& pluginId,
-    const std::string& payload)
+  std::string_t PostLolLoginV1ServiceProxyUuidRequests (const ClientInfo& info,
+    const std::string_t& serviceName,
+    const std::string_t& methodName,
+    const uint32_t_t& pluginId,
+    const std::string_t& payload)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

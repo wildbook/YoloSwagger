@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "LolChatFriendResource.hpp"
 namespace leagueapi {
-  nlohmann::json PutLolChatV1FriendsById (const ClientInfo& info,
-    const uint64_t& id,
+  nlohmann::json_t PutLolChatV1FriendsById (const ClientInfo& info,
+    const uint64_t_t& id,
     const LolChatFriendResource_t& contact)
   {
     using std::to_string;

@@ -4,7 +4,7 @@
 namespace leagueapi {
   struct LolLoadoutsGetItemsRequest_t {
     std::vector<std::string> inventoryTypes;
-    uint32_t id;
+    uint32_t_t id;
     std::vector<std::string> inventoryJWTs;
   };
 
@@ -16,7 +16,7 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolLoadoutsGetItemsRequest_t& v) {
     v.inventoryTypes = j.at("inventoryTypes").get<std::vector<std::string>>();
-    v.id = j.at("id").get<uint32_t>();
+    v.id = j.at("id").get<uint32_t_t>();
     v.inventoryJWTs = j.at("inventoryJWTs").get<std::vector<std::string>>();
   }
   inline std::string to_string(const LolLoadoutsGetItemsRequest_t& v) {

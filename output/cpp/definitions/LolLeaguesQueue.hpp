@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolLeaguesQueue_t {
-    nlohmann::json type;
+    nlohmann::json_t type;
   };
 
   inline void to_json(nlohmann::json& j, const LolLeaguesQueue_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLeaguesQueue_t& v) {
-    v.type = j.at("type").get<nlohmann::json>();
+    v.type = j.at("type").get<nlohmann::json_t>();
   }
   inline std::string to_string(const LolLeaguesQueue_t& v) {
     nlohmann::json j = v;

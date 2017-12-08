@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void DeleteLolLoginV1ShutdownLocksByLockName (const ClientInfo& info,
-    const std::string& lockName)
+    const std::string_t& lockName)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "LolSettingsSettingCategory.hpp"
 namespace leagueapi {
-  nlohmann::json PutLolSettingsV1AccountByCategory (const ClientInfo& info,
-    const std::string& category,
+  nlohmann::json_t PutLolSettingsV1AccountByCategory (const ClientInfo& info,
+    const std::string_t& category,
     const LolSettingsSettingCategory_t& settingsResource)
   {
     using std::to_string;

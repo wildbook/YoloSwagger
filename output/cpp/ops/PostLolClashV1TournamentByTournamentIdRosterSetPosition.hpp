@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "LolClashSetPositionRequest.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolClashV1TournamentByTournamentIdRosterSetPosition (const ClientInfo& info,
-    const int64_t& tournamentId,
+  nlohmann::json_t PostLolClashV1TournamentByTournamentIdRosterSetPosition (const ClientInfo& info,
+    const int64_t_t& tournamentId,
     const LolClashSetPositionRequest_t& setPositionRequest)
   {
     using std::to_string;

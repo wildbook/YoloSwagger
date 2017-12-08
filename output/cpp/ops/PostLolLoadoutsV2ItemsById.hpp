@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolLoadoutsV2ItemsById (const ClientInfo& info,
-    const uint32_t& id,
+  nlohmann::json_t PostLolLoadoutsV2ItemsById (const ClientInfo& info,
+    const uint32_t_t& id,
     const std::map<std::string, nlohmann::json>& items)
   {
     using std::to_string;

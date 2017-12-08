@@ -4,8 +4,8 @@
 #include "PatcherInjectedPatcherError.hpp"
 namespace leagueapi {
   void PostPatcherV1ProductsByProductIdInjectError (const ClientInfo& info,
-    const std::string& product-id,
-    const std::string& component-id,
+    const std::string_t& product-id,
+    const std::string_t& component-id,
     const PatcherInjectedPatcherError_t& error)
   {
     using std::to_string;

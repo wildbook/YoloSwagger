@@ -3,7 +3,7 @@
 #include "RsoAuthRSOJWTConfig.hpp"
 namespace leagueapi {
   RsoAuthRSOJWTConfig_t GetRsoAuthV1ConfigByPlatformId (const ClientInfo& info,
-    const std::string& platformId)
+    const std::string_t& platformId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

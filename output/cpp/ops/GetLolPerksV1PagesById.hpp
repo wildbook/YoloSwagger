@@ -3,7 +3,7 @@
 #include "LolPerksPerkPageResource.hpp"
 namespace leagueapi {
   LolPerksPerkPageResource_t GetLolPerksV1PagesById (const ClientInfo& info,
-    const int32_t& id)
+    const int32_t_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

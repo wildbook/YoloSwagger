@@ -3,20 +3,20 @@
 #include <optional>
 namespace leagueapi {
   struct LolHonorV2EndOfGamePlayer_t {
-    bool botPlayer;
-    int32_t profileIconId;
-    uint64_t gameId;
-    int32_t championId;
-    std::string summonerName;
-    bool isReportingDisabled;
-    uint64_t userId;
-    bool leaver;
-    int32_t skinIndex;
-    std::string skinName;
-    int32_t teamId;
-    int32_t wins;
-    nlohmann::json stats;
-    uint64_t summonerId;
+    bool_t botPlayer;
+    int32_t_t profileIconId;
+    uint64_t_t gameId;
+    int32_t_t championId;
+    std::string_t summonerName;
+    bool_t isReportingDisabled;
+    uint64_t_t userId;
+    bool_t leaver;
+    int32_t_t skinIndex;
+    std::string_t skinName;
+    int32_t_t teamId;
+    int32_t_t wins;
+    nlohmann::json_t stats;
+    uint64_t_t summonerId;
   };
 
   inline void to_json(nlohmann::json& j, const LolHonorV2EndOfGamePlayer_t& v) {
@@ -37,20 +37,20 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolHonorV2EndOfGamePlayer_t& v) {
-    v.botPlayer = j.at("botPlayer").get<bool>();
-    v.profileIconId = j.at("profileIconId").get<int32_t>();
-    v.gameId = j.at("gameId").get<uint64_t>();
-    v.championId = j.at("championId").get<int32_t>();
-    v.summonerName = j.at("summonerName").get<std::string>();
-    v.isReportingDisabled = j.at("isReportingDisabled").get<bool>();
-    v.userId = j.at("userId").get<uint64_t>();
-    v.leaver = j.at("leaver").get<bool>();
-    v.skinIndex = j.at("skinIndex").get<int32_t>();
-    v.skinName = j.at("skinName").get<std::string>();
-    v.teamId = j.at("teamId").get<int32_t>();
-    v.wins = j.at("wins").get<int32_t>();
-    v.stats = j.at("stats").get<nlohmann::json>();
-    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.botPlayer = j.at("botPlayer").get<bool_t>();
+    v.profileIconId = j.at("profileIconId").get<int32_t_t>();
+    v.gameId = j.at("gameId").get<uint64_t_t>();
+    v.championId = j.at("championId").get<int32_t_t>();
+    v.summonerName = j.at("summonerName").get<std::string_t>();
+    v.isReportingDisabled = j.at("isReportingDisabled").get<bool_t>();
+    v.userId = j.at("userId").get<uint64_t_t>();
+    v.leaver = j.at("leaver").get<bool_t>();
+    v.skinIndex = j.at("skinIndex").get<int32_t_t>();
+    v.skinName = j.at("skinName").get<std::string_t>();
+    v.teamId = j.at("teamId").get<int32_t_t>();
+    v.wins = j.at("wins").get<int32_t_t>();
+    v.stats = j.at("stats").get<nlohmann::json_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t_t>();
   }
   inline std::string to_string(const LolHonorV2EndOfGamePlayer_t& v) {
     nlohmann::json j = v;

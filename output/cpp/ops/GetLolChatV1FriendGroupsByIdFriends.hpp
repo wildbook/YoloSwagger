@@ -3,7 +3,7 @@
 #include "LolChatFriendResource.hpp"
 namespace leagueapi {
   std::vector<LolChatFriendResource_t> GetLolChatV1FriendGroupsByIdFriends (const ClientInfo& info,
-    const uint32_t& id)
+    const uint32_t_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

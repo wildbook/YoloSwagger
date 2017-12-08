@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json GetLolChatV1SettingsByKey (const ClientInfo& info,
-    const std::string& key)
+  nlohmann::json_t GetLolChatV1SettingsByKey (const ClientInfo& info,
+    const std::string_t& key)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

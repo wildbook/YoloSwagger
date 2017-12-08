@@ -4,7 +4,7 @@
 #include "LolLootPlayerLoot.hpp"
 namespace leagueapi {
   struct LolLootPlayerLootDelta_t {
-    int32_t deltaCount;
+    int32_t_t deltaCount;
     LolLootPlayerLoot_t playerLoot;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLootPlayerLootDelta_t& v) {
-    v.deltaCount = j.at("deltaCount").get<int32_t>();
+    v.deltaCount = j.at("deltaCount").get<int32_t_t>();
     v.playerLoot = j.at("playerLoot").get<LolLootPlayerLoot_t>();
   }
   inline std::string to_string(const LolLootPlayerLootDelta_t& v) {

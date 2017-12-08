@@ -6,17 +6,17 @@
 #include "LolLobbyPartyMemberMetadataDto.hpp"
 namespace leagueapi {
   struct LolLobbyPartyMemberDto_t {
-    std::optional<uint64_t> inviteTimestamp;
-    std::optional<uint64_t> invitedBySummonerId;
-    std::string platformId;
+    std::optional<uint64_t_t> inviteTimestamp;
+    std::optional<uint64_t_t> invitedBySummonerId;
+    std::string_t platformId;
     LolLobbyPartyMemberRoleEnum_t role;
     std::optional<LolLobbyGameModeDto_t> gameMode;
-    std::optional<bool> ready;
-    std::string partyId;
-    std::optional<bool> canInvite;
-    std::string puuid;
-    uint64_t accountId;
-    uint64_t summonerId;
+    std::optional<bool_t> ready;
+    std::string_t partyId;
+    std::optional<bool_t> canInvite;
+    std::string_t puuid;
+    uint64_t_t accountId;
+    uint64_t_t summonerId;
     LolLobbyPartyMemberMetadataDto_t metadata;
   };
 
@@ -42,21 +42,21 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolLobbyPartyMemberDto_t& v) {
     if(auto it = j.find("inviteTimestamp"); it != j.end() && !it->is_null())
-      v.inviteTimestamp = it->get<uint64_t>();
+      v.inviteTimestamp = it->get<uint64_t_t>();
     if(auto it = j.find("invitedBySummonerId"); it != j.end() && !it->is_null())
-      v.invitedBySummonerId = it->get<uint64_t>();
-    v.platformId = j.at("platformId").get<std::string>();
+      v.invitedBySummonerId = it->get<uint64_t_t>();
+    v.platformId = j.at("platformId").get<std::string_t>();
     v.role = j.at("role").get<LolLobbyPartyMemberRoleEnum_t>();
     if(auto it = j.find("gameMode"); it != j.end() && !it->is_null())
       v.gameMode = it->get<LolLobbyGameModeDto_t>();
     if(auto it = j.find("ready"); it != j.end() && !it->is_null())
-      v.ready = it->get<bool>();
-    v.partyId = j.at("partyId").get<std::string>();
+      v.ready = it->get<bool_t>();
+    v.partyId = j.at("partyId").get<std::string_t>();
     if(auto it = j.find("canInvite"); it != j.end() && !it->is_null())
-      v.canInvite = it->get<bool>();
-    v.puuid = j.at("puuid").get<std::string>();
-    v.accountId = j.at("accountId").get<uint64_t>();
-    v.summonerId = j.at("summonerId").get<uint64_t>();
+      v.canInvite = it->get<bool_t>();
+    v.puuid = j.at("puuid").get<std::string_t>();
+    v.accountId = j.at("accountId").get<uint64_t_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t_t>();
     v.metadata = j.at("metadata").get<LolLobbyPartyMemberMetadataDto_t>();
   }
   inline std::string to_string(const LolLobbyPartyMemberDto_t& v) {

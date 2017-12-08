@@ -1,9 +1,9 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json GetLolPlatformConfigV1NamespacesByNsByKey (const ClientInfo& info,
-    const std::string& ns,
-    const std::string& key)
+  nlohmann::json_t GetLolPlatformConfigV1NamespacesByNsByKey (const ClientInfo& info,
+    const std::string_t& ns,
+    const std::string_t& key)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

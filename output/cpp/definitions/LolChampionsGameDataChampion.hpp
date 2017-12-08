@@ -5,16 +5,16 @@
 #include "LolChampionsGameDataChampionSkin.hpp"
 namespace leagueapi {
   struct LolChampionsGameDataChampion_t {
-    std::string stingerSfxPath;
-    std::string name;
+    std::string_t stingerSfxPath;
+    std::string_t name;
     std::vector<std::string> roles;
-    std::string banVoPath;
+    std::string_t banVoPath;
     std::vector<LolChampionsGameDataChampionSkin_t> skins;
     LolChampionsGameDataChampionSpell_t passive;
-    std::string alias;
-    std::string chooseVoPath;
-    std::string squarePortraitPath;
-    int32_t id;
+    std::string_t alias;
+    std::string_t chooseVoPath;
+    std::string_t squarePortraitPath;
+    int32_t_t id;
     std::vector<LolChampionsGameDataChampionSpell_t> spells;
   };
 
@@ -33,16 +33,16 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChampionsGameDataChampion_t& v) {
-    v.stingerSfxPath = j.at("stingerSfxPath").get<std::string>();
-    v.name = j.at("name").get<std::string>();
+    v.stingerSfxPath = j.at("stingerSfxPath").get<std::string_t>();
+    v.name = j.at("name").get<std::string_t>();
     v.roles = j.at("roles").get<std::vector<std::string>>();
-    v.banVoPath = j.at("banVoPath").get<std::string>();
+    v.banVoPath = j.at("banVoPath").get<std::string_t>();
     v.skins = j.at("skins").get<std::vector<LolChampionsGameDataChampionSkin_t>>();
     v.passive = j.at("passive").get<LolChampionsGameDataChampionSpell_t>();
-    v.alias = j.at("alias").get<std::string>();
-    v.chooseVoPath = j.at("chooseVoPath").get<std::string>();
-    v.squarePortraitPath = j.at("squarePortraitPath").get<std::string>();
-    v.id = j.at("id").get<int32_t>();
+    v.alias = j.at("alias").get<std::string_t>();
+    v.chooseVoPath = j.at("chooseVoPath").get<std::string_t>();
+    v.squarePortraitPath = j.at("squarePortraitPath").get<std::string_t>();
+    v.id = j.at("id").get<int32_t_t>();
     v.spells = j.at("spells").get<std::vector<LolChampionsGameDataChampionSpell_t>>();
   }
   inline std::string to_string(const LolChampionsGameDataChampion_t& v) {

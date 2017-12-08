@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolLoginAccessToken.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolLoginV1AccessToken (const ClientInfo& info,
+  nlohmann::json_t PostLolLoginV1AccessToken (const ClientInfo& info,
     const LolLoginAccessToken_t& AccessToken)
   {
     using std::to_string;

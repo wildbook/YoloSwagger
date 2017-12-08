@@ -7,19 +7,19 @@
 #include "LolLobbyPartyMemberDto.hpp"
 namespace leagueapi {
   struct LolLobbyPartyDto_t {
-    int32_t maxPartySize;
-    bool activityLocked;
-    std::string platformId;
+    int32_t_t maxPartySize;
+    bool_t activityLocked;
+    std::string_t platformId;
     LolLobbyGameModeDto_t gameMode;
-    uint64_t activityResumeUtcMillis;
-    uint64_t activityStartedUtcMillis;
+    uint64_t_t activityResumeUtcMillis;
+    uint64_t_t activityStartedUtcMillis;
     LolLobbyQueueRestrictionDto_t activeRestrictions;
     std::vector<LolLobbyPartyMemberDto_t> players;
-    uint64_t version;
-    std::string partyId;
+    uint64_t_t version;
+    std::string_t partyId;
     LolLobbyPartyChatDto_t chat;
-    int64_t eligibilityHash;
-    std::string partyType;
+    int64_t_t eligibilityHash;
+    std::string_t partyType;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyPartyDto_t& v) {
@@ -39,19 +39,19 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyPartyDto_t& v) {
-    v.maxPartySize = j.at("maxPartySize").get<int32_t>();
-    v.activityLocked = j.at("activityLocked").get<bool>();
-    v.platformId = j.at("platformId").get<std::string>();
+    v.maxPartySize = j.at("maxPartySize").get<int32_t_t>();
+    v.activityLocked = j.at("activityLocked").get<bool_t>();
+    v.platformId = j.at("platformId").get<std::string_t>();
     v.gameMode = j.at("gameMode").get<LolLobbyGameModeDto_t>();
-    v.activityResumeUtcMillis = j.at("activityResumeUtcMillis").get<uint64_t>();
-    v.activityStartedUtcMillis = j.at("activityStartedUtcMillis").get<uint64_t>();
+    v.activityResumeUtcMillis = j.at("activityResumeUtcMillis").get<uint64_t_t>();
+    v.activityStartedUtcMillis = j.at("activityStartedUtcMillis").get<uint64_t_t>();
     v.activeRestrictions = j.at("activeRestrictions").get<LolLobbyQueueRestrictionDto_t>();
     v.players = j.at("players").get<std::vector<LolLobbyPartyMemberDto_t>>();
-    v.version = j.at("version").get<uint64_t>();
-    v.partyId = j.at("partyId").get<std::string>();
+    v.version = j.at("version").get<uint64_t_t>();
+    v.partyId = j.at("partyId").get<std::string_t>();
     v.chat = j.at("chat").get<LolLobbyPartyChatDto_t>();
-    v.eligibilityHash = j.at("eligibilityHash").get<int64_t>();
-    v.partyType = j.at("partyType").get<std::string>();
+    v.eligibilityHash = j.at("eligibilityHash").get<int64_t_t>();
+    v.partyType = j.at("partyType").get<std::string_t>();
   }
   inline std::string to_string(const LolLobbyPartyDto_t& v) {
     nlohmann::json j = v;

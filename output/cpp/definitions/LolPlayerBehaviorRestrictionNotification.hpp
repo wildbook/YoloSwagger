@@ -4,9 +4,9 @@
 #include "LolPlayerBehaviorNotificationSource.hpp"
 namespace leagueapi {
   struct LolPlayerBehaviorRestrictionNotification_t {
-    bool displayReformCard;
-    int64_t gamesRemaining;
-    uint64_t id;
+    bool_t displayReformCard;
+    int64_t_t gamesRemaining;
+    uint64_t_t id;
     LolPlayerBehaviorNotificationSource_t source;
   };
 
@@ -18,9 +18,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolPlayerBehaviorRestrictionNotification_t& v) {
-    v.displayReformCard = j.at("displayReformCard").get<bool>();
-    v.gamesRemaining = j.at("gamesRemaining").get<int64_t>();
-    v.id = j.at("id").get<uint64_t>();
+    v.displayReformCard = j.at("displayReformCard").get<bool_t>();
+    v.gamesRemaining = j.at("gamesRemaining").get<int64_t_t>();
+    v.id = j.at("id").get<uint64_t_t>();
     v.source = j.at("source").get<LolPlayerBehaviorNotificationSource_t>();
   }
   inline std::string to_string(const LolPlayerBehaviorRestrictionNotification_t& v) {

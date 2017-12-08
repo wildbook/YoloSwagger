@@ -6,16 +6,16 @@
 namespace leagueapi {
   struct LolPerksPerkStyleResource_t {
     std::vector<LolPerksPerkSubStyleBonusResource_t> subStyleBonus;
-    bool isAdvanced;
-    std::string name;
+    bool_t isAdvanced;
+    std::string_t name;
     std::vector<int32_t> defaultPerks;
-    std::string tooltip;
-    std::string defaultPageName;
+    std::string_t tooltip;
+    std::string_t defaultPageName;
     std::vector<int32_t> allowedSubStyles;
-    int32_t defaultSubStyle;
-    std::string iconPath;
+    int32_t_t defaultSubStyle;
+    std::string_t iconPath;
     std::vector<LolPerksPerkStyleSlotResource_t> slots;
-    int32_t id;
+    int32_t_t id;
   };
 
   inline void to_json(nlohmann::json& j, const LolPerksPerkStyleResource_t& v) {
@@ -34,16 +34,16 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolPerksPerkStyleResource_t& v) {
     v.subStyleBonus = j.at("subStyleBonus").get<std::vector<LolPerksPerkSubStyleBonusResource_t>>();
-    v.isAdvanced = j.at("isAdvanced").get<bool>();
-    v.name = j.at("name").get<std::string>();
+    v.isAdvanced = j.at("isAdvanced").get<bool_t>();
+    v.name = j.at("name").get<std::string_t>();
     v.defaultPerks = j.at("defaultPerks").get<std::vector<int32_t>>();
-    v.tooltip = j.at("tooltip").get<std::string>();
-    v.defaultPageName = j.at("defaultPageName").get<std::string>();
+    v.tooltip = j.at("tooltip").get<std::string_t>();
+    v.defaultPageName = j.at("defaultPageName").get<std::string_t>();
     v.allowedSubStyles = j.at("allowedSubStyles").get<std::vector<int32_t>>();
-    v.defaultSubStyle = j.at("defaultSubStyle").get<int32_t>();
-    v.iconPath = j.at("iconPath").get<std::string>();
+    v.defaultSubStyle = j.at("defaultSubStyle").get<int32_t_t>();
+    v.iconPath = j.at("iconPath").get<std::string_t>();
     v.slots = j.at("slots").get<std::vector<LolPerksPerkStyleSlotResource_t>>();
-    v.id = j.at("id").get<int32_t>();
+    v.id = j.at("id").get<int32_t_t>();
   }
   inline std::string to_string(const LolPerksPerkStyleResource_t& v) {
     nlohmann::json j = v;

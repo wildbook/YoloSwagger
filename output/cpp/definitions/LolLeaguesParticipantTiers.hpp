@@ -4,7 +4,7 @@
 #include "LolLeaguesAchievedTier.hpp"
 namespace leagueapi {
   struct LolLeaguesParticipantTiers_t {
-    uint64_t summonerId;
+    uint64_t_t summonerId;
     std::vector<LolLeaguesAchievedTier_t> achievedTiers;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLeaguesParticipantTiers_t& v) {
-    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t_t>();
     v.achievedTiers = j.at("achievedTiers").get<std::vector<LolLeaguesAchievedTier_t>>();
   }
   inline std::string to_string(const LolLeaguesParticipantTiers_t& v) {

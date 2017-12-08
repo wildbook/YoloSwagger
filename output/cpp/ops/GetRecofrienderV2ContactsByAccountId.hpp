@@ -3,7 +3,7 @@
 #include "RecofrienderContactResource.hpp"
 namespace leagueapi {
   RecofrienderContactResource_t GetRecofrienderV2ContactsByAccountId (const ClientInfo& info,
-    const uint64_t& accountId)
+    const uint64_t_t& accountId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

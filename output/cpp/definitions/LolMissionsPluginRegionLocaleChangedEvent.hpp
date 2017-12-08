@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolMissionsPluginRegionLocaleChangedEvent_t {
-    std::string locale;
+    std::string_t locale;
   };
 
   inline void to_json(nlohmann::json& j, const LolMissionsPluginRegionLocaleChangedEvent_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolMissionsPluginRegionLocaleChangedEvent_t& v) {
-    v.locale = j.at("locale").get<std::string>();
+    v.locale = j.at("locale").get<std::string_t>();
   }
   inline std::string to_string(const LolMissionsPluginRegionLocaleChangedEvent_t& v) {
     nlohmann::json j = v;

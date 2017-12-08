@@ -5,7 +5,7 @@ namespace leagueapi {
   struct LolLootLootDescription_t {
     std::map<std::string, std::string> localizationMap;
     std::map<std::string, std::string> localizationLongDescriptionMap;
-    std::string lootName;
+    std::string_t lootName;
     std::vector<std::string> childLootTableNames;
   };
 
@@ -19,7 +19,7 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, LolLootLootDescription_t& v) {
     v.localizationMap = j.at("localizationMap").get<std::map<std::string, std::string>>();
     v.localizationLongDescriptionMap = j.at("localizationLongDescriptionMap").get<std::map<std::string, std::string>>();
-    v.lootName = j.at("lootName").get<std::string>();
+    v.lootName = j.at("lootName").get<std::string_t>();
     v.childLootTableNames = j.at("childLootTableNames").get<std::vector<std::string>>();
   }
   inline std::string to_string(const LolLootLootDescription_t& v) {

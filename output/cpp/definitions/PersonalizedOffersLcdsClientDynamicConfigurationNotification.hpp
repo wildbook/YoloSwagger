@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct PersonalizedOffersLcdsClientDynamicConfigurationNotification_t {
-    std::string configs;
-    bool delta;
+    std::string_t configs;
+    bool_t delta;
   };
 
   inline void to_json(nlohmann::json& j, const PersonalizedOffersLcdsClientDynamicConfigurationNotification_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PersonalizedOffersLcdsClientDynamicConfigurationNotification_t& v) {
-    v.configs = j.at("configs").get<std::string>();
-    v.delta = j.at("delta").get<bool>();
+    v.configs = j.at("configs").get<std::string_t>();
+    v.delta = j.at("delta").get<bool_t>();
   }
   inline std::string to_string(const PersonalizedOffersLcdsClientDynamicConfigurationNotification_t& v) {
     nlohmann::json j = v;

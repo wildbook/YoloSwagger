@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolChatFriendRequestResource.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolChatV1FriendRequests (const ClientInfo& info,
+  nlohmann::json_t PostLolChatV1FriendRequests (const ClientInfo& info,
     const LolChatFriendRequestResource_t& request)
   {
     using std::to_string;

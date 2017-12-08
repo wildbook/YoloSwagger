@@ -4,7 +4,7 @@
 #include "LolReplaysReplayCreateMetadata.hpp"
 namespace leagueapi {
   void PostLolReplaysV2MetadataByGameIdCreate (const ClientInfo& info,
-    const uint64_t& gameId,
+    const uint64_t_t& gameId,
     const LolReplaysReplayCreateMetadata_t& request)
   {
     using std::to_string;

@@ -5,9 +5,9 @@
 namespace leagueapi {
   // User Experience Settings System Information
   struct basicSystemInfo_t {
-    uint32_t physicalProcessorCores;
-    uint32_t processorSpeed;
-    uint64_t physicalMemory;
+    uint32_t_t physicalProcessorCores;
+    uint32_t_t processorSpeed;
+    uint64_t_t physicalMemory;
     basicOperatingSystemInfo_t operatingSystem;
   };
 
@@ -19,9 +19,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, basicSystemInfo_t& v) {
-    v.physicalProcessorCores = j.at("physicalProcessorCores").get<uint32_t>();
-    v.processorSpeed = j.at("processorSpeed").get<uint32_t>();
-    v.physicalMemory = j.at("physicalMemory").get<uint64_t>();
+    v.physicalProcessorCores = j.at("physicalProcessorCores").get<uint32_t_t>();
+    v.processorSpeed = j.at("processorSpeed").get<uint32_t_t>();
+    v.physicalMemory = j.at("physicalMemory").get<uint64_t_t>();
     v.operatingSystem = j.at("operatingSystem").get<basicOperatingSystemInfo_t>();
   }
   inline std::string to_string(const basicSystemInfo_t& v) {

@@ -4,8 +4,8 @@
 #include "LolStoreItemKey.hpp"
 namespace leagueapi {
   struct LolStorePageGroupingDTO_t {
-    bool grouped;
-    bool hidden;
+    bool_t grouped;
+    bool_t hidden;
     std::vector<LolStoreItemKey_t> items;
   };
 
@@ -16,8 +16,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolStorePageGroupingDTO_t& v) {
-    v.grouped = j.at("grouped").get<bool>();
-    v.hidden = j.at("hidden").get<bool>();
+    v.grouped = j.at("grouped").get<bool_t>();
+    v.hidden = j.at("hidden").get<bool_t>();
     v.items = j.at("items").get<std::vector<LolStoreItemKey_t>>();
   }
   inline std::string to_string(const LolStorePageGroupingDTO_t& v) {

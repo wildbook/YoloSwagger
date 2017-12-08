@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct LolAccountVerificationSendTokenRequest_t {
-    std::string device;
-    std::string locale;
-    std::string mediator;
+    std::string_t device;
+    std::string_t locale;
+    std::string_t mediator;
   };
 
   inline void to_json(nlohmann::json& j, const LolAccountVerificationSendTokenRequest_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolAccountVerificationSendTokenRequest_t& v) {
-    v.device = j.at("device").get<std::string>();
-    v.locale = j.at("locale").get<std::string>();
-    v.mediator = j.at("mediator").get<std::string>();
+    v.device = j.at("device").get<std::string_t>();
+    v.locale = j.at("locale").get<std::string_t>();
+    v.mediator = j.at("mediator").get<std::string_t>();
   }
   inline std::string to_string(const LolAccountVerificationSendTokenRequest_t& v) {
     nlohmann::json j = v;

@@ -5,7 +5,7 @@
 namespace leagueapi {
   struct MatchmakingLcdsFailedJoinPlayer_t {
     MatchmakingLcdsSummoner_t summoner;
-    std::string reasonFailed;
+    std::string_t reasonFailed;
   };
 
   inline void to_json(nlohmann::json& j, const MatchmakingLcdsFailedJoinPlayer_t& v) {
@@ -15,7 +15,7 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, MatchmakingLcdsFailedJoinPlayer_t& v) {
     v.summoner = j.at("summoner").get<MatchmakingLcdsSummoner_t>();
-    v.reasonFailed = j.at("reasonFailed").get<std::string>();
+    v.reasonFailed = j.at("reasonFailed").get<std::string_t>();
   }
   inline std::string to_string(const MatchmakingLcdsFailedJoinPlayer_t& v) {
     nlohmann::json j = v;

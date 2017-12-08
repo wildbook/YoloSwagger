@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolClashV1TournamentByTournamentIdRosterDisband (const ClientInfo& info,
-    const int64_t& tournamentId)
+  nlohmann::json_t PostLolClashV1TournamentByTournamentIdRosterDisband (const ClientInfo& info,
+    const int64_t_t& tournamentId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

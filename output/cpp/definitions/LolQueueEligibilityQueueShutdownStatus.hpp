@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolQueueEligibilityQueueShutdownStatus_t {
-    bool isDisabled;
+    bool_t isDisabled;
   };
 
   inline void to_json(nlohmann::json& j, const LolQueueEligibilityQueueShutdownStatus_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolQueueEligibilityQueueShutdownStatus_t& v) {
-    v.isDisabled = j.at("isDisabled").get<bool>();
+    v.isDisabled = j.at("isDisabled").get<bool_t>();
   }
   inline std::string to_string(const LolQueueEligibilityQueueShutdownStatus_t& v) {
     nlohmann::json j = v;

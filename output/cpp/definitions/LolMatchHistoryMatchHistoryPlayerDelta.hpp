@@ -5,8 +5,8 @@
 namespace leagueapi {
   struct LolMatchHistoryMatchHistoryPlayerDelta_t {
     std::vector<LolMatchHistoryMatchHistoryPlayerGameDelta_t> deltas;
-    uint64_t originalAccountId;
-    std::string originalPlatformId;
+    uint64_t_t originalAccountId;
+    std::string_t originalPlatformId;
   };
 
   inline void to_json(nlohmann::json& j, const LolMatchHistoryMatchHistoryPlayerDelta_t& v) {
@@ -17,8 +17,8 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolMatchHistoryMatchHistoryPlayerDelta_t& v) {
     v.deltas = j.at("deltas").get<std::vector<LolMatchHistoryMatchHistoryPlayerGameDelta_t>>();
-    v.originalAccountId = j.at("originalAccountId").get<uint64_t>();
-    v.originalPlatformId = j.at("originalPlatformId").get<std::string>();
+    v.originalAccountId = j.at("originalAccountId").get<uint64_t_t>();
+    v.originalPlatformId = j.at("originalPlatformId").get<std::string_t>();
   }
   inline std::string to_string(const LolMatchHistoryMatchHistoryPlayerDelta_t& v) {
     nlohmann::json j = v;

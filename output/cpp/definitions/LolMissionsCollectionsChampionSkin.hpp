@@ -4,8 +4,8 @@
 #include "LolMissionsCollectionsOwnership.hpp"
 namespace leagueapi {
   struct LolMissionsCollectionsChampionSkin_t {
-    int32_t championId;
-    int32_t id;
+    int32_t_t championId;
+    int32_t_t id;
     LolMissionsCollectionsOwnership_t ownership;
   };
 
@@ -16,8 +16,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolMissionsCollectionsChampionSkin_t& v) {
-    v.championId = j.at("championId").get<int32_t>();
-    v.id = j.at("id").get<int32_t>();
+    v.championId = j.at("championId").get<int32_t_t>();
+    v.id = j.at("id").get<int32_t_t>();
     v.ownership = j.at("ownership").get<LolMissionsCollectionsOwnership_t>();
   }
   inline std::string to_string(const LolMissionsCollectionsChampionSkin_t& v) {

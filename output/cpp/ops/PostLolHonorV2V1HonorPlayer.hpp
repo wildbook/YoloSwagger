@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolHonorV2ApiHonorPlayerServerRequest.hpp"
 namespace leagueapi {
-  std::string PostLolHonorV2V1HonorPlayer (const ClientInfo& info,
+  std::string_t PostLolHonorV2V1HonorPlayer (const ClientInfo& info,
     const LolHonorV2ApiHonorPlayerServerRequest_t& honorPlayerRequest)
   {
     using std::to_string;

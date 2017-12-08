@@ -5,9 +5,9 @@
 #include "ClashRewardConfigEntry.hpp"
 namespace leagueapi {
   struct ClashRewardConfigClient_t {
-    bool grantToSub;
+    bool_t grantToSub;
     std::vector<ClashRewardKeyType_t> keyDef;
-    std::string name;
+    std::string_t name;
     std::vector<ClashRewardConfigEntry_t> entries;
   };
 
@@ -19,9 +19,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, ClashRewardConfigClient_t& v) {
-    v.grantToSub = j.at("grantToSub").get<bool>();
+    v.grantToSub = j.at("grantToSub").get<bool_t>();
     v.keyDef = j.at("keyDef").get<std::vector<ClashRewardKeyType_t>>();
-    v.name = j.at("name").get<std::string>();
+    v.name = j.at("name").get<std::string_t>();
     v.entries = j.at("entries").get<std::vector<ClashRewardConfigEntry_t>>();
   }
   inline std::string to_string(const ClashRewardConfigClient_t& v) {

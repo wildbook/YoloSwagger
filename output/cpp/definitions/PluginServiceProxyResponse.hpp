@@ -3,12 +3,12 @@
 #include <optional>
 namespace leagueapi {
   struct PluginServiceProxyResponse_t {
-    std::string status;
-    std::string methodName;
-    std::string uuid;
-    std::string serviceName;
-    std::string error;
-    std::string payload;
+    std::string_t status;
+    std::string_t methodName;
+    std::string_t uuid;
+    std::string_t serviceName;
+    std::string_t error;
+    std::string_t payload;
   };
 
   inline void to_json(nlohmann::json& j, const PluginServiceProxyResponse_t& v) {
@@ -21,12 +21,12 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PluginServiceProxyResponse_t& v) {
-    v.status = j.at("status").get<std::string>();
-    v.methodName = j.at("methodName").get<std::string>();
-    v.uuid = j.at("uuid").get<std::string>();
-    v.serviceName = j.at("serviceName").get<std::string>();
-    v.error = j.at("error").get<std::string>();
-    v.payload = j.at("payload").get<std::string>();
+    v.status = j.at("status").get<std::string_t>();
+    v.methodName = j.at("methodName").get<std::string_t>();
+    v.uuid = j.at("uuid").get<std::string_t>();
+    v.serviceName = j.at("serviceName").get<std::string_t>();
+    v.error = j.at("error").get<std::string_t>();
+    v.payload = j.at("payload").get<std::string_t>();
   }
   inline std::string to_string(const PluginServiceProxyResponse_t& v) {
     nlohmann::json j = v;

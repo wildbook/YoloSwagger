@@ -4,7 +4,7 @@
 #include "LolClashThemeVp.hpp"
 namespace leagueapi {
   struct LolClashPlayerRewards_t {
-    int32_t seasonVp;
+    int32_t_t seasonVp;
     std::vector<LolClashThemeVp_t> themeVp;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolClashPlayerRewards_t& v) {
-    v.seasonVp = j.at("seasonVp").get<int32_t>();
+    v.seasonVp = j.at("seasonVp").get<int32_t_t>();
     v.themeVp = j.at("themeVp").get<std::vector<LolClashThemeVp_t>>();
   }
   inline std::string to_string(const LolClashPlayerRewards_t& v) {

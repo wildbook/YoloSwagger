@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Return the auth token used by the remoting server
-  std::string GetRiotclientAuthToken (const ClientInfo& info)
+  std::string_t GetRiotclientAuthToken (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

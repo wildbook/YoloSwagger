@@ -6,7 +6,7 @@
 namespace leagueapi {
   struct LolHonorV2VendedHonorChange_t {
     LolHonorV2Reward_t reward;
-    std::string actionType;
+    std::string_t actionType;
     LolHonorV2VendedHonorState_t currentState;
     LolHonorV2VendedHonorState_t previousState;
   };
@@ -20,7 +20,7 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolHonorV2VendedHonorChange_t& v) {
     v.reward = j.at("reward").get<LolHonorV2Reward_t>();
-    v.actionType = j.at("actionType").get<std::string>();
+    v.actionType = j.at("actionType").get<std::string_t>();
     v.currentState = j.at("currentState").get<LolHonorV2VendedHonorState_t>();
     v.previousState = j.at("previousState").get<LolHonorV2VendedHonorState_t>();
   }

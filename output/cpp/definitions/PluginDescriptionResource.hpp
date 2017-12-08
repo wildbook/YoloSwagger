@@ -6,8 +6,8 @@ namespace leagueapi {
   struct PluginDescriptionResource_t {
     std::map<std::string, std::string> pluginDependencies;
     PluginMetadataResource_t riotMeta;
-    std::string version;
-    std::string name;
+    std::string_t version;
+    std::string_t name;
   };
 
   inline void to_json(nlohmann::json& j, const PluginDescriptionResource_t& v) {
@@ -20,8 +20,8 @@ namespace leagueapi {
   inline void from_json(const nlohmann::json& j, PluginDescriptionResource_t& v) {
     v.pluginDependencies = j.at("pluginDependencies").get<std::map<std::string, std::string>>();
     v.riotMeta = j.at("riotMeta").get<PluginMetadataResource_t>();
-    v.version = j.at("version").get<std::string>();
-    v.name = j.at("name").get<std::string>();
+    v.version = j.at("version").get<std::string_t>();
+    v.name = j.at("name").get<std::string_t>();
   }
   inline std::string to_string(const PluginDescriptionResource_t& v) {
     nlohmann::json j = v;

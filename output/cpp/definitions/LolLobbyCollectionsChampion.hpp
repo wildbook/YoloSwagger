@@ -3,10 +3,10 @@
 #include <optional>
 namespace leagueapi {
   struct LolLobbyCollectionsChampion_t {
-    bool active;
-    bool botEnabled;
-    int32_t id;
-    std::string name;
+    bool_t active;
+    bool_t botEnabled;
+    int32_t_t id;
+    std::string_t name;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyCollectionsChampion_t& v) {
@@ -17,10 +17,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyCollectionsChampion_t& v) {
-    v.active = j.at("active").get<bool>();
-    v.botEnabled = j.at("botEnabled").get<bool>();
-    v.id = j.at("id").get<int32_t>();
-    v.name = j.at("name").get<std::string>();
+    v.active = j.at("active").get<bool_t>();
+    v.botEnabled = j.at("botEnabled").get<bool_t>();
+    v.id = j.at("id").get<int32_t_t>();
+    v.name = j.at("name").get<std::string_t>();
   }
   inline std::string to_string(const LolLobbyCollectionsChampion_t& v) {
     nlohmann::json j = v;

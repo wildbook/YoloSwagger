@@ -4,7 +4,7 @@
 #include "LolReplaysReplayContextData.hpp"
 namespace leagueapi {
   void PostLolReplaysV1RoflsByGameIdDownload (const ClientInfo& info,
-    const uint64_t& gameId,
+    const uint64_t_t& gameId,
     const LolReplaysReplayContextData_t& contextData)
   {
     using std::to_string;

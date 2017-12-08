@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct LolCollectionsCollectionsChestEligibility_t {
-    uint32_t maximumChests;
-    uint32_t earnableChests;
-    uint64_t nextChestRechargeTime;
+    uint32_t_t maximumChests;
+    uint32_t_t earnableChests;
+    uint64_t_t nextChestRechargeTime;
   };
 
   inline void to_json(nlohmann::json& j, const LolCollectionsCollectionsChestEligibility_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolCollectionsCollectionsChestEligibility_t& v) {
-    v.maximumChests = j.at("maximumChests").get<uint32_t>();
-    v.earnableChests = j.at("earnableChests").get<uint32_t>();
-    v.nextChestRechargeTime = j.at("nextChestRechargeTime").get<uint64_t>();
+    v.maximumChests = j.at("maximumChests").get<uint32_t_t>();
+    v.earnableChests = j.at("earnableChests").get<uint32_t_t>();
+    v.nextChestRechargeTime = j.at("nextChestRechargeTime").get<uint64_t_t>();
   }
   inline std::string to_string(const LolCollectionsCollectionsChestEligibility_t& v) {
     nlohmann::json j = v;

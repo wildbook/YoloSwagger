@@ -4,7 +4,7 @@
 #include "PlayerLevelUpEventAck.hpp"
 namespace leagueapi {
   void PostLolPlayerLevelUpV1LevelUpNotificationsByPluginName (const ClientInfo& info,
-    const std::string& pluginName,
+    const std::string_t& pluginName,
     const PlayerLevelUpEventAck_t& levelUpEventAck)
   {
     using std::to_string;

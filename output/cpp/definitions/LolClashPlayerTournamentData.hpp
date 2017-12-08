@@ -4,8 +4,8 @@
 #include "LolClashPlayerState.hpp"
 namespace leagueapi {
   struct LolClashPlayerTournamentData_t {
-    int64_t bracketId;
-    std::string rosterId;
+    int64_t_t bracketId;
+    std::string_t rosterId;
     LolClashPlayerState_t state;
   };
 
@@ -16,8 +16,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolClashPlayerTournamentData_t& v) {
-    v.bracketId = j.at("bracketId").get<int64_t>();
-    v.rosterId = j.at("rosterId").get<std::string>();
+    v.bracketId = j.at("bracketId").get<int64_t_t>();
+    v.rosterId = j.at("rosterId").get<std::string_t>();
     v.state = j.at("state").get<LolClashPlayerState_t>();
   }
   inline std::string to_string(const LolClashPlayerTournamentData_t& v) {

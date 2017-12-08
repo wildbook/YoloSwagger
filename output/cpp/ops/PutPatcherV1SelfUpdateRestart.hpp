@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json PutPatcherV1SelfUpdateRestart (const ClientInfo& info,
-    const bool& forceRestartOnSelfUpdate)
+  nlohmann::json_t PutPatcherV1SelfUpdateRestart (const ClientInfo& info,
+    const bool_t& forceRestartOnSelfUpdate)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

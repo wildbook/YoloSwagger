@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LolChampionsGameDataChampionSpell_t {
-    std::string description;
-    std::string name;
+    std::string_t description;
+    std::string_t name;
   };
 
   inline void to_json(nlohmann::json& j, const LolChampionsGameDataChampionSpell_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChampionsGameDataChampionSpell_t& v) {
-    v.description = j.at("description").get<std::string>();
-    v.name = j.at("name").get<std::string>();
+    v.description = j.at("description").get<std::string_t>();
+    v.name = j.at("name").get<std::string_t>();
   }
   inline std::string to_string(const LolChampionsGameDataChampionSpell_t& v) {
     nlohmann::json j = v;

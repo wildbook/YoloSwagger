@@ -4,9 +4,9 @@
 #include "LolItemSetsItemSet.hpp"
 namespace leagueapi {
   struct LolItemSetsItemSets_t {
-    uint64_t timestamp;
+    uint64_t_t timestamp;
     std::vector<LolItemSetsItemSet_t> itemSets;
-    uint64_t accountId;
+    uint64_t_t accountId;
   };
 
   inline void to_json(nlohmann::json& j, const LolItemSetsItemSets_t& v) {
@@ -16,9 +16,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolItemSetsItemSets_t& v) {
-    v.timestamp = j.at("timestamp").get<uint64_t>();
+    v.timestamp = j.at("timestamp").get<uint64_t_t>();
     v.itemSets = j.at("itemSets").get<std::vector<LolItemSetsItemSet_t>>();
-    v.accountId = j.at("accountId").get<uint64_t>();
+    v.accountId = j.at("accountId").get<uint64_t_t>();
   }
   inline std::string to_string(const LolItemSetsItemSets_t& v) {
     nlohmann::json j = v;

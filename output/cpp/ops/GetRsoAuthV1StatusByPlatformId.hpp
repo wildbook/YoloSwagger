@@ -3,7 +3,7 @@
 #include "RsoAuthRegionStatus.hpp"
 namespace leagueapi {
   RsoAuthRegionStatus_t GetRsoAuthV1StatusByPlatformId (const ClientInfo& info,
-    const std::string& platformId)
+    const std::string_t& platformId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

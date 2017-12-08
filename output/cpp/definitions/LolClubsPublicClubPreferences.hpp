@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolClubsPublicClubPreferences_t {
-    bool shareClubAffiliation;
+    bool_t shareClubAffiliation;
   };
 
   inline void to_json(nlohmann::json& j, const LolClubsPublicClubPreferences_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolClubsPublicClubPreferences_t& v) {
-    v.shareClubAffiliation = j.at("shareClubAffiliation").get<bool>();
+    v.shareClubAffiliation = j.at("shareClubAffiliation").get<bool_t>();
   }
   inline std::string to_string(const LolClubsPublicClubPreferences_t& v) {
     nlohmann::json j = v;

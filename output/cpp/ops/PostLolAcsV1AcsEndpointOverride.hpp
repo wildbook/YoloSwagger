@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolAcsAcsEndPoint.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolAcsV1AcsEndpointOverride (const ClientInfo& info,
+  nlohmann::json_t PostLolAcsV1AcsEndpointOverride (const ClientInfo& info,
     const LolAcsAcsEndPoint_t& data)
   {
     using std::to_string;

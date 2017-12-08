@@ -4,10 +4,10 @@
 #include "LolChatQueueCustomGameSpectatorPolicy.hpp"
 namespace leagueapi {
   struct LolChatLobbyStatus_t {
-    bool isCustom;
-    int32_t queueId;
-    bool isLeader;
-    bool isPracticeTool;
+    bool_t isCustom;
+    int32_t_t queueId;
+    bool_t isLeader;
+    bool_t isPracticeTool;
     LolChatQueueCustomGameSpectatorPolicy_t customSpectatorPolicy;
   };
 
@@ -20,10 +20,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChatLobbyStatus_t& v) {
-    v.isCustom = j.at("isCustom").get<bool>();
-    v.queueId = j.at("queueId").get<int32_t>();
-    v.isLeader = j.at("isLeader").get<bool>();
-    v.isPracticeTool = j.at("isPracticeTool").get<bool>();
+    v.isCustom = j.at("isCustom").get<bool_t>();
+    v.queueId = j.at("queueId").get<int32_t_t>();
+    v.isLeader = j.at("isLeader").get<bool_t>();
+    v.isPracticeTool = j.at("isPracticeTool").get<bool_t>();
     v.customSpectatorPolicy = j.at("customSpectatorPolicy").get<LolChatQueueCustomGameSpectatorPolicy_t>();
   }
   inline std::string to_string(const LolChatLobbyStatus_t& v) {

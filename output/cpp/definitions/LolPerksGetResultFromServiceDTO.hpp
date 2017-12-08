@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LolPerksGetResultFromServiceDTO_t {
-    std::string result;
-    std::string error;
+    std::string_t result;
+    std::string_t error;
   };
 
   inline void to_json(nlohmann::json& j, const LolPerksGetResultFromServiceDTO_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolPerksGetResultFromServiceDTO_t& v) {
-    v.result = j.at("result").get<std::string>();
-    v.error = j.at("error").get<std::string>();
+    v.result = j.at("result").get<std::string_t>();
+    v.error = j.at("error").get<std::string_t>();
   }
   inline std::string to_string(const LolPerksGetResultFromServiceDTO_t& v) {
     nlohmann::json j = v;

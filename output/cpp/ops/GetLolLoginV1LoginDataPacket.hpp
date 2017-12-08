@@ -1,7 +1,7 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json GetLolLoginV1LoginDataPacket (const ClientInfo& info)
+  nlohmann::json_t GetLolLoginV1LoginDataPacket (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

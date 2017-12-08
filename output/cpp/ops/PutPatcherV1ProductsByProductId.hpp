@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "PatcherProductResource.hpp"
 namespace leagueapi {
-  nlohmann::json PutPatcherV1ProductsByProductId (const ClientInfo& info,
-    const std::string& product-id,
+  nlohmann::json_t PutPatcherV1ProductsByProductId (const ClientInfo& info,
+    const std::string_t& product-id,
     const PatcherProductResource_t& data)
   {
     using std::to_string;

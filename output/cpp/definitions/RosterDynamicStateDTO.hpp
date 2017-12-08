@@ -10,8 +10,8 @@ namespace leagueapi {
     std::vector<PhaseRosterSubDTO_t> phaseRosterSubs;
     std::vector<BuybackMember_t> members;
     RosterWithdraw_t withdraw;
-    int64_t rosterId;
-    int64_t tournamentId;
+    int64_t_t rosterId;
+    int64_t_t tournamentId;
     std::vector<TicketOfferDTO_t> ticketOffers;
     std::vector<uint64_t> phaseCheckinStates;
   };
@@ -30,8 +30,8 @@ namespace leagueapi {
     v.phaseRosterSubs = j.at("phaseRosterSubs").get<std::vector<PhaseRosterSubDTO_t>>();
     v.members = j.at("members").get<std::vector<BuybackMember_t>>();
     v.withdraw = j.at("withdraw").get<RosterWithdraw_t>();
-    v.rosterId = j.at("rosterId").get<int64_t>();
-    v.tournamentId = j.at("tournamentId").get<int64_t>();
+    v.rosterId = j.at("rosterId").get<int64_t_t>();
+    v.tournamentId = j.at("tournamentId").get<int64_t_t>();
     v.ticketOffers = j.at("ticketOffers").get<std::vector<TicketOfferDTO_t>>();
     v.phaseCheckinStates = j.at("phaseCheckinStates").get<std::vector<uint64_t>>();
   }

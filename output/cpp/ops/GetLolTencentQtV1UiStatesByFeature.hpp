@@ -3,7 +3,7 @@
 #include "TencentQTNotification.hpp"
 namespace leagueapi {
   TencentQTNotification_t GetLolTencentQtV1UiStatesByFeature (const ClientInfo& info,
-    const std::string& feature)
+    const std::string_t& feature)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

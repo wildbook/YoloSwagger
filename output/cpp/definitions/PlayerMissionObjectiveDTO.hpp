@@ -5,9 +5,9 @@
 namespace leagueapi {
   struct PlayerMissionObjectiveDTO_t {
     MissionProgressDTO_t progress;
-    std::string type;
-    std::string description;
-    int32_t sequence;
+    std::string_t type;
+    std::string_t description;
+    int32_t_t sequence;
   };
 
   inline void to_json(nlohmann::json& j, const PlayerMissionObjectiveDTO_t& v) {
@@ -19,9 +19,9 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, PlayerMissionObjectiveDTO_t& v) {
     v.progress = j.at("progress").get<MissionProgressDTO_t>();
-    v.type = j.at("type").get<std::string>();
-    v.description = j.at("description").get<std::string>();
-    v.sequence = j.at("sequence").get<int32_t>();
+    v.type = j.at("type").get<std::string_t>();
+    v.description = j.at("description").get<std::string_t>();
+    v.sequence = j.at("sequence").get<int32_t_t>();
   }
   inline std::string to_string(const PlayerMissionObjectiveDTO_t& v) {
     nlohmann::json j = v;

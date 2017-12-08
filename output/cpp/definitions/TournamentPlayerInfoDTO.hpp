@@ -10,9 +10,9 @@ namespace leagueapi {
     std::vector<ThemeVp_t> themeVps;
     std::vector<RosterStatsDTO_t> rosterStats;
     std::vector<TournamentInfoDTO_t> tournamentInfo;
-    int32_t seasonVp;
+    int32_t_t seasonVp;
     PlayerDTO_t player;
-    int64_t time;
+    int64_t_t time;
   };
 
   inline void to_json(nlohmann::json& j, const TournamentPlayerInfoDTO_t& v) {
@@ -28,9 +28,9 @@ namespace leagueapi {
     v.themeVps = j.at("themeVps").get<std::vector<ThemeVp_t>>();
     v.rosterStats = j.at("rosterStats").get<std::vector<RosterStatsDTO_t>>();
     v.tournamentInfo = j.at("tournamentInfo").get<std::vector<TournamentInfoDTO_t>>();
-    v.seasonVp = j.at("seasonVp").get<int32_t>();
+    v.seasonVp = j.at("seasonVp").get<int32_t_t>();
     v.player = j.at("player").get<PlayerDTO_t>();
-    v.time = j.at("time").get<int64_t>();
+    v.time = j.at("time").get<int64_t_t>();
   }
   inline std::string to_string(const TournamentPlayerInfoDTO_t& v) {
     nlohmann::json j = v;

@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void PostLolGameflowV1ClientReceivedMessage (const ClientInfo& info,
-    const std::string& messsage)
+    const std::string_t& messsage)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

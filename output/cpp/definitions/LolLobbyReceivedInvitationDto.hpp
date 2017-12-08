@@ -7,13 +7,13 @@
 namespace leagueapi {
   struct LolLobbyReceivedInvitationDto_t {
     std::vector<LolLobbyEligibilityRestriction_t> restrictions;
-    bool canAcceptInvitation;
-    std::string timestamp;
+    bool_t canAcceptInvitation;
+    std::string_t timestamp;
     LolLobbyLobbyInvitationState_t state;
     LolLobbyReceivedInvitationGameConfigDto_t gameConfig;
-    std::string invitationId;
-    std::string fromSummonerName;
-    uint64_t fromSummonerId;
+    std::string_t invitationId;
+    std::string_t fromSummonerName;
+    uint64_t_t fromSummonerId;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyReceivedInvitationDto_t& v) {
@@ -29,13 +29,13 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolLobbyReceivedInvitationDto_t& v) {
     v.restrictions = j.at("restrictions").get<std::vector<LolLobbyEligibilityRestriction_t>>();
-    v.canAcceptInvitation = j.at("canAcceptInvitation").get<bool>();
-    v.timestamp = j.at("timestamp").get<std::string>();
+    v.canAcceptInvitation = j.at("canAcceptInvitation").get<bool_t>();
+    v.timestamp = j.at("timestamp").get<std::string_t>();
     v.state = j.at("state").get<LolLobbyLobbyInvitationState_t>();
     v.gameConfig = j.at("gameConfig").get<LolLobbyReceivedInvitationGameConfigDto_t>();
-    v.invitationId = j.at("invitationId").get<std::string>();
-    v.fromSummonerName = j.at("fromSummonerName").get<std::string>();
-    v.fromSummonerId = j.at("fromSummonerId").get<uint64_t>();
+    v.invitationId = j.at("invitationId").get<std::string_t>();
+    v.fromSummonerName = j.at("fromSummonerName").get<std::string_t>();
+    v.fromSummonerId = j.at("fromSummonerId").get<uint64_t_t>();
   }
   inline std::string to_string(const LolLobbyReceivedInvitationDto_t& v) {
     nlohmann::json j = v;

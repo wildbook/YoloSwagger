@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void PostRiotMessagingServiceV1Connect (const ClientInfo& info,
-    const std::string& idToken)
+    const std::string_t& idToken)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

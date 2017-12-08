@@ -5,9 +5,9 @@
 namespace leagueapi {
   struct LolItemSetsItemSetBlock_t {
     std::vector<LolItemSetsItemSetItem_t> items;
-    std::string hideIfSummonerSpell;
-    std::string type;
-    std::string showIfSummonerSpell;
+    std::string_t hideIfSummonerSpell;
+    std::string_t type;
+    std::string_t showIfSummonerSpell;
   };
 
   inline void to_json(nlohmann::json& j, const LolItemSetsItemSetBlock_t& v) {
@@ -19,9 +19,9 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolItemSetsItemSetBlock_t& v) {
     v.items = j.at("items").get<std::vector<LolItemSetsItemSetItem_t>>();
-    v.hideIfSummonerSpell = j.at("hideIfSummonerSpell").get<std::string>();
-    v.type = j.at("type").get<std::string>();
-    v.showIfSummonerSpell = j.at("showIfSummonerSpell").get<std::string>();
+    v.hideIfSummonerSpell = j.at("hideIfSummonerSpell").get<std::string_t>();
+    v.type = j.at("type").get<std::string_t>();
+    v.showIfSummonerSpell = j.at("showIfSummonerSpell").get<std::string_t>();
   }
   inline std::string to_string(const LolItemSetsItemSetBlock_t& v) {
     nlohmann::json j = v;

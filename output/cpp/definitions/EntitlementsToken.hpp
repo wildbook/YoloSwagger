@@ -4,10 +4,10 @@
 namespace leagueapi {
   struct EntitlementsToken_t {
     std::vector<std::string> entitlements;
-    std::string token;
-    std::string subject;
-    std::string accessToken;
-    std::string issuer;
+    std::string_t token;
+    std::string_t subject;
+    std::string_t accessToken;
+    std::string_t issuer;
   };
 
   inline void to_json(nlohmann::json& j, const EntitlementsToken_t& v) {
@@ -20,10 +20,10 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, EntitlementsToken_t& v) {
     v.entitlements = j.at("entitlements").get<std::vector<std::string>>();
-    v.token = j.at("token").get<std::string>();
-    v.subject = j.at("subject").get<std::string>();
-    v.accessToken = j.at("accessToken").get<std::string>();
-    v.issuer = j.at("issuer").get<std::string>();
+    v.token = j.at("token").get<std::string_t>();
+    v.subject = j.at("subject").get<std::string_t>();
+    v.accessToken = j.at("accessToken").get<std::string_t>();
+    v.issuer = j.at("issuer").get<std::string_t>();
   }
   inline std::string to_string(const EntitlementsToken_t& v) {
     nlohmann::json j = v;

@@ -4,28 +4,28 @@
 #include "PluginResourceContract.hpp"
 namespace leagueapi {
   struct PluginResource_t {
-    int32_t orderDynamicLibraryInited;
-    bool isDynamicLibraryLoaded;
-    std::string app;
-    std::string dynLibFileName;
-    std::string supertype;
-    std::string pluginInfoApiSemVer;
-    bool isDynamicLibraryInited;
-    std::string fullName;
-    std::string feature;
-    int32_t orderWADFileMounted;
-    std::string version;
-    std::string threadingModel;
-    int32_t orderDynamicLibraryLoaded;
-    std::string externalUri;
+    int32_t_t orderDynamicLibraryInited;
+    bool_t isDynamicLibraryLoaded;
+    std::string_t app;
+    std::string_t dynLibFileName;
+    std::string_t supertype;
+    std::string_t pluginInfoApiSemVer;
+    bool_t isDynamicLibraryInited;
+    std::string_t fullName;
+    std::string_t feature;
+    int32_t_t orderWADFileMounted;
+    std::string_t version;
+    std::string_t threadingModel;
+    int32_t_t orderDynamicLibraryLoaded;
+    std::string_t externalUri;
     std::vector<PluginResourceContract_t> implementedContracts;
     std::map<std::string, std::string> mountedAssetBundles;
     std::vector<PluginResourceContract_t> dependencies;
-    std::string shortName;
-    bool standalone;
+    std::string_t shortName;
+    bool_t standalone;
     std::vector<std::string> assetBundleNames;
-    std::string subtype;
-    std::string dynLibPath;
+    std::string_t subtype;
+    std::string_t dynLibPath;
   };
 
   inline void to_json(nlohmann::json& j, const PluginResource_t& v) {
@@ -54,28 +54,28 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PluginResource_t& v) {
-    v.orderDynamicLibraryInited = j.at("orderDynamicLibraryInited").get<int32_t>();
-    v.isDynamicLibraryLoaded = j.at("isDynamicLibraryLoaded").get<bool>();
-    v.app = j.at("app").get<std::string>();
-    v.dynLibFileName = j.at("dynLibFileName").get<std::string>();
-    v.supertype = j.at("supertype").get<std::string>();
-    v.pluginInfoApiSemVer = j.at("pluginInfoApiSemVer").get<std::string>();
-    v.isDynamicLibraryInited = j.at("isDynamicLibraryInited").get<bool>();
-    v.fullName = j.at("fullName").get<std::string>();
-    v.feature = j.at("feature").get<std::string>();
-    v.orderWADFileMounted = j.at("orderWADFileMounted").get<int32_t>();
-    v.version = j.at("version").get<std::string>();
-    v.threadingModel = j.at("threadingModel").get<std::string>();
-    v.orderDynamicLibraryLoaded = j.at("orderDynamicLibraryLoaded").get<int32_t>();
-    v.externalUri = j.at("externalUri").get<std::string>();
+    v.orderDynamicLibraryInited = j.at("orderDynamicLibraryInited").get<int32_t_t>();
+    v.isDynamicLibraryLoaded = j.at("isDynamicLibraryLoaded").get<bool_t>();
+    v.app = j.at("app").get<std::string_t>();
+    v.dynLibFileName = j.at("dynLibFileName").get<std::string_t>();
+    v.supertype = j.at("supertype").get<std::string_t>();
+    v.pluginInfoApiSemVer = j.at("pluginInfoApiSemVer").get<std::string_t>();
+    v.isDynamicLibraryInited = j.at("isDynamicLibraryInited").get<bool_t>();
+    v.fullName = j.at("fullName").get<std::string_t>();
+    v.feature = j.at("feature").get<std::string_t>();
+    v.orderWADFileMounted = j.at("orderWADFileMounted").get<int32_t_t>();
+    v.version = j.at("version").get<std::string_t>();
+    v.threadingModel = j.at("threadingModel").get<std::string_t>();
+    v.orderDynamicLibraryLoaded = j.at("orderDynamicLibraryLoaded").get<int32_t_t>();
+    v.externalUri = j.at("externalUri").get<std::string_t>();
     v.implementedContracts = j.at("implementedContracts").get<std::vector<PluginResourceContract_t>>();
     v.mountedAssetBundles = j.at("mountedAssetBundles").get<std::map<std::string, std::string>>();
     v.dependencies = j.at("dependencies").get<std::vector<PluginResourceContract_t>>();
-    v.shortName = j.at("shortName").get<std::string>();
-    v.standalone = j.at("standalone").get<bool>();
+    v.shortName = j.at("shortName").get<std::string_t>();
+    v.standalone = j.at("standalone").get<bool_t>();
     v.assetBundleNames = j.at("assetBundleNames").get<std::vector<std::string>>();
-    v.subtype = j.at("subtype").get<std::string>();
-    v.dynLibPath = j.at("dynLibPath").get<std::string>();
+    v.subtype = j.at("subtype").get<std::string_t>();
+    v.dynLibPath = j.at("dynLibPath").get<std::string_t>();
   }
   inline std::string to_string(const PluginResource_t& v) {
     nlohmann::json j = v;

@@ -5,13 +5,13 @@ namespace leagueapi {
   //Adds or Updates a Metric
   void PostRiotclientAddorupdatemetric (const ClientInfo& info,
     //Name of metric group
-    const std::string& group,
+    const std::string_t& group,
     //Name of metric object
-    const std::string& object,
+    const std::string_t& object,
     //Name of metric item
-    const std::string& name,
+    const std::string_t& name,
     //Value to store
-    const uint64_t& value)
+    const uint64_t_t& value)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

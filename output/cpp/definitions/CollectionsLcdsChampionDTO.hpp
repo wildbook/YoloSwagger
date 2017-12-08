@@ -5,18 +5,18 @@
 namespace leagueapi {
   struct CollectionsLcdsChampionDTO_t {
     std::vector<CollectionsLcdsChampionSkinDTO_t> championSkins;
-    bool rankedPlayEnabled;
-    int32_t championId;
-    bool botEnabled;
-    uint64_t purchaseDate;
-    uint64_t endDate;
+    bool_t rankedPlayEnabled;
+    int32_t_t championId;
+    bool_t botEnabled;
+    uint64_t_t purchaseDate;
+    uint64_t_t endDate;
     std::vector<std::string> sources;
-    bool freeToPlayReward;
-    bool owned;
-    uint64_t purchased;
-    bool active;
-    bool freeToPlay;
-    int32_t winCountRemaining;
+    bool_t freeToPlayReward;
+    bool_t owned;
+    uint64_t_t purchased;
+    bool_t active;
+    bool_t freeToPlay;
+    int32_t_t winCountRemaining;
   };
 
   inline void to_json(nlohmann::json& j, const CollectionsLcdsChampionDTO_t& v) {
@@ -37,18 +37,18 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, CollectionsLcdsChampionDTO_t& v) {
     v.championSkins = j.at("championSkins").get<std::vector<CollectionsLcdsChampionSkinDTO_t>>();
-    v.rankedPlayEnabled = j.at("rankedPlayEnabled").get<bool>();
-    v.championId = j.at("championId").get<int32_t>();
-    v.botEnabled = j.at("botEnabled").get<bool>();
-    v.purchaseDate = j.at("purchaseDate").get<uint64_t>();
-    v.endDate = j.at("endDate").get<uint64_t>();
+    v.rankedPlayEnabled = j.at("rankedPlayEnabled").get<bool_t>();
+    v.championId = j.at("championId").get<int32_t_t>();
+    v.botEnabled = j.at("botEnabled").get<bool_t>();
+    v.purchaseDate = j.at("purchaseDate").get<uint64_t_t>();
+    v.endDate = j.at("endDate").get<uint64_t_t>();
     v.sources = j.at("sources").get<std::vector<std::string>>();
-    v.freeToPlayReward = j.at("freeToPlayReward").get<bool>();
-    v.owned = j.at("owned").get<bool>();
-    v.purchased = j.at("purchased").get<uint64_t>();
-    v.active = j.at("active").get<bool>();
-    v.freeToPlay = j.at("freeToPlay").get<bool>();
-    v.winCountRemaining = j.at("winCountRemaining").get<int32_t>();
+    v.freeToPlayReward = j.at("freeToPlayReward").get<bool_t>();
+    v.owned = j.at("owned").get<bool_t>();
+    v.purchased = j.at("purchased").get<uint64_t_t>();
+    v.active = j.at("active").get<bool_t>();
+    v.freeToPlay = j.at("freeToPlay").get<bool_t>();
+    v.winCountRemaining = j.at("winCountRemaining").get<int32_t_t>();
   }
   inline std::string to_string(const CollectionsLcdsChampionDTO_t& v) {
     nlohmann::json j = v;

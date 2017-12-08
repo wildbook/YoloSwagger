@@ -5,7 +5,7 @@
 namespace leagueapi {
   struct RecentGames_t {
     std::vector<PlayerGameStats_t> gameStatistics;
-    uint64_t userId;
+    uint64_t_t userId;
   };
 
   inline void to_json(nlohmann::json& j, const RecentGames_t& v) {
@@ -15,7 +15,7 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, RecentGames_t& v) {
     v.gameStatistics = j.at("gameStatistics").get<std::vector<PlayerGameStats_t>>();
-    v.userId = j.at("userId").get<uint64_t>();
+    v.userId = j.at("userId").get<uint64_t_t>();
   }
   inline std::string to_string(const RecentGames_t& v) {
     nlohmann::json j = v;

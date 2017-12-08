@@ -3,8 +3,8 @@
 #include ".hpp"
 namespace leagueapi {
   void PostLolEsportStreamNotificationsV1SendStats (const ClientInfo& info,
-    const std::string& eventType,
-    const std::string& matchId)
+    const std::string_t& eventType,
+    const std::string_t& matchId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

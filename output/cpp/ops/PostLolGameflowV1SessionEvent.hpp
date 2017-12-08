@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void PostLolGameflowV1SessionEvent (const ClientInfo& info,
-    const std::string& session)
+    const std::string_t& session)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

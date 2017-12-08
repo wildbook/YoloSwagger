@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct ContentItemIdentifier_t {
-    int32_t itemId;
-    std::string inventoryType;
+    int32_t_t itemId;
+    std::string_t inventoryType;
   };
 
   inline void to_json(nlohmann::json& j, const ContentItemIdentifier_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, ContentItemIdentifier_t& v) {
-    v.itemId = j.at("itemId").get<int32_t>();
-    v.inventoryType = j.at("inventoryType").get<std::string>();
+    v.itemId = j.at("itemId").get<int32_t_t>();
+    v.inventoryType = j.at("inventoryType").get<std::string_t>();
   }
   inline std::string to_string(const ContentItemIdentifier_t& v) {
     nlohmann::json j = v;

@@ -3,7 +3,7 @@
 #include "RecofrienderLinkResource.hpp"
 namespace leagueapi {
   std::vector<RecofrienderLinkResource_t> GetRecofrienderV1Registrations (const ClientInfo& info,
-    const std::optional<std::string>& cb = std::nullopt)
+    const std::optional<std::string_t>& cb = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

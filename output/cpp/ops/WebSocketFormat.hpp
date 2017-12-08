@@ -3,7 +3,7 @@
 #include "RemotingSerializedFormat.hpp"
 namespace leagueapi {
   //Controls the console output format
-  nlohmann::json WebSocketFormat (const ClientInfo& info,
+  nlohmann::json_t WebSocketFormat (const ClientInfo& info,
     //Output format to switch to
     const std::optional<RemotingSerializedFormat_t>& format = std::nullopt)
   {

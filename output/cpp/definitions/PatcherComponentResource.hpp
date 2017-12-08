@@ -6,16 +6,16 @@
 #include "PatcherComponentResourceHistory.hpp"
 namespace leagueapi {
   struct PatcherComponentResource_t {
-    std::string install_dir;
-    std::string locale;
-    std::string region;
-    std::string hostname;
-    std::string remote_path;
-    bool use_tls;
+    std::string_t install_dir;
+    std::string_t locale;
+    std::string_t region;
+    std::string_t hostname;
+    std::string_t remote_path;
+    bool_t use_tls;
     std::vector<PatcherHeaderEntry_t> headers;
-    bool copy_to_solution;
+    bool_t copy_to_solution;
     PatcherComponentResourceType_t type;
-    std::string id;
+    std::string_t id;
     PatcherComponentResourceHistory_t history;
   };
 
@@ -34,16 +34,16 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PatcherComponentResource_t& v) {
-    v.install_dir = j.at("install_dir").get<std::string>();
-    v.locale = j.at("locale").get<std::string>();
-    v.region = j.at("region").get<std::string>();
-    v.hostname = j.at("hostname").get<std::string>();
-    v.remote_path = j.at("remote_path").get<std::string>();
-    v.use_tls = j.at("use_tls").get<bool>();
+    v.install_dir = j.at("install_dir").get<std::string_t>();
+    v.locale = j.at("locale").get<std::string_t>();
+    v.region = j.at("region").get<std::string_t>();
+    v.hostname = j.at("hostname").get<std::string_t>();
+    v.remote_path = j.at("remote_path").get<std::string_t>();
+    v.use_tls = j.at("use_tls").get<bool_t>();
     v.headers = j.at("headers").get<std::vector<PatcherHeaderEntry_t>>();
-    v.copy_to_solution = j.at("copy_to_solution").get<bool>();
+    v.copy_to_solution = j.at("copy_to_solution").get<bool_t>();
     v.type = j.at("type").get<PatcherComponentResourceType_t>();
-    v.id = j.at("id").get<std::string>();
+    v.id = j.at("id").get<std::string_t>();
     v.history = j.at("history").get<PatcherComponentResourceHistory_t>();
   }
   inline std::string to_string(const PatcherComponentResource_t& v) {

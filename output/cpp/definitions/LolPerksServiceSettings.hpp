@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolPerksServiceSettings_t {
-    bool serverSideStorageAvailable;
+    bool_t serverSideStorageAvailable;
   };
 
   inline void to_json(nlohmann::json& j, const LolPerksServiceSettings_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolPerksServiceSettings_t& v) {
-    v.serverSideStorageAvailable = j.at("serverSideStorageAvailable").get<bool>();
+    v.serverSideStorageAvailable = j.at("serverSideStorageAvailable").get<bool_t>();
   }
   inline std::string to_string(const LolPerksServiceSettings_t& v) {
     nlohmann::json j = v;

@@ -5,16 +5,16 @@
 #include "BracketMatch.hpp"
 namespace leagueapi {
   struct LolClashBracket_t {
-    int32_t currentLoserRound;
-    int32_t currentRound;
+    int32_t_t currentLoserRound;
+    int32_t_t currentRound;
     std::vector<BracketMatch_t> matches;
-    int32_t period;
-    bool isComplete;
-    int64_t tournamentId;
+    int32_t_t period;
+    bool_t isComplete;
+    int64_t_t tournamentId;
     std::vector<BracketRoster_t> rosters;
     std::vector<BracketMatch_t> loserBracketMatches;
-    int64_t id;
-    int32_t size;
+    int64_t_t id;
+    int32_t_t size;
   };
 
   inline void to_json(nlohmann::json& j, const LolClashBracket_t& v) {
@@ -31,16 +31,16 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolClashBracket_t& v) {
-    v.currentLoserRound = j.at("currentLoserRound").get<int32_t>();
-    v.currentRound = j.at("currentRound").get<int32_t>();
+    v.currentLoserRound = j.at("currentLoserRound").get<int32_t_t>();
+    v.currentRound = j.at("currentRound").get<int32_t_t>();
     v.matches = j.at("matches").get<std::vector<BracketMatch_t>>();
-    v.period = j.at("period").get<int32_t>();
-    v.isComplete = j.at("isComplete").get<bool>();
-    v.tournamentId = j.at("tournamentId").get<int64_t>();
+    v.period = j.at("period").get<int32_t_t>();
+    v.isComplete = j.at("isComplete").get<bool_t>();
+    v.tournamentId = j.at("tournamentId").get<int64_t_t>();
     v.rosters = j.at("rosters").get<std::vector<BracketRoster_t>>();
     v.loserBracketMatches = j.at("loserBracketMatches").get<std::vector<BracketMatch_t>>();
-    v.id = j.at("id").get<int64_t>();
-    v.size = j.at("size").get<int32_t>();
+    v.id = j.at("id").get<int64_t_t>();
+    v.size = j.at("size").get<int32_t_t>();
   }
   inline std::string to_string(const LolClashBracket_t& v) {
     nlohmann::json j = v;

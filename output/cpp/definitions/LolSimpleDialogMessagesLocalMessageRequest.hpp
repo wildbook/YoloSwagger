@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolSimpleDialogMessagesLocalMessageRequest_t {
-    std::string msgType;
+    std::string_t msgType;
     std::vector<std::string> msgBody;
   };
 
@@ -13,7 +13,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolSimpleDialogMessagesLocalMessageRequest_t& v) {
-    v.msgType = j.at("msgType").get<std::string>();
+    v.msgType = j.at("msgType").get<std::string_t>();
     v.msgBody = j.at("msgBody").get<std::vector<std::string>>();
   }
   inline std::string to_string(const LolSimpleDialogMessagesLocalMessageRequest_t& v) {

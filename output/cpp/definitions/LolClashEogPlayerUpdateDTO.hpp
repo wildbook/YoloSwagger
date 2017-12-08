@@ -4,13 +4,13 @@
 #include "ClashRewardDefinition.hpp"
 namespace leagueapi {
   struct LolClashEogPlayerUpdateDTO_t {
-    int64_t gameId;
+    int64_t_t gameId;
     std::vector<ClashRewardDefinition_t> rewardProgress;
-    int32_t seasonVp;
+    int32_t_t seasonVp;
     std::vector<ClashRewardDefinition_t> earnedRewards;
-    bool winner;
-    int32_t themeVp;
-    int64_t tournamentId;
+    bool_t winner;
+    int32_t_t themeVp;
+    int64_t_t tournamentId;
   };
 
   inline void to_json(nlohmann::json& j, const LolClashEogPlayerUpdateDTO_t& v) {
@@ -24,13 +24,13 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolClashEogPlayerUpdateDTO_t& v) {
-    v.gameId = j.at("gameId").get<int64_t>();
+    v.gameId = j.at("gameId").get<int64_t_t>();
     v.rewardProgress = j.at("rewardProgress").get<std::vector<ClashRewardDefinition_t>>();
-    v.seasonVp = j.at("seasonVp").get<int32_t>();
+    v.seasonVp = j.at("seasonVp").get<int32_t_t>();
     v.earnedRewards = j.at("earnedRewards").get<std::vector<ClashRewardDefinition_t>>();
-    v.winner = j.at("winner").get<bool>();
-    v.themeVp = j.at("themeVp").get<int32_t>();
-    v.tournamentId = j.at("tournamentId").get<int64_t>();
+    v.winner = j.at("winner").get<bool_t>();
+    v.themeVp = j.at("themeVp").get<int32_t_t>();
+    v.tournamentId = j.at("tournamentId").get<int64_t_t>();
   }
   inline std::string to_string(const LolClashEogPlayerUpdateDTO_t& v) {
     nlohmann::json j = v;

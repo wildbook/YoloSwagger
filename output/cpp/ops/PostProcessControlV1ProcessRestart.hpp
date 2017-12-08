@@ -4,8 +4,8 @@
 namespace leagueapi {
   //Restarts the application.  Does nothing if there is already a waiting delayed restart.  Optionally accepts specific version to restart.
   void PostProcessControlV1ProcessRestart (const ClientInfo& info,
-    const uint32_t& delaySeconds,
-    const std::optional<uint32_t>& restartVersion = std::nullopt)
+    const uint32_t_t& delaySeconds,
+    const std::optional<uint32_t_t>& restartVersion = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LolGameQueuesPlatformConfigEnabledMap_t {
-    int32_t minPlayers;
-    int32_t gameMapId;
+    int32_t_t minPlayers;
+    int32_t_t gameMapId;
   };
 
   inline void to_json(nlohmann::json& j, const LolGameQueuesPlatformConfigEnabledMap_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolGameQueuesPlatformConfigEnabledMap_t& v) {
-    v.minPlayers = j.at("minPlayers").get<int32_t>();
-    v.gameMapId = j.at("gameMapId").get<int32_t>();
+    v.minPlayers = j.at("minPlayers").get<int32_t_t>();
+    v.gameMapId = j.at("gameMapId").get<int32_t_t>();
   }
   inline std::string to_string(const LolGameQueuesPlatformConfigEnabledMap_t& v) {
     nlohmann::json j = v;

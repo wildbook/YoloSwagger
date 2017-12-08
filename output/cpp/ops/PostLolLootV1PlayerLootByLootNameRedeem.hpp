@@ -3,7 +3,7 @@
 #include "LolLootPlayerLootUpdate.hpp"
 namespace leagueapi {
   LolLootPlayerLootUpdate_t PostLolLootV1PlayerLootByLootNameRedeem (const ClientInfo& info,
-    const std::string& lootName)
+    const std::string_t& lootName)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

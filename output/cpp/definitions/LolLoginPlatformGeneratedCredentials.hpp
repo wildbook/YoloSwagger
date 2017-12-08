@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct LolLoginPlatformGeneratedCredentials_t {
-    std::string username;
-    std::string password;
-    nlohmann::json gasToken;
+    std::string_t username;
+    std::string_t password;
+    nlohmann::json_t gasToken;
   };
 
   inline void to_json(nlohmann::json& j, const LolLoginPlatformGeneratedCredentials_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLoginPlatformGeneratedCredentials_t& v) {
-    v.username = j.at("username").get<std::string>();
-    v.password = j.at("password").get<std::string>();
-    v.gasToken = j.at("gasToken").get<nlohmann::json>();
+    v.username = j.at("username").get<std::string_t>();
+    v.password = j.at("password").get<std::string_t>();
+    v.gasToken = j.at("gasToken").get<nlohmann::json_t>();
   }
   inline std::string to_string(const LolLoginPlatformGeneratedCredentials_t& v) {
     nlohmann::json j = v;

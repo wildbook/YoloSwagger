@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "PlayerPreferencesEndpoint.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolPlayerPreferencesV1PlayerPreferencesEndpointOverride (const ClientInfo& info,
+  nlohmann::json_t PostLolPlayerPreferencesV1PlayerPreferencesEndpointOverride (const ClientInfo& info,
     const PlayerPreferencesEndpoint_t& preferences)
   {
     using std::to_string;

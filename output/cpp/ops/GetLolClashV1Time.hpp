@@ -1,7 +1,7 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  int64_t GetLolClashV1Time (const ClientInfo& info)
+  int64_t_t GetLolClashV1Time (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

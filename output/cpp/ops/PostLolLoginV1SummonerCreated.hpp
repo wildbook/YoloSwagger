@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolLoginSummonerCreatedResource.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolLoginV1SummonerCreated (const ClientInfo& info,
+  nlohmann::json_t PostLolLoginV1SummonerCreated (const ClientInfo& info,
     const LolLoginSummonerCreatedResource_t& summonerId)
   {
     using std::to_string;

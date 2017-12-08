@@ -5,7 +5,7 @@ namespace leagueapi {
   //Handles changing the zoom scale value.
   void PostRiotclientZoomScale (const ClientInfo& info,
     //The new value of the zoom scale.
-    const double& newZoomScale)
+    const double_t& newZoomScale)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

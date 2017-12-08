@@ -4,8 +4,8 @@
 namespace leagueapi {
   //Exits the application and runs a given executable just before it shuts down.
   void PostProcessControlV1ProcessExitAndRun (const ClientInfo& info,
-    const std::string& executablePath,
-    const std::string& workingDir,
+    const std::string_t& executablePath,
+    const std::string_t& workingDir,
     const std::vector<std::string>& args)
   {
     using std::to_string;

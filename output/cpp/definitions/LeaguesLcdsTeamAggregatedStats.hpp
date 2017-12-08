@@ -5,7 +5,7 @@
 #include "LeaguesLcdsPlayerAggregatedStats.hpp"
 namespace leagueapi {
   struct LeaguesLcdsTeamAggregatedStats_t {
-    std::string queueType;
+    std::string_t queueType;
     std::vector<LeaguesLcdsPlayerAggregatedStats_t> playerAggregatedStatsList;
     LeaguesLcdsTeamIdDTO_t id;
   };
@@ -17,7 +17,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LeaguesLcdsTeamAggregatedStats_t& v) {
-    v.queueType = j.at("queueType").get<std::string>();
+    v.queueType = j.at("queueType").get<std::string_t>();
     v.playerAggregatedStatsList = j.at("playerAggregatedStatsList").get<std::vector<LeaguesLcdsPlayerAggregatedStats_t>>();
     v.id = j.at("id").get<LeaguesLcdsTeamIdDTO_t>();
   }

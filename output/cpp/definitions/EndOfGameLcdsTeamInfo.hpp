@@ -5,10 +5,10 @@
 namespace leagueapi {
   struct EndOfGameLcdsTeamInfo_t {
     EndOfGameLcdsTeamId_t teamId;
-    std::string tag;
-    std::string memberStatusString;
-    int64_t secondsUntilEligibleForDeletion;
-    std::string name;
+    std::string_t tag;
+    std::string_t memberStatusString;
+    int64_t_t secondsUntilEligibleForDeletion;
+    std::string_t name;
   };
 
   inline void to_json(nlohmann::json& j, const EndOfGameLcdsTeamInfo_t& v) {
@@ -21,10 +21,10 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, EndOfGameLcdsTeamInfo_t& v) {
     v.teamId = j.at("teamId").get<EndOfGameLcdsTeamId_t>();
-    v.tag = j.at("tag").get<std::string>();
-    v.memberStatusString = j.at("memberStatusString").get<std::string>();
-    v.secondsUntilEligibleForDeletion = j.at("secondsUntilEligibleForDeletion").get<int64_t>();
-    v.name = j.at("name").get<std::string>();
+    v.tag = j.at("tag").get<std::string_t>();
+    v.memberStatusString = j.at("memberStatusString").get<std::string_t>();
+    v.secondsUntilEligibleForDeletion = j.at("secondsUntilEligibleForDeletion").get<int64_t_t>();
+    v.name = j.at("name").get<std::string_t>();
   }
   inline std::string to_string(const EndOfGameLcdsTeamInfo_t& v) {
     nlohmann::json j = v;

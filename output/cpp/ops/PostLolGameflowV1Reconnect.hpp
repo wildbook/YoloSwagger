@@ -1,7 +1,7 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolGameflowV1Reconnect (const ClientInfo& info)
+  nlohmann::json_t PostLolGameflowV1Reconnect (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

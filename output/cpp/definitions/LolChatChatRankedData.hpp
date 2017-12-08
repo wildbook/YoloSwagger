@@ -4,7 +4,7 @@
 #include "LolChatChatRankedEntry.hpp"
 namespace leagueapi {
   struct LolChatChatRankedData_t {
-    uint64_t summonerId;
+    uint64_t_t summonerId;
     std::vector<LolChatChatRankedEntry_t> rankedData;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChatChatRankedData_t& v) {
-    v.summonerId = j.at("summonerId").get<uint64_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t_t>();
     v.rankedData = j.at("rankedData").get<std::vector<LolChatChatRankedEntry_t>>();
   }
   inline std::string to_string(const LolChatChatRankedData_t& v) {

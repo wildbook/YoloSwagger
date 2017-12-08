@@ -3,7 +3,7 @@
 #include "LolMatchHistoryMatchHistoryTimelineFrames.hpp"
 namespace leagueapi {
   LolMatchHistoryMatchHistoryTimelineFrames_t GetLolMatchHistoryV1GameTimelinesByGameId (const ClientInfo& info,
-    const uint64_t& gameId)
+    const uint64_t_t& gameId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

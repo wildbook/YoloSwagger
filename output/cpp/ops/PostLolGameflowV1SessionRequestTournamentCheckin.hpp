@@ -1,7 +1,7 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  bool PostLolGameflowV1SessionRequestTournamentCheckin (const ClientInfo& info)
+  bool_t PostLolGameflowV1SessionRequestTournamentCheckin (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

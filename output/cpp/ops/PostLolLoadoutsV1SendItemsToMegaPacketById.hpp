@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolLoadoutsV1SendItemsToMegaPacketById (const ClientInfo& info,
-    const uint32_t& id)
+  nlohmann::json_t PostLolLoadoutsV1SendItemsToMegaPacketById (const ClientInfo& info,
+    const uint32_t_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

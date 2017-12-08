@@ -5,16 +5,16 @@
 #include "LolClashRosterPeriodAggregatedStats.hpp"
 namespace leagueapi {
   struct LolClashRosterStats_t {
-    int32_t rosterIconColorId;
-    std::string tournamentNameLocKey;
-    std::string rosterName;
+    int32_t_t rosterIconColorId;
+    std::string_t tournamentNameLocKey;
+    std::string_t rosterName;
     std::map<std::string, LolClashRosterPlayerAggregatedStats_t> playerStats;
-    int32_t tournamentPeriods;
-    int64_t rosterId;
-    std::string rosterShortName;
-    int32_t tier;
-    int32_t rosterIconId;
-    int32_t tournamentThemeId;
+    int32_t_t tournamentPeriods;
+    int64_t_t rosterId;
+    std::string_t rosterShortName;
+    int32_t_t tier;
+    int32_t_t rosterIconId;
+    int32_t_t tournamentThemeId;
     std::vector<LolClashRosterPeriodAggregatedStats_t> periodStats;
   };
 
@@ -33,16 +33,16 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolClashRosterStats_t& v) {
-    v.rosterIconColorId = j.at("rosterIconColorId").get<int32_t>();
-    v.tournamentNameLocKey = j.at("tournamentNameLocKey").get<std::string>();
-    v.rosterName = j.at("rosterName").get<std::string>();
+    v.rosterIconColorId = j.at("rosterIconColorId").get<int32_t_t>();
+    v.tournamentNameLocKey = j.at("tournamentNameLocKey").get<std::string_t>();
+    v.rosterName = j.at("rosterName").get<std::string_t>();
     v.playerStats = j.at("playerStats").get<std::map<std::string, LolClashRosterPlayerAggregatedStats_t>>();
-    v.tournamentPeriods = j.at("tournamentPeriods").get<int32_t>();
-    v.rosterId = j.at("rosterId").get<int64_t>();
-    v.rosterShortName = j.at("rosterShortName").get<std::string>();
-    v.tier = j.at("tier").get<int32_t>();
-    v.rosterIconId = j.at("rosterIconId").get<int32_t>();
-    v.tournamentThemeId = j.at("tournamentThemeId").get<int32_t>();
+    v.tournamentPeriods = j.at("tournamentPeriods").get<int32_t_t>();
+    v.rosterId = j.at("rosterId").get<int64_t_t>();
+    v.rosterShortName = j.at("rosterShortName").get<std::string_t>();
+    v.tier = j.at("tier").get<int32_t_t>();
+    v.rosterIconId = j.at("rosterIconId").get<int32_t_t>();
+    v.tournamentThemeId = j.at("tournamentThemeId").get<int32_t_t>();
     v.periodStats = j.at("periodStats").get<std::vector<LolClashRosterPeriodAggregatedStats_t>>();
   }
   inline std::string to_string(const LolClashRosterStats_t& v) {

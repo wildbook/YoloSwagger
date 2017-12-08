@@ -2,9 +2,9 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Retrieves the API declaration for a supported API
-  nlohmann::json HttpApiDeclarationV1 (const ClientInfo& info,
+  nlohmann::json_t HttpApiDeclarationV1 (const ClientInfo& info,
     //API to get a declaration for
-    const std::string& api)
+    const std::string_t& api)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

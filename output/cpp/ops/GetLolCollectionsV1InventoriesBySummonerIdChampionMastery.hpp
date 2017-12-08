@@ -3,7 +3,7 @@
 #include "LolCollectionsCollectionsChampionMastery.hpp"
 namespace leagueapi {
   std::vector<LolCollectionsCollectionsChampionMastery_t> GetLolCollectionsV1InventoriesBySummonerIdChampionMastery (const ClientInfo& info,
-    const uint64_t& summonerId)
+    const uint64_t_t& summonerId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

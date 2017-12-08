@@ -7,9 +7,9 @@
 #include "LeaguesLcdsLeagueRank.hpp"
 namespace leagueapi {
   struct LeaguesLcdsSummonerLeagueListDTO_t {
-    std::string requestorsName;
-    uint64_t nextApexUpdate;
-    std::string name;
+    std::string_t requestorsName;
+    uint64_t_t nextApexUpdate;
+    std::string_t name;
     LeaguesLcdsLeagueRank_t requestorsRank;
     LeaguesLcdsQueueType_t queue;
     std::vector<LeaguesLcdsLeagueItemDTO_t> entries;
@@ -27,9 +27,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LeaguesLcdsSummonerLeagueListDTO_t& v) {
-    v.requestorsName = j.at("requestorsName").get<std::string>();
-    v.nextApexUpdate = j.at("nextApexUpdate").get<uint64_t>();
-    v.name = j.at("name").get<std::string>();
+    v.requestorsName = j.at("requestorsName").get<std::string_t>();
+    v.nextApexUpdate = j.at("nextApexUpdate").get<uint64_t_t>();
+    v.name = j.at("name").get<std::string_t>();
     v.requestorsRank = j.at("requestorsRank").get<LeaguesLcdsLeagueRank_t>();
     v.queue = j.at("queue").get<LeaguesLcdsQueueType_t>();
     v.entries = j.at("entries").get<std::vector<LeaguesLcdsLeagueItemDTO_t>>();

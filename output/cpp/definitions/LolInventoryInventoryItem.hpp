@@ -4,8 +4,8 @@
 #include "LolInventoryItemOwnershipType.hpp"
 namespace leagueapi {
   struct LolInventoryInventoryItem_t {
-    int32_t itemId;
-    std::string inventoryType;
+    int32_t_t itemId;
+    std::string_t inventoryType;
     LolInventoryItemOwnershipType_t ownershipType;
   };
 
@@ -16,8 +16,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolInventoryInventoryItem_t& v) {
-    v.itemId = j.at("itemId").get<int32_t>();
-    v.inventoryType = j.at("inventoryType").get<std::string>();
+    v.itemId = j.at("itemId").get<int32_t_t>();
+    v.inventoryType = j.at("inventoryType").get<std::string_t>();
     v.ownershipType = j.at("ownershipType").get<LolInventoryItemOwnershipType_t>();
   }
   inline std::string to_string(const LolInventoryInventoryItem_t& v) {

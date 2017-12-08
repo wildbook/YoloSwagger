@@ -3,7 +3,7 @@
 #include "LolPlayerBehaviorReporterFeedback.hpp"
 namespace leagueapi {
   LolPlayerBehaviorReporterFeedback_t GetLolPlayerBehaviorV1ReporterFeedbackById (const ClientInfo& info,
-    const std::string& id)
+    const std::string_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

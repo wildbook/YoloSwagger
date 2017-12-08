@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Get the current runtime affinity of the application.
-  nlohmann::json GetRiotclientAffinity (const ClientInfo& info)
+  nlohmann::json_t GetRiotclientAffinity (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

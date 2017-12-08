@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolSimpleDialogMessagesLocalMessageRequest.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolSimpleDialogMessagesV1Messages (const ClientInfo& info,
+  nlohmann::json_t PostLolSimpleDialogMessagesV1Messages (const ClientInfo& info,
     const LolSimpleDialogMessagesLocalMessageRequest_t& messageRequest)
   {
     using std::to_string;

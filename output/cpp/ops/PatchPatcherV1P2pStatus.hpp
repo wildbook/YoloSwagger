@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "PatcherP2PStatusUpdate.hpp"
 namespace leagueapi {
-  nlohmann::json PatchPatcherV1P2pStatus (const ClientInfo& info,
+  nlohmann::json_t PatchPatcherV1P2pStatus (const ClientInfo& info,
     const PatcherP2PStatusUpdate_t& data)
   {
     using std::to_string;

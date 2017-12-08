@@ -4,30 +4,30 @@
 #include "LolLobbyLobbyBotDifficulty.hpp"
 namespace leagueapi {
   struct LolLobbyLobbyParticipantDto_t {
-    bool autoFillEligible;
-    int32_t botChampionId;
-    bool allowedKickOthers;
-    bool isBot;
-    std::string puuid;
-    std::string firstPositionPreference;
-    bool ready;
-    bool autoFillProtectedForPromos;
-    std::string botId;
-    bool allowedToggleInvite;
-    bool autoFillProtectedForSoloing;
-    int32_t summonerIconId;
-    uint64_t summonerId;
-    bool allowedChangeActivity;
-    std::string summonerName;
-    bool isSpectator;
-    bool autoFillProtectedForStreaking;
-    bool allowedInviteOthers;
-    int32_t teamId;
-    bool allowedStartActivity;
-    bool showGhostedBanner;
+    bool_t autoFillEligible;
+    int32_t_t botChampionId;
+    bool_t allowedKickOthers;
+    bool_t isBot;
+    std::string_t puuid;
+    std::string_t firstPositionPreference;
+    bool_t ready;
+    bool_t autoFillProtectedForPromos;
+    std::string_t botId;
+    bool_t allowedToggleInvite;
+    bool_t autoFillProtectedForSoloing;
+    int32_t_t summonerIconId;
+    uint64_t_t summonerId;
+    bool_t allowedChangeActivity;
+    std::string_t summonerName;
+    bool_t isSpectator;
+    bool_t autoFillProtectedForStreaking;
+    bool_t allowedInviteOthers;
+    int32_t_t teamId;
+    bool_t allowedStartActivity;
+    bool_t showGhostedBanner;
     LolLobbyLobbyBotDifficulty_t botDifficulty;
-    bool isLeader;
-    std::string secondPositionPreference;
+    bool_t isLeader;
+    std::string_t secondPositionPreference;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyLobbyParticipantDto_t& v) {
@@ -58,30 +58,30 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyLobbyParticipantDto_t& v) {
-    v.autoFillEligible = j.at("autoFillEligible").get<bool>();
-    v.botChampionId = j.at("botChampionId").get<int32_t>();
-    v.allowedKickOthers = j.at("allowedKickOthers").get<bool>();
-    v.isBot = j.at("isBot").get<bool>();
-    v.puuid = j.at("puuid").get<std::string>();
-    v.firstPositionPreference = j.at("firstPositionPreference").get<std::string>();
-    v.ready = j.at("ready").get<bool>();
-    v.autoFillProtectedForPromos = j.at("autoFillProtectedForPromos").get<bool>();
-    v.botId = j.at("botId").get<std::string>();
-    v.allowedToggleInvite = j.at("allowedToggleInvite").get<bool>();
-    v.autoFillProtectedForSoloing = j.at("autoFillProtectedForSoloing").get<bool>();
-    v.summonerIconId = j.at("summonerIconId").get<int32_t>();
-    v.summonerId = j.at("summonerId").get<uint64_t>();
-    v.allowedChangeActivity = j.at("allowedChangeActivity").get<bool>();
-    v.summonerName = j.at("summonerName").get<std::string>();
-    v.isSpectator = j.at("isSpectator").get<bool>();
-    v.autoFillProtectedForStreaking = j.at("autoFillProtectedForStreaking").get<bool>();
-    v.allowedInviteOthers = j.at("allowedInviteOthers").get<bool>();
-    v.teamId = j.at("teamId").get<int32_t>();
-    v.allowedStartActivity = j.at("allowedStartActivity").get<bool>();
-    v.showGhostedBanner = j.at("showGhostedBanner").get<bool>();
+    v.autoFillEligible = j.at("autoFillEligible").get<bool_t>();
+    v.botChampionId = j.at("botChampionId").get<int32_t_t>();
+    v.allowedKickOthers = j.at("allowedKickOthers").get<bool_t>();
+    v.isBot = j.at("isBot").get<bool_t>();
+    v.puuid = j.at("puuid").get<std::string_t>();
+    v.firstPositionPreference = j.at("firstPositionPreference").get<std::string_t>();
+    v.ready = j.at("ready").get<bool_t>();
+    v.autoFillProtectedForPromos = j.at("autoFillProtectedForPromos").get<bool_t>();
+    v.botId = j.at("botId").get<std::string_t>();
+    v.allowedToggleInvite = j.at("allowedToggleInvite").get<bool_t>();
+    v.autoFillProtectedForSoloing = j.at("autoFillProtectedForSoloing").get<bool_t>();
+    v.summonerIconId = j.at("summonerIconId").get<int32_t_t>();
+    v.summonerId = j.at("summonerId").get<uint64_t_t>();
+    v.allowedChangeActivity = j.at("allowedChangeActivity").get<bool_t>();
+    v.summonerName = j.at("summonerName").get<std::string_t>();
+    v.isSpectator = j.at("isSpectator").get<bool_t>();
+    v.autoFillProtectedForStreaking = j.at("autoFillProtectedForStreaking").get<bool_t>();
+    v.allowedInviteOthers = j.at("allowedInviteOthers").get<bool_t>();
+    v.teamId = j.at("teamId").get<int32_t_t>();
+    v.allowedStartActivity = j.at("allowedStartActivity").get<bool_t>();
+    v.showGhostedBanner = j.at("showGhostedBanner").get<bool_t>();
     v.botDifficulty = j.at("botDifficulty").get<LolLobbyLobbyBotDifficulty_t>();
-    v.isLeader = j.at("isLeader").get<bool>();
-    v.secondPositionPreference = j.at("secondPositionPreference").get<std::string>();
+    v.isLeader = j.at("isLeader").get<bool_t>();
+    v.secondPositionPreference = j.at("secondPositionPreference").get<std::string_t>();
   }
   inline std::string to_string(const LolLobbyLobbyParticipantDto_t& v) {
     nlohmann::json j = v;

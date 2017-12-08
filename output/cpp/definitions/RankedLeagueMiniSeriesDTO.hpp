@@ -3,11 +3,11 @@
 #include <optional>
 namespace leagueapi {
   struct RankedLeagueMiniSeriesDTO_t {
-    uint64_t wins;
-    std::string progress;
-    uint64_t losses;
-    uint64_t target;
-    uint64_t timeLeftToPlayMillis;
+    uint64_t_t wins;
+    std::string_t progress;
+    uint64_t_t losses;
+    uint64_t_t target;
+    uint64_t_t timeLeftToPlayMillis;
   };
 
   inline void to_json(nlohmann::json& j, const RankedLeagueMiniSeriesDTO_t& v) {
@@ -19,11 +19,11 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, RankedLeagueMiniSeriesDTO_t& v) {
-    v.wins = j.at("wins").get<uint64_t>();
-    v.progress = j.at("progress").get<std::string>();
-    v.losses = j.at("losses").get<uint64_t>();
-    v.target = j.at("target").get<uint64_t>();
-    v.timeLeftToPlayMillis = j.at("timeLeftToPlayMillis").get<uint64_t>();
+    v.wins = j.at("wins").get<uint64_t_t>();
+    v.progress = j.at("progress").get<std::string_t>();
+    v.losses = j.at("losses").get<uint64_t_t>();
+    v.target = j.at("target").get<uint64_t_t>();
+    v.timeLeftToPlayMillis = j.at("timeLeftToPlayMillis").get<uint64_t_t>();
   }
   inline std::string to_string(const RankedLeagueMiniSeriesDTO_t& v) {
     nlohmann::json j = v;

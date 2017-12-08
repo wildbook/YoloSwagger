@@ -3,7 +3,7 @@
 #include "PlayerClubMembership.hpp"
 namespace leagueapi {
   PlayerClubMembership_t DeleteLolClubsV1ClubsByClubKey (const ClientInfo& info,
-    const std::string& clubKey)
+    const std::string_t& clubKey)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

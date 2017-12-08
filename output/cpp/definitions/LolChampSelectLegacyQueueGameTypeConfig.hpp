@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct LolChampSelectLegacyQueueGameTypeConfig_t {
-    bool battleBoost;
-    bool allowTrades;
-    int32_t maxAllowableBans;
+    bool_t battleBoost;
+    bool_t allowTrades;
+    int32_t_t maxAllowableBans;
   };
 
   inline void to_json(nlohmann::json& j, const LolChampSelectLegacyQueueGameTypeConfig_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolChampSelectLegacyQueueGameTypeConfig_t& v) {
-    v.battleBoost = j.at("battleBoost").get<bool>();
-    v.allowTrades = j.at("allowTrades").get<bool>();
-    v.maxAllowableBans = j.at("maxAllowableBans").get<int32_t>();
+    v.battleBoost = j.at("battleBoost").get<bool_t>();
+    v.allowTrades = j.at("allowTrades").get<bool_t>();
+    v.maxAllowableBans = j.at("maxAllowableBans").get<int32_t_t>();
   }
   inline std::string to_string(const LolChampSelectLegacyQueueGameTypeConfig_t& v) {
     nlohmann::json j = v;

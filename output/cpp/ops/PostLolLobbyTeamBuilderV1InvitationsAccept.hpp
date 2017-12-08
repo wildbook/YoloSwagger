@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "LolLobbyTeamBuilderLobbyInvitation.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolLobbyTeamBuilderV1InvitationsAccept (const ClientInfo& info,
+  nlohmann::json_t PostLolLobbyTeamBuilderV1InvitationsAccept (const ClientInfo& info,
     const LolLobbyTeamBuilderLobbyInvitation_t& invitation)
   {
     using std::to_string;

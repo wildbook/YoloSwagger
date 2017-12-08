@@ -3,9 +3,9 @@
 #include "LolChampionsCollectionsChampionChroma.hpp"
 namespace leagueapi {
   std::vector<LolChampionsCollectionsChampionChroma_t> GetLolChampionsV1InventoriesBySummonerIdChampionsByChampionIdSkinsBySkinIdChromas (const ClientInfo& info,
-    const uint64_t& summonerId,
-    const int32_t& championId,
-    const int32_t& skinId)
+    const uint64_t_t& summonerId,
+    const int32_t_t& championId,
+    const int32_t_t& skinId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

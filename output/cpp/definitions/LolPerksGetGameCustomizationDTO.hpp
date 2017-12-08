@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolPerksGetGameCustomizationDTO_t {
-    std::string queueType;
+    std::string_t queueType;
   };
 
   inline void to_json(nlohmann::json& j, const LolPerksGetGameCustomizationDTO_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolPerksGetGameCustomizationDTO_t& v) {
-    v.queueType = j.at("queueType").get<std::string>();
+    v.queueType = j.at("queueType").get<std::string_t>();
   }
   inline std::string to_string(const LolPerksGetGameCustomizationDTO_t& v) {
     nlohmann::json j = v;

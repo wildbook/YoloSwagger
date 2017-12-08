@@ -3,8 +3,8 @@
 #include "LolClashRoster.hpp"
 namespace leagueapi {
   LolClashRoster_t GetLolClashV1TournamentByTournamentIdRosterByRosterId (const ClientInfo& info,
-    const int64_t& tournamentId,
-    const std::string& rosterId)
+    const int64_t_t& tournamentId,
+    const std::string_t& rosterId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

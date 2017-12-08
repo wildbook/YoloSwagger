@@ -3,7 +3,7 @@
 #include "LolCollectionsCollectionsRuneQuantities.hpp"
 namespace leagueapi {
   LolCollectionsCollectionsRuneQuantities_t GetLolCollectionsV1InventoriesBySummonerIdRunes (const ClientInfo& info,
-    const uint64_t& summonerId)
+    const uint64_t_t& summonerId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

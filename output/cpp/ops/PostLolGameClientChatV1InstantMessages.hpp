@@ -3,8 +3,8 @@
 #include ".hpp"
 namespace leagueapi {
   void PostLolGameClientChatV1InstantMessages (const ClientInfo& info,
-    const std::string& summonerName,
-    const std::string& message)
+    const std::string_t& summonerName,
+    const std::string_t& message)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -4,10 +4,10 @@
 #include "LolEsportStreamNotificationsLiveMatchTeam.hpp"
 namespace leagueapi {
   struct LolEsportStreamNotificationsLiveMatch_t {
-    std::string tournamentDescription;
-    std::string streamGroup;
-    std::string title;
-    std::string id;
+    std::string_t tournamentDescription;
+    std::string_t streamGroup;
+    std::string_t title;
+    std::string_t id;
     std::vector<LolEsportStreamNotificationsLiveMatchTeam_t> teams;
   };
 
@@ -20,10 +20,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolEsportStreamNotificationsLiveMatch_t& v) {
-    v.tournamentDescription = j.at("tournamentDescription").get<std::string>();
-    v.streamGroup = j.at("streamGroup").get<std::string>();
-    v.title = j.at("title").get<std::string>();
-    v.id = j.at("id").get<std::string>();
+    v.tournamentDescription = j.at("tournamentDescription").get<std::string_t>();
+    v.streamGroup = j.at("streamGroup").get<std::string_t>();
+    v.title = j.at("title").get<std::string_t>();
+    v.id = j.at("id").get<std::string_t>();
     v.teams = j.at("teams").get<std::vector<LolEsportStreamNotificationsLiveMatchTeam_t>>();
   }
   inline std::string to_string(const LolEsportStreamNotificationsLiveMatch_t& v) {

@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Base64 encoded uuid identifying the user's machine
-  std::string GetRiotclientMachineId (const ClientInfo& info)
+  std::string_t GetRiotclientMachineId (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

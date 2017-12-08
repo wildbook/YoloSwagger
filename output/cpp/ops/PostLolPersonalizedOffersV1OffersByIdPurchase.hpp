@@ -3,7 +3,7 @@
 #include "LolPersonalizedOffersPurchaseResponse.hpp"
 namespace leagueapi {
   LolPersonalizedOffersPurchaseResponse_t PostLolPersonalizedOffersV1OffersByIdPurchase (const ClientInfo& info,
-    const std::string& id)
+    const std::string_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -4,7 +4,7 @@
 #include "PlayerClub.hpp"
 namespace leagueapi {
   PlayerClub_t PatchLolClubsV1ClubsByClubKeyMotd (const ClientInfo& info,
-    const std::string& clubKey,
+    const std::string_t& clubKey,
     const ClubMOTD_t& motd)
   {
     using std::to_string;

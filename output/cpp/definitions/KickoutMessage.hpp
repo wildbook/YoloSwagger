@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct KickoutMessage_t {
-    std::string message;
+    std::string_t message;
   };
 
   inline void to_json(nlohmann::json& j, const KickoutMessage_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, KickoutMessage_t& v) {
-    v.message = j.at("message").get<std::string>();
+    v.message = j.at("message").get<std::string_t>();
   }
   inline std::string to_string(const KickoutMessage_t& v) {
     nlohmann::json j = v;

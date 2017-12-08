@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 #include "SpectateGameInfo.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolSpectatorV1SpectateLaunch (const ClientInfo& info,
+  nlohmann::json_t PostLolSpectatorV1SpectateLaunch (const ClientInfo& info,
     const SpectateGameInfo_t& spectateGameInfo)
   {
     using std::to_string;

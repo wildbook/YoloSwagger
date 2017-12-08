@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct SeriesMediaDTO_t {
-    std::string backgroundUrl;
+    std::string_t backgroundUrl;
   };
 
   inline void to_json(nlohmann::json& j, const SeriesMediaDTO_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, SeriesMediaDTO_t& v) {
-    v.backgroundUrl = j.at("backgroundUrl").get<std::string>();
+    v.backgroundUrl = j.at("backgroundUrl").get<std::string_t>();
   }
   inline std::string to_string(const SeriesMediaDTO_t& v) {
     nlohmann::json j = v;

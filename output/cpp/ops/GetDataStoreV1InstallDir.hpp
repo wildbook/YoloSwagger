@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Gets the current install directory (used internally.)
-  std::string GetDataStoreV1InstallDir (const ClientInfo& info)
+  std::string_t GetDataStoreV1InstallDir (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

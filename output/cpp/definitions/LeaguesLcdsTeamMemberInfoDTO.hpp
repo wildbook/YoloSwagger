@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LeaguesLcdsTeamMemberInfoDTO_t {
-    uint64_t playerId;
-    std::string playerName;
+    uint64_t_t playerId;
+    std::string_t playerName;
   };
 
   inline void to_json(nlohmann::json& j, const LeaguesLcdsTeamMemberInfoDTO_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LeaguesLcdsTeamMemberInfoDTO_t& v) {
-    v.playerId = j.at("playerId").get<uint64_t>();
-    v.playerName = j.at("playerName").get<std::string>();
+    v.playerId = j.at("playerId").get<uint64_t_t>();
+    v.playerName = j.at("playerName").get<std::string_t>();
   }
   inline std::string to_string(const LeaguesLcdsTeamMemberInfoDTO_t& v) {
     nlohmann::json j = v;

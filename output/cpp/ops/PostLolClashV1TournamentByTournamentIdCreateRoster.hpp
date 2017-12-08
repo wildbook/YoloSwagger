@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "LolClashRosterDetails.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolClashV1TournamentByTournamentIdCreateRoster (const ClientInfo& info,
-    const int64_t& tournamentId,
+  nlohmann::json_t PostLolClashV1TournamentByTournamentIdCreateRoster (const ClientInfo& info,
+    const int64_t_t& tournamentId,
     const LolClashRosterDetails_t& rosterDetails)
   {
     using std::to_string;

@@ -1,7 +1,7 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  uint64_t GetLolHonorV2V1LatestEligibleGame (const ClientInfo& info)
+  uint64_t_t GetLolHonorV2V1LatestEligibleGame (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

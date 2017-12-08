@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolLobbyTeamBuilderLeaverBusterAbandoned_t {
-    std::string abandonerName;
+    std::string_t abandonerName;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderLeaverBusterAbandoned_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderLeaverBusterAbandoned_t& v) {
-    v.abandonerName = j.at("abandonerName").get<std::string>();
+    v.abandonerName = j.at("abandonerName").get<std::string_t>();
   }
   inline std::string to_string(const LolLobbyTeamBuilderLeaverBusterAbandoned_t& v) {
     nlohmann::json j = v;

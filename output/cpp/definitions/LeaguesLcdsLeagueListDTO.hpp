@@ -6,10 +6,10 @@
 #include "LeaguesLcdsLeagueTier.hpp"
 namespace leagueapi {
   struct LeaguesLcdsLeagueListDTO_t {
-    std::string requestorsName;
-    uint64_t nextApexUpdate;
-    std::string name;
-    uint64_t maxLeagueSize;
+    std::string_t requestorsName;
+    uint64_t_t nextApexUpdate;
+    std::string_t name;
+    uint64_t_t maxLeagueSize;
     LeaguesLcdsQueueType_t queue;
     std::vector<LeaguesLcdsLeagueItemDTO_t> entries;
     LeaguesLcdsLeagueTier_t tier;
@@ -26,10 +26,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LeaguesLcdsLeagueListDTO_t& v) {
-    v.requestorsName = j.at("requestorsName").get<std::string>();
-    v.nextApexUpdate = j.at("nextApexUpdate").get<uint64_t>();
-    v.name = j.at("name").get<std::string>();
-    v.maxLeagueSize = j.at("maxLeagueSize").get<uint64_t>();
+    v.requestorsName = j.at("requestorsName").get<std::string_t>();
+    v.nextApexUpdate = j.at("nextApexUpdate").get<uint64_t_t>();
+    v.name = j.at("name").get<std::string_t>();
+    v.maxLeagueSize = j.at("maxLeagueSize").get<uint64_t_t>();
     v.queue = j.at("queue").get<LeaguesLcdsQueueType_t>();
     v.entries = j.at("entries").get<std::vector<LeaguesLcdsLeagueItemDTO_t>>();
     v.tier = j.at("tier").get<LeaguesLcdsLeagueTier_t>();

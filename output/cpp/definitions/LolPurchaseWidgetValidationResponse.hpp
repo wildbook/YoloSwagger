@@ -5,7 +5,7 @@
 namespace leagueapi {
   struct LolPurchaseWidgetValidationResponse_t {
     std::vector<LolPurchaseWidgetValidationResponseItem_t> items;
-    bool valid;
+    bool_t valid;
   };
 
   inline void to_json(nlohmann::json& j, const LolPurchaseWidgetValidationResponse_t& v) {
@@ -15,7 +15,7 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolPurchaseWidgetValidationResponse_t& v) {
     v.items = j.at("items").get<std::vector<LolPurchaseWidgetValidationResponseItem_t>>();
-    v.valid = j.at("valid").get<bool>();
+    v.valid = j.at("valid").get<bool_t>();
   }
   inline std::string to_string(const LolPurchaseWidgetValidationResponse_t& v) {
     nlohmann::json j = v;

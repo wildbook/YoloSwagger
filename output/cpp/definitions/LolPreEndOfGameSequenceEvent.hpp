@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LolPreEndOfGameSequenceEvent_t {
-    int32_t priority;
-    std::string name;
+    int32_t_t priority;
+    std::string_t name;
   };
 
   inline void to_json(nlohmann::json& j, const LolPreEndOfGameSequenceEvent_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolPreEndOfGameSequenceEvent_t& v) {
-    v.priority = j.at("priority").get<int32_t>();
-    v.name = j.at("name").get<std::string>();
+    v.priority = j.at("priority").get<int32_t_t>();
+    v.name = j.at("name").get<std::string_t>();
   }
   inline std::string to_string(const LolPreEndOfGameSequenceEvent_t& v) {
     nlohmann::json j = v;

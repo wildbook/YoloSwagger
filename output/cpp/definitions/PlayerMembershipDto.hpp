@@ -9,13 +9,13 @@
 #include "ClubsServerConfigDto.hpp"
 namespace leagueapi {
   struct PlayerMembershipDto_t {
-    std::string resourceUri;
+    std::string_t resourceUri;
     PlayerMembershipPreferencesDto_t playerClubPreferences;
     std::vector<ClubReferenceDto_t> revokedInviteClubs;
     std::vector<ClubReferenceDto_t> removedClubs;
     std::vector<MembershipInviteDto_t> pendingInvites;
     PlayerInfoDto_t player;
-    std::string secureClubPresenceInfoString;
+    std::string_t secureClubPresenceInfoString;
     ClubsServerConfigDto_t clubsServerConfig;
     std::vector<ClubDto_t> activeClubs;
   };
@@ -33,13 +33,13 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PlayerMembershipDto_t& v) {
-    v.resourceUri = j.at("resourceUri").get<std::string>();
+    v.resourceUri = j.at("resourceUri").get<std::string_t>();
     v.playerClubPreferences = j.at("playerClubPreferences").get<PlayerMembershipPreferencesDto_t>();
     v.revokedInviteClubs = j.at("revokedInviteClubs").get<std::vector<ClubReferenceDto_t>>();
     v.removedClubs = j.at("removedClubs").get<std::vector<ClubReferenceDto_t>>();
     v.pendingInvites = j.at("pendingInvites").get<std::vector<MembershipInviteDto_t>>();
     v.player = j.at("player").get<PlayerInfoDto_t>();
-    v.secureClubPresenceInfoString = j.at("secureClubPresenceInfoString").get<std::string>();
+    v.secureClubPresenceInfoString = j.at("secureClubPresenceInfoString").get<std::string_t>();
     v.clubsServerConfig = j.at("clubsServerConfig").get<ClubsServerConfigDto_t>();
     v.activeClubs = j.at("activeClubs").get<std::vector<ClubDto_t>>();
   }

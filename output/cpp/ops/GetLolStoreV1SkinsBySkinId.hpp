@@ -3,7 +3,7 @@
 #include "LolStoreCatalogItem.hpp"
 namespace leagueapi {
   LolStoreCatalogItem_t GetLolStoreV1SkinsBySkinId (const ClientInfo& info,
-    const int32_t& skinId)
+    const int32_t_t& skinId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

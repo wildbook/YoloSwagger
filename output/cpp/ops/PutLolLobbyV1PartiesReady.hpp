@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void PutLolLobbyV1PartiesReady (const ClientInfo& info,
-    const int32_t& ready)
+    const int32_t_t& ready)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

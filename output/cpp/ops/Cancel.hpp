@@ -2,9 +2,9 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Attempts to cancel an asynchronous operation
-  nlohmann::json Cancel (const ClientInfo& info,
+  nlohmann::json_t Cancel (const ClientInfo& info,
     //Operation to cancel
-    const uint32_t& asyncToken)
+    const uint32_t_t& asyncToken)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

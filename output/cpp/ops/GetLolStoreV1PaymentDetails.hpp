@@ -1,10 +1,10 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json GetLolStoreV1PaymentDetails (const ClientInfo& info,
-    const std::string& action,
-    const std::optional<uint64_t>& giftRecipientAccountId = std::nullopt,
-    const std::optional<std::string>& giftMessage = std::nullopt)
+  nlohmann::json_t GetLolStoreV1PaymentDetails (const ClientInfo& info,
+    const std::string_t& action,
+    const std::optional<uint64_t_t>& giftRecipientAccountId = std::nullopt,
+    const std::optional<std::string_t>& giftMessage = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -4,8 +4,8 @@
 #include "CollectionsLcdsSummonerIcon.hpp"
 namespace leagueapi {
   struct CollectionsLcdsSummonerIconInventoryDTO_t {
-    uint64_t summonerId;
-    std::string dateString;
+    uint64_t_t summonerId;
+    std::string_t dateString;
     std::vector<CollectionsLcdsSummonerIcon_t> summonerIcons;
   };
 
@@ -16,8 +16,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, CollectionsLcdsSummonerIconInventoryDTO_t& v) {
-    v.summonerId = j.at("summonerId").get<uint64_t>();
-    v.dateString = j.at("dateString").get<std::string>();
+    v.summonerId = j.at("summonerId").get<uint64_t_t>();
+    v.dateString = j.at("dateString").get<std::string_t>();
     v.summonerIcons = j.at("summonerIcons").get<std::vector<CollectionsLcdsSummonerIcon_t>>();
   }
   inline std::string to_string(const CollectionsLcdsSummonerIconInventoryDTO_t& v) {

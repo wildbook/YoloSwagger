@@ -3,8 +3,8 @@
 #include "LolLoginLcdsResponse.hpp"
 namespace leagueapi {
   LolLoginLcdsResponse_t PostLolLoginV1SessionInvoke (const ClientInfo& info,
-    const std::string& destination,
-    const std::string& method,
+    const std::string_t& destination,
+    const std::string_t& method,
     const std::vector<nlohmann::json>& args)
   {
     using std::to_string;

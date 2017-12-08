@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "LolLobbyLobbyBotParams.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolLobbyV1LobbyCustomBotsBySummonerInternalName (const ClientInfo& info,
-    const std::string& summonerInternalName,
+  nlohmann::json_t PostLolLobbyV1LobbyCustomBotsBySummonerInternalName (const ClientInfo& info,
+    const std::string_t& summonerInternalName,
     const LolLobbyLobbyBotParams_t& parameters)
   {
     using std::to_string;

@@ -3,7 +3,7 @@
 #include "RecofrienderNetworkConfig.hpp"
 namespace leagueapi {
   RecofrienderNetworkConfig_t GetRecofrienderV1ConfigByNetwork (const ClientInfo& info,
-    const std::string& network)
+    const std::string_t& network)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

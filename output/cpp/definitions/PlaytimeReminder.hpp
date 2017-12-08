@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct PlaytimeReminder_t {
-    uint32_t hours;
+    uint32_t_t hours;
   };
 
   inline void to_json(nlohmann::json& j, const PlaytimeReminder_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PlaytimeReminder_t& v) {
-    v.hours = j.at("hours").get<uint32_t>();
+    v.hours = j.at("hours").get<uint32_t_t>();
   }
   inline std::string to_string(const PlaytimeReminder_t& v) {
     nlohmann::json j = v;

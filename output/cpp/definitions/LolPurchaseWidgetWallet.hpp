@@ -5,8 +5,8 @@
 namespace leagueapi {
   struct LolPurchaseWidgetWallet_t {
     std::vector<LolPurchaseWidgetBalance_t> balances;
-    int32_t version;
-    uint64_t accountId;
+    int32_t_t version;
+    uint64_t_t accountId;
   };
 
   inline void to_json(nlohmann::json& j, const LolPurchaseWidgetWallet_t& v) {
@@ -17,8 +17,8 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolPurchaseWidgetWallet_t& v) {
     v.balances = j.at("balances").get<std::vector<LolPurchaseWidgetBalance_t>>();
-    v.version = j.at("version").get<int32_t>();
-    v.accountId = j.at("accountId").get<uint64_t>();
+    v.version = j.at("version").get<int32_t_t>();
+    v.accountId = j.at("accountId").get<uint64_t_t>();
   }
   inline std::string to_string(const LolPurchaseWidgetWallet_t& v) {
     nlohmann::json j = v;

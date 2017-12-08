@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct LolStoreServiceBalance_t {
-    std::string currency;
-    int64_t amount;
+    std::string_t currency;
+    int64_t_t amount;
   };
 
   inline void to_json(nlohmann::json& j, const LolStoreServiceBalance_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolStoreServiceBalance_t& v) {
-    v.currency = j.at("currency").get<std::string>();
-    v.amount = j.at("amount").get<int64_t>();
+    v.currency = j.at("currency").get<std::string_t>();
+    v.amount = j.at("amount").get<int64_t_t>();
   }
   inline std::string to_string(const LolStoreServiceBalance_t& v) {
     nlohmann::json j = v;

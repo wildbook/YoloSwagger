@@ -3,8 +3,8 @@
 #include "LolCollectionsCollectionsWardSkin.hpp"
 namespace leagueapi {
   LolCollectionsCollectionsWardSkin_t GetLolCollectionsV1InventoriesBySummonerIdWardSkinsByWardSkinId (const ClientInfo& info,
-    const uint64_t& summonerId,
-    const int64_t& wardSkinId)
+    const uint64_t_t& summonerId,
+    const int64_t_t& wardSkinId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

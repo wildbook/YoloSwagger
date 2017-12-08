@@ -3,14 +3,14 @@
 #include <optional>
 namespace leagueapi {
   struct SanitizerSanitizerConfig_t {
-    std::optional<std::string> Level1Filter;
-    std::optional<std::string> Level1Unfilter;
-    std::optional<std::string> Level0Filter;
-    std::optional<std::string> Level2Unfilter;
-    std::optional<std::string> Level0Unfilter;
-    std::optional<std::string> Level3Unfilter;
-    std::optional<std::string> Level2Filter;
-    std::optional<std::string> Level3Filter;
+    std::optional<std::string_t> Level1Filter;
+    std::optional<std::string_t> Level1Unfilter;
+    std::optional<std::string_t> Level0Filter;
+    std::optional<std::string_t> Level2Unfilter;
+    std::optional<std::string_t> Level0Unfilter;
+    std::optional<std::string_t> Level3Unfilter;
+    std::optional<std::string_t> Level2Filter;
+    std::optional<std::string_t> Level3Filter;
   };
 
   inline void to_json(nlohmann::json& j, const SanitizerSanitizerConfig_t& v) {
@@ -34,21 +34,21 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, SanitizerSanitizerConfig_t& v) {
     if(auto it = j.find("Level1Filter"); it != j.end() && !it->is_null())
-      v.Level1Filter = it->get<std::string>();
+      v.Level1Filter = it->get<std::string_t>();
     if(auto it = j.find("Level1Unfilter"); it != j.end() && !it->is_null())
-      v.Level1Unfilter = it->get<std::string>();
+      v.Level1Unfilter = it->get<std::string_t>();
     if(auto it = j.find("Level0Filter"); it != j.end() && !it->is_null())
-      v.Level0Filter = it->get<std::string>();
+      v.Level0Filter = it->get<std::string_t>();
     if(auto it = j.find("Level2Unfilter"); it != j.end() && !it->is_null())
-      v.Level2Unfilter = it->get<std::string>();
+      v.Level2Unfilter = it->get<std::string_t>();
     if(auto it = j.find("Level0Unfilter"); it != j.end() && !it->is_null())
-      v.Level0Unfilter = it->get<std::string>();
+      v.Level0Unfilter = it->get<std::string_t>();
     if(auto it = j.find("Level3Unfilter"); it != j.end() && !it->is_null())
-      v.Level3Unfilter = it->get<std::string>();
+      v.Level3Unfilter = it->get<std::string_t>();
     if(auto it = j.find("Level2Filter"); it != j.end() && !it->is_null())
-      v.Level2Filter = it->get<std::string>();
+      v.Level2Filter = it->get<std::string_t>();
     if(auto it = j.find("Level3Filter"); it != j.end() && !it->is_null())
-      v.Level3Filter = it->get<std::string>();
+      v.Level3Filter = it->get<std::string_t>();
   }
   inline std::string to_string(const SanitizerSanitizerConfig_t& v) {
     nlohmann::json j = v;

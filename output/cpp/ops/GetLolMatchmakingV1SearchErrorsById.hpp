@@ -3,7 +3,7 @@
 #include "LolMatchmakingMatchmakingSearchErrorResource.hpp"
 namespace leagueapi {
   LolMatchmakingMatchmakingSearchErrorResource_t GetLolMatchmakingV1SearchErrorsById (const ClientInfo& info,
-    const int32_t& id)
+    const int32_t_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

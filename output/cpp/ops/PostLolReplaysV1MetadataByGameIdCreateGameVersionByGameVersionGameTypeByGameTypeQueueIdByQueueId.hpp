@@ -3,10 +3,10 @@
 #include ".hpp"
 namespace leagueapi {
   void PostLolReplaysV1MetadataByGameIdCreateGameVersionByGameVersionGameTypeByGameTypeQueueIdByQueueId (const ClientInfo& info,
-    const uint64_t& gameId,
-    const std::string& gameVersion,
-    const std::string& gameType,
-    const int32_t& queueId)
+    const uint64_t_t& gameId,
+    const std::string_t& gameVersion,
+    const std::string_t& gameType,
+    const int32_t_t& queueId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -3,7 +3,7 @@
 #include "Highlight.hpp"
 namespace leagueapi {
   Highlight_t DeleteLolHighlightsV1HighlightsById (const ClientInfo& info,
-    const uint64_t& id)
+    const uint64_t_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -5,7 +5,7 @@ namespace leagueapi {
   //Registers the process and includes it with the performance information.
   void PostPerformanceV1ProcessByProcessId (const ClientInfo& info,
     //Id of the process to track performance information.
-    const uint32_t& processId)
+    const uint32_t_t& processId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolLootLootRecipeGdsResource_t {
-    std::string placeholder;
+    std::string_t placeholder;
   };
 
   inline void to_json(nlohmann::json& j, const LolLootLootRecipeGdsResource_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLootLootRecipeGdsResource_t& v) {
-    v.placeholder = j.at("placeholder").get<std::string>();
+    v.placeholder = j.at("placeholder").get<std::string_t>();
   }
   inline std::string to_string(const LolLootLootRecipeGdsResource_t& v) {
     nlohmann::json j = v;

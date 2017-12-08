@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "TencentQTNotification.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolTencentQtV1UiStatesByFeature (const ClientInfo& info,
-    const std::string& feature,
+  nlohmann::json_t PostLolTencentQtV1UiStatesByFeature (const ClientInfo& info,
+    const std::string_t& feature,
     const TencentQTNotification_t& state)
   {
     using std::to_string;

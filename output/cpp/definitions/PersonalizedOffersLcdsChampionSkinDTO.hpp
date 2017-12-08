@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct PersonalizedOffersLcdsChampionSkinDTO_t {
-    int32_t skinId;
-    int32_t championId;
-    bool owned;
+    int32_t_t skinId;
+    int32_t_t championId;
+    bool_t owned;
   };
 
   inline void to_json(nlohmann::json& j, const PersonalizedOffersLcdsChampionSkinDTO_t& v) {
@@ -15,9 +15,9 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PersonalizedOffersLcdsChampionSkinDTO_t& v) {
-    v.skinId = j.at("skinId").get<int32_t>();
-    v.championId = j.at("championId").get<int32_t>();
-    v.owned = j.at("owned").get<bool>();
+    v.skinId = j.at("skinId").get<int32_t_t>();
+    v.championId = j.at("championId").get<int32_t_t>();
+    v.owned = j.at("owned").get<bool_t>();
   }
   inline std::string to_string(const PersonalizedOffersLcdsChampionSkinDTO_t& v) {
     nlohmann::json j = v;

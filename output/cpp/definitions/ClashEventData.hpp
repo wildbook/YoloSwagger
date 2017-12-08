@@ -4,18 +4,18 @@
 #include "ClashRewardSpec.hpp"
 namespace leagueapi {
   struct ClashEventData_t {
-    int32_t seasonId;
-    std::string tournamentName;
-    std::string teamLogoName;
-    std::string teamName;
-    std::string rewardType;
-    std::string theme;
-    int32_t bracket;
-    int64_t tournamentId;
-    std::string earnedDate;
-    std::string tier;
+    int32_t_t seasonId;
+    std::string_t tournamentName;
+    std::string_t teamLogoName;
+    std::string_t teamName;
+    std::string_t rewardType;
+    std::string_t theme;
+    int32_t_t bracket;
+    int64_t_t tournamentId;
+    std::string_t earnedDate;
+    std::string_t tier;
     std::vector<std::string> playerUUIDs;
-    std::string teamLogoChromaId;
+    std::string_t teamLogoChromaId;
     ClashRewardSpec_t rewardSpec;
   };
 
@@ -36,18 +36,18 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, ClashEventData_t& v) {
-    v.seasonId = j.at("seasonId").get<int32_t>();
-    v.tournamentName = j.at("tournamentName").get<std::string>();
-    v.teamLogoName = j.at("teamLogoName").get<std::string>();
-    v.teamName = j.at("teamName").get<std::string>();
-    v.rewardType = j.at("rewardType").get<std::string>();
-    v.theme = j.at("theme").get<std::string>();
-    v.bracket = j.at("bracket").get<int32_t>();
-    v.tournamentId = j.at("tournamentId").get<int64_t>();
-    v.earnedDate = j.at("earnedDate").get<std::string>();
-    v.tier = j.at("tier").get<std::string>();
+    v.seasonId = j.at("seasonId").get<int32_t_t>();
+    v.tournamentName = j.at("tournamentName").get<std::string_t>();
+    v.teamLogoName = j.at("teamLogoName").get<std::string_t>();
+    v.teamName = j.at("teamName").get<std::string_t>();
+    v.rewardType = j.at("rewardType").get<std::string_t>();
+    v.theme = j.at("theme").get<std::string_t>();
+    v.bracket = j.at("bracket").get<int32_t_t>();
+    v.tournamentId = j.at("tournamentId").get<int64_t_t>();
+    v.earnedDate = j.at("earnedDate").get<std::string_t>();
+    v.tier = j.at("tier").get<std::string_t>();
     v.playerUUIDs = j.at("playerUUIDs").get<std::vector<std::string>>();
-    v.teamLogoChromaId = j.at("teamLogoChromaId").get<std::string>();
+    v.teamLogoChromaId = j.at("teamLogoChromaId").get<std::string_t>();
     v.rewardSpec = j.at("rewardSpec").get<ClashRewardSpec_t>();
   }
   inline std::string to_string(const ClashEventData_t& v) {

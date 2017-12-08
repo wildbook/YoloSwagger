@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  uint64_t PostLolLobbyV2LobbyMembersBySummonerIdGrantInvite (const ClientInfo& info,
-    const uint64_t& summonerId)
+  uint64_t_t PostLolLobbyV2LobbyMembersBySummonerIdGrantInvite (const ClientInfo& info,
+    const uint64_t_t& summonerId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

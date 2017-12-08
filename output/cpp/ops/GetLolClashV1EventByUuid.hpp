@@ -3,7 +3,7 @@
 #include "ClashEventData.hpp"
 namespace leagueapi {
   ClashEventData_t GetLolClashV1EventByUuid (const ClientInfo& info,
-    const std::string& uuid)
+    const std::string_t& uuid)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -5,9 +5,9 @@ namespace leagueapi {
   //Set the data for the specified key from the install settings.
   void PostDataStoreV1InstallSettingsByPath (const ClientInfo& info,
     //The path to the settings key
-    const std::string& path,
+    const std::string_t& path,
     //The data to assign to the key
-    const nlohmann::json& data)
+    const nlohmann::json_t& data)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

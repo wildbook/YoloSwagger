@@ -5,8 +5,8 @@
 #include "ClubMembershipDto.hpp"
 namespace leagueapi {
   struct ClubDto_t {
-    std::string platformId;
-    std::string resourceUri;
+    std::string_t platformId;
+    std::string_t resourceUri;
     ClubMembershipDto_t membership;
     ClubDataDto_t clubData;
   };
@@ -19,8 +19,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, ClubDto_t& v) {
-    v.platformId = j.at("platformId").get<std::string>();
-    v.resourceUri = j.at("resourceUri").get<std::string>();
+    v.platformId = j.at("platformId").get<std::string_t>();
+    v.resourceUri = j.at("resourceUri").get<std::string_t>();
     v.membership = j.at("membership").get<ClubMembershipDto_t>();
     v.clubData = j.at("clubData").get<ClubDataDto_t>();
   }

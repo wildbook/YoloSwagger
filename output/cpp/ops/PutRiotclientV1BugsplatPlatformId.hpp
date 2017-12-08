@@ -5,7 +5,7 @@ namespace leagueapi {
   //Tags the bugsplat with a platform id so it can be filtered more easily.
   void PutRiotclientV1BugsplatPlatformId (const ClientInfo& info,
     //The platform id that should be reported to bugsplat.
-    const std::string& platformId)
+    const std::string_t& platformId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

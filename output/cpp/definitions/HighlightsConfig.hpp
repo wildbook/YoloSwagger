@@ -3,8 +3,8 @@
 #include <optional>
 namespace leagueapi {
   struct HighlightsConfig_t {
-    std::string invalidHighlightNameCharacters;
-    bool isHighlightsEnabled;
+    std::string_t invalidHighlightNameCharacters;
+    bool_t isHighlightsEnabled;
   };
 
   inline void to_json(nlohmann::json& j, const HighlightsConfig_t& v) {
@@ -13,8 +13,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, HighlightsConfig_t& v) {
-    v.invalidHighlightNameCharacters = j.at("invalidHighlightNameCharacters").get<std::string>();
-    v.isHighlightsEnabled = j.at("isHighlightsEnabled").get<bool>();
+    v.invalidHighlightNameCharacters = j.at("invalidHighlightNameCharacters").get<std::string_t>();
+    v.isHighlightsEnabled = j.at("isHighlightsEnabled").get<bool_t>();
   }
   inline std::string to_string(const HighlightsConfig_t& v) {
     nlohmann::json j = v;

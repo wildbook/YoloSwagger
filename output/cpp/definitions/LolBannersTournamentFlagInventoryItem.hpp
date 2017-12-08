@@ -4,7 +4,7 @@
 #include "LolBannersCapClashFlagEntitlementPayload.hpp"
 namespace leagueapi {
   struct LolBannersTournamentFlagInventoryItem_t {
-    std::string purchaseDate;
+    std::string_t purchaseDate;
     LolBannersCapClashFlagEntitlementPayload_t payload;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolBannersTournamentFlagInventoryItem_t& v) {
-    v.purchaseDate = j.at("purchaseDate").get<std::string>();
+    v.purchaseDate = j.at("purchaseDate").get<std::string_t>();
     v.payload = j.at("payload").get<LolBannersCapClashFlagEntitlementPayload_t>();
   }
   inline std::string to_string(const LolBannersTournamentFlagInventoryItem_t& v) {

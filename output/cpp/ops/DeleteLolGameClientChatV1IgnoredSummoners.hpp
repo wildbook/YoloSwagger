@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void DeleteLolGameClientChatV1IgnoredSummoners (const ClientInfo& info,
-    const std::string& summonerName)
+    const std::string_t& summonerName)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

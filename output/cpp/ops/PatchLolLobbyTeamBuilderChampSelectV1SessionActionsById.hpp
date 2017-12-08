@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "LolLobbyTeamBuilderChampSelectAction.hpp"
 namespace leagueapi {
-  nlohmann::json PatchLolLobbyTeamBuilderChampSelectV1SessionActionsById (const ClientInfo& info,
-    const int32_t& id,
+  nlohmann::json_t PatchLolLobbyTeamBuilderChampSelectV1SessionActionsById (const ClientInfo& info,
+    const int32_t_t& id,
     const LolLobbyTeamBuilderChampSelectAction_t& data)
   {
     using std::to_string;

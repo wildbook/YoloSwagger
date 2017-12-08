@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  nlohmann::json PostLolLobbyTeamBuilderChampSelectV1SessionTradesByIdCancel (const ClientInfo& info,
-    const int32_t& id)
+  nlohmann::json_t PostLolLobbyTeamBuilderChampSelectV1SessionTradesByIdCancel (const ClientInfo& info,
+    const int32_t_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

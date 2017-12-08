@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolEndOfGameLobbyInvitation_t {
-    std::string state;
+    std::string_t state;
   };
 
   inline void to_json(nlohmann::json& j, const LolEndOfGameLobbyInvitation_t& v) {
@@ -11,7 +11,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolEndOfGameLobbyInvitation_t& v) {
-    v.state = j.at("state").get<std::string>();
+    v.state = j.at("state").get<std::string_t>();
   }
   inline std::string to_string(const LolEndOfGameLobbyInvitation_t& v) {
     nlohmann::json j = v;

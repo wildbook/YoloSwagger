@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct LolLobbyTeamBuilderBackwardsTransitionInfoV1_t {
-    std::string backwardsTransitionReason;
+    std::string_t backwardsTransitionReason;
     std::vector<uint64_t> initiatorSummonerIds;
   };
 
@@ -13,7 +13,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderBackwardsTransitionInfoV1_t& v) {
-    v.backwardsTransitionReason = j.at("backwardsTransitionReason").get<std::string>();
+    v.backwardsTransitionReason = j.at("backwardsTransitionReason").get<std::string_t>();
     v.initiatorSummonerIds = j.at("initiatorSummonerIds").get<std::vector<uint64_t>>();
   }
   inline std::string to_string(const LolLobbyTeamBuilderBackwardsTransitionInfoV1_t& v) {

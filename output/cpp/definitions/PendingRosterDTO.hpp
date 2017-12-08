@@ -7,17 +7,17 @@
 #include "FailedInvite.hpp"
 namespace leagueapi {
   struct PendingRosterDTO_t {
-    std::string name;
+    std::string_t name;
     std::vector<FailedInvite_t> inviteFaileds;
-    int64_t tournamentId;
-    int32_t logoColor;
+    int64_t_t tournamentId;
+    int32_t_t logoColor;
     std::vector<TicketOfferDTO_t> ticketOffers;
-    std::string invitationId;
+    std::string_t invitationId;
     std::vector<PendingRosterMemberDTO_t> members;
-    int32_t tier;
-    int32_t logo;
-    uint64_t captainId;
-    std::string shortName;
+    int32_t_t tier;
+    int32_t_t logo;
+    uint64_t_t captainId;
+    std::string_t shortName;
     std::vector<PendingRosterInviteeDTO_t> invitees;
   };
 
@@ -37,17 +37,17 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, PendingRosterDTO_t& v) {
-    v.name = j.at("name").get<std::string>();
+    v.name = j.at("name").get<std::string_t>();
     v.inviteFaileds = j.at("inviteFaileds").get<std::vector<FailedInvite_t>>();
-    v.tournamentId = j.at("tournamentId").get<int64_t>();
-    v.logoColor = j.at("logoColor").get<int32_t>();
+    v.tournamentId = j.at("tournamentId").get<int64_t_t>();
+    v.logoColor = j.at("logoColor").get<int32_t_t>();
     v.ticketOffers = j.at("ticketOffers").get<std::vector<TicketOfferDTO_t>>();
-    v.invitationId = j.at("invitationId").get<std::string>();
+    v.invitationId = j.at("invitationId").get<std::string_t>();
     v.members = j.at("members").get<std::vector<PendingRosterMemberDTO_t>>();
-    v.tier = j.at("tier").get<int32_t>();
-    v.logo = j.at("logo").get<int32_t>();
-    v.captainId = j.at("captainId").get<uint64_t>();
-    v.shortName = j.at("shortName").get<std::string>();
+    v.tier = j.at("tier").get<int32_t_t>();
+    v.logo = j.at("logo").get<int32_t_t>();
+    v.captainId = j.at("captainId").get<uint64_t_t>();
+    v.shortName = j.at("shortName").get<std::string_t>();
     v.invitees = j.at("invitees").get<std::vector<PendingRosterInviteeDTO_t>>();
   }
   inline std::string to_string(const PendingRosterDTO_t& v) {

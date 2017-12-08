@@ -3,7 +3,7 @@
 #include <optional>
 namespace leagueapi {
   struct MultipleReplayMetadataRequestV2_t {
-    std::string platformId;
+    std::string_t platformId;
     std::vector<uint64_t> gameIds;
   };
 
@@ -13,7 +13,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, MultipleReplayMetadataRequestV2_t& v) {
-    v.platformId = j.at("platformId").get<std::string>();
+    v.platformId = j.at("platformId").get<std::string_t>();
     v.gameIds = j.at("gameIds").get<std::vector<uint64_t>>();
   }
   inline std::string to_string(const MultipleReplayMetadataRequestV2_t& v) {

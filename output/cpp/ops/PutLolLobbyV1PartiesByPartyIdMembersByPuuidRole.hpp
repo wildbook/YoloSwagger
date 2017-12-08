@@ -3,9 +3,9 @@
 #include ".hpp"
 namespace leagueapi {
   void PutLolLobbyV1PartiesByPartyIdMembersByPuuidRole (const ClientInfo& info,
-    const std::string& partyId,
-    const std::string& puuid,
-    const std::string& role)
+    const std::string_t& partyId,
+    const std::string_t& puuid,
+    const std::string_t& role)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

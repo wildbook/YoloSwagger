@@ -3,7 +3,7 @@
 #include "LolLootRecipe.hpp"
 namespace leagueapi {
   std::vector<LolLootRecipe_t> PostLolLootV1RecipesInitialItemByLootId (const ClientInfo& info,
-    const std::string& lootId)
+    const std::string_t& lootId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

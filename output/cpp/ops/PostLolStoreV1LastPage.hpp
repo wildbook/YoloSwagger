@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void PostLolStoreV1LastPage (const ClientInfo& info,
-    const std::string& pageType)
+    const std::string_t& pageType)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

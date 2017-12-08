@@ -4,8 +4,8 @@
 #include "LootNameRefId.hpp"
 namespace leagueapi {
   struct CraftLootRefTransactionDTO_t {
-    int32_t repeat;
-    std::string recipeName;
+    int32_t_t repeat;
+    std::string_t recipeName;
     std::vector<LootNameRefId_t> lootNameRefIds;
   };
 
@@ -16,8 +16,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, CraftLootRefTransactionDTO_t& v) {
-    v.repeat = j.at("repeat").get<int32_t>();
-    v.recipeName = j.at("recipeName").get<std::string>();
+    v.repeat = j.at("repeat").get<int32_t_t>();
+    v.recipeName = j.at("recipeName").get<std::string_t>();
     v.lootNameRefIds = j.at("lootNameRefIds").get<std::vector<LootNameRefId_t>>();
   }
   inline std::string to_string(const CraftLootRefTransactionDTO_t& v) {

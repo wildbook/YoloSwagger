@@ -4,7 +4,7 @@
 #include "MatchmakingSearchErrorResource.hpp"
 namespace leagueapi {
   struct MatchmakingSearchResource_t {
-    int32_t queueId;
+    int32_t_t queueId;
     std::vector<MatchmakingSearchErrorResource_t> errors;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, MatchmakingSearchResource_t& v) {
-    v.queueId = j.at("queueId").get<int32_t>();
+    v.queueId = j.at("queueId").get<int32_t_t>();
     v.errors = j.at("errors").get<std::vector<MatchmakingSearchErrorResource_t>>();
   }
   inline std::string to_string(const MatchmakingSearchResource_t& v) {

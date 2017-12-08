@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Gets the last known posted zoom-scale value.
-  double GetRiotclientZoomScale (const ClientInfo& info)
+  double_t GetRiotclientZoomScale (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

@@ -1,8 +1,8 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  std::string PostLolPlayerPreferencesV1Hash (const ClientInfo& info,
-    const std::string& preferences)
+  std::string_t PostLolPlayerPreferencesV1Hash (const ClientInfo& info,
+    const std::string_t& preferences)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

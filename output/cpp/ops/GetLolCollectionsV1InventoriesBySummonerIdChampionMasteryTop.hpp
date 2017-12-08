@@ -3,9 +3,9 @@
 #include "LolCollectionsCollectionsTopChampionMasteries.hpp"
 namespace leagueapi {
   LolCollectionsCollectionsTopChampionMasteries_t GetLolCollectionsV1InventoriesBySummonerIdChampionMasteryTop (const ClientInfo& info,
-    const uint64_t& summonerId,
-    const uint64_t& limit,
-    const std::optional<std::string>& sortRule = std::nullopt)
+    const uint64_t_t& summonerId,
+    const uint64_t_t& limit,
+    const std::optional<std::string_t>& sortRule = std::nullopt)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

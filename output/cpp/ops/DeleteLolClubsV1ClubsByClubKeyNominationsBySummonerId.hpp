@@ -3,8 +3,8 @@
 #include "ClubMemberLists.hpp"
 namespace leagueapi {
   ClubMemberLists_t DeleteLolClubsV1ClubsByClubKeyNominationsBySummonerId (const ClientInfo& info,
-    const std::string& clubKey,
-    const uint64_t& summonerId)
+    const std::string_t& clubKey,
+    const uint64_t_t& summonerId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

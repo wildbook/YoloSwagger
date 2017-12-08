@@ -3,7 +3,7 @@
 #include "PatcherProductState.hpp"
 namespace leagueapi {
   PatcherProductState_t PostPatcherV1ProductsByProductIdDetectCorruptionRequest (const ClientInfo& info,
-    const std::string& product-id)
+    const std::string_t& product-id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

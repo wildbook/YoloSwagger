@@ -5,8 +5,8 @@
 namespace leagueapi {
   struct LCDSLoyaltyRewards_t {
     std::vector<LCDSChampionReward_t> champions;
-    int32_t xpBoost;
-    int32_t ipBoost;
+    int32_t_t xpBoost;
+    int32_t_t ipBoost;
   };
 
   inline void to_json(nlohmann::json& j, const LCDSLoyaltyRewards_t& v) {
@@ -17,8 +17,8 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LCDSLoyaltyRewards_t& v) {
     v.champions = j.at("champions").get<std::vector<LCDSChampionReward_t>>();
-    v.xpBoost = j.at("xpBoost").get<int32_t>();
-    v.ipBoost = j.at("ipBoost").get<int32_t>();
+    v.xpBoost = j.at("xpBoost").get<int32_t_t>();
+    v.ipBoost = j.at("ipBoost").get<int32_t_t>();
   }
   inline std::string to_string(const LCDSLoyaltyRewards_t& v) {
     nlohmann::json j = v;

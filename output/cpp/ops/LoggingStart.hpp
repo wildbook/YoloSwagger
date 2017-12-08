@@ -6,7 +6,7 @@ namespace leagueapi {
   //Initializes the logging system.
   void LoggingStart (const ClientInfo& info,
     //Specifies whether logs will be buffered for LoggingGetEntries to work
-    const std::optional<bool>& buffered = std::nullopt,
+    const std::optional<bool_t>& buffered = std::nullopt,
     //Minimum severity level to fire a log event
     const std::optional<LogSeverityLevels_t>& severity = std::nullopt)
   {

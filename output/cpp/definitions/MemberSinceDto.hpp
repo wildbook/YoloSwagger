@@ -4,8 +4,8 @@
 #include "PlayerInfoDto.hpp"
 namespace leagueapi {
   struct MemberSinceDto_t {
-    int64_t since;
-    std::string role;
+    int64_t_t since;
+    std::string_t role;
     PlayerInfoDto_t playerInfo;
   };
 
@@ -16,8 +16,8 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, MemberSinceDto_t& v) {
-    v.since = j.at("since").get<int64_t>();
-    v.role = j.at("role").get<std::string>();
+    v.since = j.at("since").get<int64_t_t>();
+    v.role = j.at("role").get<std::string_t>();
     v.playerInfo = j.at("playerInfo").get<PlayerInfoDto_t>();
   }
   inline std::string to_string(const MemberSinceDto_t& v) {

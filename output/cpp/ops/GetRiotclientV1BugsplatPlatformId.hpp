@@ -2,7 +2,7 @@
 #incldue "../client.hpp"
 namespace leagueapi {
   //Get the bugsplat platform id.
-  std::string GetRiotclientV1BugsplatPlatformId (const ClientInfo& info)
+  std::string_t GetRiotclientV1BugsplatPlatformId (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

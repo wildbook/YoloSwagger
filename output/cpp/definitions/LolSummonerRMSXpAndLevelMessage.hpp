@@ -4,7 +4,7 @@
 #include "LolSummonerRMSLevelField.hpp"
 namespace leagueapi {
   struct LolSummonerRMSXpAndLevelMessage_t {
-    nlohmann::json xp;
+    nlohmann::json_t xp;
     LolSummonerRMSLevelField_t level;
   };
 
@@ -14,7 +14,7 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolSummonerRMSXpAndLevelMessage_t& v) {
-    v.xp = j.at("xp").get<nlohmann::json>();
+    v.xp = j.at("xp").get<nlohmann::json_t>();
     v.level = j.at("level").get<LolSummonerRMSLevelField_t>();
   }
   inline std::string to_string(const LolSummonerRMSXpAndLevelMessage_t& v) {

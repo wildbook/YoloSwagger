@@ -1,7 +1,7 @@
 #pragma once
 #incldue "../client.hpp"
 namespace leagueapi {
-  std::string GetLolReplaysV1RoflsPath (const ClientInfo& info)
+  std::string_t GetLolReplaysV1RoflsPath (const ClientInfo& info)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

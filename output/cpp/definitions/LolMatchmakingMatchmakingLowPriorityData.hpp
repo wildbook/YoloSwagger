@@ -3,10 +3,10 @@
 #include <optional>
 namespace leagueapi {
   struct LolMatchmakingMatchmakingLowPriorityData_t {
-    std::string bustedLeaverAccessToken;
-    double penaltyTimeRemaining;
+    std::string_t bustedLeaverAccessToken;
+    double_t penaltyTimeRemaining;
     std::vector<uint64_t> penalizedSummonerIds;
-    double penaltyTime;
+    double_t penaltyTime;
   };
 
   inline void to_json(nlohmann::json& j, const LolMatchmakingMatchmakingLowPriorityData_t& v) {
@@ -17,10 +17,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolMatchmakingMatchmakingLowPriorityData_t& v) {
-    v.bustedLeaverAccessToken = j.at("bustedLeaverAccessToken").get<std::string>();
-    v.penaltyTimeRemaining = j.at("penaltyTimeRemaining").get<double>();
+    v.bustedLeaverAccessToken = j.at("bustedLeaverAccessToken").get<std::string_t>();
+    v.penaltyTimeRemaining = j.at("penaltyTimeRemaining").get<double_t>();
     v.penalizedSummonerIds = j.at("penalizedSummonerIds").get<std::vector<uint64_t>>();
-    v.penaltyTime = j.at("penaltyTime").get<double>();
+    v.penaltyTime = j.at("penaltyTime").get<double_t>();
   }
   inline std::string to_string(const LolMatchmakingMatchmakingLowPriorityData_t& v) {
     nlohmann::json j = v;

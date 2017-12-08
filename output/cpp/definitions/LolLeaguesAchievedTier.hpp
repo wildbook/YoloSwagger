@@ -6,7 +6,7 @@
 namespace leagueapi {
   struct LolLeaguesAchievedTier_t {
     LolLeaguesLeagueTier_t tier;
-    uint64_t division;
+    uint64_t_t division;
     LolLeaguesLeagueQueueType_t queueType;
   };
 
@@ -18,7 +18,7 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolLeaguesAchievedTier_t& v) {
     v.tier = j.at("tier").get<LolLeaguesLeagueTier_t>();
-    v.division = j.at("division").get<uint64_t>();
+    v.division = j.at("division").get<uint64_t_t>();
     v.queueType = j.at("queueType").get<LolLeaguesLeagueQueueType_t>();
   }
   inline std::string to_string(const LolLeaguesAchievedTier_t& v) {

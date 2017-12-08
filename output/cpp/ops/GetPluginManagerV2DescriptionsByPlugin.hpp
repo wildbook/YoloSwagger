@@ -5,7 +5,7 @@ namespace leagueapi {
   //Get a plugin description.
   PluginDescriptionResource_t GetPluginManagerV2DescriptionsByPlugin (const ClientInfo& info,
     //Plugin name
-    const std::string& plugin)
+    const std::string_t& plugin)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

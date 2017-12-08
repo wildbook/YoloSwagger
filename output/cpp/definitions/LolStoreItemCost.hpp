@@ -3,9 +3,9 @@
 #include <optional>
 namespace leagueapi {
   struct LolStoreItemCost_t {
-    std::string currency;
-    int64_t cost;
-    std::optional<float> discount;
+    std::string_t currency;
+    int64_t_t cost;
+    std::optional<float_t> discount;
   };
 
   inline void to_json(nlohmann::json& j, const LolStoreItemCost_t& v) {
@@ -16,10 +16,10 @@ namespace leagueapi {
   }
 
   inline void from_json(const nlohmann::json& j, LolStoreItemCost_t& v) {
-    v.currency = j.at("currency").get<std::string>();
-    v.cost = j.at("cost").get<int64_t>();
+    v.currency = j.at("currency").get<std::string_t>();
+    v.cost = j.at("cost").get<int64_t_t>();
     if(auto it = j.find("discount"); it != j.end() && !it->is_null())
-      v.discount = it->get<float>();
+      v.discount = it->get<float_t>();
   }
   inline std::string to_string(const LolStoreItemCost_t& v) {
     nlohmann::json j = v;

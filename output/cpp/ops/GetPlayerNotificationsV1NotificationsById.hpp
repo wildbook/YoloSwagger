@@ -3,7 +3,7 @@
 #include "PlayerNotificationResource.hpp"
 namespace leagueapi {
   PlayerNotificationResource_t GetPlayerNotificationsV1NotificationsById (const ClientInfo& info,
-    const uint64_t& id)
+    const uint64_t_t& id)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

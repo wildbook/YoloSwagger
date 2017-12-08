@@ -2,8 +2,8 @@
 #incldue "../client.hpp"
 #include "LolPerksPerkPageResource.hpp"
 namespace leagueapi {
-  nlohmann::json PutLolPerksV1PagesById (const ClientInfo& info,
-    const int32_t& id,
+  nlohmann::json_t PutLolPerksV1PagesById (const ClientInfo& info,
+    const int32_t_t& id,
     const LolPerksPerkPageResource_t& page)
   {
     using std::to_string;

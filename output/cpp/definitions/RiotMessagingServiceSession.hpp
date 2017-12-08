@@ -6,7 +6,7 @@
 namespace leagueapi {
   struct RiotMessagingServiceSession_t {
     RiotMessagingServiceState_t state;
-    std::string token;
+    std::string_t token;
     RiotMessagingServiceTokenType_t tokenType;
   };
 
@@ -18,7 +18,7 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, RiotMessagingServiceSession_t& v) {
     v.state = j.at("state").get<RiotMessagingServiceState_t>();
-    v.token = j.at("token").get<std::string>();
+    v.token = j.at("token").get<std::string_t>();
     v.tokenType = j.at("tokenType").get<RiotMessagingServiceTokenType_t>();
   }
   inline std::string to_string(const RiotMessagingServiceSession_t& v) {

@@ -3,7 +3,7 @@
 #include "LolClubsPublicClubTag.hpp"
 namespace leagueapi {
   LolClubsPublicClubTag_t GetLolClubsPublicV1ClubsPublicBySummonerIdTag (const ClientInfo& info,
-    const uint64_t& summonerId)
+    const uint64_t_t& summonerId)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};

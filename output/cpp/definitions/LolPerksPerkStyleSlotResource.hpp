@@ -4,8 +4,8 @@
 namespace leagueapi {
   struct LolPerksPerkStyleSlotResource_t {
     std::vector<int32_t> perks;
-    std::string type;
-    std::string slotLabel;
+    std::string_t type;
+    std::string_t slotLabel;
   };
 
   inline void to_json(nlohmann::json& j, const LolPerksPerkStyleSlotResource_t& v) {
@@ -16,8 +16,8 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LolPerksPerkStyleSlotResource_t& v) {
     v.perks = j.at("perks").get<std::vector<int32_t>>();
-    v.type = j.at("type").get<std::string>();
-    v.slotLabel = j.at("slotLabel").get<std::string>();
+    v.type = j.at("type").get<std::string_t>();
+    v.slotLabel = j.at("slotLabel").get<std::string_t>();
   }
   inline std::string to_string(const LolPerksPerkStyleSlotResource_t& v) {
     nlohmann::json j = v;

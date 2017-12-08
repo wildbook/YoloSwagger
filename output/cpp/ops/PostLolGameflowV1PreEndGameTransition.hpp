@@ -3,7 +3,7 @@
 #include ".hpp"
 namespace leagueapi {
   void PostLolGameflowV1PreEndGameTransition (const ClientInfo& info,
-    const bool& enabled)
+    const bool_t& enabled)
   {
     using std::to_string;
     Headers headers = {{"Authorization", auth}};
