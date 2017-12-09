@@ -90,105 +90,112 @@ namespace {NAMESPACE} {{
   using FormData = SimpleWeb::CaseInsensitiveMultimap;
   using ErrorCode = SimpleWeb::error_code;
   using QueryString = SimpleWeb::QueryString;
+  using RequestError = LolLobbyAmbassadorMessage;
 
   struct ClientInfo {{
     std::string host;
     std::string auth;
   }};
 
-  using RequestError = LolLobbyAmbassadorMessage;
-
   template<T>
   struct Result {{
     HttpsResponsePtr response;
-    T data;
+    std::optional<T> data;
+    std::optional<LolLobbyAmbassadorMessage> error;
     Result(HttpsResponsePtr r) : response(r) {{
       int status_code = std::stoul(r->status_code);
       auto raw = r->content.string();
-      if(status_code != 200) {{
-        LolLobbyAmbassadorMessage error;
+      if(status_code != 204) {{
         if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")) {{
           error = json::parse(raw);
         }} else {{
+          error = RequestError{{}};
           error.httpStatus = status_code;
           error.message = raw;
         }}
-        throw error;
+      }} else {{
+        data = json::parse(raw);
       }}
-      data = json::parse(raw);
     }}
-    T* operator->() {{
-      return &data;
+    std::optional<T> operator->() {{
+      return data;
     }}
     T operator*() const {{
-      return data;
+      return *data;
     }}
-    const T& operator*() const {{
-      return &data;
+    explicit operator bool() const {{
+      return error == std::nullopt;
     }}
-    operator T() const {{
-      return data;
+    bool operator !() const {{
+      return error != std::nullopt;
     }}
   }};
 
   template<>
   struct Result<json> {{
     HttpsResponsePtr response;
-    json data;
+    std::optional<json> data;
+    std::optional<RequestError> error;
     Result(HttpsResponsePtr r) : response(r) {{
       int status_code = std::stoul(r->status_code);
       auto raw = r->content.string();
-      if(status_code != 200) {{
-        LolLobbyAmbassadorMessage error;
+      if(status_code != 204) {{
         if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")) {{
           error = json::parse(raw);
         }} else {{
+          error = RequestError{{}};
           error.httpStatus = status_code;
           error.message = raw;
         }}
-        throw error;
+      }} else {{
+        if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")
+          data = json::parse(raw);
+        else
+          data = raw;
       }}
-      if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")
-        data = json::parse(raw);
-      else
-        data = raw;
     }}
-    json* operator->() {{
-      return &data;
+    std::optional<json> operator->() {{
+      return data;
     }}
     json operator*() const {{
-      return data;
+      return *data;
     }}
-    const json& operator*() const {{
-      return &data;
+    explicit operator bool() const {{
+      return error == std::nullopt;
     }}
-    operator json() const {{
-      return data;
+    bool operator !() const {{
+      return error != std::nullopt;
     }}
   }};
 
   template<>
   struct Result<void> {{
     HttpsResponsePtr response;
+    std::optional<RequestError> error;
     Result(HttpsResponsePtr r) : response(r) {{
       int status_code = std::stoul(r->status_code);
       auto raw = r->content.string();
       if(status_code != 204) {{
-        LolLobbyAmbassadorMessage error;
         if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")) {{
           error = json::parse(raw);
         }} else {{
+          error = RequestError{{}};
           error.httpStatus = status_code;
           error.message = raw;
         }}
-        throw error;
       }}
     }}
     HttpsResponsePtr operator->() const {{
       return response;
     }}
-    HttpsResponsePtr operator*() {{
-      return response;
+    HttpsResponse operator*() {{
+      return *response;
+    }}
+    explicit operator bool() const {{
+      return error == std::nullopt;
+    }}
+    bool operator !() const {{
+      return error != std::nullopt;
     }}
   }}
 
