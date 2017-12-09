@@ -175,7 +175,7 @@ def generate_ops(info,  folder,  namespace):
         file.write("#include \"../client.hpp\"\n")
         for i in info_function_imports(op):
             if not i in builtins:
-                file.write("#include \"{0}.hpp\"\n".format(i))
+                file.write("#include \"../definitions/{0}.hpp\"\n".format(i))
         file.write("namespace {0} {{\n".format(namespace))
         returns = ""
         if op["returns"]["type"] == "":
@@ -244,7 +244,7 @@ def generate_ops(info,  folder,  namespace):
             file.write("      path.append(\"?\" + SimpleWeb::QueryString::create(query));\n")
         file.write("    HttpsClient client(info.host, false);\n")
         file.write("    auto res = client.request(\"{0}\", path, body, headers);\n".format(request["method"]))
-        file.write("    if(res->status_code == 406)\n")
+        file.write("    if(res->status_code == \"406\")\n")
         file.write("      throw OpError(res->content.string());\n")
         if returns == "void":
             file.write("    return;\n")
