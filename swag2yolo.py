@@ -9,100 +9,81 @@ def mkpath(name):
         True
 
 # convinience function to escape name to variable friendly
-def info_name_escape(name):
+def yolo_name_escape(name):
     return name.replace("-",  "_")
-
-# checks what  single {"type": ... . "elementType":... } imports
-def info_type_imports(type):
-    if type["type"] == "vector":
-        return {"vector", type["elementType"]}
-    if type["type"] == "map":
-        return {"string", "map", type["elementType"]}
-    return {type["type"]}
-
-# checks what function definition imports
-def info_function_imports(function):
-    result = info_type_imports(function["returns"])
-    for arg in function["arguments"]:
-        result.update(info_type_imports(function["arguments"][arg]["type"]))
-    return result
-
-# checks what custom type defintion imports
-def info_struct_imports(typedef):
-    result = set()
-    for field in typedef["fields"]:
-        result.update(info_type_imports(typedef["fields"][field]["type"]))
-    return result
 
  # converts single {"type": ... . "elementType":... }  to typename
  # example typemape : {"uint32": "UInt32", "map":"Dictionary<string, {0}>"}
  # nonexistant types are returned as is :D
-def info_type_convert(type,  typemap,  otherformat = "{0}"):
+def yolo_type_convert(type,  typemap,  otherformat = "{0}"):
     if not type["type"] in typemap:
-        return otherformat.format(type["type"])
+        return yolo_name_escape(otherformat.format(type["type"]))
     if not type["elementType"] == "":
         if not type["elementType"]  in typemap:
-            return typemap[type["type"]].format(otherformat.format(type["elementType"]))
-        return typemap[type["type"]].format(typemap[type["elementType"]].format())
-    return typemap[type["type"]]
+            return yolo_name_escape(typemap[type["type"]].format(otherformat.format(type["elementType"])))
+        return yolo_name_escape(typemap[type["type"]].format(typemap[type["elementType"]].format()))
+    return yolo_name_escape(typemap[type["type"]])
 
 #generates info from /Help?format=Full and /v2/swagger.json
-def info_init(helpjson,  swagjson):
+def yolo_init(helpjson,  swagjson):
+    requests = {
+        request["operationId"] : {
+            "method": method, 
+            "url": path, 
+            "parameters": {
+                param["name"]: param for param in request["parameters"]
+            } 
+        } for path, methods in swagjson["paths"].items() for method, request in methods.items() 
+    }
     info = {
-        "definitions" :{
-            entry["name"] :  {
+        "definitions" :[
+            {
+                "name": entry["name"], 
                 "description": entry["description"], 
-                "fields": {
-                    field["name"] : {
+                "fields": [
+                    {
+                        "name": fname, 
                         "description": field["description"], 
                         "type": field["type"], 
                         "optional": field["optional"]
-                    } for field in entry["fields"]
-                }, 
-                "values": { 
-                    value["name"] : {
+                        # this hackery deduplicates posible fields
+                    } for fname, field in { fieldx["name"]: fieldx for fieldx in entry["fields"] }.items()
+                ], 
+                "values": [ 
+                    {
+                        "name": value["name"] , 
                         "description": value["description"], 
                         "value": value["value"]
                     } for value in entry["values"]
-                }, 
+                ], 
                 "isEnum": len(entry["values"]) > 0
             } for entry in helpjson["types"] 
-        }, 
-        "functions" : {
-            function["name"] : {
+        ], 
+        "functions" : [
+            {
+                "name": function["name"], 
                 "description": function["description"], 
                 "returns": function["returns"], 
-                "arguments":  {
-                    arg["name"] : {
+                "method": requests[function["name"]]["method"], 
+                "url": requests[function["name"]]["url"], 
+                "arguments":  [
+                    {
+                        "name": arg["name"], 
                         "description" : arg["description"], 
-                        "type" : arg["type"]
+                        "type" : arg["type"], 
+                        "optional": arg["optional"], 
+                        "in": requests[function["name"]]["parameters"][arg["name"]]["in"]
                     } for arg in function["arguments"]
-                }, 
-                "optional":  [ 
-                    arg["name"] for arg in function["arguments"] if arg["optional"]
-                ], 
-                "required":  [ 
-                    arg["name"] for arg in function["arguments"] if not arg["optional"]
                 ]
-            } for function in helpjson["functions"]
-        }, 
-       "events": {
-            event["name"] : {
+            } for function in helpjson["functions"] if function["name"] in requests
+        ], 
+       "events": [
+            {
+                "name": event["name"], 
                 "description": event["description"], 
                 "type": event["type"]
             } for event in helpjson["events"]
-       }, 
-       "requests": {
-            request["operationId"] : {
-                "method": method, 
-                "url": path, 
-                "query": [ param["name"] for param in request["parameters"] if param["in"] == "query" ], 
-                "header": [ param["name"] for param in request["parameters"] if param["in"] == "header" ], 
-                "path": [ param["name"] for param in request["parameters"] if param["in"] == "path" ], 
-                "formData": [ param["name"] for param in request["parameters"] if param["in"] == "formData" ], 
-                "body": [ param["name"] for param in request["parameters"] if param["in"] == "body" ]
-            } for path, methods in swagjson["paths"].items() for method, request in methods.items() 
-        }
+       ]
     }
     return info
 
@@ -113,3 +94,4 @@ def json_save(info,  filename):
 # loads json from file
 def json_load(filename):
     return json.load(open(filename))
+#json_save(yolo_init(json_load("help.json"),  json_load("lol.json")),  "yolo.json")       
