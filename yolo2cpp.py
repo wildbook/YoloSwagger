@@ -214,6 +214,7 @@ namespace {NAMESPACE} {{
 #function tempalte
 template_op = """#pragma once
 #include "../client.hpp"
+{INCLUDES}
 namespace {NAMESPACE} {{
   /*{description}*/
   {RETURNS} {NAME} (const ClientInfo& info{ARGS_R} {ARGS_O})
@@ -256,10 +257,6 @@ builtins = {
 #formats all include types if they are not builtins and empty
 def type2include(parent, fmt, additional = ""):
     def _type2include(typ):
-        if "returns" in typ:
-            return type2include(typ["returns"])
-        if "elementType" not in typ:
-            return type2include(typ["type"])
         if typ["type"] == "vector" or typ["type"] == "map":
             return "" if typ["elementType"] in builtins else typ["elementType"]
         return "" if typ["type"] in builtins else typ["type"]
