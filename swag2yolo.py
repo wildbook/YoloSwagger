@@ -2,11 +2,7 @@ import json
 import os
 
 #generates info from /Help?format=Full and /v2/swagger.json
-def yolo(helpjson,  swagjson, 
-    fixname = lambda parent: None, 
-    fixtype = lambda parent: None, 
-    fixreturn = lambda parent: None
-    ):
+def yolo(helpjson,  swagjson):
     requests = {
         request["operationId"] : {
             "method": method, 
@@ -20,15 +16,12 @@ def yolo(helpjson,  swagjson,
         "definitions" :[
             {
                 "name": entry["name"], 
-                "fixedname": fixname(entry), 
                 "description": entry["description"], 
                 "fields": [
                     {
                         "name": fname, 
-                        "fixedname": fixname(field), 
                         "description": field["description"], 
                         "type": field["type"], 
-                        "fixtype": fixtype(field), 
                         "optional": field["optional"]
                         # this hackery deduplicates posible fields
                     } for fname, field in { fieldx["name"]: fieldx for fieldx in entry["fields"] }.items()
@@ -36,7 +29,6 @@ def yolo(helpjson,  swagjson,
                 "values": [ 
                     {
                         "name": value["name"] , 
-                        "fixedname": fixname(value), 
                         "description": value["description"], 
                         "value": value["value"]
                     } for value in entry["values"]
@@ -47,19 +39,15 @@ def yolo(helpjson,  swagjson,
         "functions" : [
             {
                 "name": function["name"], 
-                "fixedname": fixname(function),
                 "description": function["description"], 
                 "returns": function["returns"], 
-                "fixedreturn": fixreturn(function), 
                 "method": requests[function["name"]]["method"], 
                 "url": requests[function["name"]]["url"], 
                 "arguments":  [
                     {
                         "name": arg["name"], 
-                        "fixedname": fixname(arg), 
                         "description" : arg["description"], 
-                        "type" : arg["type"], 
-                        "fixedtype": fixtype(arg), 
+                        "type" : arg["type"],
                         "optional": arg["optional"], 
                         "in": requests[function["name"]]["parameters"][arg["name"]]["in"]
                     } for arg in function["arguments"]
@@ -68,9 +56,7 @@ def yolo(helpjson,  swagjson,
         ], 
        "events": [
             {
-                "name": event["name"], 
-                "fixedname": fixname(event), 
-                "fixedtype": fixtype(event), 
+                "name": event["name"],
                 "description": event["description"], 
                 "type": event["type"]
             } for event in helpjson["events"]
