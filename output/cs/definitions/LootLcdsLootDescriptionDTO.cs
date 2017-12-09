@@ -1,31 +1,31 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LootLcdsLootDescriptionDTO
+    public struct LootLcdsLootDescriptionDTO
     {
-        [DataMember(Name = "localizationMap")]
-        Dictionary<string, string> LocalizationMap { get; set; }
+        [DataMember(Name = "childLootTableNames")]
+        public string[] ChildLootTableNames { get; set; }
 
         [DataMember(Name = "localizationLongDescriptionMap")]
-        Dictionary<string, string> LocalizationLongDescriptionMap { get; set; }
+        public Dictionary<string, string> LocalizationLongDescriptionMap { get; set; }
+
+        [DataMember(Name = "localizationMap")]
+        public Dictionary<string, string> LocalizationMap { get; set; }
 
         [DataMember(Name = "lootName")]
-        string LootName { get; set; }
-
-        [DataMember(Name = "childLootTableNames")]
-        string[] ChildLootTableNames { get; set; }
+        public string LootName { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class LootLcdsLootDescriptionDTO {\n");
-            sb.Append("  LocalizationMap: ").Append(LocalizationMap).Append("\n");
-            sb.Append("  LocalizationLongDescriptionMap: ").Append(LocalizationLongDescriptionMap).Append("\n");
-            sb.Append("  LootName: ").Append(LootName).Append("\n");
             sb.Append("  ChildLootTableNames: ").Append(ChildLootTableNames).Append("\n");
+            sb.Append("  LocalizationLongDescriptionMap: ").Append(LocalizationLongDescriptionMap).Append("\n");
+            sb.Append("  LocalizationMap: ").Append(LocalizationMap).Append("\n");
+            sb.Append("  LootName: ").Append(LootName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

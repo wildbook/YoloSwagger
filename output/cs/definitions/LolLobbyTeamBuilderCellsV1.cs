@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyTeamBuilderCellsV1
+    public struct LolLobbyTeamBuilderCellsV1
     {
         [DataMember(Name = "alliedTeam")]
-        LolLobbyTeamBuilderCellV1[] AlliedTeam { get; set; }
+        public LolLobbyTeamBuilderCellV1[] AlliedTeam { get; set; }
 
         [DataMember(Name = "enemyTeam")]
-        LolLobbyTeamBuilderCellV1[] EnemyTeam { get; set; }
+        public LolLobbyTeamBuilderCellV1[] EnemyTeam { get; set; }
 
         public override string ToString()
         {

@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PlayerStatSummaries
+    public struct PlayerStatSummaries
     {
         [DataMember(Name = "playerStatSummarySet")]
-        PlayerStatSummary[] PlayerStatSummarySet { get; set; }
+        public PlayerStatSummary[] PlayerStatSummarySet { get; set; }
 
         public override string ToString()
         {

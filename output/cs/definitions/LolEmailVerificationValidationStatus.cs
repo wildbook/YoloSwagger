@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolEmailVerificationValidationStatus
+    public struct LolEmailVerificationValidationStatus
     {
         [DataMember(Name = "emailStatus")]
-        string EmailStatus { get; set; }
+        public string EmailStatus { get; set; }
 
         public override string ToString()
         {

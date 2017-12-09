@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyTeamBuilderTbRemovedFromServiceNotification
+    public struct LolLobbyTeamBuilderTbRemovedFromServiceNotification
     {
         [DataMember(Name = "backwardsTransitionInfo")]
-        LolLobbyTeamBuilderBackwardsTransitionInfoV1 BackwardsTransitionInfo { get; set; }
+        public LolLobbyTeamBuilderBackwardsTransitionInfoV1 BackwardsTransitionInfo { get; set; }
 
         [DataMember(Name = "reason")]
-        string Reason { get; set; }
+        public string Reason { get; set; }
 
         public override string ToString()
         {

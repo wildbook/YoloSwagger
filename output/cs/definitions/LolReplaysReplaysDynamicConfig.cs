@@ -1,23 +1,23 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolReplaysReplaysDynamicConfig
+    public struct LolReplaysReplaysDynamicConfig
     {
-        [DataMember(Name = "MinutesUntilReplayConsideredLost")]
-        double MinutesUntilReplayConsideredLost { get; set; }
-
         [DataMember(Name = "MinSupportedGameServerVersion")]
-        string MinSupportedGameServerVersion { get; set; }
+        public string MinSupportedGameServerVersion { get; set; }
+
+        [DataMember(Name = "MinutesUntilReplayConsideredLost")]
+        public double MinutesUntilReplayConsideredLost { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class LolReplaysReplaysDynamicConfig {\n");
-            sb.Append("  MinutesUntilReplayConsideredLost: ").Append(MinutesUntilReplayConsideredLost).Append("\n");
             sb.Append("  MinSupportedGameServerVersion: ").Append(MinSupportedGameServerVersion).Append("\n");
+            sb.Append("  MinutesUntilReplayConsideredLost: ").Append(MinutesUntilReplayConsideredLost).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

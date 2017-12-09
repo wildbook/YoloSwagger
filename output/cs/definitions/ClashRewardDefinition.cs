@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct ClashRewardDefinition
+    public struct ClashRewardDefinition
     {
         [DataMember(Name = "rewardSpec")]
-        ClashRewardSpec RewardSpec { get; set; }
+        public ClashRewardSpec RewardSpec { get; set; }
 
         [DataMember(Name = "rewardType")]
-        ClashRewardType RewardType { get; set; }
+        public ClashRewardType RewardType { get; set; }
 
         public override string ToString()
         {

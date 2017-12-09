@@ -1,31 +1,31 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyGameModeDto
+    public struct LolLobbyGameModeDto
     {
-        [DataMember(Name = "queueId")]
-        int QueueId { get; set; }
-
         [DataMember(Name = "botDifficulty")]
-        string BotDifficulty { get; set; }
+        public string BotDifficulty { get; set; }
 
         [DataMember(Name = "gameType")]
-        string GameType { get; set; }
+        public string GameType { get; set; }
 
         [DataMember(Name = "maxPartySize")]
-        int MaxPartySize { get; set; }
+        public int MaxPartySize { get; set; }
+
+        [DataMember(Name = "queueId")]
+        public int QueueId { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class LolLobbyGameModeDto {\n");
-            sb.Append("  QueueId: ").Append(QueueId).Append("\n");
             sb.Append("  BotDifficulty: ").Append(BotDifficulty).Append("\n");
             sb.Append("  GameType: ").Append(GameType).Append("\n");
             sb.Append("  MaxPartySize: ").Append(MaxPartySize).Append("\n");
+            sb.Append("  QueueId: ").Append(QueueId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

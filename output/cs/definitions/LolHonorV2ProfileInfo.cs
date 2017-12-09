@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolHonorV2ProfileInfo
+    public struct LolHonorV2ProfileInfo
     {
         [DataMember(Name = "checkpoint")]
-        int Checkpoint { get; set; }
+        public int Checkpoint { get; set; }
 
         [DataMember(Name = "honorLevel")]
-        int HonorLevel { get; set; }
+        public int HonorLevel { get; set; }
 
         [DataMember(Name = "rewardsLocked")]
-        bool RewardsLocked { get; set; }
+        public bool RewardsLocked { get; set; }
 
         public override string ToString()
         {

@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct EndOfGameStats
+    public struct EndOfGameStats
     {
         [DataMember(Name = "timeUntilNextFirstWinBonus")]
-        ulong TimeUntilNextFirstWinBonus { get; set; }
+        public ulong TimeUntilNextFirstWinBonus { get; set; }
 
         public override string ToString()
         {

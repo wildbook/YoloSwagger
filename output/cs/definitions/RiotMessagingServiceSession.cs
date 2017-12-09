@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct RiotMessagingServiceSession
+    public struct RiotMessagingServiceSession
     {
         [DataMember(Name = "state")]
-        RiotMessagingServiceState State { get; set; }
+        public RiotMessagingServiceState State { get; set; }
 
         [DataMember(Name = "token")]
-        string Token { get; set; }
+        public string Token { get; set; }
 
         [DataMember(Name = "tokenType")]
-        RiotMessagingServiceTokenType TokenType { get; set; }
+        public RiotMessagingServiceTokenType TokenType { get; set; }
 
         public override string ToString()
         {

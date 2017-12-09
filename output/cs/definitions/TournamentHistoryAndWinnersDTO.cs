@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct TournamentHistoryAndWinnersDTO
+    public struct TournamentHistoryAndWinnersDTO
     {
         [DataMember(Name = "tournamentHistory")]
-        TournamentDTO[] TournamentHistory { get; set; }
+        public TournamentDTO[] TournamentHistory { get; set; }
 
         [DataMember(Name = "tournamentWinnersCompressed")]
-        string TournamentWinnersCompressed { get; set; }
+        public string TournamentWinnersCompressed { get; set; }
 
         public override string ToString()
         {

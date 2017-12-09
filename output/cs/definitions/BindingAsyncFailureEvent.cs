@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     // Represents a failed asynchronous operation.
     [DataContract]
-    struct BindingAsyncFailureEvent
+    public struct BindingAsyncFailureEvent
     {
         // Asynchronous operation token
         [DataMember(Name = "asyncToken")]
-        uint AsyncToken { get; set; }
+        public uint AsyncToken { get; set; }
 
         // Error message
         [DataMember(Name = "error")]
-        string Error { get; set; }
+        public string Error { get; set; }
 
         public override string ToString()
         {

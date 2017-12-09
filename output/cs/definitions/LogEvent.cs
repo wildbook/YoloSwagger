@@ -1,17 +1,17 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     // Describes a log entry.
     [DataContract]
-    struct LogEvent
+    public struct LogEvent
     {
         [DataMember(Name = "message")]
-        string Message { get; set; }
+        public string Message { get; set; }
 
         [DataMember(Name = "severity")]
-        LogSeverityLevels Severity { get; set; }
+        public LogSeverityLevels Severity { get; set; }
 
         public override string ToString()
         {

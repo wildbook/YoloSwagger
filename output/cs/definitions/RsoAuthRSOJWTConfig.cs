@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct RsoAuthRSOJWTConfig
+    public struct RsoAuthRSOJWTConfig
     {
         [DataMember(Name = "token")]
-        string Token { get; set; }
+        public string Token { get; set; }
 
         public override string ToString()
         {

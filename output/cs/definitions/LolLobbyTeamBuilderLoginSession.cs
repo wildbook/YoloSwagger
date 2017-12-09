@@ -1,31 +1,31 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyTeamBuilderLoginSession
+    public struct LolLobbyTeamBuilderLoginSession
     {
-        [DataMember(Name = "state")]
-        LolLobbyTeamBuilderLoginSessionState State { get; set; }
+        [DataMember(Name = "accountId")]
+        public ulong AccountId { get; set; }
 
         [DataMember(Name = "connected")]
-        bool Connected { get; set; }
+        public bool Connected { get; set; }
+
+        [DataMember(Name = "state")]
+        public LolLobbyTeamBuilderLoginSessionState State { get; set; }
 
         [DataMember(Name = "summonerId")]
-        ulong SummonerId { get; set; }
-
-        [DataMember(Name = "accountId")]
-        ulong AccountId { get; set; }
+        public ulong SummonerId { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class LolLobbyTeamBuilderLoginSession {\n");
-            sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  Connected: ").Append(Connected).Append("\n");
-            sb.Append("  SummonerId: ").Append(SummonerId).Append("\n");
             sb.Append("  AccountId: ").Append(AccountId).Append("\n");
+            sb.Append("  Connected: ").Append(Connected).Append("\n");
+            sb.Append("  State: ").Append(State).Append("\n");
+            sb.Append("  SummonerId: ").Append(SummonerId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

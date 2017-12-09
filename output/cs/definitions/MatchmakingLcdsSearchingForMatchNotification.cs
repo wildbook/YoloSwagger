@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct MatchmakingLcdsSearchingForMatchNotification
+    public struct MatchmakingLcdsSearchingForMatchNotification
     {
         [DataMember(Name = "joinedQueues")]
-        MatchmakingLcdsQueueInfo[] JoinedQueues { get; set; }
+        public MatchmakingLcdsQueueInfo[] JoinedQueues { get; set; }
 
         [DataMember(Name = "playerJoinFailures")]
-        dynamic[] PlayerJoinFailures { get; set; }
+        public dynamic[] PlayerJoinFailures { get; set; }
 
         public override string ToString()
         {

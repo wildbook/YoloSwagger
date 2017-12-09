@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
-namespace leagueapi {
-  [DataContract]  enum LolClashClashVisibility {
+namespace LeagueClientApi {
+  [DataContract]  public enum LolClashClashVisibility {
     [DataMember(Name = "DarkVisible")]
     DarkVisible = 1,
 

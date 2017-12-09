@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyTeamBuilderRerollStateV1
+    public struct LolLobbyTeamBuilderRerollStateV1
     {
         [DataMember(Name = "allowRerolling")]
-        bool AllowRerolling { get; set; }
+        public bool AllowRerolling { get; set; }
 
         [DataMember(Name = "rerollsRemaining")]
-        uint RerollsRemaining { get; set; }
+        public uint RerollsRemaining { get; set; }
 
         public override string ToString()
         {

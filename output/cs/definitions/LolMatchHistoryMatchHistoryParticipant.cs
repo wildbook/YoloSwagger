@@ -1,47 +1,47 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolMatchHistoryMatchHistoryParticipant
+    public struct LolMatchHistoryMatchHistoryParticipant
     {
-        [DataMember(Name = "stats")]
-        LolMatchHistoryMatchHistoryParticipantStatistics Stats { get; set; }
-
-        [DataMember(Name = "spell1Id")]
-        ushort Spell1Id { get; set; }
-
-        [DataMember(Name = "participantId")]
-        ushort ParticipantId { get; set; }
+        [DataMember(Name = "championId")]
+        public int ChampionId { get; set; }
 
         [DataMember(Name = "highestAchievedSeasonTier")]
-        string HighestAchievedSeasonTier { get; set; }
+        public string HighestAchievedSeasonTier { get; set; }
+
+        [DataMember(Name = "participantId")]
+        public ushort ParticipantId { get; set; }
+
+        [DataMember(Name = "spell1Id")]
+        public ushort Spell1Id { get; set; }
 
         [DataMember(Name = "spell2Id")]
-        ushort Spell2Id { get; set; }
+        public ushort Spell2Id { get; set; }
+
+        [DataMember(Name = "stats")]
+        public LolMatchHistoryMatchHistoryParticipantStatistics Stats { get; set; }
 
         [DataMember(Name = "teamId")]
-        ushort TeamId { get; set; }
+        public ushort TeamId { get; set; }
 
         [DataMember(Name = "timeline")]
-        LolMatchHistoryMatchHistoryTimeline Timeline { get; set; }
-
-        [DataMember(Name = "championId")]
-        int ChampionId { get; set; }
+        public LolMatchHistoryMatchHistoryTimeline Timeline { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class LolMatchHistoryMatchHistoryParticipant {\n");
-            sb.Append("  Stats: ").Append(Stats).Append("\n");
-            sb.Append("  Spell1Id: ").Append(Spell1Id).Append("\n");
-            sb.Append("  ParticipantId: ").Append(ParticipantId).Append("\n");
+            sb.Append("  ChampionId: ").Append(ChampionId).Append("\n");
             sb.Append("  HighestAchievedSeasonTier: ").Append(HighestAchievedSeasonTier).Append("\n");
+            sb.Append("  ParticipantId: ").Append(ParticipantId).Append("\n");
+            sb.Append("  Spell1Id: ").Append(Spell1Id).Append("\n");
             sb.Append("  Spell2Id: ").Append(Spell2Id).Append("\n");
+            sb.Append("  Stats: ").Append(Stats).Append("\n");
             sb.Append("  TeamId: ").Append(TeamId).Append("\n");
             sb.Append("  Timeline: ").Append(Timeline).Append("\n");
-            sb.Append("  ChampionId: ").Append(ChampionId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

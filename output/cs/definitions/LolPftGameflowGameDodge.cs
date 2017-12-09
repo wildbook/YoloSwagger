@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolPftGameflowGameDodge
+    public struct LolPftGameflowGameDodge
     {
         [DataMember(Name = "dodgeIds")]
-        ulong[] DodgeIds { get; set; }
+        public ulong[] DodgeIds { get; set; }
 
         [DataMember(Name = "state")]
-        LolPftGameflowGameDodgeState State { get; set; }
+        public LolPftGameflowGameDodgeState State { get; set; }
 
         public override string ToString()
         {

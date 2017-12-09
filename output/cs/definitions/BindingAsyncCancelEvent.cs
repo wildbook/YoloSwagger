@@ -1,15 +1,15 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     // Represents a cancelled asynchronous operation.
     [DataContract]
-    struct BindingAsyncCancelEvent
+    public struct BindingAsyncCancelEvent
     {
         // Asynchronous operation token
         [DataMember(Name = "asyncToken")]
-        uint AsyncToken { get; set; }
+        public uint AsyncToken { get; set; }
 
         public override string ToString()
         {

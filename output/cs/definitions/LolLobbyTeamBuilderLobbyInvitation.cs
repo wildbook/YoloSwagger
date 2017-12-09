@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyTeamBuilderLobbyInvitation
+    public struct LolLobbyTeamBuilderLobbyInvitation
     {
         [DataMember(Name = "invitationMetaData")]
-        dynamic InvitationMetaData { get; set; }
+        public dynamic InvitationMetaData { get; set; }
 
         public override string ToString()
         {

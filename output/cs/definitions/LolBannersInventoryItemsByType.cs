@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolBannersInventoryItemsByType
+    public struct LolBannersInventoryItemsByType
     {
         [DataMember(Name = "TOURNAMENT_FLAG")]
-        LolBannersTournamentFlagInventoryItem[] TOURNAMENT_FLAG { get; set; }
+        public LolBannersTournamentFlagInventoryItem[] TOURNAMENT_FLAG { get; set; }
 
         public override string ToString()
         {

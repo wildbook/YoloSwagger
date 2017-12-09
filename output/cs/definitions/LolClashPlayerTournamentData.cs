@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolClashPlayerTournamentData
+    public struct LolClashPlayerTournamentData
     {
         [DataMember(Name = "bracketId")]
-        long BracketId { get; set; }
+        public long BracketId { get; set; }
 
         [DataMember(Name = "rosterId")]
-        string RosterId { get; set; }
+        public string RosterId { get; set; }
 
         [DataMember(Name = "state")]
-        LolClashPlayerState State { get; set; }
+        public LolClashPlayerState State { get; set; }
 
         public override string ToString()
         {

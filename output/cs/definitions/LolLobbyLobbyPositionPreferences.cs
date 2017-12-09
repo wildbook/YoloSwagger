@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyLobbyPositionPreferences
+    public struct LolLobbyLobbyPositionPreferences
     {
         [DataMember(Name = "firstPreference")]
-        string FirstPreference { get; set; }
+        public string FirstPreference { get; set; }
 
         [DataMember(Name = "secondPreference")]
-        string SecondPreference { get; set; }
+        public string SecondPreference { get; set; }
 
         public override string ToString()
         {

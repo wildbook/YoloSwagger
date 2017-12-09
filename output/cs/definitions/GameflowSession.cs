@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct GameflowSession
+    public struct GameflowSession
     {
         [DataMember(Name = "gameData")]
-        GameflowGameData GameData { get; set; }
+        public GameflowGameData GameData { get; set; }
 
         public override string ToString()
         {

@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct MetricMetadataHipchatNotification
+    public struct MetricMetadataHipchatNotification
     {
         [DataMember(Name = "roomid")]
-        string Roomid { get; set; }
+        public string Roomid { get; set; }
 
         [DataMember(Name = "tags")]
-        string Tags { get; set; }
+        public string Tags { get; set; }
 
         public override string ToString()
         {

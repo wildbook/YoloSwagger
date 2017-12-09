@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
-namespace leagueapi {
-  [DataContract]  enum PatcherComponentResourceType {
+namespace LeagueClientApi {
+  [DataContract]  public enum PatcherComponentResourceType {
     [DataMember(Name = "project")]
     Project = 0,
 

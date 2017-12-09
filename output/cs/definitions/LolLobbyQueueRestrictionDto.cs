@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyQueueRestrictionDto
+    public struct LolLobbyQueueRestrictionDto
     {
         [DataMember(Name = "gatekeeperRestrictions")]
-        LolLobbyGatekeeperRestrictionDto[] GatekeeperRestrictions { get; set; }
+        public LolLobbyGatekeeperRestrictionDto[] GatekeeperRestrictions { get; set; }
 
         public override string ToString()
         {

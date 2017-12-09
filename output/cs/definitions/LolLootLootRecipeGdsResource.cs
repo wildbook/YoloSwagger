@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLootLootRecipeGdsResource
+    public struct LolLootLootRecipeGdsResource
     {
         [DataMember(Name = "placeholder")]
-        string Placeholder { get; set; }
+        public string Placeholder { get; set; }
 
         public override string ToString()
         {

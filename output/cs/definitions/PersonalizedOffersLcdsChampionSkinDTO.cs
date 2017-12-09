@@ -1,27 +1,27 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PersonalizedOffersLcdsChampionSkinDTO
+    public struct PersonalizedOffersLcdsChampionSkinDTO
     {
-        [DataMember(Name = "skinId")]
-        int SkinId { get; set; }
-
         [DataMember(Name = "championId")]
-        int ChampionId { get; set; }
+        public int ChampionId { get; set; }
 
         [DataMember(Name = "owned")]
-        bool Owned { get; set; }
+        public bool Owned { get; set; }
+
+        [DataMember(Name = "skinId")]
+        public int SkinId { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class PersonalizedOffersLcdsChampionSkinDTO {\n");
-            sb.Append("  SkinId: ").Append(SkinId).Append("\n");
             sb.Append("  ChampionId: ").Append(ChampionId).Append("\n");
             sb.Append("  Owned: ").Append(Owned).Append("\n");
+            sb.Append("  SkinId: ").Append(SkinId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

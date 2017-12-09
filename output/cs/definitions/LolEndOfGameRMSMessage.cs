@@ -1,23 +1,23 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolEndOfGameRMSMessage
+    public struct LolEndOfGameRMSMessage
     {
-        [DataMember(Name = "timestamp")]
-        long Timestamp { get; set; }
-
         [DataMember(Name = "payload")]
-        string Payload { get; set; }
+        public string Payload { get; set; }
+
+        [DataMember(Name = "timestamp")]
+        public long Timestamp { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class LolEndOfGameRMSMessage {\n");
-            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("  Payload: ").Append(Payload).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

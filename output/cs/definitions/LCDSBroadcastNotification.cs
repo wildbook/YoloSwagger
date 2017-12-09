@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LCDSBroadcastNotification
+    public struct LCDSBroadcastNotification
     {
         [DataMember(Name = "broadcastMessages")]
-        dynamic[] BroadcastMessages { get; set; }
+        public dynamic[] BroadcastMessages { get; set; }
 
         public override string ToString()
         {

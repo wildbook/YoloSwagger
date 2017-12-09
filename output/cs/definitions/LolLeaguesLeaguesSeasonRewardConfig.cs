@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLeaguesLeaguesSeasonRewardConfig
+    public struct LolLeaguesLeaguesSeasonRewardConfig
     {
         [DataMember(Name = "QualificationWarningEnabled")]
-        bool QualificationWarningEnabled { get; set; }
+        public bool QualificationWarningEnabled { get; set; }
 
         public override string ToString()
         {

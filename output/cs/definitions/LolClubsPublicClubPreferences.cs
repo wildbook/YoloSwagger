@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolClubsPublicClubPreferences
+    public struct LolClubsPublicClubPreferences
     {
         [DataMember(Name = "shareClubAffiliation")]
-        bool ShareClubAffiliation { get; set; }
+        public bool ShareClubAffiliation { get; set; }
 
         public override string ToString()
         {

@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PlayerRosterHistoryDTO
+    public struct PlayerRosterHistoryDTO
     {
         [DataMember(Name = "rosters")]
-        RosterMemberDTO[] Rosters { get; set; }
+        public RosterMemberDTO[] Rosters { get; set; }
 
         public override string ToString()
         {

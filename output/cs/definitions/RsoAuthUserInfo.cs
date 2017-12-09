@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct RsoAuthUserInfo
+    public struct RsoAuthUserInfo
     {
         [DataMember(Name = "userInfo")]
-        string UserInfo { get; set; }
+        public string UserInfo { get; set; }
 
         public override string ToString()
         {

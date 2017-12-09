@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLootRecipeMenuConfig
+    public struct LolLootRecipeMenuConfig
     {
         [DataMember(Name = "alwaysShowLootIds")]
-        string[] AlwaysShowLootIds { get; set; }
+        public string[] AlwaysShowLootIds { get; set; }
 
         [DataMember(Name = "enabled")]
-        bool Enabled { get; set; }
+        public bool Enabled { get; set; }
 
         [DataMember(Name = "lootItemsUsingBreakoutRecipeMenu")]
-        string[] LootItemsUsingBreakoutRecipeMenu { get; set; }
+        public string[] LootItemsUsingBreakoutRecipeMenu { get; set; }
 
         public override string ToString()
         {

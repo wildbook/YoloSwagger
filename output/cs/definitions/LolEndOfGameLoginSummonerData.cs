@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolEndOfGameLoginSummonerData
+    public struct LolEndOfGameLoginSummonerData
     {
         [DataMember(Name = "summonerLevelAndPoints")]
-        LolEndOfGameLoginSummonerLevelAndPoints SummonerLevelAndPoints { get; set; }
+        public LolEndOfGameLoginSummonerLevelAndPoints SummonerLevelAndPoints { get; set; }
 
         public override string ToString()
         {

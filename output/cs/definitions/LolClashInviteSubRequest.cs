@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolClashInviteSubRequest
+    public struct LolClashInviteSubRequest
     {
         [DataMember(Name = "replacedSummonerId")]
-        ulong ReplacedSummonerId { get; set; }
+        public ulong ReplacedSummonerId { get; set; }
 
         [DataMember(Name = "substituteSummonerId")]
-        ulong SubstituteSummonerId { get; set; }
+        public ulong SubstituteSummonerId { get; set; }
 
         public override string ToString()
         {

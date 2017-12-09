@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyPartyNotificationEnvelopeDto
+    public struct LolLobbyPartyNotificationEnvelopeDto
     {
         [DataMember(Name = "player")]
-        LolLobbyPlayerDto? Player { get; set; }
+        public LolLobbyPlayerDto? Player { get; set; }
 
         [DataMember(Name = "queueRestriction")]
-        LolLobbyQueueRestrictionDto? QueueRestriction { get; set; }
+        public LolLobbyQueueRestrictionDto? QueueRestriction { get; set; }
 
         public override string ToString()
         {

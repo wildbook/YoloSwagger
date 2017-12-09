@@ -1,27 +1,27 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LeaguesLcdsTeamAggregatedStats
+    public struct LeaguesLcdsTeamAggregatedStats
     {
-        [DataMember(Name = "queueType")]
-        string QueueType { get; set; }
+        [DataMember(Name = "id")]
+        public LeaguesLcdsTeamIdDTO Id { get; set; }
 
         [DataMember(Name = "playerAggregatedStatsList")]
-        LeaguesLcdsPlayerAggregatedStats[] PlayerAggregatedStatsList { get; set; }
+        public LeaguesLcdsPlayerAggregatedStats[] PlayerAggregatedStatsList { get; set; }
 
-        [DataMember(Name = "id")]
-        LeaguesLcdsTeamIdDTO Id { get; set; }
+        [DataMember(Name = "queueType")]
+        public string QueueType { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class LeaguesLcdsTeamAggregatedStats {\n");
-            sb.Append("  QueueType: ").Append(QueueType).Append("\n");
-            sb.Append("  PlayerAggregatedStatsList: ").Append(PlayerAggregatedStatsList).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  PlayerAggregatedStatsList: ").Append(PlayerAggregatedStatsList).Append("\n");
+            sb.Append("  QueueType: ").Append(QueueType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

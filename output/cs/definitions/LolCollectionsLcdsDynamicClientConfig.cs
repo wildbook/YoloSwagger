@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolCollectionsLcdsDynamicClientConfig
+    public struct LolCollectionsLcdsDynamicClientConfig
     {
         [DataMember(Name = "DisabledChampions")]
-        dynamic DisabledChampions { get; set; }
+        public dynamic DisabledChampions { get; set; }
 
         public override string ToString()
         {

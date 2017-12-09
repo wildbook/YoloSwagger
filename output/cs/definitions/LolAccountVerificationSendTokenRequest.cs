@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolAccountVerificationSendTokenRequest
+    public struct LolAccountVerificationSendTokenRequest
     {
         [DataMember(Name = "device")]
-        string Device { get; set; }
+        public string Device { get; set; }
 
         [DataMember(Name = "locale")]
-        string Locale { get; set; }
+        public string Locale { get; set; }
 
         [DataMember(Name = "mediator")]
-        string Mediator { get; set; }
+        public string Mediator { get; set; }
 
         public override string ToString()
         {

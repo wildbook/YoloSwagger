@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
-namespace leagueapi {
-  [DataContract]  enum PluginManagerState {
+namespace LeagueClientApi {
+  [DataContract]  public enum PluginManagerState {
     [DataMember(Name = "NotReady")]
     NotReady = 0,
 

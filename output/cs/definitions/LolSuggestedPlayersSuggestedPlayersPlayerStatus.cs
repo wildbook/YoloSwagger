@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolSuggestedPlayersSuggestedPlayersPlayerStatus
+    public struct LolSuggestedPlayersSuggestedPlayersPlayerStatus
     {
         [DataMember(Name = "currentLobbyStatus")]
-        LolSuggestedPlayersSuggestedPlayersLobbyStatus? CurrentLobbyStatus { get; set; }
+        public LolSuggestedPlayersSuggestedPlayersLobbyStatus? CurrentLobbyStatus { get; set; }
 
         [DataMember(Name = "lastQueuedLobbyStatus")]
-        LolSuggestedPlayersSuggestedPlayersLobbyStatus? LastQueuedLobbyStatus { get; set; }
+        public LolSuggestedPlayersSuggestedPlayersLobbyStatus? LastQueuedLobbyStatus { get; set; }
 
         public override string ToString()
         {

@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolPftPFTQuestionResponse
+    public struct LolPftPFTQuestionResponse
     {
         [DataMember(Name = "questionId")]
-        ulong QuestionId { get; set; }
+        public ulong QuestionId { get; set; }
 
         [DataMember(Name = "responseData")]
-        dynamic ResponseData { get; set; }
+        public dynamic ResponseData { get; set; }
 
         public override string ToString()
         {

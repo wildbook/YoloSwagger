@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PersonalizedOffersLcdsChampionDTO
+    public struct PersonalizedOffersLcdsChampionDTO
     {
         [DataMember(Name = "championId")]
-        int ChampionId { get; set; }
+        public int ChampionId { get; set; }
 
         [DataMember(Name = "owned")]
-        bool Owned { get; set; }
+        public bool Owned { get; set; }
 
         public override string ToString()
         {

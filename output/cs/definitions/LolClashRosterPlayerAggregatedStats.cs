@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolClashRosterPlayerAggregatedStats
+    public struct LolClashRosterPlayerAggregatedStats
     {
         [DataMember(Name = "rawStatsMax")]
-        Dictionary<string, int> RawStatsMax { get; set; }
+        public Dictionary<string, int> RawStatsMax { get; set; }
 
         [DataMember(Name = "rawStatsSum")]
-        Dictionary<string, int> RawStatsSum { get; set; }
+        public Dictionary<string, int> RawStatsSum { get; set; }
 
         public override string ToString()
         {

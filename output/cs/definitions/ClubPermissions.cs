@@ -1,39 +1,39 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct ClubPermissions
+    public struct ClubPermissions
     {
         [DataMember(Name = "ADMIN")]
-        string[] ADMIN { get; set; }
-
-        [DataMember(Name = "UNKNOWN")]
-        string[] UNKNOWN { get; set; }
+        public string[] ADMIN { get; set; }
 
         [DataMember(Name = "INVITEE")]
-        string[] INVITEE { get; set; }
+        public string[] INVITEE { get; set; }
 
         [DataMember(Name = "MEMBER")]
-        string[] MEMBER { get; set; }
+        public string[] MEMBER { get; set; }
 
         [DataMember(Name = "OFFICER")]
-        string[] OFFICER { get; set; }
+        public string[] OFFICER { get; set; }
 
         [DataMember(Name = "OWNER")]
-        string[] OWNER { get; set; }
+        public string[] OWNER { get; set; }
+
+        [DataMember(Name = "UNKNOWN")]
+        public string[] UNKNOWN { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ClubPermissions {\n");
             sb.Append("  ADMIN: ").Append(ADMIN).Append("\n");
-            sb.Append("  UNKNOWN: ").Append(UNKNOWN).Append("\n");
             sb.Append("  INVITEE: ").Append(INVITEE).Append("\n");
             sb.Append("  MEMBER: ").Append(MEMBER).Append("\n");
             sb.Append("  OFFICER: ").Append(OFFICER).Append("\n");
             sb.Append("  OWNER: ").Append(OWNER).Append("\n");
+            sb.Append("  UNKNOWN: ").Append(UNKNOWN).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

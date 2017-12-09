@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct ChampSelectLcdsGameTimerDTO
+    public struct ChampSelectLcdsGameTimerDTO
     {
         [DataMember(Name = "currentGameState")]
-        string CurrentGameState { get; set; }
+        public string CurrentGameState { get; set; }
 
         [DataMember(Name = "remainingTimeInMillis")]
-        double RemainingTimeInMillis { get; set; }
+        public double RemainingTimeInMillis { get; set; }
 
         public override string ToString()
         {

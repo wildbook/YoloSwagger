@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LootLcdsRecipeListClientDTO
+    public struct LootLcdsRecipeListClientDTO
     {
         [DataMember(Name = "lastUpdate")]
-        long LastUpdate { get; set; }
+        public long LastUpdate { get; set; }
 
         [DataMember(Name = "recipes")]
-        LootLcdsRecipeClientDTO[] Recipes { get; set; }
+        public LootLcdsRecipeClientDTO[] Recipes { get; set; }
 
         public override string ToString()
         {

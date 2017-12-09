@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyTeamBuilderLobbyCountdownTimer
+    public struct LolLobbyTeamBuilderLobbyCountdownTimer
     {
         [DataMember(Name = "counter")]
-        int Counter { get; set; }
+        public int Counter { get; set; }
 
         [DataMember(Name = "phaseName")]
-        string PhaseName { get; set; }
+        public string PhaseName { get; set; }
 
         [DataMember(Name = "timer")]
-        long Timer { get; set; }
+        public long Timer { get; set; }
 
         public override string ToString()
         {

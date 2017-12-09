@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolHonorV2ApiHonorPlayerServerRequest
+    public struct LolHonorV2ApiHonorPlayerServerRequest
     {
         [DataMember(Name = "gameId")]
-        ulong GameId { get; set; }
+        public ulong GameId { get; set; }
 
         [DataMember(Name = "honorCategory")]
-        string HonorCategory { get; set; }
+        public string HonorCategory { get; set; }
 
         [DataMember(Name = "summonerId")]
-        ulong SummonerId { get; set; }
+        public ulong SummonerId { get; set; }
 
         public override string ToString()
         {

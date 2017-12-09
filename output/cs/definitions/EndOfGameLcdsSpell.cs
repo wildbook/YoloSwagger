@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct EndOfGameLcdsSpell
+    public struct EndOfGameLcdsSpell
     {
         [DataMember(Name = "spellId")]
-        int SpellId { get; set; }
+        public int SpellId { get; set; }
 
         public override string ToString()
         {

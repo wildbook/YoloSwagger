@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolClashSetPositionRequest
+    public struct LolClashSetPositionRequest
     {
         [DataMember(Name = "position")]
-        Position Position { get; set; }
+        public Position Position { get; set; }
 
         public override string ToString()
         {

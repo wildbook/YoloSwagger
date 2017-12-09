@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct MatchmakingLcdsMatchMakerPayload
+    public struct MatchmakingLcdsMatchMakerPayload
     {
         [DataMember(Name = "LEAVER_BUSTER_ACCESS_TOKEN")]
-        string LEAVER_BUSTER_ACCESS_TOKEN { get; set; }
+        public string LEAVER_BUSTER_ACCESS_TOKEN { get; set; }
 
         public override string ToString()
         {

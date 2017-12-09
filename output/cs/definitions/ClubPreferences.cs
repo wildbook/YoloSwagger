@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct ClubPreferences
+    public struct ClubPreferences
     {
         [DataMember(Name = "primaryClubKey")]
-        string PrimaryClubKey { get; set; }
+        public string PrimaryClubKey { get; set; }
 
         [DataMember(Name = "shareClubAffiliation")]
-        bool ShareClubAffiliation { get; set; }
+        public bool ShareClubAffiliation { get; set; }
 
         public override string ToString()
         {

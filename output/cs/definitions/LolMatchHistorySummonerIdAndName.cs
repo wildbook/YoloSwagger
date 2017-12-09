@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolMatchHistorySummonerIdAndName
+    public struct LolMatchHistorySummonerIdAndName
     {
         [DataMember(Name = "displayName")]
-        string DisplayName { get; set; }
+        public string DisplayName { get; set; }
 
         public override string ToString()
         {

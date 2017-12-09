@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolChampSelectChampSelectPickableSkins
+    public struct LolChampSelectChampSelectPickableSkins
     {
         [DataMember(Name = "skinIds")]
-        int[] SkinIds { get; set; }
+        public int[] SkinIds { get; set; }
 
         public override string ToString()
         {

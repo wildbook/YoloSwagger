@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LcdsGameInviteBaseRuntimeException
+    public struct LcdsGameInviteBaseRuntimeException
     {
         [DataMember(Name = "rootCauseClassname")]
-        string RootCauseClassname { get; set; }
+        public string RootCauseClassname { get; set; }
 
         public override string ToString()
         {

@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
-namespace leagueapi {
-  [DataContract]  enum MetricType {
+namespace LeagueClientApi {
+  [DataContract]  public enum MetricType {
     [DataMember(Name = "count")]
     Count = 2,
 

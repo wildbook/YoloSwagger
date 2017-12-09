@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LcdsInviter
+    public struct LcdsInviter
     {
         [DataMember(Name = "previousSeasonHighestTier")]
-        string PreviousSeasonHighestTier { get; set; }
+        public string PreviousSeasonHighestTier { get; set; }
 
         [DataMember(Name = "summonerId")]
-        ulong SummonerId { get; set; }
+        public ulong SummonerId { get; set; }
 
         [DataMember(Name = "summonerName")]
-        string SummonerName { get; set; }
+        public string SummonerName { get; set; }
 
         public override string ToString()
         {

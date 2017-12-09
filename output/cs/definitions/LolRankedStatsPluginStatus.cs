@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolRankedStatsPluginStatus
+    public struct LolRankedStatsPluginStatus
     {
         [DataMember(Name = "ready")]
-        bool Ready { get; set; }
+        public bool Ready { get; set; }
 
         public override string ToString()
         {

@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct GameflowLcdsReconnectInfoDto
+    public struct GameflowLcdsReconnectInfoDto
     {
         [DataMember(Name = "game")]
-        GameflowLcdsGameDTO Game { get; set; }
+        public GameflowLcdsGameDTO Game { get; set; }
 
         [DataMember(Name = "playerCredentials")]
-        GameflowLcdsPlayerCredentialsDto PlayerCredentials { get; set; }
+        public GameflowLcdsPlayerCredentialsDto PlayerCredentials { get; set; }
 
         [DataMember(Name = "reconnectDelay")]
-        uint ReconnectDelay { get; set; }
+        public uint ReconnectDelay { get; set; }
 
         public override string ToString()
         {

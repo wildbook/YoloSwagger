@@ -1,8 +1,11 @@
 using System.Runtime.Serialization;
-namespace leagueapi {
-  [DataContract]  enum LeaguesLcdsLeagueTier {
-    [DataMember(Name = "PLATINUM")]
-    PLATINUM = 4,
+namespace LeagueClientApi {
+  [DataContract]  public enum LeaguesLcdsLeagueTier {
+    [DataMember(Name = "BRONZE")]
+    BRONZE = 1,
+
+    [DataMember(Name = "CHALLENGER")]
+    CHALLENGER = 7,
 
     [DataMember(Name = "DIAMOND")]
     DIAMOND = 5,
@@ -10,17 +13,14 @@ namespace leagueapi {
     [DataMember(Name = "GOLD")]
     GOLD = 3,
 
-    [DataMember(Name = "CHALLENGER")]
-    CHALLENGER = 7,
-
     [DataMember(Name = "MASTER")]
     MASTER = 6,
 
+    [DataMember(Name = "PLATINUM")]
+    PLATINUM = 4,
+
     [DataMember(Name = "SILVER")]
     SILVER = 2,
-
-    [DataMember(Name = "BRONZE")]
-    BRONZE = 1,
 
   }
 }

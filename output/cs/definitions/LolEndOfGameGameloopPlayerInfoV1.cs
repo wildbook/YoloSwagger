@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolEndOfGameGameloopPlayerInfoV1
+    public struct LolEndOfGameGameloopPlayerInfoV1
     {
         [DataMember(Name = "rerollDataBag")]
-        LolEndOfGameRerollDataBagForClientV1 RerollDataBag { get; set; }
+        public LolEndOfGameRerollDataBagForClientV1 RerollDataBag { get; set; }
 
         public override string ToString()
         {

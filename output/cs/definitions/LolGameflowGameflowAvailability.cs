@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolGameflowGameflowAvailability
+    public struct LolGameflowGameflowAvailability
     {
         [DataMember(Name = "isAvailable")]
-        bool IsAvailable { get; set; }
+        public bool IsAvailable { get; set; }
 
         [DataMember(Name = "state")]
-        LolGameflowGameflowAvailabilityState State { get; set; }
+        public LolGameflowGameflowAvailabilityState State { get; set; }
 
         public override string ToString()
         {

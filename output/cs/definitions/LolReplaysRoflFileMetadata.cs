@@ -1,22 +1,22 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolReplaysRoflFileMetadata
+    public struct LolReplaysRoflFileMetadata
     {
         [DataMember(Name = "gameLength")]
-        uint GameLength { get; set; }
+        public uint GameLength { get; set; }
 
         [DataMember(Name = "gameVersion")]
-        string GameVersion { get; set; }
-
-        [DataMember(Name = "lastKeyFrameId")]
-        uint LastKeyFrameId { get; set; }
+        public string GameVersion { get; set; }
 
         [DataMember(Name = "lastGameChunkId")]
-        uint LastGameChunkId { get; set; }
+        public uint LastGameChunkId { get; set; }
+
+        [DataMember(Name = "lastKeyFrameId")]
+        public uint LastKeyFrameId { get; set; }
 
         public override string ToString()
         {
@@ -24,8 +24,8 @@ namespace leagueapi
             sb.Append("class LolReplaysRoflFileMetadata {\n");
             sb.Append("  GameLength: ").Append(GameLength).Append("\n");
             sb.Append("  GameVersion: ").Append(GameVersion).Append("\n");
-            sb.Append("  LastKeyFrameId: ").Append(LastKeyFrameId).Append("\n");
             sb.Append("  LastGameChunkId: ").Append(LastGameChunkId).Append("\n");
+            sb.Append("  LastKeyFrameId: ").Append(LastKeyFrameId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

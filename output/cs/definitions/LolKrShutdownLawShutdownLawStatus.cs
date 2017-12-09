@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
-namespace leagueapi {
-  [DataContract]  enum LolKrShutdownLawShutdownLawStatus {
+namespace LeagueClientApi {
+  [DataContract]  public enum LolKrShutdownLawShutdownLawStatus {
     [DataMember(Name = "CUT_OFF")]
     CUT_OFF = 2,
 

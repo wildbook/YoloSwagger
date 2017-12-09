@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
-namespace leagueapi {
-  [DataContract]  enum AggregationType {
+namespace LeagueClientApi {
+  [DataContract]  public enum AggregationType {
     [DataMember(Name = "average")]
     Average = 2,
 

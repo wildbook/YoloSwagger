@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct MultipleReplayMetadataResponseV2
+    public struct MultipleReplayMetadataResponseV2
     {
         [DataMember(Name = "metadataResponses")]
-        MultipleReplayMetadataResponseItemV2[] MetadataResponses { get; set; }
+        public MultipleReplayMetadataResponseItemV2[] MetadataResponses { get; set; }
 
         public override string ToString()
         {

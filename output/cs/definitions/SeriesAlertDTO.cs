@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct SeriesAlertDTO
+    public struct SeriesAlertDTO
     {
         [DataMember(Name = "alertTime")]
-        long AlertTime { get; set; }
+        public long AlertTime { get; set; }
 
         [DataMember(Name = "description")]
-        string Description { get; set; }
+        public string Description { get; set; }
 
         [DataMember(Name = "title")]
-        string Title { get; set; }
+        public string Title { get; set; }
 
         public override string ToString()
         {

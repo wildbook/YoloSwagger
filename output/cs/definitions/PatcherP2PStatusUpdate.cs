@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PatcherP2PStatusUpdate
+    public struct PatcherP2PStatusUpdate
     {
         [DataMember(Name = "isAllowedByUser")]
-        bool IsAllowedByUser { get; set; }
+        public bool IsAllowedByUser { get; set; }
 
         public override string ToString()
         {

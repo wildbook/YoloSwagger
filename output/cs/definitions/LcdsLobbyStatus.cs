@@ -1,28 +1,28 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LcdsLobbyStatus
+    public struct LcdsLobbyStatus
     {
         [DataMember(Name = "chatKey")]
-        string ChatKey { get; set; }
+        public string ChatKey { get; set; }
 
         [DataMember(Name = "gameMetaData")]
-        string GameMetaData { get; set; }
+        public string GameMetaData { get; set; }
 
         [DataMember(Name = "invitationId")]
-        string InvitationId { get; set; }
-
-        [DataMember(Name = "members")]
-        LcdsMember[] Members { get; set; }
-
-        [DataMember(Name = "owner")]
-        LcdsPlayer Owner { get; set; }
+        public string InvitationId { get; set; }
 
         [DataMember(Name = "invitees")]
-        LcdsInvitee[] Invitees { get; set; }
+        public LcdsInvitee[] Invitees { get; set; }
+
+        [DataMember(Name = "members")]
+        public LcdsMember[] Members { get; set; }
+
+        [DataMember(Name = "owner")]
+        public LcdsPlayer Owner { get; set; }
 
         public override string ToString()
         {
@@ -31,9 +31,9 @@ namespace leagueapi
             sb.Append("  ChatKey: ").Append(ChatKey).Append("\n");
             sb.Append("  GameMetaData: ").Append(GameMetaData).Append("\n");
             sb.Append("  InvitationId: ").Append(InvitationId).Append("\n");
+            sb.Append("  Invitees: ").Append(Invitees).Append("\n");
             sb.Append("  Members: ").Append(Members).Append("\n");
             sb.Append("  Owner: ").Append(Owner).Append("\n");
-            sb.Append("  Invitees: ").Append(Invitees).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

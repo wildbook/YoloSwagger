@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyLobbyTimer
+    public struct LolLobbyLobbyTimer
     {
         [DataMember(Name = "countdown")]
-        long Countdown { get; set; }
+        public long Countdown { get; set; }
 
         [DataMember(Name = "enabled")]
-        bool Enabled { get; set; }
+        public bool Enabled { get; set; }
 
         public override string ToString()
         {

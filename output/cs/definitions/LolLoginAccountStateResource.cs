@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLoginAccountStateResource
+    public struct LolLoginAccountStateResource
     {
         [DataMember(Name = "state")]
-        LolLoginAccountStateType State { get; set; }
+        public LolLoginAccountStateType State { get; set; }
 
         public override string ToString()
         {

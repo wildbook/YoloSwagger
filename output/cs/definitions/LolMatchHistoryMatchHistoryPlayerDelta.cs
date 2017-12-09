@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolMatchHistoryMatchHistoryPlayerDelta
+    public struct LolMatchHistoryMatchHistoryPlayerDelta
     {
         [DataMember(Name = "deltas")]
-        LolMatchHistoryMatchHistoryPlayerGameDelta[] Deltas { get; set; }
+        public LolMatchHistoryMatchHistoryPlayerGameDelta[] Deltas { get; set; }
 
         [DataMember(Name = "originalAccountId")]
-        ulong OriginalAccountId { get; set; }
+        public ulong OriginalAccountId { get; set; }
 
         [DataMember(Name = "originalPlatformId")]
-        string OriginalPlatformId { get; set; }
+        public string OriginalPlatformId { get; set; }
 
         public override string ToString()
         {

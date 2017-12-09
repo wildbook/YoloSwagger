@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolQueueEligibilityEligibilityQueryParams
+    public struct LolQueueEligibilityEligibilityQueryParams
     {
         [DataMember(Name = "queueIds")]
-        int[] QueueIds { get; set; }
+        public int[] QueueIds { get; set; }
 
         [DataMember(Name = "summonerIds")]
-        ulong[] SummonerIds { get; set; }
+        public ulong[] SummonerIds { get; set; }
 
         public override string ToString()
         {

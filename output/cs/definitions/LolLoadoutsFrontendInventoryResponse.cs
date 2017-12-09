@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLoadoutsFrontendInventoryResponse
+    public struct LolLoadoutsFrontendInventoryResponse
     {
         [DataMember(Name = "entitlements")]
-        LolLoadoutsItemKey[] Entitlements { get; set; }
+        public LolLoadoutsItemKey[] Entitlements { get; set; }
 
         public override string ToString()
         {

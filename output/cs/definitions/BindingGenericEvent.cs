@@ -1,15 +1,15 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     // Represents generic data for an event.
     [DataContract]
-    struct BindingGenericEvent
+    public struct BindingGenericEvent
     {
         // Event data
         [DataMember(Name = "data")]
-        dynamic Data { get; set; }
+        public dynamic Data { get; set; }
 
         public override string ToString()
         {

@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct HighlightsSettingsData
+    public struct HighlightsSettingsData
     {
         [DataMember(Name = "highlights-folder-path")]
-        string HighlightsFolderPath { get; set; }
+        public string HighlightsFolderPath { get; set; }
 
         public override string ToString()
         {

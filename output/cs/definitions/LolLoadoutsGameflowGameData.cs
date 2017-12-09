@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLoadoutsGameflowGameData
+    public struct LolLoadoutsGameflowGameData
     {
         [DataMember(Name = "queue")]
-        LolLoadoutsQueue Queue { get; set; }
+        public LolLoadoutsQueue Queue { get; set; }
 
         public override string ToString()
         {

@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct GameClientChatMessageResource
+    public struct GameClientChatMessageResource
     {
         [DataMember(Name = "body")]
-        string Body { get; set; }
+        public string Body { get; set; }
 
         [DataMember(Name = "fromSummonerName")]
-        string FromSummonerName { get; set; }
+        public string FromSummonerName { get; set; }
 
         public override string ToString()
         {

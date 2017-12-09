@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolCollectionsGameDataChampionMasteryTree
+    public struct LolCollectionsGameDataChampionMasteryTree
     {
         [DataMember(Name = "groups")]
-        LolCollectionsGameDataChampionMasteryGroup[] Groups { get; set; }
+        public LolCollectionsGameDataChampionMasteryGroup[] Groups { get; set; }
 
         public override string ToString()
         {

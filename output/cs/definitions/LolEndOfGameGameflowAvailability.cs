@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolEndOfGameGameflowAvailability
+    public struct LolEndOfGameGameflowAvailability
     {
         [DataMember(Name = "state")]
-        string State { get; set; }
+        public string State { get; set; }
 
         public override string ToString()
         {

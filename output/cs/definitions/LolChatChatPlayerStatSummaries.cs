@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolChatChatPlayerStatSummaries
+    public struct LolChatChatPlayerStatSummaries
     {
         [DataMember(Name = "playerStatSummarySet")]
-        LolChatChatPlayerStatSummary[] PlayerStatSummarySet { get; set; }
+        public LolChatChatPlayerStatSummary[] PlayerStatSummarySet { get; set; }
 
         public override string ToString()
         {

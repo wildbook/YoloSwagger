@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyLcdsDynamicClientConfig
+    public struct LolLobbyLcdsDynamicClientConfig
     {
         [DataMember(Name = "PartyRewards")]
-        LolLobbyLcdsPartyRewardsConfig PartyRewards { get; set; }
+        public LolLobbyLcdsPartyRewardsConfig PartyRewards { get; set; }
 
         public override string ToString()
         {

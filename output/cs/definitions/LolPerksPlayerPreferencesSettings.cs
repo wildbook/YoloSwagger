@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolPerksPlayerPreferencesSettings
+    public struct LolPerksPlayerPreferencesSettings
     {
         [DataMember(Name = "pages")]
-        LolPerksPerkPageResource[] Pages { get; set; }
+        public LolPerksPerkPageResource[] Pages { get; set; }
 
         [DataMember(Name = "settings")]
-        LolPerksUISettings Settings { get; set; }
+        public LolPerksUISettings Settings { get; set; }
 
         public override string ToString()
         {

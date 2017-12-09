@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct NetworkExperimentResource
+    public struct NetworkExperimentResource
     {
         [DataMember(Name = "status")]
-        NetworkExperimentStatus Status { get; set; }
+        public NetworkExperimentStatus Status { get; set; }
 
         public override string ToString()
         {

@@ -1,22 +1,22 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyTeamBuilderReadyStateV1
+    public struct LolLobbyTeamBuilderReadyStateV1
     {
         [DataMember(Name = "allowablePremadeSizes")]
-        int[] AllowablePremadeSizes { get; set; }
+        public int[] AllowablePremadeSizes { get; set; }
 
         [DataMember(Name = "premadeSizeAllowed")]
-        bool PremadeSizeAllowed { get; set; }
+        public bool PremadeSizeAllowed { get; set; }
 
         [DataMember(Name = "readyToMatchmake")]
-        bool ReadyToMatchmake { get; set; }
+        public bool ReadyToMatchmake { get; set; }
 
         [DataMember(Name = "requiredPositionCoverageMet")]
-        bool RequiredPositionCoverageMet { get; set; }
+        public bool RequiredPositionCoverageMet { get; set; }
 
         public override string ToString()
         {

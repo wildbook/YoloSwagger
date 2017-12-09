@@ -1,11 +1,11 @@
 using System.Runtime.Serialization;
-namespace leagueapi {
-  [DataContract]  enum LolLeaguesSeverity {
-    [DataMember(Name = "WARNING")]
-    WARNING = 0,
-
+namespace LeagueClientApi {
+  [DataContract]  public enum LolLeaguesSeverity {
     [DataMember(Name = "ALERT")]
     ALERT = 1,
+
+    [DataMember(Name = "WARNING")]
+    WARNING = 0,
 
   }
 }

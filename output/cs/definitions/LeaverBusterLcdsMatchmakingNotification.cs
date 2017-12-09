@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LeaverBusterLcdsMatchmakingNotification
+    public struct LeaverBusterLcdsMatchmakingNotification
     {
         [DataMember(Name = "playerJoinFailures")]
-        dynamic[] PlayerJoinFailures { get; set; }
+        public dynamic[] PlayerJoinFailures { get; set; }
 
         public override string ToString()
         {

@@ -1,35 +1,35 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct BracketRoster
+    public struct BracketRoster
     {
-        [DataMember(Name = "shortName")]
-        string ShortName { get; set; }
-
         [DataMember(Name = "logo")]
-        int Logo { get; set; }
-
-        [DataMember(Name = "rosterId")]
-        long RosterId { get; set; }
+        public int Logo { get; set; }
 
         [DataMember(Name = "logoColor")]
-        int LogoColor { get; set; }
+        public int LogoColor { get; set; }
 
         [DataMember(Name = "name")]
-        string Name { get; set; }
+        public string Name { get; set; }
+
+        [DataMember(Name = "rosterId")]
+        public long RosterId { get; set; }
+
+        [DataMember(Name = "shortName")]
+        public string ShortName { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class BracketRoster {\n");
-            sb.Append("  ShortName: ").Append(ShortName).Append("\n");
             sb.Append("  Logo: ").Append(Logo).Append("\n");
-            sb.Append("  RosterId: ").Append(RosterId).Append("\n");
             sb.Append("  LogoColor: ").Append(LogoColor).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  RosterId: ").Append(RosterId).Append("\n");
+            sb.Append("  ShortName: ").Append(ShortName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

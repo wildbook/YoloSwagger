@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct ChampSelectSession
+    public struct ChampSelectSession
     {
         [DataMember(Name = "timer")]
-        ChampSelectTimer Timer { get; set; }
+        public ChampSelectTimer Timer { get; set; }
 
         public override string ToString()
         {

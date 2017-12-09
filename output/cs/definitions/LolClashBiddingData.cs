@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolClashBiddingData
+    public struct LolClashBiddingData
     {
         [DataMember(Name = "currentBid")]
-        int CurrentBid { get; set; }
+        public int CurrentBid { get; set; }
 
         [DataMember(Name = "currentPaid")]
-        int CurrentPaid { get; set; }
+        public int CurrentPaid { get; set; }
 
         [DataMember(Name = "incomingOffers")]
-        LolClashTicketOffer[] IncomingOffers { get; set; }
+        public LolClashTicketOffer[] IncomingOffers { get; set; }
 
         public override string ToString()
         {

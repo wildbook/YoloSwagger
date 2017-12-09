@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolChampionsCollectionsChampionSkinEmblemPath
+    public struct LolChampionsCollectionsChampionSkinEmblemPath
     {
         [DataMember(Name = "large")]
-        string Large { get; set; }
+        public string Large { get; set; }
 
         [DataMember(Name = "small")]
-        string Small { get; set; }
+        public string Small { get; set; }
 
         public override string ToString()
         {

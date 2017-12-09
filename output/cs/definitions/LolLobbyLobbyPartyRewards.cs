@@ -1,22 +1,22 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyLobbyPartyRewards
+    public struct LolLobbyLobbyPartyRewards
     {
         [DataMember(Name = "isCustom")]
-        bool IsCustom { get; set; }
+        public bool IsCustom { get; set; }
 
         [DataMember(Name = "isEnabled")]
-        bool IsEnabled { get; set; }
+        public bool IsEnabled { get; set; }
 
         [DataMember(Name = "partyRewards")]
-        LolLobbyPartyReward[] PartyRewards { get; set; }
+        public LolLobbyPartyReward[] PartyRewards { get; set; }
 
         [DataMember(Name = "queueId")]
-        int QueueId { get; set; }
+        public int QueueId { get; set; }
 
         public override string ToString()
         {

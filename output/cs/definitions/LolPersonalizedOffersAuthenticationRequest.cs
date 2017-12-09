@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolPersonalizedOffersAuthenticationRequest
+    public struct LolPersonalizedOffersAuthenticationRequest
     {
         [DataMember(Name = "token")]
-        string Token { get; set; }
+        public string Token { get; set; }
 
         [DataMember(Name = "tokenType")]
-        string TokenType { get; set; }
+        public string TokenType { get; set; }
 
         public override string ToString()
         {

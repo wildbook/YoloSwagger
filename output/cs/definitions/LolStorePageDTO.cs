@@ -1,22 +1,22 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolStorePageDTO
+    public struct LolStorePageDTO
     {
         [DataMember(Name = "Player")]
-        LolStorePlayer Player { get; set; }
+        public LolStorePlayer Player { get; set; }
 
         [DataMember(Name = "catalog")]
-        LolStoreCatalogItem[] Catalog { get; set; }
+        public LolStoreCatalogItem[] Catalog { get; set; }
 
         [DataMember(Name = "groupOrder")]
-        string[] GroupOrder { get; set; }
+        public string[] GroupOrder { get; set; }
 
         [DataMember(Name = "itemGroups")]
-        Dictionary<string, LolStorePageGroupingDTO> ItemGroups { get; set; }
+        public Dictionary<string, LolStorePageGroupingDTO> ItemGroups { get; set; }
 
         public override string ToString()
         {

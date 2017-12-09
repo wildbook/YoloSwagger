@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct MissionRewardMediaItemDTO
+    public struct MissionRewardMediaItemDTO
     {
         [DataMember(Name = "sound")]
-        string Sound { get; set; }
+        public string Sound { get; set; }
 
         [DataMember(Name = "video")]
-        string Video { get; set; }
+        public string Video { get; set; }
 
         public override string ToString()
         {

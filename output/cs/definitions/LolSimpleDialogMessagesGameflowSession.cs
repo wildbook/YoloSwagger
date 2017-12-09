@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolSimpleDialogMessagesGameflowSession
+    public struct LolSimpleDialogMessagesGameflowSession
     {
         [DataMember(Name = "phase")]
-        LolSimpleDialogMessagesGameflowPhase Phase { get; set; }
+        public LolSimpleDialogMessagesGameflowPhase Phase { get; set; }
 
         public override string ToString()
         {

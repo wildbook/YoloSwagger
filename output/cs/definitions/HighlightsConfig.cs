@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct HighlightsConfig
+    public struct HighlightsConfig
     {
         [DataMember(Name = "invalidHighlightNameCharacters")]
-        string InvalidHighlightNameCharacters { get; set; }
+        public string InvalidHighlightNameCharacters { get; set; }
 
         [DataMember(Name = "isHighlightsEnabled")]
-        bool IsHighlightsEnabled { get; set; }
+        public bool IsHighlightsEnabled { get; set; }
 
         public override string ToString()
         {

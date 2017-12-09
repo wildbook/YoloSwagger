@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLoginAuthorization
+    public struct LolLoginAuthorization
     {
         [DataMember(Name = "currentAccountId")]
-        ulong CurrentAccountId { get; set; }
+        public ulong CurrentAccountId { get; set; }
 
         [DataMember(Name = "currentPlatformId")]
-        string CurrentPlatformId { get; set; }
+        public string CurrentPlatformId { get; set; }
 
         [DataMember(Name = "subject")]
-        string Subject { get; set; }
+        public string Subject { get; set; }
 
         public override string ToString()
         {

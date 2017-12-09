@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolBannersCapClashFlagEntitlementPayload
+    public struct LolBannersCapClashFlagEntitlementPayload
     {
         [DataMember(Name = "eventId")]
-        string EventId { get; set; }
+        public string EventId { get; set; }
 
         [DataMember(Name = "rewardSpec")]
-        LolBannersClashV2FlagRewardSpec RewardSpec { get; set; }
+        public LolBannersClashV2FlagRewardSpec RewardSpec { get; set; }
 
         [DataMember(Name = "rewardType")]
-        string RewardType { get; set; }
+        public string RewardType { get; set; }
 
         public override string ToString()
         {

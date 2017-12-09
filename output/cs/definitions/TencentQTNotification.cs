@@ -1,30 +1,30 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct TencentQTNotification
+    public struct TencentQTNotification
     {
-        [DataMember(Name = "timestamp")]
-        long Timestamp { get; set; }
+        [DataMember(Name = "data")]
+        public dynamic Data { get; set; }
 
         [DataMember(Name = "state")]
-        string State { get; set; }
+        public string State { get; set; }
 
-        [DataMember(Name = "data")]
-        dynamic Data { get; set; }
+        [DataMember(Name = "timestamp")]
+        public long Timestamp { get; set; }
 
         [DataMember(Name = "updatedBy")]
-        string UpdatedBy { get; set; }
+        public string UpdatedBy { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TencentQTNotification {\n");
-            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  State: ").Append(State).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

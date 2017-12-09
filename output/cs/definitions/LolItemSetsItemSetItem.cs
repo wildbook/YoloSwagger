@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolItemSetsItemSetItem
+    public struct LolItemSetsItemSetItem
     {
         [DataMember(Name = "count")]
-        ushort Count { get; set; }
+        public ushort Count { get; set; }
 
         [DataMember(Name = "id")]
-        string Id { get; set; }
+        public string Id { get; set; }
 
         public override string ToString()
         {

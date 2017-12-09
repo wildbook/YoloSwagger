@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct RecofrienderChatFriendResource
+    public struct RecofrienderChatFriendResource
     {
         [DataMember(Name = "id")]
-        ulong Id { get; set; }
+        public ulong Id { get; set; }
 
         [DataMember(Name = "name")]
-        string Name { get; set; }
+        public string Name { get; set; }
 
         public override string ToString()
         {

@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource
+    public struct LolLobbyTeamBuilderTbLobbyEnabledFeaturesResource
     {
         [DataMember(Name = "enabledFeatures")]
-        string[] EnabledFeatures { get; set; }
+        public string[] EnabledFeatures { get; set; }
 
         public override string ToString()
         {

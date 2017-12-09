@@ -1,22 +1,22 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LcdsPayloadDto
+    public struct LcdsPayloadDto
     {
         [DataMember(Name = "body")]
-        string Body { get; set; }
+        public string Body { get; set; }
 
         [DataMember(Name = "headers")]
-        Dictionary<string, string> Headers { get; set; }
+        public Dictionary<string, string> Headers { get; set; }
 
         [DataMember(Name = "method")]
-        string Method { get; set; }
+        public string Method { get; set; }
 
         [DataMember(Name = "path")]
-        string Path { get; set; }
+        public string Path { get; set; }
 
         public override string ToString()
         {

@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolMissionsCollectionsChampionSkin
+    public struct LolMissionsCollectionsChampionSkin
     {
         [DataMember(Name = "championId")]
-        int ChampionId { get; set; }
+        public int ChampionId { get; set; }
 
         [DataMember(Name = "id")]
-        int Id { get; set; }
+        public int Id { get; set; }
 
         [DataMember(Name = "ownership")]
-        LolMissionsCollectionsOwnership Ownership { get; set; }
+        public LolMissionsCollectionsOwnership Ownership { get; set; }
 
         public override string ToString()
         {

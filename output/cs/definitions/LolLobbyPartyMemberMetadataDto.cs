@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyPartyMemberMetadataDto
+    public struct LolLobbyPartyMemberMetadataDto
     {
         [DataMember(Name = "positionPref")]
-        string[] PositionPref { get; set; }
+        public string[] PositionPref { get; set; }
 
         public override string ToString()
         {

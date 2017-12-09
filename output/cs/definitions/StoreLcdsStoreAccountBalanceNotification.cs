@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct StoreLcdsStoreAccountBalanceNotification
+    public struct StoreLcdsStoreAccountBalanceNotification
     {
         [DataMember(Name = "ip")]
-        long Ip { get; set; }
+        public long Ip { get; set; }
 
         [DataMember(Name = "rp")]
-        long Rp { get; set; }
+        public long Rp { get; set; }
 
         public override string ToString()
         {

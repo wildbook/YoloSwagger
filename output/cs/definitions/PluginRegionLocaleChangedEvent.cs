@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PluginRegionLocaleChangedEvent
+    public struct PluginRegionLocaleChangedEvent
     {
         [DataMember(Name = "locale")]
-        string Locale { get; set; }
+        public string Locale { get; set; }
 
         [DataMember(Name = "region")]
-        string Region { get; set; }
+        public string Region { get; set; }
 
         public override string ToString()
         {

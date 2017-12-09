@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     // Represents generic data for an asynchronous event.
     [DataContract]
-    struct BindingGenericAsyncEvent
+    public struct BindingGenericAsyncEvent
     {
         // Asynchronous operation token
         [DataMember(Name = "asyncToken")]
-        uint AsyncToken { get; set; }
+        public uint AsyncToken { get; set; }
 
         // Event data
         [DataMember(Name = "data")]
-        dynamic Data { get; set; }
+        public dynamic Data { get; set; }
 
         public override string ToString()
         {

@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolClashTournamentGameEnd
+    public struct LolClashTournamentGameEnd
     {
         [DataMember(Name = "bracketId")]
-        long BracketId { get; set; }
+        public long BracketId { get; set; }
 
         [DataMember(Name = "tournamentId")]
-        long TournamentId { get; set; }
+        public long TournamentId { get; set; }
 
         public override string ToString()
         {

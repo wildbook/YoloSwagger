@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LcdsMember
+    public struct LcdsMember
     {
         [DataMember(Name = "hasDelegatedInvitePower")]
-        bool HasDelegatedInvitePower { get; set; }
+        public bool HasDelegatedInvitePower { get; set; }
 
         [DataMember(Name = "summonerId")]
-        ulong SummonerId { get; set; }
+        public ulong SummonerId { get; set; }
 
         [DataMember(Name = "summonerName")]
-        string SummonerName { get; set; }
+        public string SummonerName { get; set; }
 
         public override string ToString()
         {

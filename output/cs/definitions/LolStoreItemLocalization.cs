@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolStoreItemLocalization
+    public struct LolStoreItemLocalization
     {
         [DataMember(Name = "description")]
-        string Description { get; set; }
+        public string Description { get; set; }
 
         [DataMember(Name = "language")]
-        string Language { get; set; }
+        public string Language { get; set; }
 
         [DataMember(Name = "name")]
-        string Name { get; set; }
+        public string Name { get; set; }
 
         public override string ToString()
         {

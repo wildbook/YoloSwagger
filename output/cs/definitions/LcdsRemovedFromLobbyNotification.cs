@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LcdsRemovedFromLobbyNotification
+    public struct LcdsRemovedFromLobbyNotification
     {
         [DataMember(Name = "removalReason")]
-        LcdsRemovalReason RemovalReason { get; set; }
+        public LcdsRemovalReason RemovalReason { get; set; }
 
         public override string ToString()
         {

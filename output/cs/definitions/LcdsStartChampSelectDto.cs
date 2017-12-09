@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LcdsStartChampSelectDto
+    public struct LcdsStartChampSelectDto
     {
         [DataMember(Name = "invalidPlayers")]
-        LcdsFailedJoinPlayer[] InvalidPlayers { get; set; }
+        public LcdsFailedJoinPlayer[] InvalidPlayers { get; set; }
 
         public override string ToString()
         {

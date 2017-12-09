@@ -1,111 +1,111 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolGameflowQueue
+    public struct LolGameflowQueue
     {
-        [DataMember(Name = "queueAvailability")]
-        LolGameflowQueueAvailability QueueAvailability { get; set; }
-
-        [DataMember(Name = "gameMode")]
-        string GameMode { get; set; }
-
-        [DataMember(Name = "mapId")]
-        int MapId { get; set; }
-
         [DataMember(Name = "areFreeChampionsAllowed")]
-        bool AreFreeChampionsAllowed { get; set; }
-
-        [DataMember(Name = "gameTypeConfig")]
-        LolGameflowQueueGameTypeConfig GameTypeConfig { get; set; }
-
-        [DataMember(Name = "id")]
-        int Id { get; set; }
+        public bool AreFreeChampionsAllowed { get; set; }
 
         [DataMember(Name = "category")]
-        LolGameflowQueueGameCategory Category { get; set; }
-
-        [DataMember(Name = "queueRewards")]
-        LolGameflowQueueReward QueueRewards { get; set; }
-
-        [DataMember(Name = "maxSummonerLevelForFirstWinOfTheDay")]
-        uint MaxSummonerLevelForFirstWinOfTheDay { get; set; }
-
-        [DataMember(Name = "isTeamOnly")]
-        bool IsTeamOnly { get; set; }
-
-        [DataMember(Name = "maximumParticipantListSize")]
-        int MaximumParticipantListSize { get; set; }
-
-        [DataMember(Name = "detailedDescription")]
-        string DetailedDescription { get; set; }
-
-        [DataMember(Name = "maxLevel")]
-        uint MaxLevel { get; set; }
+        public LolGameflowQueueGameCategory Category { get; set; }
 
         [DataMember(Name = "description")]
-        string Description { get; set; }
+        public string Description { get; set; }
 
-        [DataMember(Name = "minLevel")]
-        uint MinLevel { get; set; }
+        [DataMember(Name = "detailedDescription")]
+        public string DetailedDescription { get; set; }
+
+        [DataMember(Name = "gameMode")]
+        public string GameMode { get; set; }
 
         [DataMember(Name = "gameMutator")]
-        string GameMutator { get; set; }
+        public string GameMutator { get; set; }
+
+        [DataMember(Name = "gameTypeConfig")]
+        public LolGameflowQueueGameTypeConfig GameTypeConfig { get; set; }
+
+        [DataMember(Name = "id")]
+        public int Id { get; set; }
 
         [DataMember(Name = "isRanked")]
-        bool IsRanked { get; set; }
-
-        [DataMember(Name = "shortName")]
-        string ShortName { get; set; }
-
-        [DataMember(Name = "numPlayersPerTeam")]
-        int NumPlayersPerTeam { get; set; }
-
-        [DataMember(Name = "spectatorEnabled")]
-        bool SpectatorEnabled { get; set; }
-
-        [DataMember(Name = "name")]
-        string Name { get; set; }
-
-        [DataMember(Name = "type")]
-        string Type { get; set; }
-
-        [DataMember(Name = "minimumParticipantListSize")]
-        int MinimumParticipantListSize { get; set; }
+        public bool IsRanked { get; set; }
 
         [DataMember(Name = "isTeamBuilderManaged")]
-        bool IsTeamBuilderManaged { get; set; }
+        public bool IsTeamBuilderManaged { get; set; }
+
+        [DataMember(Name = "isTeamOnly")]
+        public bool IsTeamOnly { get; set; }
+
+        [DataMember(Name = "mapId")]
+        public int MapId { get; set; }
+
+        [DataMember(Name = "maxLevel")]
+        public uint MaxLevel { get; set; }
+
+        [DataMember(Name = "maxSummonerLevelForFirstWinOfTheDay")]
+        public uint MaxSummonerLevelForFirstWinOfTheDay { get; set; }
+
+        [DataMember(Name = "maximumParticipantListSize")]
+        public int MaximumParticipantListSize { get; set; }
+
+        [DataMember(Name = "minLevel")]
+        public uint MinLevel { get; set; }
+
+        [DataMember(Name = "minimumParticipantListSize")]
+        public int MinimumParticipantListSize { get; set; }
+
+        [DataMember(Name = "name")]
+        public string Name { get; set; }
+
+        [DataMember(Name = "numPlayersPerTeam")]
+        public int NumPlayersPerTeam { get; set; }
+
+        [DataMember(Name = "queueAvailability")]
+        public LolGameflowQueueAvailability QueueAvailability { get; set; }
+
+        [DataMember(Name = "queueRewards")]
+        public LolGameflowQueueReward QueueRewards { get; set; }
+
+        [DataMember(Name = "shortName")]
+        public string ShortName { get; set; }
+
+        [DataMember(Name = "spectatorEnabled")]
+        public bool SpectatorEnabled { get; set; }
+
+        [DataMember(Name = "type")]
+        public string Type { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class LolGameflowQueue {\n");
-            sb.Append("  QueueAvailability: ").Append(QueueAvailability).Append("\n");
-            sb.Append("  GameMode: ").Append(GameMode).Append("\n");
-            sb.Append("  MapId: ").Append(MapId).Append("\n");
             sb.Append("  AreFreeChampionsAllowed: ").Append(AreFreeChampionsAllowed).Append("\n");
+            sb.Append("  Category: ").Append(Category).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  DetailedDescription: ").Append(DetailedDescription).Append("\n");
+            sb.Append("  GameMode: ").Append(GameMode).Append("\n");
+            sb.Append("  GameMutator: ").Append(GameMutator).Append("\n");
             sb.Append("  GameTypeConfig: ").Append(GameTypeConfig).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Category: ").Append(Category).Append("\n");
-            sb.Append("  QueueRewards: ").Append(QueueRewards).Append("\n");
-            sb.Append("  MaxSummonerLevelForFirstWinOfTheDay: ").Append(MaxSummonerLevelForFirstWinOfTheDay).Append("\n");
-            sb.Append("  IsTeamOnly: ").Append(IsTeamOnly).Append("\n");
-            sb.Append("  MaximumParticipantListSize: ").Append(MaximumParticipantListSize).Append("\n");
-            sb.Append("  DetailedDescription: ").Append(DetailedDescription).Append("\n");
-            sb.Append("  MaxLevel: ").Append(MaxLevel).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  MinLevel: ").Append(MinLevel).Append("\n");
-            sb.Append("  GameMutator: ").Append(GameMutator).Append("\n");
             sb.Append("  IsRanked: ").Append(IsRanked).Append("\n");
-            sb.Append("  ShortName: ").Append(ShortName).Append("\n");
-            sb.Append("  NumPlayersPerTeam: ").Append(NumPlayersPerTeam).Append("\n");
-            sb.Append("  SpectatorEnabled: ").Append(SpectatorEnabled).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  MinimumParticipantListSize: ").Append(MinimumParticipantListSize).Append("\n");
             sb.Append("  IsTeamBuilderManaged: ").Append(IsTeamBuilderManaged).Append("\n");
+            sb.Append("  IsTeamOnly: ").Append(IsTeamOnly).Append("\n");
+            sb.Append("  MapId: ").Append(MapId).Append("\n");
+            sb.Append("  MaxLevel: ").Append(MaxLevel).Append("\n");
+            sb.Append("  MaxSummonerLevelForFirstWinOfTheDay: ").Append(MaxSummonerLevelForFirstWinOfTheDay).Append("\n");
+            sb.Append("  MaximumParticipantListSize: ").Append(MaximumParticipantListSize).Append("\n");
+            sb.Append("  MinLevel: ").Append(MinLevel).Append("\n");
+            sb.Append("  MinimumParticipantListSize: ").Append(MinimumParticipantListSize).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  NumPlayersPerTeam: ").Append(NumPlayersPerTeam).Append("\n");
+            sb.Append("  QueueAvailability: ").Append(QueueAvailability).Append("\n");
+            sb.Append("  QueueRewards: ").Append(QueueRewards).Append("\n");
+            sb.Append("  ShortName: ").Append(ShortName).Append("\n");
+            sb.Append("  SpectatorEnabled: ").Append(SpectatorEnabled).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

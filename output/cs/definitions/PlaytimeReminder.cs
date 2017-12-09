@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PlaytimeReminder
+    public struct PlaytimeReminder
     {
         [DataMember(Name = "hours")]
-        uint Hours { get; set; }
+        public uint Hours { get; set; }
 
         public override string ToString()
         {

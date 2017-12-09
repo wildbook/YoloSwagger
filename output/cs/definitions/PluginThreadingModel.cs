@@ -1,17 +1,17 @@
 using System.Runtime.Serialization;
-namespace leagueapi {
-  [DataContract]  enum PluginThreadingModel {
+namespace LeagueClientApi {
+  [DataContract]  public enum PluginThreadingModel {
     [DataMember(Name = "concurrent")]
     Concurrent = 3,
 
     [DataMember(Name = "dedicated")]
     Dedicated = 1,
 
-    [DataMember(Name = "sequential")]
-    Sequential = 2,
-
     [DataMember(Name = "parallel")]
     Parallel = 4,
+
+    [DataMember(Name = "sequential")]
+    Sequential = 2,
 
   }
 }

@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct RecofrienderDebugConfig
+    public struct RecofrienderDebugConfig
     {
         [DataMember(Name = "isHttpLoggingEnabled")]
-        bool? IsHttpLoggingEnabled { get; set; }
+        public bool? IsHttpLoggingEnabled { get; set; }
 
         public override string ToString()
         {

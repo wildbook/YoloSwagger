@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PlayerMembershipWithNotificationsDto
+    public struct PlayerMembershipWithNotificationsDto
     {
         [DataMember(Name = "membershipNotifications")]
-        MembershipNoficationsDto[] MembershipNotifications { get; set; }
+        public MembershipNoficationsDto[] MembershipNotifications { get; set; }
 
         [DataMember(Name = "playerMembership")]
-        PlayerMembershipDto PlayerMembership { get; set; }
+        public PlayerMembershipDto PlayerMembership { get; set; }
 
         public override string ToString()
         {

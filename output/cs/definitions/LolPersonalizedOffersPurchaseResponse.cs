@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolPersonalizedOffersPurchaseResponse
+    public struct LolPersonalizedOffersPurchaseResponse
     {
         [DataMember(Name = "items")]
-        LolPersonalizedOffersPurchaseItem[] Items { get; set; }
+        public LolPersonalizedOffersPurchaseItem[] Items { get; set; }
 
         [DataMember(Name = "wallet")]
-        LolPersonalizedOffersWallet Wallet { get; set; }
+        public LolPersonalizedOffersWallet Wallet { get; set; }
 
         public override string ToString()
         {

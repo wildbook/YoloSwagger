@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLobbyTeamBuilderLeaverBusterAbandoned
+    public struct LolLobbyTeamBuilderLeaverBusterAbandoned
     {
         [DataMember(Name = "abandonerName")]
-        string AbandonerName { get; set; }
+        public string AbandonerName { get; set; }
 
         public override string ToString()
         {

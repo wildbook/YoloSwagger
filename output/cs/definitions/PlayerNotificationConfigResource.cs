@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PlayerNotificationConfigResource
+    public struct PlayerNotificationConfigResource
     {
         [DataMember(Name = "ExpirationCheckFrequency")]
-        ulong? ExpirationCheckFrequency { get; set; }
+        public ulong? ExpirationCheckFrequency { get; set; }
 
         public override string ToString()
         {

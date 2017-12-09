@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct ChampSelectLcdsObfuscatedParticipant
+    public struct ChampSelectLcdsObfuscatedParticipant
     {
         [DataMember(Name = "gameUniqueId")]
-        ulong GameUniqueId { get; set; }
+        public ulong GameUniqueId { get; set; }
 
         public override string ToString()
         {

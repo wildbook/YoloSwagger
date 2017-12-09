@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolInventoryInventoryResponseDTO
+    public struct LolInventoryInventoryResponseDTO
     {
         [DataMember(Name = "data")]
-        LolInventoryInventoryDTO Data { get; set; }
+        public LolInventoryInventoryDTO Data { get; set; }
 
         public override string ToString()
         {

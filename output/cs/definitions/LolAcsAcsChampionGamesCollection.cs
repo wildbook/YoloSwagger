@@ -1,23 +1,23 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolAcsAcsChampionGamesCollection
+    public struct LolAcsAcsChampionGamesCollection
     {
-        [DataMember(Name = "gameCount")]
-        uint GameCount { get; set; }
-
         [DataMember(Name = "champions")]
-        LolAcsAcsChampionGames[] Champions { get; set; }
+        public LolAcsAcsChampionGames[] Champions { get; set; }
+
+        [DataMember(Name = "gameCount")]
+        public uint GameCount { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class LolAcsAcsChampionGamesCollection {\n");
-            sb.Append("  GameCount: ").Append(GameCount).Append("\n");
             sb.Append("  Champions: ").Append(Champions).Append("\n");
+            sb.Append("  GameCount: ").Append(GameCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

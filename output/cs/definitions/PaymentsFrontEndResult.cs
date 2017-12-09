@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PaymentsFrontEndResult
+    public struct PaymentsFrontEndResult
     {
         [DataMember(Name = "url")]
-        string Url { get; set; }
+        public string Url { get; set; }
 
         public override string ToString()
         {

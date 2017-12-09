@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolEsportStreamNotificationsESportsLiveStreams
+    public struct LolEsportStreamNotificationsESportsLiveStreams
     {
         [DataMember(Name = "liveStreams")]
-        LolEsportStreamNotificationsESportsStreams[] LiveStreams { get; set; }
+        public LolEsportStreamNotificationsESportsStreams[] LiveStreams { get; set; }
 
         public override string ToString()
         {

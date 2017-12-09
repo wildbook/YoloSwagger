@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct RankedSummonerLeaguesDTO
+    public struct RankedSummonerLeaguesDTO
     {
         [DataMember(Name = "summonerLeagues")]
-        RankedLeagueListDTO[] SummonerLeagues { get; set; }
+        public RankedLeagueListDTO[] SummonerLeagues { get; set; }
 
         public override string ToString()
         {

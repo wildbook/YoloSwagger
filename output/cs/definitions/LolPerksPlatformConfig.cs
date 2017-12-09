@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolPerksPlatformConfig
+    public struct LolPerksPlatformConfig
     {
         [DataMember(Name = "PerksEnabled")]
-        bool PerksEnabled { get; set; }
+        public bool PerksEnabled { get; set; }
 
         public override string ToString()
         {

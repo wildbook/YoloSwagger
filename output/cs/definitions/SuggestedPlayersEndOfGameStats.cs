@@ -1,10 +1,10 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct SuggestedPlayersEndOfGameStats
+    public struct SuggestedPlayersEndOfGameStats
     {
         public override string ToString()
         {

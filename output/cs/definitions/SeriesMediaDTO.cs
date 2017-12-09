@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct SeriesMediaDTO
+    public struct SeriesMediaDTO
     {
         [DataMember(Name = "backgroundUrl")]
-        string BackgroundUrl { get; set; }
+        public string BackgroundUrl { get; set; }
 
         public override string ToString()
         {

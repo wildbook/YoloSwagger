@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolSummonerAutoFillDto
+    public struct LolSummonerAutoFillDto
     {
         [DataMember(Name = "autoFillQueues")]
-        LolSummonerAutoFillQueueDto[] AutoFillQueues { get; set; }
+        public LolSummonerAutoFillQueueDto[] AutoFillQueues { get; set; }
 
         public override string ToString()
         {

@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct MetricMetadataPagerDutyNotification
+    public struct MetricMetadataPagerDutyNotification
     {
         [DataMember(Name = "apikey")]
-        string Apikey { get; set; }
+        public string Apikey { get; set; }
 
         public override string ToString()
         {

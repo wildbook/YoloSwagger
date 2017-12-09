@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct EndOfGameLcdsPointsPenalty
+    public struct EndOfGameLcdsPointsPenalty
     {
         [DataMember(Name = "penalty")]
-        double Penalty { get; set; }
+        public double Penalty { get; set; }
 
         [DataMember(Name = "type")]
-        string Type { get; set; }
+        public string Type { get; set; }
 
         public override string ToString()
         {

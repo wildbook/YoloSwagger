@@ -1,11 +1,11 @@
 using System.Runtime.Serialization;
-namespace leagueapi {
-  [DataContract]  enum RiotMessagingServiceState {
-    [DataMember(Name = "Connecting")]
-    Connecting = 3,
-
+namespace LeagueClientApi {
+  [DataContract]  public enum RiotMessagingServiceState {
     [DataMember(Name = "Connected")]
     Connected = 5,
+
+    [DataMember(Name = "Connecting")]
+    Connecting = 3,
 
     [DataMember(Name = "Disconnected")]
     Disconnected = 1,

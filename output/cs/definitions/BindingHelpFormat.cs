@@ -1,14 +1,14 @@
 using System.Runtime.Serialization;
-namespace leagueapi {
+namespace LeagueClientApi {
   // Help format for binding functions and types.
-  [DataContract]  enum BindingHelpFormat {
-    // Native help format
-    [DataMember(Name = "Full")]
-    Full = 1,
-
+  [DataContract]  public enum BindingHelpFormat {
     // Python epytext format
     [DataMember(Name = "Epytext")]
     Epytext = 2,
+
+    // Native help format
+    [DataMember(Name = "Full")]
+    Full = 1,
 
   }
 }

@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolFeaturedModesFeaturedModesConfig
+    public struct LolFeaturedModesFeaturedModesConfig
     {
         [DataMember(Name = "MaxNotificationSaveDelayMinutes")]
-        uint MaxNotificationSaveDelayMinutes { get; set; }
+        public uint MaxNotificationSaveDelayMinutes { get; set; }
 
         [DataMember(Name = "NotificationsEnabled")]
-        bool NotificationsEnabled { get; set; }
+        public bool NotificationsEnabled { get; set; }
 
         [DataMember(Name = "QueueToggleNotificationMinutesThreshold")]
-        uint QueueToggleNotificationMinutesThreshold { get; set; }
+        public uint QueueToggleNotificationMinutesThreshold { get; set; }
 
         public override string ToString()
         {

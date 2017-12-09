@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolQueueEligibilityQueueShutdownStatus
+    public struct LolQueueEligibilityQueueShutdownStatus
     {
         [DataMember(Name = "isDisabled")]
-        bool IsDisabled { get; set; }
+        public bool IsDisabled { get; set; }
 
         public override string ToString()
         {

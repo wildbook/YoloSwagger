@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolChatSanitizerStatus
+    public struct LolChatSanitizerStatus
     {
         [DataMember(Name = "locale")]
-        string Locale { get; set; }
+        public string Locale { get; set; }
 
         [DataMember(Name = "platformID")]
-        string PlatformID { get; set; }
+        public string PlatformID { get; set; }
 
         [DataMember(Name = "ready")]
-        bool Ready { get; set; }
+        public bool Ready { get; set; }
 
         public override string ToString()
         {

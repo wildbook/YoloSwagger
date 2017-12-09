@@ -1,22 +1,22 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolPlayerBehaviorRestrictionNotification
+    public struct LolPlayerBehaviorRestrictionNotification
     {
         [DataMember(Name = "displayReformCard")]
-        bool DisplayReformCard { get; set; }
+        public bool DisplayReformCard { get; set; }
 
         [DataMember(Name = "gamesRemaining")]
-        long GamesRemaining { get; set; }
+        public long GamesRemaining { get; set; }
 
         [DataMember(Name = "id")]
-        ulong Id { get; set; }
+        public ulong Id { get; set; }
 
         [DataMember(Name = "source")]
-        LolPlayerBehaviorNotificationSource Source { get; set; }
+        public LolPlayerBehaviorNotificationSource Source { get; set; }
 
         public override string ToString()
         {

@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct RecofrienderContactCountResource
+    public struct RecofrienderContactCountResource
     {
         [DataMember(Name = "count")]
-        ulong Count { get; set; }
+        public ulong Count { get; set; }
 
         public override string ToString()
         {

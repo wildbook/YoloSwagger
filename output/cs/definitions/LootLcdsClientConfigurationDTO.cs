@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LootLcdsClientConfigurationDTO
+    public struct LootLcdsClientConfigurationDTO
     {
         [DataMember(Name = "currenciesUsingCapWallets")]
-        string[] CurrenciesUsingCapWallets { get; set; }
+        public string[] CurrenciesUsingCapWallets { get; set; }
 
         [DataMember(Name = "lootItemsUsingBreakoutRecipeMenu")]
-        string[] LootItemsUsingBreakoutRecipeMenu { get; set; }
+        public string[] LootItemsUsingBreakoutRecipeMenu { get; set; }
 
         [DataMember(Name = "lootMaterialsToAlwaysRender")]
-        string[] LootMaterialsToAlwaysRender { get; set; }
+        public string[] LootMaterialsToAlwaysRender { get; set; }
 
         public override string ToString()
         {

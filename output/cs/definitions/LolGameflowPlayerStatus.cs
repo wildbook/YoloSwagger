@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolGameflowPlayerStatus
+    public struct LolGameflowPlayerStatus
     {
         [DataMember(Name = "currentLobbyStatus")]
-        LolGameflowLobbyStatus? CurrentLobbyStatus { get; set; }
+        public LolGameflowLobbyStatus? CurrentLobbyStatus { get; set; }
 
         [DataMember(Name = "lastQueuedLobbyStatus")]
-        LolGameflowLobbyStatus? LastQueuedLobbyStatus { get; set; }
+        public LolGameflowLobbyStatus? LastQueuedLobbyStatus { get; set; }
 
         public override string ToString()
         {

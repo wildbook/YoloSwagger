@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct GameDataSummonerSpell
+    public struct GameDataSummonerSpell
     {
         [DataMember(Name = "id")]
-        ulong Id { get; set; }
+        public ulong Id { get; set; }
 
         [DataMember(Name = "summonerLevel")]
-        uint SummonerLevel { get; set; }
+        public uint SummonerLevel { get; set; }
 
         public override string ToString()
         {

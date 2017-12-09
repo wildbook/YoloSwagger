@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLootPlayerLootDelta
+    public struct LolLootPlayerLootDelta
     {
         [DataMember(Name = "deltaCount")]
-        int DeltaCount { get; set; }
+        public int DeltaCount { get; set; }
 
         [DataMember(Name = "playerLoot")]
-        LolLootPlayerLoot PlayerLoot { get; set; }
+        public LolLootPlayerLoot PlayerLoot { get; set; }
 
         public override string ToString()
         {

@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolChatActiveConversationResource
+    public struct LolChatActiveConversationResource
     {
         [DataMember(Name = "id")]
-        string Id { get; set; }
+        public string Id { get; set; }
 
         public override string ToString()
         {

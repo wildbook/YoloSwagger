@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolInventoryRmsEntitlementPayload
+    public struct LolInventoryRmsEntitlementPayload
     {
         [DataMember(Name = "itemId")]
-        string ItemId { get; set; }
+        public string ItemId { get; set; }
 
         [DataMember(Name = "itemTypeId")]
-        string ItemTypeId { get; set; }
+        public string ItemTypeId { get; set; }
 
         public override string ToString()
         {

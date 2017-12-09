@@ -1,31 +1,31 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PlayerPreferences
+    public struct PlayerPreferences
     {
-        [DataMember(Name = "hash")]
-        string Hash { get; set; }
-
-        [DataMember(Name = "version")]
-        string Version { get; set; }
-
         [DataMember(Name = "data")]
-        string Data { get; set; }
+        public string Data { get; set; }
+
+        [DataMember(Name = "hash")]
+        public string Hash { get; set; }
 
         [DataMember(Name = "type")]
-        string Type { get; set; }
+        public string Type { get; set; }
+
+        [DataMember(Name = "version")]
+        public string Version { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class PlayerPreferences {\n");
-            sb.Append("  Hash: ").Append(Hash).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Hash: ").Append(Hash).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Version: ").Append(Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

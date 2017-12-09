@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolGeoinfoWhereAmIRequest
+    public struct LolGeoinfoWhereAmIRequest
     {
         [DataMember(Name = "ipAddress")]
-        string IpAddress { get; set; }
+        public string IpAddress { get; set; }
 
         public override string ToString()
         {

@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_roster
+    public struct LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_roster
     {
         [DataMember(Name = "roster")]
-        string Roster { get; set; }
+        public string Roster { get; set; }
 
         public override string ToString()
         {

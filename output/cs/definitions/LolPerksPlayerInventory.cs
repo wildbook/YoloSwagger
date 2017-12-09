@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolPerksPlayerInventory
+    public struct LolPerksPlayerInventory
     {
         [DataMember(Name = "ownedPageCount")]
-        uint OwnedPageCount { get; set; }
+        public uint OwnedPageCount { get; set; }
 
         public override string ToString()
         {

@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolPurchaseWidgetBalance
+    public struct LolPurchaseWidgetBalance
     {
         [DataMember(Name = "amount")]
-        int Amount { get; set; }
+        public int Amount { get; set; }
 
         [DataMember(Name = "currencyType")]
-        string CurrencyType { get; set; }
+        public string CurrencyType { get; set; }
 
         public override string ToString()
         {

@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PluginManagerResource
+    public struct PluginManagerResource
     {
         [DataMember(Name = "state")]
-        PluginManagerState State { get; set; }
+        public PluginManagerState State { get; set; }
 
         public override string ToString()
         {

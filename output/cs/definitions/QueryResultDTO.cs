@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct QueryResultDTO
+    public struct QueryResultDTO
     {
         [DataMember(Name = "lastUpdate")]
-        long LastUpdate { get; set; }
+        public long LastUpdate { get; set; }
 
         [DataMember(Name = "queryToLootNames")]
-        dynamic QueryToLootNames { get; set; }
+        public dynamic QueryToLootNames { get; set; }
 
         public override string ToString()
         {

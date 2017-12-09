@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolStorePageGroupingDTO
+    public struct LolStorePageGroupingDTO
     {
         [DataMember(Name = "grouped")]
-        bool Grouped { get; set; }
+        public bool Grouped { get; set; }
 
         [DataMember(Name = "hidden")]
-        bool Hidden { get; set; }
+        public bool Hidden { get; set; }
 
         [DataMember(Name = "items")]
-        LolStoreItemKey[] Items { get; set; }
+        public LolStoreItemKey[] Items { get; set; }
 
         public override string ToString()
         {

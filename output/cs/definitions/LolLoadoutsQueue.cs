@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolLoadoutsQueue
+    public struct LolLoadoutsQueue
     {
         [DataMember(Name = "isTeamBuilderManaged")]
-        bool IsTeamBuilderManaged { get; set; }
+        public bool IsTeamBuilderManaged { get; set; }
 
         public override string ToString()
         {

@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PhaseRosterDTO
+    public struct PhaseRosterDTO
     {
         [DataMember(Name = "bracketDTO")]
-        Bracket? BracketDTO { get; set; }
+        public Bracket? BracketDTO { get; set; }
 
         [DataMember(Name = "period")]
-        int Period { get; set; }
+        public int Period { get; set; }
 
         [DataMember(Name = "phaseId")]
-        long PhaseId { get; set; }
+        public long PhaseId { get; set; }
 
         public override string ToString()
         {

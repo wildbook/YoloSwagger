@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolClashRegisteredRosterNotification
+    public struct LolClashRegisteredRosterNotification
     {
         [DataMember(Name = "notifyReason")]
-        LolClashRosterNotifyReason NotifyReason { get; set; }
+        public LolClashRosterNotifyReason NotifyReason { get; set; }
 
         [DataMember(Name = "roster")]
-        RosterDTO Roster { get; set; }
+        public RosterDTO Roster { get; set; }
 
         public override string ToString()
         {

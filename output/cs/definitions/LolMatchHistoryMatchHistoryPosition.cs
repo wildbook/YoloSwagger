@@ -1,23 +1,23 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolMatchHistoryMatchHistoryPosition
+    public struct LolMatchHistoryMatchHistoryPosition
     {
-        [DataMember(Name = "y")]
-        short Y { get; set; }
-
         [DataMember(Name = "x")]
-        short X { get; set; }
+        public short X { get; set; }
+
+        [DataMember(Name = "y")]
+        public short Y { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class LolMatchHistoryMatchHistoryPosition {\n");
-            sb.Append("  Y: ").Append(Y).Append("\n");
             sb.Append("  X: ").Append(X).Append("\n");
+            sb.Append("  Y: ").Append(Y).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

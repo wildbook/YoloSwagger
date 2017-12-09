@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PluginResourceContract
+    public struct PluginResourceContract
     {
         [DataMember(Name = "fullName")]
-        string FullName { get; set; }
+        public string FullName { get; set; }
 
         [DataMember(Name = "version")]
-        string Version { get; set; }
+        public string Version { get; set; }
 
         public override string ToString()
         {

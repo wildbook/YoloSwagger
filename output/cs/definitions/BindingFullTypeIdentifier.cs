@@ -1,17 +1,17 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     // Describes the type of a value.
     [DataContract]
-    struct BindingFullTypeIdentifier
+    public struct BindingFullTypeIdentifier
     {
         [DataMember(Name = "elementType")]
-        string ElementType { get; set; }
+        public string ElementType { get; set; }
 
         [DataMember(Name = "type")]
-        string Type { get; set; }
+        public string Type { get; set; }
 
         public override string ToString()
         {

@@ -1,26 +1,26 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct BannedChampion
+    public struct BannedChampion
     {
-        [DataMember(Name = "pickTurn")]
-        int PickTurn { get; set; }
-
         [DataMember(Name = "championId")]
-        int ChampionId { get; set; }
+        public int ChampionId { get; set; }
+
+        [DataMember(Name = "pickTurn")]
+        public int PickTurn { get; set; }
 
         [DataMember(Name = "teamId")]
-        int TeamId { get; set; }
+        public int TeamId { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class BannedChampion {\n");
-            sb.Append("  PickTurn: ").Append(PickTurn).Append("\n");
             sb.Append("  ChampionId: ").Append(ChampionId).Append("\n");
+            sb.Append("  PickTurn: ").Append(PickTurn).Append("\n");
             sb.Append("  TeamId: ").Append(TeamId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

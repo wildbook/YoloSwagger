@@ -1,23 +1,23 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LeaguesLcdsAggregatedStats
+    public struct LeaguesLcdsAggregatedStats
     {
-        [DataMember(Name = "lifetimeStatistics")]
-        LeaguesLcdsAggregatedStat[] LifetimeStatistics { get; set; }
-
         [DataMember(Name = "key")]
-        LeaguesLcdsAggregatedStatsKey Key { get; set; }
+        public LeaguesLcdsAggregatedStatsKey Key { get; set; }
+
+        [DataMember(Name = "lifetimeStatistics")]
+        public LeaguesLcdsAggregatedStat[] LifetimeStatistics { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class LeaguesLcdsAggregatedStats {\n");
-            sb.Append("  LifetimeStatistics: ").Append(LifetimeStatistics).Append("\n");
             sb.Append("  Key: ").Append(Key).Append("\n");
+            sb.Append("  LifetimeStatistics: ").Append(LifetimeStatistics).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

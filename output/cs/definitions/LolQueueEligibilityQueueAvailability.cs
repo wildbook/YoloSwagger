@@ -1,14 +1,14 @@
 using System.Runtime.Serialization;
-namespace leagueapi {
-  [DataContract]  enum LolQueueEligibilityQueueAvailability {
+namespace LeagueClientApi {
+  [DataContract]  public enum LolQueueEligibilityQueueAvailability {
     [DataMember(Name = "Available")]
     Available = 0,
 
-    [DataMember(Name = "PlatformDisabled")]
-    PlatformDisabled = 1,
-
     [DataMember(Name = "DoesntMeetRequirements")]
     DoesntMeetRequirements = 2,
+
+    [DataMember(Name = "PlatformDisabled")]
+    PlatformDisabled = 1,
 
   }
 }

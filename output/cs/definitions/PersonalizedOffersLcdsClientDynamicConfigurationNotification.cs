@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct PersonalizedOffersLcdsClientDynamicConfigurationNotification
+    public struct PersonalizedOffersLcdsClientDynamicConfigurationNotification
     {
         [DataMember(Name = "configs")]
-        string Configs { get; set; }
+        public string Configs { get; set; }
 
         [DataMember(Name = "delta")]
-        bool Delta { get; set; }
+        public bool Delta { get; set; }
 
         public override string ToString()
         {

@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct GameQueuesLcdsMatchingThrottleConfig
+    public struct GameQueuesLcdsMatchingThrottleConfig
     {
         [DataMember(Name = "cacheName")]
-        string CacheName { get; set; }
+        public string CacheName { get; set; }
 
         [DataMember(Name = "limit")]
-        long Limit { get; set; }
+        public long Limit { get; set; }
 
         public override string ToString()
         {

@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolPerksGameCustomizationDTO
+    public struct LolPerksGameCustomizationDTO
     {
         [DataMember(Name = "category")]
-        string Category { get; set; }
+        public string Category { get; set; }
 
         [DataMember(Name = "content")]
-        string Content { get; set; }
+        public string Content { get; set; }
 
         [DataMember(Name = "queueType")]
-        ulong QueueType { get; set; }
+        public ulong QueueType { get; set; }
 
         public override string ToString()
         {

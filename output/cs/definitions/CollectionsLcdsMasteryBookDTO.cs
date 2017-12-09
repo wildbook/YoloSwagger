@@ -1,19 +1,19 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct CollectionsLcdsMasteryBookDTO
+    public struct CollectionsLcdsMasteryBookDTO
     {
         [DataMember(Name = "bookPages")]
-        CollectionsLcdsMasteryBookPageDTO[] BookPages { get; set; }
+        public CollectionsLcdsMasteryBookPageDTO[] BookPages { get; set; }
 
         [DataMember(Name = "dateString")]
-        string DateString { get; set; }
+        public string DateString { get; set; }
 
         [DataMember(Name = "summonerId")]
-        ulong SummonerId { get; set; }
+        public ulong SummonerId { get; set; }
 
         public override string ToString()
         {

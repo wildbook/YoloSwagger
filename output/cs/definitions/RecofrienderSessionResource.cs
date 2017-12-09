@@ -1,16 +1,16 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct RecofrienderSessionResource
+    public struct RecofrienderSessionResource
     {
         [DataMember(Name = "sessionExpire")]
-        uint SessionExpire { get; set; }
+        public uint SessionExpire { get; set; }
 
         [DataMember(Name = "sessionState")]
-        string SessionState { get; set; }
+        public string SessionState { get; set; }
 
         public override string ToString()
         {

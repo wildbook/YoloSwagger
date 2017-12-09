@@ -1,13 +1,13 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolReplaysReplayContextData
+    public struct LolReplaysReplayContextData
     {
         [DataMember(Name = "componentType")]
-        string ComponentType { get; set; }
+        public string ComponentType { get; set; }
 
         public override string ToString()
         {

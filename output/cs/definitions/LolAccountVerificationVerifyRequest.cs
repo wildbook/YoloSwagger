@@ -1,23 +1,23 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolAccountVerificationVerifyRequest
+    public struct LolAccountVerificationVerifyRequest
     {
-        [DataMember(Name = "token")]
-        string Token { get; set; }
-
         [DataMember(Name = "mediator")]
-        string Mediator { get; set; }
+        public string Mediator { get; set; }
+
+        [DataMember(Name = "token")]
+        public string Token { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class LolAccountVerificationVerifyRequest {\n");
-            sb.Append("  Token: ").Append(Token).Append("\n");
             sb.Append("  Mediator: ").Append(Mediator).Append("\n");
+            sb.Append("  Token: ").Append(Token).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

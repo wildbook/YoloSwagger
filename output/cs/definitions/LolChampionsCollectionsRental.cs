@@ -1,30 +1,30 @@
 using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-namespace leagueapi
+namespace LeagueClientApi.Definitions
 {
     [DataContract]
-    struct LolChampionsCollectionsRental
+    public struct LolChampionsCollectionsRental
     {
-        [DataMember(Name = "rented")]
-        bool Rented { get; set; }
+        [DataMember(Name = "endDate")]
+        public ulong EndDate { get; set; }
 
         [DataMember(Name = "purchaseDate")]
-        ulong PurchaseDate { get; set; }
+        public ulong PurchaseDate { get; set; }
 
-        [DataMember(Name = "endDate")]
-        ulong EndDate { get; set; }
+        [DataMember(Name = "rented")]
+        public bool Rented { get; set; }
 
         [DataMember(Name = "winCountRemaining")]
-        int WinCountRemaining { get; set; }
+        public int WinCountRemaining { get; set; }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class LolChampionsCollectionsRental {\n");
-            sb.Append("  Rented: ").Append(Rented).Append("\n");
-            sb.Append("  PurchaseDate: ").Append(PurchaseDate).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
+            sb.Append("  PurchaseDate: ").Append(PurchaseDate).Append("\n");
+            sb.Append("  Rented: ").Append(Rented).Append("\n");
             sb.Append("  WinCountRemaining: ").Append(WinCountRemaining).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
