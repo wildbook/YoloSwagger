@@ -63,56 +63,68 @@ def type2cs_optional(type):
 
 # TODO: Use templates instead
 def generate_enum(file, namespace, name, enum):
-    file.write("using System.Runtime.Serialization;\n")
-    file.write("namespace {0} {{\n".format(namespace))
-    if enum["description"]:
-        file.write("  // {0}\n".format(enum["description"]))
-    file.write("  [DataContract]")
-    file.write("  public enum {0} {{\n".format(name))
-    for value,  details in enum["values"].items():
-        if details["description"]:
-            file.write("    // {0}\n".format(details["description"]))
-        file.write("    [DataMember(Name = \"{0}\")]\n".format(value))
-        file.write("    {0} = {1},\n\n".format(fix_case(value),  details["value"]))
-    file.write("  }\n")
-    file.write("}")
+    fields = ''
+    for value_name, details in enum["values"].items():
+        fields += ('{value_description}'
+                   '    [DataMember(Name = "{value_name}")]'    '\n'
+                   '    {value_cs_type} = {value_cs_name},'     '\n'
+                   ''                                           '\n'
+                   ).format(value_description = "    // {}\n".format(details["description"]) if details["description"] else '',
+                           value_name = value_name,
+                           value_cs_type = fix_case(value_name),
+                           value_cs_name = details["value"])
 
-# TODO: Use templates instead
+    file.write(('using System.Runtime.Serialization;'     '\n'   
+                'namespace {namespace} {{'                '\n'            
+                '{enum_description}'
+                '    [DataContract]'                      '\n'
+                '    public enum {enum_name}'             '\n'
+                '    {{'                                  '\n'
+                '{fields}'
+                '    }}'                                  '\n'
+                '}}'                                      '\n'
+              ).format(namespace = namespace,
+              enum_description = "  // {}\n".format(enum["description"]) if enum["description"] else '',
+              enum_name = name,
+              fields = fields))
+
 def generate_struct(file, namespace, name, struct):
-    file.write("using System.Text;\n")
-    file.write("using System.Runtime.Serialization;\n")
-    file.write("using System.Collections.Generic;\n")
+    field_items = ''
+    for field_name, details in struct["fields"].items():
+        field_items += (('{field_description}'
+                         '        [DataMember(Name = \"{field_name}\")]'                      '\n'
+                         '        public {field_cs_type} {field_cs_name} {{ get; set; }}'     '\n'
+                         ''                                                                   '\n'
+                         ).format(field_description = '        // {}\n'.format(details["description"]) if details["description"] else '',
+                                         field_name = field_name,
+                                      field_cs_type = type2cs_optional(details["type"]) if details["optional"] else type2cs(details["type"]),
+                                      field_cs_name = "_" + fix_case(field_name) if fix_case(field_name) == name else fix_case(field_name)))
 
-    file.write("namespace {0}.Definitions\n{{\n".format(namespace))
-    if struct["description"]:
-        file.write("    // {0}\n".format(struct["description"]))
-    file.write("    [DataContract]\n")
-    file.write("    public struct {0}\n    {{\n".format(name))
-    for field, details in struct["fields"].items():
-        if details["description"]: 
-            file.write("        // {0}\n".format(details["description"]))
-        file.write("        [DataMember(Name = \"{0}\")]\n".format(field))
-        field_name = fix_case(field)
-        if field_name == name:
-            field_name = "_" + field_name
-        if details["optional"]:
-            file.write("        public {0} {1} {{ get; set; }}\n\n".format(type2cs_optional(details["type"]), field_name))
-        else:
-            file.write("        public {0} {1} {{ get; set; }}\n\n".format(type2cs(details["type"]), field_name))
-    file.write(("        public override string ToString()\n"
-        "        {\n"
-        "            var sb = new StringBuilder();\n"
-        "            sb.Append(\"class " + name + " {\\n\");\n"))
-    for field, details in struct["fields"].items():
-        field_name = fix_case(field)
-        if field_name == name:
-            field_name = "_" + field_name
-        file.write("            sb.Append(\"  {0}: \").Append({0}).Append(\"\\n\");\n".format(field_name))
-    file.write(("            sb.Append(\"}\\n\");\n"
-        "            return sb.ToString();\n"
-        "        }\n"))
-    file.write("    }\n")
-    file.write("}")
+    file.write(('using System.Text;'                                    '\n'
+                'using System.Runtime.Serialization;'                   '\n'
+                'using System.Collections.Generic;'                     '\n'
+                'namespace {namespace}.Definitions'                     '\n'
+                '{{'                                                    '\n'
+                '{struct_description}'
+                '    [DataContract]'                                    '\n'
+                '    public struct {struct_name}'                       '\n'
+                '    {{'                                                '\n'
+                '{field_items}'
+                '        public override string ToString()'             '\n'
+                '        {{'                                            '\n'
+                '            var sb = new StringBuilder();'             '\n'
+                '            sb.Append("class {struct_name} {{\\n");'    '\n'
+                '{string_builder_items}'
+                '            sb.Append("}}\\n");'                       '\n'
+                '            return sb.ToString();'                     '\n'
+                '        }}'                                            '\n'
+                '    }}'                                                '\n'
+                '}}'
+                ).format(namespace = namespace,
+                struct_description = '    // {}\n'.format(struct["description"]) if struct["description"] else '',
+                       struct_name = name,
+                       field_items = field_items,
+              string_builder_items = ''.join('            sb.Append("  {0}: ").Append({0}).Append("\\n");\n'.format("_" + fix_case(field_name) if fix_case(field_name) == name else fix_case(field_name)) for field_name, details in struct["fields"].items()) ))
 
 def generate_requests(info, folder, namespace):
     for req_name, request in info["requests"].items():
@@ -126,7 +138,7 @@ def generate_requests(info, folder, namespace):
                     'using System.Threading.Tasks;'                                                                          '\n'
                     'using {namespace}.Definitions;'                                                                         '\n'
                     'using {namespace};'                                                                                     '\n'
-                                                                                                                             '\n'
+                    ''                                                                                                       '\n'
                     'namespace {namespace} {{'                                                                               '\n'
                     '    public static partial class Requests'                                                               '\n'
                     '    {{'                                                                                                 '\n'
@@ -140,16 +152,16 @@ def generate_requests(info, folder, namespace):
                     '                       serializeBody: {serialize_body});'                                               '\n'
                     '    }}'                                                                                                 '\n'
                     '}}'                                                                                                     '\n')
-                   .format(    namespace = namespace,
-                            return_value = "<{0}>".format(type2cs(function["returns"])) if function["returns"]["type"] else "",
-                            request_name = req_name,
-                               arguments = ''.join(", {0} {1}".format(type2cs_optional(argument["type"]) if arg_name in function["optional"] else type2cs(argument["type"]), "_" + fix_case(arg_name, False) + (" = null" if arg_name in function["optional"] else "")) for arg_name, argument in sorted_args),
-                             http_method = request["method"].upper(),
-                           http_endpoint = re.sub(r'{[^{]*-([a-zA-Z])[^}]*}', lambda m: fix_case(m.group(0), False), request["url"]).replace("{", "{_"),
-                              http_query = 'new Dictionary<string, string>{{{0}}}'.format(''.join('{{"{0}", JsonConvert.SerializeObject({1})}}, '.format(query_name, "_" + fix_case(query_name, False)) for query_name in request["query"])) if request["query"] else "null",
-                            http_headers = 'new Dictionary<string, string>{{{0}}}'.format(''.join('{{"{0}", JsonConvert.SerializeObject({1})}}, '.format(header_name, "_" + fix_case(header_name, False)) for header_name in request["header"])) if request["header"] else "null",
-                               http_body = "_" + fix_case(request["body"][0], False) if request["body"] else "null",
-                          serialize_body = "true"))
+                   .format(namespace = namespace,
+                        return_value = "<{0}>".format(type2cs(function["returns"])) if function["returns"]["type"] else '',
+                        request_name = req_name,
+                           arguments = ''.join(", {0} {1}".format(type2cs_optional(argument["type"]) if arg_name in function["optional"] else type2cs(argument["type"]), "_" + fix_case(arg_name, False) + (" = null" if arg_name in function["optional"] else "")) for arg_name, argument in sorted_args),
+                         http_method = request["method"].upper(),
+                       http_endpoint = re.sub(r'{[^{]*-([a-zA-Z])[^}]*}', lambda m: fix_case(m.group(0), False), request["url"]).replace("{", "{_"),
+                          http_query = 'new Dictionary<string, string>{{{0}}}'.format(''.join('{{"{0}", JsonConvert.SerializeObject({1})}}, '.format(query_name, "_" + fix_case(query_name, False)) for query_name in request["query"])) if request["query"] else "null",
+                        http_headers = 'new Dictionary<string, string>{{{0}}}'.format(''.join('{{"{0}", JsonConvert.SerializeObject({1})}}, '.format(header_name, "_" + fix_case(header_name, False)) for header_name in request["header"])) if request["header"] else "null",
+                           http_body = "_" + fix_case(request["body"][0], False) if request["body"] else "null",
+                      serialize_body = "true"))
 
 def generate_csproj(folder, namespace, info, guid, dotnet):
     with open("templates/cs/project.csproj", "rt") as fin:
