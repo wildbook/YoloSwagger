@@ -3,24 +3,24 @@
 #include <optional>
 namespace leagueapi {
   struct LolLoginRegionStatus_t {
-    bool enabled;
     bool isUserInfoEnabled;
-    bool isLQFallbackAllowed;
     std::string platformId;
+    bool enabled;
+    bool isLQFallbackAllowed;
   };
 
   inline void to_json(nlohmann::json& j, const LolLoginRegionStatus_t& v) {
-    j["enabled"] = v.enabled;
     j["isUserInfoEnabled"] = v.isUserInfoEnabled;
-    j["isLQFallbackAllowed"] = v.isLQFallbackAllowed;
     j["platformId"] = v.platformId;
+    j["enabled"] = v.enabled;
+    j["isLQFallbackAllowed"] = v.isLQFallbackAllowed;
   }
 
   inline void from_json(const nlohmann::json& j, LolLoginRegionStatus_t& v) {
-    v.enabled = j.at("enabled").get<bool>();
     v.isUserInfoEnabled = j.at("isUserInfoEnabled").get<bool>();
-    v.isLQFallbackAllowed = j.at("isLQFallbackAllowed").get<bool>();
     v.platformId = j.at("platformId").get<std::string>();
+    v.enabled = j.at("enabled").get<bool>();
+    v.isLQFallbackAllowed = j.at("isLQFallbackAllowed").get<bool>();
   }
   inline std::string to_string(const LolLoginRegionStatus_t& v) {
     nlohmann::json j = v;

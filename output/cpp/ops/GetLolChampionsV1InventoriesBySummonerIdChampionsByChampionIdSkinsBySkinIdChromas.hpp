@@ -8,6 +8,7 @@ namespace leagueapi {
     const int32_t& skinId)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-champions/v1/inventories/"+UrlCode::encode(to_string(summonerId))+"/champions/"+UrlCode::encode(to_string(championId))+"/skins/"+UrlCode::encode(to_string(skinId))+"/chromas";
@@ -15,8 +16,6 @@ namespace leagueapi {
     auto res = client.request("get", path, body, headers);
     if(res->status_code == 406)
       throw OpError(res->content.string());
-    if(auto it = res->header.find("content-type"); it !=res->header.end() && it->second == "application/json")
       return nlohmann::json(res->content.string());
-    return res->content.string();
   }
 }

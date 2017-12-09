@@ -3,36 +3,36 @@
 #include <optional>
 namespace leagueapi {
   struct LolLobbyTeamBuilderChampSelectTimer_t {
-    uint64_t internalNowInEpochMs;
-    int32_t adjustedTimeLeftInPhaseInSec;
-    int32_t timeLeftInPhaseInSec;
-    int64_t adjustedTimeLeftInPhase;
-    int64_t timeLeftInPhase;
-    std::string phase;
     int64_t totalTimeInPhase;
     bool isInfinite;
+    std::string phase;
+    int32_t adjustedTimeLeftInPhaseInSec;
+    int32_t timeLeftInPhaseInSec;
+    int64_t timeLeftInPhase;
+    int64_t adjustedTimeLeftInPhase;
+    uint64_t internalNowInEpochMs;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderChampSelectTimer_t& v) {
-    j["internalNowInEpochMs"] = v.internalNowInEpochMs;
-    j["adjustedTimeLeftInPhaseInSec"] = v.adjustedTimeLeftInPhaseInSec;
-    j["timeLeftInPhaseInSec"] = v.timeLeftInPhaseInSec;
-    j["adjustedTimeLeftInPhase"] = v.adjustedTimeLeftInPhase;
-    j["timeLeftInPhase"] = v.timeLeftInPhase;
-    j["phase"] = v.phase;
     j["totalTimeInPhase"] = v.totalTimeInPhase;
     j["isInfinite"] = v.isInfinite;
+    j["phase"] = v.phase;
+    j["adjustedTimeLeftInPhaseInSec"] = v.adjustedTimeLeftInPhaseInSec;
+    j["timeLeftInPhaseInSec"] = v.timeLeftInPhaseInSec;
+    j["timeLeftInPhase"] = v.timeLeftInPhase;
+    j["adjustedTimeLeftInPhase"] = v.adjustedTimeLeftInPhase;
+    j["internalNowInEpochMs"] = v.internalNowInEpochMs;
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderChampSelectTimer_t& v) {
-    v.internalNowInEpochMs = j.at("internalNowInEpochMs").get<uint64_t>();
-    v.adjustedTimeLeftInPhaseInSec = j.at("adjustedTimeLeftInPhaseInSec").get<int32_t>();
-    v.timeLeftInPhaseInSec = j.at("timeLeftInPhaseInSec").get<int32_t>();
-    v.adjustedTimeLeftInPhase = j.at("adjustedTimeLeftInPhase").get<int64_t>();
-    v.timeLeftInPhase = j.at("timeLeftInPhase").get<int64_t>();
-    v.phase = j.at("phase").get<std::string>();
     v.totalTimeInPhase = j.at("totalTimeInPhase").get<int64_t>();
     v.isInfinite = j.at("isInfinite").get<bool>();
+    v.phase = j.at("phase").get<std::string>();
+    v.adjustedTimeLeftInPhaseInSec = j.at("adjustedTimeLeftInPhaseInSec").get<int32_t>();
+    v.timeLeftInPhaseInSec = j.at("timeLeftInPhaseInSec").get<int32_t>();
+    v.timeLeftInPhase = j.at("timeLeftInPhase").get<int64_t>();
+    v.adjustedTimeLeftInPhase = j.at("adjustedTimeLeftInPhase").get<int64_t>();
+    v.internalNowInEpochMs = j.at("internalNowInEpochMs").get<uint64_t>();
   }
   inline std::string to_string(const LolLobbyTeamBuilderChampSelectTimer_t& v) {
     nlohmann::json j = v;

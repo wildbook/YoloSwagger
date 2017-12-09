@@ -7,6 +7,7 @@ namespace leagueapi {
     const std::optional<bool>& doAsync = std::nullopt)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     headers["content-type"] = "application/json";
     const std::string body = json(value).dump();

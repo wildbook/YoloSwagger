@@ -206,6 +206,7 @@ def generate_ops(info,  folder,  namespace):
                 file.write("\n    const std::optional<{1}>& {0} = std::nullopt".format(optional,  type2cpp(type)))
         file.write(")\n  {\n")
         file.write("    using std::to_string;\n")
+        file.write("    using {0}::to_string;\n".format(namespace))
         file.write("    Headers headers = {{\"Authorization\", info.auth}};\n")
         for aname in request["header"]:
             if aname in op["optional"]:
@@ -247,10 +248,12 @@ def generate_ops(info,  folder,  namespace):
         file.write("      throw OpError(res->content.string());\n")
         if returns == "void":
             file.write("    return;\n")
-        else:
+        elif returns == "nlohmann::json":
             file.write("    if(auto it = res->header.find(\"content-type\"); it !=res->header.end() && it->second == \"application/json\")\n")
             file.write("      return nlohmann::json(res->content.string());\n")
             file.write("    return res->content.string();\n")
+        else:
+            file.write("      return nlohmann::json(res->content.string());\n")
         file.write("  }\n")
         #end namespace
         file.write("}\n")

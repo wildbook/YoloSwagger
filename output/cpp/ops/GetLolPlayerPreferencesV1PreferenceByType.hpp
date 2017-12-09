@@ -6,6 +6,7 @@ namespace leagueapi {
     const std::optional<std::string>& hash = std::nullopt)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-player-preferences/v1/preference/"+UrlCode::encode(to_string(type))+"";

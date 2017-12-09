@@ -3,8 +3,8 @@
 namespace leagueapi {
   enum class LolGameflowPatcherProductStateAction_t {
     Patching_E = 2,
-    Idle_E = 0,
     Repairing_E = 3,
+    Idle_E = 0,
     CheckingForUpdates_E = 1,
   };
 
@@ -13,11 +13,11 @@ namespace leagueapi {
       case LolGameflowPatcherProductStateAction_t::Patching_E:
         j = "Patching";
       break;
-      case LolGameflowPatcherProductStateAction_t::Idle_E:
-        j = "Idle";
-      break;
       case LolGameflowPatcherProductStateAction_t::Repairing_E:
         j = "Repairing";
+      break;
+      case LolGameflowPatcherProductStateAction_t::Idle_E:
+        j = "Idle";
       break;
       case LolGameflowPatcherProductStateAction_t::CheckingForUpdates_E:
         j = "CheckingForUpdates";
@@ -31,12 +31,12 @@ namespace leagueapi {
       v = LolGameflowPatcherProductStateAction_t::Patching_E;
       return;
     }
-    if(s == "Idle"){
-      v = LolGameflowPatcherProductStateAction_t::Idle_E;
-      return;
-    }
     if(s == "Repairing"){
       v = LolGameflowPatcherProductStateAction_t::Repairing_E;
+      return;
+    }
+    if(s == "Idle"){
+      v = LolGameflowPatcherProductStateAction_t::Idle_E;
       return;
     }
     if(s == "CheckingForUpdates"){
@@ -48,10 +48,10 @@ namespace leagueapi {
     switch(v) {
       case LolGameflowPatcherProductStateAction_t::Patching_E:
         return "Patching";
-      case LolGameflowPatcherProductStateAction_t::Idle_E:
-        return "Idle";
       case LolGameflowPatcherProductStateAction_t::Repairing_E:
         return "Repairing";
+      case LolGameflowPatcherProductStateAction_t::Idle_E:
+        return "Idle";
       case LolGameflowPatcherProductStateAction_t::CheckingForUpdates_E:
         return "CheckingForUpdates";
     }

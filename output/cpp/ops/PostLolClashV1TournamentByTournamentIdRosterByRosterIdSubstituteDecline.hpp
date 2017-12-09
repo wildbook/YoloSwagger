@@ -6,6 +6,7 @@ namespace leagueapi {
     const std::string& rosterId)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-clash/v1/tournament/"+UrlCode::encode(to_string(tournamentId))+"/roster/"+UrlCode::encode(to_string(rosterId))+"/substitute/decline";

@@ -8,6 +8,7 @@ namespace leagueapi {
     const uint32_t& requestId)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     headers["content-type"] = "application/json";
     const std::string body = json(requestId).dump();

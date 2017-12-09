@@ -5,6 +5,7 @@ namespace leagueapi {
     const std::string& clubKey)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-clubs/v1/clubs/"+UrlCode::encode(to_string(clubKey))+"/view";

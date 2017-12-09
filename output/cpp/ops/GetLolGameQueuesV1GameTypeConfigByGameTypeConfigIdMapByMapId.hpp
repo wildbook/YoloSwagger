@@ -7,6 +7,7 @@ namespace leagueapi {
     const int32_t& mapId)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-game-queues/v1/game-type-config/"+UrlCode::encode(to_string(gameTypeConfigId))+"/map/"+UrlCode::encode(to_string(mapId))+"";
@@ -14,8 +15,6 @@ namespace leagueapi {
     auto res = client.request("get", path, body, headers);
     if(res->status_code == 406)
       throw OpError(res->content.string());
-    if(auto it = res->header.find("content-type"); it !=res->header.end() && it->second == "application/json")
       return nlohmann::json(res->content.string());
-    return res->content.string();
   }
 }

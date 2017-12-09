@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "MembershipNoficationsDto.hpp"
 #include "PlayerMembershipDto.hpp"
+#include "MembershipNoficationsDto.hpp"
 namespace leagueapi {
   struct PlayerMembershipWithNotificationsDto_t {
     std::vector<MembershipNoficationsDto_t> membershipNotifications;

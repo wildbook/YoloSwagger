@@ -6,6 +6,7 @@ namespace leagueapi {
     const std::string& message)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-game-client-chat/v1/party-messages";

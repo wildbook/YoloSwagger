@@ -6,6 +6,7 @@ namespace leagueapi {
     const std::string& category)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-settings/v2/account/"+UrlCode::encode(to_string(ppType))+"/"+UrlCode::encode(to_string(category))+"";

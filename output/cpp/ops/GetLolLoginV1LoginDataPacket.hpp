@@ -4,6 +4,7 @@ namespace leagueapi {
   nlohmann::json GetLolLoginV1LoginDataPacket (const ClientInfo& info)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-login/v1/login-data-packet";

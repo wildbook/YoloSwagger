@@ -7,6 +7,7 @@ namespace leagueapi {
     const LolClashSetPositionRequest_t& setPositionRequest)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     headers["content-type"] = "application/json";
     const std::string body = json(setPositionRequest).dump();

@@ -8,6 +8,7 @@ namespace leagueapi {
     const std::optional<uint32_t>& restartVersion = std::nullopt)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/process-control/v1/process/restart";

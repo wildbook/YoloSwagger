@@ -5,6 +5,7 @@ namespace leagueapi {
     const uint64_t& summonerId)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-las-toxicity/v1/summoners/"+UrlCode::encode(to_string(summonerId))+"";

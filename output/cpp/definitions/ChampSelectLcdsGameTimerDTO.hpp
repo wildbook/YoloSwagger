@@ -3,18 +3,18 @@
 #include <optional>
 namespace leagueapi {
   struct ChampSelectLcdsGameTimerDTO_t {
-    std::string currentGameState;
     double remainingTimeInMillis;
+    std::string currentGameState;
   };
 
   inline void to_json(nlohmann::json& j, const ChampSelectLcdsGameTimerDTO_t& v) {
-    j["currentGameState"] = v.currentGameState;
     j["remainingTimeInMillis"] = v.remainingTimeInMillis;
+    j["currentGameState"] = v.currentGameState;
   }
 
   inline void from_json(const nlohmann::json& j, ChampSelectLcdsGameTimerDTO_t& v) {
-    v.currentGameState = j.at("currentGameState").get<std::string>();
     v.remainingTimeInMillis = j.at("remainingTimeInMillis").get<double>();
+    v.currentGameState = j.at("currentGameState").get<std::string>();
   }
   inline std::string to_string(const ChampSelectLcdsGameTimerDTO_t& v) {
     nlohmann::json j = v;

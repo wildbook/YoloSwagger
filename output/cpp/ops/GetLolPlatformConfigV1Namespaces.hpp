@@ -4,6 +4,7 @@ namespace leagueapi {
   nlohmann::json GetLolPlatformConfigV1Namespaces (const ClientInfo& info)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-platform-config/v1/namespaces";

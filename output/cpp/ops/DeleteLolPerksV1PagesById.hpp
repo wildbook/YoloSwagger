@@ -5,6 +5,7 @@ namespace leagueapi {
     const int32_t& id)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-perks/v1/pages/"+UrlCode::encode(to_string(id))+"";

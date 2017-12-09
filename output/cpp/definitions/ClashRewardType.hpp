@@ -3,10 +3,10 @@
 namespace leagueapi {
   enum class ClashRewardType_t {
     LOGO_E = 3,
-    TROPHY_E = 0,
     FRAME_E = 2,
-    VP_E = 5,
     LOOT_E = 4,
+    TROPHY_E = 0,
+    VP_E = 5,
     FLAG_E = 1,
   };
 
@@ -15,17 +15,17 @@ namespace leagueapi {
       case ClashRewardType_t::LOGO_E:
         j = "LOGO";
       break;
-      case ClashRewardType_t::TROPHY_E:
-        j = "TROPHY";
-      break;
       case ClashRewardType_t::FRAME_E:
         j = "FRAME";
       break;
-      case ClashRewardType_t::VP_E:
-        j = "VP";
-      break;
       case ClashRewardType_t::LOOT_E:
         j = "LOOT";
+      break;
+      case ClashRewardType_t::TROPHY_E:
+        j = "TROPHY";
+      break;
+      case ClashRewardType_t::VP_E:
+        j = "VP";
       break;
       case ClashRewardType_t::FLAG_E:
         j = "FLAG";
@@ -39,20 +39,20 @@ namespace leagueapi {
       v = ClashRewardType_t::LOGO_E;
       return;
     }
-    if(s == "TROPHY"){
-      v = ClashRewardType_t::TROPHY_E;
-      return;
-    }
     if(s == "FRAME"){
       v = ClashRewardType_t::FRAME_E;
       return;
     }
-    if(s == "VP"){
-      v = ClashRewardType_t::VP_E;
-      return;
-    }
     if(s == "LOOT"){
       v = ClashRewardType_t::LOOT_E;
+      return;
+    }
+    if(s == "TROPHY"){
+      v = ClashRewardType_t::TROPHY_E;
+      return;
+    }
+    if(s == "VP"){
+      v = ClashRewardType_t::VP_E;
       return;
     }
     if(s == "FLAG"){
@@ -64,14 +64,14 @@ namespace leagueapi {
     switch(v) {
       case ClashRewardType_t::LOGO_E:
         return "LOGO";
-      case ClashRewardType_t::TROPHY_E:
-        return "TROPHY";
       case ClashRewardType_t::FRAME_E:
         return "FRAME";
-      case ClashRewardType_t::VP_E:
-        return "VP";
       case ClashRewardType_t::LOOT_E:
         return "LOOT";
+      case ClashRewardType_t::TROPHY_E:
+        return "TROPHY";
+      case ClashRewardType_t::VP_E:
+        return "VP";
       case ClashRewardType_t::FLAG_E:
         return "FLAG";
     }

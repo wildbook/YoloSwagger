@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolLootLoginAllSummonerData.hpp"
 #include "LolLootLoginSimpleMessage.hpp"
+#include "LolLootLoginAllSummonerData.hpp"
 namespace leagueapi {
   struct LolLootLoginDataPacket_t {
     LolLootLoginAllSummonerData_t allSummonerData;

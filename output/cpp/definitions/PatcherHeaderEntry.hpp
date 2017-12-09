@@ -3,18 +3,18 @@
 #include <optional>
 namespace leagueapi {
   struct PatcherHeaderEntry_t {
-    std::string value;
     std::string key;
+    std::string value;
   };
 
   inline void to_json(nlohmann::json& j, const PatcherHeaderEntry_t& v) {
-    j["value"] = v.value;
     j["key"] = v.key;
+    j["value"] = v.value;
   }
 
   inline void from_json(const nlohmann::json& j, PatcherHeaderEntry_t& v) {
-    v.value = j.at("value").get<std::string>();
     v.key = j.at("key").get<std::string>();
+    v.value = j.at("value").get<std::string>();
   }
   inline std::string to_string(const PatcherHeaderEntry_t& v) {
     nlohmann::json j = v;

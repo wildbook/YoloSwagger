@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolEndOfGameLoginSummonerData.hpp"
 #include "LolEndOfGameSimpleMessage.hpp"
+#include "LolEndOfGameLoginSummonerData.hpp"
 namespace leagueapi {
   struct LolEndOfGameLoginDataPacket_t {
     std::string platformId;

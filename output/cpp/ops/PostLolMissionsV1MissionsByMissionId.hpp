@@ -6,6 +6,7 @@ namespace leagueapi {
     const std::string& missionId)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-missions/v1/missions/"+UrlCode::encode(to_string(missionId))+"";

@@ -6,6 +6,7 @@ namespace leagueapi {
     const bool& enabledForTeambuilderQueues)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-lobby/v2/parties/overrides/EnabledForTeamBuilderQueues";

@@ -1,9 +1,9 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolStorePageGroupingDTO.hpp"
-#include "LolStoreCatalogItem.hpp"
 #include "LolStorePlayer.hpp"
+#include "LolStoreCatalogItem.hpp"
+#include "LolStorePageGroupingDTO.hpp"
 namespace leagueapi {
   struct LolStorePageDTO_t {
     LolStorePlayer_t Player;

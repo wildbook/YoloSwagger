@@ -9,6 +9,7 @@ namespace leagueapi {
     const PatcherInjectedPatcherError_t& error)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/patcher/v1/products/"+UrlCode::encode(to_string(product-id))+"/inject-error";

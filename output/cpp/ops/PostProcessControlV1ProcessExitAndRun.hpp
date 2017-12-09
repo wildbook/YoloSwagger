@@ -9,6 +9,7 @@ namespace leagueapi {
     const std::vector<std::string>& args)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     headers["content-type"] = "application/x-www-form-urlencoded";
     const std::string body = body = UrlCode::encode(to_string(args));

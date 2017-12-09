@@ -1,58 +1,58 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolChampSelectLegacyChampSelectTimer.hpp"
-#include "LolChampSelectLegacyChampSelectChatRoomDetails.hpp"
-#include "LolChampSelectLegacyChampSelectBannedChampions.hpp"
 #include "LolChampSelectLegacyChampSelectPlayerSelection.hpp"
+#include "LolChampSelectLegacyChampSelectTimer.hpp"
 #include "LolChampSelectLegacyChampSelectTradeContract.hpp"
+#include "LolChampSelectLegacyChampSelectBannedChampions.hpp"
+#include "LolChampSelectLegacyChampSelectChatRoomDetails.hpp"
 namespace leagueapi {
   struct LolChampSelectLegacyChampSelectSession_t {
     LolChampSelectLegacyChampSelectChatRoomDetails_t chatDetails;
     LolChampSelectLegacyChampSelectTimer_t timer;
-    int64_t localPlayerCellId;
-    uint32_t rerollsRemaining;
-    bool allowRerolling;
-    bool allowBattleBoost;
-    std::vector<LolChampSelectLegacyChampSelectPlayerSelection_t> theirTeam;
-    LolChampSelectLegacyChampSelectBannedChampions_t bans;
-    std::vector<LolChampSelectLegacyChampSelectTradeContract_t> trades;
-    bool isSpectating;
     std::vector<nlohmann::json> actions;
+    uint32_t rerollsRemaining;
     std::vector<LolChampSelectLegacyChampSelectPlayerSelection_t> myTeam;
+    std::vector<LolChampSelectLegacyChampSelectPlayerSelection_t> theirTeam;
+    int64_t localPlayerCellId;
+    LolChampSelectLegacyChampSelectBannedChampions_t bans;
+    bool allowBattleBoost;
+    std::vector<LolChampSelectLegacyChampSelectTradeContract_t> trades;
+    bool allowRerolling;
     bool allowSkinSelection;
+    bool isSpectating;
   };
 
   inline void to_json(nlohmann::json& j, const LolChampSelectLegacyChampSelectSession_t& v) {
     j["chatDetails"] = v.chatDetails;
     j["timer"] = v.timer;
-    j["localPlayerCellId"] = v.localPlayerCellId;
-    j["rerollsRemaining"] = v.rerollsRemaining;
-    j["allowRerolling"] = v.allowRerolling;
-    j["allowBattleBoost"] = v.allowBattleBoost;
-    j["theirTeam"] = v.theirTeam;
-    j["bans"] = v.bans;
-    j["trades"] = v.trades;
-    j["isSpectating"] = v.isSpectating;
     j["actions"] = v.actions;
+    j["rerollsRemaining"] = v.rerollsRemaining;
     j["myTeam"] = v.myTeam;
+    j["theirTeam"] = v.theirTeam;
+    j["localPlayerCellId"] = v.localPlayerCellId;
+    j["bans"] = v.bans;
+    j["allowBattleBoost"] = v.allowBattleBoost;
+    j["trades"] = v.trades;
+    j["allowRerolling"] = v.allowRerolling;
     j["allowSkinSelection"] = v.allowSkinSelection;
+    j["isSpectating"] = v.isSpectating;
   }
 
   inline void from_json(const nlohmann::json& j, LolChampSelectLegacyChampSelectSession_t& v) {
     v.chatDetails = j.at("chatDetails").get<LolChampSelectLegacyChampSelectChatRoomDetails_t>();
     v.timer = j.at("timer").get<LolChampSelectLegacyChampSelectTimer_t>();
-    v.localPlayerCellId = j.at("localPlayerCellId").get<int64_t>();
-    v.rerollsRemaining = j.at("rerollsRemaining").get<uint32_t>();
-    v.allowRerolling = j.at("allowRerolling").get<bool>();
-    v.allowBattleBoost = j.at("allowBattleBoost").get<bool>();
-    v.theirTeam = j.at("theirTeam").get<std::vector<LolChampSelectLegacyChampSelectPlayerSelection_t>>();
-    v.bans = j.at("bans").get<LolChampSelectLegacyChampSelectBannedChampions_t>();
-    v.trades = j.at("trades").get<std::vector<LolChampSelectLegacyChampSelectTradeContract_t>>();
-    v.isSpectating = j.at("isSpectating").get<bool>();
     v.actions = j.at("actions").get<std::vector<nlohmann::json>>();
+    v.rerollsRemaining = j.at("rerollsRemaining").get<uint32_t>();
     v.myTeam = j.at("myTeam").get<std::vector<LolChampSelectLegacyChampSelectPlayerSelection_t>>();
+    v.theirTeam = j.at("theirTeam").get<std::vector<LolChampSelectLegacyChampSelectPlayerSelection_t>>();
+    v.localPlayerCellId = j.at("localPlayerCellId").get<int64_t>();
+    v.bans = j.at("bans").get<LolChampSelectLegacyChampSelectBannedChampions_t>();
+    v.allowBattleBoost = j.at("allowBattleBoost").get<bool>();
+    v.trades = j.at("trades").get<std::vector<LolChampSelectLegacyChampSelectTradeContract_t>>();
+    v.allowRerolling = j.at("allowRerolling").get<bool>();
     v.allowSkinSelection = j.at("allowSkinSelection").get<bool>();
+    v.isSpectating = j.at("isSpectating").get<bool>();
   }
   inline std::string to_string(const LolChampSelectLegacyChampSelectSession_t& v) {
     nlohmann::json j = v;

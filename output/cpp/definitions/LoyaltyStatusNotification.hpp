@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LoyaltyStatus.hpp"
 #include "LoyaltyRewards.hpp"
+#include "LoyaltyStatus.hpp"
 namespace leagueapi {
   struct LoyaltyStatusNotification_t {
     LoyaltyRewards_t rewards;

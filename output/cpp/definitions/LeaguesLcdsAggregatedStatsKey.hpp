@@ -3,18 +3,18 @@
 #include <optional>
 namespace leagueapi {
   struct LeaguesLcdsAggregatedStatsKey_t {
-    std::string gameMode;
     uint64_t userId;
+    std::string gameMode;
   };
 
   inline void to_json(nlohmann::json& j, const LeaguesLcdsAggregatedStatsKey_t& v) {
-    j["gameMode"] = v.gameMode;
     j["userId"] = v.userId;
+    j["gameMode"] = v.gameMode;
   }
 
   inline void from_json(const nlohmann::json& j, LeaguesLcdsAggregatedStatsKey_t& v) {
-    v.gameMode = j.at("gameMode").get<std::string>();
     v.userId = j.at("userId").get<uint64_t>();
+    v.gameMode = j.at("gameMode").get<std::string>();
   }
   inline std::string to_string(const LeaguesLcdsAggregatedStatsKey_t& v) {
     nlohmann::json j = v;

@@ -3,8 +3,8 @@
 namespace leagueapi {
   enum class AggregationType_t {
     none_E = 0,
-    sum_E = 1,
     average_E = 2,
+    sum_E = 1,
   };
 
   inline void to_json(nlohmann::json& j, const AggregationType_t& v) {
@@ -12,11 +12,11 @@ namespace leagueapi {
       case AggregationType_t::none_E:
         j = "none";
       break;
-      case AggregationType_t::sum_E:
-        j = "sum";
-      break;
       case AggregationType_t::average_E:
         j = "average";
+      break;
+      case AggregationType_t::sum_E:
+        j = "sum";
       break;
     }
   }
@@ -27,12 +27,12 @@ namespace leagueapi {
       v = AggregationType_t::none_E;
       return;
     }
-    if(s == "sum"){
-      v = AggregationType_t::sum_E;
-      return;
-    }
     if(s == "average"){
       v = AggregationType_t::average_E;
+      return;
+    }
+    if(s == "sum"){
+      v = AggregationType_t::sum_E;
       return;
     }
   }
@@ -40,10 +40,10 @@ namespace leagueapi {
     switch(v) {
       case AggregationType_t::none_E:
         return "none";
-      case AggregationType_t::sum_E:
-        return "sum";
       case AggregationType_t::average_E:
         return "average";
+      case AggregationType_t::sum_E:
+        return "sum";
     }
   }
 

@@ -2,8 +2,8 @@
 #include <json.hpp>
 #include <optional>
 #include "LolLobbyGameflowGameDodge.hpp"
-#include "LolLobbyGameflowGameClient.hpp"
 #include "LolLobbyGameflowPhase.hpp"
+#include "LolLobbyGameflowGameClient.hpp"
 namespace leagueapi {
   struct LolLobbyGameflowSession_t {
     LolLobbyGameflowGameDodge_t gameDodge;

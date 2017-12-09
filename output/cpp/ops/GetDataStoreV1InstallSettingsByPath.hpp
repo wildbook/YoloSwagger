@@ -7,6 +7,7 @@ namespace leagueapi {
     const std::string& path)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/data-store/v1/install-settings/"+UrlCode::encode(to_string(path))+"";

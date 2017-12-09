@@ -4,8 +4,8 @@ namespace leagueapi {
   enum class LolClashClashState_t {
     Enabled_E = 3,
     DarkDisabled_E = 0,
-    DarkEnabled_E = 1,
     Disabled_E = 2,
+    DarkEnabled_E = 1,
   };
 
   inline void to_json(nlohmann::json& j, const LolClashClashState_t& v) {
@@ -16,11 +16,11 @@ namespace leagueapi {
       case LolClashClashState_t::DarkDisabled_E:
         j = "DarkDisabled";
       break;
-      case LolClashClashState_t::DarkEnabled_E:
-        j = "DarkEnabled";
-      break;
       case LolClashClashState_t::Disabled_E:
         j = "Disabled";
+      break;
+      case LolClashClashState_t::DarkEnabled_E:
+        j = "DarkEnabled";
       break;
     }
   }
@@ -35,12 +35,12 @@ namespace leagueapi {
       v = LolClashClashState_t::DarkDisabled_E;
       return;
     }
-    if(s == "DarkEnabled"){
-      v = LolClashClashState_t::DarkEnabled_E;
-      return;
-    }
     if(s == "Disabled"){
       v = LolClashClashState_t::Disabled_E;
+      return;
+    }
+    if(s == "DarkEnabled"){
+      v = LolClashClashState_t::DarkEnabled_E;
       return;
     }
   }
@@ -50,10 +50,10 @@ namespace leagueapi {
         return "Enabled";
       case LolClashClashState_t::DarkDisabled_E:
         return "DarkDisabled";
-      case LolClashClashState_t::DarkEnabled_E:
-        return "DarkEnabled";
       case LolClashClashState_t::Disabled_E:
         return "Disabled";
+      case LolClashClashState_t::DarkEnabled_E:
+        return "DarkEnabled";
     }
   }
 

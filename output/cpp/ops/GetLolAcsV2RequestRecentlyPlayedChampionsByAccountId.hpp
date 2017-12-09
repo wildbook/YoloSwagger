@@ -7,6 +7,7 @@ namespace leagueapi {
     const bool& force)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-acs/v2/request-recently-played-champions/"+UrlCode::encode(to_string(accountId))+"";

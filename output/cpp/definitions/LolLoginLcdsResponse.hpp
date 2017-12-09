@@ -3,18 +3,18 @@
 #include <optional>
 namespace leagueapi {
   struct LolLoginLcdsResponse_t {
-    std::string typeName;
     nlohmann::json body;
+    std::string typeName;
   };
 
   inline void to_json(nlohmann::json& j, const LolLoginLcdsResponse_t& v) {
-    j["typeName"] = v.typeName;
     j["body"] = v.body;
+    j["typeName"] = v.typeName;
   }
 
   inline void from_json(const nlohmann::json& j, LolLoginLcdsResponse_t& v) {
-    v.typeName = j.at("typeName").get<std::string>();
     v.body = j.at("body").get<nlohmann::json>();
+    v.typeName = j.at("typeName").get<std::string>();
   }
   inline std::string to_string(const LolLoginLcdsResponse_t& v) {
     nlohmann::json j = v;

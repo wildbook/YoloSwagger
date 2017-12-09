@@ -9,6 +9,7 @@ namespace leagueapi {
     const int32_t& queueId)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-replays/v1/metadata/"+UrlCode::encode(to_string(gameId))+"/create/gameVersion/"+UrlCode::encode(to_string(gameVersion))+"/gameType/"+UrlCode::encode(to_string(gameType))+"/queueId/"+UrlCode::encode(to_string(queueId))+"";

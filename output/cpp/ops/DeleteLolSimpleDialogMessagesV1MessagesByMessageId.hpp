@@ -5,6 +5,7 @@ namespace leagueapi {
     const int64_t& messageId)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-simple-dialog-messages/v1/messages/"+UrlCode::encode(to_string(messageId))+"";

@@ -5,6 +5,7 @@ namespace leagueapi {
   void GetLolGameflowV1SpectateDelayedLaunch (const ClientInfo& info)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-gameflow/v1/spectate/delayed-launch";

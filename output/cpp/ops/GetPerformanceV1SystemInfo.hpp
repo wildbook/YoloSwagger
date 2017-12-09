@@ -7,6 +7,7 @@ namespace leagueapi {
     const std::optional<int32_t>& full = std::nullopt)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/performance/v1/system-info";

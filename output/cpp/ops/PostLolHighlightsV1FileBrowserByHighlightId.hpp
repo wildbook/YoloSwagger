@@ -5,6 +5,7 @@ namespace leagueapi {
     const uint64_t& highlightId)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-highlights/v1/file-browser/"+UrlCode::encode(to_string(highlightId))+"";

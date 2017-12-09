@@ -2,8 +2,8 @@
 #include <json.hpp>
 #include <optional>
 #include "LolChampSelectLegacyGameflowGameClient.hpp"
-#include "LolChampSelectLegacyGameflowPhase.hpp"
 #include "LolChampSelectLegacyGameflowGameData.hpp"
+#include "LolChampSelectLegacyGameflowPhase.hpp"
 namespace leagueapi {
   struct LolChampSelectLegacyGameflowSession_t {
     LolChampSelectLegacyGameflowGameData_t gameData;

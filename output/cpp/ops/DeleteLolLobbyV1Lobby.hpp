@@ -4,6 +4,7 @@ namespace leagueapi {
   nlohmann::json DeleteLolLobbyV1Lobby (const ClientInfo& info)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-lobby/v1/lobby";

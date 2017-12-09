@@ -6,6 +6,7 @@ namespace leagueapi {
     const std::string& component-id)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/patcher/v1/products/"+UrlCode::encode(to_string(product-id))+"/"+UrlCode::encode(to_string(component-id))+"/http-headers";

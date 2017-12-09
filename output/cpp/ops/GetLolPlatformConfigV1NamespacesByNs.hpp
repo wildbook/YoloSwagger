@@ -5,6 +5,7 @@ namespace leagueapi {
     const std::string& ns)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-platform-config/v1/namespaces/"+UrlCode::encode(to_string(ns))+"";

@@ -6,6 +6,7 @@ namespace leagueapi {
     const std::string& errString)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-beta-opt-in/v1/migration-error";

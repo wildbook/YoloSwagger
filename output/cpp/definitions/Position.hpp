@@ -3,11 +3,11 @@
 namespace leagueapi {
   enum class Position_t {
     JUNGLE_E = 3,
-    BOTTOM_E = 2,
-    UTILITY_E = 4,
-    TOP_E = 0,
-    MIDDLE_E = 1,
     FILL_E = 5,
+    MIDDLE_E = 1,
+    UTILITY_E = 4,
+    BOTTOM_E = 2,
+    TOP_E = 0,
     UNSELECTED_E = 6,
   };
 
@@ -16,20 +16,20 @@ namespace leagueapi {
       case Position_t::JUNGLE_E:
         j = "JUNGLE";
       break;
-      case Position_t::BOTTOM_E:
-        j = "BOTTOM";
-      break;
-      case Position_t::UTILITY_E:
-        j = "UTILITY";
-      break;
-      case Position_t::TOP_E:
-        j = "TOP";
+      case Position_t::FILL_E:
+        j = "FILL";
       break;
       case Position_t::MIDDLE_E:
         j = "MIDDLE";
       break;
-      case Position_t::FILL_E:
-        j = "FILL";
+      case Position_t::UTILITY_E:
+        j = "UTILITY";
+      break;
+      case Position_t::BOTTOM_E:
+        j = "BOTTOM";
+      break;
+      case Position_t::TOP_E:
+        j = "TOP";
       break;
       case Position_t::UNSELECTED_E:
         j = "UNSELECTED";
@@ -43,24 +43,24 @@ namespace leagueapi {
       v = Position_t::JUNGLE_E;
       return;
     }
-    if(s == "BOTTOM"){
-      v = Position_t::BOTTOM_E;
-      return;
-    }
-    if(s == "UTILITY"){
-      v = Position_t::UTILITY_E;
-      return;
-    }
-    if(s == "TOP"){
-      v = Position_t::TOP_E;
+    if(s == "FILL"){
+      v = Position_t::FILL_E;
       return;
     }
     if(s == "MIDDLE"){
       v = Position_t::MIDDLE_E;
       return;
     }
-    if(s == "FILL"){
-      v = Position_t::FILL_E;
+    if(s == "UTILITY"){
+      v = Position_t::UTILITY_E;
+      return;
+    }
+    if(s == "BOTTOM"){
+      v = Position_t::BOTTOM_E;
+      return;
+    }
+    if(s == "TOP"){
+      v = Position_t::TOP_E;
       return;
     }
     if(s == "UNSELECTED"){
@@ -72,16 +72,16 @@ namespace leagueapi {
     switch(v) {
       case Position_t::JUNGLE_E:
         return "JUNGLE";
-      case Position_t::BOTTOM_E:
-        return "BOTTOM";
-      case Position_t::UTILITY_E:
-        return "UTILITY";
-      case Position_t::TOP_E:
-        return "TOP";
-      case Position_t::MIDDLE_E:
-        return "MIDDLE";
       case Position_t::FILL_E:
         return "FILL";
+      case Position_t::MIDDLE_E:
+        return "MIDDLE";
+      case Position_t::UTILITY_E:
+        return "UTILITY";
+      case Position_t::BOTTOM_E:
+        return "BOTTOM";
+      case Position_t::TOP_E:
+        return "TOP";
       case Position_t::UNSELECTED_E:
         return "UNSELECTED";
     }

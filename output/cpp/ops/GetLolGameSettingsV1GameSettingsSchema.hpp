@@ -4,6 +4,7 @@ namespace leagueapi {
   nlohmann::json GetLolGameSettingsV1GameSettingsSchema (const ClientInfo& info)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-game-settings/v1/game-settings-schema";

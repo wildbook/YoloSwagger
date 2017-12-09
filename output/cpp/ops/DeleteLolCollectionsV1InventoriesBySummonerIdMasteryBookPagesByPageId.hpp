@@ -6,6 +6,7 @@ namespace leagueapi {
     const uint32_t& pageId)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-collections/v1/inventories/"+UrlCode::encode(to_string(summonerId))+"/mastery-book/pages/"+UrlCode::encode(to_string(pageId))+"";

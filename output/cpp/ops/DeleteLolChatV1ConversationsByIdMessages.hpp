@@ -5,6 +5,7 @@ namespace leagueapi {
     const std::string& id)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-chat/v1/conversations/"+UrlCode::encode(to_string(id))+"/messages";

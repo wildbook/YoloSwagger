@@ -6,6 +6,7 @@ namespace leagueapi {
     const bool& enabled)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-gameflow/v1/pre-end-game-transition";

@@ -7,6 +7,7 @@ namespace leagueapi {
     const std::string& api)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/v1/api-docs/"+UrlCode::encode(to_string(api))+"";

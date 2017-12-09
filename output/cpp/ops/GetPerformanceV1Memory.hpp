@@ -5,6 +5,7 @@ namespace leagueapi {
   nlohmann::json GetPerformanceV1Memory (const ClientInfo& info)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/performance/v1/memory";

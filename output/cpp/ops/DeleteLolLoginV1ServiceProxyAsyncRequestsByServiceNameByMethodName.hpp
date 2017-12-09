@@ -8,6 +8,7 @@ namespace leagueapi {
     const uint32_t& pluginId)
   {
     using std::to_string;
+    using leagueapi::to_string;
     Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/lol-login/v1/service-proxy-async-requests/"+UrlCode::encode(to_string(serviceName))+"/"+UrlCode::encode(to_string(methodName))+"";
