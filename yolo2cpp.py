@@ -247,29 +247,29 @@ builtins = {
 
 #formats all include types if they are not builtins and empty
 def type2include(parent, fmt, additional = ""):
-    def _type2include(type):
-        if "returns" in type:
-            return type2include(type["returns"])
-        if "elementType" not in type:
-            return type2include(type["type"])
-        if type["type"] == "vector" or type["type"] == "map":
-            return "" if type["elementType"] in builtins else type["elementType"]
-        return "" if type["type"] in builtins else type["type"]
+    def _type2include(typ):
+        if "returns" in typ:
+            return type2include(typ["returns"])
+        if "elementType" not in typ:
+            return type2include(typ["type"])
+        if typ["type"] == "vector" or typ["type"] == "map":
+            return "" if typ["elementType"] in builtins else typ["elementType"]
+        return "" if typ["type"] in builtins else typ["type"]
     includes = { _type2include(f["type"]) for f in parent } 
     if not additional == "":
         includes.update({_type2include(additional)})
     return "".join([fmt.format(i) for i in includes if not i == ""])
 #converts type or type holder to type :)
 def type2cpp(parent):
-    def _type2cpp(type):
+    def _type2cpp(typ):
         otherformat = "{0}"
-        if not type["type"] in builtins:
-            return otherformat.format(type["type"]) 
-        if not type["elementType"] == "":
-            if not type["elementType"] in builtins:
-                return builtins[type["type"]].format(otherformat.format(type["elementType"])) 
-            return builtins[type["type"]].format(builtins[type["elementType"]].format(type["elementType"]))
-        return builtins[type["type"]]
+        if not typ["type"] in builtins:
+            return otherformat.format(typ["type"]) 
+        if not typ["elementType"] == "":
+            if not typ["elementType"] in builtins:
+                return builtins[typ["type"]].format(otherformat.format(typ["elementType"])) 
+            return builtins[typ["type"]].format(builtins[typ["elementType"]].format(typ["elementType"]))
+        return builtins[typ["type"]]
     if "elementType" in parent:
         return _type2cpp(parent).replace("-", "_")
     t = _type2cpp(parent["type"]).replace("-", "_")
@@ -279,7 +279,7 @@ def generate_definitions(yolo, folder, namespace):
     mkpath("{0}/definitions/".format(folder))
     open(folder + "/base.hpp", "w+").write(template_base_hpp.format(NAMESPACE = namespace))
     for definition in yolo["definitions"]:
-        with open("{0}/definitions/{1}".format(folder, definition["name"]), "w+") as file:
+        with open("{0}/definitions/{1}.hpp".format(folder, definition["name"]), "w+") as file:
             if definition["isEnum"]:
                 file.write(template_enum.format(**definition,NAMESPACE = namespace,
                     VALUES = "".join([template_enum_values.format(**m) for m in definition["values"]]),
