@@ -16,58 +16,214 @@ namespace nlohmann {{
   }};
 }}
 namespace {NAMESPACE} {{
-using json = nlohmann::json;
-}}"""
+  using json = nlohmann::json;
+  using std::to_string;
+  inline std::string to_string(const std::string& v) {{
+    return v;
+  }}
+  inline std::string to_string(const json& j) {{
+    if(j.is_string())
+      return j.get<std::string>();
+    return j.dump();
+  }}
+}} """
 
 #struct definitions
 template_struct = """#pragma once
 #include "../base.hpp"
 {INCLUDES}
 namespace {NAMESPACE} {{
-struct {NAME} {{ /*{description}*/ {MEMBERS}
-}};
-void to_json(json& j, const {NAME}& v) {{ {TO_JSON}
-}}
-void from_json(const json& j, {NAME}& v) {{ {FROM_JSON}
-}}
-}}"""
+  struct {NAME} {{ /*{description}*/ {MEMBERS}
+  }};
+  void to_json(json& j, const {NAME}& v) {{ {TO_JSON}
+  }}
+  void from_json(const json& j, {NAME}& v) {{ {FROM_JSON}
+  }}
+}} """
 template_struct_members = """
-  {TYPE} {NAME};/*{description}*/"""
+    {TYPE} {NAME};/*{description}*/"""
 template_struct_to_json = """
-  j[\"{NAME}\"] = v.{NAME};"""
+    j[\"{NAME}\"] = v.{NAME};"""
 template_struct_from_json = """
-  v.{NAME} = j.at(\"{NAME}\").get<{TYPE}>();"""
-template_struct_include = """
-#include "{0}.hpp" """
+    v.{NAME} = j.at(\"{NAME}\").get<{TYPE}>(); """
 
 #enum definitions
 template_enum = """#pragma once
 #include "../base.hpp"
 namespace {NAMESPACE} {{
-enum class {NAME} {{ /*{description}*/ {VALUES}
-}};
-std::string to_string(const {NAME}& v) {{
-  switch(v) {{ {TO_STRING}
+  enum class {NAME} {{ /*{description}*/ {VALUES}
   }};
-}}
-void to_json(json& j, const {NAME}& v) {{
-  j = as_string(v);
-}}
-void from_json(const json& j, {NAME}& v) {{
-  auto s = j.get<std::string>(); {FROM_JSON}
-}}
-}}"""
+  void to_json(json& j, const {NAME}& v) {{
+    switch(v) {{ {TO_JSON}
+    }};
+  }}
+  void from_json(const json& j, {NAME}& v) {{
+    auto s = j.get<std::string>(); {FROM_JSON}
+  }}
+}} """
 template_enum_values = """
-  {NAME} = {value}, /*{description}*/ """
-template_enum_to_string = """
-  case {ENUM}::{NAME}:
-    return \"{name}\";
-  break;"""
+    {NAME} = {value}, /*{description}*/ """
+template_enum_to_json = """
+    case {ENUM}::{NAME}:
+      j = \"{name}\";
+    break;"""
 template_enum_from_json = """
-  if(s == \"{name}\") {{
-    v = {ENUM}::{NAME};
-    return;
-  }}"""
+    if(s == \"{name}\") {{s
+      v = {ENUM}::{NAME};
+      return;
+    }} """
+
+#template for client
+template_client = """#pragma once
+#include "base.hpp"
+#include <SimpleWeb/crypto.hpp>
+#include <SimpleWeb/client_https.hpp>
+#include <SimpleWeb/utility.hpp>
+#include <stdexcept>
+#include "definitions/LolLobbyAmbassadorMessage.hpp"
+namespace {NAMESPACE} {{
+  using HttpsClient = SimpleWeb::Client<SimpleWeb::HTTPS>;
+  using HttpsResponse = HttpsClient::Response;
+  using HttpsResponsePtr = std::shared_ptr<HttpsClient::Response>;
+  using Headers = SimpleWeb::CaseInsensitiveMultimap;
+  using Query = SimpleWeb::CaseInsensitiveMultimap;
+  using FormData = SimpleWeb::CaseInsensitiveMultimap;
+  using ErrorCode = SimpleWeb::error_code;
+  using QueryString = SimpleWeb::QueryString;
+
+  struct ClientInfo {{
+    std::string host;
+    std::string auth;
+  }};
+
+  using RequestError = LolLobbyAmbassadorMessage;
+
+  template<T>
+  struct Result {{
+    HttpsResponsePtr response;
+    T data;
+    Result(HttpsResponsePtr r) : response(r) {{
+      int status_code = std::stoul(r->status_code);
+      auto raw = r->content.string();
+      if(status_code != 200) {{
+        LolLobbyAmbassadorMessage error;
+        if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")) {{
+          error = json::parse(raw);
+        }} else {{
+          error.httpStatus = status_code;
+          error.message = raw;
+        }}
+        throw error;
+      }}
+      data = json::parse(raw);
+    }}
+    T* operator->() {{
+      return &data;
+    }}
+    T operator*() const {{
+      return data;
+    }}
+    const T& operator*() const {{
+      return &data;
+    }}
+    operator T() const {{
+      return data;
+    }}
+  }};
+
+  template<>
+  struct Result<json> {{
+    HttpsResponsePtr response;
+    json data;
+    Result(HttpsResponsePtr r) : response(r) {{
+      int status_code = std::stoul(r->status_code);
+      auto raw = r->content.string();
+      if(status_code != 200) {{
+        LolLobbyAmbassadorMessage error;
+        if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")) {{
+          error = json::parse(raw);
+        }} else {{
+          error.httpStatus = status_code;
+          error.message = raw;
+        }}
+        throw error;
+      }}
+      if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")
+        data = json::parse(raw);
+      else
+        data = raw;
+    }}
+    json* operator->() {{
+      return &data;
+    }}
+    json operator*() const {{
+      return data;
+    }}
+    const json& operator*() const {{
+      return &data;
+    }}
+    operator json() const {{
+      return data;
+    }}
+  }};
+
+  template<>
+  struct Result<void> {{
+    HttpsResponsePtr response;
+    Result(HttpsResponsePtr r) : response(r) {{
+      int status_code = std::stoul(r->status_code);
+      auto raw = r->content.string();
+      if(status_code != 204) {{
+        LolLobbyAmbassadorMessage error;
+        if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")) {{
+          error = json::parse(raw);
+        }} else {{
+          error.httpStatus = status_code;
+          error.message = raw;
+        }}
+        throw error;
+      }}
+    }}
+    HttpsResponsePtr operator->() const {{
+      return response;
+    }}
+    HttpsResponsePtr operator*() {{
+      return response;
+    }}
+  }}
+
+  template<typename T>
+  static inline add2map(SimpleWeb::CaseInsensitiveMultimap &map, const std::string& name, const T& v) {{
+    map[name] = to_string(v);
+  }}
+
+  template<typename T>
+  static inline add2map(SimpleWeb::CaseInsensitiveMultimap &map, const std::string& name, const std::optional<T>& v) {{
+    if(v)
+      map[name] = to_string(*v);
+  }}
+}} """
+
+#function tempalte
+template_op = """#pragma once
+#include "../client.hpp"
+namespace {NAMESPACE} {{
+  /*{description}*/
+  {RETURNS} {NAME} (const ClientInfo& info{ARGS_R} {ARGS_O})
+  {{ 
+    Headers headers = {{ {{"Authorization", info.auth}} }}; {ARGS_HEADER}
+    Query query; {ARGS_QUERY}
+    FormData formdata; {ARGS_FORM}
+    HttpsClient client(info.host, false);
+    return {{ client.request( "{method}", "{PATH}" + "?" + QueryString::create(query), {ARGS_BODY}, headers) }};
+  }}
+}} """
+template_op_arg = ',\n      {TYPE}& {NAME} /*{description}*/'
+template_op_add_header = '\n    add2map(headers, "{name}", {NAME});'
+template_op_add_query = '\n    add2map(query, "{name}", {NAME});'
+template_op_add_fromdata = '\n    add2map(formdata, "{name}", {NAME});'
+template_op_body = "json({NAME}).dump()"
+template_op_formdata = "QueryString::create(formdata)"
 
 #builtin types
 builtins = {
@@ -83,53 +239,104 @@ builtins = {
     "uint64": "uint64_t", 
     "float": "float", 
     "double": "double", 
-    "object": "nlohmann::json", 
+    "object": "json", 
     "string": "std::string", 
     "map": "std::map<std::string, {0}>", 
     "vector": "std::vector<{0}>" 
 }
 
-#gets type as incldue type :)
-def type2include(type):
-    if "returns" in type:
-        return type2include(type["returns"])
-    if "elementType" not in type:
-        return type2include(type["type"])
-    if type["type"] == "vector":
-        return type["elementType"]
-    if type["type"] == "map":
-        return type["elementType"]
-    return type["type"]
 #formats all include types if they are not builtins and empty
-def includes2fmt(includes, fmt, additional = ""):
-    includes.update({additional})
-    return "".join([fmt.format(i) for i in includes if ((i not in builtins) and (not i == ""))])
+def type2include(parent, fmt, additional = ""):
+    def _type2include(type):
+        if "returns" in type:
+            return type2include(type["returns"])
+        if "elementType" not in type:
+            return type2include(type["type"])
+        if type["type"] == "vector" or type["type"] == "map":
+            return "" if type["elementType"] in builtins else type["elementType"]
+        return "" if type["type"] in builtins else type["type"]
+    includes = { _type2include(f["type"]) for f in parent } 
+    if not additional == "":
+        includes.update({_type2include(additional)})
+    return "".join([fmt.format(i) for i in includes if not i == ""])
 #converts type or type holder to type :)
 def type2cpp(parent):
     def _type2cpp(type):
-        otherformat = "{0}_t"
+        otherformat = "{0}"
         if not type["type"] in builtins:
-            return otherformat.format(type["type"])
+            return otherformat.format(type["type"]) 
         if not type["elementType"] == "":
             if not type["elementType"] in builtins:
-                return builtins[type["type"]].format(otherformat.format(type["elementType"]))
+                return builtins[type["type"]].format(otherformat.format(type["elementType"])) 
             return builtins[type["type"]].format(builtins[type["elementType"]].format(type["elementType"]))
         return builtins[type["type"]]
     if "elementType" in parent:
         return _type2cpp(parent).replace("-", "_")
     t = _type2cpp(parent["type"]).replace("-", "_")
-    if "optional" in parent and parent["optional"]:
-        return "std::optional<{0}>".format(t)
-    return t
+    return "std::optional<{0}>".format(t) if "optional" in parent and parent["optional"] else t
 
-def fix2cpp(yolo):
+def generate_definitions(yolo, folder, namespace):
+    mkpath("{0}/definitions/".format(folder))
+    open(folder + "/base.hpp", "w+").write(template_base_hpp.format(NAMESPACE = namespace))
     for definition in yolo["definitions"]:
-        definition["NAME"] = "{0}_t".format(definition["name"].replace("-", "_"))
+        with open("{0}/definitions/{1}".format(folder, definition["name"]), "w+") as file:
+            if definition["isEnum"]:
+                file.write(template_enum.format(**definition,NAMESPACE = namespace,
+                    VALUES = "".join([template_enum_values.format(**m) for m in definition["values"]]),
+                    TO_JSON = "".join([template_enum_to_json.format(ENUM = definition["NAME"], **m) for m in definition["values"]]),
+                    FROM_JSON = "".join([template_enum_from_json.format(ENUM = definition["NAME"], **m) for m in definition["values"]]),
+                ))
+            else:
+                file.write(template_struct.format(**definition,
+                    NAMESPACE = namespace,
+                    INCLUDES = type2include(definition["fields"], '#include "{0}.hpp"\n'),
+                    MEMBERS = "".join([template_struct_members.format(**m) for m in definition["fields"]]),
+                    TO_JSON = "".join([template_struct_to_json.format(**m) for m in definition["fields"]]),
+                    FROM_JSON = "".join([template_struct_from_json.format(**m) for m in definition["fields"]]),
+                ))            
+    with open("{0}/definitions.hpp".format(folder), "w+") as file:
+        file.write("#pragma once\n")
+        file.write("\n".join(['#include "definitions/{0}"'.format(defi["name"]) for defi in yolo["definitions"]]))
+
+def generate_ops(yolo, folder, namespace):
+    mkpath("{0}/ops".format(folder))
+    open(folder + "/client.hpp", "w+").write(template_client.format(NAMESPACE = namespace))
+    for op in yolo["functions"]:
+        with open("{0}/ops/{1}.hpp".format(folder, op["name"]), "w+") as file:
+            body = '""'
+            for arg in op["arguments"]:
+                if arg["in"] == "body":
+                    body = template_op_body.format(**arg)
+                    break
+                elif arg["in"] == "formData":
+                    body = template_op_formdata.format()
+                    break;
+            file.write(template_op.format(**op, NAMESPACE = namespace,
+                INCLUDES = type2include(op["arguments"], '#include "../definitions/{0}.hpp"\n', op["returns"]),
+                ARGS_R = "".join([template_op_arg.format(**arg) for arg in op["arguments"] if not arg["optional"]]),
+                ARGS_O = "".join([template_op_arg.format(**arg) for arg in op["arguments"] if arg["optional"]]),
+                ARGS_HEADER = "".join([template_op_add_header.format(**arg) for arg in op["arguments"] if arg["in"] == "header"]),
+                ARGS_QUERY = "".join([template_op_add_query.format(**arg) for arg in op["arguments"] if arg["in"] == "query"]),
+                ARGS_FORM = "".join([template_op_add_fromdata.format(**arg) for arg in op["arguments"] if arg["in"] == "formData"]),
+                PATH = op["url"].replace('{','" +to_string(').replace('}', ')+"'),
+                ARGS_BODY = body
+            ))
+    with open("{0}/ops.hpp".format(folder), "w+") as file:
+        file.write('#pragma once\n#include "definitions.hpp"\n')
+        file.write("\n".join(['#include "ops/{0}"'.format(op["name"]) for op in yolo["functions"]]))
+
+def generate_cpp(yolo, folder, namespace):
+    mkpath(folder)
+    for definition in yolo["definitions"]:
+        definition["NAME"] = "{0}".format(definition["name"].replace("-", "_"))
         for field in definition["fields"]:
             field["NAME"] = field["name"].replace("-", "_")
             field["TYPE"] = type2cpp(field)
         for value in definition["values"]:
-            value["NAME"] = "{}_e".format(value["name"].replace("-", "_"))
+            if value["name"] == "ERROR":
+                value["NAME"] = "EROR"
+            else:
+                value["NAME"] = value["name"].replace("-", "_")
     for function in yolo["functions"]:
         function["NAME"] = function["name"].replace("-", "_")
         function["RETURNS"] = "Result<{0}>".format(type2cpp(function["returns"]))
@@ -139,38 +346,7 @@ def fix2cpp(yolo):
     for event in yolo["events"]:
         event["NAME"] = event["name"].replace("-", "_")
         event["TYPE"] = type2cpp(event)
+    generate_definitions(yolo, folder, namespace)
+    generate_ops(yolo, folder, namespace)
 
-def generate_base(yolo, folder, namespace):
-    open(folder + "/base.hpp").write(template_base_hpp)
-
-def generate_definitions(yolo, folder, namespace):
-    mkpath("{0}/definitions/".format(folder))
-    filenames = []
-    for definition in yolo["definitions"]:
-        filename = "definitions/{0}.hpp".format(definition["name"])
-        file = open("{0}/{1}".format(folder, filename), "w+")
-        if definition["isEnum"]:
-            file.write(template_enum.format(
-                **definition,
-                NAMESPACE = namespace,
-                VALUES = "".join([template_enum_values.format(**m) for m in definition["values"]]),
-                TO_STRING = "".join([template_enum_to_string.format(ENUM = definition["NAME"], **m) for m in definition["values"]]),
-                FROM_JSON = "".join([template_enum_from_json.format(ENUM = definition["NAME"], **m) for m in definition["values"]]),
-            ))
-        else:
-            file.write(template_struct.format(
-                **definition,
-                NAMESPACE = namespace,
-                INCLUDES = includes2fmt({type2include(i) for i in definition["fields"]}, template_struct_include),
-                MEMBERS = "".join([template_struct_members.format(**m) for m in definition["fields"]]),
-                TO_JSON = "".join([template_struct_to_json.format(**m) for m in definition["fields"]]),
-                FROM_JSON = "".join([template_struct_from_json.format(**m) for m in definition["fields"]]),
-            ))            
-        file.close()
-
-#y = json_load("yolo.json")
-#fix2cpp(y)
-#json_save(y, "cpp.json")
-#json.cpp is caches here for development purposes :)
-y = json_load("cpp.json")
-generate_definitions(y, "output/cpp", "leagueapi")
+generate_cpp(json_load("yolo.json"), "output/cpp", "leagueapi")

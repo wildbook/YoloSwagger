@@ -77,6 +77,4 @@ def mkpath(name):
     try:
         os.makedirs(name)
     except:
-        True
-
-json_save(yolo(json_load("help.json"),  json_load("lol.json")),  "yolo.json")       
+        True       
