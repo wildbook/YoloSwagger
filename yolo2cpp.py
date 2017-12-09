@@ -105,7 +105,7 @@ namespace {NAMESPACE} {{
     Result(HttpsResponsePtr r) : response(r) {{
       int status_code = std::stoul(r->status_code);
       auto raw = r->content.string();
-      if(status_code != 204) {{
+      if(status_code != 200) {{
         if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")) {{
           error = json::parse(raw);
         }} else {{
@@ -139,7 +139,7 @@ namespace {NAMESPACE} {{
     Result(HttpsResponsePtr r) : response(r) {{
       int status_code = std::stoul(r->status_code);
       auto raw = r->content.string();
-      if(status_code != 204) {{
+      if(status_code != 200) {{
         if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")) {{
           error = json::parse(raw);
         }} else {{
