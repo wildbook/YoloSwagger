@@ -1,31 +1,12 @@
 import json
 import os
 
-# convinience function to generate path
-def mkpath(name):
-    try:
-        os.makedirs(os.path.dirname(name))
-    except:
-        True
-
-# convinience function to escape name to variable friendly
-def yolo_name_escape(name):
-    return name.replace("-",  "_")
-
- # converts single {"type": ... . "elementType":... }  to typename
- # example typemape : {"uint32": "UInt32", "map":"Dictionary<string, {0}>"}
- # nonexistant types are returned as is :D
-def yolo_type_convert(type,  typemap,  otherformat = "{0}"):
-    if not type["type"] in typemap:
-        return yolo_name_escape(otherformat.format(type["type"]))
-    if not type["elementType"] == "":
-        if not type["elementType"]  in typemap:
-            return yolo_name_escape(typemap[type["type"]].format(otherformat.format(type["elementType"])))
-        return yolo_name_escape(typemap[type["type"]].format(typemap[type["elementType"]].format()))
-    return yolo_name_escape(typemap[type["type"]])
-
 #generates info from /Help?format=Full and /v2/swagger.json
-def yolo_init(helpjson,  swagjson):
+def yolo(helpjson,  swagjson, 
+    fixname = lambda parent: None, 
+    fixtype = lambda parent: None, 
+    fixreturn = lambda parent: None
+    ):
     requests = {
         request["operationId"] : {
             "method": method, 
@@ -39,12 +20,15 @@ def yolo_init(helpjson,  swagjson):
         "definitions" :[
             {
                 "name": entry["name"], 
+                "fixedname": fixname(entry), 
                 "description": entry["description"], 
                 "fields": [
                     {
                         "name": fname, 
+                        "fixedname": fixname(field), 
                         "description": field["description"], 
                         "type": field["type"], 
+                        "fixtype": fixtype(field), 
                         "optional": field["optional"]
                         # this hackery deduplicates posible fields
                     } for fname, field in { fieldx["name"]: fieldx for fieldx in entry["fields"] }.items()
@@ -52,6 +36,7 @@ def yolo_init(helpjson,  swagjson):
                 "values": [ 
                     {
                         "name": value["name"] , 
+                        "fixedname": fixname(value), 
                         "description": value["description"], 
                         "value": value["value"]
                     } for value in entry["values"]
@@ -62,15 +47,19 @@ def yolo_init(helpjson,  swagjson):
         "functions" : [
             {
                 "name": function["name"], 
+                "fixedname": fixname(function),
                 "description": function["description"], 
                 "returns": function["returns"], 
+                "fixedreturn": fixreturn(function), 
                 "method": requests[function["name"]]["method"], 
                 "url": requests[function["name"]]["url"], 
                 "arguments":  [
                     {
                         "name": arg["name"], 
+                        "fixedname": fixname(arg), 
                         "description" : arg["description"], 
                         "type" : arg["type"], 
+                        "fixedtype": fixtype(arg), 
                         "optional": arg["optional"], 
                         "in": requests[function["name"]]["parameters"][arg["name"]]["in"]
                     } for arg in function["arguments"]
@@ -80,6 +69,8 @@ def yolo_init(helpjson,  swagjson):
        "events": [
             {
                 "name": event["name"], 
+                "fixedname": fixname(event), 
+                "fixedtype": fixtype(event), 
                 "description": event["description"], 
                 "type": event["type"]
             } for event in helpjson["events"]
@@ -94,4 +85,12 @@ def json_save(info,  filename):
 # loads json from file
 def json_load(filename):
     return json.load(open(filename))
+
+# convinience function to generate path
+def mkpath(name):
+    try:
+        os.makedirs(os.path.dirname(name))
+    except:
+        True
+
 #json_save(yolo_init(json_load("help.json"),  json_load("lol.json")),  "yolo.json")       
