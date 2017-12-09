@@ -1,7 +1,7 @@
 #pragma once
 #include "../client.hpp"
-#include "LolQueueEligibilityEligibilityQueryParams.hpp"
 #include "LolQueueEligibilityEligibility.hpp"
+#include "LolQueueEligibilityEligibilityQueryParams.hpp"
 namespace leagueapi {
   std::vector<LolQueueEligibilityEligibility_t> PostLolQueueEligibilityV1Eligibility (const ClientInfo& info,
     const LolQueueEligibilityEligibilityQueryParams_t& eligibilityQueryParam)
@@ -16,6 +16,6 @@ namespace leagueapi {
     auto res = client.request("post", path, body, headers);
     if(res->status_code == 406)
       throw OpError(res->content.string());
-      return nlohmann::json(res->content.string());
+    return nlohmann::json(res->content.string());
   }
 }

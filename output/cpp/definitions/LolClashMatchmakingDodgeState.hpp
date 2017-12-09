@@ -4,8 +4,8 @@ namespace leagueapi {
   enum class LolClashMatchmakingDodgeState_t {
     Invalid_E = 48,
     PartyDodged_E = 49,
-    StrangerDodged_E = 50,
     TournamentDodged_E = 51,
+    StrangerDodged_E = 50,
   };
 
   inline void to_json(nlohmann::json& j, const LolClashMatchmakingDodgeState_t& v) {
@@ -16,11 +16,11 @@ namespace leagueapi {
       case LolClashMatchmakingDodgeState_t::PartyDodged_E:
         j = "PartyDodged";
       break;
-      case LolClashMatchmakingDodgeState_t::StrangerDodged_E:
-        j = "StrangerDodged";
-      break;
       case LolClashMatchmakingDodgeState_t::TournamentDodged_E:
         j = "TournamentDodged";
+      break;
+      case LolClashMatchmakingDodgeState_t::StrangerDodged_E:
+        j = "StrangerDodged";
       break;
     }
   }
@@ -35,12 +35,12 @@ namespace leagueapi {
       v = LolClashMatchmakingDodgeState_t::PartyDodged_E;
       return;
     }
-    if(s == "StrangerDodged"){
-      v = LolClashMatchmakingDodgeState_t::StrangerDodged_E;
-      return;
-    }
     if(s == "TournamentDodged"){
       v = LolClashMatchmakingDodgeState_t::TournamentDodged_E;
+      return;
+    }
+    if(s == "StrangerDodged"){
+      v = LolClashMatchmakingDodgeState_t::StrangerDodged_E;
       return;
     }
   }
@@ -50,10 +50,10 @@ namespace leagueapi {
         return "Invalid";
       case LolClashMatchmakingDodgeState_t::PartyDodged_E:
         return "PartyDodged";
-      case LolClashMatchmakingDodgeState_t::StrangerDodged_E:
-        return "StrangerDodged";
       case LolClashMatchmakingDodgeState_t::TournamentDodged_E:
         return "TournamentDodged";
+      case LolClashMatchmakingDodgeState_t::StrangerDodged_E:
+        return "StrangerDodged";
     }
   }
 

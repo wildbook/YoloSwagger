@@ -1,7 +1,7 @@
 #pragma once
 #include "../client.hpp"
-#include "LolChatAuthResourceRsoAccessToken.hpp"
 #include "LolChatSessionResource.hpp"
+#include "LolChatAuthResourceRsoAccessToken.hpp"
 namespace leagueapi {
   LolChatSessionResource_t PostLolChatV1SessionRso (const ClientInfo& info,
     const LolChatAuthResourceRsoAccessToken_t& auth)
@@ -16,6 +16,6 @@ namespace leagueapi {
     auto res = client.request("post", path, body, headers);
     if(res->status_code == 406)
       throw OpError(res->content.string());
-      return nlohmann::json(res->content.string());
+    return nlohmann::json(res->content.string());
   }
 }

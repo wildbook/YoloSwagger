@@ -1,7 +1,7 @@
 #pragma once
 #include "../client.hpp"
-#include "LolAccountVerificationSendTokenRequest.hpp"
 #include "LolAccountVerificationSendTokenResponse.hpp"
+#include "LolAccountVerificationSendTokenRequest.hpp"
 namespace leagueapi {
   LolAccountVerificationSendTokenResponse_t PostLolAccountVerificationV1SendToken (const ClientInfo& info,
     const LolAccountVerificationSendTokenRequest_t& SendTokenRequest)
@@ -16,6 +16,6 @@ namespace leagueapi {
     auto res = client.request("post", path, body, headers);
     if(res->status_code == 406)
       throw OpError(res->content.string());
-      return nlohmann::json(res->content.string());
+    return nlohmann::json(res->content.string());
   }
 }

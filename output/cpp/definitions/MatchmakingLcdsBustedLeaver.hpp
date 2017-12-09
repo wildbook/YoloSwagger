@@ -4,24 +4,24 @@
 #include "MatchmakingLcdsSummoner.hpp"
 namespace leagueapi {
   struct MatchmakingLcdsBustedLeaver_t {
-    MatchmakingLcdsSummoner_t summoner;
+    uint64_t leaverPenaltyMillisRemaining;
     std::string reasonFailed;
     std::string accessToken;
-    uint64_t leaverPenaltyMillisRemaining;
+    MatchmakingLcdsSummoner_t summoner;
   };
 
   inline void to_json(nlohmann::json& j, const MatchmakingLcdsBustedLeaver_t& v) {
-    j["summoner"] = v.summoner;
+    j["leaverPenaltyMillisRemaining"] = v.leaverPenaltyMillisRemaining;
     j["reasonFailed"] = v.reasonFailed;
     j["accessToken"] = v.accessToken;
-    j["leaverPenaltyMillisRemaining"] = v.leaverPenaltyMillisRemaining;
+    j["summoner"] = v.summoner;
   }
 
   inline void from_json(const nlohmann::json& j, MatchmakingLcdsBustedLeaver_t& v) {
-    v.summoner = j.at("summoner").get<MatchmakingLcdsSummoner_t>();
+    v.leaverPenaltyMillisRemaining = j.at("leaverPenaltyMillisRemaining").get<uint64_t>();
     v.reasonFailed = j.at("reasonFailed").get<std::string>();
     v.accessToken = j.at("accessToken").get<std::string>();
-    v.leaverPenaltyMillisRemaining = j.at("leaverPenaltyMillisRemaining").get<uint64_t>();
+    v.summoner = j.at("summoner").get<MatchmakingLcdsSummoner_t>();
   }
   inline std::string to_string(const MatchmakingLcdsBustedLeaver_t& v) {
     nlohmann::json j = v;

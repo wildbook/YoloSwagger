@@ -1,7 +1,7 @@
 #pragma once
 #include "../client.hpp"
-#include "LolLoginUsernameAndPassword.hpp"
 #include "LolLoginLoginSession.hpp"
+#include "LolLoginUsernameAndPassword.hpp"
 namespace leagueapi {
   LolLoginLoginSession_t PostLolLoginV1Session (const ClientInfo& info,
     const LolLoginUsernameAndPassword_t& UsernameAndPassword)
@@ -16,6 +16,6 @@ namespace leagueapi {
     auto res = client.request("post", path, body, headers);
     if(res->status_code == 406)
       throw OpError(res->content.string());
-      return nlohmann::json(res->content.string());
+    return nlohmann::json(res->content.string());
   }
 }

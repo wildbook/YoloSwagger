@@ -253,7 +253,7 @@ def generate_ops(info,  folder,  namespace):
             file.write("      return nlohmann::json(res->content.string());\n")
             file.write("    return res->content.string();\n")
         else:
-            file.write("      return nlohmann::json(res->content.string());\n")
+            file.write("    return nlohmann::json(res->content.string());\n")
         file.write("  }\n")
         #end namespace
         file.write("}\n")

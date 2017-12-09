@@ -3,8 +3,8 @@
 namespace leagueapi {
   enum class LolClashMatchmakingReadyCheckResponse_t {
     Accepted_E = 49,
-    None_E = 48,
     Declined_E = 50,
+    None_E = 48,
   };
 
   inline void to_json(nlohmann::json& j, const LolClashMatchmakingReadyCheckResponse_t& v) {
@@ -12,11 +12,11 @@ namespace leagueapi {
       case LolClashMatchmakingReadyCheckResponse_t::Accepted_E:
         j = "Accepted";
       break;
-      case LolClashMatchmakingReadyCheckResponse_t::None_E:
-        j = "None";
-      break;
       case LolClashMatchmakingReadyCheckResponse_t::Declined_E:
         j = "Declined";
+      break;
+      case LolClashMatchmakingReadyCheckResponse_t::None_E:
+        j = "None";
       break;
     }
   }
@@ -27,12 +27,12 @@ namespace leagueapi {
       v = LolClashMatchmakingReadyCheckResponse_t::Accepted_E;
       return;
     }
-    if(s == "None"){
-      v = LolClashMatchmakingReadyCheckResponse_t::None_E;
-      return;
-    }
     if(s == "Declined"){
       v = LolClashMatchmakingReadyCheckResponse_t::Declined_E;
+      return;
+    }
+    if(s == "None"){
+      v = LolClashMatchmakingReadyCheckResponse_t::None_E;
       return;
     }
   }
@@ -40,10 +40,10 @@ namespace leagueapi {
     switch(v) {
       case LolClashMatchmakingReadyCheckResponse_t::Accepted_E:
         return "Accepted";
-      case LolClashMatchmakingReadyCheckResponse_t::None_E:
-        return "None";
       case LolClashMatchmakingReadyCheckResponse_t::Declined_E:
         return "Declined";
+      case LolClashMatchmakingReadyCheckResponse_t::None_E:
+        return "None";
     }
   }
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "../client.hpp"
-#include "LolPersonalizedOffersOfferIds.hpp"
 #include "LolPersonalizedOffersUIOffer.hpp"
+#include "LolPersonalizedOffersOfferIds.hpp"
 namespace leagueapi {
   std::vector<LolPersonalizedOffersUIOffer_t> PostLolPersonalizedOffersV1OffersReveal (const ClientInfo& info,
     const LolPersonalizedOffersOfferIds_t& offerIds)
@@ -16,6 +16,6 @@ namespace leagueapi {
     auto res = client.request("post", path, body, headers);
     if(res->status_code == 406)
       throw OpError(res->content.string());
-      return nlohmann::json(res->content.string());
+    return nlohmann::json(res->content.string());
   }
 }

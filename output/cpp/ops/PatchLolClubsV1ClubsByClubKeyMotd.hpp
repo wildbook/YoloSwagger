@@ -1,7 +1,7 @@
 #pragma once
 #include "../client.hpp"
-#include "PlayerClub.hpp"
 #include "ClubMOTD.hpp"
+#include "PlayerClub.hpp"
 namespace leagueapi {
   PlayerClub_t PatchLolClubsV1ClubsByClubKeyMotd (const ClientInfo& info,
     const std::string& clubKey,
@@ -17,6 +17,6 @@ namespace leagueapi {
     auto res = client.request("patch", path, body, headers);
     if(res->status_code == 406)
       throw OpError(res->content.string());
-      return nlohmann::json(res->content.string());
+    return nlohmann::json(res->content.string());
   }
 }

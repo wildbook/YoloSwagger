@@ -3,9 +3,9 @@
 namespace leagueapi {
   enum class LeaverBusterNotificationType_t {
     Invalid_E = 0,
-    PunishmentIncurred_E = 2,
-    Reforming_E = 4,
     TaintedWarning_E = 1,
+    Reforming_E = 4,
+    PunishmentIncurred_E = 2,
     PunishedGamesRemaining_E = 3,
   };
 
@@ -14,14 +14,14 @@ namespace leagueapi {
       case LeaverBusterNotificationType_t::Invalid_E:
         j = "Invalid";
       break;
-      case LeaverBusterNotificationType_t::PunishmentIncurred_E:
-        j = "PunishmentIncurred";
+      case LeaverBusterNotificationType_t::TaintedWarning_E:
+        j = "TaintedWarning";
       break;
       case LeaverBusterNotificationType_t::Reforming_E:
         j = "Reforming";
       break;
-      case LeaverBusterNotificationType_t::TaintedWarning_E:
-        j = "TaintedWarning";
+      case LeaverBusterNotificationType_t::PunishmentIncurred_E:
+        j = "PunishmentIncurred";
       break;
       case LeaverBusterNotificationType_t::PunishedGamesRemaining_E:
         j = "PunishedGamesRemaining";
@@ -35,16 +35,16 @@ namespace leagueapi {
       v = LeaverBusterNotificationType_t::Invalid_E;
       return;
     }
-    if(s == "PunishmentIncurred"){
-      v = LeaverBusterNotificationType_t::PunishmentIncurred_E;
+    if(s == "TaintedWarning"){
+      v = LeaverBusterNotificationType_t::TaintedWarning_E;
       return;
     }
     if(s == "Reforming"){
       v = LeaverBusterNotificationType_t::Reforming_E;
       return;
     }
-    if(s == "TaintedWarning"){
-      v = LeaverBusterNotificationType_t::TaintedWarning_E;
+    if(s == "PunishmentIncurred"){
+      v = LeaverBusterNotificationType_t::PunishmentIncurred_E;
       return;
     }
     if(s == "PunishedGamesRemaining"){
@@ -56,12 +56,12 @@ namespace leagueapi {
     switch(v) {
       case LeaverBusterNotificationType_t::Invalid_E:
         return "Invalid";
-      case LeaverBusterNotificationType_t::PunishmentIncurred_E:
-        return "PunishmentIncurred";
-      case LeaverBusterNotificationType_t::Reforming_E:
-        return "Reforming";
       case LeaverBusterNotificationType_t::TaintedWarning_E:
         return "TaintedWarning";
+      case LeaverBusterNotificationType_t::Reforming_E:
+        return "Reforming";
+      case LeaverBusterNotificationType_t::PunishmentIncurred_E:
+        return "PunishmentIncurred";
       case LeaverBusterNotificationType_t::PunishedGamesRemaining_E:
         return "PunishedGamesRemaining";
     }

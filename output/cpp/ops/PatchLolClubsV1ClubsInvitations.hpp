@@ -1,7 +1,7 @@
 #pragma once
 #include "../client.hpp"
-#include "ClubInvite.hpp"
 #include "PlayerClubMembership.hpp"
+#include "ClubInvite.hpp"
 namespace leagueapi {
   PlayerClubMembership_t PatchLolClubsV1ClubsInvitations (const ClientInfo& info,
     const ClubInvite_t& invitation)
@@ -16,6 +16,6 @@ namespace leagueapi {
     auto res = client.request("patch", path, body, headers);
     if(res->status_code == 406)
       throw OpError(res->content.string());
-      return nlohmann::json(res->content.string());
+    return nlohmann::json(res->content.string());
   }
 }

@@ -1,7 +1,7 @@
 #pragma once
 #include "../client.hpp"
-#include "LolLobbyLobby.hpp"
 #include "LolLobbyLobbyChangeQueue.hpp"
+#include "LolLobbyLobby.hpp"
 namespace leagueapi {
   LolLobbyLobby_t PostLolLobbyV1ChangeQueue (const ClientInfo& info,
     const LolLobbyLobbyChangeQueue_t& queueId)
@@ -16,6 +16,6 @@ namespace leagueapi {
     auto res = client.request("post", path, body, headers);
     if(res->status_code == 406)
       throw OpError(res->content.string());
-      return nlohmann::json(res->content.string());
+    return nlohmann::json(res->content.string());
   }
 }

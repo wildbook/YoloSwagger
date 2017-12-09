@@ -4,20 +4,20 @@
 #include "LolLeaguesLeagueTeamMember.hpp"
 namespace leagueapi {
   struct LolLeaguesLeagueTeam_t {
-    std::string id;
     std::string name;
+    std::string id;
     std::vector<LolLeaguesLeagueTeamMember_t> members;
   };
 
   inline void to_json(nlohmann::json& j, const LolLeaguesLeagueTeam_t& v) {
-    j["id"] = v.id;
     j["name"] = v.name;
+    j["id"] = v.id;
     j["members"] = v.members;
   }
 
   inline void from_json(const nlohmann::json& j, LolLeaguesLeagueTeam_t& v) {
-    v.id = j.at("id").get<std::string>();
     v.name = j.at("name").get<std::string>();
+    v.id = j.at("id").get<std::string>();
     v.members = j.at("members").get<std::vector<LolLeaguesLeagueTeamMember_t>>();
   }
   inline std::string to_string(const LolLeaguesLeagueTeam_t& v) {

@@ -14,6 +14,6 @@ namespace leagueapi {
     auto res = client.request("get", path, body, headers);
     if(res->status_code == 406)
       throw OpError(res->content.string());
-      return nlohmann::json(res->content.string());
+    return nlohmann::json(res->content.string());
   }
 }

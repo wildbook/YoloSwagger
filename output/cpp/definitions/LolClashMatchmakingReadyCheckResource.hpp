@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolClashMatchmakingReadyCheckResponse.hpp"
 #include "LolClashMatchmakingReadyCheckState.hpp"
+#include "LolClashMatchmakingReadyCheckResponse.hpp"
 namespace leagueapi {
   struct LolClashMatchmakingReadyCheckResource_t {
     LolClashMatchmakingReadyCheckResponse_t playerResponse;

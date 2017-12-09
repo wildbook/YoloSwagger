@@ -2,158 +2,158 @@
 #include <json.hpp>
 namespace leagueapi {
   enum class LolLeaguesGameflowPhase_t {
-    WaitingForStats_E = 10,
-    CheckedIntoTournament_E = 3,
-    PreEndOfGame_E = 11,
-    ChampSelect_E = 5,
-    InProgress_E = 8,
     Lobby_E = 1,
-    Reconnect_E = 9,
-    GameStart_E = 6,
+    WaitingForStats_E = 10,
+    ChampSelect_E = 5,
+    PreEndOfGame_E = 11,
+    InProgress_E = 8,
     EndOfGame_E = 12,
-    Matchmaking_E = 2,
-    TerminatedInError_E = 13,
-    ReadyCheck_E = 4,
+    CheckedIntoTournament_E = 3,
     None_E = 0,
+    GameStart_E = 6,
     FailedToLaunch_E = 7,
+    ReadyCheck_E = 4,
+    Reconnect_E = 9,
+    TerminatedInError_E = 13,
+    Matchmaking_E = 2,
   };
 
   inline void to_json(nlohmann::json& j, const LolLeaguesGameflowPhase_t& v) {
     switch(v) {
+      case LolLeaguesGameflowPhase_t::Lobby_E:
+        j = "Lobby";
+      break;
       case LolLeaguesGameflowPhase_t::WaitingForStats_E:
         j = "WaitingForStats";
-      break;
-      case LolLeaguesGameflowPhase_t::CheckedIntoTournament_E:
-        j = "CheckedIntoTournament";
-      break;
-      case LolLeaguesGameflowPhase_t::PreEndOfGame_E:
-        j = "PreEndOfGame";
       break;
       case LolLeaguesGameflowPhase_t::ChampSelect_E:
         j = "ChampSelect";
       break;
+      case LolLeaguesGameflowPhase_t::PreEndOfGame_E:
+        j = "PreEndOfGame";
+      break;
       case LolLeaguesGameflowPhase_t::InProgress_E:
         j = "InProgress";
-      break;
-      case LolLeaguesGameflowPhase_t::Lobby_E:
-        j = "Lobby";
-      break;
-      case LolLeaguesGameflowPhase_t::Reconnect_E:
-        j = "Reconnect";
-      break;
-      case LolLeaguesGameflowPhase_t::GameStart_E:
-        j = "GameStart";
       break;
       case LolLeaguesGameflowPhase_t::EndOfGame_E:
         j = "EndOfGame";
       break;
-      case LolLeaguesGameflowPhase_t::Matchmaking_E:
-        j = "Matchmaking";
-      break;
-      case LolLeaguesGameflowPhase_t::TerminatedInError_E:
-        j = "TerminatedInError";
-      break;
-      case LolLeaguesGameflowPhase_t::ReadyCheck_E:
-        j = "ReadyCheck";
+      case LolLeaguesGameflowPhase_t::CheckedIntoTournament_E:
+        j = "CheckedIntoTournament";
       break;
       case LolLeaguesGameflowPhase_t::None_E:
         j = "None";
       break;
+      case LolLeaguesGameflowPhase_t::GameStart_E:
+        j = "GameStart";
+      break;
       case LolLeaguesGameflowPhase_t::FailedToLaunch_E:
         j = "FailedToLaunch";
+      break;
+      case LolLeaguesGameflowPhase_t::ReadyCheck_E:
+        j = "ReadyCheck";
+      break;
+      case LolLeaguesGameflowPhase_t::Reconnect_E:
+        j = "Reconnect";
+      break;
+      case LolLeaguesGameflowPhase_t::TerminatedInError_E:
+        j = "TerminatedInError";
+      break;
+      case LolLeaguesGameflowPhase_t::Matchmaking_E:
+        j = "Matchmaking";
       break;
     }
   }
 
   inline void from_json(const nlohmann::json& j, LolLeaguesGameflowPhase_t& v) {
     const auto& s = j.get<std::string>();
+    if(s == "Lobby"){
+      v = LolLeaguesGameflowPhase_t::Lobby_E;
+      return;
+    }
     if(s == "WaitingForStats"){
       v = LolLeaguesGameflowPhase_t::WaitingForStats_E;
-      return;
-    }
-    if(s == "CheckedIntoTournament"){
-      v = LolLeaguesGameflowPhase_t::CheckedIntoTournament_E;
-      return;
-    }
-    if(s == "PreEndOfGame"){
-      v = LolLeaguesGameflowPhase_t::PreEndOfGame_E;
       return;
     }
     if(s == "ChampSelect"){
       v = LolLeaguesGameflowPhase_t::ChampSelect_E;
       return;
     }
+    if(s == "PreEndOfGame"){
+      v = LolLeaguesGameflowPhase_t::PreEndOfGame_E;
+      return;
+    }
     if(s == "InProgress"){
       v = LolLeaguesGameflowPhase_t::InProgress_E;
-      return;
-    }
-    if(s == "Lobby"){
-      v = LolLeaguesGameflowPhase_t::Lobby_E;
-      return;
-    }
-    if(s == "Reconnect"){
-      v = LolLeaguesGameflowPhase_t::Reconnect_E;
-      return;
-    }
-    if(s == "GameStart"){
-      v = LolLeaguesGameflowPhase_t::GameStart_E;
       return;
     }
     if(s == "EndOfGame"){
       v = LolLeaguesGameflowPhase_t::EndOfGame_E;
       return;
     }
-    if(s == "Matchmaking"){
-      v = LolLeaguesGameflowPhase_t::Matchmaking_E;
-      return;
-    }
-    if(s == "TerminatedInError"){
-      v = LolLeaguesGameflowPhase_t::TerminatedInError_E;
-      return;
-    }
-    if(s == "ReadyCheck"){
-      v = LolLeaguesGameflowPhase_t::ReadyCheck_E;
+    if(s == "CheckedIntoTournament"){
+      v = LolLeaguesGameflowPhase_t::CheckedIntoTournament_E;
       return;
     }
     if(s == "None"){
       v = LolLeaguesGameflowPhase_t::None_E;
       return;
     }
+    if(s == "GameStart"){
+      v = LolLeaguesGameflowPhase_t::GameStart_E;
+      return;
+    }
     if(s == "FailedToLaunch"){
       v = LolLeaguesGameflowPhase_t::FailedToLaunch_E;
+      return;
+    }
+    if(s == "ReadyCheck"){
+      v = LolLeaguesGameflowPhase_t::ReadyCheck_E;
+      return;
+    }
+    if(s == "Reconnect"){
+      v = LolLeaguesGameflowPhase_t::Reconnect_E;
+      return;
+    }
+    if(s == "TerminatedInError"){
+      v = LolLeaguesGameflowPhase_t::TerminatedInError_E;
+      return;
+    }
+    if(s == "Matchmaking"){
+      v = LolLeaguesGameflowPhase_t::Matchmaking_E;
       return;
     }
   }
   inline std::string to_string(const LolLeaguesGameflowPhase_t& v) {
     switch(v) {
-      case LolLeaguesGameflowPhase_t::WaitingForStats_E:
-        return "WaitingForStats";
-      case LolLeaguesGameflowPhase_t::CheckedIntoTournament_E:
-        return "CheckedIntoTournament";
-      case LolLeaguesGameflowPhase_t::PreEndOfGame_E:
-        return "PreEndOfGame";
-      case LolLeaguesGameflowPhase_t::ChampSelect_E:
-        return "ChampSelect";
-      case LolLeaguesGameflowPhase_t::InProgress_E:
-        return "InProgress";
       case LolLeaguesGameflowPhase_t::Lobby_E:
         return "Lobby";
-      case LolLeaguesGameflowPhase_t::Reconnect_E:
-        return "Reconnect";
-      case LolLeaguesGameflowPhase_t::GameStart_E:
-        return "GameStart";
+      case LolLeaguesGameflowPhase_t::WaitingForStats_E:
+        return "WaitingForStats";
+      case LolLeaguesGameflowPhase_t::ChampSelect_E:
+        return "ChampSelect";
+      case LolLeaguesGameflowPhase_t::PreEndOfGame_E:
+        return "PreEndOfGame";
+      case LolLeaguesGameflowPhase_t::InProgress_E:
+        return "InProgress";
       case LolLeaguesGameflowPhase_t::EndOfGame_E:
         return "EndOfGame";
-      case LolLeaguesGameflowPhase_t::Matchmaking_E:
-        return "Matchmaking";
-      case LolLeaguesGameflowPhase_t::TerminatedInError_E:
-        return "TerminatedInError";
-      case LolLeaguesGameflowPhase_t::ReadyCheck_E:
-        return "ReadyCheck";
+      case LolLeaguesGameflowPhase_t::CheckedIntoTournament_E:
+        return "CheckedIntoTournament";
       case LolLeaguesGameflowPhase_t::None_E:
         return "None";
+      case LolLeaguesGameflowPhase_t::GameStart_E:
+        return "GameStart";
       case LolLeaguesGameflowPhase_t::FailedToLaunch_E:
         return "FailedToLaunch";
+      case LolLeaguesGameflowPhase_t::ReadyCheck_E:
+        return "ReadyCheck";
+      case LolLeaguesGameflowPhase_t::Reconnect_E:
+        return "Reconnect";
+      case LolLeaguesGameflowPhase_t::TerminatedInError_E:
+        return "TerminatedInError";
+      case LolLeaguesGameflowPhase_t::Matchmaking_E:
+        return "Matchmaking";
     }
   }
 

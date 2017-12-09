@@ -3,8 +3,8 @@
 namespace leagueapi {
   enum class LolLeaguesMiniseries_t {
     N_E = 2,
-    W_E = 0,
     L_E = 1,
+    W_E = 0,
   };
 
   inline void to_json(nlohmann::json& j, const LolLeaguesMiniseries_t& v) {
@@ -12,11 +12,11 @@ namespace leagueapi {
       case LolLeaguesMiniseries_t::N_E:
         j = "N";
       break;
-      case LolLeaguesMiniseries_t::W_E:
-        j = "W";
-      break;
       case LolLeaguesMiniseries_t::L_E:
         j = "L";
+      break;
+      case LolLeaguesMiniseries_t::W_E:
+        j = "W";
       break;
     }
   }
@@ -27,12 +27,12 @@ namespace leagueapi {
       v = LolLeaguesMiniseries_t::N_E;
       return;
     }
-    if(s == "W"){
-      v = LolLeaguesMiniseries_t::W_E;
-      return;
-    }
     if(s == "L"){
       v = LolLeaguesMiniseries_t::L_E;
+      return;
+    }
+    if(s == "W"){
+      v = LolLeaguesMiniseries_t::W_E;
       return;
     }
   }
@@ -40,10 +40,10 @@ namespace leagueapi {
     switch(v) {
       case LolLeaguesMiniseries_t::N_E:
         return "N";
-      case LolLeaguesMiniseries_t::W_E:
-        return "W";
       case LolLeaguesMiniseries_t::L_E:
         return "L";
+      case LolLeaguesMiniseries_t::W_E:
+        return "W";
     }
   }
 

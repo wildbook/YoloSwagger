@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolMissionsCollectionsOwnership.hpp"
 #include "LolMissionsCollectionsChampionSkin.hpp"
+#include "LolMissionsCollectionsOwnership.hpp"
 namespace leagueapi {
   struct LolMissionsCollectionsChampion_t {
     int32_t id;

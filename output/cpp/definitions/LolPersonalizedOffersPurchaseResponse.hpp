@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolPersonalizedOffersPurchaseItem.hpp"
 #include "LolPersonalizedOffersWallet.hpp"
+#include "LolPersonalizedOffersPurchaseItem.hpp"
 namespace leagueapi {
   struct LolPersonalizedOffersPurchaseResponse_t {
     std::vector<LolPersonalizedOffersPurchaseItem_t> items;

@@ -1,9 +1,9 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
+#include "LolPurchaseWidgetPurchaseItem.hpp"
 #include "LolPurchaseWidgetTransaction.hpp"
 #include "LolPurchaseWidgetWallet.hpp"
-#include "LolPurchaseWidgetPurchaseItem.hpp"
 namespace leagueapi {
   struct LolPurchaseWidgetPurchaseResponse_t {
     std::vector<LolPurchaseWidgetPurchaseItem_t> items;

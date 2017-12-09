@@ -4,20 +4,20 @@
 namespace leagueapi {
   struct LolPerksPerkUISlot_t {
     std::string type;
-    std::string slotLabel;
     std::vector<int32_t> perks;
+    std::string slotLabel;
   };
 
   inline void to_json(nlohmann::json& j, const LolPerksPerkUISlot_t& v) {
     j["type"] = v.type;
-    j["slotLabel"] = v.slotLabel;
     j["perks"] = v.perks;
+    j["slotLabel"] = v.slotLabel;
   }
 
   inline void from_json(const nlohmann::json& j, LolPerksPerkUISlot_t& v) {
     v.type = j.at("type").get<std::string>();
-    v.slotLabel = j.at("slotLabel").get<std::string>();
     v.perks = j.at("perks").get<std::vector<int32_t>>();
+    v.slotLabel = j.at("slotLabel").get<std::string>();
   }
   inline std::string to_string(const LolPerksPerkUISlot_t& v) {
     nlohmann::json j = v;

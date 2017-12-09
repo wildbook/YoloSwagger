@@ -3,20 +3,20 @@
 #include <optional>
 namespace leagueapi {
   struct ProcessControlProcess_t {
-    std::optional<float> restart-countdown-seconds;
     std::string status;
+    std::optional<float> restart-countdown-seconds;
   };
 
   inline void to_json(nlohmann::json& j, const ProcessControlProcess_t& v) {
+    j["status"] = v.status;
     if(v.restart-countdown-seconds)
       j["restart-countdown-seconds"] = *v.restart-countdown-seconds;
-    j["status"] = v.status;
   }
 
   inline void from_json(const nlohmann::json& j, ProcessControlProcess_t& v) {
+    v.status = j.at("status").get<std::string>();
     if(auto it = j.find("restart-countdown-seconds"); it != j.end() && !it->is_null())
       v.restart-countdown-seconds = it->get<float>();
-    v.status = j.at("status").get<std::string>();
   }
   inline std::string to_string(const ProcessControlProcess_t& v) {
     nlohmann::json j = v;

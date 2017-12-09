@@ -3,8 +3,8 @@
 namespace leagueapi {
   enum class LolInventoryItemOwnershipType_t {
     F2P_E = 2,
-    OWNED_E = 0,
     RENTED_E = 1,
+    OWNED_E = 0,
   };
 
   inline void to_json(nlohmann::json& j, const LolInventoryItemOwnershipType_t& v) {
@@ -12,11 +12,11 @@ namespace leagueapi {
       case LolInventoryItemOwnershipType_t::F2P_E:
         j = "F2P";
       break;
-      case LolInventoryItemOwnershipType_t::OWNED_E:
-        j = "OWNED";
-      break;
       case LolInventoryItemOwnershipType_t::RENTED_E:
         j = "RENTED";
+      break;
+      case LolInventoryItemOwnershipType_t::OWNED_E:
+        j = "OWNED";
       break;
     }
   }
@@ -27,12 +27,12 @@ namespace leagueapi {
       v = LolInventoryItemOwnershipType_t::F2P_E;
       return;
     }
-    if(s == "OWNED"){
-      v = LolInventoryItemOwnershipType_t::OWNED_E;
-      return;
-    }
     if(s == "RENTED"){
       v = LolInventoryItemOwnershipType_t::RENTED_E;
+      return;
+    }
+    if(s == "OWNED"){
+      v = LolInventoryItemOwnershipType_t::OWNED_E;
       return;
     }
   }
@@ -40,10 +40,10 @@ namespace leagueapi {
     switch(v) {
       case LolInventoryItemOwnershipType_t::F2P_E:
         return "F2P";
-      case LolInventoryItemOwnershipType_t::OWNED_E:
-        return "OWNED";
       case LolInventoryItemOwnershipType_t::RENTED_E:
         return "RENTED";
+      case LolInventoryItemOwnershipType_t::OWNED_E:
+        return "OWNED";
     }
   }
 

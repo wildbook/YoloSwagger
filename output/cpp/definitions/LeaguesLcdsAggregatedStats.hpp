@@ -1,22 +1,22 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LeaguesLcdsAggregatedStat.hpp"
 #include "LeaguesLcdsAggregatedStatsKey.hpp"
+#include "LeaguesLcdsAggregatedStat.hpp"
 namespace leagueapi {
   struct LeaguesLcdsAggregatedStats_t {
-    LeaguesLcdsAggregatedStatsKey_t key;
     std::vector<LeaguesLcdsAggregatedStat_t> lifetimeStatistics;
+    LeaguesLcdsAggregatedStatsKey_t key;
   };
 
   inline void to_json(nlohmann::json& j, const LeaguesLcdsAggregatedStats_t& v) {
-    j["key"] = v.key;
     j["lifetimeStatistics"] = v.lifetimeStatistics;
+    j["key"] = v.key;
   }
 
   inline void from_json(const nlohmann::json& j, LeaguesLcdsAggregatedStats_t& v) {
-    v.key = j.at("key").get<LeaguesLcdsAggregatedStatsKey_t>();
     v.lifetimeStatistics = j.at("lifetimeStatistics").get<std::vector<LeaguesLcdsAggregatedStat_t>>();
+    v.key = j.at("key").get<LeaguesLcdsAggregatedStatsKey_t>();
   }
   inline std::string to_string(const LeaguesLcdsAggregatedStats_t& v) {
     nlohmann::json j = v;

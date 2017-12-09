@@ -1,7 +1,7 @@
 #pragma once
 #include "../client.hpp"
-#include "LolSummonerSummoner.hpp"
 #include "LolSummonerSummonerIcon.hpp"
+#include "LolSummonerSummoner.hpp"
 namespace leagueapi {
   LolSummonerSummoner_t PutLolSummonerV1CurrentSummonerIcon (const ClientInfo& info,
     const LolSummonerSummonerIcon_t& body)
@@ -16,6 +16,6 @@ namespace leagueapi {
     auto res = client.request("put", path, body, headers);
     if(res->status_code == 406)
       throw OpError(res->content.string());
-      return nlohmann::json(res->content.string());
+    return nlohmann::json(res->content.string());
   }
 }

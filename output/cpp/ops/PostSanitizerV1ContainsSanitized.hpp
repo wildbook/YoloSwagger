@@ -1,7 +1,7 @@
 #pragma once
 #include "../client.hpp"
-#include "SanitizerContainsSanitizedRequest.hpp"
 #include "SanitizerContainsSanitizedResponse.hpp"
+#include "SanitizerContainsSanitizedRequest.hpp"
 namespace leagueapi {
   SanitizerContainsSanitizedResponse_t PostSanitizerV1ContainsSanitized (const ClientInfo& info,
     const SanitizerContainsSanitizedRequest_t& request)
@@ -16,6 +16,6 @@ namespace leagueapi {
     auto res = client.request("post", path, body, headers);
     if(res->status_code == 406)
       throw OpError(res->content.string());
-      return nlohmann::json(res->content.string());
+    return nlohmann::json(res->content.string());
   }
 }
