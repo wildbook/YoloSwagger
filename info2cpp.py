@@ -172,7 +172,7 @@ def generate_ops(info,  folder,  namespace):
         request = info["requests"][name]
         file = open(folder + "/"+ filename,  "w+")
         file.write("#pragma once\n")
-        file.write("#incldue \"../client.hpp\"\n")
+        file.write("#include \"../client.hpp\"\n")
         for i in info_function_imports(op):
             if not i in builtins:
                 file.write("#include \"{0}.hpp\"\n".format(i))
@@ -206,7 +206,7 @@ def generate_ops(info,  folder,  namespace):
                 file.write("\n    const std::optional<{1}>& {0} = std::nullopt".format(optional,  type2cpp(type)))
         file.write(")\n  {\n")
         file.write("    using std::to_string;\n")
-        file.write("    Headers headers = {{\"Authorization\", auth}};\n")
+        file.write("    Headers headers = {{\"Authorization\", info.auth}};\n")
         for aname in request["header"]:
             if aname in op["optional"]:
                 file.write("    if({0})\n".format(aname))
@@ -226,42 +226,27 @@ def generate_ops(info,  folder,  namespace):
         path = "{0}".format(request["url"])
         if len(request["path"]) > 0:
             path = path.replace("{",  "\"+UrlCode::encode(to_string(").replace("}","))+\"")
+        file.write("    std::string path = \"{0}\";\n".format(path))
         if len(request["query"]) > 0:
-            didFirst = False
-            for aname in request["query"]:
-                if not aname in op["optional"]:
-                    if didFirst:
-                        file.write("    +\n    \"&{0}=\" + UrlCode::encode(to_string({0}))".format(aname))
-                    else:
-                        didFirst = True
-                        file.write("    std::string path = \"{1}?{0}=\" + UrlCode::encode(to_string({0}))".format(aname,  path))
-            if not didFirst:
-                file.write("    std::string path = \"{0}\";\n".format(path))
-                file.write("    bool first = true;\n")
-            else:
-                file.write(";\n")
+            file.write("    Headers query;\n")
             for aname in request["query"]:
                 if aname in op["optional"]:
-                        file.write("    if({0}) {{\n".format(aname))
-                        if not didFirst:
-                            file.write("      if(first) {\n")
-                            file.write("        first = false;\n")
-                            file.write("        path.append('?')\n")
-                            file.write("      } else {\n")
-                            file.write("        path.append('&');\n")
-                            file.write("      }")
-                            file.write("      path.append(\"{0}=\"+UrlCode::encode(to_string(*{0})));\n".format(aname))
-                        else:
-                            file.write("      path.append(\"&{0}=\"+UrlCode::encode(to_string(*{0})));\n".format(aname))
-                        file.write("    }\n")
-        else:
-            file.write("    const std::string path = \"{0}\";\n".format(path))
+                    if op["arguments"][aname]["type"]["type"] == "object":
+                        file.write("    if(!{0}.is_null())\n".format(aname))
+                        file.write("      query[\"{0}\"] = {0};\n".format(aname))
+                    else:
+                        file.write("    if({0})\n")
+                        file.write("      query[\"{0}\"] = *{0};\n".format(aname))
+                else:
+                    file.write("      query[\"{0}\"] = {0};\n".format(aname))
+            file.write("    if(query.size() > 0)\n")
+            file.write("      path.append(\"?\" + SimpleWeb::QueryString::create(query));\n")
         file.write("    HttpsClient client(info.host, false);\n")
         file.write("    auto res = client.request(\"{0}\", path, body, headers);\n".format(request["method"]))
-        file.write("    if(res->status_code != 406)\n")
+        file.write("    if(res->status_code == 406)\n")
         file.write("      throw OpError(res->content.string());\n")
         if returns == "void":
-            file.write("    return;")
+            file.write("    return;\n")
         else:
             file.write("    if(auto it = res->header.find(\"content-type\"); it !=res->header.end() && it->second == \"application/json\")\n")
             file.write("      return nlohmann::json(res->content.string());\n")

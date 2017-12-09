@@ -4,8 +4,8 @@ namespace leagueapi {
   enum class LolLobbyPlayerUpdateType_t {
     RMS_E = 3,
     None_E = 0,
-    ServiceProxy_E = 2,
     Direct_E = 1,
+    ServiceProxy_E = 2,
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyPlayerUpdateType_t& v) {
@@ -16,11 +16,11 @@ namespace leagueapi {
       case LolLobbyPlayerUpdateType_t::None_E:
         j = "None";
       break;
-      case LolLobbyPlayerUpdateType_t::ServiceProxy_E:
-        j = "ServiceProxy";
-      break;
       case LolLobbyPlayerUpdateType_t::Direct_E:
         j = "Direct";
+      break;
+      case LolLobbyPlayerUpdateType_t::ServiceProxy_E:
+        j = "ServiceProxy";
       break;
     }
   }
@@ -35,12 +35,12 @@ namespace leagueapi {
       v = LolLobbyPlayerUpdateType_t::None_E;
       return;
     }
-    if(s == "ServiceProxy"){
-      v = LolLobbyPlayerUpdateType_t::ServiceProxy_E;
-      return;
-    }
     if(s == "Direct"){
       v = LolLobbyPlayerUpdateType_t::Direct_E;
+      return;
+    }
+    if(s == "ServiceProxy"){
+      v = LolLobbyPlayerUpdateType_t::ServiceProxy_E;
       return;
     }
   }
@@ -50,10 +50,10 @@ namespace leagueapi {
         return "RMS";
       case LolLobbyPlayerUpdateType_t::None_E:
         return "None";
-      case LolLobbyPlayerUpdateType_t::ServiceProxy_E:
-        return "ServiceProxy";
       case LolLobbyPlayerUpdateType_t::Direct_E:
         return "Direct";
+      case LolLobbyPlayerUpdateType_t::ServiceProxy_E:
+        return "ServiceProxy";
     }
   }
 

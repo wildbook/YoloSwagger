@@ -1,5 +1,5 @@
 #pragma once
-#incldue "../client.hpp"
+#include "../client.hpp"
 #include ".hpp"
 namespace leagueapi {
   //Sets the current runtime affinity of the application.
@@ -8,12 +8,17 @@ namespace leagueapi {
     const std::string& newAffinity)
   {
     using std::to_string;
-    Headers headers = {{"Authorization", auth}};
+    Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
-    std::string path = "/riotclient/affinity?newAffinity=" + UrlCode::encode(to_string(newAffinity));
+    std::string path = "/riotclient/affinity";
+    Headers query;
+      query["newAffinity"] = newAffinity;
+    if(query.size() > 0)
+      path.append("?" + SimpleWeb::QueryString::create(query));
     HttpsClient client(info.host, false);
     auto res = client.request("post", path, body, headers);
-    if(res->status_code != 406)
+    if(res->status_code == 406)
       throw OpError(res->content.string());
-    return;  }
+    return;
+  }
 }

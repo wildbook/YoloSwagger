@@ -1,26 +1,22 @@
 #pragma once
-#incldue "../client.hpp"
+#include "../client.hpp"
 #include "RecofrienderLinkResource.hpp"
 namespace leagueapi {
   std::vector<RecofrienderLinkResource_t> GetRecofrienderV1Registrations (const ClientInfo& info,
     const std::optional<std::string>& cb = std::nullopt)
   {
     using std::to_string;
-    Headers headers = {{"Authorization", auth}};
+    Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/recofriender/v1/registrations";
-    bool first = true;
-    if(cb) {
-      if(first) {
-        first = false;
-        path.append('?')
-      } else {
-        path.append('&');
-      }      path.append("cb="+UrlCode::encode(to_string(*cb)));
-    }
+    Headers query;
+    if({0})
+      query["cb"] = *cb;
+    if(query.size() > 0)
+      path.append("?" + SimpleWeb::QueryString::create(query));
     HttpsClient client(info.host, false);
     auto res = client.request("get", path, body, headers);
-    if(res->status_code != 406)
+    if(res->status_code == 406)
       throw OpError(res->content.string());
     if(auto it = res->header.find("content-type"); it !=res->header.end() && it->second == "application/json")
       return nlohmann::json(res->content.string());

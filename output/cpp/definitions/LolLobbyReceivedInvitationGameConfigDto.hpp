@@ -3,27 +3,27 @@
 #include <optional>
 namespace leagueapi {
   struct LolLobbyReceivedInvitationGameConfigDto_t {
-    int32_t queueId;
-    std::string gameMutator;
     std::string gameMode;
-    int32_t mapId;
+    int32_t queueId;
     std::string inviteGameType;
+    std::string gameMutator;
+    int32_t mapId;
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyReceivedInvitationGameConfigDto_t& v) {
-    j["queueId"] = v.queueId;
-    j["gameMutator"] = v.gameMutator;
     j["gameMode"] = v.gameMode;
-    j["mapId"] = v.mapId;
+    j["queueId"] = v.queueId;
     j["inviteGameType"] = v.inviteGameType;
+    j["gameMutator"] = v.gameMutator;
+    j["mapId"] = v.mapId;
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyReceivedInvitationGameConfigDto_t& v) {
-    v.queueId = j.at("queueId").get<int32_t>();
-    v.gameMutator = j.at("gameMutator").get<std::string>();
     v.gameMode = j.at("gameMode").get<std::string>();
-    v.mapId = j.at("mapId").get<int32_t>();
+    v.queueId = j.at("queueId").get<int32_t>();
     v.inviteGameType = j.at("inviteGameType").get<std::string>();
+    v.gameMutator = j.at("gameMutator").get<std::string>();
+    v.mapId = j.at("mapId").get<int32_t>();
   }
   inline std::string to_string(const LolLobbyReceivedInvitationGameConfigDto_t& v) {
     nlohmann::json j = v;

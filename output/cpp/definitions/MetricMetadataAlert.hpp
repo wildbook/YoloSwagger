@@ -4,33 +4,33 @@
 #include "MetricMetadataNotify.hpp"
 namespace leagueapi {
   struct MetricMetadataAlert_t {
-    std::string info;
+    MetricMetadataNotify_t notify;
     std::string description;
     double min;
-    double max;
     std::string level;
+    double max;
     std::string pretty_name;
-    MetricMetadataNotify_t notify;
+    std::string info;
   };
 
   inline void to_json(nlohmann::json& j, const MetricMetadataAlert_t& v) {
-    j["info"] = v.info;
+    j["notify"] = v.notify;
     j["description"] = v.description;
     j["min"] = v.min;
-    j["max"] = v.max;
     j["level"] = v.level;
+    j["max"] = v.max;
     j["pretty_name"] = v.pretty_name;
-    j["notify"] = v.notify;
+    j["info"] = v.info;
   }
 
   inline void from_json(const nlohmann::json& j, MetricMetadataAlert_t& v) {
-    v.info = j.at("info").get<std::string>();
+    v.notify = j.at("notify").get<MetricMetadataNotify_t>();
     v.description = j.at("description").get<std::string>();
     v.min = j.at("min").get<double>();
-    v.max = j.at("max").get<double>();
     v.level = j.at("level").get<std::string>();
+    v.max = j.at("max").get<double>();
     v.pretty_name = j.at("pretty_name").get<std::string>();
-    v.notify = j.at("notify").get<MetricMetadataNotify_t>();
+    v.info = j.at("info").get<std::string>();
   }
   inline std::string to_string(const MetricMetadataAlert_t& v) {
     nlohmann::json j = v;

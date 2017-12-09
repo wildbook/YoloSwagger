@@ -1,5 +1,5 @@
 #pragma once
-#incldue "../client.hpp"
+#include "../client.hpp"
 #include ".hpp"
 namespace leagueapi {
   //Restarts the application.  Does nothing if there is already a waiting delayed restart.  Optionally accepts specific version to restart.
@@ -8,15 +8,19 @@ namespace leagueapi {
     const std::optional<uint32_t>& restartVersion = std::nullopt)
   {
     using std::to_string;
-    Headers headers = {{"Authorization", auth}};
+    Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
-    std::string path = "/process-control/v1/process/restart?delaySeconds=" + UrlCode::encode(to_string(delaySeconds));
-    if(restartVersion) {
-      path.append("&restartVersion="+UrlCode::encode(to_string(*restartVersion)));
-    }
+    std::string path = "/process-control/v1/process/restart";
+    Headers query;
+      query["delaySeconds"] = delaySeconds;
+    if({0})
+      query["restartVersion"] = *restartVersion;
+    if(query.size() > 0)
+      path.append("?" + SimpleWeb::QueryString::create(query));
     HttpsClient client(info.host, false);
     auto res = client.request("post", path, body, headers);
-    if(res->status_code != 406)
+    if(res->status_code == 406)
       throw OpError(res->content.string());
-    return;  }
+    return;
+  }
 }

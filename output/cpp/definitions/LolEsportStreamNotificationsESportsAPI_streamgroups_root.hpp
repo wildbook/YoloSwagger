@@ -1,9 +1,9 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolEsportStreamNotificationsEsportsAPI_teams.hpp"
 #include "LolEsportStreamNotificationsESportsAPI_streamgroups.hpp"
 #include "LolEsportStreamNotificationsEsportsAPI_highlanderTournaments.hpp"
+#include "LolEsportStreamNotificationsEsportsAPI_teams.hpp"
 namespace leagueapi {
   struct LolEsportStreamNotificationsESportsAPI_streamgroups_root_t {
     std::vector<LolEsportStreamNotificationsEsportsAPI_highlanderTournaments_t> highlanderTournaments;

@@ -4,41 +4,41 @@
 #include "LolChatChatPlatformLoginSessionState.hpp"
 namespace leagueapi {
   struct LolChatChatPlatformLoginSession_t {
+    nlohmann::json gasToken;
+    std::string puuid;
+    uint64_t accountId;
     std::string username;
     std::string userAuthToken;
-    std::string idToken;
-    LolChatChatPlatformLoginSessionState_t state;
-    std::string puuid;
-    nlohmann::json gasToken;
     std::optional<uint64_t> summonerId;
     bool isNewPlayer;
-    uint64_t accountId;
+    LolChatChatPlatformLoginSessionState_t state;
+    std::string idToken;
   };
 
   inline void to_json(nlohmann::json& j, const LolChatChatPlatformLoginSession_t& v) {
+    j["gasToken"] = v.gasToken;
+    j["puuid"] = v.puuid;
+    j["accountId"] = v.accountId;
     j["username"] = v.username;
     j["userAuthToken"] = v.userAuthToken;
-    j["idToken"] = v.idToken;
-    j["state"] = v.state;
-    j["puuid"] = v.puuid;
-    j["gasToken"] = v.gasToken;
     if(v.summonerId)
       j["summonerId"] = *v.summonerId;
     j["isNewPlayer"] = v.isNewPlayer;
-    j["accountId"] = v.accountId;
+    j["state"] = v.state;
+    j["idToken"] = v.idToken;
   }
 
   inline void from_json(const nlohmann::json& j, LolChatChatPlatformLoginSession_t& v) {
+    v.gasToken = j.at("gasToken").get<nlohmann::json>();
+    v.puuid = j.at("puuid").get<std::string>();
+    v.accountId = j.at("accountId").get<uint64_t>();
     v.username = j.at("username").get<std::string>();
     v.userAuthToken = j.at("userAuthToken").get<std::string>();
-    v.idToken = j.at("idToken").get<std::string>();
-    v.state = j.at("state").get<LolChatChatPlatformLoginSessionState_t>();
-    v.puuid = j.at("puuid").get<std::string>();
-    v.gasToken = j.at("gasToken").get<nlohmann::json>();
     if(auto it = j.find("summonerId"); it != j.end() && !it->is_null())
       v.summonerId = it->get<uint64_t>();
     v.isNewPlayer = j.at("isNewPlayer").get<bool>();
-    v.accountId = j.at("accountId").get<uint64_t>();
+    v.state = j.at("state").get<LolChatChatPlatformLoginSessionState_t>();
+    v.idToken = j.at("idToken").get<std::string>();
   }
   inline std::string to_string(const LolChatChatPlatformLoginSession_t& v) {
     nlohmann::json j = v;

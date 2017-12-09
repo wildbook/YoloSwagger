@@ -1,5 +1,5 @@
 #pragma once
-#incldue "../client.hpp"
+#include "../client.hpp"
 #include ".hpp"
 namespace leagueapi {
   //Adds a new event to be sent to Dradis and/or other analytics/monitoring data sinks. This will include current performance information along with the passed in data. Each call will record the performance counters then reset them for use in the next call. All events will have their eventType prefixed with ""
@@ -10,13 +10,14 @@ namespace leagueapi {
     const std::map<std::string, nlohmann::json>& eventData)
   {
     using std::to_string;
-    Headers headers = {{"Authorization", auth}};
+    Headers headers = {{"Authorization", info.auth}};
     headers["content-type"] = "application/json";
     const std::string body = json(eventData).dump();
-    const std::string path = "/telemetry/v1/events-with-perf-info/"+UrlCode::encode(to_string(eventType))+"";
+    std::string path = "/telemetry/v1/events-with-perf-info/"+UrlCode::encode(to_string(eventType))+"";
     HttpsClient client(info.host, false);
     auto res = client.request("post", path, body, headers);
-    if(res->status_code != 406)
+    if(res->status_code == 406)
       throw OpError(res->content.string());
-    return;  }
+    return;
+  }
 }

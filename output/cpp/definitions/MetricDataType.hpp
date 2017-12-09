@@ -3,11 +3,11 @@
 namespace leagueapi {
   enum class MetricDataType_t {
     string_E = 5,
-    int_E = 1,
     unknown_E = 0,
+    int_E = 1,
+    bool_E = 4,
     float_E = 3,
     uint_E = 2,
-    bool_E = 4,
   };
 
   inline void to_json(nlohmann::json& j, const MetricDataType_t& v) {
@@ -15,20 +15,20 @@ namespace leagueapi {
       case MetricDataType_t::string_E:
         j = "string";
       break;
+      case MetricDataType_t::unknown_E:
+        j = "unknown";
+      break;
       case MetricDataType_t::int_E:
         j = "int";
       break;
-      case MetricDataType_t::unknown_E:
-        j = "unknown";
+      case MetricDataType_t::bool_E:
+        j = "bool";
       break;
       case MetricDataType_t::float_E:
         j = "float";
       break;
       case MetricDataType_t::uint_E:
         j = "uint";
-      break;
-      case MetricDataType_t::bool_E:
-        j = "bool";
       break;
     }
   }
@@ -39,12 +39,16 @@ namespace leagueapi {
       v = MetricDataType_t::string_E;
       return;
     }
+    if(s == "unknown"){
+      v = MetricDataType_t::unknown_E;
+      return;
+    }
     if(s == "int"){
       v = MetricDataType_t::int_E;
       return;
     }
-    if(s == "unknown"){
-      v = MetricDataType_t::unknown_E;
+    if(s == "bool"){
+      v = MetricDataType_t::bool_E;
       return;
     }
     if(s == "float"){
@@ -55,25 +59,21 @@ namespace leagueapi {
       v = MetricDataType_t::uint_E;
       return;
     }
-    if(s == "bool"){
-      v = MetricDataType_t::bool_E;
-      return;
-    }
   }
   inline std::string to_string(const MetricDataType_t& v) {
     switch(v) {
       case MetricDataType_t::string_E:
         return "string";
-      case MetricDataType_t::int_E:
-        return "int";
       case MetricDataType_t::unknown_E:
         return "unknown";
+      case MetricDataType_t::int_E:
+        return "int";
+      case MetricDataType_t::bool_E:
+        return "bool";
       case MetricDataType_t::float_E:
         return "float";
       case MetricDataType_t::uint_E:
         return "uint";
-      case MetricDataType_t::bool_E:
-        return "bool";
     }
   }
 

@@ -3,8 +3,8 @@
 namespace leagueapi {
   enum class LolLeaguesLeagueQueueType_t {
     FLEXSR_E = 3,
-    NONE_E = 0,
     FLEXTT_E = 2,
+    NONE_E = 0,
     SOLO5V5_E = 1,
   };
 
@@ -13,11 +13,11 @@ namespace leagueapi {
       case LolLeaguesLeagueQueueType_t::FLEXSR_E:
         j = "FLEXSR";
       break;
-      case LolLeaguesLeagueQueueType_t::NONE_E:
-        j = "NONE";
-      break;
       case LolLeaguesLeagueQueueType_t::FLEXTT_E:
         j = "FLEXTT";
+      break;
+      case LolLeaguesLeagueQueueType_t::NONE_E:
+        j = "NONE";
       break;
       case LolLeaguesLeagueQueueType_t::SOLO5V5_E:
         j = "SOLO5V5";
@@ -31,12 +31,12 @@ namespace leagueapi {
       v = LolLeaguesLeagueQueueType_t::FLEXSR_E;
       return;
     }
-    if(s == "NONE"){
-      v = LolLeaguesLeagueQueueType_t::NONE_E;
-      return;
-    }
     if(s == "FLEXTT"){
       v = LolLeaguesLeagueQueueType_t::FLEXTT_E;
+      return;
+    }
+    if(s == "NONE"){
+      v = LolLeaguesLeagueQueueType_t::NONE_E;
       return;
     }
     if(s == "SOLO5V5"){
@@ -48,10 +48,10 @@ namespace leagueapi {
     switch(v) {
       case LolLeaguesLeagueQueueType_t::FLEXSR_E:
         return "FLEXSR";
-      case LolLeaguesLeagueQueueType_t::NONE_E:
-        return "NONE";
       case LolLeaguesLeagueQueueType_t::FLEXTT_E:
         return "FLEXTT";
+      case LolLeaguesLeagueQueueType_t::NONE_E:
+        return "NONE";
       case LolLeaguesLeagueQueueType_t::SOLO5V5_E:
         return "SOLO5V5";
     }

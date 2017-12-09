@@ -2,15 +2,18 @@
 #include <json.hpp>
 namespace leagueapi {
   enum class LeaverBusterNotificationType_t {
+    TaintedWarning_E = 1,
     Reforming_E = 4,
     PunishmentIncurred_E = 2,
     PunishedGamesRemaining_E = 3,
     Invalid_E = 0,
-    TaintedWarning_E = 1,
   };
 
   inline void to_json(nlohmann::json& j, const LeaverBusterNotificationType_t& v) {
     switch(v) {
+      case LeaverBusterNotificationType_t::TaintedWarning_E:
+        j = "TaintedWarning";
+      break;
       case LeaverBusterNotificationType_t::Reforming_E:
         j = "Reforming";
       break;
@@ -23,14 +26,15 @@ namespace leagueapi {
       case LeaverBusterNotificationType_t::Invalid_E:
         j = "Invalid";
       break;
-      case LeaverBusterNotificationType_t::TaintedWarning_E:
-        j = "TaintedWarning";
-      break;
     }
   }
 
   inline void from_json(const nlohmann::json& j, LeaverBusterNotificationType_t& v) {
     const auto& s = j.get<std::string>();
+    if(s == "TaintedWarning"){
+      v = LeaverBusterNotificationType_t::TaintedWarning_E;
+      return;
+    }
     if(s == "Reforming"){
       v = LeaverBusterNotificationType_t::Reforming_E;
       return;
@@ -47,13 +51,11 @@ namespace leagueapi {
       v = LeaverBusterNotificationType_t::Invalid_E;
       return;
     }
-    if(s == "TaintedWarning"){
-      v = LeaverBusterNotificationType_t::TaintedWarning_E;
-      return;
-    }
   }
   inline std::string to_string(const LeaverBusterNotificationType_t& v) {
     switch(v) {
+      case LeaverBusterNotificationType_t::TaintedWarning_E:
+        return "TaintedWarning";
       case LeaverBusterNotificationType_t::Reforming_E:
         return "Reforming";
       case LeaverBusterNotificationType_t::PunishmentIncurred_E:
@@ -62,8 +64,6 @@ namespace leagueapi {
         return "PunishedGamesRemaining";
       case LeaverBusterNotificationType_t::Invalid_E:
         return "Invalid";
-      case LeaverBusterNotificationType_t::TaintedWarning_E:
-        return "TaintedWarning";
     }
   }
 

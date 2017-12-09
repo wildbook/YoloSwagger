@@ -5,45 +5,45 @@
 #include "LolPerksPerkSubStyleBonusResource.hpp"
 namespace leagueapi {
   struct LolPerksPerkStyleResource_t {
-    std::vector<LolPerksPerkSubStyleBonusResource_t> subStyleBonus;
-    bool isAdvanced;
-    std::string name;
-    std::vector<int32_t> defaultPerks;
-    std::string tooltip;
     std::string defaultPageName;
-    std::vector<int32_t> allowedSubStyles;
-    int32_t defaultSubStyle;
+    std::string tooltip;
     std::string iconPath;
-    std::vector<LolPerksPerkStyleSlotResource_t> slots;
     int32_t id;
+    std::string name;
+    bool isAdvanced;
+    std::vector<LolPerksPerkSubStyleBonusResource_t> subStyleBonus;
+    int32_t defaultSubStyle;
+    std::vector<LolPerksPerkStyleSlotResource_t> slots;
+    std::vector<int32_t> defaultPerks;
+    std::vector<int32_t> allowedSubStyles;
   };
 
   inline void to_json(nlohmann::json& j, const LolPerksPerkStyleResource_t& v) {
-    j["subStyleBonus"] = v.subStyleBonus;
-    j["isAdvanced"] = v.isAdvanced;
-    j["name"] = v.name;
-    j["defaultPerks"] = v.defaultPerks;
-    j["tooltip"] = v.tooltip;
     j["defaultPageName"] = v.defaultPageName;
-    j["allowedSubStyles"] = v.allowedSubStyles;
-    j["defaultSubStyle"] = v.defaultSubStyle;
+    j["tooltip"] = v.tooltip;
     j["iconPath"] = v.iconPath;
-    j["slots"] = v.slots;
     j["id"] = v.id;
+    j["name"] = v.name;
+    j["isAdvanced"] = v.isAdvanced;
+    j["subStyleBonus"] = v.subStyleBonus;
+    j["defaultSubStyle"] = v.defaultSubStyle;
+    j["slots"] = v.slots;
+    j["defaultPerks"] = v.defaultPerks;
+    j["allowedSubStyles"] = v.allowedSubStyles;
   }
 
   inline void from_json(const nlohmann::json& j, LolPerksPerkStyleResource_t& v) {
-    v.subStyleBonus = j.at("subStyleBonus").get<std::vector<LolPerksPerkSubStyleBonusResource_t>>();
-    v.isAdvanced = j.at("isAdvanced").get<bool>();
-    v.name = j.at("name").get<std::string>();
-    v.defaultPerks = j.at("defaultPerks").get<std::vector<int32_t>>();
-    v.tooltip = j.at("tooltip").get<std::string>();
     v.defaultPageName = j.at("defaultPageName").get<std::string>();
-    v.allowedSubStyles = j.at("allowedSubStyles").get<std::vector<int32_t>>();
-    v.defaultSubStyle = j.at("defaultSubStyle").get<int32_t>();
+    v.tooltip = j.at("tooltip").get<std::string>();
     v.iconPath = j.at("iconPath").get<std::string>();
-    v.slots = j.at("slots").get<std::vector<LolPerksPerkStyleSlotResource_t>>();
     v.id = j.at("id").get<int32_t>();
+    v.name = j.at("name").get<std::string>();
+    v.isAdvanced = j.at("isAdvanced").get<bool>();
+    v.subStyleBonus = j.at("subStyleBonus").get<std::vector<LolPerksPerkSubStyleBonusResource_t>>();
+    v.defaultSubStyle = j.at("defaultSubStyle").get<int32_t>();
+    v.slots = j.at("slots").get<std::vector<LolPerksPerkStyleSlotResource_t>>();
+    v.defaultPerks = j.at("defaultPerks").get<std::vector<int32_t>>();
+    v.allowedSubStyles = j.at("allowedSubStyles").get<std::vector<int32_t>>();
   }
   inline std::string to_string(const LolPerksPerkStyleResource_t& v) {
     nlohmann::json j = v;

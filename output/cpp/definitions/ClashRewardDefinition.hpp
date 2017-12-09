@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "ClashRewardSpec.hpp"
 #include "ClashRewardType.hpp"
+#include "ClashRewardSpec.hpp"
 namespace leagueapi {
   struct ClashRewardDefinition_t {
     ClashRewardSpec_t rewardSpec;

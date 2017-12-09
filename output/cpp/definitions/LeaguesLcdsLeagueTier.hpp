@@ -2,17 +2,23 @@
 #include <json.hpp>
 namespace leagueapi {
   enum class LeaguesLcdsLeagueTier_t {
+    MASTER_E = 6,
+    CHALLENGER_E = 7,
     PLATINUM_E = 4,
     DIAMOND_E = 5,
     GOLD_E = 3,
-    CHALLENGER_E = 7,
-    MASTER_E = 6,
     SILVER_E = 2,
     BRONZE_E = 1,
   };
 
   inline void to_json(nlohmann::json& j, const LeaguesLcdsLeagueTier_t& v) {
     switch(v) {
+      case LeaguesLcdsLeagueTier_t::MASTER_E:
+        j = "MASTER";
+      break;
+      case LeaguesLcdsLeagueTier_t::CHALLENGER_E:
+        j = "CHALLENGER";
+      break;
       case LeaguesLcdsLeagueTier_t::PLATINUM_E:
         j = "PLATINUM";
       break;
@@ -21,12 +27,6 @@ namespace leagueapi {
       break;
       case LeaguesLcdsLeagueTier_t::GOLD_E:
         j = "GOLD";
-      break;
-      case LeaguesLcdsLeagueTier_t::CHALLENGER_E:
-        j = "CHALLENGER";
-      break;
-      case LeaguesLcdsLeagueTier_t::MASTER_E:
-        j = "MASTER";
       break;
       case LeaguesLcdsLeagueTier_t::SILVER_E:
         j = "SILVER";
@@ -39,6 +39,14 @@ namespace leagueapi {
 
   inline void from_json(const nlohmann::json& j, LeaguesLcdsLeagueTier_t& v) {
     const auto& s = j.get<std::string>();
+    if(s == "MASTER"){
+      v = LeaguesLcdsLeagueTier_t::MASTER_E;
+      return;
+    }
+    if(s == "CHALLENGER"){
+      v = LeaguesLcdsLeagueTier_t::CHALLENGER_E;
+      return;
+    }
     if(s == "PLATINUM"){
       v = LeaguesLcdsLeagueTier_t::PLATINUM_E;
       return;
@@ -49,14 +57,6 @@ namespace leagueapi {
     }
     if(s == "GOLD"){
       v = LeaguesLcdsLeagueTier_t::GOLD_E;
-      return;
-    }
-    if(s == "CHALLENGER"){
-      v = LeaguesLcdsLeagueTier_t::CHALLENGER_E;
-      return;
-    }
-    if(s == "MASTER"){
-      v = LeaguesLcdsLeagueTier_t::MASTER_E;
       return;
     }
     if(s == "SILVER"){
@@ -70,16 +70,16 @@ namespace leagueapi {
   }
   inline std::string to_string(const LeaguesLcdsLeagueTier_t& v) {
     switch(v) {
+      case LeaguesLcdsLeagueTier_t::MASTER_E:
+        return "MASTER";
+      case LeaguesLcdsLeagueTier_t::CHALLENGER_E:
+        return "CHALLENGER";
       case LeaguesLcdsLeagueTier_t::PLATINUM_E:
         return "PLATINUM";
       case LeaguesLcdsLeagueTier_t::DIAMOND_E:
         return "DIAMOND";
       case LeaguesLcdsLeagueTier_t::GOLD_E:
         return "GOLD";
-      case LeaguesLcdsLeagueTier_t::CHALLENGER_E:
-        return "CHALLENGER";
-      case LeaguesLcdsLeagueTier_t::MASTER_E:
-        return "MASTER";
       case LeaguesLcdsLeagueTier_t::SILVER_E:
         return "SILVER";
       case LeaguesLcdsLeagueTier_t::BRONZE_E:

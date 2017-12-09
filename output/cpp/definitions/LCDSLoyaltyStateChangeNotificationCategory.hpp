@@ -6,8 +6,8 @@ namespace leagueapi {
     grant_E = 1,
     expiry_E = 2,
     disabled_E = 5,
-    legacy_E = 0,
     change_E = 3,
+    legacy_E = 0,
   };
 
   inline void to_json(nlohmann::json& j, const LCDSLoyaltyStateChangeNotificationCategory_t& v) {
@@ -24,11 +24,11 @@ namespace leagueapi {
       case LCDSLoyaltyStateChangeNotificationCategory_t::disabled_E:
         j = "disabled";
       break;
-      case LCDSLoyaltyStateChangeNotificationCategory_t::legacy_E:
-        j = "legacy";
-      break;
       case LCDSLoyaltyStateChangeNotificationCategory_t::change_E:
         j = "change";
+      break;
+      case LCDSLoyaltyStateChangeNotificationCategory_t::legacy_E:
+        j = "legacy";
       break;
     }
   }
@@ -51,12 +51,12 @@ namespace leagueapi {
       v = LCDSLoyaltyStateChangeNotificationCategory_t::disabled_E;
       return;
     }
-    if(s == "legacy"){
-      v = LCDSLoyaltyStateChangeNotificationCategory_t::legacy_E;
-      return;
-    }
     if(s == "change"){
       v = LCDSLoyaltyStateChangeNotificationCategory_t::change_E;
+      return;
+    }
+    if(s == "legacy"){
+      v = LCDSLoyaltyStateChangeNotificationCategory_t::legacy_E;
       return;
     }
   }
@@ -70,10 +70,10 @@ namespace leagueapi {
         return "expiry";
       case LCDSLoyaltyStateChangeNotificationCategory_t::disabled_E:
         return "disabled";
-      case LCDSLoyaltyStateChangeNotificationCategory_t::legacy_E:
-        return "legacy";
       case LCDSLoyaltyStateChangeNotificationCategory_t::change_E:
         return "change";
+      case LCDSLoyaltyStateChangeNotificationCategory_t::legacy_E:
+        return "legacy";
     }
   }
 

@@ -2,17 +2,17 @@
 #include <json.hpp>
 namespace leagueapi {
   enum class LolLobbyTeamBuilderChampSelectTradeState_t {
-    AVAILABLE_E = 1,
+    INVALID_E = 3,
     RECEIVED_E = 4,
     BUSY_E = 2,
     SENT_E = 5,
-    INVALID_E = 3,
+    AVAILABLE_E = 1,
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderChampSelectTradeState_t& v) {
     switch(v) {
-      case LolLobbyTeamBuilderChampSelectTradeState_t::AVAILABLE_E:
-        j = "AVAILABLE";
+      case LolLobbyTeamBuilderChampSelectTradeState_t::INVALID_E:
+        j = "INVALID";
       break;
       case LolLobbyTeamBuilderChampSelectTradeState_t::RECEIVED_E:
         j = "RECEIVED";
@@ -23,16 +23,16 @@ namespace leagueapi {
       case LolLobbyTeamBuilderChampSelectTradeState_t::SENT_E:
         j = "SENT";
       break;
-      case LolLobbyTeamBuilderChampSelectTradeState_t::INVALID_E:
-        j = "INVALID";
+      case LolLobbyTeamBuilderChampSelectTradeState_t::AVAILABLE_E:
+        j = "AVAILABLE";
       break;
     }
   }
 
   inline void from_json(const nlohmann::json& j, LolLobbyTeamBuilderChampSelectTradeState_t& v) {
     const auto& s = j.get<std::string>();
-    if(s == "AVAILABLE"){
-      v = LolLobbyTeamBuilderChampSelectTradeState_t::AVAILABLE_E;
+    if(s == "INVALID"){
+      v = LolLobbyTeamBuilderChampSelectTradeState_t::INVALID_E;
       return;
     }
     if(s == "RECEIVED"){
@@ -47,23 +47,23 @@ namespace leagueapi {
       v = LolLobbyTeamBuilderChampSelectTradeState_t::SENT_E;
       return;
     }
-    if(s == "INVALID"){
-      v = LolLobbyTeamBuilderChampSelectTradeState_t::INVALID_E;
+    if(s == "AVAILABLE"){
+      v = LolLobbyTeamBuilderChampSelectTradeState_t::AVAILABLE_E;
       return;
     }
   }
   inline std::string to_string(const LolLobbyTeamBuilderChampSelectTradeState_t& v) {
     switch(v) {
-      case LolLobbyTeamBuilderChampSelectTradeState_t::AVAILABLE_E:
-        return "AVAILABLE";
+      case LolLobbyTeamBuilderChampSelectTradeState_t::INVALID_E:
+        return "INVALID";
       case LolLobbyTeamBuilderChampSelectTradeState_t::RECEIVED_E:
         return "RECEIVED";
       case LolLobbyTeamBuilderChampSelectTradeState_t::BUSY_E:
         return "BUSY";
       case LolLobbyTeamBuilderChampSelectTradeState_t::SENT_E:
         return "SENT";
-      case LolLobbyTeamBuilderChampSelectTradeState_t::INVALID_E:
-        return "INVALID";
+      case LolLobbyTeamBuilderChampSelectTradeState_t::AVAILABLE_E:
+        return "AVAILABLE";
     }
   }
 

@@ -5,12 +5,12 @@ namespace leagueapi {
   enum class RemotingHelpFormat_t {
     // Native help format
     Full_E = 1,
+    // Python epytext format
+    Epytext_E = 2,
     // Console-friendly description format
     Console_E = 5,
     // Short description format
     Brief_E = 4,
-    // Python epytext format
-    Epytext_E = 2,
   };
 
   inline void to_json(nlohmann::json& j, const RemotingHelpFormat_t& v) {
@@ -18,14 +18,14 @@ namespace leagueapi {
       case RemotingHelpFormat_t::Full_E:
         j = "Full";
       break;
+      case RemotingHelpFormat_t::Epytext_E:
+        j = "Epytext";
+      break;
       case RemotingHelpFormat_t::Console_E:
         j = "Console";
       break;
       case RemotingHelpFormat_t::Brief_E:
         j = "Brief";
-      break;
-      case RemotingHelpFormat_t::Epytext_E:
-        j = "Epytext";
       break;
     }
   }
@@ -36,6 +36,10 @@ namespace leagueapi {
       v = RemotingHelpFormat_t::Full_E;
       return;
     }
+    if(s == "Epytext"){
+      v = RemotingHelpFormat_t::Epytext_E;
+      return;
+    }
     if(s == "Console"){
       v = RemotingHelpFormat_t::Console_E;
       return;
@@ -44,21 +48,17 @@ namespace leagueapi {
       v = RemotingHelpFormat_t::Brief_E;
       return;
     }
-    if(s == "Epytext"){
-      v = RemotingHelpFormat_t::Epytext_E;
-      return;
-    }
   }
   inline std::string to_string(const RemotingHelpFormat_t& v) {
     switch(v) {
       case RemotingHelpFormat_t::Full_E:
         return "Full";
+      case RemotingHelpFormat_t::Epytext_E:
+        return "Epytext";
       case RemotingHelpFormat_t::Console_E:
         return "Console";
       case RemotingHelpFormat_t::Brief_E:
         return "Brief";
-      case RemotingHelpFormat_t::Epytext_E:
-        return "Epytext";
     }
   }
 

@@ -1,17 +1,22 @@
 #pragma once
-#incldue "../client.hpp"
+#include "../client.hpp"
 #include ".hpp"
 namespace leagueapi {
   void PostLolGameClientChatV1PartyMessages (const ClientInfo& info,
     const std::string& message)
   {
     using std::to_string;
-    Headers headers = {{"Authorization", auth}};
+    Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
-    std::string path = "/lol-game-client-chat/v1/party-messages?message=" + UrlCode::encode(to_string(message));
+    std::string path = "/lol-game-client-chat/v1/party-messages";
+    Headers query;
+      query["message"] = message;
+    if(query.size() > 0)
+      path.append("?" + SimpleWeb::QueryString::create(query));
     HttpsClient client(info.host, false);
     auto res = client.request("post", path, body, headers);
-    if(res->status_code != 406)
+    if(res->status_code == 406)
       throw OpError(res->content.string());
-    return;  }
+    return;
+  }
 }

@@ -3,27 +3,27 @@
 #include <optional>
 namespace leagueapi {
   struct PaymentsPMCStartUrlRequest_t {
-    bool isPrepaid;
+    int32_t gifteeAccountId;
     int16_t summonerLevel;
     std::string gifteeMessage;
-    int32_t gifteeAccountId;
     std::string localeId;
+    bool isPrepaid;
   };
 
   inline void to_json(nlohmann::json& j, const PaymentsPMCStartUrlRequest_t& v) {
-    j["isPrepaid"] = v.isPrepaid;
+    j["gifteeAccountId"] = v.gifteeAccountId;
     j["summonerLevel"] = v.summonerLevel;
     j["gifteeMessage"] = v.gifteeMessage;
-    j["gifteeAccountId"] = v.gifteeAccountId;
     j["localeId"] = v.localeId;
+    j["isPrepaid"] = v.isPrepaid;
   }
 
   inline void from_json(const nlohmann::json& j, PaymentsPMCStartUrlRequest_t& v) {
-    v.isPrepaid = j.at("isPrepaid").get<bool>();
+    v.gifteeAccountId = j.at("gifteeAccountId").get<int32_t>();
     v.summonerLevel = j.at("summonerLevel").get<int16_t>();
     v.gifteeMessage = j.at("gifteeMessage").get<std::string>();
-    v.gifteeAccountId = j.at("gifteeAccountId").get<int32_t>();
     v.localeId = j.at("localeId").get<std::string>();
+    v.isPrepaid = j.at("isPrepaid").get<bool>();
   }
   inline std::string to_string(const PaymentsPMCStartUrlRequest_t& v) {
     nlohmann::json j = v;

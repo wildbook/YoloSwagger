@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolLeaguesLeagueStanding.hpp"
 #include "LolLeaguesLeagueRank.hpp"
+#include "LolLeaguesLeagueStanding.hpp"
 namespace leagueapi {
   struct LolLeaguesLeagueDivision_t {
     std::vector<LolLeaguesLeagueStanding_t> standings;

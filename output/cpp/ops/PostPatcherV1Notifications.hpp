@@ -1,5 +1,5 @@
 #pragma once
-#incldue "../client.hpp"
+#include "../client.hpp"
 #include ".hpp"
 #include "PatcherNotificationId.hpp"
 namespace leagueapi {
@@ -7,12 +7,17 @@ namespace leagueapi {
     const PatcherNotificationId_t& notificationId)
   {
     using std::to_string;
-    Headers headers = {{"Authorization", auth}};
+    Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
-    std::string path = "/patcher/v1/notifications?notificationId=" + UrlCode::encode(to_string(notificationId));
+    std::string path = "/patcher/v1/notifications";
+    Headers query;
+      query["notificationId"] = notificationId;
+    if(query.size() > 0)
+      path.append("?" + SimpleWeb::QueryString::create(query));
     HttpsClient client(info.host, false);
     auto res = client.request("post", path, body, headers);
-    if(res->status_code != 406)
+    if(res->status_code == 406)
       throw OpError(res->content.string());
-    return;  }
+    return;
+  }
 }

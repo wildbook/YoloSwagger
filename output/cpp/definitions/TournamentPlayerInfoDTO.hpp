@@ -1,10 +1,10 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "PlayerDTO.hpp"
 #include "TournamentInfoDTO.hpp"
-#include "ThemeVp.hpp"
 #include "RosterStatsDTO.hpp"
+#include "PlayerDTO.hpp"
+#include "ThemeVp.hpp"
 namespace leagueapi {
   struct TournamentPlayerInfoDTO_t {
     std::vector<ThemeVp_t> themeVps;

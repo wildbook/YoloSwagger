@@ -4,18 +4,18 @@
 #include "LolClashMatchmakingDodgeState.hpp"
 namespace leagueapi {
   struct LolClashGameflowGameDodge_t {
-    std::vector<uint64_t> dodgeIds;
     LolClashMatchmakingDodgeState_t state;
+    std::vector<uint64_t> dodgeIds;
   };
 
   inline void to_json(nlohmann::json& j, const LolClashGameflowGameDodge_t& v) {
-    j["dodgeIds"] = v.dodgeIds;
     j["state"] = v.state;
+    j["dodgeIds"] = v.dodgeIds;
   }
 
   inline void from_json(const nlohmann::json& j, LolClashGameflowGameDodge_t& v) {
-    v.dodgeIds = j.at("dodgeIds").get<std::vector<uint64_t>>();
     v.state = j.at("state").get<LolClashMatchmakingDodgeState_t>();
+    v.dodgeIds = j.at("dodgeIds").get<std::vector<uint64_t>>();
   }
   inline std::string to_string(const LolClashGameflowGameDodge_t& v) {
     nlohmann::json j = v;

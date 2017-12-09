@@ -1,5 +1,5 @@
 #pragma once
-#incldue "../client.hpp"
+#include "../client.hpp"
 #include ".hpp"
 namespace leagueapi {
   //Sets the filter parameters for when to print to the log. Use MemoryFilterEnable to start/stop the print outs
@@ -14,45 +14,24 @@ namespace leagueapi {
     const std::optional<std::string>& maxAddress = std::nullopt)
   {
     using std::to_string;
-    Headers headers = {{"Authorization", auth}};
+    Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/MemoryFilterSet";
-    bool first = true;
-    if(minSize) {
-      if(first) {
-        first = false;
-        path.append('?')
-      } else {
-        path.append('&');
-      }      path.append("minSize="+UrlCode::encode(to_string(*minSize)));
-    }
-    if(maxSize) {
-      if(first) {
-        first = false;
-        path.append('?')
-      } else {
-        path.append('&');
-      }      path.append("maxSize="+UrlCode::encode(to_string(*maxSize)));
-    }
-    if(minAddress) {
-      if(first) {
-        first = false;
-        path.append('?')
-      } else {
-        path.append('&');
-      }      path.append("minAddress="+UrlCode::encode(to_string(*minAddress)));
-    }
-    if(maxAddress) {
-      if(first) {
-        first = false;
-        path.append('?')
-      } else {
-        path.append('&');
-      }      path.append("maxAddress="+UrlCode::encode(to_string(*maxAddress)));
-    }
+    Headers query;
+    if({0})
+      query["minSize"] = *minSize;
+    if({0})
+      query["maxSize"] = *maxSize;
+    if({0})
+      query["minAddress"] = *minAddress;
+    if({0})
+      query["maxAddress"] = *maxAddress;
+    if(query.size() > 0)
+      path.append("?" + SimpleWeb::QueryString::create(query));
     HttpsClient client(info.host, false);
     auto res = client.request("post", path, body, headers);
-    if(res->status_code != 406)
+    if(res->status_code == 406)
       throw OpError(res->content.string());
-    return;  }
+    return;
+  }
 }

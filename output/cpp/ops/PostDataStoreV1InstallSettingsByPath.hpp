@@ -1,5 +1,5 @@
 #pragma once
-#incldue "../client.hpp"
+#include "../client.hpp"
 #include ".hpp"
 namespace leagueapi {
   //Set the data for the specified key from the install settings.
@@ -10,13 +10,14 @@ namespace leagueapi {
     const nlohmann::json& data)
   {
     using std::to_string;
-    Headers headers = {{"Authorization", auth}};
+    Headers headers = {{"Authorization", info.auth}};
     headers["content-type"] = "application/json";
     const std::string body = json(data).dump();
-    const std::string path = "/data-store/v1/install-settings/"+UrlCode::encode(to_string(path))+"";
+    std::string path = "/data-store/v1/install-settings/"+UrlCode::encode(to_string(path))+"";
     HttpsClient client(info.host, false);
     auto res = client.request("post", path, body, headers);
-    if(res->status_code != 406)
+    if(res->status_code == 406)
       throw OpError(res->content.string());
-    return;  }
+    return;
+  }
 }

@@ -1,16 +1,17 @@
 #pragma once
-#incldue "../client.hpp"
+#include "../client.hpp"
 #include ".hpp"
 namespace leagueapi {
   void PostLolHonorV2V1LateRecognitionAck (const ClientInfo& info)
   {
     using std::to_string;
-    Headers headers = {{"Authorization", auth}};
+    Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
-    const std::string path = "/lol-honor-v2/v1/late-recognition/ack";
+    std::string path = "/lol-honor-v2/v1/late-recognition/ack";
     HttpsClient client(info.host, false);
     auto res = client.request("post", path, body, headers);
-    if(res->status_code != 406)
+    if(res->status_code == 406)
       throw OpError(res->content.string());
-    return;  }
+    return;
+  }
 }

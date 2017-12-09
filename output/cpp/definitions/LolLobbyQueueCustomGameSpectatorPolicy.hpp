@@ -3,8 +3,8 @@
 namespace leagueapi {
   enum class LolLobbyQueueCustomGameSpectatorPolicy_t {
     FriendsAllowed_E = 2,
-    LobbyAllowed_E = 1,
     AllAllowed_E = 3,
+    LobbyAllowed_E = 1,
     NotAllowed_E = 0,
   };
 
@@ -13,11 +13,11 @@ namespace leagueapi {
       case LolLobbyQueueCustomGameSpectatorPolicy_t::FriendsAllowed_E:
         j = "FriendsAllowed";
       break;
-      case LolLobbyQueueCustomGameSpectatorPolicy_t::LobbyAllowed_E:
-        j = "LobbyAllowed";
-      break;
       case LolLobbyQueueCustomGameSpectatorPolicy_t::AllAllowed_E:
         j = "AllAllowed";
+      break;
+      case LolLobbyQueueCustomGameSpectatorPolicy_t::LobbyAllowed_E:
+        j = "LobbyAllowed";
       break;
       case LolLobbyQueueCustomGameSpectatorPolicy_t::NotAllowed_E:
         j = "NotAllowed";
@@ -31,12 +31,12 @@ namespace leagueapi {
       v = LolLobbyQueueCustomGameSpectatorPolicy_t::FriendsAllowed_E;
       return;
     }
-    if(s == "LobbyAllowed"){
-      v = LolLobbyQueueCustomGameSpectatorPolicy_t::LobbyAllowed_E;
-      return;
-    }
     if(s == "AllAllowed"){
       v = LolLobbyQueueCustomGameSpectatorPolicy_t::AllAllowed_E;
+      return;
+    }
+    if(s == "LobbyAllowed"){
+      v = LolLobbyQueueCustomGameSpectatorPolicy_t::LobbyAllowed_E;
       return;
     }
     if(s == "NotAllowed"){
@@ -48,10 +48,10 @@ namespace leagueapi {
     switch(v) {
       case LolLobbyQueueCustomGameSpectatorPolicy_t::FriendsAllowed_E:
         return "FriendsAllowed";
-      case LolLobbyQueueCustomGameSpectatorPolicy_t::LobbyAllowed_E:
-        return "LobbyAllowed";
       case LolLobbyQueueCustomGameSpectatorPolicy_t::AllAllowed_E:
         return "AllAllowed";
+      case LolLobbyQueueCustomGameSpectatorPolicy_t::LobbyAllowed_E:
+        return "LobbyAllowed";
       case LolLobbyQueueCustomGameSpectatorPolicy_t::NotAllowed_E:
         return "NotAllowed";
     }

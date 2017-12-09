@@ -3,8 +3,8 @@
 namespace leagueapi {
   enum class LolGameQueuesQueueGameCategory_t {
     VersusAi_E = 3,
-    PvP_E = 2,
     None_E = 0,
+    PvP_E = 2,
     Custom_E = 1,
   };
 
@@ -13,11 +13,11 @@ namespace leagueapi {
       case LolGameQueuesQueueGameCategory_t::VersusAi_E:
         j = "VersusAi";
       break;
-      case LolGameQueuesQueueGameCategory_t::PvP_E:
-        j = "PvP";
-      break;
       case LolGameQueuesQueueGameCategory_t::None_E:
         j = "None";
+      break;
+      case LolGameQueuesQueueGameCategory_t::PvP_E:
+        j = "PvP";
       break;
       case LolGameQueuesQueueGameCategory_t::Custom_E:
         j = "Custom";
@@ -31,12 +31,12 @@ namespace leagueapi {
       v = LolGameQueuesQueueGameCategory_t::VersusAi_E;
       return;
     }
-    if(s == "PvP"){
-      v = LolGameQueuesQueueGameCategory_t::PvP_E;
-      return;
-    }
     if(s == "None"){
       v = LolGameQueuesQueueGameCategory_t::None_E;
+      return;
+    }
+    if(s == "PvP"){
+      v = LolGameQueuesQueueGameCategory_t::PvP_E;
       return;
     }
     if(s == "Custom"){
@@ -48,10 +48,10 @@ namespace leagueapi {
     switch(v) {
       case LolGameQueuesQueueGameCategory_t::VersusAi_E:
         return "VersusAi";
-      case LolGameQueuesQueueGameCategory_t::PvP_E:
-        return "PvP";
       case LolGameQueuesQueueGameCategory_t::None_E:
         return "None";
+      case LolGameQueuesQueueGameCategory_t::PvP_E:
+        return "PvP";
       case LolGameQueuesQueueGameCategory_t::Custom_E:
         return "Custom";
     }

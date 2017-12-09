@@ -3,18 +3,18 @@
 #include <optional>
 namespace leagueapi {
   struct RsoAuthIdToken_t {
-    std::string token;
     uint64_t expiry;
+    std::string token;
   };
 
   inline void to_json(nlohmann::json& j, const RsoAuthIdToken_t& v) {
-    j["token"] = v.token;
     j["expiry"] = v.expiry;
+    j["token"] = v.token;
   }
 
   inline void from_json(const nlohmann::json& j, RsoAuthIdToken_t& v) {
-    v.token = j.at("token").get<std::string>();
     v.expiry = j.at("expiry").get<uint64_t>();
+    v.token = j.at("token").get<std::string>();
   }
   inline std::string to_string(const RsoAuthIdToken_t& v) {
     nlohmann::json j = v;

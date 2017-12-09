@@ -1,5 +1,5 @@
 #pragma once
-#incldue "../client.hpp"
+#include "../client.hpp"
 #include ".hpp"
 #include "PatcherInjectedPatcherError.hpp"
 namespace leagueapi {
@@ -9,13 +9,18 @@ namespace leagueapi {
     const PatcherInjectedPatcherError_t& error)
   {
     using std::to_string;
-    Headers headers = {{"Authorization", auth}};
+    Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
-    std::string path = "/patcher/v1/products/"+UrlCode::encode(to_string(product-id))+"/inject-error?component-id=" + UrlCode::encode(to_string(component-id))    +
-    "&error=" + UrlCode::encode(to_string(error));
+    std::string path = "/patcher/v1/products/"+UrlCode::encode(to_string(product-id))+"/inject-error";
+    Headers query;
+      query["component-id"] = component-id;
+      query["error"] = error;
+    if(query.size() > 0)
+      path.append("?" + SimpleWeb::QueryString::create(query));
     HttpsClient client(info.host, false);
     auto res = client.request("post", path, body, headers);
-    if(res->status_code != 406)
+    if(res->status_code == 406)
       throw OpError(res->content.string());
-    return;  }
+    return;
+  }
 }

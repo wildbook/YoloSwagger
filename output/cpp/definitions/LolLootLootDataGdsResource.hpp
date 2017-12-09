@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "LolLootLootItemGdsResource.hpp"
 #include "LolLootLootRecipeGdsResource.hpp"
+#include "LolLootLootItemGdsResource.hpp"
 namespace leagueapi {
   struct LolLootLootDataGdsResource_t {
     std::vector<LolLootLootRecipeGdsResource_t> LootRecipes;

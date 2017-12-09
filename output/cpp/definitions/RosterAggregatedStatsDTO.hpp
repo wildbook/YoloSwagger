@@ -1,8 +1,8 @@
 #pragma once
 #include <json.hpp>
 #include <optional>
-#include "RosterPeriodAggregatedStatsDTO.hpp"
 #include "RosterPlayerAggregatedStatsDTO.hpp"
+#include "RosterPeriodAggregatedStatsDTO.hpp"
 namespace leagueapi {
   struct RosterAggregatedStatsDTO_t {
     std::vector<RosterPeriodAggregatedStatsDTO_t> periodStats;

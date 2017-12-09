@@ -1,5 +1,5 @@
 #pragma once
-#incldue "../client.hpp"
+#include "../client.hpp"
 #include ".hpp"
 namespace leagueapi {
   //Adds or Updates a Metric
@@ -14,15 +14,20 @@ namespace leagueapi {
     const uint64_t& value)
   {
     using std::to_string;
-    Headers headers = {{"Authorization", auth}};
+    Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
-    std::string path = "/riotclient/addorupdatemetric?group=" + UrlCode::encode(to_string(group))    +
-    "&object=" + UrlCode::encode(to_string(object))    +
-    "&name=" + UrlCode::encode(to_string(name))    +
-    "&value=" + UrlCode::encode(to_string(value));
+    std::string path = "/riotclient/addorupdatemetric";
+    Headers query;
+      query["group"] = group;
+      query["object"] = object;
+      query["name"] = name;
+      query["value"] = value;
+    if(query.size() > 0)
+      path.append("?" + SimpleWeb::QueryString::create(query));
     HttpsClient client(info.host, false);
     auto res = client.request("post", path, body, headers);
-    if(res->status_code != 406)
+    if(res->status_code == 406)
       throw OpError(res->content.string());
-    return;  }
+    return;
+  }
 }

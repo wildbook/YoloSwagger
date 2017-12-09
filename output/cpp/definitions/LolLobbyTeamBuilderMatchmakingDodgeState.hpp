@@ -3,9 +3,9 @@
 namespace leagueapi {
   enum class LolLobbyTeamBuilderMatchmakingDodgeState_t {
     PartyDodged_E = 49,
+    StrangerDodged_E = 50,
     TournamentDodged_E = 51,
     Invalid_E = 48,
-    StrangerDodged_E = 50,
   };
 
   inline void to_json(nlohmann::json& j, const LolLobbyTeamBuilderMatchmakingDodgeState_t& v) {
@@ -13,14 +13,14 @@ namespace leagueapi {
       case LolLobbyTeamBuilderMatchmakingDodgeState_t::PartyDodged_E:
         j = "PartyDodged";
       break;
+      case LolLobbyTeamBuilderMatchmakingDodgeState_t::StrangerDodged_E:
+        j = "StrangerDodged";
+      break;
       case LolLobbyTeamBuilderMatchmakingDodgeState_t::TournamentDodged_E:
         j = "TournamentDodged";
       break;
       case LolLobbyTeamBuilderMatchmakingDodgeState_t::Invalid_E:
         j = "Invalid";
-      break;
-      case LolLobbyTeamBuilderMatchmakingDodgeState_t::StrangerDodged_E:
-        j = "StrangerDodged";
       break;
     }
   }
@@ -31,6 +31,10 @@ namespace leagueapi {
       v = LolLobbyTeamBuilderMatchmakingDodgeState_t::PartyDodged_E;
       return;
     }
+    if(s == "StrangerDodged"){
+      v = LolLobbyTeamBuilderMatchmakingDodgeState_t::StrangerDodged_E;
+      return;
+    }
     if(s == "TournamentDodged"){
       v = LolLobbyTeamBuilderMatchmakingDodgeState_t::TournamentDodged_E;
       return;
@@ -39,21 +43,17 @@ namespace leagueapi {
       v = LolLobbyTeamBuilderMatchmakingDodgeState_t::Invalid_E;
       return;
     }
-    if(s == "StrangerDodged"){
-      v = LolLobbyTeamBuilderMatchmakingDodgeState_t::StrangerDodged_E;
-      return;
-    }
   }
   inline std::string to_string(const LolLobbyTeamBuilderMatchmakingDodgeState_t& v) {
     switch(v) {
       case LolLobbyTeamBuilderMatchmakingDodgeState_t::PartyDodged_E:
         return "PartyDodged";
+      case LolLobbyTeamBuilderMatchmakingDodgeState_t::StrangerDodged_E:
+        return "StrangerDodged";
       case LolLobbyTeamBuilderMatchmakingDodgeState_t::TournamentDodged_E:
         return "TournamentDodged";
       case LolLobbyTeamBuilderMatchmakingDodgeState_t::Invalid_E:
         return "Invalid";
-      case LolLobbyTeamBuilderMatchmakingDodgeState_t::StrangerDodged_E:
-        return "StrangerDodged";
     }
   }
 

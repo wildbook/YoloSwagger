@@ -1,5 +1,5 @@
 #pragma once
-#incldue "../client.hpp"
+#include "../client.hpp"
 #include ".hpp"
 #include "LogSeverityLevels.hpp"
 namespace leagueapi {
@@ -11,29 +11,20 @@ namespace leagueapi {
     const std::optional<LogSeverityLevels_t>& severity = std::nullopt)
   {
     using std::to_string;
-    Headers headers = {{"Authorization", auth}};
+    Headers headers = {{"Authorization", info.auth}};
     const std::string body ="";
     std::string path = "/LoggingStart";
-    bool first = true;
-    if(buffered) {
-      if(first) {
-        first = false;
-        path.append('?')
-      } else {
-        path.append('&');
-      }      path.append("buffered="+UrlCode::encode(to_string(*buffered)));
-    }
-    if(severity) {
-      if(first) {
-        first = false;
-        path.append('?')
-      } else {
-        path.append('&');
-      }      path.append("severity="+UrlCode::encode(to_string(*severity)));
-    }
+    Headers query;
+    if({0})
+      query["buffered"] = *buffered;
+    if({0})
+      query["severity"] = *severity;
+    if(query.size() > 0)
+      path.append("?" + SimpleWeb::QueryString::create(query));
     HttpsClient client(info.host, false);
     auto res = client.request("post", path, body, headers);
-    if(res->status_code != 406)
+    if(res->status_code == 406)
       throw OpError(res->content.string());
-    return;  }
+    return;
+  }
 }

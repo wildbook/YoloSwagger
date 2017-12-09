@@ -3,19 +3,19 @@
 namespace leagueapi {
   enum class LolChatGameflowPhase_t {
     CheckedIntoTournament_E = 3,
-    None_E = 0,
-    EndOfGame_E = 12,
-    ChampSelect_E = 5,
+    Lobby_E = 1,
+    Matchmaking_E = 2,
+    PreEndOfGame_E = 11,
     FailedToLaunch_E = 7,
+    None_E = 0,
     WaitingForStats_E = 10,
     TerminatedInError_E = 13,
-    Reconnect_E = 9,
     GameStart_E = 6,
     ReadyCheck_E = 4,
     InProgress_E = 8,
-    PreEndOfGame_E = 11,
-    Lobby_E = 1,
-    Matchmaking_E = 2,
+    Reconnect_E = 9,
+    EndOfGame_E = 12,
+    ChampSelect_E = 5,
   };
 
   inline void to_json(nlohmann::json& j, const LolChatGameflowPhase_t& v) {
@@ -23,26 +23,26 @@ namespace leagueapi {
       case LolChatGameflowPhase_t::CheckedIntoTournament_E:
         j = "CheckedIntoTournament";
       break;
-      case LolChatGameflowPhase_t::None_E:
-        j = "None";
+      case LolChatGameflowPhase_t::Lobby_E:
+        j = "Lobby";
       break;
-      case LolChatGameflowPhase_t::EndOfGame_E:
-        j = "EndOfGame";
+      case LolChatGameflowPhase_t::Matchmaking_E:
+        j = "Matchmaking";
       break;
-      case LolChatGameflowPhase_t::ChampSelect_E:
-        j = "ChampSelect";
+      case LolChatGameflowPhase_t::PreEndOfGame_E:
+        j = "PreEndOfGame";
       break;
       case LolChatGameflowPhase_t::FailedToLaunch_E:
         j = "FailedToLaunch";
+      break;
+      case LolChatGameflowPhase_t::None_E:
+        j = "None";
       break;
       case LolChatGameflowPhase_t::WaitingForStats_E:
         j = "WaitingForStats";
       break;
       case LolChatGameflowPhase_t::TerminatedInError_E:
         j = "TerminatedInError";
-      break;
-      case LolChatGameflowPhase_t::Reconnect_E:
-        j = "Reconnect";
       break;
       case LolChatGameflowPhase_t::GameStart_E:
         j = "GameStart";
@@ -53,14 +53,14 @@ namespace leagueapi {
       case LolChatGameflowPhase_t::InProgress_E:
         j = "InProgress";
       break;
-      case LolChatGameflowPhase_t::PreEndOfGame_E:
-        j = "PreEndOfGame";
+      case LolChatGameflowPhase_t::Reconnect_E:
+        j = "Reconnect";
       break;
-      case LolChatGameflowPhase_t::Lobby_E:
-        j = "Lobby";
+      case LolChatGameflowPhase_t::EndOfGame_E:
+        j = "EndOfGame";
       break;
-      case LolChatGameflowPhase_t::Matchmaking_E:
-        j = "Matchmaking";
+      case LolChatGameflowPhase_t::ChampSelect_E:
+        j = "ChampSelect";
       break;
     }
   }
@@ -71,20 +71,24 @@ namespace leagueapi {
       v = LolChatGameflowPhase_t::CheckedIntoTournament_E;
       return;
     }
-    if(s == "None"){
-      v = LolChatGameflowPhase_t::None_E;
+    if(s == "Lobby"){
+      v = LolChatGameflowPhase_t::Lobby_E;
       return;
     }
-    if(s == "EndOfGame"){
-      v = LolChatGameflowPhase_t::EndOfGame_E;
+    if(s == "Matchmaking"){
+      v = LolChatGameflowPhase_t::Matchmaking_E;
       return;
     }
-    if(s == "ChampSelect"){
-      v = LolChatGameflowPhase_t::ChampSelect_E;
+    if(s == "PreEndOfGame"){
+      v = LolChatGameflowPhase_t::PreEndOfGame_E;
       return;
     }
     if(s == "FailedToLaunch"){
       v = LolChatGameflowPhase_t::FailedToLaunch_E;
+      return;
+    }
+    if(s == "None"){
+      v = LolChatGameflowPhase_t::None_E;
       return;
     }
     if(s == "WaitingForStats"){
@@ -93,10 +97,6 @@ namespace leagueapi {
     }
     if(s == "TerminatedInError"){
       v = LolChatGameflowPhase_t::TerminatedInError_E;
-      return;
-    }
-    if(s == "Reconnect"){
-      v = LolChatGameflowPhase_t::Reconnect_E;
       return;
     }
     if(s == "GameStart"){
@@ -111,16 +111,16 @@ namespace leagueapi {
       v = LolChatGameflowPhase_t::InProgress_E;
       return;
     }
-    if(s == "PreEndOfGame"){
-      v = LolChatGameflowPhase_t::PreEndOfGame_E;
+    if(s == "Reconnect"){
+      v = LolChatGameflowPhase_t::Reconnect_E;
       return;
     }
-    if(s == "Lobby"){
-      v = LolChatGameflowPhase_t::Lobby_E;
+    if(s == "EndOfGame"){
+      v = LolChatGameflowPhase_t::EndOfGame_E;
       return;
     }
-    if(s == "Matchmaking"){
-      v = LolChatGameflowPhase_t::Matchmaking_E;
+    if(s == "ChampSelect"){
+      v = LolChatGameflowPhase_t::ChampSelect_E;
       return;
     }
   }
@@ -128,32 +128,32 @@ namespace leagueapi {
     switch(v) {
       case LolChatGameflowPhase_t::CheckedIntoTournament_E:
         return "CheckedIntoTournament";
-      case LolChatGameflowPhase_t::None_E:
-        return "None";
-      case LolChatGameflowPhase_t::EndOfGame_E:
-        return "EndOfGame";
-      case LolChatGameflowPhase_t::ChampSelect_E:
-        return "ChampSelect";
+      case LolChatGameflowPhase_t::Lobby_E:
+        return "Lobby";
+      case LolChatGameflowPhase_t::Matchmaking_E:
+        return "Matchmaking";
+      case LolChatGameflowPhase_t::PreEndOfGame_E:
+        return "PreEndOfGame";
       case LolChatGameflowPhase_t::FailedToLaunch_E:
         return "FailedToLaunch";
+      case LolChatGameflowPhase_t::None_E:
+        return "None";
       case LolChatGameflowPhase_t::WaitingForStats_E:
         return "WaitingForStats";
       case LolChatGameflowPhase_t::TerminatedInError_E:
         return "TerminatedInError";
-      case LolChatGameflowPhase_t::Reconnect_E:
-        return "Reconnect";
       case LolChatGameflowPhase_t::GameStart_E:
         return "GameStart";
       case LolChatGameflowPhase_t::ReadyCheck_E:
         return "ReadyCheck";
       case LolChatGameflowPhase_t::InProgress_E:
         return "InProgress";
-      case LolChatGameflowPhase_t::PreEndOfGame_E:
-        return "PreEndOfGame";
-      case LolChatGameflowPhase_t::Lobby_E:
-        return "Lobby";
-      case LolChatGameflowPhase_t::Matchmaking_E:
-        return "Matchmaking";
+      case LolChatGameflowPhase_t::Reconnect_E:
+        return "Reconnect";
+      case LolChatGameflowPhase_t::EndOfGame_E:
+        return "EndOfGame";
+      case LolChatGameflowPhase_t::ChampSelect_E:
+        return "ChampSelect";
     }
   }
 
