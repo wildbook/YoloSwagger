@@ -75,8 +75,8 @@ def json_load(filename):
 # convinience function to generate path
 def mkpath(name):
     try:
-        os.makedirs(os.path.dirname(name))
+        os.makedirs(name)
     except:
         True
 
-#json_save(yolo_init(json_load("help.json"),  json_load("lol.json")),  "yolo.json")       
+json_save(yolo(json_load("help.json"),  json_load("lol.json")),  "yolo.json")       
