@@ -225,7 +225,8 @@ namespace {NAMESPACE} {{
     return {{ client.request( "{method}", "{PATH}" + "?" + QueryString::create(query), {ARGS_BODY}, headers) }};
   }}
 }} """
-template_op_arg = ',\n      {TYPE}& {NAME} /*{description}*/'
+template_op_arg_r = ',\n      {TYPE}& {NAME} /*{description}*/'
+template_op_arg_o = ',\n      {TYPE}& {NAME} = std::nullopt /*{description}*/'
 template_op_add_header = '\n    add2map(headers, "{name}", {NAME});'
 template_op_add_query = '\n    add2map(query, "{name}", {NAME});'
 template_op_add_fromdata = '\n    add2map(formdata, "{name}", {NAME});'
@@ -320,8 +321,8 @@ def generate_ops(yolo, folder, namespace):
                     break;
             file.write(template_op.format(**op, NAMESPACE = namespace,
                 INCLUDES = type2include(op["arguments"], '#include "../definitions/{0}.hpp"\n', op["returns"]),
-                ARGS_R = "".join([template_op_arg.format(**arg) for arg in op["arguments"] if not arg["optional"]]),
-                ARGS_O = "".join([template_op_arg.format(**arg) for arg in op["arguments"] if arg["optional"]]),
+                ARGS_R = "".join([template_op_arg_r.format(**arg) for arg in op["arguments"] if not arg["optional"]]),
+                ARGS_O = "".join([template_op_arg_o.format(**arg) for arg in op["arguments"] if arg["optional"]]),
                 ARGS_HEADER = "".join([template_op_add_header.format(**arg) for arg in op["arguments"] if arg["in"] == "header"]),
                 ARGS_QUERY = "".join([template_op_add_query.format(**arg) for arg in op["arguments"] if arg["in"] == "query"]),
                 ARGS_FORM = "".join([template_op_add_fromdata.format(**arg) for arg in op["arguments"] if arg["in"] == "formData"]),
