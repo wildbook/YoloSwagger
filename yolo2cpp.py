@@ -335,10 +335,7 @@ def generate_cpp(yolo, folder, namespace):
             field["NAME"] = field["name"].replace("-", "_")
             field["TYPE"] = type2cpp(field)
         for value in definition["values"]:
-            if value["name"] == "ERROR":
-                value["NAME"] = "EROR"
-            else:
-                value["NAME"] = value["name"].replace("-", "_")
+            value["NAME"] = value["name"].replace("-", "_")+"_e"
     for function in yolo["functions"]:
         function["NAME"] = function["name"].replace("-", "_")
         function["RETURNS"] = "Result<{0}>".format(type2cpp(function["returns"]))
