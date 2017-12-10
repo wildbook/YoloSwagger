@@ -3,6 +3,77 @@ import time
 import uuid
 import re
 
+template_enum = (
+'using System.Runtime.Serialization;'     '\n'   
+'namespace {namespace} {{'                '\n'            
+'{enum_description}'
+'    [DataContract]'                      '\n'
+'    public enum {enum_name}'             '\n'
+'    {{'                                  '\n'
+'{fields}'
+'    }}'                                  '\n'
+'}}'                                      '\n'
+)
+
+template_enum_field = (
+'{value_description}'
+'    [DataMember(Name = "{value_name}")]'     '\n'
+'    {value_cs_type} = {value_cs_name},'      '\n'
+''                                            '\n'
+)
+
+template_struct = (
+'using System.Text;'                                    '\n'
+'using System.Runtime.Serialization;'                   '\n'
+'using System.Collections.Generic;'                     '\n'
+'namespace {namespace}.Definitions'                     '\n'
+'{{'                                                    '\n'
+'{struct_description}'
+'    [DataContract]'                                    '\n'
+'    public struct {struct_name}'                       '\n'
+'    {{'                                                '\n'
+'{field_items}'
+'        public override string ToString()'             '\n'
+'        {{'                                            '\n'
+'            var sb = new StringBuilder();'             '\n'
+'            sb.Append("class {struct_name} {{\\n");'   '\n'
+'{string_builder_items}'
+'            sb.Append("}}\\n");'                       '\n'
+'            return sb.ToString();'                     '\n'
+'        }}'                                            '\n'
+'    }}'                                                '\n'
+'}}'
+)
+
+template_struct_field = (
+'{field_description}'
+'        [DataMember(Name = \"{field_name}\")]'                      '\n'
+'        public {field_cs_type} {field_cs_name} {{ get; set; }}'     '\n'
+''                                                                   '\n'
+)
+
+template_request = (
+'using Newtonsoft.Json;'                                                                                 '\n'
+'using System.Collections.Generic;'                                                                      '\n'
+'using System.Threading.Tasks;'                                                                          '\n'
+'using {namespace}.Definitions;'                                                                         '\n'
+'using {namespace};'                                                                                     '\n'
+''                                                                                                       '\n'
+'namespace {namespace} {{'                                                                               '\n'
+'    public static partial class Requests'                                                               '\n'
+'    {{'                                                                                                 '\n'
+'        public static Task{return_value} {request_name}(LeagueClientSession session{arguments}) =>'     '\n'
+'            session.SendRequestAsync{return_value}('                                                    '\n'
+'                              method: "{http_method}",'                                                 '\n'
+'                            endpoint: $"{http_endpoint}",'                                              '\n'
+'                               query: {http_query},'                                                    '\n'
+'                             headers: {http_headers},'                                                  '\n'
+'                                body: {http_body},'                                                     '\n'
+'                       serializeBody: {serialize_body});'                                               '\n'
+'    }}'                                                                                                 '\n'
+'}}'                                                                                                     '\n'
+)
+
 builtins = {
     "bool": "bool", 
     "int8": "sbyte", 
@@ -20,7 +91,6 @@ builtins = {
     "map": "Dictionary<string, {0}>", 
     "vector": "{0}[]" 
 }
-
 builtins_optional = {
     "bool": "bool?", 
     "int8": "sbyte?", 
@@ -65,25 +135,12 @@ def type2cs_optional(type):
 def generate_enum(file, namespace, name, enum):
     fields = ''
     for value_name, details in enum["values"].items():
-        fields += ('{value_description}'
-                   '    [DataMember(Name = "{value_name}")]'    '\n'
-                   '    {value_cs_type} = {value_cs_name},'     '\n'
-                   ''                                           '\n'
-                   ).format(value_description = "    // {}\n".format(details["description"]) if details["description"] else '',
+        fields += template_enum_field.format(value_description = "    // {}\n".format(details["description"]) if details["description"] else '',
                            value_name = value_name,
                            value_cs_type = fix_case(value_name),
                            value_cs_name = details["value"])
 
-    file.write(('using System.Runtime.Serialization;'     '\n'   
-                'namespace {namespace} {{'                '\n'            
-                '{enum_description}'
-                '    [DataContract]'                      '\n'
-                '    public enum {enum_name}'             '\n'
-                '    {{'                                  '\n'
-                '{fields}'
-                '    }}'                                  '\n'
-                '}}'                                      '\n'
-              ).format(namespace = namespace,
+    file.write(template_enum.format(namespace = namespace,
               enum_description = "  // {}\n".format(enum["description"]) if enum["description"] else '',
               enum_name = name,
               fields = fields))
@@ -91,41 +148,16 @@ def generate_enum(file, namespace, name, enum):
 def generate_struct(file, namespace, name, struct):
     field_items = ''
     for field_name, details in struct["fields"].items():
-        field_items += (('{field_description}'
-                         '        [DataMember(Name = \"{field_name}\")]'                      '\n'
-                         '        public {field_cs_type} {field_cs_name} {{ get; set; }}'     '\n'
-                         ''                                                                   '\n'
-                         ).format(field_description = '        // {}\n'.format(details["description"]) if details["description"] else '',
-                                         field_name = field_name,
-                                      field_cs_type = type2cs_optional(details["type"]) if details["optional"] else type2cs(details["type"]),
-                                      field_cs_name = "_" + fix_case(field_name) if fix_case(field_name) == name else fix_case(field_name)))
+        field_items += (template_struct_field.format(field_description = '        // {}\n'.format(details["description"]) if details["description"] else '',
+                                                            field_name = field_name,
+                                                         field_cs_type = type2cs_optional(details["type"]) if details["optional"] else type2cs(details["type"]),
+                                                         field_cs_name = "_" + fix_case(field_name) if fix_case(field_name) == name else fix_case(field_name)))
 
-    file.write(('using System.Text;'                                    '\n'
-                'using System.Runtime.Serialization;'                   '\n'
-                'using System.Collections.Generic;'                     '\n'
-                'namespace {namespace}.Definitions'                     '\n'
-                '{{'                                                    '\n'
-                '{struct_description}'
-                '    [DataContract]'                                    '\n'
-                '    public struct {struct_name}'                       '\n'
-                '    {{'                                                '\n'
-                '{field_items}'
-                '        public override string ToString()'             '\n'
-                '        {{'                                            '\n'
-                '            var sb = new StringBuilder();'             '\n'
-                '            sb.Append("class {struct_name} {{\\n");'    '\n'
-                '{string_builder_items}'
-                '            sb.Append("}}\\n");'                       '\n'
-                '            return sb.ToString();'                     '\n'
-                '        }}'                                            '\n'
-                '    }}'                                                '\n'
-                '}}'
-                ).format(namespace = namespace,
-                struct_description = '    // {}\n'.format(struct["description"]) if struct["description"] else '',
-                       struct_name = name,
-                       field_items = field_items,
-              string_builder_items = ''.join('            sb.Append("  {0}: ").Append({0}).Append("\\n");\n'.format("_" + fix_case(field_name) if fix_case(field_name) == name else fix_case(field_name)) for field_name, details in struct["fields"].items()) ))
-
+    file.write(template_struct.format(namespace = namespace,
+                             struct_description = '    // {}\n'.format(struct["description"]) if struct["description"] else '',
+                                    struct_name = name,
+                                    field_items = field_items,
+                           string_builder_items = ''.join('            sb.Append("  {0}: ").Append({0}).Append("\\n");\n'.format("_" + fix_case(field_name) if fix_case(field_name) == name else fix_case(field_name)) for field_name, details in struct["fields"].items()) ))
 def generate_requests(info, folder, namespace):
     for req_name, request in info["requests"].items():
         function = info["functions"][req_name]
@@ -133,26 +165,7 @@ def generate_requests(info, folder, namespace):
         mkpath(filename)
         file = open(filename, "w+")
         sorted_args = sorted(function["arguments"].items(), key=lambda x: (x[0] in function["optional"], x[0]))
-        file.write(('using Newtonsoft.Json;'                                                                                 '\n'
-                    'using System.Collections.Generic;'                                                                      '\n'
-                    'using System.Threading.Tasks;'                                                                          '\n'
-                    'using {namespace}.Definitions;'                                                                         '\n'
-                    'using {namespace};'                                                                                     '\n'
-                    ''                                                                                                       '\n'
-                    'namespace {namespace} {{'                                                                               '\n'
-                    '    public static partial class Requests'                                                               '\n'
-                    '    {{'                                                                                                 '\n'
-                    '        public static Task{return_value} {request_name}(LeagueClientSession session{arguments}) =>'     '\n'
-                    '            session.SendRequestAsync{return_value}('                                                    '\n'
-                    '                              method: "{http_method}",'                                                 '\n'
-                    '                            endpoint: $"{http_endpoint}",'                                              '\n'
-                    '                               query: {http_query},'                                                    '\n'
-                    '                             headers: {http_headers},'                                                  '\n'
-                    '                                body: {http_body},'                                                     '\n'
-                    '                       serializeBody: {serialize_body});'                                               '\n'
-                    '    }}'                                                                                                 '\n'
-                    '}}'                                                                                                     '\n')
-                   .format(namespace = namespace,
+        file.write(template_request.format(namespace = namespace,
                         return_value = "<{0}>".format(type2cs(function["returns"])) if function["returns"]["type"] else '',
                         request_name = req_name,
                            arguments = ''.join(", {0} {1}".format(type2cs_optional(argument["type"]) if arg_name in function["optional"] else type2cs(argument["type"]), "_" + fix_case(arg_name, False) + (" = null" if arg_name in function["optional"] else "")) for arg_name, argument in sorted_args),
