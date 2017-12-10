@@ -187,14 +187,6 @@
             "type": "BasePublicSummonerDTO"
           }
         },
-        "summonerLevel": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "SummonerLevel"
-          }
-        },
         "summonerLevelAndPoints": {
           "description": "",
           "optional": false,
@@ -216,14 +208,6 @@
           "type": {
             "elementType": "",
             "type": "PrivateSummonerDTO"
-          }
-        },
-        "summonerLevel": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "SummonerLevel"
           }
         },
         "summonerLevelAndPoints": {
@@ -1755,36 +1739,6 @@
           }
         },
         "state": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
-    },
-    "ChampSelectSession": {
-      "description": "",
-      "fields": {
-        "timer": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ChampSelectTimer"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
-    },
-    "ChampSelectTimer": {
-      "description": "",
-      "fields": {
-        "phase": {
           "description": "",
           "optional": false,
           "type": {
@@ -4891,53 +4845,6 @@
       "isEnum": false,
       "values": {}
     },
-    "EndOfGameLcdsEogPointChangeBreakdown": {
-      "description": "",
-      "fields": {
-        "endPoints": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        "pointChangeFromChampionsOwned": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        "pointChangeFromGameplay": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        "pointsUsed": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        "previousPoints": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
-    },
     "EndOfGameLcdsHarassmentReport": {
       "description": "",
       "fields": {
@@ -5785,21 +5692,6 @@
       "isEnum": false,
       "values": {}
     },
-    "GameflowGameData": {
-      "description": "",
-      "fields": {
-        "queue": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "Queue"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
-    },
     "GameflowLcdsGameDTO": {
       "description": "",
       "fields": {
@@ -6007,21 +5899,6 @@
           "type": {
             "elementType": "",
             "type": "uint32"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
-    },
-    "GameflowSession": {
-      "description": "",
-      "fields": {
-        "gameData": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "GameflowGameData"
           }
         }
       },
@@ -8665,6 +8542,14 @@
             "type": "string"
           }
         },
+        "smsTokenExpireDurationInSec": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
         "status": {
           "description": "",
           "optional": false,
@@ -8841,6 +8726,14 @@
           "type": {
             "elementType": "",
             "type": "string"
+          }
+        },
+        "smsTokenExpireDurationInSec": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
           }
         },
         "status": {
@@ -9075,6 +8968,14 @@
             "type": "string"
           }
         },
+        "seasonId": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
         "theme": {
           "description": "",
           "optional": false,
@@ -9173,6 +9074,52 @@
           "type": {
             "elementType": "",
             "type": "LolBannersInventoryItemsByType"
+          }
+        }
+      },
+      "isEnum": false,
+      "values": {}
+    },
+    "LolBannersLoadoutsSlot": {
+      "description": "",
+      "fields": {
+        "inventoryType": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        "itemId": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        }
+      },
+      "isEnum": false,
+      "values": {}
+    },
+    "LolBannersSummonerProfileUpdate": {
+      "description": "",
+      "fields": {
+        "key": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        "value": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "object"
           }
         }
       },
@@ -12367,67 +12314,6 @@
       "isEnum": false,
       "values": {}
     },
-    "LolChatChatLoginDataPacket": {
-      "description": "",
-      "fields": {
-        "allSummonerData": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "LolChatChatLoginSummonerData"
-          }
-        },
-        "playerStatSummaries": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "LolChatChatPlayerStatSummaries"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
-    },
-    "LolChatChatLoginSummonerData": {
-      "description": "",
-      "fields": {
-        "summonerLevelAndPoints": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "LolChatChatLoginSummonerLevelAndPoints"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
-    },
-    "LolChatChatLoginSummonerLevelAndPoints": {
-      "description": "",
-      "fields": {
-        "expPoints": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        "summonerLevel": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint32"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
-    },
     "LolChatChatPlatformLoginSession": {
       "description": "",
       "fields": {
@@ -12529,76 +12415,6 @@
           "value": 1
         }
       }
-    },
-    "LolChatChatPlayerStatSummaries": {
-      "description": "",
-      "fields": {
-        "playerStatSummarySet": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "LolChatChatPlayerStatSummary",
-            "type": "vector"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
-    },
-    "LolChatChatPlayerStatSummary": {
-      "description": "",
-      "fields": {
-        "leaves": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        "losses": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        "maxRating": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        "playerStatSummaryType": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        "rating": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        "wins": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
     },
     "LolChatChatRankedData": {
       "description": "",
@@ -17340,6 +17156,29 @@
       "isEnum": false,
       "values": {}
     },
+    "LolClashUserResource": {
+      "description": "",
+      "fields": {
+        "lol": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        },
+        "summonerId": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      },
+      "isEnum": false,
+      "values": {}
+    },
     "LolClubsPublicClubMemberLists": {
       "description": "",
       "fields": {
@@ -21798,6 +21637,14 @@
             "type": "bool"
           }
         },
+        "assetMutator": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
         "category": {
           "description": "",
           "optional": false,
@@ -23301,6 +23148,14 @@
     "LolGameflowPlayerStatus": {
       "description": "",
       "fields": {
+        "canInviteOthersAtEog": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
         "currentLobbyStatus": {
           "description": "",
           "optional": true,
@@ -23330,6 +23185,14 @@
           "type": {
             "elementType": "",
             "type": "bool"
+          }
+        },
+        "assetMutator": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
           }
         },
         "category": {
@@ -25016,6 +24879,37 @@
           "type": {
             "elementType": "",
             "type": "uint64"
+          }
+        }
+      },
+      "isEnum": false,
+      "values": {}
+    },
+    "LolInventoryAccessTokenResource": {
+      "description": "",
+      "fields": {
+        "expiry": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        "scopes": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        "token": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
           }
         }
       },
@@ -27175,6 +27069,37 @@
       "isEnum": false,
       "values": {}
     },
+    "LolLoadoutsAccessTokenResource": {
+      "description": "",
+      "fields": {
+        "expiry": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        "scopes": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        "token": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      },
+      "isEnum": false,
+      "values": {}
+    },
     "LolLoadoutsCreateOrUpdateItemsRequest": {
       "description": "",
       "fields": {
@@ -29201,7 +29126,7 @@
         },
         "restrictions": {
           "description": "",
-          "optional": false,
+          "optional": true,
           "type": {
             "elementType": "LolLobbyEligibilityRestriction",
             "type": "vector"
@@ -30555,6 +30480,14 @@
             "type": "int64"
           }
         },
+        "eligibilityRestrictions": {
+          "description": "",
+          "optional": true,
+          "type": {
+            "elementType": "LolLobbyGatekeeperRestrictionDto",
+            "type": "vector"
+          }
+        },
         "gameMode": {
           "description": "",
           "optional": false,
@@ -30963,6 +30896,14 @@
             "type": "string"
           }
         },
+        "serverUtcMillis": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
         "summonerId": {
           "description": "",
           "optional": false,
@@ -30994,6 +30935,14 @@
     "LolLobbyPlayerStatus": {
       "description": "",
       "fields": {
+        "canInviteOthersAtEog": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
         "currentLobbyStatus": {
           "description": "",
           "optional": true,
@@ -31040,6 +30989,14 @@
     "LolLobbyPremadeMemberDto": {
       "description": "",
       "fields": {
+        "displayName": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
         "partyId": {
           "description": "",
           "optional": false,
@@ -31092,7 +31049,7 @@
           "optional": false,
           "type": {
             "elementType": "LolLobbyPremadeMemberDto",
-            "type": "vector"
+            "type": "map"
           }
         }
       },
@@ -31118,12 +31075,28 @@
             "type": "bool"
           }
         },
+        "assetMutator": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
         "category": {
           "description": "",
           "optional": false,
           "type": {
             "elementType": "",
             "type": "LolLobbyQueueGameCategory"
+          }
+        },
+        "championsRequiredToPlay": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
           }
         },
         "description": {
@@ -36226,6 +36199,22 @@
             "type": "string"
           }
         },
+        "upgradeEssenceName": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        "upgradeEssenceValue": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
         "upgradeLootName": {
           "description": "",
           "optional": false,
@@ -40856,6 +40845,14 @@
     "LolPerksPerkPageResource": {
       "description": "",
       "fields": {
+        "current": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
         "formatVersion": {
           "description": "",
           "optional": false,
@@ -47428,37 +47425,6 @@
       "isEnum": false,
       "values": {}
     },
-    "LolSummonerEndOfGamePoints": {
-      "description": "",
-      "fields": {
-        "pointsUntilNextReroll": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        "rerollCount": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint32"
-          }
-        },
-        "totalPoints": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
-    },
     "LolSummonerGameloopPlayerInfoV1": {
       "description": "",
       "fields": {
@@ -47594,6 +47560,14 @@
           "type": {
             "elementType": "",
             "type": "bool"
+          }
+        },
+        "puuid": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
           }
         },
         "state": {
@@ -47783,6 +47757,14 @@
           }
         },
         "pointsUntilNextReroll": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        "queueId": {
           "description": "",
           "optional": false,
           "type": {
@@ -47983,6 +47965,37 @@
           "type": {
             "elementType": "",
             "type": "uint64"
+          }
+        }
+      },
+      "isEnum": false,
+      "values": {}
+    },
+    "LolSummonerSummonerProfileUpdate": {
+      "description": "",
+      "fields": {
+        "inventory": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        "key": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        "value": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "object"
           }
         }
       },
@@ -50845,6 +50858,14 @@
             "type": "string"
           }
         },
+        "rewardLogos": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "RewardLogo",
+            "type": "vector"
+          }
+        },
         "shortName": {
           "description": "",
           "optional": false,
@@ -51150,6 +51171,14 @@
           "type": {
             "elementType": "",
             "type": "int64"
+          }
+        },
+        "phaseRosterSubs": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "PhaseRosterSubDTO",
+            "type": "vector"
           }
         }
       },
@@ -52092,6 +52121,14 @@
           "type": {
             "elementType": "",
             "type": "int64"
+          }
+        },
+        "completionExpression": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
           }
         },
         "cooldownTimeMillis": {
@@ -53653,12 +53690,20 @@
     "Queue": {
       "description": "",
       "fields": {
-        "gameTypeConfig": {
+        "id": {
           "description": "",
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "QueueGameTypeConfig"
+            "type": "int32"
+          }
+        },
+        "minLevel": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
           }
         }
       },
@@ -53745,21 +53790,6 @@
           "type": {
             "elementType": "uint64",
             "type": "vector"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
-    },
-    "QueueGameTypeConfig": {
-      "description": "",
-      "fields": {
-        "battleBoost": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
           }
         }
       },
@@ -54943,6 +54973,29 @@
       "description": "",
       "fields": {
         "icon": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        "memberOwnedCount": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        }
+      },
+      "isEnum": false,
+      "values": {}
+    },
+    "RewardLogo": {
+      "description": "",
+      "fields": {
+        "logo": {
           "description": "",
           "optional": false,
           "type": {
@@ -57136,45 +57189,6 @@
       "isEnum": false,
       "values": {}
     },
-    "SummonerLevel": {
-      "description": "",
-      "fields": {
-        "expTierMod": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        "expToNextLevel": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        "summonerLevel": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint32"
-          }
-        },
-        "summonerTier": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
-    },
     "SummonerLevelAndPoints": {
       "description": "",
       "fields": {
@@ -57186,7 +57200,7 @@
             "type": "uint64"
           }
         },
-        "infPoints": {
+        "expToNextLevel": {
           "description": "",
           "optional": false,
           "type": {
@@ -57223,132 +57237,6 @@
           "type": {
             "elementType": "string",
             "type": "vector"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
-    },
-    "TeamBoost": {
-      "description": "",
-      "fields": {
-        "availableSkins": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "int64",
-            "type": "vector"
-          }
-        },
-        "ipReward": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int64"
-          }
-        },
-        "ipRewardForPurchaser": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int64"
-          }
-        },
-        "price": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int64"
-          }
-        },
-        "skinUnlockMode": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        "summonerName": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        "unlocked": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        }
-      },
-      "isEnum": false,
-      "values": {}
-    },
-    "TeamBoostsTeamSkinRentalDTO": {
-      "description": "",
-      "fields": {
-        "availableSkins": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "int64",
-            "type": "vector"
-          }
-        },
-        "ipReward": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int64"
-          }
-        },
-        "ipRewardForPurchaser": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int64"
-          }
-        },
-        "price": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int64"
-          }
-        },
-        "skinUnlockMode": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        "summonerName": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        "unlocked": {
-          "description": "",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
           }
         }
       },
@@ -57703,6 +57591,14 @@
             "type": "RosterDTO"
           }
         },
+        "subRosters": {
+          "description": "",
+          "optional": false,
+          "type": {
+            "elementType": "RosterDTO",
+            "type": "vector"
+          }
+        },
         "themeVp": {
           "description": "",
           "optional": false,
@@ -58013,6 +57909,13 @@
         "type": "PluginResourceEvent"
       }
     },
+    "OnJsonApiEvent_data-store_v1_install-settings": {
+      "description": "",
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
     "OnJsonApiEvent_entitlements_v1_token": {
       "description": "",
       "type": {
@@ -58049,13 +57952,6 @@
       }
     },
     "OnJsonApiEvent_lol-champ-select-legacy_v1_team-boost": {
-      "description": "",
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    "OnJsonApiEvent_lol-champ-select_v1_session": {
       "description": "",
       "type": {
         "elementType": "",
@@ -58378,6 +58274,13 @@
       }
     },
     "OnJsonApiEvent_lol-platform-config_v1_namespaces_AccountVerification": {
+      "description": "",
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    "OnJsonApiEvent_lol-platform-config_v1_namespaces_Banners_IsEquipEnabled": {
       "description": "",
       "type": {
         "elementType": "",
@@ -58853,6 +58756,13 @@
         "type": "PluginResourceEvent"
       }
     },
+    "OnJsonApiEvent_lol-platform-config_v1_namespaces_Mutators_EnabledAssetMutators": {
+      "description": "",
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
     "OnJsonApiEvent_lol-platform-config_v1_namespaces_Mutators_EnabledModes": {
       "description": "",
       "type": {
@@ -58994,20 +58904,6 @@
       }
     },
     "OnJsonApiEvent_lol-platform-config_v1_namespaces_SuggestedPlayers": {
-      "description": "",
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    "OnJsonApiEvent_lol-platform-config_v1_namespaces_TeamBuilderDraft_TBRerollServiceEnabled": {
-      "description": "",
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    "OnJsonApiEvent_lol-player-level-up_v1_level-up": {
       "description": "",
       "type": {
         "elementType": "",
@@ -59379,13 +59275,6 @@
       }
     },
     "OnLcdsEvent_com_riotgames_platform_messaging_persistence_SimpleDialogMessage": {
-      "description": "",
-      "type": {
-        "elementType": "",
-        "type": "PluginLcdsEvent"
-      }
-    },
-    "OnLcdsEvent_com_riotgames_platform_reroll_pojo_EogPointChangeBreakdown": {
       "description": "",
       "type": {
         "elementType": "",
@@ -59920,26 +59809,6 @@
       }
     },
     "DeleteLolLeaverBusterV1NotificationsById": {
-      "arguments": {
-        "id": {
-          "description": "",
-          "type": {
-            "elementType": "",
-            "type": "uint32"
-          }
-        }
-      },
-      "description": "",
-      "optional": [],
-      "required": [
-        "id"
-      ],
-      "returns": {
-        "elementType": "",
-        "type": "object"
-      }
-    },
-    "DeleteLolLoadoutsV1LoadoutById": {
       "arguments": {
         "id": {
           "description": "",
@@ -60872,6 +60741,16 @@
       "returns": {
         "elementType": "",
         "type": "ActiveBoosts"
+      }
+    },
+    "GetLolBannersV1CurrentSummonerFlags": {
+      "arguments": {},
+      "description": "",
+      "optional": [],
+      "required": [],
+      "returns": {
+        "elementType": "LolBannersBannerFlag",
+        "type": "vector"
       }
     },
     "GetLolBannersV1CurrentSummonerFlagsEquipped": {
@@ -62385,6 +62264,26 @@
         "type": "LolCollectionsCollectionsSummonerIcons"
       }
     },
+    "GetLolCollectionsV1InventoriesBySummonerIdVerification": {
+      "arguments": {
+        "summonerId": {
+          "description": "",
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      },
+      "description": "",
+      "optional": [],
+      "required": [
+        "summonerId"
+      ],
+      "returns": {
+        "elementType": "",
+        "type": "string"
+      }
+    },
     "GetLolCollectionsV1InventoriesBySummonerIdWardSkins": {
       "arguments": {
         "summonerId": {
@@ -63415,26 +63314,6 @@
       "returns": {
         "elementType": "",
         "type": "LolLoadoutsFrontendInventoryResponse"
-      }
-    },
-    "GetLolLoadoutsV1LoadoutById": {
-      "arguments": {
-        "id": {
-          "description": "",
-          "type": {
-            "elementType": "",
-            "type": "uint32"
-          }
-        }
-      },
-      "description": "",
-      "optional": [],
-      "required": [
-        "id"
-      ],
-      "returns": {
-        "elementType": "",
-        "type": "LolLoadoutsLoadout"
       }
     },
     "GetLolLoadoutsV2ItemsByIdByInventoryType": {
@@ -64609,6 +64488,16 @@
         "type": "bool"
       }
     },
+    "GetLolPersonalizedOffersV1Themed": {
+      "arguments": {},
+      "description": "",
+      "optional": [],
+      "required": [],
+      "returns": {
+        "elementType": "",
+        "type": "bool"
+      }
+    },
     "GetLolPftV2Survey": {
       "arguments": {},
       "description": "",
@@ -65238,16 +65127,6 @@
         "type": "vector"
       }
     },
-    "GetLolStoreV1GetLCUConfigs": {
-      "arguments": {},
-      "description": "",
-      "optional": [],
-      "required": [],
-      "returns": {
-        "elementType": "",
-        "type": "object"
-      }
-    },
     "GetLolStoreV1GetStoreUrl": {
       "arguments": {},
       "description": "",
@@ -65435,6 +65314,36 @@
         "type": "LolSummonerSummonerRerollPoints"
       }
     },
+    "GetLolSummonerV1CurrentSummonerSummonerProfile": {
+      "arguments": {},
+      "description": "",
+      "optional": [],
+      "required": [],
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      }
+    },
+    "GetLolSummonerV1SummonerProfile": {
+      "arguments": {
+        "puuid": {
+          "description": "",
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      },
+      "description": "",
+      "optional": [],
+      "required": [
+        "puuid"
+      ],
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      }
+    },
     "GetLolSummonerV1Summoners": {
       "arguments": {
         "name": {
@@ -65541,16 +65450,6 @@
       "returns": {
         "elementType": "LolSummonerSummoner",
         "type": "vector"
-      }
-    },
-    "GetLolTeamBoostsV1TeamBoost": {
-      "arguments": {},
-      "description": "",
-      "optional": [],
-      "required": [],
-      "returns": {
-        "elementType": "",
-        "type": "TeamBoost"
       }
     },
     "GetLolTencentQtV1UiStates": {
@@ -69410,47 +69309,7 @@
         "type": "object"
       }
     },
-    "PostLolLoadoutsV1Loadout": {
-      "arguments": {
-        "loadout": {
-          "description": "",
-          "type": {
-            "elementType": "",
-            "type": "LolLoadoutsLoadout"
-          }
-        }
-      },
-      "description": "",
-      "optional": [],
-      "required": [
-        "loadout"
-      ],
-      "returns": {
-        "elementType": "",
-        "type": "LolLoadoutsLoadout"
-      }
-    },
     "PostLolLoadoutsV1SendItemsToMegaPacketById": {
-      "arguments": {
-        "id": {
-          "description": "",
-          "type": {
-            "elementType": "",
-            "type": "uint32"
-          }
-        }
-      },
-      "description": "",
-      "optional": [],
-      "required": [
-        "id"
-      ],
-      "returns": {
-        "elementType": "",
-        "type": "object"
-      }
-    },
-    "PostLolLoadoutsV1SendToMegaPacketById": {
       "arguments": {
         "id": {
           "description": "",
@@ -70132,6 +69991,26 @@
       "returns": {
         "elementType": "",
         "type": "object"
+      }
+    },
+    "PostLolLobbyV2EogInvitations": {
+      "arguments": {
+        "invitations": {
+          "description": "",
+          "type": {
+            "elementType": "LolLobbyLobbyInvitationDto",
+            "type": "vector"
+          }
+        }
+      },
+      "description": "",
+      "optional": [],
+      "required": [
+        "invitations"
+      ],
+      "returns": {
+        "elementType": "LolLobbyLobbyInvitationDto",
+        "type": "vector"
       }
     },
     "PostLolLobbyV2Lobby": {
@@ -71617,64 +71496,24 @@
         "type": "LolSummonerSummoner"
       }
     },
-    "PostLolSummonerV1CurrentSummonerRerollPoints": {
+    "PostLolSummonerV1CurrentSummonerSummonerProfile": {
       "arguments": {
-        "points": {
+        "body": {
           "description": "",
           "type": {
             "elementType": "",
-            "type": "LolSummonerEndOfGamePoints"
+            "type": "LolSummonerSummonerProfileUpdate"
           }
         }
       },
       "description": "",
       "optional": [],
       "required": [
-        "points"
+        "body"
       ],
       "returns": {
         "elementType": "",
-        "type": ""
-      }
-    },
-    "PostLolSummonerV1CurrentSummonerRerollPointsDecrement": {
-      "arguments": {},
-      "description": "",
-      "optional": [],
-      "required": [],
-      "returns": {
-        "elementType": "",
-        "type": ""
-      }
-    },
-    "PostLolSummonerV1CurrentSummonerRerollPointsReset": {
-      "arguments": {},
-      "description": "",
-      "optional": [],
-      "required": [],
-      "returns": {
-        "elementType": "",
-        "type": ""
-      }
-    },
-    "PostLolSummonerV1CurrentSummonerTbRerollPoints": {
-      "arguments": {
-        "points": {
-          "description": "",
-          "type": {
-            "elementType": "",
-            "type": "LolSummonerEndOfGamePoints"
-          }
-        }
-      },
-      "description": "",
-      "optional": [],
-      "required": [
-        "points"
-      ],
-      "returns": {
-        "elementType": "",
-        "type": ""
+        "type": "object"
       }
     },
     "PostLolSummonerV1CurrentSummonerXpInfo": {
@@ -71705,16 +71544,6 @@
       "returns": {
         "elementType": "",
         "type": "LolSummonerInternalSummoner"
-      }
-    },
-    "PostLolTeamBoostsV1TeamBoostPurchase": {
-      "arguments": {},
-      "description": "",
-      "optional": [],
-      "required": [],
-      "returns": {
-        "elementType": "",
-        "type": "object"
       }
     },
     "PostLolTencentQtV1UiStatesByFeature": {
@@ -72727,6 +72556,26 @@
         "type": ""
       }
     },
+    "PutLolBannersV1CurrentSummonerFlagsEquipped": {
+      "arguments": {
+        "flag": {
+          "description": "",
+          "type": {
+            "elementType": "",
+            "type": "LolBannersBannerFlag"
+          }
+        }
+      },
+      "description": "",
+      "optional": [],
+      "required": [
+        "flag"
+      ],
+      "returns": {
+        "elementType": "",
+        "type": "LolBannersBannerFlag"
+      }
+    },
     "PutLolBetaOptInV1MigrationError": {
       "arguments": {
         "errString": {
@@ -73133,6 +72982,34 @@
         "type": "LolCollectionsCollectionsRunePage"
       }
     },
+    "PutLolCollectionsV1InventoriesBySummonerIdVerification": {
+      "arguments": {
+        "summonerId": {
+          "description": "",
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        "verificationCode": {
+          "description": "",
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      },
+      "description": "",
+      "optional": [],
+      "required": [
+        "summonerId",
+        "verificationCode"
+      ],
+      "returns": {
+        "elementType": "",
+        "type": "string"
+      }
+    },
     "PutLolEmailVerificationV1Email": {
       "arguments": {
         "EmailUpdate": {
@@ -73207,26 +73084,6 @@
       "returns": {
         "elementType": "",
         "type": ""
-      }
-    },
-    "PutLolLoadoutsV1Loadout": {
-      "arguments": {
-        "loadout": {
-          "description": "",
-          "type": {
-            "elementType": "",
-            "type": "LolLoadoutsLoadout"
-          }
-        }
-      },
-      "description": "",
-      "optional": [],
-      "required": [
-        "loadout"
-      ],
-      "returns": {
-        "elementType": "",
-        "type": "LolLoadoutsLoadout"
       }
     },
     "PutLolLobbyV1AutofillDisplayed": {
@@ -74226,17 +74083,6 @@
       "query": [],
       "url": "/lol-leaver-buster/v1/notifications/{id}"
     },
-    "DeleteLolLoadoutsV1LoadoutById": {
-      "body": [],
-      "formData": [],
-      "header": [],
-      "method": "delete",
-      "path": [
-        "id"
-      ],
-      "query": [],
-      "url": "/lol-loadouts/v1/loadout/{id}"
-    },
     "DeleteLolLoadoutsV2ItemsById": {
       "body": [],
       "formData": [],
@@ -74804,6 +74650,15 @@
       "path": [],
       "query": [],
       "url": "/lol-active-boosts/v1/active-boosts"
+    },
+    "GetLolBannersV1CurrentSummonerFlags": {
+      "body": [],
+      "formData": [],
+      "header": [],
+      "method": "get",
+      "path": [],
+      "query": [],
+      "url": "/lol-banners/v1/current-summoner/flags"
     },
     "GetLolBannersV1CurrentSummonerFlagsEquipped": {
       "body": [],
@@ -75795,6 +75650,17 @@
       "query": [],
       "url": "/lol-collections/v1/inventories/{summonerId}/summoner-icons"
     },
+    "GetLolCollectionsV1InventoriesBySummonerIdVerification": {
+      "body": [],
+      "formData": [],
+      "header": [],
+      "method": "get",
+      "path": [
+        "summonerId"
+      ],
+      "query": [],
+      "url": "/lol-collections/v1/inventories/{summonerId}/verification"
+    },
     "GetLolCollectionsV1InventoriesBySummonerIdWardSkins": {
       "body": [],
       "formData": [],
@@ -76551,17 +76417,6 @@
         "inventoryTypes"
       ],
       "url": "/lol-loadouts/v1/inventory"
-    },
-    "GetLolLoadoutsV1LoadoutById": {
-      "body": [],
-      "formData": [],
-      "header": [],
-      "method": "get",
-      "path": [
-        "id"
-      ],
-      "query": [],
-      "url": "/lol-loadouts/v1/loadout/{id}"
     },
     "GetLolLoadoutsV2ItemsByIdByInventoryType": {
       "body": [],
@@ -77467,6 +77322,15 @@
       "query": [],
       "url": "/lol-personalized-offers/v1/status"
     },
+    "GetLolPersonalizedOffersV1Themed": {
+      "body": [],
+      "formData": [],
+      "header": [],
+      "method": "get",
+      "path": [],
+      "query": [],
+      "url": "/lol-personalized-offers/v1/themed"
+    },
     "GetLolPftV2Survey": {
       "body": [],
       "formData": [],
@@ -77884,15 +77748,6 @@
       ],
       "url": "/lol-store/v1/catalog"
     },
-    "GetLolStoreV1GetLCUConfigs": {
-      "body": [],
-      "formData": [],
-      "header": [],
-      "method": "get",
-      "path": [],
-      "query": [],
-      "url": "/lol-store/v1/getLCUConfigs"
-    },
     "GetLolStoreV1GetStoreUrl": {
       "body": [],
       "formData": [],
@@ -78020,6 +77875,26 @@
       "query": [],
       "url": "/lol-summoner/v1/current-summoner/rerollPoints"
     },
+    "GetLolSummonerV1CurrentSummonerSummonerProfile": {
+      "body": [],
+      "formData": [],
+      "header": [],
+      "method": "get",
+      "path": [],
+      "query": [],
+      "url": "/lol-summoner/v1/current-summoner/summoner-profile"
+    },
+    "GetLolSummonerV1SummonerProfile": {
+      "body": [],
+      "formData": [],
+      "header": [],
+      "method": "get",
+      "path": [],
+      "query": [
+        "puuid"
+      ],
+      "url": "/lol-summoner/v1/summoner-profile"
+    },
     "GetLolSummonerV1Summoners": {
       "body": [],
       "formData": [],
@@ -78075,15 +77950,6 @@
         "ids"
       ],
       "url": "/lol-summoner/v2/summoners"
-    },
-    "GetLolTeamBoostsV1TeamBoost": {
-      "body": [],
-      "formData": [],
-      "header": [],
-      "method": "get",
-      "path": [],
-      "query": [],
-      "url": "/lol-team-boosts/v1/team-boost"
     },
     "GetLolTencentQtV1UiStates": {
       "body": [],
@@ -78734,6 +78600,17 @@
       "query": [],
       "url": "/v2/swagger.json"
     },
+    "Http2AsyncDelete": {
+      "body": [],
+      "formData": [],
+      "header": [],
+      "method": "delete",
+      "path": [
+        "asyncToken"
+      ],
+      "query": [],
+      "url": "/async/v1/status/{asyncToken}"
+    },
     "HttpApiDeclarationV1": {
       "body": [],
       "formData": [],
@@ -78762,17 +78639,6 @@
       "path": [],
       "query": [],
       "url": "/v3/openapi.json"
-    },
-    "HttpAsyncDelete": {
-      "body": [],
-      "formData": [],
-      "header": [],
-      "method": "delete",
-      "path": [
-        "asyncToken"
-      ],
-      "query": [],
-      "url": "/async/v1/status/{asyncToken}"
     },
     "HttpAsyncResult": {
       "body": [],
@@ -80291,17 +80157,6 @@
       "query": [],
       "url": "/lol-license-agreement/v1/agreements/{id}/decline"
     },
-    "PostLolLoadoutsV1Loadout": {
-      "body": [
-        "loadout"
-      ],
-      "formData": [],
-      "header": [],
-      "method": "post",
-      "path": [],
-      "query": [],
-      "url": "/lol-loadouts/v1/loadout"
-    },
     "PostLolLoadoutsV1SendItemsToMegaPacketById": {
       "body": [],
       "formData": [],
@@ -80312,17 +80167,6 @@
       ],
       "query": [],
       "url": "/lol-loadouts/v1/sendItemsToMegaPacket/{id}"
-    },
-    "PostLolLoadoutsV1SendToMegaPacketById": {
-      "body": [],
-      "formData": [],
-      "header": [],
-      "method": "post",
-      "path": [
-        "id"
-      ],
-      "query": [],
-      "url": "/lol-loadouts/v1/sendToMegaPacket/{id}"
     },
     "PostLolLoadoutsV2ItemsById": {
       "body": [
@@ -80709,6 +80553,17 @@
       ],
       "query": [],
       "url": "/lol-lobby/v1/tournaments/{id}/join"
+    },
+    "PostLolLobbyV2EogInvitations": {
+      "body": [
+        "invitations"
+      ],
+      "formData": [],
+      "header": [],
+      "method": "post",
+      "path": [],
+      "query": [],
+      "url": "/lol-lobby/v2/eog-invitations"
     },
     "PostLolLobbyV2Lobby": {
       "body": [
@@ -81499,45 +81354,16 @@
       "query": [],
       "url": "/lol-summoner/v1/current-summoner/name"
     },
-    "PostLolSummonerV1CurrentSummonerRerollPoints": {
+    "PostLolSummonerV1CurrentSummonerSummonerProfile": {
       "body": [
-        "points"
+        "body"
       ],
       "formData": [],
       "header": [],
       "method": "post",
       "path": [],
       "query": [],
-      "url": "/lol-summoner/v1/current-summoner/rerollPoints"
-    },
-    "PostLolSummonerV1CurrentSummonerRerollPointsDecrement": {
-      "body": [],
-      "formData": [],
-      "header": [],
-      "method": "post",
-      "path": [],
-      "query": [],
-      "url": "/lol-summoner/v1/current-summoner/rerollPoints/decrement"
-    },
-    "PostLolSummonerV1CurrentSummonerRerollPointsReset": {
-      "body": [],
-      "formData": [],
-      "header": [],
-      "method": "post",
-      "path": [],
-      "query": [],
-      "url": "/lol-summoner/v1/current-summoner/rerollPoints/reset"
-    },
-    "PostLolSummonerV1CurrentSummonerTbRerollPoints": {
-      "body": [
-        "points"
-      ],
-      "formData": [],
-      "header": [],
-      "method": "post",
-      "path": [],
-      "query": [],
-      "url": "/lol-summoner/v1/current-summoner/tbRerollPoints"
+      "url": "/lol-summoner/v1/current-summoner/summoner-profile"
     },
     "PostLolSummonerV1CurrentSummonerXpInfo": {
       "body": [],
@@ -81558,15 +81384,6 @@
       "path": [],
       "query": [],
       "url": "/lol-summoner/v1/summoners"
-    },
-    "PostLolTeamBoostsV1TeamBoostPurchase": {
-      "body": [],
-      "formData": [],
-      "header": [],
-      "method": "post",
-      "path": [],
-      "query": [],
-      "url": "/lol-team-boosts/v1/team-boost/purchase"
     },
     "PostLolTencentQtV1UiStatesByFeature": {
       "body": [
@@ -82118,6 +81935,17 @@
       "query": [],
       "url": "/telemetry/v1/events-with-perf-info/{eventType}"
     },
+    "PutLolBannersV1CurrentSummonerFlagsEquipped": {
+      "body": [
+        "flag"
+      ],
+      "formData": [],
+      "header": [],
+      "method": "put",
+      "path": [],
+      "query": [],
+      "url": "/lol-banners/v1/current-summoner/flags/equipped"
+    },
     "PutLolBetaOptInV1MigrationError": {
       "body": [],
       "formData": [],
@@ -82307,6 +82135,19 @@
       "query": [],
       "url": "/lol-collections/v1/inventories/{summonerId}/rune-book/select-page/{pageId}"
     },
+    "PutLolCollectionsV1InventoriesBySummonerIdVerification": {
+      "body": [
+        "verificationCode"
+      ],
+      "formData": [],
+      "header": [],
+      "method": "put",
+      "path": [
+        "summonerId"
+      ],
+      "query": [],
+      "url": "/lol-collections/v1/inventories/{summonerId}/verification"
+    },
     "PutLolEmailVerificationV1Email": {
       "body": [
         "EmailUpdate"
@@ -82343,17 +82184,6 @@
       ],
       "query": [],
       "url": "/lol-item-sets/v1/item-sets/{summonerId}/sets"
-    },
-    "PutLolLoadoutsV1Loadout": {
-      "body": [
-        "loadout"
-      ],
-      "formData": [],
-      "header": [],
-      "method": "put",
-      "path": [],
-      "query": [],
-      "url": "/lol-loadouts/v1/loadout"
     },
     "PutLolLobbyV1AutofillDisplayed": {
       "body": [],
