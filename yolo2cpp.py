@@ -110,8 +110,8 @@ namespace {NAMESPACE} {{
           error = json::parse(raw);
         }} else {{
           error = RequestError{{}};
-          error.httpStatus = status_code;
-          error.message = raw;
+          error->httpStatus = status_code;
+          error->message = raw;
         }}
       }} else {{
         data = json::parse(raw);
@@ -144,8 +144,8 @@ namespace {NAMESPACE} {{
           error = json::parse(raw);
         }} else {{
           error = RequestError{{}};
-          error.httpStatus = status_code;
-          error.message = raw;
+          error->httpStatus = status_code;
+          error->message = raw;
         }}
       }} else {{
         if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")
@@ -180,8 +180,8 @@ namespace {NAMESPACE} {{
           error = json::parse(raw);
         }} else {{
           error = RequestError{{}};
-          error.httpStatus = status_code;
-          error.message = raw;
+          error->httpStatus = status_code;
+          error->message = raw;
         }}
       }}
     }}
@@ -194,7 +194,7 @@ namespace {NAMESPACE} {{
     bool operator !() const {{
       return error != std::nullopt;
     }}
-  }}
+  }};
 
   template<typename T>
   static inline add2map(SimpleWeb::CaseInsensitiveMultimap &map, const std::string& name, const T& v) {{
