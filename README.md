@@ -1,0 +1,3 @@
+master: [![status](https://circleci.com/gh/wildbook/YoloSwagger/tree/master.svg?style=shield&circle-token=9068946f834f4a45b2b092e3f465dfa363ddd113)](https://circleci.com/gh/wildbook/YoloSwagger/tree/master)
+
+yolo: [![status](https://circleci.com/gh/wildbook/YoloSwagger/tree/yolo.svg?style=shield&circle-token=9068946f834f4a45b2b092e3f465dfa363ddd113)](https://circleci.com/gh/wildbook/YoloSwagger/tree/yolo)
