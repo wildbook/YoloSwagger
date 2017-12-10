@@ -231,9 +231,9 @@ template_op = """#pragma once
 {INCLUDES}
 namespace {NAMESPACE} {{
   /*{description}*/
-  static Result<{RETURNS}> {NAME} (const ClientInfo& info{ARGS_R} {ARGS_O})
+  static Result<{RETURNS}> {NAME} (const ClientInfo& _info_{ARGS_R} {ARGS_O})
   {{ 
-    HttpsMap _headers_ = {{ {{"Authorization", info.auth}} }}; {ARGS_HEADER}
+    HttpsMap _headers_ = {{ {{"Authorization", _info_.auth}} }}; {ARGS_HEADER}
     HttpsMap _query_; {ARGS_QUERY}
     HttpsMap _formdata_; {ARGS_FORM}
     const std::string _method_ = "{method}";
@@ -246,13 +246,13 @@ template_op_add_header = '\n    add2map(headers, "{name}", {NAME});'
 template_op_add_query = '\n    add2map(query, "{name}", {NAME});'
 template_op_add_fromdata = '\n    add2map(formdata, "{name}", {NAME});'
 template_op_empty = """
-    return HttpsRequestEmpty<{RETURNS}>(info, _method_, _path_ , _query_,  _headers_); """
+    return HttpsRequestEmpty<{RETURNS}>(_info_, _method_, _path_ , _query_,  _headers_); """
 template_op_json = """
     _headers_.insert({{ "content-type", "application/json" }});
-    return HttpsRequestJson<{RETURNS}>(info, _method_, _path_  , _query_,  _headers_, {ARGNAME}); """
+    return HttpsRequestJson<{RETURNS}>(_info_, _method_, _path_  , _query_,  _headers_, {ARGNAME}); """
 template_op_formdata = """
     _headers_.insert({{ "content-type", "application/x-www-form-urlencoded" }});
-    return HttpsRequestFormData<{RETURNS}>(info, _method_, _path_ , _query_,  _headers_, _formdata_); """
+    return HttpsRequestFormData<{RETURNS}>(_info_, _method_, _path_ , _query_,  _headers_, _formdata_); """
 
 #builtin types
 builtins = {
