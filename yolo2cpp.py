@@ -220,7 +220,7 @@ namespace {NAMESPACE} {{
     Query query; {ARGS_QUERY}
     FormData formdata; {ARGS_FORM}
     HttpsClient client(info.host, false);
-    return {{ client.request( "{method}", "{PATH}" + "?" + QueryString::create(query), {ARGS_BODY}, headers) }};
+    return {{ client.request( "{method}", "{PATH}?" + QueryString::create(query), {ARGS_BODY}, headers) }};
   }}
 }} """
 template_op_arg_r = ',\n      {TYPE}& {NAME} /*{description}*/'
