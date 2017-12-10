@@ -97,7 +97,7 @@ namespace {NAMESPACE} {{
     std::string auth;
   }};
 
-  template<T>
+  template<typename T>
   struct Result {{
     HttpsResponsePtr response;
     std::optional<T> data;
@@ -188,9 +188,6 @@ namespace {NAMESPACE} {{
     HttpsResponsePtr operator->() const {{
       return response;
     }}
-    HttpsResponse operator*() {{
-      return *response;
-    }}
     explicit operator bool() const {{
       return error == std::nullopt;
     }}
@@ -227,7 +224,7 @@ namespace {NAMESPACE} {{
   }}
 }} """
 template_op_arg_r = ',\n      {TYPE}& {NAME} /*{description}*/'
-template_op_arg_o = ',\n      {TYPE}& {NAME} = std::nullopt /*{description}*/'
+template_op_arg_o = ',\n      {TYPE}& {NAME} = {{std::nullopt}} /*{description}*/'
 template_op_add_header = '\n    add2map(headers, "{name}", {NAME});'
 template_op_add_query = '\n    add2map(query, "{name}", {NAME});'
 template_op_add_fromdata = '\n    add2map(formdata, "{name}", {NAME});'
