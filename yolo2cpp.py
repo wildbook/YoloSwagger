@@ -72,7 +72,7 @@ template_enum_to_json = """
       j = \"{name}\";
     break;"""
 template_enum_from_json = """
-    if(s == \"{name}\") {{s
+    if(s == \"{name}\") {{
       v = {ENUM}::{NAME};
       return;
     }} """
@@ -95,7 +95,7 @@ namespace {NAMESPACE} {{
     std::string auth;
   }};
 
-  template<T>
+  template<typename T>
   struct Result {{
     HttpsResponsePtr response;
     std::optional<T> data;
@@ -174,12 +174,12 @@ namespace {NAMESPACE} {{
       int status_code = std::stoul(r->status_code);
       auto raw = r->content.string();
       if(status_code != 204) {{
-        if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")) {{
+        if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json") {{
           error = json::parse(raw);
         }} else {{
           error = RequestError{{}};
-          error.httpStatus = status_code;
-          error.message = raw;
+          error->httpStatus = status_code;
+          error->message = raw;
         }}
       }}
     }}
@@ -192,7 +192,7 @@ namespace {NAMESPACE} {{
     bool operator !() const {{
       return error != std::nullopt;
     }}
-  }}
+  }};
 
   template<typename T>
   static inline void add2map(HttpsMap &map, const std::string& name, const T& v) {{
@@ -242,9 +242,9 @@ namespace {NAMESPACE} {{
 }} """
 template_op_arg_r = ',\n      const {TYPE}& {NAME} /*{description}*/'
 template_op_arg_o = ',\n      const {TYPE}& {NAME} = std::nullopt /*{description}*/'
-template_op_add_header = '\n    add2map(headers, "{name}", {NAME});'
-template_op_add_query = '\n    add2map(query, "{name}", {NAME});'
-template_op_add_fromdata = '\n    add2map(formdata, "{name}", {NAME});'
+template_op_add_header = '\n    add2map(_headers_, "{name}", {NAME});'
+template_op_add_query = '\n    add2map(_query_, "{name}", {NAME});'
+template_op_add_fromdata = '\n    add2map(_formdata_, "{name}", {NAME});'
 template_op_empty = """
     return HttpsRequestEmpty<{RETURNS}>(_info_, _method_, _path_ , _query_,  _headers_); """
 template_op_json = """
@@ -321,7 +321,7 @@ def generate_definitions(yolo, folder, namespace):
                 ))            
     with open("{0}/definitions.hpp".format(folder), "w+") as file:
         file.write("#pragma once\n")
-        file.write("\n".join(['#include "definitions/{0}"'.format(defi["name"]) for defi in yolo["definitions"]]))
+        file.write("\n".join(['#include "definitions/{0}.hpp"'.format(defi["name"]) for defi in yolo["definitions"]]))
 
 def generate_ops(yolo, folder, namespace):
     mkpath("{0}/ops".format(folder))
@@ -348,7 +348,7 @@ def generate_ops(yolo, folder, namespace):
             ))
     with open("{0}/ops.hpp".format(folder), "w+") as file:
         file.write('#pragma once\n#include "definitions.hpp"\n')
-        file.write("\n".join(['#include "ops/{0}"'.format(op["name"]) for op in yolo["functions"]]))
+        file.write("\n".join(['#include "ops/{0}.hpp"'.format(op["name"]) for op in yolo["functions"]]))
 
 def generate_cpp(yolo, folder, namespace):
     mkpath(folder)
@@ -358,10 +358,7 @@ def generate_cpp(yolo, folder, namespace):
             field["NAME"] = field["name"].replace("-", "_")
             field["TYPE"] = type2cpp(field)
         for value in definition["values"]:
-            if value["name"] == "ERROR":
-                value["NAME"] = "EROR"
-            else:
-                value["NAME"] = value["name"].replace("-", "_")
+            value["NAME"] = value["name"].replace("-", "_") + "_e"
     for function in yolo["functions"]:
         function["NAME"] = function["name"].replace("-", "_")
         function["RETURNS"] = type2cpp(function["returns"])
