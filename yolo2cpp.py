@@ -68,7 +68,7 @@ template_enum_to_json = """
       j = \"{name}\";
     break;"""
 template_enum_from_json = """
-    if(s == \"{name}\") {{s
+    if(s == \"{name}\") {{
       v = {ENUM}::{NAME};
       return;
     }} """
@@ -301,7 +301,7 @@ def generate_definitions(yolo, folder, namespace):
                 ))            
     with open("{0}/definitions.hpp".format(folder), "w+") as file:
         file.write("#pragma once\n")
-        file.write("\n".join(['#include "definitions/{0}"'.format(defi["name"]) for defi in yolo["definitions"]]))
+        file.write("\n".join(['#include "definitions/{0}.hpp"'.format(defi["name"]) for defi in yolo["definitions"]]))
 
 def generate_ops(yolo, folder, namespace):
     mkpath("{0}/ops".format(folder))
@@ -328,7 +328,7 @@ def generate_ops(yolo, folder, namespace):
             ))
     with open("{0}/ops.hpp".format(folder), "w+") as file:
         file.write('#pragma once\n#include "definitions.hpp"\n')
-        file.write("\n".join(['#include "ops/{0}"'.format(op["name"]) for op in yolo["functions"]]))
+        file.write("\n".join(['#include "ops/{0}.hpp"'.format(op["name"]) for op in yolo["functions"]]))
 
 def generate_cpp(yolo, folder, namespace):
     mkpath(folder)
