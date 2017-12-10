@@ -1,0 +1,14 @@
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.1
+    steps:
+      - checkout
+      - run:
+          name: Generate cs code
+          command: python3 info2cs.py
+      - run:
+          name: Generate cpp code
+          command: python3 info2cpp.py
