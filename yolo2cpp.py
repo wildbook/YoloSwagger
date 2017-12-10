@@ -8,20 +8,22 @@ namespace nlohmann {{
   template <typename T>
   struct adl_serializer<std::optional<T>> {{
     static void to_json(json& j, const std::optional<T>& opt) {{
-      j = opt ? *j : nullptr;
+      if(opt)
+        j = *opt;
+      else
+        j = nullptr;
     }}
     static void from_json(const json& j, std::optional<T>& opt) {{
-      opt = j.is_null() ? std::nullopt : j.get<T>();
+      if(j.is_null())
+        opt.reset();
+      else
+        opt = j.get<T>();
     }}
   }};
 }}
 namespace {NAMESPACE} {{
   using json = nlohmann::json;
   using std::to_string;
-  template<typename T>
-  inline std::string to_string(const T& v) {{
-    return std::to_string(v);
-  }}
   inline std::string to_string(const std::string& v) {{
     return v;
   }}
@@ -99,20 +101,20 @@ namespace {NAMESPACE} {{
   struct Result {{
     HttpsResponsePtr response;
     std::optional<T> data;
-    std::optional<LolLobbyAmbassadorMessage> error;
+    std::optional<RequestError> error;
     Result(const HttpsResponsePtr& r) : response(r) {{
       int status_code = std::stoul(r->status_code);
       auto raw = r->content.string();
       if(status_code != 200) {{
         if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json") {{
-          error = json::parse(raw);
+          error = json::parse(raw).get<RequestError>();
         }} else {{
           error = RequestError{{}};
           error->httpStatus = status_code;
           error->message = raw;
         }}
       }} else {{
-        data = json::parse(raw);
+        data = json::parse(raw).get<T>();
       }}
     }}
     std::optional<T> operator->() {{
@@ -139,7 +141,7 @@ namespace {NAMESPACE} {{
       auto raw = r->content.string();
       if(status_code != 200) {{
         if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json") {{
-          error = json::parse(raw);
+          error = json::parse(raw).get<RequestError>();
         }} else {{
           error = RequestError{{}};
           error->httpStatus = status_code;
@@ -175,7 +177,7 @@ namespace {NAMESPACE} {{
       auto raw = r->content.string();
       if(status_code != 204) {{
         if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json") {{
-          error = json::parse(raw);
+          error = json::parse(raw).get<RequestError>();
         }} else {{
           error = RequestError{{}};
           error->httpStatus = status_code;
@@ -209,7 +211,7 @@ namespace {NAMESPACE} {{
   static Result<T> HttpsRequestEmpty(const ClientInfo& info, const std::string& method, const std::string& path, const HttpsMap& query,
     const HttpsMap& headers) {{
     SimpleWeb::Client<SimpleWeb::HTTPS> client(info.host, false);
-    return {{ client.request( method, path + SimpleWeb::QueryString::create(query)), headers }};
+    return {{ client.request( method, path + SimpleWeb::QueryString::create(query), "", headers) }};
   }}
   template<typename T>
   static Result<T> HttpsRequestJson(const ClientInfo& info, const std::string& method, const std::string& path, const HttpsMap& query,
