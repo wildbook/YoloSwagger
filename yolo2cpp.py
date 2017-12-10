@@ -18,6 +18,10 @@ namespace nlohmann {{
 namespace {NAMESPACE} {{
   using json = nlohmann::json;
   using std::to_string;
+  template<typename T>
+  inline std::string to_string(const T& v) {{
+    return std::to_string(v);
+  }}
   inline std::string to_string(const std::string& v) {{
     return v;
   }}
@@ -35,9 +39,9 @@ template_struct = """#pragma once
 namespace {NAMESPACE} {{
   struct {NAME} {{ /*{description}*/ {MEMBERS}
   }};
-  void to_json(json& j, const {NAME}& v) {{ {TO_JSON}
+  static void to_json(json& j, const {NAME}& v) {{ {TO_JSON}
   }}
-  void from_json(const json& j, {NAME}& v) {{ {FROM_JSON}
+  static void from_json(const json& j, {NAME}& v) {{ {FROM_JSON}
   }}
 }} """
 template_struct_members = """
@@ -53,11 +57,11 @@ template_enum = """#pragma once
 namespace {NAMESPACE} {{
   enum class {NAME} {{ /*{description}*/ {VALUES}
   }};
-  void to_json(json& j, const {NAME}& v) {{
+  static void to_json(json& j, const {NAME}& v) {{
     switch(v) {{ {TO_JSON}
     }};
   }}
-  void from_json(const json& j, {NAME}& v) {{
+  static void from_json(const json& j, {NAME}& v) {{
     auto s = j.get<std::string>(); {FROM_JSON}
   }}
 }} """
@@ -68,7 +72,7 @@ template_enum_to_json = """
       j = \"{name}\";
     break;"""
 template_enum_from_json = """
-    if(s == \"{name}\") {{
+    if(s == \"{name}\") {{s
       v = {ENUM}::{NAME};
       return;
     }} """
@@ -82,14 +86,8 @@ template_client = """#pragma once
 #include <stdexcept>
 #include "definitions/LolLobbyAmbassadorMessage.hpp"
 namespace {NAMESPACE} {{
-  using HttpsClient = SimpleWeb::Client<SimpleWeb::HTTPS>;
-  using HttpsResponse = HttpsClient::Response;
-  using HttpsResponsePtr = std::shared_ptr<HttpsClient::Response>;
-  using Headers = SimpleWeb::CaseInsensitiveMultimap;
-  using Query = SimpleWeb::CaseInsensitiveMultimap;
-  using FormData = SimpleWeb::CaseInsensitiveMultimap;
-  using ErrorCode = SimpleWeb::error_code;
-  using QueryString = SimpleWeb::QueryString;
+  using HttpsResponsePtr = std::shared_ptr<SimpleWeb::Client<SimpleWeb::HTTPS>::Response>;
+  using HttpsMap = SimpleWeb::CaseInsensitiveMultimap;
   using RequestError = LolLobbyAmbassadorMessage;
 
   struct ClientInfo {{
@@ -97,12 +95,12 @@ namespace {NAMESPACE} {{
     std::string auth;
   }};
 
-  template<typename T>
+  template<T>
   struct Result {{
     HttpsResponsePtr response;
     std::optional<T> data;
     std::optional<LolLobbyAmbassadorMessage> error;
-    Result(HttpsResponsePtr r) : response(r) {{
+    Result(const HttpsResponsePtr& r) : response(r) {{
       int status_code = std::stoul(r->status_code);
       auto raw = r->content.string();
       if(status_code != 200) {{
@@ -136,7 +134,7 @@ namespace {NAMESPACE} {{
     HttpsResponsePtr response;
     std::optional<json> data;
     std::optional<RequestError> error;
-    Result(HttpsResponsePtr r) : response(r) {{
+    Result(const HttpsResponsePtr& r) : response(r) {{
       int status_code = std::stoul(r->status_code);
       auto raw = r->content.string();
       if(status_code != 200) {{
@@ -172,16 +170,16 @@ namespace {NAMESPACE} {{
   struct Result<void> {{
     HttpsResponsePtr response;
     std::optional<RequestError> error;
-    Result(HttpsResponsePtr r) : response(r) {{
+    Result(const HttpsResponsePtr& r) : response(r) {{
       int status_code = std::stoul(r->status_code);
       auto raw = r->content.string();
       if(status_code != 204) {{
-        if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json") {{
+        if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")) {{
           error = json::parse(raw);
         }} else {{
           error = RequestError{{}};
-          error->httpStatus = status_code;
-          error->message = raw;
+          error.httpStatus = status_code;
+          error.message = raw;
         }}
       }}
     }}
@@ -194,17 +192,36 @@ namespace {NAMESPACE} {{
     bool operator !() const {{
       return error != std::nullopt;
     }}
-  }};
-
-  template<typename T>
-  static inline add2map(SimpleWeb::CaseInsensitiveMultimap &map, const std::string& name, const T& v) {{
-    map[name] = to_string(v);
   }}
 
   template<typename T>
-  static inline add2map(SimpleWeb::CaseInsensitiveMultimap &map, const std::string& name, const std::optional<T>& v) {{
+  static inline void add2map(HttpsMap &map, const std::string& name, const T& v) {{
+    map.insert({{ name, to_string(v) }});
+  }}
+
+  template<typename T>
+  static inline void add2map(HttpsMap &map, const std::string& name, const std::optional<T>& v) {{
     if(v)
-      map[name] = to_string(*v);
+      map.insert({{ name, to_string(*v) }});
+  }}
+
+  template<typename T>
+  static Result<T> HttpsRequestEmpty(const ClientInfo& info, const std::string& method, const std::string& path, const HttpsMap& query,
+    const HttpsMap& headers) {{
+    SimpleWeb::Client<SimpleWeb::HTTPS> client(info.host, false);
+    return {{ client.request( method, path + SimpleWeb::QueryString::create(query)), headers }};
+  }}
+  template<typename T>
+  static Result<T> HttpsRequestJson(const ClientInfo& info, const std::string& method, const std::string& path, const HttpsMap& query,
+    const HttpsMap& headers, const json& body) {{
+    SimpleWeb::Client<SimpleWeb::HTTPS> client(info.host, false);
+    return {{ client.request( method, path + SimpleWeb::QueryString::create(query), body.dump(), headers) }};
+  }}
+  template<typename T>
+  static Result<T> HttpsRequestFormData(const ClientInfo& info, const std::string& method, const std::string& path, const HttpsMap& query,
+    const HttpsMap& headers, const HttpsMap& formdata) {{
+    SimpleWeb::Client<SimpleWeb::HTTPS> client(info.host, false);
+    return {{ client.request( method, path + SimpleWeb::QueryString::create(query), SimpleWeb::QueryString::create(formdata), headers) }};
   }}
 }} """
 
@@ -214,22 +231,28 @@ template_op = """#pragma once
 {INCLUDES}
 namespace {NAMESPACE} {{
   /*{description}*/
-  {RETURNS} {NAME} (const ClientInfo& info{ARGS_R} {ARGS_O})
+  static Result<{RETURNS}> {NAME} (const ClientInfo& info{ARGS_R} {ARGS_O})
   {{ 
-    Headers headers = {{ {{"Authorization", info.auth}} }}; {ARGS_HEADER}
-    Query query; {ARGS_QUERY}
-    FormData formdata; {ARGS_FORM}
-    HttpsClient client(info.host, false);
-    return {{ client.request( "{method}", "{PATH}?" + QueryString::create(query), {ARGS_BODY}, headers) }};
+    HttpsMap _headers_ = {{ {{"Authorization", info.auth}} }}; {ARGS_HEADER}
+    HttpsMap _query_; {ARGS_QUERY}
+    HttpsMap _formdata_; {ARGS_FORM}
+    const std::string _method_ = "{method}";
+    const std::string _path_ = "{PATH}?"; {BODY}
   }}
 }} """
-template_op_arg_r = ',\n      {TYPE}& {NAME} /*{description}*/'
-template_op_arg_o = ',\n      {TYPE}& {NAME} = {{std::nullopt}} /*{description}*/'
+template_op_arg_r = ',\n      const {TYPE}& {NAME} /*{description}*/'
+template_op_arg_o = ',\n      const {TYPE}& {NAME} = std::nullopt /*{description}*/'
 template_op_add_header = '\n    add2map(headers, "{name}", {NAME});'
 template_op_add_query = '\n    add2map(query, "{name}", {NAME});'
 template_op_add_fromdata = '\n    add2map(formdata, "{name}", {NAME});'
-template_op_body = "json({NAME}).dump()"
-template_op_formdata = "QueryString::create(formdata)"
+template_op_empty = """
+    return HttpsRequestEmpty<{RETURNS}>(info, _method_, _path_ , _query_,  _headers_); """
+template_op_json = """
+    _headers_.insert({{ "content-type", "application/json" }});
+    return HttpsRequestJson<{RETURNS}>(info, _method_, _path_  , _query_,  _headers_, {ARGNAME}); """
+template_op_formdata = """
+    _headers_.insert({{ "content-type", "application/x-www-form-urlencoded" }});
+    return HttpsRequestFormData<{RETURNS}>(info, _method_, _path_ , _query_,  _headers_, _formdata_); """
 
 #builtin types
 builtins = {
@@ -298,20 +321,20 @@ def generate_definitions(yolo, folder, namespace):
                 ))            
     with open("{0}/definitions.hpp".format(folder), "w+") as file:
         file.write("#pragma once\n")
-        file.write("\n".join(['#include "definitions/{0}.hpp"'.format(defi["name"]) for defi in yolo["definitions"]]))
+        file.write("\n".join(['#include "definitions/{0}"'.format(defi["name"]) for defi in yolo["definitions"]]))
 
 def generate_ops(yolo, folder, namespace):
     mkpath("{0}/ops".format(folder))
     open(folder + "/client.hpp", "w+").write(template_client.format(NAMESPACE = namespace))
     for op in yolo["functions"]:
         with open("{0}/ops/{1}.hpp".format(folder, op["name"]), "w+") as file:
-            body = '""'
+            body = template_op_empty.format(RETURNS = op["RETURNS"])
             for arg in op["arguments"]:
                 if arg["in"] == "body":
-                    body = template_op_body.format(**arg)
+                    body = template_op_json.format(RETURNS = op["RETURNS"], ARGNAME = arg["NAME"])
                     break
                 elif arg["in"] == "formData":
-                    body = template_op_formdata.format()
+                    body = template_op_formdata.format(RETURNS = op["RETURNS"])
                     break;
             file.write(template_op.format(**op, NAMESPACE = namespace,
                 INCLUDES = type2include(op["arguments"], '#include "../definitions/{0}.hpp"\n', op["returns"]),
@@ -320,12 +343,12 @@ def generate_ops(yolo, folder, namespace):
                 ARGS_HEADER = "".join([template_op_add_header.format(**arg) for arg in op["arguments"] if arg["in"] == "header"]),
                 ARGS_QUERY = "".join([template_op_add_query.format(**arg) for arg in op["arguments"] if arg["in"] == "query"]),
                 ARGS_FORM = "".join([template_op_add_fromdata.format(**arg) for arg in op["arguments"] if arg["in"] == "formData"]),
-                PATH = op["url"].replace('{','" +to_string(').replace('}', ')+"'),
-                ARGS_BODY = body
+                PATH = op["url"].format(**{arg["name"] : '"+to_string({0})+"'.format(arg["NAME"]) for arg in op["arguments"] if arg["in"] == "path" }),
+                BODY = body
             ))
     with open("{0}/ops.hpp".format(folder), "w+") as file:
         file.write('#pragma once\n#include "definitions.hpp"\n')
-        file.write("\n".join(['#include "ops/{0}.hpp"'.format(op["name"]) for op in yolo["functions"]]))
+        file.write("\n".join(['#include "ops/{0}"'.format(op["name"]) for op in yolo["functions"]]))
 
 def generate_cpp(yolo, folder, namespace):
     mkpath(folder)
@@ -335,10 +358,13 @@ def generate_cpp(yolo, folder, namespace):
             field["NAME"] = field["name"].replace("-", "_")
             field["TYPE"] = type2cpp(field)
         for value in definition["values"]:
-            value["NAME"] = value["name"].replace("-", "_")+"_e"
+            if value["name"] == "ERROR":
+                value["NAME"] = "EROR"
+            else:
+                value["NAME"] = value["name"].replace("-", "_")
     for function in yolo["functions"]:
         function["NAME"] = function["name"].replace("-", "_")
-        function["RETURNS"] = "Result<{0}>".format(type2cpp(function["returns"]))
+        function["RETURNS"] = type2cpp(function["returns"])
         for arg in function["arguments"]:
             arg["NAME"] = arg["name"].replace("-", "_")
             arg["TYPE"] = type2cpp(arg)
