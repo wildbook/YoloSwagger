@@ -2,6 +2,7 @@ import json
 import time
 import uuid
 import re
+import os
 
 template_enum = (
 'using System.Runtime.Serialization;'     '\n'   
@@ -169,9 +170,9 @@ def generate_struct(file, namespace, name, struct):
                            string_builder_items = ''.join('            sb.Append("  {0}: ").Append({0}).Append("\\n");\n'.format("_" + fix_case(field["name"]) if fix_case(field["name"]) == name else fix_case(field["name"])) for field in struct["fields"]) ))
 
 def generate_requests(info, folder, namespace):
+    mkpath(folder)
     for function in info["functions"]:
-        filename = folder + "/Requests/" + function["name"] + ".cs"
-        mkpath(filename)
+        filename = folder + function["name"] + ".cs"
         file = open(filename, "w+")
         sorted_args = sorted(function["arguments"], key=lambda x: (x["optional"], x["name"]))
         query_items = [item for item in sorted_args if item["in"] == "query"]
@@ -208,9 +209,9 @@ def generate_utilities(folder, ns):
 def generate_defintions(info, folder, namespace):
     for definition in info["definitions"]:
         name = fix_case(definition["name"])
-        filename = folder + "/Definitions/" + name + ".cs"
-        mkpath(filename)
-        file = open(filename,  "w+")
+        filename = folder + name + ".cs"
+        mkpath(folder)
+        file = open(filename,  "wt")
         # basic include and namespace
         if definition["isEnum"]:
             generate_enum(file, namespace, name, definition)
@@ -235,10 +236,10 @@ def mkpath(name):
             
 output_namespace = "LeagueClientApi"
 
-solution_dir = "output/cs"
+solution_dir = "output/cs/"
 solution_guid = str(uuid.uuid4())
 
-project_dir = solution_dir + "/" + output_namespace
+project_dir = solution_dir + output_namespace + "/"
 project_guid = str(uuid.uuid4())
 
 dotnet_version = "4.7"
@@ -247,9 +248,9 @@ target_framework = "net47"
 yolo_json = json_load("yolo.json")
 
 print("Generating definitions...")
-generate_defintions(yolo_json, project_dir, output_namespace)
+generate_defintions(yolo_json, project_dir + "Definitions/", output_namespace)
 print("Generating requests...")
-generate_requests(yolo_json, project_dir, output_namespace)
+generate_requests(yolo_json, project_dir + "Requests/", output_namespace)
 print("Generating utilities...")
 generate_utilities(project_dir, output_namespace)
 print("Generating Visual Studio project...")
