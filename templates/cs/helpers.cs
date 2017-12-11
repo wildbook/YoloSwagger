@@ -55,7 +55,7 @@ namespace {NAMESPACE}
             IEnumerable<KeyValuePair<string, string>> headers = null, object body = null, bool serializeBody = true, bool ensureSuccess = true)
         {{
             var httpMethod = new HttpMethod(method.ToUpper());
-            var requestUrl = new Uri($"https://localhost.:{{_lockfileData.Port}}{{endpoint}}");
+            var requestUrl = new Uri($"{{_lockfileData.ConnectionType}}://localhost.:{{_lockfileData.Port}}{{endpoint}}");
 
             var client = new HttpClient(_httpClientHandler);
             
@@ -139,6 +139,13 @@ namespace {NAMESPACE}
         {{
             ProcessName = processName;
             ProcessId = processId;
+            Port = port;
+            Password = password;
+            ConnectionType = connectionType;
+        }}
+
+        public Lockfile(int port, string password, string connectionType = "https")
+        {{
             Port = port;
             Password = password;
             ConnectionType = connectionType;
