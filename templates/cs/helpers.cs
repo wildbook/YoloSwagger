@@ -17,6 +17,15 @@ namespace {NAMESPACE}
     {{
         private readonly Lockfile _lockfileData;
 
+        private readonly HttpClientHandler _httpClientHandler = new HttpClientHandler
+        {{
+            // Alternative: certificate.Subject.Contains("CN=rclient");
+            // I know this is a bad idea, but riot already uses a self-signed cert so it's not ENTIRELY my fault.
+            // I have to admit that there is probably a ton of better ways to do this though.
+            ServerCertificateCustomValidationCallback = (message, certificate2, chain, errors) => true,
+            SslProtocols = SslProtocols.Tls12
+        }};
+        
         public LeagueClientSession(Lockfile lockfileData)
         {{
             _lockfileData = lockfileData;
@@ -45,16 +54,11 @@ namespace {NAMESPACE}
             IEnumerable<KeyValuePair<string, string>> query = null,
             IEnumerable<KeyValuePair<string, string>> headers = null, object body = null, bool serializeBody = true, bool ensureSuccess = true)
         {{
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-
             var httpMethod = new HttpMethod(method.ToUpper());
             var requestUrl = new Uri($"https://localhost.:{{_lockfileData.Port}}{{endpoint}}");
-            ServicePointManager.ServerCertificateValidationCallback =
-                (sender, certificate, chain, sslPolicyErrors) => true; //certificate.Subject.Contains("CN=rclient");
-                                                                       // I know this is a bad idea, but riot already uses a self-signed cert so it's not ENTIRELY my fault.
-                                                                       // I have to admit that there is probably a ton of better ways to do this though.
 
-            var client = new HttpClient();
+            var client = new HttpClient(_httpClientHandler);
+            
             var request = new HttpRequestMessage(httpMethod, requestUrl);
 
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",

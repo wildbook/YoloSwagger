@@ -59,8 +59,8 @@ template_request = (
 'using {namespace}.Definitions;'                                                                         '\n'
 'using {namespace};'                                                                                     '\n'
 ''                                                                                                       '\n'
-'namespace {namespace} {{'                                                                               '\n'
-'    public static partial class Requests'                                                               '\n'
+'namespace {namespace}.Requests {{'                                                                      '\n'
+'    public static partial class Request'                                                                '\n'
 '    {{'                                                                                                 '\n'
 '        public static Task{return_value} {request_name}(LeagueClientSession session{arguments}) =>'     '\n'
 '            session.SendRequestAsync{return_value}('                                                    '\n'
@@ -158,6 +158,7 @@ def generate_struct(file, namespace, name, struct):
                                     struct_name = name,
                                     field_items = field_items,
                            string_builder_items = ''.join('            sb.Append("  {0}: ").Append({0}).Append("\\n");\n'.format("_" + fix_case(field_name) if fix_case(field_name) == name else fix_case(field_name)) for field_name, details in struct["fields"].items()) ))
+
 def generate_requests(info, folder, namespace):
     for req_name, request in info["requests"].items():
         function = info["functions"][req_name]
@@ -179,31 +180,19 @@ def generate_requests(info, folder, namespace):
 def generate_csproj(folder, namespace, info, guid, dotnet):
     with open("templates/cs/project.csproj", "rt") as fin:
         with open(folder + "/" + namespace + ".csproj", "wt") as fout:
-            includes = "    <Compile Include=\"Helpers.cs\"/>\n"
-            includes += ''.join("    <Compile Include=\"Definitions\\{0}.cs\"/>\n".format(fix_case(name)) for name, definition in info["definitions"].items())
-            includes += ''.join("    <Compile Include=\"Requests\\{0}.cs\"/>\n"   .format(fix_case(name)) for name, request    in info["requests"]   .items())
-            fout.write(fin.read().format(PROJECT_GUID = guid,
-                                         ROOT_NAMESPACE = namespace,
-                                         ASSEMBLY_NAME = namespace,
-                                         INCLUDES = includes,
-                                         TARGET_DOTNET = dotnet))
+            fout.write(fin.read().format(ROOT_NAMESPACE = namespace))
 
 def generate_sln(folder, namespace, project_guid, solution_guid):
     with open("templates/cs/solution.sln", "rt") as fin:
         with open(folder + "/" + namespace + ".sln", "wt") as fout:
-            fout.write(fin.read().format(PROJECT_GUID = project_guid,
-                                         ROOT_NAMESPACE = namespace,
-                                         SOLUTION_GUID = solution_guid))
+            fout.write(fin.read().format(ROOT_NAMESPACE = namespace,
+                                           PROJECT_GUID = project_guid,
+                                          SOLUTION_GUID = solution_guid))
 
 def generate_utilities(folder, ns):
     with open("templates/cs/helpers.cs", "rt") as fin:
         with open(folder + "/Helpers.cs", "wt") as fout:
             fout.write(fin.read().format(NAMESPACE = ns))
-
-def generate_packages(folder, target_framework):
-    with open("templates/cs/packages.config", "rt") as fin:
-        with open(folder + "/packages.config", "wt") as fout:
-            fout.write(fin.read().format(TARGET_FRAMEWORK = target_framework))
 
 def generate_defintions(info, folder, namespace):
     for name, definition in info["definitions"].items():
@@ -217,27 +206,36 @@ def generate_defintions(info, folder, namespace):
         else:
             generate_struct(file, namespace, name, definition)
 
-info_json = json_load("info.json")
-output_dir = "output/cs"
 output_namespace = "LeagueClientApi"
 
-project_guid = str(uuid.uuid4())
+solution_dir = "output/cs"
 solution_guid = str(uuid.uuid4())
+
+project_dir = solution_dir + "/" + output_namespace
+project_guid = str(uuid.uuid4())
 
 dotnet_version = "4.7"
 target_framework = "net47"
 
+info_json = json_load("info.json")
+
 print("Generating definitions...")
-generate_defintions(info_json, output_dir, output_namespace)
+generate_defintions(info_json, project_dir, output_namespace)
 print("Generating requests...")
-generate_requests(info_json, output_dir, output_namespace)
+generate_requests(info_json, project_dir, output_namespace)
 print("Generating utilities...")
-generate_utilities(output_dir, output_namespace)
+generate_utilities(project_dir, output_namespace)
 print("Generating Visual Studio project...")
-generate_csproj(output_dir, output_namespace, info_json, project_guid, dotnet_version)
+generate_csproj(project_dir, output_namespace, info_json, project_guid, dotnet_version)
 print("Generating Visual Studio solution...")
-generate_sln(output_dir, output_namespace, project_guid, solution_guid)
-print("Generating nuget packages file...")
-generate_packages(output_dir, target_framework)
+generate_sln(solution_dir, output_namespace, project_guid, solution_guid)
+
+print("Generating .bat files for compilation...")
+with open(solution_dir + "/Build.bat", "wt") as fout:
+    fout.write(('@echo off \n'
+                'dotnet publish -c Release -r win10-x86 \n'
+                'dotnet publish -c Release -r win10-x64 \n'
+                'pause \n'))
+
 print("Done!")
 time.sleep(1)
