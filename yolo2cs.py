@@ -1,4 +1,4 @@
-from swag2info import *
+import json
 import time
 import uuid
 import re
@@ -109,6 +109,15 @@ builtins_optional = {
     "vector": "{0}[]"
 }
 
+def type_convert(type,  typemap,  otherformat = "{0}"):
+    if not type["type"] in typemap:
+        return otherformat.format(type["type"])
+    if not type["elementType"] == "":
+        if not type["elementType"]  in typemap:
+            return typemap[type["type"]].format(otherformat.format(type["elementType"]))
+        return typemap[type["type"]].format(typemap[type["elementType"]].format())
+    return typemap[type["type"]]
+
 def fix_case(str, firstUpper = True):
     components = str.split('-')
 
@@ -122,14 +131,14 @@ def type2cs(type):
         return fix_case(type["type"])
     if (len(type["elementType"]) > 0 and not type["elementType"] in builtins):
         type["elementType"] = fix_case(type["elementType"])
-    return info_type_convert(type, builtins)
+    return type_convert(type, builtins)
     
 def type2cs_optional(type):
     if not type["type"] in builtins:
         return fix_case(type["type"]) + "?"
     if (len(type["elementType"]) > 0 and not type["elementType"] in builtins):
         type["elementType"] = fix_case(type["elementType"])
-    return info_type_convert(type, builtins_optional)
+    return type_convert(type, builtins_optional)
 
 # TODO: Use templates instead
 def generate_enum(file, namespace, name, enum):
@@ -208,6 +217,22 @@ def generate_defintions(info, folder, namespace):
         else:
             generate_struct(file, namespace, name, definition)
 
+            
+# saves json to file
+def json_save(info,  filename):
+    open(filename,  "w+").write(json.dumps(info, sort_keys=True, indent=2, separators=(',', ': ')))
+
+# loads json from file
+def json_load(filename):
+    return json.load(open(filename))
+
+# convinience function to generate path
+def mkpath(name):
+    try:
+        os.makedirs(name)
+    except:
+        True
+            
 output_namespace = "LeagueClientApi"
 
 solution_dir = "output/cs"
@@ -219,16 +244,16 @@ project_guid = str(uuid.uuid4())
 dotnet_version = "4.7"
 target_framework = "net47"
 
-info_json = json_load("yolo.json")
+yolo_json = json_load("yolo.json")
 
 print("Generating definitions...")
-generate_defintions(info_json, project_dir, output_namespace)
+generate_defintions(yolo_json, project_dir, output_namespace)
 print("Generating requests...")
-generate_requests(info_json, project_dir, output_namespace)
+generate_requests(yolo_json, project_dir, output_namespace)
 print("Generating utilities...")
 generate_utilities(project_dir, output_namespace)
 print("Generating Visual Studio project...")
-generate_csproj(project_dir, output_namespace, info_json, project_guid, dotnet_version)
+generate_csproj(project_dir, output_namespace, yolo_json, project_guid, dotnet_version)
 print("Generating Visual Studio solution...")
 generate_sln(solution_dir, output_namespace, project_guid, solution_guid)
 

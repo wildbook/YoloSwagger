@@ -1,12 +1,12 @@
 import time
 
-print("----- Getting info.json")
-import lol2info
+print("----- Getting yolo.json")
+import lol2yolo
 
 print("----- Generating c# code")
-import info2cs
+import yolo2cs
 
 print("----- Generating c++ code")
-import info2cpp
+import yolo2cpp
 
-sleep(1)
+time.sleep(1)
