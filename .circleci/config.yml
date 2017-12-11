@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Generate cs code
-          command: python3 info2cs.py
+          command: python3 yolo2cs.py
       - run:
           name: Generate cpp code
-          command: python3 info2cpp.py
+          command: python3 yolo2cpp.py
