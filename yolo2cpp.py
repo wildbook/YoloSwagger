@@ -1,262 +1,235 @@
 from swag2yolo import *
-
-#base.hpp includes json and optional support
-template_base_hpp = """#pragma once
+template_base_def = """#pragma once
 #include <json.hpp>
 #include <optional>
-namespace nlohmann {{
+namespace nlohmann {
   template <typename T>
-  struct adl_serializer<std::optional<T>> {{
-    static void to_json(json& j, const std::optional<T>& opt) {{
+  struct adl_serializer<std::optional<T>> {
+    static void to_json(json& j, const std::optional<T>& opt) {
       if(opt)
         j = *opt;
       else
         j = nullptr;
-    }}
-    static void from_json(const json& j, std::optional<T>& opt) {{
+    }
+    static void from_json(const json& j, std::optional<T>& opt) {
       if(j.is_null())
         opt.reset();
       else
         opt = j.get<T>();
-    }}
-  }};
-}}
-namespace {NAMESPACE} {{
+    }
+  };
+}
+namespace lol {
   using json = nlohmann::json;
-  using std::to_string;
-  inline std::string to_string(const std::string& v) {{
-    return v;
-  }}
-  inline std::string to_string(const json& j) {{
-    if(j.is_string())
-      return j.get<std::string>();
-    return j.dump();
-  }}
-}} """
+} """
 
-#struct definitions
-template_struct = """#pragma once
-#include "../base.hpp"
-{INCLUDES}
-namespace {NAMESPACE} {{
-  struct {NAME} {{ /*{description}*/ {MEMBERS}
-  }};
-  static void to_json(json& j, const {NAME}& v) {{ {TO_JSON}
-  }}
-  static void from_json(const json& j, {NAME}& v) {{ {FROM_JSON}
-  }}
-}} """
-template_struct_members = """
-    {TYPE} {NAME};/*{description}*/"""
-template_struct_to_json = """
-    j[\"{NAME}\"] = v.{NAME};"""
-template_struct_from_json = """
-    v.{NAME} = j.at(\"{NAME}\").get<{TYPE}>(); """
-
-#enum definitions
-template_enum = """#pragma once
-#include "../base.hpp"
-namespace {NAMESPACE} {{
-  enum class {NAME} {{ /*{description}*/ {VALUES}
-  }};
-  static void to_json(json& j, const {NAME}& v) {{
-    switch(v) {{ {TO_JSON}
-    }};
-  }}
-  static void from_json(const json& j, {NAME}& v) {{
-    auto s = j.get<std::string>(); {FROM_JSON}
-  }}
-}} """
-template_enum_values = """
-    {NAME} = {value}, /*{description}*/ """
-template_enum_to_json = """
-    case {ENUM}::{NAME}:
-      j = \"{name}\";
-    break;"""
-template_enum_from_json = """
-    if(s == \"{name}\") {{
-      v = {ENUM}::{NAME};
-      return;
-    }} """
-
-#template for client
-template_client = """#pragma once
-#include "base.hpp"
+template_base_op = """#pragma once
+#include <lol/base_def.hpp>
+#include <lol/def/LolLobbyAmbassadorMessage.hpp>
 #include <SimpleWeb/crypto.hpp>
 #include <SimpleWeb/client_https.hpp>
-#include <SimpleWeb/utility.hpp>
-#include <stdexcept>
-#include "definitions/LolLobbyAmbassadorMessage.hpp"
-namespace {NAMESPACE} {{
-  using HttpsResponsePtr = std::shared_ptr<SimpleWeb::Client<SimpleWeb::HTTPS>::Response>;
-  using HttpsMap = SimpleWeb::CaseInsensitiveMultimap;
-  using RequestError = LolLobbyAmbassadorMessage;
+#include <SimpleWeb/client_wss.hpp>
+namespace lol {
+  using Error = LolLobbyAmbassadorMessage;
+  using HttpsClient = SimpleWeb::Client<SimpleWeb::HTTPS>;
+  using HttpsArgs = std::multimap<std::string, std::optional<std::string>>;
+  using HttpsResponse = std::shared_ptr<HttpsClient::Response>;
+  using std::to_string;
+  inline std::string to_string(const std::string& v) {
+    return v;
+  }
+  inline std::string to_string(const json& j) {
+    if (j.is_string())
+      return j.get<std::string>();
+    return j.dump();
+  }
+  template<typename T>
+  inline std::optional<std::string> to_string(const std::optional<T>& o) {
+    if (o)
+      return to_string(*o);
+    return std::nullopt;
+  }
+  template<typename T>
+  struct Result {
+    std::string content_type;
+    std::string status_code;
+    std::string content;
+    std::optional<Error> error;
+    T data;
+    Result(const HttpsResponse& r) {
+      status_code = r->status_code;
+      content = r->content.string();
+      if(auto it = r->header.find("content-type"); it != r->header.end())
+        content_type = it->second;
+      if(status_code != "200" && content_type == "application/json")
+        error = json::parse(content).get<Error>();
+      else if(status_code != "200")
+        error = Error{content, content_type, status_code};
+      else
+        data = json::parse(content).get<T>();
+    }
+    T* operator->() {
+      return &data;
+    }
+    const T& operator*() const {
+      return data;
+    }
+    T& operator*() {
+      return data;
+    }
+    explicit operator bool() const {
+      return error != std::nullopt;
+    }
+    bool operator!() const {
+      return error == std::nullopt;
+    }
+  };
 
-  struct ClientInfo {{
+  template<>
+  struct Result<json> {
+    std::string content_type;
+    std::string status_code;
+    std::string content;
+    std::optional<Error> error;
+    json data;
+    Result(const HttpsResponse& r) {
+      status_code = r->status_code;
+      content = r->content.string();
+      if(auto it = r->header.find("content-type"); it != r->header.end())
+        content_type = it->second;
+      if(status_code != "200" && content_type == "application/json")
+        error = json::parse(content).get<Error>();
+      else if(status_code != "200")
+        error = Error{content, content_type, status_code};
+      else if(content_type == "application/json")
+        data = json::parse(content);
+      else
+        data = content;
+    }
+    json* operator->() {
+      return &data;
+    }
+    const json& operator*() const {
+      return data;
+    }
+    json& operator*() {
+      return data;
+    }
+    explicit operator bool() const {
+      return error != std::nullopt;
+    }
+    bool operator!() const {
+      return error == std::nullopt;
+    }
+  };
+  
+  template<>
+  struct Result<void> {
+    std::string content_type;
+    std::string status_code;
+    std::string content;
+    std::optional<Error> error;
+    json data;
+    Result(const HttpsResponse& r) {
+      status_code = r->status_code;
+      content = r->content.string();
+      if(auto it = r->header.find("content-type"); it != r->header.end())
+        content_type = it->second;
+      if(status_code != "204" && content_type == "application/json")
+        error = json::parse(content).get<Error>();
+      else if(status_code != "204")
+        error = Error{content, content_type, status_code};
+    }
+    explicit operator bool() const {
+      return error != std::nullopt;
+    }
+    bool operator!() const {
+      return error == std::nullopt;
+    }
+  };
+  static SimpleWeb::CaseInsensitiveMultimap Args2Headers(const HttpsArgs& args) {
+    SimpleWeb::CaseInsensitiveMultimap map;
+    for(const auto& it: args)
+      if(it.second)
+        map.insert({it.first, *(it.second)});
+    return map;
+  }
+  struct LeagueClient {
     std::string host;
     std::string auth;
+    
+    LeagueClient(const std::string& address, int port, const std::string& password) :
+      host(address + ":" + std::to_string(port)),
+      auth("Basic " + SimpleWeb::Crypto::Base64::encode("riot:" + password))
+    { }
+  };
+}"""
+
+template_include = '\n#include <lol/def/{0}.hpp>'
+
+template_definition = """#pragma once
+#include<lol/base_def.hpp> {INCLUDES}
+namespace lol {{
+  {ISENUM}struct {NAME} {{ {FIELDS} {VALUES}
   }};
-
-  template<typename T>
-  struct Result {{
-    HttpsResponsePtr response;
-    std::optional<T> data;
-    std::optional<RequestError> error;
-    Result(const HttpsResponsePtr& r) : response(r) {{
-      int status_code = std::stoul(r->status_code);
-      auto raw = r->content.string();
-      if(status_code != 200) {{
-        if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json") {{
-          error = json::parse(raw).get<RequestError>();
-        }} else {{
-          error = RequestError{{}};
-          error->httpStatus = status_code;
-          error->message = raw;
-        }}
-      }} else {{
-        data = json::parse(raw).get<T>();
-      }}
-    }}
-    std::optional<T> operator->() {{
-      return data;
-    }}
-    T operator*() const {{
-      return *data;
-    }}
-    explicit operator bool() const {{
-      return error == std::nullopt;
-    }}
-    bool operator !() const {{
-      return error != std::nullopt;
-    }}
-  }};
-
-  template<>
-  struct Result<json> {{
-    HttpsResponsePtr response;
-    std::optional<json> data;
-    std::optional<RequestError> error;
-    Result(const HttpsResponsePtr& r) : response(r) {{
-      int status_code = std::stoul(r->status_code);
-      auto raw = r->content.string();
-      if(status_code != 200) {{
-        if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json") {{
-          error = json::parse(raw).get<RequestError>();
-        }} else {{
-          error = RequestError{{}};
-          error->httpStatus = status_code;
-          error->message = raw;
-        }}
-      }} else {{
-        if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json")
-          data = json::parse(raw);
-        else
-          data = raw;
-      }}
-    }}
-    std::optional<json> operator->() {{
-      return data;
-    }}
-    json operator*() const {{
-      return *data;
-    }}
-    explicit operator bool() const {{
-      return error == std::nullopt;
-    }}
-    bool operator !() const {{
-      return error != std::nullopt;
-    }}
-  }};
-
-  template<>
-  struct Result<void> {{
-    HttpsResponsePtr response;
-    std::optional<RequestError> error;
-    Result(const HttpsResponsePtr& r) : response(r) {{
-      int status_code = std::stoul(r->status_code);
-      auto raw = r->content.string();
-      if(status_code != 204) {{
-        if(auto it = r->header.find("content-type"); it !=r->header.end() && it->second == "application/json") {{
-          error = json::parse(raw).get<RequestError>();
-        }} else {{
-          error = RequestError{{}};
-          error->httpStatus = status_code;
-          error->message = raw;
-        }}
-      }}
-    }}
-    HttpsResponsePtr operator->() const {{
-      return response;
-    }}
-    explicit operator bool() const {{
-      return error == std::nullopt;
-    }}
-    bool operator !() const {{
-      return error != std::nullopt;
-    }}
-  }};
-
-  template<typename T>
-  static inline void add2map(HttpsMap &map, const std::string& name, const T& v) {{
-    map.insert({{ name, to_string(v) }});
+  void to_json(json& j, const {NAME}& v) {{{ENUM_TO}{STRUCT_TO}
   }}
+  void from_json(const json& j, {NAME}& v) {{{ENUM_FROM}{STRUCT_FROM}
+  }}
+}}"""
+template_definition_fields = """
+    {TYPE} {NAME};"""
+template_definition_values = """
+    {NAME} = {value},"""
+template_enum_to = """
+  if(v == {DNAME}::{NAME}) {{
+    j = \"{name}\";
+    return;
+  }}"""
+template_enum_from = """
+  if(j.get<std::string>() == \"{name}\") {{
+    v = {DNAME}::{NAME};
+    return;
+  }} """
+template_struct_to = """
+  j[\"{NAME}\"] = v.{NAME}; """
+template_struct_from = """
+  v.{NAME} = j.at(\"{NAME}\").get<{TYPE}>(); """
 
-  template<typename T>
-  static inline void add2map(HttpsMap &map, const std::string& name, const std::optional<T>& v) {{
-    if(v)
-      map.insert({{ name, to_string(*v) }});
+template_op_arg_r = ', const {TYPE}& {NAME}'
+template_op_arg_o = ', const {TYPE}& {NAME} = std::nullopt'
+template_op_arg = '{{ "{name}", to_string({NAME}) }}'
+template_op_empty = """#pragma once
+#include<lol/base_op.hpp> {INCLUDES}
+namespace lol {{
+  Result<{RETURNS}> {NAME}(const LeagueClient& _client{ARGS_R}{ARGS_O})
+  {{
+    HttpsClient _client_(_client.host, false);
+    return _client_.request("{method}", "{PATH}?" + SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), "",
+      Args2Headers({{ {{"Authorization", _client.auth}}, {ARGS_HEADER} }}) );
   }}
+}}"""
+template_op_form = """#pragma once
+#include<lol/base_op.hpp> {INCLUDES}
+namespace lol {{
+  Result<{RETURNS}> {NAME}(const LeagueClient& _client{ARGS_R}{ARGS_O})
+  {{
+    HttpsClient _client_(_client.host, false);
+    return _client_.request("{method}", "{PATH}?" + SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), Args2String({{ {ARGS_FORM} }}),
+    Args2Headers({{ {{"Authorization", _client.host}}, {{"content-type", "application/x-www-form-urlencoded"}}, {ARGS_HEADER} }}) );
+  }}
+}}"""
+template_op_json = """#pragma once
+#include<lol/base_op.hpp> {INCLUDES}
+namespace lol {{
+  Result<{RETURNS}> {NAME}(const LeagueClient& _client{ARGS_R}{ARGS_O})
+  {{
+    HttpsClient _client_(_client.host, false);
+    return _client_.request("{method}", "{PATH}?" + SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), json({ARGS_BODY}).dump(),
+      Args2Headers({{ {{"Authorization", _client.host}}, {{"content-type", "application/json"}}, {ARGS_HEADER} }}) );
+  }}
+}}"""
 
-  template<typename T>
-  static Result<T> HttpsRequestEmpty(const ClientInfo& info, const std::string& method, const std::string& path, const HttpsMap& query,
-    const HttpsMap& headers) {{
-    SimpleWeb::Client<SimpleWeb::HTTPS> client(info.host, false);
-    return {{ client.request( method, path + SimpleWeb::QueryString::create(query), "", headers) }};
-  }}
-  template<typename T>
-  static Result<T> HttpsRequestJson(const ClientInfo& info, const std::string& method, const std::string& path, const HttpsMap& query,
-    const HttpsMap& headers, const json& body) {{
-    SimpleWeb::Client<SimpleWeb::HTTPS> client(info.host, false);
-    return {{ client.request( method, path + SimpleWeb::QueryString::create(query), body.dump(), headers) }};
-  }}
-  template<typename T>
-  static Result<T> HttpsRequestFormData(const ClientInfo& info, const std::string& method, const std::string& path, const HttpsMap& query,
-    const HttpsMap& headers, const HttpsMap& formdata) {{
-    SimpleWeb::Client<SimpleWeb::HTTPS> client(info.host, false);
-    return {{ client.request( method, path + SimpleWeb::QueryString::create(query), SimpleWeb::QueryString::create(formdata), headers) }};
-  }}
-}} """
-
-#function tempalte
-template_op = """#pragma once
-#include "../client.hpp"
-{INCLUDES}
-namespace {NAMESPACE} {{
-  /*{description}*/
-  static Result<{RETURNS}> {NAME} (const ClientInfo& _info_{ARGS_R} {ARGS_O})
-  {{ 
-    HttpsMap _headers_ = {{ {{"Authorization", _info_.auth}} }}; {ARGS_HEADER}
-    HttpsMap _query_; {ARGS_QUERY}
-    HttpsMap _formdata_; {ARGS_FORM}
-    const std::string _method_ = "{method}";
-    const std::string _path_ = "{PATH}?"; {BODY}
-  }}
-}} """
-template_op_arg_r = ',\n      const {TYPE}& {NAME} /*{description}*/'
-template_op_arg_o = ',\n      const {TYPE}& {NAME} = std::nullopt /*{description}*/'
-template_op_add_header = '\n    add2map(_headers_, "{name}", {NAME});'
-template_op_add_query = '\n    add2map(_query_, "{name}", {NAME});'
-template_op_add_fromdata = '\n    add2map(_formdata_, "{name}", {NAME});'
-template_op_empty = """
-    return HttpsRequestEmpty<{RETURNS}>(_info_, _method_, _path_ , _query_,  _headers_); """
-template_op_json = """
-    _headers_.insert({{ "content-type", "application/json" }});
-    return HttpsRequestJson<{RETURNS}>(_info_, _method_, _path_  , _query_,  _headers_, {ARGNAME}); """
-template_op_formdata = """
-    _headers_.insert({{ "content-type", "application/x-www-form-urlencoded" }});
-    return HttpsRequestFormData<{RETURNS}>(_info_, _method_, _path_ , _query_,  _headers_, _formdata_); """
-
-#builtin types
 builtins = {
     "": "void",
     "bool": "bool", 
@@ -275,18 +248,6 @@ builtins = {
     "map": "std::map<std::string, {0}>", 
     "vector": "std::vector<{0}>" 
 }
-
-#formats all include types if they are not builtins and empty
-def type2include(parent, fmt, additional = ""):
-    def _type2include(typ):
-        if typ["type"] == "vector" or typ["type"] == "map":
-            return "" if typ["elementType"] in builtins else typ["elementType"]
-        return "" if typ["type"] in builtins else typ["type"]
-    includes = { _type2include(f["type"]) for f in parent } 
-    if not additional == "":
-        includes.update({_type2include(additional)})
-    return "".join([fmt.format(i) for i in includes if not i == ""])
-#converts type or type holder to type :)
 def type2cpp(parent):
     def _type2cpp(typ):
         otherformat = "{0}"
@@ -301,76 +262,66 @@ def type2cpp(parent):
         return _type2cpp(parent).replace("-", "_")
     t = _type2cpp(parent["type"]).replace("-", "_")
     return "std::optional<{0}>".format(t) if "optional" in parent and parent["optional"] else t
+def include2cpp(parent, ret = ""):
+    def _in(typ):
+        if not typ["elementType"] in builtins:
+            return typ["elementType"]
+        return typ["type"] if not typ["type"] in builtins else ""
+    result = { _in(t["type"]) for t in parent if not _in(t["type"]) == "" }
+    if not ret == "":
+        extra = _in(ret)
+        if not extra == "":
+            result.update({extra})
+    return result
 
-def generate_definitions(yolo, folder, namespace):
-    mkpath("{0}/definitions/".format(folder))
-    open(folder + "/base.hpp", "w+").write(template_base_hpp.format(NAMESPACE = namespace))
-    for definition in yolo["definitions"]:
-        with open("{0}/definitions/{1}.hpp".format(folder, definition["name"]), "w+") as file:
-            if definition["isEnum"]:
-                file.write(template_enum.format(**definition,NAMESPACE = namespace,
-                    VALUES = "".join([template_enum_values.format(**m) for m in definition["values"]]),
-                    TO_JSON = "".join([template_enum_to_json.format(ENUM = definition["NAME"], **m) for m in definition["values"]]),
-                    FROM_JSON = "".join([template_enum_from_json.format(ENUM = definition["NAME"], **m) for m in definition["values"]]),
-                ))
-            else:
-                file.write(template_struct.format(**definition,
-                    NAMESPACE = namespace,
-                    INCLUDES = type2include(definition["fields"], '#include "{0}.hpp"\n'),
-                    MEMBERS = "".join([template_struct_members.format(**m) for m in definition["fields"]]),
-                    TO_JSON = "".join([template_struct_to_json.format(**m) for m in definition["fields"]]),
-                    FROM_JSON = "".join([template_struct_from_json.format(**m) for m in definition["fields"]]),
-                ))            
-    with open("{0}/definitions.hpp".format(folder), "w+") as file:
-        file.write("#pragma once\n")
-        file.write("\n".join(['#include "definitions/{0}.hpp"'.format(defi["name"]) for defi in yolo["definitions"]]))
-
-def generate_ops(yolo, folder, namespace):
-    mkpath("{0}/ops".format(folder))
-    open(folder + "/client.hpp", "w+").write(template_client.format(NAMESPACE = namespace))
-    for op in yolo["functions"]:
-        with open("{0}/ops/{1}.hpp".format(folder, op["name"]), "w+") as file:
-            body = template_op_empty.format(RETURNS = op["RETURNS"])
-            for arg in op["arguments"]:
-                if arg["in"] == "body":
-                    body = template_op_json.format(RETURNS = op["RETURNS"], ARGNAME = arg["NAME"])
-                    break
-                elif arg["in"] == "formData":
-                    body = template_op_formdata.format(RETURNS = op["RETURNS"])
-                    break;
-            file.write(template_op.format(**op, NAMESPACE = namespace,
-                INCLUDES = type2include(op["arguments"], '#include "../definitions/{0}.hpp"\n', op["returns"]),
-                ARGS_R = "".join([template_op_arg_r.format(**arg) for arg in op["arguments"] if not arg["optional"]]),
-                ARGS_O = "".join([template_op_arg_o.format(**arg) for arg in op["arguments"] if arg["optional"]]),
-                ARGS_HEADER = "".join([template_op_add_header.format(**arg) for arg in op["arguments"] if arg["in"] == "header"]),
-                ARGS_QUERY = "".join([template_op_add_query.format(**arg) for arg in op["arguments"] if arg["in"] == "query"]),
-                ARGS_FORM = "".join([template_op_add_fromdata.format(**arg) for arg in op["arguments"] if arg["in"] == "formData"]),
-                PATH = op["url"].format(**{arg["name"] : '"+to_string({0})+"'.format(arg["NAME"]) for arg in op["arguments"] if arg["in"] == "path" }),
-                BODY = body
-            ))
-    with open("{0}/ops.hpp".format(folder), "w+") as file:
-        file.write('#pragma once\n#include "definitions.hpp"\n')
-        file.write("\n".join(['#include "ops/{0}.hpp"'.format(op["name"]) for op in yolo["functions"]]))
-
-def generate_cpp(yolo, folder, namespace):
-    mkpath(folder)
+def generate_def(yolo, folder):
+    mkpath(folder+"/lol/def")
+    open(folder+"/lol/base_def.hpp", "w+").write(template_base_def)
     for definition in yolo["definitions"]:
         definition["NAME"] = "{0}".format(definition["name"].replace("-", "_"))
         for field in definition["fields"]:
+            field["DNAME"] = definition["NAME"]
             field["NAME"] = field["name"].replace("-", "_")
             field["TYPE"] = type2cpp(field)
         for value in definition["values"]:
+            value["DNAME"] = definition["NAME"]
             value["NAME"] = value["name"].replace("-", "_") + "_e"
-    for function in yolo["functions"]:
-        function["NAME"] = function["name"].replace("-", "_")
-        function["RETURNS"] = type2cpp(function["returns"])
-        for arg in function["arguments"]:
+        open("{0}/lol/def/{1}.hpp".format(folder, definition["name"]), "w+").write(template_definition.format(**definition,
+            INCLUDES = "".join([template_include.format(i) for i in include2cpp(definition["fields"])]),
+            VALUES = "".join([template_definition_values.format(**m) for m in definition["values"]]),
+            FIELDS = "".join([template_definition_fields.format(**m) for m in definition["fields"]]),
+            ISENUM = "enum " if definition["isEnum"] else "",
+            ENUM_TO = "".join([template_enum_to.format(**m) for m in definition["values"]]),
+            ENUM_FROM = "".join([template_enum_from.format(**m) for m in definition["values"]]),
+            STRUCT_TO = "".join([template_struct_to.format(**m) for m in definition["fields"]]),
+            STRUCT_FROM = "".join([template_struct_from.format(**m) for m in definition["fields"]])))
+
+def generate_op(yolo, folder):       
+    mkpath(folder+"/lol/op")
+    open(folder+"/lol/base_op.hpp", "w+").write(template_base_op)
+    for op in yolo["functions"]:
+        op["NAME"] = op["name"].replace("-", "_")
+        op["RETURNS"] = type2cpp(op["returns"])
+        for arg in op["arguments"]:
             arg["NAME"] = arg["name"].replace("-", "_")
             arg["TYPE"] = type2cpp(arg)
-    for event in yolo["events"]:
-        event["NAME"] = event["name"].replace("-", "_")
-        event["TYPE"] = type2cpp(event)
-    generate_definitions(yolo, folder, namespace)
-    generate_ops(yolo, folder, namespace)
+        template = template_op_empty
+        args_formdata = [template_op_arg.format(**arg) for arg in op["arguments"] if arg["in"] == "formData"]
+        args_body = [arg["NAME"] for arg in op["arguments"] if arg["in"] == "body"]
+        open("{0}/lol/op/{1}.hpp".format(folder, op["name"]), "w+").write(
+            (template_op_form if len(args_formdata) > 0 else (template_op_json if len(args_body) >0 else template_op_empty))
+            .format(**op,
+            ARGS_R = "".join([template_op_arg_r.format(**arg) for arg in op["arguments"] if not arg["optional"]]),
+            ARGS_O = "".join([template_op_arg_o.format(**arg) for arg in op["arguments"] if arg["optional"]]),
+            ARGS_FORM = ",\n    ".join(args_formdata),       
+            INCLUDES = "".join([template_include.format(i) for i in include2cpp(op["arguments"], op["returns"])]),
+            ARGS_BODY = "".join(args_body),
+            ARGS_HEADER = ",\n    ".join([template_op_arg.format(**arg) for arg in op["arguments"] if arg["in"] == "header"]),
+            ARGS_QUERY = ",\n    ".join([template_op_arg.format(**arg) for arg in op["arguments"] if arg["in"] == "query"]),
+            PATH = op["url"].format(**{arg["name"] : '"+to_string({0})+"'.format(arg["NAME"]) for arg in op["arguments"] if arg["in"] == "path" })))
 
-generate_cpp(json_load("yolo.json"), "output/cpp", "leagueapi")
+def generate_cpp(yolo, folder):   
+    generate_def(yolo, folder)   
+    generate_op(yolo, folder)
+
+generate_cpp(json_load("yolo.json"), "output/cpp")
