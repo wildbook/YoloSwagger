@@ -21,11 +21,13 @@ headers = { 'Authorization' : 'Basic %s' % base64.b64encode("riot:{0}".format(pa
 
 print("Requesting /v2/swagger.json...")
 connection.request('GET', '/v2/swagger.json', headers=headers)
-swagger = json.load(connection.getresponse())
+response = connection.getresponse()
+swagger = json.loads(response.read().decode('utf-8'))
 
 print("Requesting /Help?format=Full...")
 connection.request('GET', '/Help?format=Full', headers=headers)
-help = json.load(connection.getresponse())
+response = connection.getresponse()
+help = json.loads(response.read().decode('utf-8'))
 
 print("Generating yolo.json...")
 json_save(yolo(help, swagger), "yolo.json")
