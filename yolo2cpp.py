@@ -44,8 +44,10 @@ namespace lol {{
   Result<{RETURNS}> {NAME}(const LeagueClient& _client{ARGS_R}{ARGS_O})
   {{
     HttpsClient _client_(_client.host, false);
-    return _client_.request("{method}", "{PATH}?" + SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), "",
-      Args2Headers({{ {{"Authorization", _client.auth}}, {ARGS_HEADER} }}) );
+    return Result<{RETURNS}> {{
+    _client_.request("{method}", "{PATH}?" + SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), "",
+      Args2Headers({{ {{"Authorization", _client.auth}}, {ARGS_HEADER} }}) )
+    }};
   }}
 }}"""
 template_op_form = """#pragma once
@@ -54,8 +56,10 @@ namespace lol {{
   Result<{RETURNS}> {NAME}(const LeagueClient& _client{ARGS_R}{ARGS_O})
   {{
     HttpsClient _client_(_client.host, false);
-    return _client_.request("{method}", "{PATH}?" + SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), Args2String({{ {ARGS_FORM} }}),
-    Args2Headers({{ {{"Authorization", _client.auth}}, {{"content-type", "application/x-www-form-urlencoded"}}, {ARGS_HEADER} }}) );
+    return Result<{RETURNS}> {{
+    _client_.request("{method}", "{PATH}?" + SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), Args2String({{ {ARGS_FORM} }}),
+      Args2Headers({{ {{"Authorization", _client.auth}}, {{"content-type", "application/x-www-form-urlencoded"}}, {ARGS_HEADER} }}) )
+    }};
   }}
 }}"""
 template_op_json = """#pragma once
@@ -64,8 +68,10 @@ namespace lol {{
   Result<{RETURNS}> {NAME}(const LeagueClient& _client{ARGS_R}{ARGS_O})
   {{
     HttpsClient _client_(_client.host, false);
-    return _client_.request("{method}", "{PATH}?" + SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), json({ARGS_BODY}).dump(),
-      Args2Headers({{ {{"Authorization", _client.auth}}, {{"content-type", "application/json"}}, {ARGS_HEADER} }}) );
+    return Result<{RETURNS}> {{
+    _client_.request("{method}", "{PATH}?" + SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), json({ARGS_BODY}).dump(),
+      Args2Headers({{ {{"Authorization", _client.auth}}, {{"content-type", "application/json"}}, {ARGS_HEADER} }}) )
+    }};
   }}
 }}"""
 

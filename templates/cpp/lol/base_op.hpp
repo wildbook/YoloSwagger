@@ -43,70 +43,70 @@ namespace lol {
   template<typename T>
   struct Result {
     std::optional<Error> error;
-    T data;
+    std::optional<T> data;
     Result(const HttpsResponse& r) {
       std::string content_type;
       int32_t status_code = std::stoi(r->status_code);
       std::string content = r->content.string();
       if(auto it = r->header.find("content-type"); it != r->header.end())
         content_type = it->second;
-      if(status_code != 200 && content_type == "application/json")
+      if((status_code < 200 || status_code>299) && content_type == "application/json")
         error = json::parse(content).get<Error>();
-      else if(status_code != 200)
+      else if((status_code < 200 || status_code>299))
         error = Error{content_type, status_code, content};
       else
         data = json::parse(content).get<T>();
     }
-    T* operator->() {
-      return &data;
+    std::optional<T>& operator->() {
+      return data;
     }
     const T& operator*() const {
-      return data;
+      return *data;
     }
     T& operator*() {
-      return data;
+      return *data;
     }
     explicit operator bool() const {
-      return error != std::nullopt;
+      return error == std::nullopt;
     }
     bool operator!() const {
-      return error == std::nullopt;
+      return error != std::nullopt;
     }
   };
 
   template<>
   struct Result<json> {
     std::optional<Error> error;
-    json data;
+    std::optional<json> data;
     Result(const HttpsResponse& r) {
       std::string content_type;
       int32_t status_code = std::stoi(r->status_code);
       std::string content = r->content.string();
       if(auto it = r->header.find("content-type"); it != r->header.end())
         content_type = it->second;
-      if(status_code != 200 && content_type == "application/json")
+      if((status_code < 200 || status_code>299) && content_type == "application/json")
         error = json::parse(content).get<Error>();
-      else if(status_code != 200)
+      else if((status_code < 200 || status_code>299))
         error = Error{content_type, status_code, content};
       else if(content_type == "application/json")
         data = json::parse(content);
       else
         data = content;
     }
-    json* operator->() {
-      return &data;
+    std::optional<json>& operator->() {
+      return data;
     }
     const json& operator*() const {
-      return data;
+      return *data;
     }
     json& operator*() {
-      return data;
+      return *data;
     }
     explicit operator bool() const {
-      return error != std::nullopt;
+      return error == std::nullopt;
     }
     bool operator!() const {
-      return error == std::nullopt;
+      return error != std::nullopt;
     }
   };
   
@@ -120,16 +120,16 @@ namespace lol {
       std::string content = r->content.string();
       if(auto it = r->header.find("content-type"); it != r->header.end())
         content_type = it->second;
-      if(status_code != 204 && content_type == "application/json")
+      if((status_code < 200 || status_code>299) && content_type == "application/json")
         error = json::parse(content).get<Error>();
-      else if(status_code != 204)
+      else if((status_code < 200 || status_code>299))
         error = Error{content_type, status_code, content};
     }
     explicit operator bool() const {
-      return error != std::nullopt;
+      return error == std::nullopt;
     }
     bool operator!() const {
-      return error == std::nullopt;
+      return error != std::nullopt;
     }
   };
   static SimpleWeb::CaseInsensitiveMultimap Args2Headers(const HttpsArgs& args) {
