@@ -332,4 +332,4 @@ def generate_cpp(yolo, folder):
     generate_def(yolo, folder)   
     generate_op(yolo, folder)
 
-generate_cpp(json_load("yolo.json"), "output/cpp")
+generate_cpp(json_load("yolo.json"), "../output/cpp")
