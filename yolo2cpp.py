@@ -35,45 +35,37 @@ template_struct_from_o = """
     if(auto it = j.find("{name}"); it != j.end() && !it->is_null())
       v.{NAME} = it->get<{TYPE}>(); """
 
+template_op = """#pragma once
+#include<lol/base_op.hpp> {INCLUDES}
+namespace lol {{
+  Result<{RETURNS}> {NAME}(const LeagueClient& _client{ARGS_R}{ARGS_O})
+  {{
+    HttpsClient _client_(_client.host, false);
+    try {{
+      return Result<{RETURNS}> {{
+        _client_.request("{method}", "{PATH}?" +
+          SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), {REQ}
+            {{"Authorization", _client.auth}}, {ARGS_HEADER} }}))
+      }};
+    }} catch(const SimpleWeb::system_error &e) {{
+      return Result<{RETURNS}> {{ Error {{ to_string(e.code().value()), -1, e.what() }} }};
+    }}
+  }}
+}}"""
 template_op_arg_r = ', const {TYPE}& {NAME}'
 template_op_arg_o = ', const {TYPE}& {NAME} = std::nullopt'
-template_op_arg = '{{ "{name}", to_string({NAME}) }}'
-template_op_empty = """#pragma once
-#include<lol/base_op.hpp> {INCLUDES}
-namespace lol {{
-  Result<{RETURNS}> {NAME}(const LeagueClient& _client{ARGS_R}{ARGS_O})
-  {{
-    HttpsClient _client_(_client.host, false);
-    return Result<{RETURNS}> {{
-    _client_.request("{method}", "{PATH}?" + SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), "",
-      Args2Headers({{ {{"Authorization", _client.auth}}, {ARGS_HEADER} }}) )
-    }};
-  }}
-}}"""
-template_op_form = """#pragma once
-#include<lol/base_op.hpp> {INCLUDES}
-namespace lol {{
-  Result<{RETURNS}> {NAME}(const LeagueClient& _client{ARGS_R}{ARGS_O})
-  {{
-    HttpsClient _client_(_client.host, false);
-    return Result<{RETURNS}> {{
-    _client_.request("{method}", "{PATH}?" + SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), Args2String({{ {ARGS_FORM} }}),
-      Args2Headers({{ {{"Authorization", _client.auth}}, {{"content-type", "application/x-www-form-urlencoded"}}, {ARGS_HEADER} }}) )
-    }};
-  }}
-}}"""
-template_op_json = """#pragma once
-#include<lol/base_op.hpp> {INCLUDES}
-namespace lol {{
-  Result<{RETURNS}> {NAME}(const LeagueClient& _client{ARGS_R}{ARGS_O})
-  {{
-    HttpsClient _client_(_client.host, false);
-    return Result<{RETURNS}> {{
-    _client_.request("{method}", "{PATH}?" + SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), json({ARGS_BODY}).dump(),
-      Args2Headers({{ {{"Authorization", _client.auth}}, {{"content-type", "application/json"}}, {ARGS_HEADER} }}) )
-    }};
-  }}
-}}"""
+template_op_arg = '\n           {{ "{name}", to_string({NAME}) }},'
+template_op_empty = """
+          "",
+          Args2Headers({{  """
+template_op_form = """
+          Args2String({{ {ARGS_FORM} }}),
+          Args2Headers({{
+            {{"content-type", "application/x-www-form-urlencoded"}},"""
+template_op_json = """
+          json({ARGS_BODY}).dump(),
+          Args2Headers({{
+            {{"content-type", "application/json"}},"""
 
 builtins = {
     "": "void",
@@ -138,7 +130,8 @@ def generate_def(yolo, folder):
             ENUM_TO = "".join([template_enum_to.format(**m) for m in definition["values"]]),
             ENUM_FROM = "".join([template_enum_from.format(**m) for m in definition["values"]]),
             STRUCT_TO = "".join([template_struct_to_o.format(**m) if m["optional"] else template_struct_to.format(**m) for m in definition["fields"]]),
-            STRUCT_FROM = "".join([template_struct_from_o.format(**m) if m["optional"] else template_struct_from.format(**m) for m in definition["fields"]])))
+            STRUCT_FROM = "".join([template_struct_from_o.format(**m) if m["optional"] else template_struct_from.format(**m) for m in definition["fields"]])
+            ))
 
 def generate_op(yolo, folder):       
     mkpath(folder+"/lol/op")
@@ -148,20 +141,19 @@ def generate_op(yolo, folder):
         for arg in op["arguments"]:
             arg["NAME"] = arg["name"].replace("-", "_")
             arg["TYPE"] = type2cpp(arg)
-        template = template_op_empty
         args_formdata = [template_op_arg.format(**arg) for arg in op["arguments"] if arg["in"] == "formData"]
         args_body = [arg["NAME"] for arg in op["arguments"] if arg["in"] == "body"]
-        open("{0}/lol/op/{1}.hpp".format(folder, op["name"]), "w+").write(
-            (template_op_form if len(args_formdata) > 0 else (template_op_json if len(args_body) >0 else template_op_empty))
-            .format(**op,
+        open("{0}/lol/op/{1}.hpp".format(folder, op["name"]), "w+").write(template_op.format(**op,
             ARGS_R = "".join([template_op_arg_r.format(**arg) for arg in op["arguments"] if not arg["optional"]]),
-            ARGS_O = "".join([template_op_arg_o.format(**arg) for arg in op["arguments"] if arg["optional"]]),
-            ARGS_FORM = ",\n    ".join(args_formdata),       
+            ARGS_O = "".join([template_op_arg_o.format(**arg) for arg in op["arguments"] if arg["optional"]]),      
             INCLUDES = "".join([template_include.format(i) for i in include2cpp(op["arguments"], op["returns"])]),
-            ARGS_BODY = "".join(args_body),
-            ARGS_HEADER = ",\n    ".join([template_op_arg.format(**arg) for arg in op["arguments"] if arg["in"] == "header"]),
-            ARGS_QUERY = ",\n    ".join([template_op_arg.format(**arg) for arg in op["arguments"] if arg["in"] == "query"]),
-            PATH = op["url"].format(**{arg["name"] : '"+to_string({0})+"'.format(arg["NAME"]) for arg in op["arguments"] if arg["in"] == "path" })))
+            ARGS_QUERY = "".join([template_op_arg.format(**arg) for arg in op["arguments"] if arg["in"] == "query"]),
+            ARGS_HEADER = "".join([template_op_arg.format(**arg) for arg in op["arguments"] if arg["in"] == "header"]),                                                                                 
+            PATH = op["url"].format(**{arg["name"] : '"+to_string({0})+"'.format(arg["NAME"]) for arg in op["arguments"] if arg["in"] == "path" }),
+            REQ = (template_op_form if len(args_formdata) > 0 else (template_op_json if len(args_body) >0 else template_op_empty)).format(
+                ARGS_FORM = "".join(args_formdata), 
+                ARGS_BODY = "".join(args_body))
+            ))
 
 def generate_cpp(yolo, folder):   
     generate_def(yolo, folder)   

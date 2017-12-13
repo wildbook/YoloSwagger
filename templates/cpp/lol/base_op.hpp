@@ -44,6 +44,9 @@ namespace lol {
   struct Result {
     std::optional<Error> error;
     std::optional<T> data;
+    Result(const Error& e) {
+      error = e;
+    }
     Result(const HttpsResponse& r) {
       std::string content_type;
       int32_t status_code = std::stoi(r->status_code);
@@ -78,6 +81,9 @@ namespace lol {
   struct Result<json> {
     std::optional<Error> error;
     std::optional<json> data;
+    Result(const Error& e) {
+      error = e;
+    }
     Result(const HttpsResponse& r) {
       std::string content_type;
       int32_t status_code = std::stoi(r->status_code);
@@ -114,6 +120,9 @@ namespace lol {
   struct Result<void> {
     std::optional<Error> error;
     json data;
+    Result(const Error& e) {
+      error = e;
+    }
     Result(const HttpsResponse& r) {
       std::string content_type;
       int32_t status_code = std::stoi(r->status_code);
