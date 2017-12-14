@@ -152,19 +152,21 @@ namespace lol {
     std::string host;
     std::string auth;
     WssClient wss;
-	  std::function<void(LeagueClient*)> onwelcome;
+    std::function<void(LeagueClient*)> onwelcome;
     std::function<void(LeagueClient*, PluginResourceEvent j)> onevent;
     void* data;
     
     LeagueClient(const std::string& address, int port, const std::string& password) :
       host(address + ":" + std::to_string(port)),
       auth("Basic " + SimpleWeb::Crypto::Base64::encode("riot:" + password)),
-	    wss(host, false)
+      wss(address + ":" + std::to_string(port), false)
     {
-	    wss.config.header = { {"authorization", auth }, {"sec-websockets-protocol", "wamp"}};
-	    wss.on_message = [this](std::shared_ptr<WssClient::Connection> connection, std::shared_ptr<WssClient::Message> message) {
-			  if (message->size() > 0) {
-          std::vector<json> j = json::parse(message->string());
+      wss.config.header = { {"authorization", "Basic " + SimpleWeb::Crypto::Base64::encode("riot:" + password) }, 
+        {"sec-websocket-protocol", "wamp"}
+      };
+      wss.on_message = [this](std::shared_ptr<WssClient::Connection> connection, std::shared_ptr<WssClient::Message> message) {
+        if (message->size() > 0) {
+          auto j = json::parse(message->string()).get<std::vector<json>>();
           if (j[0].get<int32_t>() == 0) {
             auto send_stream = std::make_shared<WssClient::SendStream>();
             *send_stream << "[5, \"OnJsonApiEvent\"]";
@@ -174,8 +176,8 @@ namespace lol {
           } else if (j[0].get<int32_t>() == 8 && onevent && j[1].get<std::string>() == "OnJsonApiEvent") {
             onevent(this, j[2]);
           }
-			  }
-		  };
+        }
+       };
     }
   };
 }
