@@ -43,45 +43,43 @@ namespace lol {{
   inline Result<{RETURNS}> {NAME}(LeagueClient& _client{ARGS_R}{ARGS_O})
   {{
     try {{
-      return Result<{RETURNS}> {{
-        _client.https.request("{method}", "{PATH}?" +
-          SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), {REQ}
-            {{"Authorization", _client.auth}}, {ARGS_HEADER} }}))
-      }};
+      return ToResult<{RETURNS}>(_client.https.request("{method}", "{PATH}?" +
+        SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), {REQ}
+        {{"Authorization", _client.auth}}, {ARGS_HEADER} }})));
     }} catch(const SimpleWeb::system_error &e) {{
-      return Result<{RETURNS}> {{ Error {{ to_string(e.code().value()), -1, e.code().message() }} }};
+      return ToResult<{RETURNS}>(e.code());
     }}
   }}
-  inline void {NAME}(LeagueClient& _client{ARGS_R}{ARGS_O}, std::function<void(LeagueClient&,const Result<{RETURNS}>&)> cb)
+  inline void {NAME}(LeagueClient& _client{ARGS_R}{ARGS_O}, std::function<void(LeagueClient&, const Result<{RETURNS}>&)> cb)
   {{
     _client.httpsa.request("{method}", "{PATH}?" +
       SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), {REQ}
         {{"Authorization", _client.auth}}, {ARGS_HEADER} }}),[cb,&_client](std::shared_ptr<HttpsClient::Response> response, const SimpleWeb::error_code &e) {{
-          if(!e)
-            cb(_client, Result<{RETURNS}> {{ response }});
-          else
-            cb(_client,Result<{RETURNS}> {{ Error {{ to_string(e.value()), -1, e.message() }} }});
+            if(e)
+              cb(_client, ToResult<{RETURNS}>(e));
+            else
+              cb(_client, ToResult<{RETURNS}>(response));
         }});
   }}
 }}"""
 
 template_op_arg_r = ', const {TYPE}& {NAME}'
 template_op_arg_o = ', const {TYPE}& {NAME} = std::nullopt'
-template_op_arg = '\n           {{ "{name}", to_string({NAME}) }},'
+template_op_arg = '\n          {{ "{name}", to_string({NAME}) }},'
 template_op_empty = """
-          "",
-          Args2Headers({{  """
+        "",
+        Args2Headers({{  """
 template_op_form = """
-          Args2String({{ {ARGS_FORM} }}),
-          Args2Headers({{
-            {{"content-type", "application/x-www-form-urlencoded"}},"""
+        Args2String({{ {ARGS_FORM} }}),
+        Args2Headers({{
+          {{"content-type", "application/x-www-form-urlencoded"}},"""
 template_op_json = """
-          json({ARGS_BODY}).dump(),
-          Args2Headers({{
-            {{"content-type", "application/json"}},"""
+        json({ARGS_BODY}).dump(),
+        Args2Headers({{
+          {{"content-type", "application/json"}},"""
 
 builtins = {
-    "": "void",
+    "": "std::nullptr_t",
     "bool": "bool", 
     "int8": "int8_t", 
     "uint8": "uint8_t",
@@ -175,4 +173,4 @@ def generate_cpp(yolo, folder):
     generate_def(yolo, folder)   
     generate_op(yolo, folder)
 
-generate_cpp(json_load("yolo.json"), "../output/cpp")
+generate_cpp(json_load("yolo.json"), "../include")
