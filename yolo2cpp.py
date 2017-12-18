@@ -52,7 +52,7 @@ namespace lol {{
       return Result<{RETURNS}> {{ Error {{ to_string(e.code().value()), -1, e.code().message() }} }};
     }}
   }}
-  inline void {NAME}_async(LeagueClient& _client, std::function<void(LeagueClient&,const Result<{RETURNS}>&)> cb{ARGS_R}{ARGS_O})
+  inline void {NAME}(LeagueClient& _client{ARGS_R}{ARGS_O}, std::function<void(LeagueClient&,const Result<{RETURNS}>&)> cb)
   {{
     _client.httpsa.request("{method}", "{PATH}?" +
       SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), {REQ}
