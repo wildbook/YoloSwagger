@@ -37,22 +37,34 @@ template_struct_from_o = """
       v.{NAME} = it->get<{TYPE}>(); """
 
 template_op = """#pragma once
-#include "../base_op.hpp" {INCLUDES}
+#include "../base_op.hpp"
+#include <functional> {INCLUDES}
 namespace lol {{
-  inline Result<{RETURNS}> {NAME}(const LeagueClient& _client{ARGS_R}{ARGS_O})
+  inline Result<{RETURNS}> {NAME}(LeagueClient& _client{ARGS_R}{ARGS_O})
   {{
-    HttpsClient _client_(_client.host, false);
     try {{
       return Result<{RETURNS}> {{
-        _client_.request("{method}", "{PATH}?" +
+        _client.https.request("{method}", "{PATH}?" +
           SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), {REQ}
             {{"Authorization", _client.auth}}, {ARGS_HEADER} }}))
       }};
     }} catch(const SimpleWeb::system_error &e) {{
-      return Result<{RETURNS}> {{ Error {{ to_string(e.code().value()), -1, e.what() }} }};
+      return Result<{RETURNS}> {{ Error {{ to_string(e.code().value()), -1, e.code().message() }} }};
     }}
   }}
+  inline void {NAME}_async(LeagueClient& _client, std::function<void(LeagueClient&,const Result<{RETURNS}>&)> cb{ARGS_R}{ARGS_O})
+  {{
+    _client.httpsa.request("{method}", "{PATH}?" +
+      SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), {REQ}
+        {{"Authorization", _client.auth}}, {ARGS_HEADER} }}),[cb,&_client](std::shared_ptr<HttpsClient::Response> response, const SimpleWeb::error_code &e) {{
+          if(!e)
+            cb(_client, Result<{RETURNS}> {{ response }});
+          else
+            cb(_client,Result<{RETURNS}> {{ Error {{ to_string(e.value()), -1, e.message() }} }});
+        }});
+  }}
 }}"""
+
 template_op_arg_r = ', const {TYPE}& {NAME}'
 template_op_arg_o = ', const {TYPE}& {NAME} = std::nullopt'
 template_op_arg = '\n           {{ "{name}", to_string({NAME}) }},'
