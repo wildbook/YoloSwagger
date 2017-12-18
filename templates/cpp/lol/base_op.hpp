@@ -15,12 +15,12 @@ namespace lol {
     int32_t httpStatus; 
     std::string message;
   };
-  void to_json(json& j, const Error& v) {
+  inline void to_json(json& j, const Error& v) {
     j["errorCode"] = v.errorCode;
     j["httpStatus"] = v.httpStatus;
     j["message"] = v.message; 
   }
-  void from_json(const json& j, Error& v) {
+  inline void from_json(const json& j, Error& v) {
     v.errorCode = j.at("errorCode").get<std::string>();  
     v.httpStatus = j.at("httpStatus").get<int32_t>(); 
     v.message = j.at("message").get<std::string>();

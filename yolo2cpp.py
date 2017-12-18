@@ -1,13 +1,14 @@
 from swag2yolo import *
-template_include = '\n#include <lol/def/{0}.hpp>'
+template_include_d = '\n#include "{0}.hpp"'
+template_include_o = '\n#include "../def/{0}.hpp"'
 template_definition = """#pragma once
-#include<lol/base_def.hpp> {INCLUDES}
+#include "../base_def.hpp" {INCLUDES}
 namespace lol {{
   {ISENUM}struct {NAME} {{ {FIELDS} {VALUES}
   }};
-  void to_json(json& j, const {NAME}& v) {{{ENUM_TO}{STRUCT_TO}
+  inline void to_json(json& j, const {NAME}& v) {{{ENUM_TO}{STRUCT_TO}
   }}
-  void from_json(const json& j, {NAME}& v) {{{ENUM_FROM}{STRUCT_FROM}
+  inline void from_json(const json& j, {NAME}& v) {{{ENUM_FROM}{STRUCT_FROM}
   }}
 }}"""
 template_definition_fields = """
@@ -36,9 +37,9 @@ template_struct_from_o = """
       v.{NAME} = it->get<{TYPE}>(); """
 
 template_op = """#pragma once
-#include<lol/base_op.hpp> {INCLUDES}
+#include "../base_op.hpp" {INCLUDES}
 namespace lol {{
-  Result<{RETURNS}> {NAME}(const LeagueClient& _client{ARGS_R}{ARGS_O})
+  inline Result<{RETURNS}> {NAME}(const LeagueClient& _client{ARGS_R}{ARGS_O})
   {{
     HttpsClient _client_(_client.host, false);
     try {{
@@ -123,7 +124,7 @@ def generate_def(yolo, folder):
             value["DNAME"] = definition["NAME"]
             value["NAME"] = value["name"].replace("-", "_") + "_e"
         open("{0}/lol/def/{1}.hpp".format(folder, definition["name"]), "w+").write(template_definition.format(**definition,
-            INCLUDES = "".join([template_include.format(i) for i in include2cpp(definition["fields"])]),
+            INCLUDES = "".join([template_include_d.format(i) for i in include2cpp(definition["fields"])]),
             VALUES = "".join([template_definition_values.format(**m) for m in definition["values"]]),
             FIELDS = "".join([template_definition_fields.format(**m) for m in definition["fields"]]),
             ISENUM = "enum " if definition["isEnum"] else "",
@@ -133,7 +134,7 @@ def generate_def(yolo, folder):
             STRUCT_FROM = "".join([template_struct_from_o.format(**m) if m["optional"] else template_struct_from.format(**m) for m in definition["fields"]])
             ))
 
-def generate_op(yolo, folder):       
+def generate_op(yolo, folder):
     mkpath(folder+"/lol/op")
     for op in yolo["functions"]:
         op["NAME"] = op["name"].replace("-", "_")
@@ -146,7 +147,7 @@ def generate_op(yolo, folder):
         open("{0}/lol/op/{1}.hpp".format(folder, op["name"]), "w+").write(template_op.format(**op,
             ARGS_R = "".join([template_op_arg_r.format(**arg) for arg in op["arguments"] if not arg["optional"]]),
             ARGS_O = "".join([template_op_arg_o.format(**arg) for arg in op["arguments"] if arg["optional"]]),      
-            INCLUDES = "".join([template_include.format(i) for i in include2cpp(op["arguments"], op["returns"])]),
+            INCLUDES = "".join([template_include_o.format(i) for i in include2cpp(op["arguments"], op["returns"])]),
             ARGS_QUERY = "".join([template_op_arg.format(**arg) for arg in op["arguments"] if arg["in"] == "query"]),
             ARGS_HEADER = "".join([template_op_arg.format(**arg) for arg in op["arguments"] if arg["in"] == "header"]),                                                                                 
             PATH = op["url"].format(**{arg["name"] : '"+to_string({0})+"'.format(arg["NAME"]) for arg in op["arguments"] if arg["in"] == "path" }),
@@ -155,7 +156,10 @@ def generate_op(yolo, folder):
                 ARGS_BODY = "".join(args_body))
             ))
 
-def generate_cpp(yolo, folder):   
+def generate_cpp(yolo, folder):
+    mkpath(folder+"/lol")
+    open(folder+"/lol/base_op.hpp", "wb+").write(open("templates/cpp/lol/base_op.hpp", "rb").read())
+    open(folder+"/lol/base_def.hpp", "wb+").write(open("templates/cpp/lol/base_def.hpp", "rb").read())
     generate_def(yolo, folder)   
     generate_op(yolo, folder)
 
