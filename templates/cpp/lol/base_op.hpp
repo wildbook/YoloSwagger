@@ -37,6 +37,7 @@ namespace lol {
   }
   
   inline void from_json(const json& j, Error& v) {
+    v.source = ErrorSource::League,
     v.errorCode = j.at("errorCode").get<std::string>();
     v.httpStatus = j.at("httpStatus").get<int32_t>();
     v.message = j.at("message").get<std::string>();
@@ -78,6 +79,9 @@ namespace lol {
     int32_t status_code = std::stoi(r->status_code);
     std::string content = r->content.string();
     json j{};
+    if (auto it = r->header.find("content-type"); it != r->header.end()) {
+      content_type = it->second;
+    }
     if (content_type == "application/json") {
       if(content.size() > 0) {
         j = json::parse(content);
@@ -85,9 +89,7 @@ namespace lol {
     } else {
       j = content;
     }
-    if (auto it = r->header.find("content-type"); it != r->header.end()) {
-      content_type = it->second;
-    } else if ((status_code < 200 || status_code>299) && content_type == "application/json") {
+    if ((status_code < 200 || status_code>299) && content_type == "application/json") {
       try {
         return j.get<Error>();
       } catch(const json::exception& j) {
