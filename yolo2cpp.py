@@ -40,7 +40,8 @@ template_op = """#pragma once
 #include "../base_op.hpp"
 #include <functional> {INCLUDES}
 namespace lol {{
-  inline Result<{RETURNS}> {NAME}(LeagueClient& _client{ARGS_R}{ARGS_O})
+  template<typename T>
+  inline Result<{RETURNS}> {NAME}(T& _client{ARGS_R}{ARGS_O})
   {{
     try {{
       return ToResult<{RETURNS}>(_client.https.request("{method}", "{PATH}?" +
@@ -50,7 +51,8 @@ namespace lol {{
       return ToResult<{RETURNS}>(e.code());
     }}
   }}
-  inline void {NAME}(LeagueClient& _client{ARGS_R}{ARGS_O}, std::function<void(LeagueClient&, const Result<{RETURNS}>&)> cb)
+  template<typename T>
+  inline void {NAME}(T& _client{ARGS_R}{ARGS_O}, std::function<void(T&, const Result<{RETURNS}>&)> cb)
   {{
     _client.httpsa.request("{method}", "{PATH}?" +
       SimpleWeb::QueryString::create(Args2Headers({{ {ARGS_QUERY} }})), {REQ}
@@ -79,7 +81,7 @@ template_op_json = """
           {{"content-type", "application/json"}},"""
 
 builtins = {
-    "": "std::nullptr_t",
+    "": "Nothing",
     "bool": "bool", 
     "int8": "int8_t", 
     "uint8": "uint8_t",
