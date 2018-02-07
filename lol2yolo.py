@@ -16,7 +16,7 @@ password = re.search('--remoting-auth-token=([^"]+)', cmdline).group(1)
 
 print("Connecting to LeagueClient...")
 context = ssl._create_unverified_context()
-connection = http.client.HTTPSConnection('localhost', port, context=context)
+connection = http.client.HTTPSConnection('127.0.0.1', port, context=context)
 headers = { 'Authorization' : 'Basic %s' % base64.b64encode("riot:{0}".format(password).encode()).decode("ascii")}
 
 print("Requesting /v2/swagger.json...")
