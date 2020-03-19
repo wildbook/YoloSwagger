@@ -20,7 +20,7 @@ connection = http.client.HTTPSConnection('127.0.0.1', port, context=context)
 headers = { 'Authorization' : 'Basic %s' % base64.b64encode("riot:{0}".format(password).encode()).decode("ascii")}
 
 print("Requesting /v2/swagger.json...")
-connection.request('GET', '/v2/swagger.json', headers=headers)
+connection.request('GET', '/swagger/v2/swagger.json', headers=headers)
 response = connection.getresponse()
 swagger = json.loads(response.read().decode('utf-8'))
 
