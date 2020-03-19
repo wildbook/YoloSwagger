@@ -405,7 +405,7 @@ def generate_requests(info, folder, namespace):
                         request_name = function["name"],
                            arguments = ''.join(", {0} {1}".format(type2cs_optional(argument["type"]) if argument["optional"] else type2cs(argument["type"]), "_" + fix_case(argument["name"], False) + (" = null" if argument["optional"] else "")) for argument in sorted_args),
                          http_method = function["method"].upper(),
-                       http_endpoint = re.sub(r'{[^{]*-([a-zA-Z])[^}]*}', lambda m: fix_case(m.group(0), False), function["url"]).replace("{", "{_"),
+                       http_endpoint = re.sub(r'{[^{]*([a-zA-Z_])[^}]*}', lambda m: fix_case(m.group(0), False), function["url"]).replace("{", "{_"),
                           http_query = 'new Dictionary<string, string>{{{0}}}'.format(''.join('{{"{0}", JsonConvert.SerializeObject({1})}}, '.format(query["name"], "_" + fix_case(query["name"], False)) for query in query_items)) if query_items else "null",
                         http_headers = 'new Dictionary<string, string>{{{0}}}'.format(''.join('{{"{0}", JsonConvert.SerializeObject({1})}}, '.format(header["name"], "_" + fix_case(header["name"], False)) for header in header_items)) if header_items else "null",
                            http_body = "_" + fix_case(body_items[0]["name"], False) if body_items else "null",
