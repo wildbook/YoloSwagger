@@ -81,7 +81,7 @@ namespace {namespace}
             bool ensureSuccess = true)
         {{
             var httpMethod = new HttpMethod(method.ToUpper());
-            var requestUrl = new Uri($"{{_lockfileData.ConnectionType}}://localhost.:{{_lockfileData.Port}}{{endpoint}}");
+            var requestUrl = new Uri($"{{_lockfileData.ConnectionType}}://127.0.0.1:{{_lockfileData.Port}}{{endpoint}}");
 
             var client = new HttpClient(_httpClientHandler);
 
